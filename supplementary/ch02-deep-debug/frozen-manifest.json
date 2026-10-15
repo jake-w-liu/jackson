@@ -1,0 +1,18 @@
+{
+  "chapter": 2,
+  "hash_algorithm": "SHA-256",
+  "files": {
+    "sections/ch02.tex": "441f5cc76b2999934a6a2d2552a75a851afb5293dc29e79f07b43bcb87fe2842",
+    "supplementary/ch02-results.json": "00629bf68da078a971db583c4be977927dacd213f2af0012eb66e6486d860725",
+    "supplementary/ch02_figures/hemisphere_axis.tex": "ee0da1c0ea6087c3c69962a5a90a7752bf32f094e4d137a9fb28ac36dd87a134",
+    "supplementary/ch02_figures/quarter_cylinder.tex": "e331dbbe1d00e56107b54e5859465e2b355b9fdf289ad0a53b92cd4c3a995d77",
+    "supplementary/ch02_images.csv": "eb50a30f6d83e3f1a1d85a1555a7a2f88fef1114625c7dc873bc98c485753e74",
+    "supplementary/check_ch02.py": "2299e4b1d59dcfa260acdd8f1667d956f8ecfb14a38cb30a6320e8f91055de77",
+    "supplementary/deep-debug-ch02.json": "a8517a8164b31089a679ca68f6e0897690df21d221f29b557e695b17b7e984f2"
+  },
+  "note": "Ledger hash is recorded here, outside the ledger itself. Evidence archives are separate from the mathematical input/output hashes.",
+  "archived_evidence_sha256": {
+    "supplementary/ch02-deep-debug/final-checks.log": "26d29d5c4f7dc0101b669a3149717018ff1666e5a3e8ab284010c12f571ac9a1",
+    "supplementary/ch02-deep-debug/initial-checks.log": "26d29d5c4f7dc0101b669a3149717018ff1666e5a3e8ab284010c12f571ac9a1"
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "chapter": 10,
+  "hash_algorithm": "SHA-256",
+  "files": {
+    "sections/ch10.tex": "54a2cb0e91bc9058b8e677c3839656e2ee7fd14a2b103051fbbfe10079221fa4",
+    "supplementary/ch10-source/fig10_14_crop.png": "8dcc32492d9c556bf469c8508b484f93c9c05ce5220cbb1140e0fa8470d5d4ed",
+    "supplementary/ch10-source/fig10_14_measurements.csv": "0f25c82edab59dfeea93fb89159d32605cc952146d9c07563ca614d678bb417c",
+    "supplementary/ch10-source/sources.txt": "d894adf90410d5a4b4d9c03e31861fd17bee4de822d7166a44a09b6f7a568d0b",
+    "supplementary/check_ch10.py": "9d6309c04655ec699af6bcabeaabcb1660f568fc61a21eaaa6618e7badb9fe8b",
+    "supplementary/figures/ch10_11_fresnel.tex": "e424f38b8f8a656eef7192b46c62b1cc3aed26e05a58e6ab33eb75a31a5b257d",
+    "supplementary/figures/ch10_13_circular.tex": "9351341b51d0bfe8a64b92eae81f0a7afc2f415e751c1b99880f28fb1f9de4dc",
+    "supplementary/figures/ch10_14_square.tex": "fc2174e01bb129e95b90b4998ba1f1a50a51ba10b5cd7203063eacf1ed0d8c90",
+    "supplementary/figures/ch10_17_mie.tex": "9fc566896b025364baf7ffa5a4b06f3f506f6c694f674bfbd61e2ef36d015394",
+    "supplementary/figures/ch10_20_fibers.tex": "c15c5fac279ff90c4c01f77128282f71247186dee9c0d09e72f3263fb8835511",
+    "supplementary/deep-debug-ch10.json": "40cefdec5f2e6e8692f7d4efda5554cd4123936ac48a8b6211cc1c3b56494dad"
+  },
+  "note": "Ledger hash is recorded here, outside the ledger itself. Evidence archives are separate from the mathematical input/output hashes.",
+  "archived_evidence_sha256": {
+    "supplementary/ch10-deep-debug/final-checks.log": "18a305565c5b4e7e35fc1ced8b52062da0843932d1878da6dc42245232b3f08c",
+    "supplementary/ch10-deep-debug/initial-checks.log": "18a305565c5b4e7e35fc1ced8b52062da0843932d1878da6dc42245232b3f08c"
+  }
+}

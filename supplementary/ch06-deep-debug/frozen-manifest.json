@@ -1,0 +1,21 @@
+{
+  "chapter": 6,
+  "hash_algorithm": "SHA-256",
+  "files": {
+    "sections/ch06.tex": "64b64fecb03361feb6439430887da41c7da06ab2615c4f558772beb0e231f58b",
+    "supplementary/check_ch06.py": "19f7dad1fe1323e8ce2bf5b99e962cf21ba1b1e0b243a92b189482f286393317",
+    "supplementary/deep-debug-ch06.json": "47ea8a967ad41a37da9970e8ff490b33152ae216721928c2304a60edb01c0f34"
+  },
+  "note": "Ledger hash is recorded here, outside the ledger itself. Evidence archives are separate from the mathematical input/output hashes.",
+  "archived_evidence_sha256": {
+    "supplementary/ch06-deep-debug/final-checks.log": "07edeb445314c75ef84e2f33749e35e51f5d0dd74b64ebc7632ef37486c4dfdf",
+    "supplementary/ch06-deep-debug/initial-checks.log": "07edeb445314c75ef84e2f33749e35e51f5d0dd74b64ebc7632ef37486c4dfdf",
+    "supplementary/ch06-deep-debug/local-compile.stdout": "78f3a6cd4091d42bc7456b3e37b8cb5a1fafe36dad7a7e87038aed3a7fd9edb0",
+    "supplementary/ch06-deep-debug/local-exits.json": "99bddca0b3410bb464d9cfce05bc4df1048c98a05ed708872131e2149f890244",
+    "supplementary/ch06-deep-debug/local-montage-exits.json": "672df73037f0341d0d8b0c1ab0478783c224c61a52ff63f4e91001f8368799b0",
+    "supplementary/ch06-deep-debug/local-pdfinfo.stdout": "f3b2436c6cce3c7619aca1a6dc25ed3530c889d0627024fb552edb4070e6aa00",
+    "supplementary/ch06-deep-debug/local-render.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "supplementary/ch06-deep-debug/source244.png": "d20eb33a9040fa7025b6f6ef4dd9dcd7d4058979a774c68902d94bb00ec60706",
+    "supplementary/ch06-deep-debug/source246.png": "83831530f8408a0f9482bfc46ae561a739efeebc43044f1d49d379d9ab833dd8"
+  }
+}

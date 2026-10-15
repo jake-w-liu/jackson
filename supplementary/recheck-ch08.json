@@ -1,0 +1,376 @@
+{
+  "chapter": 8,
+  "review": "Fresh derivation, pedagogy and Jackson notation review",
+  "review_date": "2026-10-03",
+  "source": "sections/ch08.tex",
+  "source_sha256": "71b029e4e23aaea84be3d77399e5d9a12431c7c0b549571be626d0053449aaa0",
+  "checked_command": "python3 -Werror supplementary/check_ch08.py",
+  "observed_exit_code": 0,
+  "check_log": "build/recheck-ch08.log",
+  "notation_sources": [
+    "build/ch08-source/p-383.png",
+    "build/ch08-source/p-384.png",
+    "build/ch08-source/p-391.png",
+    "build/ch08-source/p-415.png",
+    "build/ch08-source/p-416.png"
+  ],
+  "problems": [
+    {
+      "problem": "8.1",
+      "status": "reviewed",
+      "mathematics_checked": "Complex skin-layer current, time-averaged Lorentz traction, permeability jump and distinct-frequency averages.",
+      "derivation_changes": "Existing peak-phasor and normal conventions retained.",
+      "notation_check": "Jackson SI, peak e^{-i omega t} phasors; gamma transverse eigenvalue and k axial wavenumber (8.26–8.36); beta is attenuation (p.366); normalized real transverse fields and bilinear longitudinal norms 8.129–8.136 (pp.390–391).",
+      "source_evidence": [
+        "sections/ch08.tex, full statement and solution 8.1",
+        "build/ch08-source/p-383.png",
+        "build/ch08-source/p-384.png",
+        "build/ch08-source/p-391.png",
+        "build/ch08-source/p-415.png",
+        "build/ch08-source/p-416.png"
+      ],
+      "independent_check": "supplementary/check_ch08.py::check_01; build/recheck-ch08.log",
+      "remaining_limitations": "Numerical checks sample parameters and supplement the analytic derivation; physical approximations and source-data conventions remain explicit in the solution."
+    },
+    {
+      "problem": "8.2",
+      "status": "reviewed",
+      "mathematics_checked": "Coaxial TEM power/current, attenuation, impedance, wall resistance and penetrating-field inductance.",
+      "derivation_changes": "Existing derivation retained.",
+      "notation_check": "Jackson SI, peak e^{-i omega t} phasors; gamma transverse eigenvalue and k axial wavenumber (8.26–8.36); beta is attenuation (p.366); normalized real transverse fields and bilinear longitudinal norms 8.129–8.136 (pp.390–391).",
+      "source_evidence": [
+        "sections/ch08.tex, full statement and solution 8.2",
+        "build/ch08-source/p-383.png",
+        "build/ch08-source/p-384.png",
+        "build/ch08-source/p-391.png",
+        "build/ch08-source/p-415.png",
+        "build/ch08-source/p-416.png"
+      ],
+      "independent_check": "supplementary/check_ch08.py::check_02; build/recheck-ch08.log",
+      "remaining_limitations": "Numerical checks sample parameters and supplement the analytic derivation; physical approximations and source-data conventions remain explicit in the solution."
+    },
+    {
+      "problem": "8.3",
+      "status": "reviewed",
+      "mathematics_checked": "Wide-strip power and losses; narrow-strip electrostatic/magnetostatic leading logarithms.",
+      "derivation_changes": "Added Gaussian-cylinder E field, potential logarithm, C and L per length, speed and impedance.",
+      "notation_check": "Jackson SI, peak e^{-i omega t} phasors; gamma transverse eigenvalue and k axial wavenumber (8.26–8.36); beta is attenuation (p.366); normalized real transverse fields and bilinear longitudinal norms 8.129–8.136 (pp.390–391).",
+      "source_evidence": [
+        "sections/ch08.tex, full statement and solution 8.3",
+        "build/ch08-source/p-383.png",
+        "build/ch08-source/p-384.png",
+        "build/ch08-source/p-391.png",
+        "build/ch08-source/p-415.png",
+        "build/ch08-source/p-416.png"
+      ],
+      "independent_check": "supplementary/check_ch08.py::check_03; build/recheck-ch08.log",
+      "remaining_limitations": "Numerical checks sample parameters and supplement the analytic derivation; physical approximations and source-data conventions remain explicit in the solution."
+    },
+    {
+      "problem": "8.4",
+      "status": "reviewed",
+      "mathematics_checked": "Cylindrical TE/TM eigenvalues, mode counting, Bessel norms, Maxwell power and wall losses.",
+      "derivation_changes": "Added transverse Maxwell reconstruction, integration-by-parts/Bessel norm steps and TE coefficient simplification; attenuation renamed beta per Jackson.",
+      "notation_check": "Jackson SI, peak e^{-i omega t} phasors; gamma transverse eigenvalue and k axial wavenumber (8.26–8.36); beta is attenuation (p.366); normalized real transverse fields and bilinear longitudinal norms 8.129–8.136 (pp.390–391).",
+      "source_evidence": [
+        "sections/ch08.tex, full statement and solution 8.4",
+        "build/ch08-source/p-383.png",
+        "build/ch08-source/p-384.png",
+        "build/ch08-source/p-391.png",
+        "build/ch08-source/p-415.png",
+        "build/ch08-source/p-416.png"
+      ],
+      "independent_check": "supplementary/check_ch08.py::check_04; build/recheck-ch08.log",
+      "remaining_limitations": "Numerical checks sample parameters and supplement the analytic derivation; physical approximations and source-data conventions remain explicit in the solution."
+    },
+    {
+      "problem": "8.5",
+      "status": "reviewed",
+      "mathematics_checked": "Triangle reflection basis, TE/TM cutoffs, lowest-mode volume norms and all three wall integrals.",
+      "derivation_changes": "Added explicit TM norm and normal derivatives; attenuation renamed beta.",
+      "notation_check": "Jackson SI, peak e^{-i omega t} phasors; gamma transverse eigenvalue and k axial wavenumber (8.26–8.36); beta is attenuation (p.366); normalized real transverse fields and bilinear longitudinal norms 8.129–8.136 (pp.390–391).",
+      "source_evidence": [
+        "sections/ch08.tex, full statement and solution 8.5",
+        "build/ch08-source/p-383.png",
+        "build/ch08-source/p-384.png",
+        "build/ch08-source/p-391.png",
+        "build/ch08-source/p-415.png",
+        "build/ch08-source/p-416.png"
+      ],
+      "independent_check": "supplementary/check_ch08.py::check_05; build/recheck-ch08.log",
+      "remaining_limitations": "Numerical checks sample parameters and supplement the analytic derivation; physical approximations and source-data conventions remain explicit in the solution."
+    },
+    {
+      "problem": "8.6",
+      "status": "reviewed",
+      "mathematics_checked": "Cylinder axial TM/TE parity, four ordered frequencies, dominant-mode crossing and copper cavity Q.",
+      "derivation_changes": "Explained end-wall standing waves and Bessel norm recurrence; repaired malformed unit commands.",
+      "notation_check": "Jackson SI, peak e^{-i omega t} phasors; gamma transverse eigenvalue and k axial wavenumber (8.26–8.36); beta is attenuation (p.366); normalized real transverse fields and bilinear longitudinal norms 8.129–8.136 (pp.390–391).",
+      "source_evidence": [
+        "sections/ch08.tex, full statement and solution 8.6",
+        "build/ch08-source/p-383.png",
+        "build/ch08-source/p-384.png",
+        "build/ch08-source/p-391.png",
+        "build/ch08-source/p-415.png",
+        "build/ch08-source/p-416.png"
+      ],
+      "independent_check": "supplementary/check_ch08.py::check_06; build/recheck-ch08.log",
+      "remaining_limitations": "Numerical checks sample parameters and supplement the analytic derivation; physical approximations and source-data conventions remain explicit in the solution."
+    },
+    {
+      "problem": "8.7",
+      "status": "reviewed",
+      "mathematics_checked": "Spherical TM derivative determinant, l=1 tangent equation, thin-shell eigenvalue perturbation and TE family.",
+      "derivation_changes": "Added exact weighted Rayleigh ratio and why the first-order eigenfunction correction cancels.",
+      "notation_check": "Jackson SI, peak e^{-i omega t} phasors; gamma transverse eigenvalue and k axial wavenumber (8.26–8.36); beta is attenuation (p.366); normalized real transverse fields and bilinear longitudinal norms 8.129–8.136 (pp.390–391).",
+      "source_evidence": [
+        "sections/ch08.tex, full statement and solution 8.7",
+        "build/ch08-source/p-383.png",
+        "build/ch08-source/p-384.png",
+        "build/ch08-source/p-391.png",
+        "build/ch08-source/p-415.png",
+        "build/ch08-source/p-416.png"
+      ],
+      "independent_check": "supplementary/check_ch08.py::check_07; build/recheck-ch08.log",
+      "remaining_limitations": "Numerical checks sample parameters and supplement the analytic derivation; physical approximations and source-data conventions remain explicit in the solution."
+    },
+    {
+      "problem": "8.8",
+      "status": "reviewed",
+      "mathematics_checked": "Schumann frequency, separate wall penetration losses, Earth/ionosphere skin depths and approximation limits.",
+      "derivation_changes": "Repaired malformed frequency/length unit commands.",
+      "notation_check": "Jackson SI, peak e^{-i omega t} phasors; gamma transverse eigenvalue and k axial wavenumber (8.26–8.36); beta is attenuation (p.366); normalized real transverse fields and bilinear longitudinal norms 8.129–8.136 (pp.390–391).",
+      "source_evidence": [
+        "sections/ch08.tex, full statement and solution 8.8",
+        "build/ch08-source/p-383.png",
+        "build/ch08-source/p-384.png",
+        "build/ch08-source/p-391.png",
+        "build/ch08-source/p-415.png",
+        "build/ch08-source/p-416.png"
+      ],
+      "independent_check": "supplementary/check_ch08.py::check_08; build/recheck-ch08.log",
+      "remaining_limitations": "Numerical checks sample parameters and supplement the analytic derivation; physical approximations and source-data conventions remain explicit in the solution."
+    },
+    {
+      "problem": "8.9",
+      "status": "reviewed",
+      "mathematics_checked": "Constrained self-adjoint Rayleigh quotient, admissible subspace, cosine trial and optimized polynomial.",
+      "derivation_changes": "Existing variation and upper-bound qualifications retained.",
+      "notation_check": "Jackson SI, peak e^{-i omega t} phasors; gamma transverse eigenvalue and k axial wavenumber (8.26–8.36); beta is attenuation (p.366); normalized real transverse fields and bilinear longitudinal norms 8.129–8.136 (pp.390–391).",
+      "source_evidence": [
+        "sections/ch08.tex, full statement and solution 8.9",
+        "build/ch08-source/p-383.png",
+        "build/ch08-source/p-384.png",
+        "build/ch08-source/p-391.png",
+        "build/ch08-source/p-415.png",
+        "build/ch08-source/p-416.png"
+      ],
+      "independent_check": "supplementary/check_ch08.py::check_09; build/recheck-ch08.log",
+      "remaining_limitations": "Numerical checks sample parameters and supplement the analytic derivation; physical approximations and source-data conventions remain explicit in the solution."
+    },
+    {
+      "problem": "8.10",
+      "status": "reviewed",
+      "mathematics_checked": "Divergence-free vector trial, boundary conditions, cylindrical curls/Laplacian and variational frequency.",
+      "derivation_changes": "Added explicit vector-Laplacian components and the extra numerator integral.",
+      "notation_check": "Jackson SI, peak e^{-i omega t} phasors; gamma transverse eigenvalue and k axial wavenumber (8.26–8.36); beta is attenuation (p.366); normalized real transverse fields and bilinear longitudinal norms 8.129–8.136 (pp.390–391).",
+      "source_evidence": [
+        "sections/ch08.tex, full statement and solution 8.10",
+        "build/ch08-source/p-383.png",
+        "build/ch08-source/p-384.png",
+        "build/ch08-source/p-391.png",
+        "build/ch08-source/p-415.png",
+        "build/ch08-source/p-416.png"
+      ],
+      "independent_check": "supplementary/check_ch08.py::check_10; build/recheck-ch08.log",
+      "remaining_limitations": "Numerical checks sample parameters and supplement the analytic derivation; physical approximations and source-data conventions remain explicit in the solution."
+    },
+    {
+      "problem": "8.11",
+      "status": "reviewed",
+      "mathematics_checked": "Breadbox power trial, integrability, beta-integrals, derivative polynomial, positive optimum and sector bound.",
+      "derivation_changes": "Existing derivation retained.",
+      "notation_check": "Jackson SI, peak e^{-i omega t} phasors; gamma transverse eigenvalue and k axial wavenumber (8.26–8.36); beta is attenuation (p.366); normalized real transverse fields and bilinear longitudinal norms 8.129–8.136 (pp.390–391).",
+      "source_evidence": [
+        "sections/ch08.tex, full statement and solution 8.11",
+        "build/ch08-source/p-383.png",
+        "build/ch08-source/p-384.png",
+        "build/ch08-source/p-391.png",
+        "build/ch08-source/p-415.png",
+        "build/ch08-source/p-416.png"
+      ],
+      "independent_check": "supplementary/check_ch08.py::check_11; build/recheck-ch08.log",
+      "remaining_limitations": "Numerical checks sample parameters and supplement the analytic derivation; physical approximations and source-data conventions remain explicit in the solution."
+    },
+    {
+      "problem": "8.12",
+      "status": "reviewed",
+      "mathematics_checked": "Dirichlet and Neumann shape perturbations, normal rotation, trapezoidal displacement and lowest shifts.",
+      "derivation_changes": "Existing full Neumann slope term retained and checked.",
+      "notation_check": "Jackson SI, peak e^{-i omega t} phasors; gamma transverse eigenvalue and k axial wavenumber (8.26–8.36); beta is attenuation (p.366); normalized real transverse fields and bilinear longitudinal norms 8.129–8.136 (pp.390–391).",
+      "source_evidence": [
+        "sections/ch08.tex, full statement and solution 8.12",
+        "build/ch08-source/p-383.png",
+        "build/ch08-source/p-384.png",
+        "build/ch08-source/p-391.png",
+        "build/ch08-source/p-415.png",
+        "build/ch08-source/p-416.png"
+      ],
+      "independent_check": "supplementary/check_ch08.py::check_12; build/recheck-ch08.log",
+      "remaining_limitations": "Numerical checks sample parameters and supplement the analytic derivation; physical approximations and source-data conventions remain explicit in the solution."
+    },
+    {
+      "problem": "8.13",
+      "status": "reviewed",
+      "mathematics_checked": "Degenerate matrix perturbation, complete TE wall loss, ellipse off-diagonal elements and eigenpolarizations.",
+      "derivation_changes": "Corrected Bz versus Hz permeability normalization, distinguished wall-tangent H from transverse H, used Jackson attenuation beta; new nonunit-mu Maxwell-power check.",
+      "notation_check": "Jackson SI, peak e^{-i omega t} phasors; gamma transverse eigenvalue and k axial wavenumber (8.26–8.36); beta is attenuation (p.366); normalized real transverse fields and bilinear longitudinal norms 8.129–8.136 (pp.390–391).",
+      "source_evidence": [
+        "sections/ch08.tex, full statement and solution 8.13",
+        "build/ch08-source/p-383.png",
+        "build/ch08-source/p-384.png",
+        "build/ch08-source/p-391.png",
+        "build/ch08-source/p-415.png",
+        "build/ch08-source/p-416.png"
+      ],
+      "independent_check": "supplementary/check_ch08.py::check_13; build/recheck-ch08.log",
+      "remaining_limitations": "Numerical checks sample parameters and supplement the analytic derivation; physical approximations and source-data conventions remain explicit in the solution."
+    },
+    {
+      "problem": "8.14",
+      "status": "reviewed",
+      "mathematics_checked": "Sech index first integral, sinh substitution, crossing period and optical path independent of launch angle.",
+      "derivation_changes": "Existing derivation retained.",
+      "notation_check": "Jackson SI, peak e^{-i omega t} phasors; gamma transverse eigenvalue and k axial wavenumber (8.26–8.36); beta is attenuation (p.366); normalized real transverse fields and bilinear longitudinal norms 8.129–8.136 (pp.390–391).",
+      "source_evidence": [
+        "sections/ch08.tex, full statement and solution 8.14",
+        "build/ch08-source/p-383.png",
+        "build/ch08-source/p-384.png",
+        "build/ch08-source/p-391.png",
+        "build/ch08-source/p-415.png",
+        "build/ch08-source/p-416.png"
+      ],
+      "independent_check": "supplementary/check_ch08.py::check_14; build/recheck-ch08.log",
+      "remaining_limitations": "Numerical checks sample parameters and supplement the analytic derivation; physical approximations and source-data conventions remain explicit in the solution."
+    },
+    {
+      "problem": "8.15",
+      "status": "reviewed",
+      "mathematics_checked": "Slab parity equations, cutoffs, inverse-trigonometric branches, Newton roots and core/cladding powers.",
+      "derivation_changes": "Added arctan(w/u)=arccos(xi) bridge to the root equation.",
+      "notation_check": "Jackson SI, peak e^{-i omega t} phasors; gamma transverse eigenvalue and k axial wavenumber (8.26–8.36); beta is attenuation (p.366); normalized real transverse fields and bilinear longitudinal norms 8.129–8.136 (pp.390–391).",
+      "source_evidence": [
+        "sections/ch08.tex, full statement and solution 8.15",
+        "build/ch08-source/p-383.png",
+        "build/ch08-source/p-384.png",
+        "build/ch08-source/p-391.png",
+        "build/ch08-source/p-415.png",
+        "build/ch08-source/p-416.png"
+      ],
+      "independent_check": "supplementary/check_ch08.py::check_15; build/recheck-ch08.log",
+      "remaining_limitations": "Numerical checks sample parameters and supplement the analytic derivation; physical approximations and source-data conventions remain explicit in the solution."
+    },
+    {
+      "problem": "8.16",
+      "status": "reviewed",
+      "mathematics_checked": "Implicit slab derivative, group speed, independent energy transport and Goos–Hänchen interpretation.",
+      "derivation_changes": "Existing derivation retained.",
+      "notation_check": "Jackson SI, peak e^{-i omega t} phasors; gamma transverse eigenvalue and k axial wavenumber (8.26–8.36); beta is attenuation (p.366); normalized real transverse fields and bilinear longitudinal norms 8.129–8.136 (pp.390–391).",
+      "source_evidence": [
+        "sections/ch08.tex, full statement and solution 8.16",
+        "build/ch08-source/p-383.png",
+        "build/ch08-source/p-384.png",
+        "build/ch08-source/p-391.png",
+        "build/ch08-source/p-415.png",
+        "build/ch08-source/p-416.png"
+      ],
+      "independent_check": "supplementary/check_ch08.py::check_16; build/recheck-ch08.log",
+      "remaining_limitations": "Numerical checks sample parameters and supplement the analytic derivation; physical approximations and source-data conventions remain explicit in the solution."
+    },
+    {
+      "problem": "8.17",
+      "status": "reviewed",
+      "mathematics_checked": "Vector fiber matching determinant, TE/TM thresholds, HE11 exponential scale and finite prefactor.",
+      "derivation_changes": "Added J1/K1 series, explicit inverse-power coefficients and logarithm before exponentiation.",
+      "notation_check": "Jackson SI, peak e^{-i omega t} phasors; gamma transverse eigenvalue and k axial wavenumber (8.26–8.36); beta is attenuation (p.366); normalized real transverse fields and bilinear longitudinal norms 8.129–8.136 (pp.390–391).",
+      "source_evidence": [
+        "sections/ch08.tex, full statement and solution 8.17",
+        "build/ch08-source/p-383.png",
+        "build/ch08-source/p-384.png",
+        "build/ch08-source/p-391.png",
+        "build/ch08-source/p-415.png",
+        "build/ch08-source/p-416.png"
+      ],
+      "independent_check": "supplementary/check_ch08.py::check_17; build/recheck-ch08.log",
+      "remaining_limitations": "Numerical checks sample parameters and supplement the analytic derivation; physical approximations and source-data conventions remain explicit in the solution."
+    },
+    {
+      "problem": "8.18",
+      "status": "reviewed",
+      "mathematics_checked": "Scalar Green identity, degenerate orthogonal bases, mixed TE/TM transverse orthogonality and bilinear longitudinal norms.",
+      "derivation_changes": "Checked negative longitudinal norm signs directly against Jackson 8.132–8.134.",
+      "notation_check": "Jackson SI, peak e^{-i omega t} phasors; gamma transverse eigenvalue and k axial wavenumber (8.26–8.36); beta is attenuation (p.366); normalized real transverse fields and bilinear longitudinal norms 8.129–8.136 (pp.390–391).",
+      "source_evidence": [
+        "sections/ch08.tex, full statement and solution 8.18",
+        "build/ch08-source/p-383.png",
+        "build/ch08-source/p-384.png",
+        "build/ch08-source/p-391.png",
+        "build/ch08-source/p-415.png",
+        "build/ch08-source/p-416.png"
+      ],
+      "independent_check": "supplementary/check_ch08.py::check_18; build/recheck-ch08.log",
+      "remaining_limitations": "Numerical checks sample parameters and supplement the analytic derivation; physical approximations and source-data conventions remain explicit in the solution."
+    },
+    {
+      "problem": "8.19",
+      "status": "reviewed",
+      "mathematics_checked": "Normalized probe coupling, Fourier source integral/removable pole, high-mode asymptotics and short-circuit image power.",
+      "derivation_changes": "Added product-to-sum integral evaluation before combining fractions.",
+      "notation_check": "Jackson SI, peak e^{-i omega t} phasors; gamma transverse eigenvalue and k axial wavenumber (8.26–8.36); beta is attenuation (p.366); normalized real transverse fields and bilinear longitudinal norms 8.129–8.136 (pp.390–391).",
+      "source_evidence": [
+        "sections/ch08.tex, full statement and solution 8.19",
+        "build/ch08-source/p-383.png",
+        "build/ch08-source/p-384.png",
+        "build/ch08-source/p-391.png",
+        "build/ch08-source/p-415.png",
+        "build/ch08-source/p-416.png"
+      ],
+      "independent_check": "supplementary/check_ch08.py::check_19; build/recheck-ch08.log",
+      "remaining_limitations": "Numerical checks sample parameters and supplement the analytic derivation; physical approximations and source-data conventions remain explicit in the solution."
+    },
+    {
+      "problem": "8.20",
+      "status": "reviewed",
+      "mathematics_checked": "Loop coupling, zero TM circulation, exact TE Bessel integral, small-loop R^4 power and height independence.",
+      "derivation_changes": "Existing derivation retained.",
+      "notation_check": "Jackson SI, peak e^{-i omega t} phasors; gamma transverse eigenvalue and k axial wavenumber (8.26–8.36); beta is attenuation (p.366); normalized real transverse fields and bilinear longitudinal norms 8.129–8.136 (pp.390–391).",
+      "source_evidence": [
+        "sections/ch08.tex, full statement and solution 8.20",
+        "build/ch08-source/p-383.png",
+        "build/ch08-source/p-384.png",
+        "build/ch08-source/p-391.png",
+        "build/ch08-source/p-415.png",
+        "build/ch08-source/p-416.png"
+      ],
+      "independent_check": "supplementary/check_ch08.py::check_20; build/recheck-ch08.log",
+      "remaining_limitations": "Numerical checks sample parameters and supplement the analytic derivation; physical approximations and source-data conventions remain explicit in the solution."
+    },
+    {
+      "problem": "8.21",
+      "status": "reviewed",
+      "mathematics_checked": "Curvilinear Laplacian, curvature potential, slow width derivatives, bound-state matching and finite-angle counterexample.",
+      "derivation_changes": "Added exact transformed longitudinal operator and width derivative terms; stated transition-length hierarchy for the square-well model.",
+      "notation_check": "Jackson SI, peak e^{-i omega t} phasors; gamma transverse eigenvalue and k axial wavenumber (8.26–8.36); beta is attenuation (p.366); normalized real transverse fields and bilinear longitudinal norms 8.129–8.136 (pp.390–391).",
+      "source_evidence": [
+        "sections/ch08.tex, full statement and solution 8.21",
+        "build/ch08-source/p-383.png",
+        "build/ch08-source/p-384.png",
+        "build/ch08-source/p-391.png",
+        "build/ch08-source/p-415.png",
+        "build/ch08-source/p-416.png"
+      ],
+      "independent_check": "supplementary/check_ch08.py::check_21; build/recheck-ch08.log",
+      "remaining_limitations": "Numerical checks sample parameters and supplement the analytic derivation; physical approximations and source-data conventions remain explicit in the solution."
+    }
+  ]
+}

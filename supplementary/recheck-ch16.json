@@ -1,0 +1,245 @@
+{
+  "chapter": 16,
+  "review_date": "2026-10-03",
+  "problem_count": 13,
+  "scope": "Every problem and subpart read and independently retraced; source conventions checked against actual local PDF pages. This ledger does not treat a passing compilation or an existing test as proof of all mathematics.",
+  "textbook": "John David Jackson - Classical Electrodynamics (1998, Wiley) - libgen.li.pdf",
+  "source_page_rule": "PDF page number = printed page + 25",
+  "review_evidence": "Actual section files, rendered/OCR textbook theory pages, new derivations and independent checks in the chapter script; existing checks also rerun with warnings as errors.",
+  "test_command": "python3 -u -W error supplementary/check_ch16.py",
+  "test_log": "build/recheck-ch16-checks.log",
+  "test_result": "exit 0, including fresh independent_recheck()",
+  "problems": [
+    {
+      "problem": "16.1",
+      "mathematics_checked": "Oscillator orbit averages, virial relation, vector angular momentum and common secular exponent versus coordinate amplitude.",
+      "derivation_pedagogy_changes": "No derivation change needed.",
+      "evidence_checks": "check_01 time-domain damped oscillator; fresh full Abraham-Lorentz roots confirm first-order secular rate and higher-order errors.",
+      "notation_sources": [
+        "Gaussian units: printed pp.746-748 (PDF771-773), (16.3), (16.6)-(16.9); tau_r=2e^2/(3mc^3).",
+        "tau_r is explicitly defined shorthand for Jackson's radiation time; proper time remains tau in 16.7-16.9.",
+        "Secular equations (16.13),(16.16), pp.749-750 (PDF774-775); oscillator (16.69)-(16.71), p.764 (PDF789)."
+      ],
+      "remaining_limitations": [
+        "Exponential is an orbit-averaged weak-reaction law, not exact instantaneous mechanical energy at arbitrary damping."
+      ]
+    },
+    {
+      "problem": "16.2",
+      "mathematics_checked": "Circular energy and angular momentum independently yield radius-cubed law; n^-5 rate and integrated muon cascade times.",
+      "derivation_pedagogy_changes": "Fixed broken unit commands that rendered m s instead of seconds; corrected the differential to dt=dn/dot(n) and explicitly reversed the decreasing-n limits to obtain a positive cascade time.",
+      "evidence_checks": "check_02 numerical ODE, separate energy/L derivatives, requested SI time values, and direct integration of 1/dot(n) from n=10 down to n=4 and n=1.",
+      "notation_sources": [
+        "Gaussian units: printed pp.746-748 (PDF771-773), (16.3), (16.6)-(16.9); tau_r=2e^2/(3mc^3).",
+        "tau_r is explicitly defined shorthand for Jackson's radiation time; proper time remains tau in 16.7-16.9.",
+        "(16.13),(16.16), pp.749-750; problem p.769 (PDF794)."
+      ],
+      "remaining_limitations": [
+        "Z is unspecified and retained; point nucleus, no screening/recoil, stated mass ratio 207."
+      ]
+    },
+    {
+      "problem": "16.3",
+      "mathematics_checked": "Kepler time weighting, r^-3/r^-4 averages, both rates, linear integrating factor and eccentricity law/circular limit.",
+      "derivation_pedagogy_changes": "No derivation change needed.",
+      "evidence_checks": "check_03 direct anomaly quadrature and symbolic invariant; fresh coupled secular ODE without inserting epsilon(L).",
+      "notation_sources": [
+        "Gaussian units: printed pp.746-748 (PDF771-773), (16.3), (16.6)-(16.9); tau_r=2e^2/(3mc^3).",
+        "tau_r is explicitly defined shorthand for Jackson's radiation time; proper time remains tau in 16.7-16.9.",
+        "(16.13),(16.16), pp.749-750; problem p.770 (PDF795)."
+      ],
+      "remaining_limitations": [
+        "Binding energy is positive epsilon; eccentricity eta is explicitly distinguished from charge e."
+      ]
+    },
+    {
+      "problem": "16.4",
+      "mathematics_checked": "Normalized shell separation distribution, entire mass function, truncated runaway, all upper-plane cases and Lambert-W roots.",
+      "derivation_pedagogy_changes": "No derivation change needed.",
+      "evidence_checks": "check_04 direct kernel integrals/Lambert roots; fresh argument-principle winding independently counts upper-plane zeros.",
+      "notation_sources": [
+        "Gaussian units: printed pp.746-748 (PDF771-773), (16.3), (16.6)-(16.9); tau_r=2e^2/(3mc^3).",
+        "tau_r is explicitly defined shorthand for Jackson's radiation time; proper time remains tau in 16.7-16.9.",
+        "(16.29)-(16.35), pp.753-755 (PDF778-780)."
+      ],
+      "remaining_limitations": [
+        "m0=0 has real undamped roots; a truncated low-frequency runaway is not generally an exact finite-size pole."
+      ]
+    },
+    {
+      "problem": "16.5",
+      "mathematics_checked": "Step transform, retarded double-pole contour, high-frequency mass, closure at t<=0, delay equation and initial behavior.",
+      "derivation_pedagogy_changes": "Converted the complete Fourier derivation to Jackson symmetric 1/sqrt(2pi) convention; final physical integral unchanged.",
+      "evidence_checks": "check_05 causal delay dynamics versus Laplace mass kernel; fresh numerical symmetric Fourier transform.",
+      "notation_sources": [
+        "Gaussian units: printed pp.746-748 (PDF771-773), (16.3), (16.6)-(16.9); tau_r=2e^2/(3mc^3).",
+        "tau_r is explicitly defined shorthand for Jackson's radiation time; proper time remains tau in 16.7-16.9.",
+        "Actual rendered printed p.753 (PDF778), Fourier pair before (16.29); (16.30), p.754."
+      ],
+      "remaining_limitations": [
+        "Positive bare mass qualification retained; zero/negative mass alternatives and contour choices explicitly stated."
+      ]
+    },
+    {
+      "problem": "16.6",
+      "mathematics_checked": "Charge form-factor normalization, mass integral, three partial fractions, retarded sign/pole, root trajectories and turning point.",
+      "derivation_pedagogy_changes": "No derivation change needed.",
+      "evidence_checks": "check_06 source integrals and exact root residuals; fresh real causal memory-kernel transform.",
+      "notation_sources": [
+        "Gaussian units: printed pp.746-748 (PDF771-773), (16.3), (16.6)-(16.9); tau_r=2e^2/(3mc^3).",
+        "tau_r is explicitly defined shorthand for Jackson's radiation time; proper time remains tau in 16.7-16.9.",
+        "Spatial transform (16.31), effective mass (16.32)-(16.34), p.754 (PDF779)."
+      ],
+      "remaining_limitations": [
+        "m0=0 has no finite mass zeros; M pole is a response zero, as explained."
+      ]
+    },
+    {
+      "problem": "16.7",
+      "mathematics_checked": "Differentiated mass shell, orthogonal jerk projection, coefficient and nonrelativistic index signs.",
+      "derivation_pedagogy_changes": "Clarified that +m times the spatial jerk is contravariant; covariant momentum/force both reverse the spatial sign.",
+      "evidence_checks": "check_07 mass-shell orthogonality and boost covariance; fresh uniform-proper-acceleration projection and lowered spatial sign.",
+      "notation_sources": [
+        "Gaussian units: printed pp.746-748 (PDF771-773), (16.3), (16.6)-(16.9); tau_r=2e^2/(3mc^3).",
+        "tau_r is explicitly defined shorthand for Jackson's radiation time; proper time remains tau in 16.7-16.9.",
+        "Mass shell (11.54), p.538 (PDF563); metric interval (11.59), p.540 (PDF565); force (16.8), p.748."
+      ],
+      "remaining_limitations": [
+        "Orthogonality alone does not select arbitrary additional transverse terms; stated local jerk model is assumed."
+      ]
+    },
+    {
+      "problem": "16.8",
+      "mathematics_checked": "One-dimensional four-momentum contraction, cancellation after p=mc sinh y, integrating factor, arbitrary constant and nonrunaway condition.",
+      "derivation_pedagogy_changes": "No derivation change needed.",
+      "evidence_checks": "check_08 ODE versus integral rapidity and nonlinear momentum equation; future-force convolution.",
+      "notation_sources": [
+        "Gaussian units: printed pp.746-748 (PDF771-773), (16.3), (16.6)-(16.9); tau_r=2e^2/(3mc^3).",
+        "tau_r is explicitly defined shorthand for Jackson's radiation time; proper time remains tau in 16.7-16.9.",
+        "Rapidity (11.58), p.539 (PDF564); (16.9), p.748."
+      ],
+      "remaining_limitations": [
+        "One initial momentum leaves the independent initial rapidity derivative free; nonrunaway choice requires a convergent future-force integral."
+      ]
+    },
+    {
+      "problem": "16.9",
+      "mathematics_checked": "Projector identity, scalar p dot dF/dtau, lab/proper conversion and vector triple product with reaction-time dimensions.",
+      "derivation_pedagogy_changes": "Retained source-proven missing-tau statement correction.",
+      "evidence_checks": "check_09 random-vector four-force projection and orthogonality.",
+      "notation_sources": [
+        "Gaussian units: printed pp.746-748 (PDF771-773), (16.3), (16.6)-(16.9); tau_r=2e^2/(3mc^3).",
+        "tau_r is explicitly defined shorthand for Jackson's radiation time; proper time remains tau in 16.7-16.9.",
+        "Printed problem p.772 (PDF797) includes tau; metric pp.538-541 (PDF563-566)."
+      ],
+      "remaining_limitations": [
+        "Reduced-order acceleration and field derivatives use zeroth-order motion inside the O(tau_r) term."
+      ]
+    },
+    {
+      "problem": "16.10",
+      "mathematics_checked": "Integrating factor and future boundary, Taylor factorial cancellation/remainder, explicit divergent example, step branches and reduced-order delta.",
+      "derivation_pedagogy_changes": "No derivation change needed; asymptotic-series statement correction retained.",
+      "evidence_checks": "check_10 force convolution, first-order convergence rate and factorial derivatives.",
+      "notation_sources": [
+        "Gaussian units: printed pp.746-748 (PDF771-773), (16.3), (16.6)-(16.9); tau_r=2e^2/(3mc^3).",
+        "tau_r is explicitly defined shorthand for Jackson's radiation time; proper time remains tau in 16.7-16.9.",
+        "(16.9)-(16.10), pp.748-749; problem p.772 (PDF797)."
+      ],
+      "remaining_limitations": [
+        "Discontinuous step is not uniformly within the smooth-force small-tau expansion."
+      ]
+    },
+    {
+      "problem": "16.11",
+      "mathematics_checked": "Self-consistent finite force pulse, all three velocity branches, unique crossing time, first-order corrections and exact energy including pre-entry radiation.",
+      "derivation_pedagogy_changes": "No derivation change needed.",
+      "evidence_checks": "check_11 independent acceleration/velocity integrals; fresh v0=0 and non-asymptotic crossing cases with exact energy balance.",
+      "notation_sources": [
+        "Gaussian units: printed pp.746-748 (PDF771-773), (16.3), (16.6)-(16.9); tau_r=2e^2/(3mc^3).",
+        "tau_r is explicitly defined shorthand for Jackson's radiation time; proper time remains tau in 16.7-16.9.",
+        "(16.6),(16.9), pp.747-748; problem p.772 (PDF797)."
+      ],
+      "remaining_limitations": [
+        "Monotone nonrelativistic crossing with alpha>0, d>0, v0>=0; small-tau formulas separately require long crossing."
+      ]
+    },
+    {
+      "problem": "16.12",
+      "mathematics_checked": "Poisson survival correlation, double time integral and energy normalization, FWHM, Maxwell Doppler/relative speeds, pressure conversions.",
+      "derivation_pedagogy_changes": "No derivation change needed.",
+      "evidence_checks": "check_12 independent renewal-train average, line area/FWHM, relative-speed integral and all numerical widths.",
+      "notation_sources": [
+        "Gaussian units: printed pp.746-748 (PDF771-773), (16.3), (16.6)-(16.9); tau_r=2e^2/(3mc^3).",
+        "tau_r is explicitly defined shorthand for Jackson's radiation time; proper time remains tau in 16.7-16.9.",
+        "Line shape/normalization (16.72), p.765 (PDF790); problem pp.772-773 (PDF797-798)."
+      ],
+      "remaining_limitations": [
+        "Phase interruption, not permanent termination of emission; ideal gas and prescribed constant cross section. Voigt total width is not a sum of component FWHMs."
+      ]
+    },
+    {
+      "problem": "16.13",
+      "mathematics_checked": "Mean extinction work and Gaussian incident flux, reality symmetry, upper contour orientation, arc asymptote and dipole sum.",
+      "derivation_pedagogy_changes": "No derivation change needed.",
+      "evidence_checks": "check_13 multi-resonance extinction integrals; fresh finite complex contour integral and arc limit.",
+      "notation_sources": [
+        "Gaussian units: printed pp.746-748 (PDF771-773), (16.3), (16.6)-(16.9); tau_r=2e^2/(3mc^3).",
+        "tau_r is explicitly defined shorthand for Jackson's radiation time; proper time remains tau in 16.7-16.9.",
+        "Gaussian radiation convention pp.746-748; problem p.773 (PDF798); causal dispersion framework invoked in the question."
+      ],
+      "remaining_limitations": [
+        "Requires causal stable response and the stated high-frequency physical-mass limit; low-frequency runaway approximations cannot be extrapolated."
+      ]
+    }
+  ],
+  "test_log_sha256": "c1ac0592ecd6d1c7bab8d5a33c6fd6d96d0bd5a472d6c371434e7ba7691bd713",
+  "render_verification": {
+    "command": "pdflatex -interaction=nonstopmode -halt-on-error -output-directory=/private/tmp/recheck-ch16-render /private/tmp/recheck-ch16-render/recheck-ch16.tex",
+    "exit_code": 0,
+    "compile_log": "build/recheck-ch16-compile.log",
+    "compile_log_sha256": "a59b135907ddc7d1cd82b14e40cdb7020d86b7bab53578d544cbf49bd5c62303",
+    "warnings_overfull_underfull_errors": [],
+    "pdf": "/private/tmp/recheck-ch16-render/recheck-ch16.pdf",
+    "pdf_sha256": "4edda6c0ecc41e679e0a65b0a21cb4465c4d0a8f3ee3413ec6ba3a62990fda4b",
+    "pdf_bytes": 325040,
+    "pages": 18,
+    "visually_inspected_pages": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18
+    ],
+    "method": "All pages rasterized at 1400 px and visually inspected in four-page contact sheets; altered formula/unit pages also inspected individually. Chapter 16 page 2 was rerendered at 1600 px after the final differential-sign wording correction.",
+    "findings": "No clipping, overlaps, missing glyphs, displaced equations, or illegible plot labels seen."
+  },
+  "final_structure_check": {
+    "ordered_problem_count": 13,
+    "every_problem_prefix": "\\Needspace{5\\baselineskip}\\par\\bigskip",
+    "broken_unit_fragments_found": 0
+  },
+  "frozen_files_sha256": {
+    "sections/ch16.tex": "8c0b351f416ce40af8048c33d9756f1f351dcbd6bc1f868522411a322f335283",
+    "supplementary/check_ch16.py": "8bdd739eeb6d54a13744fbf3a65427a4b83b05cdd4326528dc69062563989490",
+    "supplementary/ch16-results.json": "4b125979617e8cdebdff8f60ab17460e5a87fb74e8a5d47927ec7b6fc46e85eb",
+    "supplementary/figures/ch16-p06.tex": "3fadcb7cb81cd0c4d21d48abb6a5bbc6b7c129a1ff5e30bb2cf8eb1d4b54ebe2",
+    "supplementary/figures/ch16-p10.tex": "37e2abbc210ffe6a1e1ad9a1c8fe675d4df56dd9d2368b3ce1a6c086516c4b9e",
+    "supplementary/figures/ch16-p11.tex": "5bedffeff93b1d9020c5561c4ee1f9e23e0fdd9a121ac7f1589ce9eb676bae9e",
+    "supplementary/ch16-source/sources.txt": "d424805e69963090a76ed193317db28c618be2c987e469e736798b9d63df9bdc"
+  },
+  "sources_assets_frozen": true
+}

@@ -1,0 +1,38 @@
+{
+  "chapter": "14",
+  "directory": "/private/tmp/deep-debug-02-06-10-14/final-render/ch14",
+  "commands": [
+    {
+      "kind": "compile",
+      "command": [
+        "pdflatex",
+        "-interaction=nonstopmode",
+        "-halt-on-error",
+        "chapter.tex"
+      ],
+      "exit": 0
+    },
+    {
+      "kind": "render",
+      "command": [
+        "pdftoppm",
+        "-png",
+        "-r",
+        "95",
+        "chapter.pdf",
+        "page"
+      ],
+      "exit": 0
+    },
+    {
+      "kind": "pdfinfo",
+      "command": [
+        "pdfinfo",
+        "chapter.pdf"
+      ],
+      "exit": 0
+    }
+  ],
+  "warnings": [],
+  "pages": 32
+}

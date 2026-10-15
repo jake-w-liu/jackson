@@ -1,0 +1,54 @@
+{
+  "textbook": {
+    "file": "John David Jackson - Classical Electrodynamics (1998, Wiley) - libgen.li.pdf",
+    "problem_printed_pages": "568-578",
+    "problem_pdf_pages": "593-603",
+    "problem_ocr": "ocr/p-593.txt through ocr/p-603.txt",
+    "equations_checked": {
+      "Lorentz coordinates, proper time, wave vector and velocity addition": "printed 524-532",
+      "generator matrices and commutators 11.90-11.99": "printed 545-548",
+      "four-current and potentials": "printed 554-556",
+      "F, dual F, G tensors 11.137-11.145": "printed 556-557",
+      "field transformations 11.149 and moving-charge fields 11.152": "printed 558-559",
+      "momentum, energy, mass shell 11.46-11.55": "printed 536-538"
+    },
+    "reference_ocr_working_directory": "/private/tmp/jackson_ch11_reference"
+  },
+  "external_primary_sources": [
+    {
+      "citation": "PDG Charged Kaon Mass, 2025 review",
+      "url": "https://pdg.lbl.gov/2025/reviews/rpp2024-rev-charged-kaon-mass.pdf",
+      "checked": "Mass 493.677 MeV; use rounded 493.7 MeV in 11.21"
+    },
+    {
+      "citation": "Macek, Schneider, Salamon, J. Appl. Phys.35,2556-2557(1964)",
+      "doi": "10.1063/1.1702908",
+      "checked": "publisher metadata only",
+      "limitation": "AIP and ADS full PDF requests failed HTTP403; not read; no numerical experimental accuracy attributed to this paper"
+    },
+    {
+      "citation": "Bilger and Zavodny, Phys. Rev. A5,591(1972)",
+      "url": "https://journals.aps.org/pra/abstract/10.1103/PhysRevA.5.591",
+      "checked": "primary publisher abstract: triangular ring laser, 0.6328 micrometers, fused silica, agreement including dispersion within errors; formula images not used for numerical claims"
+    },
+    {
+      "citation": "Lahaye, Labastie, Mathevet, Am.J.Phys.80,497-505(2012)",
+      "url": "https://thierry-lahaye.org/wp-content/uploads/2022/12/2012_lahaye_amjphys_fizeau.pdf",
+      "doi": "10.1119/1.3690117",
+      "checked": "full author-hosted primary paper; phase formula and experiment, historical ring-laser discussion, dispersion contribution"
+    },
+    {
+      "citation": "Hertzberg et al., Measurement of the Relativistic Potential Difference across a Rotating Magnetic Dielectric Cylinder (2001)",
+      "url": "https://arxiv.org/pdf/gr-qc/0104101",
+      "checked": "Primary paper abstract/introduction and experimental construction; Wilson steel balls in wax, composite limitation, homogeneous YIG experiment supports locally inertial treatment."
+    }
+  ],
+  "statement_corrections": {
+    "11.12": "deviation -> derivation; typographic sense of Thomas-precession task",
+    "11.16c": "close parenthesis and divide v cross B by c for chapter Gaussian units; source p320 reference uses SI",
+    "11.17": "qualify ordinary tensor without Levi-Civita tensor; exclude its dual by Coulomb rest-frame B=0",
+    "11.25": "theta is departure from head-on, not included momentum-vector angle; write sin(theta/2); alpha arc restored from x axis as source figure on printed p.576",
+    "11.27b": "steady localized rest current explicitly required for unchanged magnetic moment at first order",
+    "11.31": "epsilon is relative permittivity; clarify denominator c\u00b2mu epsilon; state no free charges/currents and neglect end effects to fix D=0, H=B0; qualify historical validation claim because of conducting steel inclusions, as documented by Hertzberg et al.2001"
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "7.1_ellipses": [
+    {
+      "semimajor": 1.618033988749895,
+      "semiminor": 0.6180339887498949,
+      "angle_degrees": 58.282525588538995
+    },
+    {
+      "semimajor": 4.949747468305833,
+      "semiminor": 0.7071067811865475,
+      "angle_degrees": 45.0
+    }
+  ],
+  "7.13_density_m3": {
+    "flat": 669180203148.1049,
+    "earth_radius_6370_km": 734397289382.211
+  },
+  "7.19_width_products": {
+    "exponential": 0.7071067811865475,
+    "Gaussian": 0.5,
+    "triangle": 0.5477225575051661,
+    "rectangle": "divergent spectral second moment"
+  },
+  "7.24_sum_rules": {
+    "epsilon": 0.6400000000000002,
+    "inverse_epsilon": -0.6400000000000002,
+    "plasma_frequency_squared": 0.6400000000000001
+  },
+  "7.25_minima": [
+    {
+      "p": 1.0,
+      "x_min": 0.23954692166375996,
+      "group_index_min": 1.8094086161866783
+    },
+    {
+      "p": 2.0,
+      "x_min": 0.24715835683982085,
+      "group_index_min": 3.2209503365785745
+    },
+    {
+      "p": 5.0,
+      "x_min": 0.24953357884255867,
+      "group_index_min": 7.755568163581104
+    }
+  ],
+  "7.26_dimensionless_loss_check": 0.0006385738346330381
+}

@@ -1,0 +1,254 @@
+{
+  "chapter": 4,
+  "review": "Fresh derivation, pedagogy and Jackson notation review",
+  "review_date": "2026-10-03",
+  "source": "sections/ch04.tex",
+  "source_sha256": "04550bf57870b032a2f93dfb7a1a2e3114935334316c20a27827673268d602f7",
+  "checked_command": "python3 -Werror supplementary/check_ch04.py --figures",
+  "observed_exit_code": 0,
+  "check_log": "build/recheck-ch04.log",
+  "notation_sources": [
+    "build/recheck-sources/ch04/p-170.png",
+    "build/recheck-sources/ch04/p-171.png",
+    "build/recheck-sources/ch04/p-176.png",
+    "build/recheck-sources/ch04/p-186.png",
+    "build/recheck-sources/ch04/p-187.png",
+    "build/recheck-sources/ch04/p-189.png"
+  ],
+  "problems": [
+    {
+      "problem": "4.1",
+      "status": "reviewed",
+      "mathematics_checked": "Charge moments, all-l selection rules and octupole potential; CS phase checked against Jackson 3.49/3.53.",
+      "derivation_changes": "Added Rodrigues polynomial and explicit P_l^m(0) factorial evaluation.",
+      "notation_check": "Jackson SI electrostatics: multipoles 4.1–4.9 (printed pp.145–147), Q=Qzz/e 4.25 (p.151), gamma_mol 4.67–4.70 (pp.161–162), Boltzmann k and gamma_i 4.81–4.82 (p.164).",
+      "source_evidence": [
+        "sections/ch04.tex, full statement and solution 4.1",
+        "build/recheck-sources/ch04/p-170.png",
+        "build/recheck-sources/ch04/p-171.png",
+        "build/recheck-sources/ch04/p-176.png",
+        "build/recheck-sources/ch04/p-186.png",
+        "build/recheck-sources/ch04/p-187.png",
+        "build/recheck-sources/ch04/p-189.png"
+      ],
+      "independent_check": "supplementary/check_ch04.py::check_01; build/recheck-ch04.log",
+      "remaining_limitations": "Numerical checks sample parameters and supplement the analytic derivation; physical approximations and source-data conventions remain explicit in the solution."
+    },
+    {
+      "problem": "4.2",
+      "status": "reviewed",
+      "mathematics_checked": "Distributional dipole sign, test-function action, external interaction energy and charge-pair limit.",
+      "derivation_changes": "Existing derivation retained.",
+      "notation_check": "Jackson SI electrostatics: multipoles 4.1–4.9 (printed pp.145–147), Q=Qzz/e 4.25 (p.151), gamma_mol 4.67–4.70 (pp.161–162), Boltzmann k and gamma_i 4.81–4.82 (p.164).",
+      "source_evidence": [
+        "sections/ch04.tex, full statement and solution 4.2",
+        "build/recheck-sources/ch04/p-170.png",
+        "build/recheck-sources/ch04/p-171.png",
+        "build/recheck-sources/ch04/p-176.png",
+        "build/recheck-sources/ch04/p-186.png",
+        "build/recheck-sources/ch04/p-187.png",
+        "build/recheck-sources/ch04/p-189.png"
+      ],
+      "independent_check": "supplementary/check_ch04.py::check_02; build/recheck-ch04.log",
+      "remaining_limitations": "Numerical checks sample parameters and supplement the analytic derivation; physical approximations and source-data conventions remain explicit in the solution."
+    },
+    {
+      "problem": "4.3",
+      "status": "reviewed",
+      "mathematics_checked": "Harmonic decomposition, Laplacian coefficient 2s(2k+2s+1), dimension count and trace-free exterior derivatives.",
+      "derivation_changes": "Existing derivation retained.",
+      "notation_check": "Jackson SI electrostatics: multipoles 4.1–4.9 (printed pp.145–147), Q=Qzz/e 4.25 (p.151), gamma_mol 4.67–4.70 (pp.161–162), Boltzmann k and gamma_i 4.81–4.82 (p.164).",
+      "source_evidence": [
+        "sections/ch04.tex, full statement and solution 4.3",
+        "build/recheck-sources/ch04/p-170.png",
+        "build/recheck-sources/ch04/p-171.png",
+        "build/recheck-sources/ch04/p-176.png",
+        "build/recheck-sources/ch04/p-186.png",
+        "build/recheck-sources/ch04/p-187.png",
+        "build/recheck-sources/ch04/p-189.png"
+      ],
+      "independent_check": "supplementary/check_ch04.py::check_03_04; build/recheck-ch04.log",
+      "remaining_limitations": "Numerical checks sample parameters and supplement the analytic derivation; physical approximations and source-data conventions remain explicit in the solution."
+    },
+    {
+      "problem": "4.4",
+      "status": "reviewed",
+      "mathematics_checked": "Dipole/quadrupole translations, neutral counterexample and rank-one eigenvalue constraints.",
+      "derivation_changes": "Added the explicit eigenvalues of 3aa^T-a^2I.",
+      "notation_check": "Jackson SI electrostatics: multipoles 4.1–4.9 (printed pp.145–147), Q=Qzz/e 4.25 (p.151), gamma_mol 4.67–4.70 (pp.161–162), Boltzmann k and gamma_i 4.81–4.82 (p.164).",
+      "source_evidence": [
+        "sections/ch04.tex, full statement and solution 4.4",
+        "build/recheck-sources/ch04/p-170.png",
+        "build/recheck-sources/ch04/p-171.png",
+        "build/recheck-sources/ch04/p-176.png",
+        "build/recheck-sources/ch04/p-186.png",
+        "build/recheck-sources/ch04/p-187.png",
+        "build/recheck-sources/ch04/p-189.png"
+      ],
+      "independent_check": "supplementary/check_ch04.py::check_03_04; build/recheck-ch04.log",
+      "remaining_limitations": "Numerical checks sample parameters and supplement the analytic derivation; physical approximations and source-data conventions remain explicit in the solution."
+    },
+    {
+      "problem": "4.5",
+      "status": "reviewed",
+      "mathematics_checked": "Dipole/quadrupole force, source-free trace removal, torque and rotation-energy signs.",
+      "derivation_changes": "Existing source-free qualification and derivation retained.",
+      "notation_check": "Jackson SI electrostatics: multipoles 4.1–4.9 (printed pp.145–147), Q=Qzz/e 4.25 (p.151), gamma_mol 4.67–4.70 (pp.161–162), Boltzmann k and gamma_i 4.81–4.82 (p.164).",
+      "source_evidence": [
+        "sections/ch04.tex, full statement and solution 4.5",
+        "build/recheck-sources/ch04/p-170.png",
+        "build/recheck-sources/ch04/p-171.png",
+        "build/recheck-sources/ch04/p-176.png",
+        "build/recheck-sources/ch04/p-186.png",
+        "build/recheck-sources/ch04/p-187.png",
+        "build/recheck-sources/ch04/p-189.png"
+      ],
+      "independent_check": "supplementary/check_ch04.py::check_05; build/recheck-ch04.log",
+      "remaining_limitations": "Numerical checks sample parameters and supplement the analytic derivation; physical approximations and source-data conventions remain explicit in the solution."
+    },
+    {
+      "problem": "4.6",
+      "status": "reviewed",
+      "mathematics_checked": "Nuclear Q=Qzz/e, rotated traceless tensors, transition-energy gradient and spheroid deformation.",
+      "derivation_changes": "Added explicit contraction of Qij with the axially symmetric field gradient.",
+      "notation_check": "Jackson SI electrostatics: multipoles 4.1–4.9 (printed pp.145–147), Q=Qzz/e 4.25 (p.151), gamma_mol 4.67–4.70 (pp.161–162), Boltzmann k and gamma_i 4.81–4.82 (p.164).",
+      "source_evidence": [
+        "sections/ch04.tex, full statement and solution 4.6",
+        "build/recheck-sources/ch04/p-170.png",
+        "build/recheck-sources/ch04/p-171.png",
+        "build/recheck-sources/ch04/p-176.png",
+        "build/recheck-sources/ch04/p-186.png",
+        "build/recheck-sources/ch04/p-187.png",
+        "build/recheck-sources/ch04/p-189.png"
+      ],
+      "independent_check": "supplementary/check_ch04.py::check_06_07; build/recheck-ch04.log",
+      "remaining_limitations": "Numerical checks sample parameters and supplement the analytic derivation; physical approximations and source-data conventions remain explicit in the solution."
+    },
+    {
+      "problem": "4.7",
+      "status": "reviewed",
+      "mathematics_checked": "Noncompact exponential density, enclosed/exterior radial integrals, asymptotic multipoles and Poisson equation.",
+      "derivation_changes": "Existing noncompact-source qualification retained.",
+      "notation_check": "Jackson SI electrostatics: multipoles 4.1–4.9 (printed pp.145–147), Q=Qzz/e 4.25 (p.151), gamma_mol 4.67–4.70 (pp.161–162), Boltzmann k and gamma_i 4.81–4.82 (p.164).",
+      "source_evidence": [
+        "sections/ch04.tex, full statement and solution 4.7",
+        "build/recheck-sources/ch04/p-170.png",
+        "build/recheck-sources/ch04/p-171.png",
+        "build/recheck-sources/ch04/p-176.png",
+        "build/recheck-sources/ch04/p-186.png",
+        "build/recheck-sources/ch04/p-187.png",
+        "build/recheck-sources/ch04/p-189.png"
+      ],
+      "independent_check": "supplementary/check_ch04.py::check_06_07; build/recheck-ch04.log",
+      "remaining_limitations": "Numerical checks sample parameters and supplement the analytic derivation; physical approximations and source-data conventions remain explicit in the solution."
+    },
+    {
+      "problem": "4.8",
+      "status": "reviewed",
+      "mathematics_checked": "All four cylinder-interface coefficients, radial/tangential fields, streamfunction and solid/cavity limits.",
+      "derivation_changes": "Existing field-line construction retained.",
+      "notation_check": "Jackson SI electrostatics: multipoles 4.1–4.9 (printed pp.145–147), Q=Qzz/e 4.25 (p.151), gamma_mol 4.67–4.70 (pp.161–162), Boltzmann k and gamma_i 4.81–4.82 (p.164).",
+      "source_evidence": [
+        "sections/ch04.tex, full statement and solution 4.8",
+        "build/recheck-sources/ch04/p-170.png",
+        "build/recheck-sources/ch04/p-171.png",
+        "build/recheck-sources/ch04/p-176.png",
+        "build/recheck-sources/ch04/p-186.png",
+        "build/recheck-sources/ch04/p-187.png",
+        "build/recheck-sources/ch04/p-189.png"
+      ],
+      "independent_check": "supplementary/check_ch04.py::check_08; build/recheck-ch04.log",
+      "remaining_limitations": "Numerical checks sample parameters and supplement the analytic derivation; physical approximations and source-data conventions remain explicit in the solution."
+    },
+    {
+      "problem": "4.9",
+      "status": "reviewed",
+      "mathematics_checked": "Dielectric-sphere boundary matching, Cartesian field at center and neutral conductor limit including compensating monopole.",
+      "derivation_changes": "Existing derivation retained.",
+      "notation_check": "Jackson SI electrostatics: multipoles 4.1–4.9 (printed pp.145–147), Q=Qzz/e 4.25 (p.151), gamma_mol 4.67–4.70 (pp.161–162), Boltzmann k and gamma_i 4.81–4.82 (p.164).",
+      "source_evidence": [
+        "sections/ch04.tex, full statement and solution 4.9",
+        "build/recheck-sources/ch04/p-170.png",
+        "build/recheck-sources/ch04/p-171.png",
+        "build/recheck-sources/ch04/p-176.png",
+        "build/recheck-sources/ch04/p-186.png",
+        "build/recheck-sources/ch04/p-187.png",
+        "build/recheck-sources/ch04/p-189.png"
+      ],
+      "independent_check": "supplementary/check_ch04.py::check_09_10; build/recheck-ch04.log",
+      "remaining_limitations": "Numerical checks sample parameters and supplement the analytic derivation; physical approximations and source-data conventions remain explicit in the solution."
+    },
+    {
+      "problem": "4.10",
+      "status": "reviewed",
+      "mathematics_checked": "Hemispherical dielectric capacitor uniqueness, total free charge, radial E and polarization-surface signs.",
+      "derivation_changes": "Existing derivation retained.",
+      "notation_check": "Jackson SI electrostatics: multipoles 4.1–4.9 (printed pp.145–147), Q=Qzz/e 4.25 (p.151), gamma_mol 4.67–4.70 (pp.161–162), Boltzmann k and gamma_i 4.81–4.82 (p.164).",
+      "source_evidence": [
+        "sections/ch04.tex, full statement and solution 4.10",
+        "build/recheck-sources/ch04/p-170.png",
+        "build/recheck-sources/ch04/p-171.png",
+        "build/recheck-sources/ch04/p-176.png",
+        "build/recheck-sources/ch04/p-186.png",
+        "build/recheck-sources/ch04/p-187.png",
+        "build/recheck-sources/ch04/p-189.png"
+      ],
+      "independent_check": "supplementary/check_ch04.py::check_09_10; build/recheck-ch04.log",
+      "remaining_limitations": "Numerical checks sample parameters and supplement the analytic derivation; physical approximations and source-data conventions remain explicit in the solution."
+    },
+    {
+      "problem": "4.11",
+      "status": "reviewed",
+      "mathematics_checked": "Clausius–Mossotti density comparison, air compressibility interpolation, pentane correction and sensitivity.",
+      "derivation_changes": "Renamed molecular polarizability gamma_mol to match Jackson 4.67–4.70.",
+      "notation_check": "Jackson SI electrostatics: multipoles 4.1–4.9 (printed pp.145–147), Q=Qzz/e 4.25 (p.151), gamma_mol 4.67–4.70 (pp.161–162), Boltzmann k and gamma_i 4.81–4.82 (p.164).",
+      "source_evidence": [
+        "sections/ch04.tex, full statement and solution 4.11",
+        "build/recheck-sources/ch04/p-170.png",
+        "build/recheck-sources/ch04/p-171.png",
+        "build/recheck-sources/ch04/p-176.png",
+        "build/recheck-sources/ch04/p-186.png",
+        "build/recheck-sources/ch04/p-187.png",
+        "build/recheck-sources/ch04/p-189.png"
+      ],
+      "independent_check": "supplementary/check_ch04.py::check_11; build/recheck-ch04.log",
+      "remaining_limitations": "Numerical checks sample parameters and supplement the analytic derivation; physical approximations and source-data conventions remain explicit in the solution."
+    },
+    {
+      "problem": "4.12",
+      "status": "reviewed",
+      "mathematics_checked": "Ideal-gas number density, SI polarizability units, orientational averaging, linear fit and permanent dipole.",
+      "derivation_changes": "Aligned gamma_mol, induced gamma_i, molecular dipole and Boltzmann k with Jackson 4.81–4.82.",
+      "notation_check": "Jackson SI electrostatics: multipoles 4.1–4.9 (printed pp.145–147), Q=Qzz/e 4.25 (p.151), gamma_mol 4.67–4.70 (pp.161–162), Boltzmann k and gamma_i 4.81–4.82 (p.164).",
+      "source_evidence": [
+        "sections/ch04.tex, full statement and solution 4.12",
+        "build/recheck-sources/ch04/p-170.png",
+        "build/recheck-sources/ch04/p-171.png",
+        "build/recheck-sources/ch04/p-176.png",
+        "build/recheck-sources/ch04/p-186.png",
+        "build/recheck-sources/ch04/p-187.png",
+        "build/recheck-sources/ch04/p-189.png"
+      ],
+      "independent_check": "supplementary/check_ch04.py::check_12_13; build/recheck-ch04.log",
+      "remaining_limitations": "Numerical checks sample parameters and supplement the analytic derivation; physical approximations and source-data conventions remain explicit in the solution."
+    },
+    {
+      "problem": "4.13",
+      "status": "reviewed",
+      "mathematics_checked": "Fixed-voltage energy including battery, capacitance derivative, local pressure and area-averaged rise.",
+      "derivation_changes": "Existing derivation and electrostatic/fluid assumptions retained.",
+      "notation_check": "Jackson SI electrostatics: multipoles 4.1–4.9 (printed pp.145–147), Q=Qzz/e 4.25 (p.151), gamma_mol 4.67–4.70 (pp.161–162), Boltzmann k and gamma_i 4.81–4.82 (p.164).",
+      "source_evidence": [
+        "sections/ch04.tex, full statement and solution 4.13",
+        "build/recheck-sources/ch04/p-170.png",
+        "build/recheck-sources/ch04/p-171.png",
+        "build/recheck-sources/ch04/p-176.png",
+        "build/recheck-sources/ch04/p-186.png",
+        "build/recheck-sources/ch04/p-187.png",
+        "build/recheck-sources/ch04/p-189.png"
+      ],
+      "independent_check": "supplementary/check_ch04.py::check_12_13; build/recheck-ch04.log",
+      "remaining_limitations": "Numerical checks sample parameters and supplement the analytic derivation; physical approximations and source-data conventions remain explicit in the solution."
+    }
+  ]
+}

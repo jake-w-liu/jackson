@@ -1,0 +1,435 @@
+{
+  "chapter": 14,
+  "review_date": "2026-10-03",
+  "reviewer": "independent chapter03 agent; these chapters were authored by other agents",
+  "scope": "Every original problem, every solution and all subparts; independent mathematical reconstruction, source notation and pedagogical continuity.",
+  "problem_count": 27,
+  "chapter_notation_checks": [
+    "Gaussian units, confirmed by the original chapter headers on printed pp.674-678,698-707 (PDF699-703,723-732); SI conversions are identified explicitly in the numerical Crab calculation.",
+    "Symmetric temporal Fourier normalization 1/sqrt(2*pi), forward exp(+i*omega*t) and inverse exp(-i*omega*t), Eqs.(14.54)-(14.55), printed p.674 (PDF699); the positive-frequency spectrum doubles |A(omega)|^2 in (14.60).",
+    "Trajectory/current spectral formulas (14.65),(14.67),(14.70) and phase omega(t-n dot r/c), printed pp.675-676 (PDF700-701); helicity-resolved local-curvature spectrum built from (14.79), printed p.678 (PDF703).",
+    "Metric (+---), F^{0i}=-E_i and F^{ij}=-epsilon_ijk B_k checked directly in (11.137), printed p.556 (PDF581); helicity vectors (7.22) and Stokes s_0,s_1,s_2,s_3 definitions (7.27)-(7.28), printed pp.300-301 (PDF325-326)."
+  ],
+  "checks_command": "python3 -W error supplementary/check_ch14.py",
+  "checks_log": "build/recheck-ch14-checks.log",
+  "compile_command": "pdflatex -interaction=nonstopmode -halt-on-error -output-directory=build build/recheck-ch14.tex",
+  "compile_log": "build/recheck-ch14.log",
+  "render_directory": "build/recheck-render-ch14",
+  "validation": {
+    "python_warnings_as_errors_exit_code": 0,
+    "temporary_chapter_compile_exit_code": 0,
+    "compiled_pages": 32,
+    "latex_warning_overfull_underfull_scan": "No warnings or box diagnostics in the final chapter log.",
+    "visual_review": "Every rendered page inspected in contact sheets; changed mathematical passages additionally inspected at 120 dpi.",
+    "problem_spacing_and_solution_slots": "Every problem retains Needspace{5 baselineskip}, par bigskip and exactly one nonempty solution slot.",
+    "malformed_math_typography_scan": "No remaining broken command fragments, literal multiplication commas or doubled-backslash thin-space candidates in the reviewed chapters."
+  },
+  "tex_sha256": "127b15160bdf5ee471f227a896d38197b1df91f1d2eaeb0499fb52001e519de2",
+  "script_sha256": "2a594ae587dbb73f344e218e19f13f714d255c4e5f7741db7fdd74953beaebc3",
+  "problems": [
+    {
+      "problem_id": "14.1",
+      "mathematics_checked": "Solved the retarded-distance quadratic for uniform motion, proved kappa R=s, and compared all electric/magnetic components with a direct Lorentz transformation of the Coulomb field.",
+      "derivation_pedagogy_changes": [],
+      "notation_and_source_checks": [
+        "Original problem: printed pp.698, PDF pp.723; inspected local OCR and compared every part with the TeX statement."
+      ],
+      "evidence": [
+        "supplementary/check_ch14.py::check_01",
+        "Independent manual reconstruction of the mathematics described above, including each requested subpart and approximation assumptions."
+      ],
+      "unresolved_limitations": [],
+      "status": "reviewed"
+    },
+    {
+      "problem_id": "14.2",
+      "mathematics_checked": "Expanded retarded position, velocity and direction through c^{-2} in the instantaneous rest frame; checked cancellation of magnetic terms and the divergence/curl of the acceleration correction.",
+      "derivation_pedagogy_changes": [],
+      "notation_and_source_checks": [
+        "Original problem: printed pp.698, PDF pp.723; inspected local OCR and compared every part with the TeX statement."
+      ],
+      "evidence": [
+        "supplementary/check_ch14.py::check_02",
+        "Independent manual reconstruction of the mathematics described above, including each requested subpart and approximation assumptions."
+      ],
+      "unresolved_limitations": [],
+      "status": "reviewed"
+    },
+    {
+      "problem_id": "14.3",
+      "mathematics_checked": "Differentiated the implicit retarded-time relation with the observation clock, expanded the Feynman expression and verified equality with the full velocity-plus-acceleration Lienard-Wiechert field.",
+      "derivation_pedagogy_changes": [],
+      "notation_and_source_checks": [
+        "Original problem: printed pp.699, PDF pp.724; inspected local OCR and compared every part with the TeX statement."
+      ],
+      "evidence": [
+        "supplementary/check_ch14.py::check_03",
+        "Independent manual reconstruction of the mathematics described above, including each requested subpart and approximation assumptions."
+      ],
+      "unresolved_limitations": [],
+      "status": "reviewed"
+    },
+    {
+      "problem_id": "14.4",
+      "mathematics_checked": "Averaged the acceleration radiation for linear and circular nonrelativistic trajectories and integrated their angular patterns to the Larmor powers.",
+      "derivation_pedagogy_changes": [],
+      "notation_and_source_checks": [
+        "Original problem: printed pp.699, PDF pp.724; inspected local OCR and compared every part with the TeX statement."
+      ],
+      "evidence": [
+        "supplementary/check_ch14.py::check_04",
+        "Independent manual reconstruction of the mathematics described above, including each requested subpart and approximation assumptions."
+      ],
+      "unresolved_limitations": [],
+      "status": "reviewed"
+    },
+    {
+      "problem_id": "14.5",
+      "mathematics_checked": "Changed the two branches of the collision time integral to radius by energy conservation, evaluated the repulsive Coulomb beta integral and checked the finite-range versus Coulomb-tail interpretation.",
+      "derivation_pedagogy_changes": [],
+      "notation_and_source_checks": [
+        "Original problem: printed pp.699, PDF pp.724; inspected local OCR and compared every part with the TeX statement."
+      ],
+      "evidence": [
+        "supplementary/check_ch14.py::check_05",
+        "Independent manual reconstruction of the mathematics described above, including each requested subpart and approximation assumptions."
+      ],
+      "unresolved_limitations": [],
+      "status": "reviewed"
+    },
+    {
+      "problem_id": "14.6",
+      "mathematics_checked": "Kept angular momentum in the radial clock but used the actual central force for acceleration; evaluated the Coulomb orbit integral and checked head-on, weak-deflection and attractive-potential branches.",
+      "derivation_pedagogy_changes": [],
+      "notation_and_source_checks": [
+        "Original problem: printed pp.699-700, PDF pp.724-725; inspected local OCR and compared every part with the TeX statement."
+      ],
+      "evidence": [
+        "supplementary/check_ch14.py::check_06",
+        "Independent manual reconstruction of the mathematics described above, including each requested subpart and approximation assumptions."
+      ],
+      "unresolved_limitations": [],
+      "status": "reviewed"
+    },
+    {
+      "problem_id": "14.7",
+      "mathematics_checked": "Integrated the Coulomb force along the unperturbed straight path, compared the head-on extrapolation and integrated the impact-parameter cutoff; checked the exact 15.30 coefficient and pi^2/8 comparison.",
+      "derivation_pedagogy_changes": [],
+      "notation_and_source_checks": [
+        "Original problem: printed pp.700, PDF pp.725; inspected local OCR and compared every part with the TeX statement.",
+        "Eq.(15.30), printed p.718 (PDF743), with its dimensionless integral equal to one; printed pp.717-718 establish the nonrelativistic Born comparison."
+      ],
+      "evidence": [
+        "supplementary/check_ch14.py::check_07",
+        "Independent manual reconstruction of the mathematics described above, including each requested subpart and approximation assumptions."
+      ],
+      "unresolved_limitations": [],
+      "status": "reviewed"
+    },
+    {
+      "problem_id": "14.8",
+      "mathematics_checked": "Decomposed the relativistic force parallel/perpendicular to velocity, used the corresponding gamma factors in the Lienard power and evaluated both straight-trajectory quadratures and the nonrelativistic limit.",
+      "derivation_pedagogy_changes": [],
+      "notation_and_source_checks": [
+        "Original problem: printed pp.700, PDF pp.725; inspected local OCR and compared every part with the TeX statement."
+      ],
+      "evidence": [
+        "supplementary/check_ch14.py::check_08",
+        "Independent manual reconstruction of the mathematics described above, including each requested subpart and approximation assumptions."
+      ],
+      "unresolved_limitations": [],
+      "status": "reviewed"
+    },
+    {
+      "problem_id": "14.9",
+      "mathematics_checked": "Expressed synchrotron loss through gamma, integrated the exact cooling law and both relativistic/nonrelativistic limits, and used adiabatic mirror motion to obtain the local B^3 scaling.",
+      "derivation_pedagogy_changes": [],
+      "notation_and_source_checks": [
+        "Original problem: printed pp.700-701, PDF pp.725-726; inspected local OCR and compared every part with the TeX statement."
+      ],
+      "evidence": [
+        "supplementary/check_ch14.py::check_09",
+        "Independent manual reconstruction of the mathematics described above, including each requested subpart and approximation assumptions."
+      ],
+      "unresolved_limitations": [],
+      "status": "reviewed"
+    },
+    {
+      "problem_id": "14.10",
+      "mathematics_checked": "Integrated source-time angular power during linear braking, removed its transverse apparent singularity, derived the narrow-cone variable and both moments, and compared the angular integral with exact total Lienard loss.",
+      "derivation_pedagogy_changes": [],
+      "notation_and_source_checks": [
+        "Original problem: printed pp.701, PDF pp.726; inspected local OCR and compared every part with the TeX statement."
+      ],
+      "evidence": [
+        "supplementary/check_ch14.py::check_10",
+        "Independent manual reconstruction of the mathematics described above, including each requested subpart and approximation assumptions."
+      ],
+      "unresolved_limitations": [],
+      "status": "reviewed"
+    },
+    {
+      "problem_id": "14.11",
+      "mathematics_checked": "Inverted the relativistic force-acceleration relation and contracted the exact Jackson field tensor with covariant momentum; checked the sign before squaring and the Lorentz-invariant nonnegative contraction.",
+      "derivation_pedagogy_changes": [
+        "Removed an unspecified common-sign caveat and used Jackson's exact F^{mu nu} components to show w^0 and w^i before the invariant contraction.",
+        "Added component-level checks that would catch a sign error hidden by squaring the invariant."
+      ],
+      "notation_and_source_checks": [
+        "Original problem: printed pp.701, PDF pp.726; inspected local OCR and compared every part with the TeX statement.",
+        "Eq.(11.137), printed p.556 (PDF581), source image inspected; exact F components contracted before forming invariant."
+      ],
+      "evidence": [
+        "supplementary/check_ch14.py::check_11",
+        "Independent manual reconstruction of the mathematics described above, including each requested subpart and approximation assumptions."
+      ],
+      "unresolved_limitations": [],
+      "status": "reviewed"
+    },
+    {
+      "problem_id": "14.12",
+      "mathematics_checked": "Averaged the fifth-power Doppler denominator by differentiating the elementary angular integral and checked the nonrelativistic pattern and relativistic peak width/location.",
+      "derivation_pedagogy_changes": [],
+      "notation_and_source_checks": [
+        "Original problem: printed pp.701-702, PDF pp.726-727; inspected local OCR and compared every part with the TeX statement."
+      ],
+      "evidence": [
+        "supplementary/check_ch14.py::check_12",
+        "Independent manual reconstruction of the mathematics described above, including each requested subpart and approximation assumptions."
+      ],
+      "unresolved_limitations": [],
+      "status": "reviewed"
+    },
+    {
+      "problem_id": "14.13",
+      "mathematics_checked": "Used a finite train before taking the Fejer-kernel limit, keeping its normalization and positive-frequency convention, to derive the discrete harmonic powers without squaring a delta function.",
+      "derivation_pedagogy_changes": [],
+      "notation_and_source_checks": [
+        "Original problem: printed pp.702, PDF pp.727; inspected local OCR and compared every part with the TeX statement.",
+        "Eqs.(14.54)-(14.60), printed p.674 (PDF699), distinguish the full signed Fourier integral from the positive-frequency energy spectrum."
+      ],
+      "evidence": [
+        "supplementary/check_ch14.py::check_13",
+        "Independent manual reconstruction of the mathematics described above, including each requested subpart and approximation assumptions."
+      ],
+      "unresolved_limitations": [],
+      "status": "reviewed"
+    },
+    {
+      "problem_id": "14.14",
+      "mathematics_checked": "Evaluated the harmonic linear-motion amplitude by a Bessel integral and integration by parts, checked the removable right-angle limit and recovered the nonrelativistic fundamental power.",
+      "derivation_pedagogy_changes": [],
+      "notation_and_source_checks": [
+        "Original problem: printed pp.702, PDF pp.727; inspected local OCR and compared every part with the TeX statement."
+      ],
+      "evidence": [
+        "supplementary/check_ch14.py::check_14",
+        "Independent manual reconstruction of the mathematics described above, including each requested subpart and approximation assumptions."
+      ],
+      "unresolved_limitations": [],
+      "status": "reviewed"
+    },
+    {
+      "problem_id": "14.15",
+      "mathematics_checked": "Evaluated both exact circular-motion polarization amplitudes, checked the small-velocity harmonics, and reduced the turning-point integrals to K Bessel functions with the correct harmonic-to-continuum normalization.",
+      "derivation_pedagogy_changes": [],
+      "notation_and_source_checks": [
+        "Original problem: printed pp.702, PDF pp.727; inspected local OCR and compared every part with the TeX statement.",
+        "Eqs.(14.76)-(14.79), printed p.678 (PDF703), checked polarizations and K-Bessel normalization."
+      ],
+      "evidence": [
+        "supplementary/check_ch14.py::check_15",
+        "Independent manual reconstruction of the mathematics described above, including each requested subpart and approximation assumptions."
+      ],
+      "unresolved_limitations": [],
+      "status": "reviewed"
+    },
+    {
+      "problem_id": "14.16",
+      "mathematics_checked": "Formed the invariant p dot k and proper-time derivative combinations, compared their local trajectory expansion with 14.79 and tracked polarization four-vectors under boosts within the stated ultrarelativistic approximation.",
+      "derivation_pedagogy_changes": [],
+      "notation_and_source_checks": [
+        "Original problem: printed pp.702-703, PDF pp.727-728; inspected local OCR and compared every part with the TeX statement.",
+        "Eq.(14.79), printed p.678 (PDF703); source problem on pp.702-703 explicitly bases the invariant expression on that approximation."
+      ],
+      "evidence": [
+        "supplementary/check_ch14.py::check_16",
+        "Independent manual reconstruction of the mathematics described above, including each requested subpart and approximation assumptions."
+      ],
+      "unresolved_limitations": [],
+      "status": "reviewed"
+    },
+    {
+      "problem_id": "14.17",
+      "mathematics_checked": "Derived the exact helical arrival-time Doppler period and curvature, then specialized to the beaming cone; checked the pitch-angle conditions and the source-time versus received-power normalization.",
+      "derivation_pedagogy_changes": [],
+      "notation_and_source_checks": [
+        "Original problem: printed pp.703, PDF pp.728; inspected local OCR and compared every part with the TeX statement."
+      ],
+      "evidence": [
+        "supplementary/check_ch14.py::check_17",
+        "Independent manual reconstruction of the mathematics described above, including each requested subpart and approximation assumptions."
+      ],
+      "unresolved_limitations": [],
+      "status": "reviewed"
+    },
+    {
+      "problem_id": "14.18",
+      "mathematics_checked": "Integrated the helical spectrum over the cone with the correct angular Jacobian and frequency scale, evaluated the K_{5/3} integral and distinguished pitch-independent received power from emitted source-time power.",
+      "derivation_pedagogy_changes": [],
+      "notation_and_source_checks": [
+        "Original problem: printed pp.703, PDF pp.728; inspected local OCR and compared every part with the TeX statement."
+      ],
+      "evidence": [
+        "supplementary/check_ch14.py::check_18",
+        "Independent manual reconstruction of the mathematics described above, including each requested subpart and approximation assumptions."
+      ],
+      "unresolved_limitations": [],
+      "status": "reviewed"
+    },
+    {
+      "problem_id": "14.19",
+      "mathematics_checked": "Fourier-transformed the magnetization curl with Gaussian c factors, derived the precession line and angular pattern, and checked Larmor power while retaining smooth switching to avoid artificial ultraviolet divergence.",
+      "derivation_pedagogy_changes": [],
+      "notation_and_source_checks": [
+        "Original problem: printed pp.703-704, PDF pp.728-729; inspected local OCR and compared every part with the TeX statement.",
+        "Eq.(14.70), printed p.676 (PDF701), with Gaussian effective magnetization current c curl M as stated in Problem14.19."
+      ],
+      "evidence": [
+        "supplementary/check_ch14.py::check_19",
+        "Independent manual reconstruction of the mathematics described above, including each requested subpart and approximation assumptions."
+      ],
+      "unresolved_limitations": [],
+      "status": "reviewed"
+    },
+    {
+      "problem_id": "14.20",
+      "mathematics_checked": "Transformed sech/tanh using beta/gamma integrals and distributional zero-frequency handling, normalized the flip spectrum and mean frequency, and integrated the independent instantaneous dipole power.",
+      "derivation_pedagogy_changes": [],
+      "notation_and_source_checks": [
+        "Original problem: printed pp.704, PDF pp.729; inspected local OCR and compared every part with the TeX statement.",
+        "Eq.(14.70), printed p.676 (PDF701); positive-frequency normalization (14.60), p.674 (PDF699)."
+      ],
+      "evidence": [
+        "supplementary/check_ch14.py::check_20",
+        "Independent manual reconstruction of the mathematics described above, including each requested subpart and approximation assumptions."
+      ],
+      "unresolved_limitations": [],
+      "status": "reviewed"
+    },
+    {
+      "problem_id": "14.21",
+      "mathematics_checked": "Inserted Bohr circular radius and frequency into nonrelativistic Larmor power, divided by one photon energy, checked n^5 lifetime scaling and recomputed the three stated numerical comparisons.",
+      "derivation_pedagogy_changes": [],
+      "notation_and_source_checks": [
+        "Original problem: printed pp.704, PDF pp.729; inspected local OCR and compared every part with the TeX statement."
+      ],
+      "evidence": [
+        "supplementary/check_ch14.py::check_21",
+        "Independent manual reconstruction of the mathematics described above, including each requested subpart and approximation assumptions."
+      ],
+      "unresolved_limitations": [],
+      "status": "reviewed"
+    },
+    {
+      "problem_id": "14.22",
+      "mathematics_checked": "Changed the Kepler Fourier integrals to eccentric anomaly, integrated by parts for both Cartesian harmonics, tracked the real-phasor normalization and recovered the circular-orbit limit.",
+      "derivation_pedagogy_changes": [],
+      "notation_and_source_checks": [
+        "Original problem: printed pp.704-705, PDF pp.729-730; inspected local OCR and compared every part with the TeX statement."
+      ],
+      "evidence": [
+        "supplementary/check_ch14.py::check_22",
+        "Independent manual reconstruction of the mathematics described above, including each requested subpart and approximation assumptions."
+      ],
+      "unresolved_limitations": [],
+      "status": "reviewed"
+    },
+    {
+      "problem_id": "14.23",
+      "mathematics_checked": "Summed complex phase factors for charges on a ring, checked the roots-of-unity selection for equal signed charges, derived nonrelativistic and relativistic large-N suppression and the steady-current limit.",
+      "derivation_pedagogy_changes": [],
+      "notation_and_source_checks": [
+        "Original problem: printed pp.705, PDF pp.730; inspected local OCR and compared every part with the TeX statement."
+      ],
+      "evidence": [
+        "supplementary/check_ch14.py::check_23",
+        "Independent manual reconstruction of the mathematics described above, including each requested subpart and approximation assumptions."
+      ],
+      "unresolved_limitations": [],
+      "status": "reviewed"
+    },
+    {
+      "problem_id": "14.24",
+      "mathematics_checked": "Changed the continuous Lienard-Wiechert source labels to retarded arclength, proved the Jacobian cancels kappa for arbitrary subluminal speed, and recovered stationary Coulomb/Biot-Savart fields.",
+      "derivation_pedagogy_changes": [],
+      "notation_and_source_checks": [
+        "Original problem: printed pp.705-706, PDF pp.730-731; inspected local OCR and compared every part with the TeX statement."
+      ],
+      "evidence": [
+        "supplementary/check_ch14.py::check_24",
+        "Independent manual reconstruction of the mathematics described above, including each requested subpart and approximation assumptions."
+      ],
+      "unresolved_limitations": [],
+      "status": "reviewed"
+    },
+    {
+      "problem_id": "14.25",
+      "mathematics_checked": "Projected the local-curvature Jones vector onto both helicities, checked the sum and asymmetry, defined Jackson's four Stokes parameters explicitly and analyzed both frequency- and angle-dependent Bessel limits.",
+      "derivation_pedagogy_changes": [
+        "Corrected unpolarized spectrum to polarization-summed spectrum; every resolved direction/frequency remains fully polarized.",
+        "Derived both spectral amplitudes, their relative phase, right-handed linear basis, Jones vector and normalization directly from (14.71),(14.74),(14.77)-(14.78).",
+        "Replaced undefined I,Q,U,V shorthand with explicitly defined Jackson s_0,s_1,s_2,s_3, including the time convention and signed helicity asymmetry.",
+        "Added independent Airy-function/Airy-derivative reconstruction of the source integrals, complex-conjugate analyzer projections and 45-degree linear-polarizer checks."
+      ],
+      "notation_and_source_checks": [
+        "Original problem: printed pp.706, PDF pp.731; inspected local OCR and compared every part with the TeX statement.",
+        "Eqs.(14.71),(14.74), printed p.677 (PDF702), fix the ordered parallel/perpendicular basis and amplitude signs; (14.77)-(14.79), p.678 (PDF703), fix the Airy integrals and two linear intensities; Eqs.(7.22),(7.27)-(7.28), pp.300-301 (PDF325-326), fix positive helicity and Stokes signs.",
+        "APS publisher record, https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.4.558 , checked 2026-10-03: Joos title/date/DOI verified and authorization required for full text."
+      ],
+      "evidence": [
+        "supplementary/check_ch14.py::check_25",
+        "Independent manual reconstruction of the mathematics described above, including each requested subpart and approximation assumptions."
+      ],
+      "unresolved_limitations": [
+        "APS requires authorization for the Joos full text, so no numerical agreement with unavailable experimental curves is asserted; only bibliographic metadata and theoretical comparison observables are verified."
+      ],
+      "status": "reviewed"
+    },
+    {
+      "problem_id": "14.26",
+      "mathematics_checked": "Recomputed orbit/critical-frequency/keV numbers with explicit Gaussian-SI conversion, derived the power-law electron transform and cutoff qualification, integrated the cooling lifetime and checked the cited historical/pulsar-wind sources.",
+      "derivation_pedagogy_changes": [
+        "Added the directly checked NASA/CXC 2023 source supporting particle acceleration in the pulsar-wind nebula; retained all historical-model and cutoff qualifications."
+      ],
+      "notation_and_source_checks": [
+        "Original problem: printed pp.706-707, PDF pp.731-732; inspected local OCR and compared every part with the TeX statement.",
+        "NASA https://www.nasa.gov/image-article/crab-nebula-observations-through-time/ (2020) and https://www.nasa.gov/news-release/nasa-satellites-find-high-energy-surprises-in-constant-crab-nebula/ (2011), checked 2026-10-03 for 1054 historical date and pulsar-wind interpretation.",
+        "NASA/CXC https://chandra.si.edu/press/23_releases/press_041023.html (2023), checked 2026-10-03, explicitly describes wind-driven shocks accelerating particles in the pulsar-wind nebula."
+      ],
+      "evidence": [
+        "supplementary/check_ch14.py::check_26",
+        "Independent manual reconstruction of the mathematics described above, including each requested subpart and approximation assumptions."
+      ],
+      "unresolved_limitations": [
+        "The textbook spectral indices are model inputs; spectral steepening alone does not determine a unique hard electron-energy cutoff."
+      ],
+      "status": "reviewed"
+    },
+    {
+      "problem_id": "14.27",
+      "mathematics_checked": "Combined E1 and E2 second-harmonic amplitudes with their phase, expanded the angular polynomial, transformed energy/time/solid-angle/frequency measures and integrated the normalized laboratory spectrum and band limits.",
+      "derivation_pedagogy_changes": [],
+      "notation_and_source_checks": [
+        "Original problem: printed pp.707, PDF pp.732; inspected local OCR and compared every part with the TeX statement.",
+        "Weak-undulator source equations in printed pp.688-691 (PDF713-716), retained local source scans/OCR; conventions inherited from the current spectral formula on p.676."
+      ],
+      "evidence": [
+        "supplementary/check_ch14.py::check_27",
+        "Independent manual reconstruction of the mathematics described above, including each requested subpart and approximation assumptions."
+      ],
+      "unresolved_limitations": [],
+      "status": "reviewed"
+    }
+  ]
+}

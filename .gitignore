@@ -35,7 +35,6 @@ __pycache__/
 
 # Working/scratch material (kept locally, not published)
 build/
-supplementary/
 errata/
 *.py
 

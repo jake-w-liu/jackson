@@ -1,0 +1,32 @@
+[
+  {
+    "first_page": 1,
+    "last_page": 6,
+    "exit": 0
+  },
+  {
+    "first_page": 7,
+    "last_page": 12,
+    "exit": 0
+  },
+  {
+    "first_page": 13,
+    "last_page": 18,
+    "exit": 0
+  },
+  {
+    "first_page": 19,
+    "last_page": 24,
+    "exit": 0
+  },
+  {
+    "first_page": 25,
+    "last_page": 30,
+    "exit": 0
+  },
+  {
+    "first_page": 31,
+    "last_page": 32,
+    "exit": 0
+  }
+]

@@ -1,0 +1,399 @@
+{
+  "chapter": 6,
+  "review_date": "2026-10-03",
+  "reviewer": "independent chapter03 agent; these chapters were authored by other agents",
+  "scope": "Every original problem, every solution and all subparts; independent mathematical reconstruction, source notation and pedagogical continuity.",
+  "problem_count": 25,
+  "chapter_notation_checks": [
+    "SI, confirmed by the original chapter headers on printed pp.284-294 (PDF309-319); magnetic charge is the flux-valued SI g used in Problems 6.16-6.19, not Gaussian magnetic charge.",
+    "Temporal transform: forward exp(+i*omega*t), inverse exp(-i*omega*t)/(2*pi), Eqs.(6.33)-(6.34), printed p.243 (PDF268); retarded wave Green normalization -4*pi and Eq.(6.47), printed pp.243-245 (PDF268-270).",
+    "Q'_{alpha beta}=3 sum(q*x_alpha*x_beta) is not traceless, Eq.(6.77), printed p.252 (PDF277); Q_{alpha beta}=<Q'>/6 and D definition are Eqs.(6.90)-(6.92), printed p.255 (PDF280).",
+    "Complex Poynting vector is E cross H*/2; w_e=E dot D*/4 and w_m=B dot H*/4, Eqs.(6.132)-(6.134), printed p.265 (PDF290). The solution uses Y=G-iB as explicitly required on p.288."
+  ],
+  "checks_command": "python3 -W error supplementary/check_ch06.py",
+  "checks_log": "build/recheck-ch06-checks.log",
+  "compile_command": "pdflatex -interaction=nonstopmode -halt-on-error -output-directory=build build/recheck-ch06.tex",
+  "compile_log": "build/recheck-ch06.log",
+  "render_directory": "build/recheck-render-ch06",
+  "validation": {
+    "python_warnings_as_errors_exit_code": 0,
+    "temporary_chapter_compile_exit_code": 0,
+    "compiled_pages": 34,
+    "latex_warning_overfull_underfull_scan": "No warnings or box diagnostics in the final chapter log.",
+    "visual_review": "Every rendered page inspected in contact sheets; changed mathematical passages additionally inspected at 120 dpi.",
+    "problem_spacing_and_solution_slots": "Every problem retains Needspace{5 baselineskip}, par bigskip and exactly one nonempty solution slot.",
+    "malformed_math_typography_scan": "No remaining broken command fragments, literal multiplication commas or doubled-backslash thin-space candidates in the reviewed chapters."
+  },
+  "tex_sha256": "4df4b483e1ab0ae7c3fce3c0f3484a22ea349669c0ef67d9e451c3f54ed91f5f",
+  "script_sha256": "5e5f478e8ccc0eac417eaaabc604a9c5038213fd0566098e167186e4ca71b34a",
+  "problems": [
+    {
+      "problem_id": "6.1",
+      "mathematics_checked": "Integrated the retarded three-dimensional point pulse over the unused coordinates, including each delta-function Jacobian, causal support and the one-/two-dimensional wake coefficients.",
+      "derivation_pedagogy_changes": [],
+      "notation_and_source_checks": [
+        "Original problem: printed pp.283-284, PDF pp.308-309; inspected local OCR and compared every part with the TeX statement.",
+        "Eqs.(6.32),(6.44),(6.47), printed pp.243-245 (PDF268-270)."
+      ],
+      "evidence": [
+        "supplementary/check_ch06.py::check01",
+        "Independent manual reconstruction of the mathematics described above, including each requested subpart and approximation assumptions."
+      ],
+      "unresolved_limitations": [],
+      "status": "reviewed"
+    },
+    {
+      "problem_id": "6.2",
+      "mathematics_checked": "Computed the implicit retarded delta Jacobian and observation-time derivatives, then expanded the Jefimenko and Heaviside-Feynman fields into the same Lienard-Wiechert expression.",
+      "derivation_pedagogy_changes": [],
+      "notation_and_source_checks": [
+        "Original problem: printed pp.284, PDF pp.309; inspected local OCR and compared every part with the TeX statement."
+      ],
+      "evidence": [
+        "supplementary/check_ch06.py::check02",
+        "Independent manual reconstruction of the mathematics described above, including each requested subpart and approximation assumptions."
+      ],
+      "unresolved_limitations": [],
+      "status": "reviewed"
+    },
+    {
+      "problem_id": "6.3",
+      "mathematics_checked": "Solved the spatial Fourier evolution, evaluated the causal frequency pole and three Gaussian integrals, and checked unit mass, the two far-source time scales and vanishing initial monopole moment.",
+      "derivation_pedagogy_changes": [],
+      "notation_and_source_checks": [
+        "Original problem: printed pp.284-285, PDF pp.309-310; inspected local OCR and compared every part with the TeX statement.",
+        "Eqs.(6.33)-(6.34), printed p.243 (PDF268); the three-dimensional spatial normalization is printed explicitly in Problem6.3, p.285 (PDF310)."
+      ],
+      "evidence": [
+        "supplementary/check_ch06.py::check03",
+        "Independent manual reconstruction of the mathematics described above, including each requested subpart and approximation assumptions."
+      ],
+      "unresolved_limitations": [],
+      "status": "reviewed"
+    },
+    {
+      "problem_id": "6.4",
+      "mathematics_checked": "Applied the moving-conductor equilibrium equation, matched interior and exterior potentials, checked volume and surface neutrality and quadrupole normalization, and integrated the pole-equator voltage.",
+      "derivation_pedagogy_changes": [],
+      "notation_and_source_checks": [
+        "Original problem: printed pp.285-286, PDF pp.310-311; inspected local OCR and compared every part with the TeX statement."
+      ],
+      "evidence": [
+        "supplementary/check_ch06.py::check04",
+        "Independent manual reconstruction of the mathematics described above, including each requested subpart and approximation assumptions."
+      ],
+      "unresolved_limitations": [],
+      "status": "reviewed"
+    },
+    {
+      "problem_id": "6.5",
+      "mathematics_checked": "Integrated the field momentum by parts, derived the antisymmetric current moment and evaluated the sphere-at-infinity term for a uniform field; retained the conditional-convergence prescription.",
+      "derivation_pedagogy_changes": [],
+      "notation_and_source_checks": [
+        "Original problem: printed pp.286, PDF pp.311; inspected local OCR and compared every part with the TeX statement."
+      ],
+      "evidence": [
+        "supplementary/check_ch06.py::check05",
+        "Independent manual reconstruction of the mathematics described above, including each requested subpart and approximation assumptions."
+      ],
+      "unresolved_limitations": [],
+      "status": "reviewed"
+    },
+    {
+      "problem_id": "6.6",
+      "mathematics_checked": "Integrated toroidal field momentum with the azimuthal cancellation and narrow-cross-section limit, then recomputed the SI field values and comparison with the insect momentum.",
+      "derivation_pedagogy_changes": [],
+      "notation_and_source_checks": [
+        "Original problem: printed pp.286-287, PDF pp.311-312; inspected local OCR and compared every part with the TeX statement."
+      ],
+      "evidence": [
+        "supplementary/check_ch06.py::check06",
+        "Independent manual reconstruction of the mathematics described above, including each requested subpart and approximation assumptions."
+      ],
+      "unresolved_limitations": [],
+      "status": "reviewed"
+    },
+    {
+      "problem_id": "6.7",
+      "mathematics_checked": "Expanded the microscopic current through quadrupole order, differentiated molecular moments and assembled transport curls; distinguished Jackson's nontraceless Q' from the macroscopic one-sixth quadrupole density.",
+      "derivation_pedagogy_changes": [],
+      "notation_and_source_checks": [
+        "Original problem: printed pp.287, PDF pp.312; inspected local OCR and compared every part with the TeX statement.",
+        "Eqs.(6.77),(6.90)-(6.92), printed pp.252,255 (PDF277,280), inspected OCR; molecular Q' and macroscopic Q are distinct."
+      ],
+      "evidence": [
+        "supplementary/check_ch06.py::check07",
+        "Independent manual reconstruction of the mathematics described above, including each requested subpart and approximation assumptions."
+      ],
+      "unresolved_limitations": [],
+      "status": "reviewed"
+    },
+    {
+      "problem_id": "6.8",
+      "mathematics_checked": "Used the stationary laboratory polarization and its motion-induced magnetization, calculated its divergence and surface normal jump, and matched the magnetic quadrupole scalar potential inside/outside.",
+      "derivation_pedagogy_changes": [],
+      "notation_and_source_checks": [
+        "Original problem: printed pp.287, PDF pp.312; inspected local OCR and compared every part with the TeX statement."
+      ],
+      "evidence": [
+        "supplementary/check_ch06.py::check08",
+        "Independent manual reconstruction of the mathematics described above, including each requested subpart and approximation assumptions."
+      ],
+      "unresolved_limitations": [],
+      "status": "reviewed"
+    },
+    {
+      "problem_id": "6.9",
+      "mathematics_checked": "Derived the macroscopic energy and momentum balances componentwise; checked Minkowski stress and momentum, then kept all spatial epsilon/mu gradient terms and their force signs.",
+      "derivation_pedagogy_changes": [],
+      "notation_and_source_checks": [
+        "Original problem: printed pp.287, PDF pp.312; inspected local OCR and compared every part with the TeX statement."
+      ],
+      "evidence": [
+        "supplementary/check_ch06.py::check09_10",
+        "Independent manual reconstruction of the mathematics described above, including each requested subpart and approximation assumptions."
+      ],
+      "unresolved_limitations": [],
+      "status": "reviewed"
+    },
+    {
+      "problem_id": "6.10",
+      "mathematics_checked": "Multiplied the momentum balance by the position vector, checked that symmetric stress removes the internal torque term, and matched the dyadic/angular-momentum index ordering.",
+      "derivation_pedagogy_changes": [],
+      "notation_and_source_checks": [
+        "Original problem: printed pp.288, PDF pp.313; inspected local OCR and compared every part with the TeX statement."
+      ],
+      "evidence": [
+        "supplementary/check_ch06.py::check09_10",
+        "Independent manual reconstruction of the mathematics described above, including each requested subpart and approximation assumptions."
+      ],
+      "unresolved_limitations": [],
+      "status": "reviewed"
+    },
+    {
+      "problem_id": "6.11",
+      "mathematics_checked": "Integrated the time-averaged Maxwell stress for absorption/reflection and recomputed sail accelerations; independently checked the stated representative solar-wind density and speed against the cited NASA source.",
+      "derivation_pedagogy_changes": [],
+      "notation_and_source_checks": [
+        "Original problem: printed pp.288, PDF pp.313; inspected local OCR and compared every part with the TeX statement.",
+        "NASA Cosmicopia, Solar Wind Electricity?, https://science.gsfc.nasa.gov/attic/cosmicopia.gsfc.nasa.gov/qa_sun.html : 5 particles/cm^3 and 440 km/s; source checked 2026-10-03."
+      ],
+      "evidence": [
+        "supplementary/check_ch06.py::check11",
+        "Independent manual reconstruction of the mathematics described above, including each requested subpart and approximation assumptions."
+      ],
+      "unresolved_limitations": [
+        "Solar-wind comparison is an estimate using the explicitly cited representative historical NASA parameters, not a contemporaneous measurement."
+      ],
+      "status": "reviewed"
+    },
+    {
+      "problem_id": "6.12",
+      "mathematics_checked": "Conjugated the complex Poynting identity with the e^{-i omega t} convention and Y=G-iB; retained complex surface and energy terms and checked the low-frequency formulas against a passive RLC network.",
+      "derivation_pedagogy_changes": [],
+      "notation_and_source_checks": [
+        "Original problem: printed pp.288, PDF pp.313; inspected local OCR and compared every part with the TeX statement.",
+        "Eqs.(6.132)-(6.134), printed p.265 (PDF290): complex conjugation and one-half/one-quarter factors."
+      ],
+      "evidence": [
+        "supplementary/check_ch06.py::check12",
+        "Independent manual reconstruction of the mathematics described above, including each requested subpart and approximation assumptions."
+      ],
+      "unresolved_limitations": [],
+      "status": "reviewed"
+    },
+    {
+      "problem_id": "6.13",
+      "mathematics_checked": "Solved the rectangular capacitor's exact cosine/sine fields with fixed input current, expanded them and their energies consistently, and recovered the series capacitance and inductance with the correct impedance sign.",
+      "derivation_pedagogy_changes": [],
+      "notation_and_source_checks": [
+        "Original problem: printed pp.288-289, PDF pp.313-314; inspected local OCR and compared every part with the TeX statement."
+      ],
+      "evidence": [
+        "supplementary/check_ch06.py::check13",
+        "Independent manual reconstruction of the mathematics described above, including each requested subpart and approximation assumptions."
+      ],
+      "unresolved_limitations": [],
+      "status": "reviewed"
+    },
+    {
+      "problem_id": "6.14",
+      "mathematics_checked": "Normalized the circular-capacitor Bessel fields by total charge, expanded both energies including the extra relative fourth-order electric term, and checked the lumped and first-J0-root resonance estimates.",
+      "derivation_pedagogy_changes": [],
+      "notation_and_source_checks": [
+        "Original problem: printed pp.289, PDF pp.314; inspected local OCR and compared every part with the TeX statement."
+      ],
+      "evidence": [
+        "supplementary/check_ch06.py::check14",
+        "Independent manual reconstruction of the mathematics described above, including each requested subpart and approximation assumptions."
+      ],
+      "unresolved_limitations": [],
+      "status": "reviewed"
+    },
+    {
+      "problem_id": "6.15",
+      "mathematics_checked": "Constructed the isotropic resistivity tensor from delta, epsilon and H_iH_j, checked parity and work, and distinguished Onsager time reversal from a false requirement that dissipative terms vanish.",
+      "derivation_pedagogy_changes": [],
+      "notation_and_source_checks": [
+        "Original problem: printed pp.289-290, PDF pp.314-315; inspected local OCR and compared every part with the TeX statement."
+      ],
+      "evidence": [
+        "supplementary/check_ch06.py::check15",
+        "Independent manual reconstruction of the mathematics described above, including each requested subpart and approximation assumptions."
+      ],
+      "unresolved_limitations": [],
+      "status": "reviewed"
+    },
+    {
+      "problem_id": "6.16",
+      "mathematics_checked": "Used SI magnetic charge g=h/e and the dipole field at the equator, checked force and interaction-energy signs and atomic-force scales, and retained the limitation of the singular inverse-square binding estimate.",
+      "derivation_pedagogy_changes": [],
+      "notation_and_source_checks": [
+        "Original problem: printed pp.290, PDF pp.315; inspected local OCR and compared every part with the TeX statement."
+      ],
+      "evidence": [
+        "supplementary/check_ch06.py::check16",
+        "Independent manual reconstruction of the mathematics described above, including each requested subpart and approximation assumptions."
+      ],
+      "unresolved_limitations": [
+        "Binding discussion gives scale/validity conditions; the singular point-dipole potential cannot determine a nuclear binding energy without short-distance physics."
+      ],
+      "status": "reviewed"
+    },
+    {
+      "problem_id": "6.17",
+      "mathematics_checked": "Applied the duality rotation to normalized electric/magnetic charges and fields, checked every term of the generalized Lorentz force and the invariant two-charge Dirac determinant.",
+      "derivation_pedagogy_changes": [],
+      "notation_and_source_checks": [
+        "Original problem: printed pp.290, PDF pp.315; inspected local OCR and compared every part with the TeX statement."
+      ],
+      "evidence": [
+        "supplementary/check_ch06.py::check17",
+        "Independent manual reconstruction of the mathematics described above, including each requested subpart and approximation assumptions."
+      ],
+      "unresolved_limitations": [],
+      "status": "reviewed"
+    },
+    {
+      "problem_id": "6.18",
+      "mathematics_checked": "Integrated the negative-axis string potential, computed its curl away from the string, compared upward disk flux and circulation above/below the monopole, and identified the compensating distributional string flux.",
+      "derivation_pedagogy_changes": [],
+      "notation_and_source_checks": [
+        "Original problem: printed pp.290-291, PDF pp.315-316; inspected local OCR and compared every part with the TeX statement."
+      ],
+      "evidence": [
+        "supplementary/check_ch06.py::check18_19",
+        "Independent manual reconstruction of the mathematics described above, including each requested subpart and approximation assumptions."
+      ],
+      "unresolved_limitations": [],
+      "status": "reviewed"
+    },
+    {
+      "problem_id": "6.19",
+      "mathematics_checked": "Tracked the pseudoscalar magnetic-charge parity, checked both patch curls and the azimuthal gauge gradient, and derived the oriented half-plane solid-angle change from the spherical lune area.",
+      "derivation_pedagogy_changes": [
+        "Inserted the explicit unit-sphere lune integral yielding the solid-angle factor two and explained its orientation.",
+        "Added direct lune-area quadratures alongside the independent half-plane solid-angle derivative check."
+      ],
+      "notation_and_source_checks": [
+        "Original problem: printed pp.291, PDF pp.316; inspected local OCR and compared every part with the TeX statement.",
+        "Problem6.19(c), printed p.291 (PDF316), specifies C=L'-L and the meridian rectangle; Eq.(6.162), printed p.279 (PDF304), gives the oriented solid-angle gauge change; independent half-plane integral fixes orientation."
+      ],
+      "evidence": [
+        "supplementary/check_ch06.py::check18_19",
+        "Independent manual reconstruction of the mathematics described above, including each requested subpart and approximation assumptions."
+      ],
+      "unresolved_limitations": [],
+      "status": "reviewed"
+    },
+    {
+      "problem_id": "6.20",
+      "mathematics_checked": "Differentiated the Coulomb dipole distribution with its contact term, verified transverse-current divergence, constructed the Lorenz-to-Coulomb gauge cancellation, and checked all causal flash components and delta rescalings.",
+      "derivation_pedagogy_changes": [],
+      "notation_and_source_checks": [
+        "Original problem: printed pp.291-292, PDF pp.316-317; inspected local OCR and compared every part with the TeX statement."
+      ],
+      "evidence": [
+        "supplementary/check_ch06.py::check20",
+        "Independent manual reconstruction of the mathematics described above, including each requested subpart and approximation assumptions."
+      ],
+      "unresolved_limitations": [],
+      "status": "reviewed"
+    },
+    {
+      "problem_id": "6.21",
+      "mathematics_checked": "Expanded the moving fixed-magnitude dipole charge/current deltas and translated its moments; differentiated the quadrupole potential and checked the continuity equation and far-field tensor factors.",
+      "derivation_pedagogy_changes": [],
+      "notation_and_source_checks": [
+        "Original problem: printed pp.292, PDF pp.317; inspected local OCR and compared every part with the TeX statement."
+      ],
+      "evidence": [
+        "supplementary/check_ch06.py::check21_22",
+        "Independent manual reconstruction of the mathematics described above, including each requested subpart and approximation assumptions."
+      ],
+      "unresolved_limitations": [],
+      "status": "reviewed"
+    },
+    {
+      "problem_id": "6.22",
+      "mathematics_checked": "Separated the leading off-center vector potential into antisymmetric magnetic and symmetric electric-quadrupole pieces; computed both curls and the displacement-current curl identity and recovered v cross E/c^2.",
+      "derivation_pedagogy_changes": [],
+      "notation_and_source_checks": [
+        "Original problem: printed pp.292-293, PDF pp.317-318; inspected local OCR and compared every part with the TeX statement."
+      ],
+      "evidence": [
+        "supplementary/check_ch06.py::check21_22",
+        "Independent manual reconstruction of the mathematics described above, including each requested subpart and approximation assumptions."
+      ],
+      "unresolved_limitations": [],
+      "status": "reviewed"
+    },
+    {
+      "problem_id": "6.23",
+      "mathematics_checked": "Substituted the Hertz-vector transformations into both wave equations and into A and Phi, showing explicitly that curl terms cancel and identifying the scalar gauge function and its sign.",
+      "derivation_pedagogy_changes": [],
+      "notation_and_source_checks": [
+        "Original problem: printed pp.293, PDF pp.318; inspected local OCR and compared every part with the TeX statement."
+      ],
+      "evidence": [
+        "supplementary/check_ch06.py::check23",
+        "Independent manual reconstruction of the mathematics described above, including each requested subpart and approximation assumptions."
+      ],
+      "unresolved_limitations": [],
+      "status": "reviewed"
+    },
+    {
+      "problem_id": "6.24",
+      "mathematics_checked": "Derived the retarded magnetic-dipole fields, integrated the solenoid terms and checked Faraday's law; examined the exact outgoing cylindrical low-frequency solution and the insufficiency of a first-derivative bound alone.",
+      "derivation_pedagogy_changes": [
+        "Added a dark-red statement qualification: a first-derivative relative bound alone does not control a derivative expansion.",
+        "Added a dimensionally explicit current counterexample, differentiated through second order, and a precise spectral/higher-derivative condition.",
+        "Added symbolic verification of the counterexample derivatives."
+      ],
+      "notation_and_source_checks": [
+        "Original problem: printed pp.293, PDF pp.318; inspected local OCR and compared every part with the TeX statement.",
+        "Problem6.24, printed p.293 (PDF318), contains only the relative first-derivative inequality; the explicit smooth counterexample establishes the need for qualification."
+      ],
+      "evidence": [
+        "supplementary/check_ch06.py::check24",
+        "Independent manual reconstruction of the mathematics described above, including each requested subpart and approximation assumptions."
+      ],
+      "unresolved_limitations": [],
+      "status": "reviewed"
+    },
+    {
+      "problem_id": "6.25",
+      "mathematics_checked": "Expanded the neutral atom's Lorentz force through dipole order and evaluated it for a monochromatic dilute dielectric; checked the instantaneous one-half mechanical momentum factor and the Abraham/Minkowski distinction.",
+      "derivation_pedagogy_changes": [],
+      "notation_and_source_checks": [
+        "Original problem: printed pp.294, PDF pp.319; inspected local OCR and compared every part with the TeX statement."
+      ],
+      "evidence": [
+        "supplementary/check_ch06.py::check25",
+        "Independent manual reconstruction of the mathematics described above, including each requested subpart and approximation assumptions."
+      ],
+      "unresolved_limitations": [],
+      "status": "reviewed"
+    }
+  ]
+}

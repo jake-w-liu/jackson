@@ -1,0 +1,87 @@
+{
+  "14.1": "PASS",
+  "14.2 expansion errors": [
+    3.108897608654911e-07,
+    1.9455280647220778e-08,
+    1.2163428494640896e-09
+  ],
+  "14.2": "PASS",
+  "14.3": "PASS",
+  "14.4": "PASS",
+  "14.5": "PASS",
+  "14.6 maximum relative quadrature error": 6.53285788930819e-10,
+  "14.6": "PASS",
+  "14.7 cutoff to Bethe-Heitler ratio": 1.2337005501361697,
+  "14.7": "PASS",
+  "14.8": "PASS",
+  "14.9": "PASS",
+  "14.10 gamma squared mean angle squared": [
+    2.0335323922008572,
+    2.0029704646060034
+  ],
+  "14.10": "PASS",
+  "14.11": "PASS",
+  "14.12": "PASS",
+  "14.13": "PASS",
+  "14.14": "PASS",
+  "14.15 uniform-asymptotic relative errors": [
+    0.0007381189061735904,
+    8.198427907712968e-05
+  ],
+  "14.15": "PASS",
+  "14.16": "PASS",
+  "14.17": "PASS",
+  "14.18_exact_received_power_to_ultrarelativistic_limit": {
+    "gamma=20,alpha=0.4": 0.9973296009308339,
+    "gamma=20,alpha=1": 0.9951363569737189,
+    "gamma=60,alpha=0.4": 0.9997035537813659,
+    "gamma=60,alpha=1": 0.9994679202292812
+  },
+  "14.18": "PASS",
+  "14.19": "PASS",
+  "14.20 mean omega/nu": 1.5756221907096677,
+  "14.20 distribution peak x": 1.9959153310234052,
+  "14.20": "PASS",
+  "14.21 classical lifetimes seconds": [
+    2.987860728308467e-09,
+    9.561154330587095e-08,
+    7.260501569789576e-07
+  ],
+  "14.21 classical/quoted quantum lifetime": [
+    1.8674129551927918,
+    1.3097471685735746,
+    1.1902461589818978
+  ],
+  "14.21": "PASS",
+  "14.22": "PASS",
+  "14.23 full-Debye log-amplitude errors": [
+    0.0020408590726788134,
+    0.00020677553885661837
+  ],
+  "14.23 omitted exponent at gamma10 N1000000": 4.028795484482968,
+  "14.23 fixed-speed Debye relative errors": [
+    0.0013362056909329567,
+    0.00033517269036087427
+  ],
+  "14.23": "PASS",
+  "14.24 discrete-loop maximum static-field residual": [
+    0.050680740877039526,
+    7.489203032173819e-07,
+    6.994405055138486e-15
+  ],
+  "14.24": "PASS",
+  "14.25": "PASS",
+  "14.26 numerical values": {
+    "gamma": 19569511.809100054,
+    "radius_m": 1111880317327.1736,
+    "omega0": 0.0002696265536210453,
+    "omega_c": 3.0310555422566303e+18,
+    "critical_energy_keV": 1.9950770000956284,
+    "half_life_years": 9.281344813626651,
+    "lifetime_coefficient_years_mG2_GeV": 8353.210332263987,
+    "cutoff_TeV": 5.743849508764988
+  },
+  "14.26": "PASS",
+  "14.27 second harmonic coefficient P2/P1 divided by K2/D2": 1.25,
+  "14.27": "PASS"
+}

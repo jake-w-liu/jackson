@@ -1,0 +1,938 @@
+{
+  "audit": "Fresh independent iterative deep-debug, 2026-10-03",
+  "chapter": 15,
+  "problem_count": 16,
+  "scope_rebuilt_from": [
+    "sections/ch15.tex",
+    "supplementary/check_ch15.py",
+    "all directly referenced chapter figure inputs"
+  ],
+  "prior_ledgers": "Used only as source locators; no inherited review result treated as current evidence.",
+  "audit_matrix": {
+    "domain_correctness": "Every problem/subpart checked for algebra, physics, dimensions, signs, domains, notation and source fidelity; individual evidence below.",
+    "implementation_correctness": "Read calculation script functions and every current assertion path; ran with warnings promoted to errors and captured stdout.",
+    "memory_and_resources": "Scoped batch calculation scripts, bounded arrays/quadrature and synchronous Path writes inspected; file handles are closed by write_text; no persistent service, network mutation, process stop or concurrency-sensitive state.",
+    "performance": "No performance target requested. Current final script duration is recorded; no measured performance defect or optimization claim.",
+    "completeness": "All original problem IDs and subparts reviewed; every Needspace/par/bigskip prefix preserved; retained historical-source and approximation limitations enumerated."
+  },
+  "notation_checked": {
+    "units": "Gaussian, alpha_fs=e^2/(hbar c), positive angular frequency; dI/domega is energy per angular-frequency and dN/depsilon=(dI/domega)/(hbar epsilon); source unitary Fourier factor retained.",
+    "source": "Jackson pp.674-675,709-710,712-713,716-717,722,725,727-728,731; Eqs.14.54-14.66,15.1-15.6,15.9-15.13,15.25,15.29,15.47,15.54-15.58,15.65-15.67 and Table15.1.",
+    "inspected_files": [
+      "build/source_ch14/p-699.txt",
+      "build/source_ch14/p-700.txt",
+      "build/ch15-source/p-734.txt",
+      "build/ch15-source/p-735.txt",
+      "build/ch15-source/p-737.txt",
+      "build/ch15-source/p-738.txt",
+      "build/ch15-source/p-741.txt",
+      "build/ch15-source/p-742.txt",
+      "build/ch15-source/p-747.txt",
+      "build/ch15-source/p-750.txt",
+      "build/ch15-source/p-752.txt",
+      "build/ch15-source/p-753.txt",
+      "build/ch15-source/p-756.txt"
+    ]
+  },
+  "runs": [
+    {
+      "chapter": 15,
+      "command": [
+        "/opt/homebrew/opt/python@3.14/bin/python3.14",
+        "-W",
+        "error",
+        "supplementary/check_ch15.py"
+      ],
+      "exit_code": 0,
+      "log": "/var/folders/93/r1t98m8d3014c24llb8j119w0000gn/T/jackson-deep-debug-team3-7iu2qgz3/check_ch15-baseline.log",
+      "tail": [
+        "PASS 15.16",
+        "All 16 Chapter 15 check groups passed; four TikZ figures regenerated."
+      ]
+    },
+    {
+      "chapter": 15,
+      "command": [
+        "/opt/homebrew/opt/python@3.14/bin/python3.14",
+        "-W",
+        "error",
+        "supplementary/check_ch15.py"
+      ],
+      "exit_code": 0,
+      "seconds": 20.702,
+      "log": "/var/folders/93/r1t98m8d3014c24llb8j119w0000gn/T/jackson-deep-debug-team3-7iu2qgz3/check_ch15-final.log",
+      "tail": [
+        "PASS 15.16",
+        "All 16 Chapter 15 check groups passed; four TikZ figures regenerated."
+      ]
+    }
+  ],
+  "confirmed_new_findings": [],
+  "crc": {
+    "correctness": "Current chapter checks and independent analytical final route passed.",
+    "robustness": "Physical/domain endpoints and singular limits are individually documented; no unsupported extension of approximations.",
+    "completeness": "Entire chapter rerun, generated assets verified, and isolated local four-chapter compilation/render completed as recorded in validation."
+  },
+  "final_pass": {
+    "coverage": "All 16 problems, reverse-order answer-to-invariant route, after the only TeX correction.",
+    "new_confirmed_errors": 0,
+    "numerical_limit": "Finite numerical checks supplement analytical retracing and are not exhaustive proof."
+  },
+  "problems": [
+    {
+      "problem": "15.1",
+      "inspected_sources": [
+        {
+          "file": "sections/ch15.tex",
+          "line": 9,
+          "scope": "Current complete statement, solution, every subpart, assumptions and retained errata."
+        },
+        {
+          "file": "supplementary/check_ch15.py",
+          "scope": "Current functions covering this problem, assertion logic, numerical methods and generated assets."
+        },
+        {
+          "source": "Jackson 3rd edition supplied local PDF",
+          "printed_pages": "737-738",
+          "pdf_pages": [
+            762,
+            763
+          ],
+          "ocr_files": [
+            "ocr/p-762.txt",
+            "ocr/p-763.txt"
+          ]
+        }
+      ],
+      "source_notation": "Jackson pp.674-675,709-710,712-713,716-717,722,725,727-728,731; Eqs.14.54-14.66,15.1-15.6,15.9-15.13,15.25,15.29,15.47,15.54-15.58,15.65-15.67 and Table15.1.",
+      "additional_sources_checked": [],
+      "first_pass": {
+        "method": "Read current problem and full solution, independently retrace the stated derivation, then inspect current check implementation.",
+        "mathematics_checked": "Acceleration integral expansion, unitary Fourier normalization, electric/magnetic/quadrupole terms and spectral intensity.",
+        "falsifiable_candidate": "Candidate: the introduction needs only cR times the Fourier transform. Discarded against Eq.14.54 and the existing sqrt(2 pi) erratum.",
+        "outcome": "candidate_discarded_no_new_confirmed_error"
+      },
+      "independent_final_pass": {
+        "method": "Reverse problem order; work from final expressions back to source equations using conservation, boundary conditions, dimensional checks, independent integral reductions and limiting cases rather than repeating the first derivation.",
+        "evidence": "Final route: transform the far-zone field with dt_obs=(1-n dot beta)dt and apply Parseval to positive frequencies; this independently fixes the global sign convention and 1/(4 pi^2 c^3).",
+        "new_confirmed_errors": 0
+      },
+      "verification": {
+        "manual_analytic_retracing": "The displayed identities and domain restrictions above were retraced; this is not a claim that numerical sampling proves all parameter values.",
+        "baseline_exit_code": 0,
+        "final_exit_code": 0,
+        "final_log": "/var/folders/93/r1t98m8d3014c24llb8j119w0000gn/T/jackson-deep-debug-team3-7iu2qgz3/check_ch15-final.log",
+        "machine_check_kind": "Symbolic identities where implemented; otherwise numerical quadrature/spectral samples with explicit tolerances."
+      },
+      "changes": [],
+      "unresolved_limitations": []
+    },
+    {
+      "problem": "15.2",
+      "inspected_sources": [
+        {
+          "file": "sections/ch15.tex",
+          "line": 151,
+          "scope": "Current complete statement, solution, every subpart, assumptions and retained errata."
+        },
+        {
+          "file": "supplementary/check_ch15.py",
+          "scope": "Current functions covering this problem, assertion logic, numerical methods and generated assets."
+        },
+        {
+          "source": "Jackson 3rd edition supplied local PDF",
+          "printed_pages": "738",
+          "pdf_pages": [
+            763
+          ],
+          "ocr_files": [
+            "ocr/p-763.txt"
+          ]
+        }
+      ],
+      "source_notation": "Jackson pp.674-675,709-710,712-713,716-717,722,725,727-728,731; Eqs.14.54-14.66,15.1-15.6,15.9-15.13,15.25,15.29,15.47,15.54-15.58,15.65-15.67 and Table15.1.",
+      "additional_sources_checked": [],
+      "first_pass": {
+        "method": "Read current problem and full solution, independently retrace the stated derivation, then inspect current check implementation.",
+        "mathematics_checked": "Hard-sphere impact measure, dipole angular distribution, total photon cross section and frequency limits.",
+        "falsifiable_candidate": "Candidate: the hard-sphere angular cross section is R^2 instead of R^2/4. Discarded using b=R cos(chi/2).",
+        "outcome": "candidate_discarded_no_new_confirmed_error"
+      },
+      "independent_final_pass": {
+        "method": "Reverse problem order; work from final expressions back to source equations using conservation, boundary conditions, dimensional checks, independent integral reductions and limiting cases rather than repeating the first derivation.",
+        "evidence": "Final route: integrate the soft impulse radiation over isotropic reflected directions; the angular average and total geometric area pi R^2 reproduce the full coefficient.",
+        "new_confirmed_errors": 0
+      },
+      "verification": {
+        "manual_analytic_retracing": "The displayed identities and domain restrictions above were retraced; this is not a claim that numerical sampling proves all parameter values.",
+        "baseline_exit_code": 0,
+        "final_exit_code": 0,
+        "final_log": "/var/folders/93/r1t98m8d3014c24llb8j119w0000gn/T/jackson-deep-debug-team3-7iu2qgz3/check_ch15-final.log",
+        "machine_check_kind": "Symbolic identities where implemented; otherwise numerical quadrature/spectral samples with explicit tolerances."
+      },
+      "changes": [],
+      "unresolved_limitations": []
+    },
+    {
+      "problem": "15.3",
+      "inspected_sources": [
+        {
+          "file": "sections/ch15.tex",
+          "line": 215,
+          "scope": "Current complete statement, solution, every subpart, assumptions and retained errata."
+        },
+        {
+          "file": "supplementary/check_ch15.py",
+          "scope": "Current functions covering this problem, assertion logic, numerical methods and generated assets."
+        },
+        {
+          "source": "Jackson 3rd edition supplied local PDF",
+          "printed_pages": "738",
+          "pdf_pages": [
+            763
+          ],
+          "ocr_files": [
+            "ocr/p-763.txt"
+          ]
+        }
+      ],
+      "source_notation": "Jackson pp.674-675,709-710,712-713,716-717,722,725,727-728,731; Eqs.14.54-14.66,15.1-15.6,15.9-15.13,15.25,15.29,15.47,15.54-15.58,15.65-15.67 and Table15.1.",
+      "additional_sources_checked": [],
+      "first_pass": {
+        "method": "Read current problem and full solution, independently retrace the stated derivation, then inspect current check implementation.",
+        "mathematics_checked": "Exact relativistic endpoint, outgoing-direction average, interference cancellation and nonrelativistic limit.",
+        "falsifiable_candidate": "Candidate: incoming/outgoing interference survives the hard-sphere direction average. Discarded: its transverse outgoing vector average is zero by axial symmetry about n.",
+        "outcome": "candidate_discarded_no_new_confirmed_error"
+      },
+      "independent_final_pass": {
+        "method": "Reverse problem order; work from final expressions back to source equations using conservation, boundary conditions, dimensional checks, independent integral reductions and limiting cases rather than repeating the first derivation.",
+        "evidence": "Final route: integrate the full photon angular distribution and expand log((1+beta)/(1-beta)) in beta; the leading term is precisely the total result of 15.2.",
+        "new_confirmed_errors": 0
+      },
+      "verification": {
+        "manual_analytic_retracing": "The displayed identities and domain restrictions above were retraced; this is not a claim that numerical sampling proves all parameter values.",
+        "baseline_exit_code": 0,
+        "final_exit_code": 0,
+        "final_log": "/var/folders/93/r1t98m8d3014c24llb8j119w0000gn/T/jackson-deep-debug-team3-7iu2qgz3/check_ch15-final.log",
+        "machine_check_kind": "Symbolic identities where implemented; otherwise numerical quadrature/spectral samples with explicit tolerances."
+      },
+      "changes": [],
+      "unresolved_limitations": []
+    },
+    {
+      "problem": "15.4",
+      "inspected_sources": [
+        {
+          "file": "sections/ch15.tex",
+          "line": 272,
+          "scope": "Current complete statement, solution, every subpart, assumptions and retained errata."
+        },
+        {
+          "file": "supplementary/check_ch15.py",
+          "scope": "Current functions covering this problem, assertion logic, numerical methods and generated assets."
+        },
+        {
+          "source": "Jackson 3rd edition supplied local PDF",
+          "printed_pages": "739",
+          "pdf_pages": [
+            764
+          ],
+          "ocr_files": [
+            "ocr/p-764.txt"
+          ]
+        }
+      ],
+      "source_notation": "Jackson pp.674-675,709-710,712-713,716-717,722,725,727-728,731; Eqs.14.54-14.66,15.1-15.6,15.9-15.13,15.25,15.29,15.47,15.54-15.58,15.65-15.67 and Table15.1.",
+      "additional_sources_checked": [],
+      "first_pass": {
+        "method": "Read current problem and full solution, independently retrace the stated derivation, then inspect current check implementation.",
+        "mathematics_checked": "Coherent multi-charge soft endpoints/phases, opposite-charge pair angular integral and both decay estimates.",
+        "falsifiable_candidate": "Candidate: branching ratios multiply each conditional decay energy. Discarded: conditional and parent-averaged energies are explicitly distinguished.",
+        "outcome": "candidate_discarded_no_new_confirmed_error"
+      },
+      "independent_final_pass": {
+        "method": "Reverse problem order; work from final expressions back to source equations using conservation, boundary conditions, dimensional checks, independent integral reductions and limiting cases rather than repeating the first derivation.",
+        "evidence": "Final route: use charge-weighted final velocities and the two-body endpoint invariant; the ultrarelativistic electron and moderately relativistic pion limits give the stated separate energy fractions.",
+        "new_confirmed_errors": 0
+      },
+      "verification": {
+        "manual_analytic_retracing": "The displayed identities and domain restrictions above were retraced; this is not a claim that numerical sampling proves all parameter values.",
+        "baseline_exit_code": 0,
+        "final_exit_code": 0,
+        "final_log": "/var/folders/93/r1t98m8d3014c24llb8j119w0000gn/T/jackson-deep-debug-team3-7iu2qgz3/check_ch15-final.log",
+        "machine_check_kind": "Symbolic identities where implemented; otherwise numerical quadrature/spectral samples with explicit tolerances."
+      },
+      "changes": [],
+      "unresolved_limitations": [
+        "The classical/soft, multipole or cutoff approximation and its range are explicitly stated in the solution; numerical agreement checks that model, not a complete quantum prediction."
+      ]
+    },
+    {
+      "problem": "15.5",
+      "inspected_sources": [
+        {
+          "file": "sections/ch15.tex",
+          "line": 377,
+          "scope": "Current complete statement, solution, every subpart, assumptions and retained errata."
+        },
+        {
+          "file": "supplementary/check_ch15.py",
+          "scope": "Current functions covering this problem, assertion logic, numerical methods and generated assets."
+        },
+        {
+          "source": "Jackson 3rd edition supplied local PDF",
+          "printed_pages": "739",
+          "pdf_pages": [
+            764
+          ],
+          "ocr_files": [
+            "ocr/p-764.txt"
+          ]
+        }
+      ],
+      "source_notation": "Jackson pp.674-675,709-710,712-713,716-717,722,725,727-728,731; Eqs.14.54-14.66,15.1-15.6,15.9-15.13,15.25,15.29,15.47,15.54-15.58,15.65-15.67 and Table15.1.",
+      "additional_sources_checked": [],
+      "first_pass": {
+        "method": "Read current problem and full solution, independently retrace the stated derivation, then inspect current check implementation.",
+        "mathematics_checked": "Soft annihilation factorization, angular/integrated quantum comparison and magnetic term power counting.",
+        "falsifiable_candidate": "Candidate: spin disappearance changes the 1/epsilon soft coefficient. Discarded: its amplitude is O(omega), so its photon spectrum is O(epsilon).",
+        "outcome": "candidate_discarded_no_new_confirmed_error"
+      },
+      "independent_final_pass": {
+        "method": "Reverse problem order; work from final expressions back to source equations using conservation, boundary conditions, dimensional checks, independent integral reductions and limiting cases rather than repeating the first derivation.",
+        "evidence": "Final route: let s' approach s term by term in the supplied formula and independently integrate (1-beta^4 x^4)/(1-beta^2 x^2)^2; both universal charge coefficients and the magnetic angular integral agree.",
+        "new_confirmed_errors": 0
+      },
+      "verification": {
+        "manual_analytic_retracing": "The displayed identities and domain restrictions above were retraced; this is not a claim that numerical sampling proves all parameter values.",
+        "baseline_exit_code": 0,
+        "final_exit_code": 0,
+        "final_log": "/var/folders/93/r1t98m8d3014c24llb8j119w0000gn/T/jackson-deep-debug-team3-7iu2qgz3/check_ch15-final.log",
+        "machine_check_kind": "Symbolic identities where implemented; otherwise numerical quadrature/spectral samples with explicit tolerances."
+      },
+      "changes": [],
+      "unresolved_limitations": [
+        "The classical/soft, multipole or cutoff approximation and its range are explicitly stated in the solution; numerical agreement checks that model, not a complete quantum prediction."
+      ]
+    },
+    {
+      "problem": "15.6",
+      "inspected_sources": [
+        {
+          "file": "sections/ch15.tex",
+          "line": 451,
+          "scope": "Current complete statement, solution, every subpart, assumptions and retained errata."
+        },
+        {
+          "file": "supplementary/check_ch15.py",
+          "scope": "Current functions covering this problem, assertion logic, numerical methods and generated assets."
+        },
+        {
+          "source": "Jackson 3rd edition supplied local PDF",
+          "printed_pages": "739-740",
+          "pdf_pages": [
+            764,
+            765
+          ],
+          "ocr_files": [
+            "ocr/p-764.txt",
+            "ocr/p-765.txt"
+          ]
+        }
+      ],
+      "source_notation": "Jackson pp.674-675,709-710,712-713,716-717,722,725,727-728,731; Eqs.14.54-14.66,15.1-15.6,15.9-15.13,15.25,15.29,15.47,15.54-15.58,15.65-15.67 and Table15.1.",
+      "additional_sources_checked": [],
+      "first_pass": {
+        "method": "Read current problem and full solution, independently retrace the stated derivation, then inspect current check implementation.",
+        "mathematics_checked": "Polarization projections, azimuthal average, forward cone, polarization fraction and angular total.",
+        "falsifiable_candidate": "Candidate: positive polarization is the parallel excess. Discarded against Eq.15.10's definition: it is perpendicular minus parallel.",
+        "outcome": "candidate_discarded_no_new_confirmed_error"
+      },
+      "independent_final_pass": {
+        "method": "Reverse problem order; work from final expressions back to source equations using conservation, boundary conditions, dimensional checks, independent integral reductions and limiting cases rather than repeating the first derivation.",
+        "evidence": "Final route: the sum of the two positive polarization spectra reduces to (1+x^2)/(1+x)^4; its integral is 2/3 and its difference peaks at x=1, under gamma Delta beta<<1.",
+        "new_confirmed_errors": 0
+      },
+      "verification": {
+        "manual_analytic_retracing": "The displayed identities and domain restrictions above were retraced; this is not a claim that numerical sampling proves all parameter values.",
+        "baseline_exit_code": 0,
+        "final_exit_code": 0,
+        "final_log": "/var/folders/93/r1t98m8d3014c24llb8j119w0000gn/T/jackson-deep-debug-team3-7iu2qgz3/check_ch15-final.log",
+        "machine_check_kind": "Symbolic identities where implemented; otherwise numerical quadrature/spectral samples with explicit tolerances."
+      },
+      "changes": [],
+      "unresolved_limitations": []
+    },
+    {
+      "problem": "15.7",
+      "inspected_sources": [
+        {
+          "file": "sections/ch15.tex",
+          "line": 552,
+          "scope": "Current complete statement, solution, every subpart, assumptions and retained errata."
+        },
+        {
+          "file": "supplementary/check_ch15.py",
+          "scope": "Current functions covering this problem, assertion logic, numerical methods and generated assets."
+        },
+        {
+          "source": "Jackson 3rd edition supplied local PDF",
+          "printed_pages": "740",
+          "pdf_pages": [
+            765
+          ],
+          "ocr_files": [
+            "ocr/p-765.txt"
+          ]
+        }
+      ],
+      "source_notation": "Jackson pp.674-675,709-710,712-713,716-717,722,725,727-728,731; Eqs.14.54-14.66,15.1-15.6,15.9-15.13,15.25,15.29,15.47,15.54-15.58,15.65-15.67 and Table15.1.",
+      "additional_sources_checked": [],
+      "first_pass": {
+        "method": "Read current problem and full solution, independently retrace the stated derivation, then inspect current check implementation.",
+        "mathematics_checked": "Fragment momentum constraints, dipole/quadrupole coefficients, angular moments and fission energy budget.",
+        "falsifiable_candidate": "Candidate: the beta^4 result is the complete relativistic intensity through that order. Discarded: the solution explicitly retains the specified amplitude multipoles and identifies omitted dipole-octupole interference.",
+        "outcome": "candidate_discarded_no_new_confirmed_error"
+      },
+      "independent_final_pass": {
+        "method": "Reverse problem order; work from final expressions back to source equations using conservation, boundary conditions, dimensional checks, independent integral reductions and limiting cases rather than repeating the first derivation.",
+        "evidence": "Final route: use equal-and-opposite momenta to derive p and q, then integrate (1-epsilon/E) and its square separately; the emitted 2.30424 keV and dipole/quadrupole fractions follow.",
+        "new_confirmed_errors": 0
+      },
+      "verification": {
+        "manual_analytic_retracing": "The displayed identities and domain restrictions above were retraced; this is not a claim that numerical sampling proves all parameter values.",
+        "baseline_exit_code": 0,
+        "final_exit_code": 0,
+        "final_log": "/var/folders/93/r1t98m8d3014c24llb8j119w0000gn/T/jackson-deep-debug-team3-7iu2qgz3/check_ch15-final.log",
+        "machine_check_kind": "Symbolic identities where implemented; otherwise numerical quadrature/spectral samples with explicit tolerances."
+      },
+      "changes": [],
+      "unresolved_limitations": [
+        "The classical/soft, multipole or cutoff approximation and its range are explicitly stated in the solution; numerical agreement checks that model, not a complete quantum prediction."
+      ]
+    },
+    {
+      "problem": "15.8",
+      "inspected_sources": [
+        {
+          "file": "sections/ch15.tex",
+          "line": 647,
+          "scope": "Current complete statement, solution, every subpart, assumptions and retained errata."
+        },
+        {
+          "file": "supplementary/check_ch15.py",
+          "scope": "Current functions covering this problem, assertion logic, numerical methods and generated assets."
+        },
+        {
+          "source": "Jackson 3rd edition supplied local PDF",
+          "printed_pages": "740-741",
+          "pdf_pages": [
+            765,
+            766
+          ],
+          "ocr_files": [
+            "ocr/p-765.txt",
+            "ocr/p-766.txt"
+          ]
+        }
+      ],
+      "source_notation": "Jackson pp.674-675,709-710,712-713,716-717,722,725,727-728,731; Eqs.14.54-14.66,15.1-15.6,15.9-15.13,15.25,15.29,15.47,15.54-15.58,15.65-15.67 and Table15.1.",
+      "additional_sources_checked": [],
+      "first_pass": {
+        "method": "Read current problem and full solution, independently retrace the stated derivation, then inspect current check implementation.",
+        "mathematics_checked": "Identical-particle cancellation, contact phase, central-collision quadrupole amplitudes and impact integrals.",
+        "falsifiable_candidate": "Candidate: identical particles require another factor one-half in the classical incoming impact measure. Discarded: specified incoming particles and impact parameters are counted once.",
+        "outcome": "candidate_discarded_no_new_confirmed_error"
+      },
+      "independent_final_pass": {
+        "method": "Reverse problem order; work from final expressions back to source equations using conservation, boundary conditions, dimensional checks, independent integral reductions and limiting cases rather than repeating the first derivation.",
+        "evidence": "Final route: project the two-particle velocity/position tensor, average its azimuthal powers and check the two angular brackets each integrate to 16 pi/5; the fixed-sphere ratio is [beta^2+(kR)^2]/20.",
+        "new_confirmed_errors": 0
+      },
+      "verification": {
+        "manual_analytic_retracing": "The displayed identities and domain restrictions above were retraced; this is not a claim that numerical sampling proves all parameter values.",
+        "baseline_exit_code": 0,
+        "final_exit_code": 0,
+        "final_log": "/var/folders/93/r1t98m8d3014c24llb8j119w0000gn/T/jackson-deep-debug-team3-7iu2qgz3/check_ch15-final.log",
+        "machine_check_kind": "Symbolic identities where implemented; otherwise numerical quadrature/spectral samples with explicit tolerances."
+      },
+      "changes": [],
+      "unresolved_limitations": []
+    },
+    {
+      "problem": "15.9",
+      "inspected_sources": [
+        {
+          "file": "sections/ch15.tex",
+          "line": 750,
+          "scope": "Current complete statement, solution, every subpart, assumptions and retained errata."
+        },
+        {
+          "file": "supplementary/check_ch15.py",
+          "scope": "Current functions covering this problem, assertion logic, numerical methods and generated assets."
+        },
+        {
+          "source": "Jackson 3rd edition supplied local PDF",
+          "printed_pages": "741",
+          "pdf_pages": [
+            766
+          ],
+          "ocr_files": [
+            "ocr/p-766.txt"
+          ]
+        }
+      ],
+      "source_notation": "Jackson pp.674-675,709-710,712-713,716-717,722,725,727-728,731; Eqs.14.54-14.66,15.1-15.6,15.9-15.13,15.25,15.29,15.47,15.54-15.58,15.65-15.67 and Table15.1.",
+      "additional_sources_checked": [],
+      "first_pass": {
+        "method": "Read current problem and full solution, independently retrace the stated derivation, then inspect current check implementation.",
+        "mathematics_checked": "Screened straight-path impulse, full Fourier force, Bessel primitive and screened/unscreened logarithms.",
+        "falsifiable_candidate": "Candidate: the screening symbol alpha can be used also for e^2/(hbar c). Discarded: the solution separates alpha_fs explicitly.",
+        "outcome": "candidate_discarded_no_new_confirmed_error"
+      },
+      "independent_final_pass": {
+        "method": "Reverse problem order; work from final expressions back to source equations using conservation, boundary conditions, dimensional checks, independent integral reductions and limiting cases rather than repeating the first derivation.",
+        "evidence": "Final route: differentiate the Fourier-transformed Yukawa potential in b and integrate its time derivative for the longitudinal force; positivity of integral x K1^2 controls both cutoff limits.",
+        "new_confirmed_errors": 0
+      },
+      "verification": {
+        "manual_analytic_retracing": "The displayed identities and domain restrictions above were retraced; this is not a claim that numerical sampling proves all parameter values.",
+        "baseline_exit_code": 0,
+        "final_exit_code": 0,
+        "final_log": "/var/folders/93/r1t98m8d3014c24llb8j119w0000gn/T/jackson-deep-debug-team3-7iu2qgz3/check_ch15-final.log",
+        "machine_check_kind": "Symbolic identities where implemented; otherwise numerical quadrature/spectral samples with explicit tolerances."
+      },
+      "changes": [],
+      "unresolved_limitations": [
+        "The classical/soft, multipole or cutoff approximation and its range are explicitly stated in the solution; numerical agreement checks that model, not a complete quantum prediction."
+      ]
+    },
+    {
+      "problem": "15.10",
+      "inspected_sources": [
+        {
+          "file": "sections/ch15.tex",
+          "line": 888,
+          "scope": "Current complete statement, solution, every subpart, assumptions and retained errata."
+        },
+        {
+          "file": "supplementary/check_ch15.py",
+          "scope": "Current functions covering this problem, assertion logic, numerical methods and generated assets."
+        },
+        {
+          "source": "Jackson 3rd edition supplied local PDF",
+          "printed_pages": "741",
+          "pdf_pages": [
+            766
+          ],
+          "ocr_files": [
+            "ocr/p-766.txt"
+          ]
+        }
+      ],
+      "source_notation": "Jackson pp.674-675,709-710,712-713,716-717,722,725,727-728,731; Eqs.14.54-14.66,15.1-15.6,15.9-15.13,15.25,15.29,15.47,15.54-15.58,15.65-15.67 and Table15.1.",
+      "additional_sources_checked": [],
+      "first_pass": {
+        "method": "Read current problem and full solution, independently retrace the stated derivation, then inspect current check implementation.",
+        "mathematics_checked": "Hyperbolic master integral, spectral components, impact primitive, soft logarithm and simultaneous-large-order asymptotics.",
+        "falsifiable_candidate": "Candidate: a fixed-order K asymptotic suffices at omega/omega0 tending to infinity. Discarded: order and argument grow together; the cubic turning point gives the required coefficient.",
+        "outcome": "candidate_discarded_no_new_confirmed_error"
+      },
+      "independent_final_pass": {
+        "method": "Reverse problem order; work from final expressions back to source equations using conservation, boundary conditions, dimensional checks, independent integral reductions and limiting cases rather than repeating the first derivation.",
+        "evidence": "Final route: independently integrate the Larmor power over impact parameter before radius; the total energy requires integral exp(-pi s)s K_is(s)(-K'_is(s)) ds=pi/6. New numerical regression agrees; attraction gives the stated formal point-center plateau.",
+        "new_confirmed_errors": 0
+      },
+      "verification": {
+        "manual_analytic_retracing": "The displayed identities and domain restrictions above were retraced; this is not a claim that numerical sampling proves all parameter values.",
+        "baseline_exit_code": 0,
+        "final_exit_code": 0,
+        "final_log": "/var/folders/93/r1t98m8d3014c24llb8j119w0000gn/T/jackson-deep-debug-team3-7iu2qgz3/check_ch15-final.log",
+        "machine_check_kind": "Symbolic identities where implemented; otherwise numerical quadrature/spectral samples with explicit tolerances."
+      },
+      "changes": [
+        "Added independent Larmor total-energy spectral-moment regression."
+      ],
+      "unresolved_limitations": [
+        "The classical/soft, multipole or cutoff approximation and its range are explicitly stated in the solution; numerical agreement checks that model, not a complete quantum prediction."
+      ]
+    },
+    {
+      "problem": "15.11",
+      "inspected_sources": [
+        {
+          "file": "sections/ch15.tex",
+          "line": 1059,
+          "scope": "Current complete statement, solution, every subpart, assumptions and retained errata."
+        },
+        {
+          "file": "supplementary/check_ch15.py",
+          "scope": "Current functions covering this problem, assertion logic, numerical methods and generated assets."
+        },
+        {
+          "source": "Jackson 3rd edition supplied local PDF",
+          "printed_pages": "742",
+          "pdf_pages": [
+            767
+          ],
+          "ocr_files": [
+            "ocr/p-767.txt"
+          ]
+        }
+      ],
+      "source_notation": "Jackson pp.674-675,709-710,712-713,716-717,722,725,727-728,731; Eqs.14.54-14.66,15.1-15.6,15.9-15.13,15.25,15.29,15.47,15.54-15.58,15.65-15.67 and Table15.1.",
+      "additional_sources_checked": [
+        "build/ch15-source/Wolynec-v3-p375.png (original Fig.1; NBS sheet368)",
+        "build/ch15-source/Wolynec-fig2.png (original Fig.2; NBS sheet84)",
+        "build/ch15-source/Wolynec-v7-p201.png (original Fig.3; NBS sheet186)",
+        "build/ch15-source/Wolynec-v9-p431.png (original Figs.4-5; NBS sheet425)"
+      ],
+      "first_pass": {
+        "method": "Read current problem and full solution, independently retrace the stated derivation, then inspect current check implementation.",
+        "mathematics_checked": "Equivalent-photon cutoff, finite/narrow resonance integrals, F normalization, table and original figure reproductions.",
+        "falsifiable_candidate": "Candidate: F has residual area dimensions or a missing resonance strength. Discarded: dividing by Z^2 r0^2 cancels the radiator area and the same S cancels between numerator and denominator.",
+        "outcome": "candidate_discarded_no_new_confirmed_error"
+      },
+      "independent_final_pass": {
+        "method": "Reverse problem order; work from final expressions back to source equations using conservation, boundary conditions, dimensional checks, independent integral reductions and limiting cases rather than repeating the first derivation.",
+        "evidence": "Final route: compare the computed 1/log(E^2) trend and scale with the five original plots reproduced on NBS data sheets 368,84,186,425; retain approximate plot readings and incomplete-screening limitations.",
+        "new_confirmed_errors": 0
+      },
+      "verification": {
+        "manual_analytic_retracing": "The displayed identities and domain restrictions above were retraced; this is not a claim that numerical sampling proves all parameter values.",
+        "baseline_exit_code": 0,
+        "final_exit_code": 0,
+        "final_log": "/var/folders/93/r1t98m8d3014c24llb8j119w0000gn/T/jackson-deep-debug-team3-7iu2qgz3/check_ch15-final.log",
+        "machine_check_kind": "Symbolic identities where implemented; otherwise numerical quadrature/spectral samples with explicit tolerances."
+      },
+      "changes": [],
+      "unresolved_limitations": [
+        "Approximate readings of original plots as reproduced in the NBS compilation; no numerical dataset or statistical refit. Complete-screening and delta-resonance approximations are only qualitative over the historical 20-40 MeV interval."
+      ]
+    },
+    {
+      "problem": "15.12",
+      "inspected_sources": [
+        {
+          "file": "sections/ch15.tex",
+          "line": 1198,
+          "scope": "Current complete statement, solution, every subpart, assumptions and retained errata."
+        },
+        {
+          "file": "supplementary/check_ch15.py",
+          "scope": "Current functions covering this problem, assertion logic, numerical methods and generated assets."
+        },
+        {
+          "source": "Jackson 3rd edition supplied local PDF",
+          "printed_pages": "742-743",
+          "pdf_pages": [
+            767,
+            768
+          ],
+          "ocr_files": [
+            "ocr/p-767.txt",
+            "ocr/p-768.txt"
+          ]
+        }
+      ],
+      "source_notation": "Jackson pp.674-675,709-710,712-713,716-717,722,725,727-728,731; Eqs.14.54-14.66,15.1-15.6,15.9-15.13,15.25,15.29,15.47,15.54-15.58,15.65-15.67 and Table15.1.",
+      "additional_sources_checked": [],
+      "first_pass": {
+        "method": "Read current problem and full solution, independently retrace the stated derivation, then inspect current check implementation.",
+        "mathematics_checked": "Rutherford recoil law, reduced-mass endpoint, photoabsorption virtual-photon spectrum, moments and stopping logarithm.",
+        "falsifiable_candidate": "Candidate: distant collisions dominate energy loss by the same factor as event number. Discarded: their Q^-4 spectrum concentrates near I, while close Q^-2 events carry the large logarithm.",
+        "outcome": "candidate_discarded_no_new_confirmed_error"
+      },
+      "independent_final_pass": {
+        "method": "Reverse problem order; work from final expressions back to source equations using conservation, boundary conditions, dimensional checks, independent integral reductions and limiting cases rather than repeating the first derivation.",
+        "evidence": "Final route: use the dipole sum-rule area to reduce constants and integrate the number/energy moments with different powers of y; the resulting two logarithms give Bethe's leading coefficient and I_eff~1.47 I.",
+        "new_confirmed_errors": 0
+      },
+      "verification": {
+        "manual_analytic_retracing": "The displayed identities and domain restrictions above were retraced; this is not a claim that numerical sampling proves all parameter values.",
+        "baseline_exit_code": 0,
+        "final_exit_code": 0,
+        "final_log": "/var/folders/93/r1t98m8d3014c24llb8j119w0000gn/T/jackson-deep-debug-team3-7iu2qgz3/check_ch15-final.log",
+        "machine_check_kind": "Symbolic identities where implemented; otherwise numerical quadrature/spectral samples with explicit tolerances."
+      },
+      "changes": [],
+      "unresolved_limitations": [
+        "The classical/soft, multipole or cutoff approximation and its range are explicitly stated in the solution; numerical agreement checks that model, not a complete quantum prediction."
+      ]
+    },
+    {
+      "problem": "15.13",
+      "inspected_sources": [
+        {
+          "file": "sections/ch15.tex",
+          "line": 1330,
+          "scope": "Current complete statement, solution, every subpart, assumptions and retained errata."
+        },
+        {
+          "file": "supplementary/check_ch15.py",
+          "scope": "Current functions covering this problem, assertion logic, numerical methods and generated assets."
+        },
+        {
+          "source": "Jackson 3rd edition supplied local PDF",
+          "printed_pages": "743",
+          "pdf_pages": [
+            768
+          ],
+          "ocr_files": [
+            "ocr/p-768.txt"
+          ]
+        }
+      ],
+      "source_notation": "Jackson pp.674-675,709-710,712-713,716-717,722,725,727-728,731; Eqs.14.54-14.66,15.1-15.6,15.9-15.13,15.25,15.29,15.47,15.54-15.58,15.65-15.67 and Table15.1.",
+      "additional_sources_checked": [],
+      "first_pass": {
+        "method": "Read current problem and full solution, independently retrace the stated derivation, then inspect current check implementation.",
+        "mathematics_checked": "Muon endpoint spectrum, perpendicular-photon recoil kinematics, 17 MeV bound and matching the experimental cut.",
+        "falsifiable_candidate": "Candidate: epsilon>1.7 MeV equals the measured T_mu<3.4 MeV cut. Discarded: exact perpendicular kinematics gives epsilon>3.3711 MeV.",
+        "outcome": "candidate_discarded_no_new_confirmed_error"
+      },
+      "independent_final_pass": {
+        "method": "Reverse problem order; work from final expressions back to source equations using conservation, boundary conditions, dimensional checks, independent integral reductions and limiting cases rather than repeating the first derivation.",
+        "evidence": "Final route: square the neutrino mass shell and solve for T_mu(epsilon); endpoints and the cut reproduce energy conservation, while the improved count is explicitly a soft-spectrum extrapolation.",
+        "new_confirmed_errors": 0
+      },
+      "verification": {
+        "manual_analytic_retracing": "The displayed identities and domain restrictions above were retraced; this is not a claim that numerical sampling proves all parameter values.",
+        "baseline_exit_code": 0,
+        "final_exit_code": 0,
+        "final_log": "/var/folders/93/r1t98m8d3014c24llb8j119w0000gn/T/jackson-deep-debug-team3-7iu2qgz3/check_ch15-final.log",
+        "machine_check_kind": "Symbolic identities where implemented; otherwise numerical quadrature/spectral samples with explicit tolerances."
+      },
+      "changes": [],
+      "unresolved_limitations": [
+        "The classical/soft, multipole or cutoff approximation and its range are explicitly stated in the solution; numerical agreement checks that model, not a complete quantum prediction."
+      ]
+    },
+    {
+      "problem": "15.14",
+      "inspected_sources": [
+        {
+          "file": "sections/ch15.tex",
+          "line": 1406,
+          "scope": "Current complete statement, solution, every subpart, assumptions and retained errata."
+        },
+        {
+          "file": "supplementary/check_ch15.py",
+          "scope": "Current functions covering this problem, assertion logic, numerical methods and generated assets."
+        },
+        {
+          "source": "Jackson 3rd edition supplied local PDF",
+          "printed_pages": "743",
+          "pdf_pages": [
+            768
+          ],
+          "ocr_files": [
+            "ocr/p-768.txt"
+          ]
+        }
+      ],
+      "source_notation": "Jackson pp.674-675,709-710,712-713,716-717,722,725,727-728,731; Eqs.14.54-14.66,15.1-15.6,15.9-15.13,15.25,15.29,15.47,15.54-15.58,15.65-15.67 and Table15.1.",
+      "additional_sources_checked": [],
+      "first_pass": {
+        "method": "Read current problem and full solution, independently retrace the stated derivation, then inspect current check implementation.",
+        "mathematics_checked": "Relativistic electron speed, endpoint coefficient, percent-level tail and kinetic/total-energy cut distinction.",
+        "falsifiable_candidate": "Candidate: 99 percent of line energy unambiguously means total relativistic energy. Discarded: the solution gives both interpretations and identifies the measured kinetic line.",
+        "outcome": "candidate_discarded_no_new_confirmed_error"
+      },
+      "independent_final_pass": {
+        "method": "Reverse problem order; work from final expressions back to source equations using conservation, boundary conditions, dimensional checks, independent integral reductions and limiting cases rather than repeating the first derivation.",
+        "evidence": "Final route: angular integration of the single-charge spectrum gives C, then the band integral is C log(100); its observability claim remains conditional on resolution/background rather than assumed apparatus performance.",
+        "new_confirmed_errors": 0
+      },
+      "verification": {
+        "manual_analytic_retracing": "The displayed identities and domain restrictions above were retraced; this is not a claim that numerical sampling proves all parameter values.",
+        "baseline_exit_code": 0,
+        "final_exit_code": 0,
+        "final_log": "/var/folders/93/r1t98m8d3014c24llb8j119w0000gn/T/jackson-deep-debug-team3-7iu2qgz3/check_ch15-final.log",
+        "machine_check_kind": "Symbolic identities where implemented; otherwise numerical quadrature/spectral samples with explicit tolerances."
+      },
+      "changes": [],
+      "unresolved_limitations": [
+        "The classical/soft, multipole or cutoff approximation and its range are explicitly stated in the solution; numerical agreement checks that model, not a complete quantum prediction."
+      ]
+    },
+    {
+      "problem": "15.15",
+      "inspected_sources": [
+        {
+          "file": "sections/ch15.tex",
+          "line": 1457,
+          "scope": "Current complete statement, solution, every subpart, assumptions and retained errata."
+        },
+        {
+          "file": "supplementary/check_ch15.py",
+          "scope": "Current functions covering this problem, assertion logic, numerical methods and generated assets."
+        },
+        {
+          "source": "Jackson 3rd edition supplied local PDF",
+          "printed_pages": "743",
+          "pdf_pages": [
+            768
+          ],
+          "ocr_files": [
+            "ocr/p-768.txt"
+          ]
+        }
+      ],
+      "source_notation": "Jackson pp.674-675,709-710,712-713,716-717,722,725,727-728,731; Eqs.14.54-14.66,15.1-15.6,15.9-15.13,15.25,15.29,15.47,15.54-15.58,15.65-15.67 and Table15.1.",
+      "additional_sources_checked": [],
+      "first_pass": {
+        "method": "Read current problem and full solution, independently retrace the stated derivation, then inspect current check implementation.",
+        "mathematics_checked": "Three-pion charge-weighted velocity, dipole cancellation, conditional branching and available-energy model.",
+        "falsifiable_candidate": "Candidate: a numerical rate is model-independent without a Dalitz distribution. Discarded: a constant-amplitude symmetric phase-space mean is explicitly assumed.",
+        "outcome": "candidate_discarded_no_new_confirmed_error"
+      },
+      "independent_final_pass": {
+        "method": "Reverse problem order; work from final expressions back to source equations using conservation, boundary conditions, dimensional checks, independent integral reductions and limiting cases rather than repeating the first derivation.",
+        "evidence": "Final route: momentum conservation reduces the amplitude to -2e v_minus/c; the soft logarithm is fixed, while the reduced-budget constant and exact recoil endpoint are explicitly labeled approximation-dependent.",
+        "new_confirmed_errors": 0
+      },
+      "verification": {
+        "manual_analytic_retracing": "The displayed identities and domain restrictions above were retraced; this is not a claim that numerical sampling proves all parameter values.",
+        "baseline_exit_code": 0,
+        "final_exit_code": 0,
+        "final_log": "/var/folders/93/r1t98m8d3014c24llb8j119w0000gn/T/jackson-deep-debug-team3-7iu2qgz3/check_ch15-final.log",
+        "machine_check_kind": "Symbolic identities where implemented; otherwise numerical quadrature/spectral samples with explicit tolerances."
+      },
+      "changes": [],
+      "unresolved_limitations": [
+        "The classical/soft, multipole or cutoff approximation and its range are explicitly stated in the solution; numerical agreement checks that model, not a complete quantum prediction."
+      ]
+    },
+    {
+      "problem": "15.16",
+      "inspected_sources": [
+        {
+          "file": "sections/ch15.tex",
+          "line": 1541,
+          "scope": "Current complete statement, solution, every subpart, assumptions and retained errata."
+        },
+        {
+          "file": "supplementary/check_ch15.py",
+          "scope": "Current functions covering this problem, assertion logic, numerical methods and generated assets."
+        },
+        {
+          "source": "Jackson 3rd edition supplied local PDF",
+          "printed_pages": "743-744",
+          "pdf_pages": [
+            768,
+            769
+          ],
+          "ocr_files": [
+            "ocr/p-768.txt",
+            "ocr/p-769.txt"
+          ]
+        }
+      ],
+      "source_notation": "Jackson pp.674-675,709-710,712-713,716-717,722,725,727-728,731; Eqs.14.54-14.66,15.1-15.6,15.9-15.13,15.25,15.29,15.47,15.54-15.58,15.65-15.67 and Table15.1.",
+      "additional_sources_checked": [
+        "build/ch15-source/Edwards-fig6.png; build/ch15-source/Edwards1972.pdf (COO-1195-230 scan Fig.6, PDF p.26)"
+      ],
+      "first_pass": {
+        "method": "Read current problem and full solution, independently retrace the stated derivation, then inspect current check implementation.",
+        "mathematics_checked": "Kaon two-body values, six source histogram bins, exact photon kinematics, phase-space normalization and rate.",
+        "falsifiable_candidate": "Candidate: fixed neutral momentum, parallel photon/pion and exact energy conservation can coexist for a nonzero photon. Discarded against the existing erratum: monotonic E-p forces epsilon=0.",
+        "outcome": "candidate_discarded_no_new_confirmed_error"
+      },
+      "independent_final_pass": {
+        "method": "Reverse problem order; work from final expressions back to source equations using conservation, boundary conditions, dimensional checks, independent integral reductions and limiting cases rather than repeating the first derivation.",
+        "evidence": "Final route: cancel W times -partial_T log(epsilon) algebraically to p/[p_star(E_star-E)] and perform an independent one-dimensional rate integral; 2.5927975506e-4 agrees with the two existing integrations. Re-read all six bins in Edwards Fig.6 and retain the 58 versus 55 MeV cut distinction.",
+        "new_confirmed_errors": 0
+      },
+      "verification": {
+        "manual_analytic_retracing": "The displayed identities and domain restrictions above were retraced; this is not a claim that numerical sampling proves all parameter values.",
+        "baseline_exit_code": 0,
+        "final_exit_code": 0,
+        "final_log": "/var/folders/93/r1t98m8d3014c24llb8j119w0000gn/T/jackson-deep-debug-team3-7iu2qgz3/check_ch15-final.log",
+        "machine_check_kind": "Symbolic identities where implemented; otherwise numerical quadrature/spectral samples with explicit tolerances."
+      },
+      "changes": [
+        "Added independent one-dimensional phase-space-cancellation branching-ratio regression."
+      ],
+      "unresolved_limitations": [
+        "Finite-cut photon rates use an explicitly stated constant-amplitude inner-bremsstrahlung model; direct-emission amplitudes are not determined by the classical problem. Historical plot uses 58 MeV, while requested rate uses 55 MeV."
+      ]
+    }
+  ],
+  "frozen_sha256": {
+    "sections/ch15.tex": "b6aff47776afae98aeb57e885c38180d598083129d8871a3f12b35e40345898b",
+    "supplementary/ch15_electrodisintegration.tex": "03eb8efd3cfc8542d0274bdcd8aba19bc6f8c26eb28b4a0127726b0249bbc696",
+    "supplementary/ch15_energy_transfer.tex": "2cc403d51ecb067ba35885ae940fce8afd3879826d2c6261fbf8dc7e8633602e",
+    "supplementary/ch15_hard_sphere.tex": "cf2479b9c01c076bdf359ca691bd1f0406540bdb125e0698e06d9735ca3efcbb",
+    "supplementary/ch15_kaon_angles.tex": "9aade8159bcf42f5bf5d3bf6c9ea0d747aa7e9b2fcfe692e8fb621a40cc7e2b2",
+    "supplementary/check_ch15.py": "b52a1e3267374ced5d06e2f2750243c3888f8c3a8b72f33d0daa5e1d93c8f71b"
+  },
+  "validation": {
+    "isolated_compile": [
+      {
+        "command": [
+          "pdflatex",
+          "-interaction=nonstopmode",
+          "-halt-on-error",
+          "review.tex"
+        ],
+        "cwd": "/var/folders/93/r1t98m8d3014c24llb8j119w0000gn/T/jackson-deep-debug-team3-7iu2qgz3/compile",
+        "pass": 1,
+        "exit_code": 0,
+        "seconds": 28.98,
+        "log": "/var/folders/93/r1t98m8d3014c24llb8j119w0000gn/T/jackson-deep-debug-team3-7iu2qgz3/compile/pdflatex-1.log",
+        "tail": [
+          "mbols/msbm10.pfb>",
+          "Output written on review.pdf (144 pages, 1118220 bytes).",
+          "Transcript written on review.log."
+        ]
+      },
+      {
+        "command": [
+          "pdflatex",
+          "-interaction=nonstopmode",
+          "-halt-on-error",
+          "review.tex"
+        ],
+        "cwd": "/var/folders/93/r1t98m8d3014c24llb8j119w0000gn/T/jackson-deep-debug-team3-7iu2qgz3/compile",
+        "pass": 2,
+        "exit_code": 0,
+        "seconds": 41.444,
+        "log": "/var/folders/93/r1t98m8d3014c24llb8j119w0000gn/T/jackson-deep-debug-team3-7iu2qgz3/compile/pdflatex-2.log",
+        "tail": [
+          "sbm10.pfb>",
+          "Output written on review.pdf (144 pages, 1118220 bytes).",
+          "Transcript written on review.log."
+        ]
+      }
+    ],
+    "current_tex_and_referenced_assets_match_compiled_copy": true,
+    "render_manifest": "/private/var/folders/93/r1t98m8d3014c24llb8j119w0000gn/T/jackson-deep-debug-team3-7iu2qgz3/render-results.json",
+    "pdf_pages": 144,
+    "pdftotext_exit": 0,
+    "pdftoppm_exit": 0,
+    "montage_initial_exit": 1,
+    "montage_initial_failure": "montage: unable to read font `' @ error/annotate.c/RenderFreetype/1660.",
+    "montage_resolution": "Supplied the verified existing Helvetica.ttc font; all nine contact-sheet commands subsequently exited 0.",
+    "montage_retry_exits": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "visual_inspection": "All nine contact sheets (all 144 pages) inspected; full pages 71 and 141-144 separately inspected. No clipped formulas/plots or missing separation found.",
+    "latex_diagnostic_scan": [],
+    "prefixes_checked": 16,
+    "ledger_generation_observed_exits": [
+      1,
+      0
+    ],
+    "ledger_generation_resolution": "First temporary generator used a bare vertical-bar separator that also occurred inside a mathematical absolute value. Replaced it with explicit Candidate/Confirmed and Final route field delimiters; regenerated all 104 entries and validated their IDs, JSON syntax and hashes successfully.",
+    "numerical_evidence_limit": "Passing samples and symbolic identities have the coverage stated in the current scripts; they are not an exhaustive theorem proof for every parameter."
+  }
+}

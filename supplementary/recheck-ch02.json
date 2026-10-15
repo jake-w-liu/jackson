@@ -1,0 +1,454 @@
+{
+  "chapter": 2,
+  "review_date": "2026-10-03",
+  "reviewer": "independent chapter03 agent; these chapters were authored by other agents",
+  "scope": "Every original problem, every solution and all subparts; independent mathematical reconstruction, source notation and pedagogical continuity.",
+  "problem_count": 30,
+  "chapter_notation_checks": [
+    "SI, confirmed by the original chapter header on printed p.86 (PDF111) and the epsilon_0 pressure/energy factors in Problems 2.1 and 2.5.",
+    "The two-dimensional Green function retains Jackson's Laplacian normalization -4*pi*delta, checked directly against Problems 2.15 and 2.17 on printed pp.89-90 (PDF114-115); the physical potential has the corresponding 1/(4*pi*epsilon_0).",
+    "Fourier angular factors, radial exponents and zero modes were checked against the original statements on printed pp.89-93 (PDF114-118). Temporary dimensionless radii are explicitly defined in their solutions."
+  ],
+  "checks_command": "python3 -W error supplementary/check_ch02.py --write-assets --images supplementary/ch02_images.csv",
+  "checks_log": "build/recheck-ch02-checks.log",
+  "compile_command": "pdflatex -interaction=nonstopmode -halt-on-error -output-directory=build build/recheck-ch02.tex",
+  "compile_log": "build/recheck-ch02.log",
+  "render_directory": "build/recheck-render-ch02",
+  "validation": {
+    "python_warnings_as_errors_exit_code": 0,
+    "temporary_chapter_compile_exit_code": 0,
+    "compiled_pages": 38,
+    "latex_warning_overfull_underfull_scan": "No warnings or box diagnostics in the final chapter log.",
+    "visual_review": "Every rendered page inspected in contact sheets; changed mathematical passages additionally inspected at 120 dpi.",
+    "problem_spacing_and_solution_slots": "Every problem retains Needspace{5 baselineskip}, par bigskip and exactly one nonempty solution slot.",
+    "malformed_math_typography_scan": "No remaining broken command fragments, literal multiplication commas or doubled-backslash thin-space candidates in the reviewed chapters."
+  },
+  "tex_sha256": "441f5cc76b2999934a6a2d2552a75a851afb5293dc29e79f07b43bcb87fe2842",
+  "script_sha256": "eaf4ec57b6430b7b4f88229112c4021ce36ad672933c3f2e4097fbe1109e7746",
+  "problems": [
+    {
+      "problem_id": "2.1",
+      "mathematics_checked": "Differentiated the plane image potential, integrated induced charge and Maxwell pressure, and integrated the removal work; checked the factor one-half in image energy and the electron-volt conversion.",
+      "derivation_pedagogy_changes": [],
+      "notation_and_source_checks": [
+        "Original problem: printed pp.85, PDF pp.110; inspected local OCR and compared every part with the TeX statement."
+      ],
+      "evidence": [
+        "supplementary/check_ch02.py::check_01_05",
+        "Independent manual reconstruction of the mathematics described above, including each requested subpart and approximation assumptions."
+      ],
+      "unresolved_limitations": [],
+      "status": "reviewed"
+    },
+    {
+      "problem_id": "2.2",
+      "mathematics_checked": "Checked inversion geometry for an internal point charge, inward conductor normal, total induced charge, outward image force and the grounded/fixed-voltage/isolated-charge distinctions.",
+      "derivation_pedagogy_changes": [],
+      "notation_and_source_checks": [
+        "Original problem: printed pp.85, PDF pp.110; inspected local OCR and compared every part with the TeX statement."
+      ],
+      "evidence": [
+        "supplementary/check_ch02.py::check_01_05",
+        "Independent manual reconstruction of the mathematics described above, including each requested subpart and approximation assumptions."
+      ],
+      "unresolved_limitations": [],
+      "status": "reviewed"
+    },
+    {
+      "problem_id": "2.3",
+      "mathematics_checked": "Reconstructed all four line images; checked both zero boundaries and tangential fields, arctangent charge partition, and the quadrupolar far-field coefficient.",
+      "derivation_pedagogy_changes": [],
+      "notation_and_source_checks": [
+        "Original problem: printed pp.85-86, PDF pp.110-111; inspected local OCR and compared every part with the TeX statement."
+      ],
+      "evidence": [
+        "supplementary/check_ch02.py::check_01_05",
+        "Independent manual reconstruction of the mathematics described above, including each requested subpart and approximation assumptions."
+      ],
+      "unresolved_limitations": [],
+      "status": "reviewed"
+    },
+    {
+      "problem_id": "2.4",
+      "mathematics_checked": "Derived the dimensionless force equation and monotonic root function, the golden-ratio separation, the doubled/halved sphere charges and the near-plane force limit; retained the corrected printed answer.",
+      "derivation_pedagogy_changes": [],
+      "notation_and_source_checks": [
+        "Original problem: printed pp.86, PDF pp.111; inspected local OCR and compared every part with the TeX statement."
+      ],
+      "evidence": [
+        "supplementary/check_ch02.py::check_01_05",
+        "Independent manual reconstruction of the mathematics described above, including each requested subpart and approximation assumptions."
+      ],
+      "unresolved_limitations": [],
+      "status": "reviewed"
+    },
+    {
+      "problem_id": "2.5",
+      "mathematics_checked": "Integrated both grounded and isolated-sphere forces and differentiated the corresponding energies; distinguished preexisting sphere charge energy from half the induced-charge interaction.",
+      "derivation_pedagogy_changes": [],
+      "notation_and_source_checks": [
+        "Original problem: printed pp.86, PDF pp.111; inspected local OCR and compared every part with the TeX statement."
+      ],
+      "evidence": [
+        "supplementary/check_ch02.py::check_01_05",
+        "Independent manual reconstruction of the mathematics described above, including each requested subpart and approximation assumptions."
+      ],
+      "unresolved_limitations": [],
+      "status": "reviewed"
+    },
+    {
+      "problem_id": "2.6",
+      "mathematics_checked": "Retraced the coupled seed-charge constraints, image recursion and convergence bound; compared surface voltages, Maxwell stress and energy differentiation; checked the contact capacitance and corrected contact-force ratio.",
+      "derivation_pedagogy_changes": [],
+      "notation_and_source_checks": [
+        "Original problem: printed pp.86-87, PDF pp.111-112; inspected local OCR and compared every part with the TeX statement."
+      ],
+      "evidence": [
+        "supplementary/check_ch02.py::check_06",
+        "Independent manual reconstruction of the mathematics described above, including each requested subpart and approximation assumptions."
+      ],
+      "unresolved_limitations": [],
+      "status": "reviewed"
+    },
+    {
+      "problem_id": "2.7",
+      "mathematics_checked": "Differentiated the half-space Dirichlet Green function, integrated the disk on axis, and checked the uniform far-field expansion and its agreement with the axial series.",
+      "derivation_pedagogy_changes": [],
+      "notation_and_source_checks": [
+        "Original problem: printed pp.87, PDF pp.112; inspected local OCR and compared every part with the TeX statement."
+      ],
+      "evidence": [
+        "supplementary/check_ch02.py::check_07_11",
+        "Independent manual reconstruction of the mathematics described above, including each requested subpart and approximation assumptions."
+      ],
+      "unresolved_limitations": [],
+      "status": "reviewed"
+    },
+    {
+      "problem_id": "2.8",
+      "mathematics_checked": "Completed the equipotential circles, two-cylinder geometry and capacitance; checked disjoint and nested cases, the large-separation correction and the concentric-cylinder limit.",
+      "derivation_pedagogy_changes": [],
+      "notation_and_source_checks": [
+        "Original problem: printed pp.88, PDF pp.113; inspected local OCR and compared every part with the TeX statement."
+      ],
+      "evidence": [
+        "supplementary/check_ch02.py::check_07_11",
+        "Independent manual reconstruction of the mathematics described above, including each requested subpart and approximation assumptions."
+      ],
+      "unresolved_limitations": [],
+      "status": "reviewed"
+    },
+    {
+      "problem_id": "2.9",
+      "mathematics_checked": "Integrated the electric pressure on each hemisphere, including the external-field and net-charge cross term; distinguished separation force from translation of the complete sphere.",
+      "derivation_pedagogy_changes": [],
+      "notation_and_source_checks": [
+        "Original problem: printed pp.88, PDF pp.113; inspected local OCR and compared every part with the TeX statement."
+      ],
+      "evidence": [
+        "supplementary/check_ch02.py::check_07_11",
+        "Independent manual reconstruction of the mathematics described above, including each requested subpart and approximation assumptions."
+      ],
+      "unresolved_limitations": [],
+      "status": "reviewed"
+    },
+    {
+      "problem_id": "2.10",
+      "mathematics_checked": "Reconstructed the uniform-field hemisphere potential and four point-charge images; checked plane and boss charge densities, the rim limit and the integrated boss charge.",
+      "derivation_pedagogy_changes": [],
+      "notation_and_source_checks": [
+        "Original problem: printed pp.88, PDF pp.113; inspected local OCR and compared every part with the TeX statement."
+      ],
+      "evidence": [
+        "supplementary/check_ch02.py::check_07_11",
+        "Independent manual reconstruction of the mathematics described above, including each requested subpart and approximation assumptions."
+      ],
+      "unresolved_limitations": [],
+      "status": "reviewed"
+    },
+    {
+      "problem_id": "2.11",
+      "mathematics_checked": "Checked the line-image location and strength, voltage fixed by the infinity convention, Poisson-kernel surface charge, its integral and the attractive force per unit length.",
+      "derivation_pedagogy_changes": [],
+      "notation_and_source_checks": [
+        "Original problem: printed pp.88, PDF pp.113; inspected local OCR and compared every part with the TeX statement."
+      ],
+      "evidence": [
+        "supplementary/check_ch02.py::check_07_11",
+        "Independent manual reconstruction of the mathematics described above, including each requested subpart and approximation assumptions."
+      ],
+      "unresolved_limitations": [],
+      "status": "reviewed"
+    },
+    {
+      "problem_id": "2.12",
+      "mathematics_checked": "Summed the circular Fourier kernel and checked its action on independent sine/cosine modes; retained the exterior zero-mode/infinity compatibility condition.",
+      "derivation_pedagogy_changes": [],
+      "notation_and_source_checks": [
+        "Original problem: printed pp.89, PDF pp.114; inspected local OCR and compared every part with the TeX statement."
+      ],
+      "evidence": [
+        "supplementary/check_ch02.py::check_12_21",
+        "Independent manual reconstruction of the mathematics described above, including each requested subpart and approximation assumptions."
+      ],
+      "unresolved_limitations": [],
+      "status": "reviewed"
+    },
+    {
+      "problem_id": "2.13",
+      "mathematics_checked": "Calculated the odd Fourier coefficients, summed the arctangent and differentiated the inner-surface normal; checked the two sides of each gap and the ideal edge singularity.",
+      "derivation_pedagogy_changes": [],
+      "notation_and_source_checks": [
+        "Original problem: printed pp.89, PDF pp.114; inspected local OCR and compared every part with the TeX statement."
+      ],
+      "evidence": [
+        "supplementary/check_ch02.py::check_12_21",
+        "Independent manual reconstruction of the mathematics described above, including each requested subpart and approximation assumptions."
+      ],
+      "unresolved_limitations": [],
+      "status": "reviewed"
+    },
+    {
+      "problem_id": "2.14",
+      "mathematics_checked": "Checked the 4n+2 Fourier selection, complex artanh sum, real/imaginary level curves and field-line directions; differentiated the potential to verify Laplace's equation.",
+      "derivation_pedagogy_changes": [],
+      "notation_and_source_checks": [
+        "Original problem: printed pp.89, PDF pp.114; inspected local OCR and compared every part with the TeX statement."
+      ],
+      "evidence": [
+        "supplementary/check_ch02.py::check_12_21",
+        "Independent manual reconstruction of the mathematics described above, including each requested subpart and approximation assumptions."
+      ],
+      "unresolved_limitations": [],
+      "status": "reviewed"
+    },
+    {
+      "problem_id": "2.15",
+      "mathematics_checked": "Enforced the square Green-function endpoint values and source derivative jump, including the sine-series normalization, and recovered the displayed hyperbolic coefficient.",
+      "derivation_pedagogy_changes": [],
+      "notation_and_source_checks": [
+        "Original problem: printed pp.89, PDF pp.114; inspected local OCR and compared every part with the TeX statement."
+      ],
+      "evidence": [
+        "supplementary/check_ch02.py::check_12_21",
+        "Independent manual reconstruction of the mathematics described above, including each requested subpart and approximation assumptions."
+      ],
+      "unresolved_limitations": [],
+      "status": "reviewed"
+    },
+    {
+      "problem_id": "2.16",
+      "mathematics_checked": "Integrated the square Green function over a uniform source, including parity selection and the hyperbolic integrals; checked all zero walls and the interior Poisson equation.",
+      "derivation_pedagogy_changes": [],
+      "notation_and_source_checks": [
+        "Original problem: printed pp.90, PDF pp.115; inspected local OCR and compared every part with the TeX statement."
+      ],
+      "evidence": [
+        "supplementary/check_ch02.py::check_12_21",
+        "Independent manual reconstruction of the mathematics described above, including each requested subpart and approximation assumptions."
+      ],
+      "unresolved_limitations": [],
+      "status": "reviewed"
+    },
+    {
+      "problem_id": "2.17",
+      "mathematics_checked": "Integrated the three-dimensional Green function along the infinite direction, removed its common constant and matched every radial-mode derivative jump, including the logarithmic zero mode.",
+      "derivation_pedagogy_changes": [],
+      "notation_and_source_checks": [
+        "Original problem: printed pp.90, PDF pp.115; inspected local OCR and compared every part with the TeX statement."
+      ],
+      "evidence": [
+        "supplementary/check_ch02.py::check_12_21",
+        "Independent manual reconstruction of the mathematics described above, including each requested subpart and approximation assumptions."
+      ],
+      "unresolved_limitations": [],
+      "status": "reviewed"
+    },
+    {
+      "problem_id": "2.18",
+      "mathematics_checked": "Checked the interior/exterior disk Green series against the closed image form and boundary normal derivative; retained the exterior nonvanishing-infinity qualification.",
+      "derivation_pedagogy_changes": [],
+      "notation_and_source_checks": [
+        "Original problem: printed pp.90-91, PDF pp.115-116; inspected local OCR and compared every part with the TeX statement."
+      ],
+      "evidence": [
+        "supplementary/check_ch02.py::check_12_21",
+        "Independent manual reconstruction of the mathematics described above, including each requested subpart and approximation assumptions."
+      ],
+      "unresolved_limitations": [],
+      "status": "reviewed"
+    },
+    {
+      "problem_id": "2.19",
+      "mathematics_checked": "Calculated nonzero-mode and logarithmic-mode Wronskians for the annulus; checked normalization, both boundary values, symmetry in the two radii and the disk limit.",
+      "derivation_pedagogy_changes": [],
+      "notation_and_source_checks": [
+        "Original problem: printed pp.91, PDF pp.116; inspected local OCR and compared every part with the TeX statement."
+      ],
+      "evidence": [
+        "supplementary/check_ch02.py::check_12_21",
+        "Independent manual reconstruction of the mathematics described above, including each requested subpart and approximation assumptions."
+      ],
+      "unresolved_limitations": [],
+      "status": "reviewed"
+    },
+    {
+      "problem_id": "2.20",
+      "mathematics_checked": "Summed four physical line charges, selected harmonics 4k+2, matched the complex logarithm and differentiated its first two terms into Cartesian fields; checked the fourth-power relative correction.",
+      "derivation_pedagogy_changes": [],
+      "notation_and_source_checks": [
+        "Original problem: printed pp.91, PDF pp.116; inspected local OCR and compared every part with the TeX statement."
+      ],
+      "evidence": [
+        "supplementary/check_ch02.py::check_12_21",
+        "Independent manual reconstruction of the mathematics described above, including each requested subpart and approximation assumptions."
+      ],
+      "unresolved_limitations": [],
+      "status": "reviewed"
+    },
+    {
+      "problem_id": "2.21",
+      "mathematics_checked": "Added the exterior image-pole contour integral to Cauchy's formula, formed the real Poisson kernel and checked its action on an independent analytic polynomial.",
+      "derivation_pedagogy_changes": [],
+      "notation_and_source_checks": [
+        "Original problem: printed pp.91, PDF pp.116; inspected local OCR and compared every part with the TeX statement."
+      ],
+      "evidence": [
+        "supplementary/check_ch02.py::check_12_21",
+        "Independent manual reconstruction of the mathematics described above, including each requested subpart and approximation assumptions."
+      ],
+      "unresolved_limitations": [],
+      "status": "reviewed"
+    },
+    {
+      "problem_id": "2.22",
+      "mathematics_checked": "Integrated the signed hemispherical Poisson kernel on axis and differentiated both branches; checked origin and pole limits and the distinction between even axial E_z and radial E_r on the negative axis.",
+      "derivation_pedagogy_changes": [],
+      "notation_and_source_checks": [
+        "Original problem: printed pp.92, PDF pp.117; inspected local OCR and compared every part with the TeX statement."
+      ],
+      "evidence": [
+        "supplementary/check_ch02.py::check_22_27",
+        "Independent manual reconstruction of the mathematics described above, including each requested subpart and approximation assumptions."
+      ],
+      "unresolved_limitations": [],
+      "status": "reviewed"
+    },
+    {
+      "problem_id": "2.23",
+      "mathematics_checked": "Derived the double odd-mode cube series, exact center value by symmetry, numerical truncation and Abel interpretation of the differentiated boundary series.",
+      "derivation_pedagogy_changes": [],
+      "notation_and_source_checks": [
+        "Original problem: printed pp.92, PDF pp.117; inspected local OCR and compared every part with the TeX statement."
+      ],
+      "evidence": [
+        "supplementary/check_ch02.py::check_22_27",
+        "Independent manual reconstruction of the mathematics described above, including each requested subpart and approximation assumptions."
+      ],
+      "unresolved_limitations": [],
+      "status": "reviewed"
+    },
+    {
+      "problem_id": "2.24",
+      "mathematics_checked": "Retraced the odd extension and Fourier completeness proof as a distribution, checking orthogonality and reproducing action on a nontrivial sine polynomial.",
+      "derivation_pedagogy_changes": [],
+      "notation_and_source_checks": [
+        "Original problem: printed pp.92, PDF pp.117; inspected local OCR and compared every part with the TeX statement."
+      ],
+      "evidence": [
+        "supplementary/check_ch02.py::check_22_27",
+        "Independent manual reconstruction of the mathematics described above, including each requested subpart and approximation assumptions."
+      ],
+      "unresolved_limitations": [],
+      "status": "reviewed"
+    },
+    {
+      "problem_id": "2.25",
+      "mathematics_checked": "Checked the wedge radial jump and 4/m coefficient, conformal-image closed form, source flux and the familiar half-plane and right-angle image limits.",
+      "derivation_pedagogy_changes": [],
+      "notation_and_source_checks": [
+        "Original problem: printed pp.92-93, PDF pp.117-118; inspected local OCR and compared every part with the TeX statement."
+      ],
+      "evidence": [
+        "supplementary/check_ch02.py::check_22_27",
+        "Independent manual reconstruction of the mathematics described above, including each requested subpart and approximation assumptions."
+      ],
+      "unresolved_limitations": [],
+      "status": "reviewed"
+    },
+    {
+      "problem_id": "2.26",
+      "mathematics_checked": "Differentiated the arbitrary wedge mode with correctly oriented surface normals; integrated bump and planar charge and independently checked the finite-strip charge by semicircular Gauss flux.",
+      "derivation_pedagogy_changes": [
+        "Replaced a literal comma before dx in the compensation integral with TeX differential spacing.",
+        "Added a finite-radius Gauss-flux check of Q_L, independent of the surface-charge integral."
+      ],
+      "notation_and_source_checks": [
+        "Original problem: printed pp.93, PDF pp.118; inspected local OCR and compared every part with the TeX statement."
+      ],
+      "evidence": [
+        "supplementary/check_ch02.py::check_22_27",
+        "Independent manual reconstruction of the mathematics described above, including each requested subpart and approximation assumptions."
+      ],
+      "unresolved_limitations": [],
+      "status": "reviewed"
+    },
+    {
+      "problem_id": "2.27",
+      "mathematics_checked": "Specialized to exponent one-half, located the sheet maximum at 3a and included both faces and the removed strip in the cylinder/sheet charge compensation.",
+      "derivation_pedagogy_changes": [],
+      "notation_and_source_checks": [
+        "Original problem: printed pp.93, PDF pp.118; inspected local OCR and compared every part with the TeX statement."
+      ],
+      "evidence": [
+        "supplementary/check_ch02.py::check_22_27",
+        "Independent manual reconstruction of the mathematics described above, including each requested subpart and approximation assumptions."
+      ],
+      "unresolved_limitations": [],
+      "status": "reviewed"
+    },
+    {
+      "problem_id": "2.28",
+      "mathematics_checked": "Reproved the result by rotating the unit-face Dirichlet solutions and uniqueness: all center weights are equal, their sum is one, and linearity gives the arithmetic mean. This is a proof, not a numerical claim.",
+      "derivation_pedagogy_changes": [],
+      "notation_and_source_checks": [
+        "Original problem: printed pp.94, PDF pp.119; inspected local OCR and compared every part with the TeX statement.",
+        "Printed p.94 (PDF119), all five Platonic solids; proof uses Dirichlet uniqueness and face transitivity, not a numerical extrapolation."
+      ],
+      "evidence": [
+        "supplementary/check_ch02.py::written uniqueness/symmetry proof",
+        "Independent manual reconstruction of the mathematics described above, including each requested subpart and approximation assumptions."
+      ],
+      "unresolved_limitations": [],
+      "status": "reviewed"
+    },
+    {
+      "problem_id": "2.29",
+      "mathematics_checked": "Integrated the one-dimensional tent mass/stiffness factors and their tensor products; checked central, axial-neighbor and diagonal-neighbor entries and the row-sum cancellation.",
+      "derivation_pedagogy_changes": [],
+      "notation_and_source_checks": [
+        "Original problem: printed pp.94, PDF pp.119; inspected local OCR and compared every part with the TeX statement."
+      ],
+      "evidence": [
+        "supplementary/check_ch02.py::check_29_30",
+        "Independent manual reconstruction of the mathematics described above, including each requested subpart and approximation assumptions."
+      ],
+      "unresolved_limitations": [],
+      "status": "reviewed"
+    },
+    {
+      "problem_id": "2.30",
+      "mathematics_checked": "Assembled the full Galerkin system, reduced it by square symmetry, retraced explicit elimination, and compared the exact continuum series with Galerkin and finite-difference iterations at all three sites.",
+      "derivation_pedagogy_changes": [],
+      "notation_and_source_checks": [
+        "Original problem: printed pp.94, PDF pp.119; inspected local OCR and compared every part with the TeX statement."
+      ],
+      "evidence": [
+        "supplementary/check_ch02.py::check_29_30",
+        "Independent manual reconstruction of the mathematics described above, including each requested subpart and approximation assumptions."
+      ],
+      "unresolved_limitations": [],
+      "status": "reviewed"
+    }
+  ]
+}

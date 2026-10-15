@@ -1,0 +1,226 @@
+{
+  "chapter": 15,
+  "review": "Fresh independent mathematical, pedagogical and notation retrace of every problem and subpart",
+  "source": "Jackson3rd ed.; PDF page=printed page+25; build/ch15-source and build/source_ch14 contain source scans. Historical comparisons were reread from cached original/reproduced graph scans.",
+  "test_command": "python3 -W error supplementary/check_ch15.py",
+  "problems": [
+    {
+      "problem": "15.1",
+      "status": "reviewed",
+      "mathematics_checked": "Expanded the exact retarded acceleration kernel through c^−2, integrated products by parts with a regulator, and reconstructed electric dipole, magnetic dipole and traceless quadrupole amplitudes.",
+      "derivation_changes": "Corrected the introductory Fourier-field factor to √(2π)cR under Jackson14.54; explicitly derived the retarded-time Jacobian and field-transform relation.",
+      "notation_check": "Gaussian radiation units, α=e²/(ℏc), positive frequency. Jackson's temporal transform has e^{+iωt}/√(2π) (p.674 Eq.14.54); the endpoint J integral is explicitly unnormalized. dI/dω is energy per angular frequency, ε=ℏω is photon energy, dN/dε=(dI/dω)/(ℏε), and dχ/dω is impact-integrated radiated energy. Screening α in15.9 is separately distinguished from α_fs.",
+      "source_evidence": [
+        "Problem15.1, printed pp.737–738.",
+        "pp.674–675 Eqs.(14.54)–(14.66); Problem15.1, pp.737–738; actual pages/p-763.png."
+      ],
+      "independent_check": "python3 -W error supplementary/check_ch15.py; check_01",
+      "remaining_limitations": "Low-velocity and small phase-displacement expansion; radiation formula itself is unchanged. Convergence factors are needed for asymptotically uniform trajectories."
+    },
+    {
+      "problem": "15.2",
+      "status": "reviewed",
+      "mathematics_checked": "Derived the hard-sphere elastic angular measure, integrated the vector endpoint radiation over scattering directions and obtained the full angular/photon spectrum.",
+      "derivation_changes": "No new algebra; polar plot and total angular integral checked.",
+      "notation_check": "Gaussian radiation units, α=e²/(ℏc), positive frequency. Jackson's temporal transform has e^{+iωt}/√(2π) (p.674 Eq.14.54); the endpoint J integral is explicitly unnormalized. dI/dω is energy per angular frequency, ε=ℏω is photon energy, dN/dε=(dI/dω)/(ℏε), and dχ/dω is impact-integrated radiated energy. Screening α in15.9 is separately distinguished from α_fs.",
+      "source_evidence": [
+        "Problem15.2, printed pp.738.",
+        "p.709 Eqs.(15.1)–(15.3); Problem15.2, p.738."
+      ],
+      "independent_check": "python3 -W error supplementary/check_ch15.py; check_02",
+      "remaining_limitations": "Instantaneous hard contact has no finite classical time cutoff; finite collision duration and recoil delimit physical high-frequency extrapolation."
+    },
+    {
+      "problem": "15.3",
+      "status": "reviewed",
+      "mathematics_checked": "Averaged the relativistic outgoing endpoint vector over elastic directions, evaluated the remaining rational/logarithmic integral and recovered the nonrelativistic result.",
+      "derivation_changes": "No mathematical change needed.",
+      "notation_check": "Gaussian radiation units, α=e²/(ℏc), positive frequency. Jackson's temporal transform has e^{+iωt}/√(2π) (p.674 Eq.14.54); the endpoint J integral is explicitly unnormalized. dI/dω is energy per angular frequency, ε=ℏω is photon energy, dN/dε=(dI/dω)/(ℏε), and dχ/dω is impact-integrated radiated energy. Screening α in15.9 is separately distinguished from α_fs.",
+      "source_evidence": [
+        "Problem15.3, printed pp.738–739.",
+        "p.709 Eq.(15.2); Problem15.3, pp.738–739."
+      ],
+      "independent_check": "python3 -W error supplementary/check_ch15.py; check_03",
+      "remaining_limitations": "Strict soft/instantaneous-scattering result; hard photons require recoil and detailed collision dynamics."
+    },
+    {
+      "problem": "15.4",
+      "status": "reviewed",
+      "mathematics_checked": "Derived the coherent many-charge endpoint sum, evaluated opposite-charge pair angular integrals and exact recoil endpoints, and computed each specified decay energy estimate.",
+      "derivation_changes": "No mathematical change needed; branch-weighted versus conditional energies are distinguished.",
+      "notation_check": "Gaussian radiation units, α=e²/(ℏc), positive frequency. Jackson's temporal transform has e^{+iωt}/√(2π) (p.674 Eq.14.54); the endpoint J integral is explicitly unnormalized. dI/dω is energy per angular frequency, ε=ℏω is photon energy, dN/dε=(dI/dω)/(ℏε), and dχ/dω is impact-integrated radiated energy. Screening α in15.9 is separately distinguished from α_fs.",
+      "source_evidence": [
+        "Problem15.4, printed pp.739.",
+        "pp.709–710 Eqs.(15.1)–(15.6); Problem15.4, p.739."
+      ],
+      "independent_check": "python3 -W error supplementary/check_ch15.py; check_04",
+      "remaining_limitations": "Constant soft-spectrum extrapolation to the endpoint is only the requested rough estimate; it is not a controlled hard-photon prediction."
+    },
+    {
+      "problem": "15.5",
+      "status": "reviewed",
+      "mathematics_checked": "Reversed the creation amplitude for annihilation, checked soft factorization and both supplied quantum formulas term by term, including the magnetic angular integral.",
+      "derivation_changes": "No mathematical change needed; preserved explicit limits of the optional classical-spin interpretation.",
+      "notation_check": "Gaussian radiation units, α=e²/(ℏc), positive frequency. Jackson's temporal transform has e^{+iωt}/√(2π) (p.674 Eq.14.54); the endpoint J integral is explicitly unnormalized. dI/dω is energy per angular frequency, ε=ℏω is photon energy, dN/dε=(dI/dω)/(ℏε), and dχ/dω is impact-integrated radiated energy. Screening α in15.9 is separately distinguished from α_fs.",
+      "source_evidence": [
+        "Problem15.5, printed pp.739.",
+        "Problem15.5, p.739; pp.709–710 soft factorization Eqs.(15.2)–(15.6)."
+      ],
+      "independent_check": "python3 -W error supplementary/check_ch15.py; check_05",
+      "remaining_limitations": "The universal soft term is derived. The optional process-dependent magnetic coefficient is not claimed to follow from a spinless endpoint model or an unspecified spin ensemble."
+    },
+    {
+      "problem": "15.6",
+      "status": "reviewed",
+      "mathematics_checked": "Projected the small transverse velocity change on Jackson's two polarization vectors, averaged azimuth, and integrated the ultrarelativistic angular distribution.",
+      "derivation_changes": "No mathematical change needed; all four subparts and P(θ) maximum checked.",
+      "notation_check": "Gaussian radiation units, α=e²/(ℏc), positive frequency. Jackson's temporal transform has e^{+iωt}/√(2π) (p.674 Eq.14.54); the endpoint J integral is explicitly unnormalized. dI/dω is energy per angular frequency, ε=ℏω is photon energy, dN/dε=(dI/dω)/(ℏε), and dχ/dω is impact-integrated radiated energy. Screening α in15.9 is separately distinguished from α_fs.",
+      "source_evidence": [
+        "Problem15.6, printed pp.739–740.",
+        "pp.711–712 Eqs.(15.9)–(15.12), Fig.15.2; Problem15.6, pp.739–740."
+      ],
+      "independent_check": "python3 -W error supplementary/check_ch15.py; check_06",
+      "remaining_limitations": "Small-deflection expansion in the forward cone requires γ|Δβ|≪1, in addition to γ≫1."
+    },
+    {
+      "problem": "15.7",
+      "status": "reviewed",
+      "mathematics_checked": "Used two-fragment momentum conservation to identify p and q, integrated odd interference away and evaluated the recoil-budget dipole/quadrupole integrals numerically.",
+      "derivation_changes": "No mathematical change needed; amplitude-order versus full intensity-order distinction checked.",
+      "notation_check": "Gaussian radiation units, α=e²/(ℏc), positive frequency. Jackson's temporal transform has e^{+iωt}/√(2π) (p.674 Eq.14.54); the endpoint J integral is explicitly unnormalized. dI/dω is energy per angular frequency, ε=ℏω is photon energy, dN/dε=(dI/dω)/(ℏε), and dχ/dω is impact-integrated radiated energy. Screening α in15.9 is separately distinguished from α_fs.",
+      "source_evidence": [
+        "Problem15.7, printed pp.740.",
+        "Problem15.7, p.740; p.738 Problem15.1 moment definitions."
+      ],
+      "independent_check": "python3 -W error supplementary/check_ch15.py; check_07",
+      "remaining_limitations": "Squared truncated amplitude is the prescribed dipole/quadrupole estimate, not the complete expansion of total intensity through β^4; nuclear excitation radiation is absent."
+    },
+    {
+      "problem": "15.8",
+      "status": "reviewed",
+      "mathematics_checked": "Reconstructed identical-sphere collision velocities/positions, expanded both endpoint denominators and retardation phases coherently, and integrated all azimuth/impact moments.",
+      "derivation_changes": "No mathematical change needed.",
+      "notation_check": "Gaussian radiation units, α=e²/(ℏc), positive frequency. Jackson's temporal transform has e^{+iωt}/√(2π) (p.674 Eq.14.54); the endpoint J integral is explicitly unnormalized. dI/dω is energy per angular frequency, ε=ℏω is photon energy, dN/dε=(dI/dω)/(ℏε), and dχ/dω is impact-integrated radiated energy. Screening α in15.9 is separately distinguished from α_fs.",
+      "source_evidence": [
+        "Problem15.8, printed pp.740–741.",
+        "Problem15.8, pp.740–741; Problem15.1, p.738; p.709 Eq.(15.2)."
+      ],
+      "independent_check": "python3 -W error supplementary/check_ch15.py; check_08",
+      "remaining_limitations": "Classical collision impact parameters are counted once; no quantum identical-particle factor is inserted."
+    },
+    {
+      "problem": "15.9",
+      "status": "reviewed",
+      "mathematics_checked": "Integrated the screened straight-path force, proved the Bessel-square primitive, and evaluated screened/unscreened limits with all constants and projectile/atomic masses distinguished.",
+      "derivation_changes": "Expanded the hyperbolic contour shift giving the finite-frequency K0 transform and derived both force-transform components by differentiation/integration by parts.",
+      "notation_check": "Gaussian radiation units, α=e²/(ℏc), positive frequency. Jackson's temporal transform has e^{+iωt}/√(2π) (p.674 Eq.14.54); the endpoint J integral is explicitly unnormalized. dI/dω is energy per angular frequency, ε=ℏω is photon energy, dN/dε=(dI/dω)/(ℏε), and dχ/dω is impact-integrated radiated energy. Screening α in15.9 is separately distinguished from α_fs.",
+      "source_evidence": [
+        "Problem15.9, printed pp.741.",
+        "Problem15.9, p.741; p.717 Eq.(15.29); pp.721–722 Eqs.(15.42)–(15.47)."
+      ],
+      "independent_check": "python3 -W error supplementary/check_ch15.py; check_09",
+      "remaining_limitations": "Straight orbit and impact cutoffs are approximations; the logarithmic plateau additionally requires αb_min≪1. Negative logarithms are not used outside that domain."
+    },
+    {
+      "problem": "15.10",
+      "status": "reviewed",
+      "mathematics_checked": "Transformed the exact repulsive hyperbola, integrated the impact distribution with the imaginary-order Bessel ODE, and obtained soft and simultaneous-large-order asymptotics plus the attractive continuation.",
+      "derivation_changes": "Added the general oscillatory K_is(z) representation, fixed-order derivative and explicit cubic-phase substitutions leading to both Gamma factors.",
+      "notation_check": "Gaussian radiation units, α=e²/(ℏc), positive frequency. Jackson's temporal transform has e^{+iωt}/√(2π) (p.674 Eq.14.54); the endpoint J integral is explicitly unnormalized. dI/dω is energy per angular frequency, ε=ℏω is photon energy, dN/dε=(dI/dω)/(ℏε), and dχ/dω is impact-integrated radiated energy. Screening α in15.9 is separately distinguished from α_fs.",
+      "source_evidence": [
+        "Problem15.10, printed pp.741–742.",
+        "Problem15.10, pp.741–742; p.716 Eq.(15.25); modified-Bessel conventions pp.116,126."
+      ],
+      "independent_check": "python3 -W error supplementary/check_ch15.py; check_10",
+      "remaining_limitations": "Attractive point-center high-frequency plateau is a formal nonrelativistic result; arbitrarily close encounters violate its physical assumptions."
+    },
+    {
+      "problem": "15.11",
+      "status": "reviewed",
+      "mathematics_checked": "Converted the equivalent field-energy spectrum into photon number, convolved a finite-width resonance, derived the narrow-resonance F ratio and verified all tabulated examples.",
+      "derivation_changes": "No new algebra; independently reread the historical reproduced graphs and checked their stated approximate ranges.",
+      "notation_check": "Gaussian radiation units, α=e²/(ℏc), positive frequency. Jackson's temporal transform has e^{+iωt}/√(2π) (p.674 Eq.14.54); the endpoint J integral is explicitly unnormalized. dI/dω is energy per angular frequency, ε=ℏω is photon energy, dN/dε=(dI/dω)/(ℏε), and dχ/dω is impact-integrated radiated energy. Screening α in15.9 is separately distinguished from α_fs.",
+      "source_evidence": [
+        "Problem15.11, printed pp.742.",
+        "pp.727–728 Eqs.(15.53)–(15.58); p.722 Eq.(15.47); NBS IR83-2742 III/V/VII/IX data sheets368/84/186/425 reproduce Wolynec Figs.1–5; local graph assets viewed."
+      ],
+      "independent_check": "python3 -W error supplementary/check_ch15.py; check_11",
+      "remaining_limitations": "Historical curves support scale/trend only; no digitized fit. Complete screening and a single20MeV narrow resonance are not quantitatively uniform over20–40MeV."
+    },
+    {
+      "problem": "15.12",
+      "status": "reviewed",
+      "mathematics_checked": "Derived finite-mass Rutherford transfer and the two-component equivalent-photon integral, nondimensionalized both distributions, and calculated collision/energy moments and Bethe's logarithm.",
+      "derivation_changes": "No mathematical change needed; plotted domains, recoil cutoff and I_eff≈1.47I checked.",
+      "notation_check": "Gaussian radiation units, α=e²/(ℏc), positive frequency. Jackson's temporal transform has e^{+iωt}/√(2π) (p.674 Eq.14.54); the endpoint J integral is explicitly unnormalized. dI/dω is energy per angular frequency, ε=ℏω is photon energy, dN/dε=(dI/dω)/(ℏε), and dχ/dω is impact-integrated radiated energy. Screening α in15.9 is separately distinguished from α_fs.",
+      "source_evidence": [
+        "Problem15.12, printed pp.742–743.",
+        "p.628 Eqs.(13.14)–(13.15); pp.727–728 Eqs.(15.54)–(15.58); Problem15.12, pp.742–743."
+      ],
+      "independent_check": "python3 -W error supplementary/check_ch15.py; check_12",
+      "remaining_limitations": "Close/distant matching and the photoabsorption continuum are approximate; discrete excitation is omitted, so the exact mean excitation constant is not determined."
+    },
+    {
+      "problem": "15.13",
+      "status": "reviewed",
+      "mathematics_checked": "Integrated the muon endpoint angular spectrum, solved perpendicular three-body energy conservation, mapped photon/muon cuts and calculated frozen-speed and recoil-improved photon counts.",
+      "derivation_changes": "No mathematical change needed.",
+      "notation_check": "Gaussian radiation units, α=e²/(ℏc), positive frequency. Jackson's temporal transform has e^{+iωt}/√(2π) (p.674 Eq.14.54); the endpoint J integral is explicitly unnormalized. dI/dω is energy per angular frequency, ε=ℏω is photon energy, dN/dε=(dI/dω)/(ℏε), and dχ/dω is impact-integrated radiated energy. Screening α in15.9 is separately distinguished from α_fs.",
+      "source_evidence": [
+        "Problem15.13, printed pp.743.",
+        "p.731 Eqs.(15.65)–(15.67); Problem15.13, p.743."
+      ],
+      "independent_check": "python3 -W error supplementary/check_ch15.py; check_13",
+      "remaining_limitations": "Comparison to the quoted measurement uses its muon-energy cut; the originally requested photon cut selects a different sample. Perpendicular-photon approximation is stipulated."
+    },
+    {
+      "problem": "15.14",
+      "status": "reviewed",
+      "mathematics_checked": "Calculated the conversion-electron speed and photon coefficient, integrated the tail for both kinetic-energy and literal total-energy readings, and assessed the stated idealization.",
+      "derivation_changes": "No mathematical change needed.",
+      "notation_check": "Gaussian radiation units, α=e²/(ℏc), positive frequency. Jackson's temporal transform has e^{+iωt}/√(2π) (p.674 Eq.14.54); the endpoint J integral is explicitly unnormalized. dI/dω is energy per angular frequency, ε=ℏω is photon energy, dN/dε=(dI/dω)/(ℏε), and dχ/dω is impact-integrated radiated energy. Screening α in15.9 is separately distinguished from α_fs.",
+      "source_evidence": [
+        "Problem15.14, printed pp.743.",
+        "p.731 Eqs.(15.65)–(15.67); Problem15.14, p.743."
+      ],
+      "independent_check": "python3 -W error supplementary/check_ch15.py; check_14",
+      "remaining_limitations": "Tail estimate extrapolates a soft formula; experimental observability also depends on detector response and background, not specified here."
+    },
+    {
+      "problem": "15.15",
+      "status": "reviewed",
+      "mathematics_checked": "Used equal pion masses and momentum conservation to reduce the charge sum to the negative-pion velocity, then integrated angular and energy spectra and both cutoff models.",
+      "derivation_changes": "No mathematical change needed; all requested1,10,11MeV values and the exact endpoint were checked.",
+      "notation_check": "Gaussian radiation units, α=e²/(ℏc), positive frequency. Jackson's temporal transform has e^{+iωt}/√(2π) (p.674 Eq.14.54); the endpoint J integral is explicitly unnormalized. dI/dω is energy per angular frequency, ε=ℏω is photon energy, dN/dε=(dI/dω)/(ℏε), and dχ/dω is impact-integrated radiated energy. Screening α in15.9 is separately distinguished from α_fs.",
+      "source_evidence": [
+        "Problem15.15, printed pp.743.",
+        "Problem15.15, p.743; p.709 Eq.(15.2)."
+      ],
+      "independent_check": "python3 -W error supplementary/check_ch15.py; check_15",
+      "remaining_limitations": "The branching estimate assumes a constant decay amplitude/equal mean kinetic energies and a crude energy-budget reduction; no precision hard-photon claim."
+    },
+    {
+      "problem": "15.16",
+      "status": "reviewed",
+      "mathematics_checked": "Computed exact two-body pion speed and angular maxima, integrated each Edwards bin, derived three-body photon endpoints and the complete phase-space Jacobian, and independently integrated the model in T and photon energy.",
+      "derivation_changes": "No new algebra needed; independently reread original Edwards Fig.6 and its58–90MeV cut and checked the existing fixed-neutral-momentum inconsistency proof.",
+      "notation_check": "Gaussian radiation units, α=e²/(ℏc), positive frequency. Jackson's temporal transform has e^{+iωt}/√(2π) (p.674 Eq.14.54); the endpoint J integral is explicitly unnormalized. dI/dω is energy per angular frequency, ε=ℏω is photon energy, dN/dε=(dI/dω)/(ℏε), and dχ/dω is impact-integrated radiated energy. Screening α in15.9 is separately distinguished from α_fs.",
+      "source_evidence": [
+        "Problem15.16, printed pp.743–744.",
+        "p.731 Eqs.(15.65)–(15.67); Problem15.16, pp.743–744; Edwards preprint COO-1195-230, Fig.6 PDFp.26, build/ch15-source/Edwards-fig6.png and text lines588–597,1006."
+      ],
+      "independent_check": "python3 -W error supplementary/check_ch15.py; check_16",
+      "remaining_limitations": "The2.5928×10^−4 branching result is a specified constant-nonradiative-amplitude charge-radiation model; direct radiative amplitudes are absent. Fig.6 uses58MeV, part(b)55MeV."
+    }
+  ],
+  "verification": {
+    "test_status": "Passed all problem groups with -W error after the recorded implementation changes.",
+    "tex_compile": "pdflatex -interaction=nonstopmode -halt-on-error in an isolated local temporary output directory; exit0, no box/font/other warnings.",
+    "pdf": "/var/folders/93/r1t98m8d3014c24llb8j119w0000gn/T/jackson-recheck-ch15-_cgyz6o5/ch15-verify.pdf",
+    "pages_rendered_and_visually_reviewed": 28,
+    "review_images": "/var/folders/93/r1t98m8d3014c24llb8j119w0000gn/T/jackson-recheck-ch15-_cgyz6o5/sheet-*.png",
+    "source_sha256": "b6aff47776afae98aeb57e885c38180d598083129d8871a3f12b35e40345898b",
+    "test_sha256": "a65205a8eaf6d73b0513a90927779beb5c488e7c4f921328fec27c9ea4fb05cc",
+    "problem_prefixes": "16/16 preserved; all solution bodies manually retraced."
+  }
+}

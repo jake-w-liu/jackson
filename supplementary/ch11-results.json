@@ -1,0 +1,240 @@
+{
+  "1": {
+    "checks": "symbolic inverse, determinant, and invariant limiting velocity"
+  },
+  "2": {
+    "checks": "symbolic composition forces one signed universal kappa"
+  },
+  "3": {
+    "checks": "30 collinear boost products and metric preservation"
+  },
+  "4": {
+    "checks": "light-ray intersections in transverse and longitudinal moving clocks"
+  },
+  "5": {
+    "checks": "acceleration compared with differentiated Lorentz-transformed trajectory"
+  },
+  "6": {
+    "checks": "four proper-time quadratures, return position, and analytic elapsed time",
+    "earth_elapsed_years": 337.9189054577485,
+    "return_year": 2437.9189054577487,
+    "maximum_light_years": 167.0331303005469,
+    "maximum_km": 1580255425764943.2
+  },
+  "7": {
+    "checks": "simultaneous/coincident start-event boosts and null time ordering"
+  },
+  "8": {
+    "checks": "Fizeau coefficient checked against the implicit dispersive wave-vector boost",
+    "test_drag_coefficient": 0.6739088965205146,
+    "source_access": "Macek 1964 metadata only; primary 1972 abstract and 2012 full report checked"
+  },
+  "9": {
+    "checks": "antisymmetric raised-index generator and finite metric preservation"
+  },
+  "10": {
+    "checks": "generator cube identities and matrix-exponential boost for 12 axes"
+  },
+  "11": {
+    "checks": "commutator series versus conjugation integral and quadratic finite-variation remainder"
+  },
+  "12": {
+    "checks": "Thomas infinitesimal boost/rotation versus exact noncollinear boost product"
+  },
+  "13": {
+    "checks": "boosted wire field/current with independent cylindrical Gauss and Ampere integrals"
+  },
+  "14": {
+    "checks": "all independent tensor contractions under random boosts and magnetic-dominated zero-E frame"
+  },
+  "15": {
+    "checks": "101 collinear-field boosts including antiparallel angles, invariant magnitudes, and endpoints"
+  },
+  "16": {
+    "checks": "covariant Ohm law compared with separately boosted rest current and field"
+  },
+  "17": {
+    "checks": "three event-separation tensors agree with a separately boosted Coulomb field"
+  },
+  "18": {
+    "checks": "tested ultrarelativistic distributional limit, transverse source flux, and symbolic gauge derivatives",
+    "transverse_test_errors": [
+      0.03631994785409676,
+      0.0035744738617875527,
+      0.00030585158387452793
+    ],
+    "longitudinal_test_magnitudes": [
+      0.023676708403803662,
+      0.00245534063624852,
+      0.00021471441865829818
+    ]
+  },
+  "19": {
+    "checks": "two-body daughter mass shells, four-momentum conservation, and pion decay values",
+    "muon_kinetic_MeV": 4.11608166189113,
+    "neutrino_energy_MeV": 29.78391833810886
+  },
+  "20": {
+    "checks": "boosted daughter four-vectors, independent angular optimization, stationary cubic, and decay length",
+    "average_length_m": 0.7748672095671674,
+    "max_opening_degrees": 5.031112671546716,
+    "max_cos_theta_star": 0.5270819975430985
+  },
+  "21": {
+    "checks": "all multibody endpoints realized as on-shell threshold clusters and energy/momentum checked",
+    "table": [
+      {
+        "process": "mu",
+        "daughter": "e",
+        "Q_MeV": 105.18900000000001,
+        "Tmax_MeV": 52.340235198675494,
+        "fraction": 0.49758278145695356
+      },
+      {
+        "process": "mu",
+        "daughter": "nu",
+        "Q_MeV": 105.18900000000001,
+        "Tmax_MeV": 52.848764801324506,
+        "fraction": 0.5024172185430463
+      },
+      {
+        "process": "K3pi",
+        "daughter": "pi",
+        "Q_MeV": 74.90000000000003,
+        "Tmax_MeV": 48.03946728782663,
+        "fraction": 0.6413814057119708
+      },
+      {
+        "process": "Ke",
+        "daughter": "e",
+        "Q_MeV": 358.18899999999996,
+        "Tmax_MeV": 227.88169913003847,
+        "fraction": 0.6362051853352239
+      },
+      {
+        "process": "Ke",
+        "daughter": "pi0",
+        "Q_MeV": 358.18899999999996,
+        "Tmax_MeV": 130.30730086996152,
+        "fraction": 0.36379481466477626
+      },
+      {
+        "process": "Ke",
+        "daughter": "nu",
+        "Q_MeV": 358.18899999999996,
+        "Tmax_MeV": 228.2524396181892,
+        "fraction": 0.6372402268584161
+      },
+      {
+        "process": "Kmu",
+        "daughter": "mu",
+        "Q_MeV": 253.0,
+        "Tmax_MeV": 134.00749442981567,
+        "fraction": 0.5296738910269394
+      },
+      {
+        "process": "Kmu",
+        "daughter": "pi0",
+        "Q_MeV": 253.0,
+        "Tmax_MeV": 118.99250557018433,
+        "fraction": 0.4703261089730606
+      },
+      {
+        "process": "Kmu",
+        "daughter": "nu",
+        "Q_MeV": 253.0,
+        "Tmax_MeV": 188.17419485517522,
+        "fraction": 0.7437715211667004
+      },
+      {
+        "process": "pp5pi",
+        "daughter": "pi",
+        "Q_MeV": 1183.6,
+        "Tmax_MeV": 722.3932658497603,
+        "fraction": 0.6103356419818861
+      },
+      {
+        "process": "pp5pi",
+        "daughter": "pi0",
+        "Q_MeV": 1183.6,
+        "Tmax_MeV": 725.293937133724,
+        "fraction": 0.6127863612147043
+      },
+      {
+        "process": "pp2K3pi",
+        "daughter": "K",
+        "Q_MeV": 484.5999999999999,
+        "Tmax_MeV": 294.58103356419815,
+        "fraction": 0.6078849227490677
+      },
+      {
+        "process": "pp2K3pi",
+        "daughter": "pi0",
+        "Q_MeV": 484.5999999999999,
+        "Tmax_MeV": 387.18946190729883,
+        "fraction": 0.798987746403836
+      }
+    ]
+  },
+  "22": {
+    "checks": "head-on pair threshold invariant and larger non-head-on thresholds",
+    "threshold_eV": [
+      1044484000000000.0,
+      522242000.0
+    ]
+  },
+  "23": {
+    "checks": "direct cm transformation and fourth-order remainder of nonrelativistic expansion"
+  },
+  "24": {
+    "checks": "all threshold final states constructed with common velocity and conserved total four-momentum",
+    "thresholds": [
+      {
+        "process": "photopion",
+        "T_MeV": 144.70964304741608,
+        "T_over_incident_mass": null
+      },
+      {
+        "process": "pp",
+        "T_MeV": 5631.0,
+        "T_over_incident_mass": 6.0
+      },
+      {
+        "process": "eepp",
+        "T_MeV": 3451042.6497064573,
+        "T_over_incident_mass": 6753508.120756276
+      },
+      {
+        "process": "annihilation",
+        "T_MeV": 3447287.627706458,
+        "T_over_incident_mass": 6746159.741108528
+      }
+    ]
+  },
+  "25": {
+    "checks": "exact beam invariant, fourth-order expansion error, cm boost, and pion opening angle",
+    "beta_cm": 0.17364053086043277,
+    "gamma_cm": 1.0154252216594477,
+    "W_GeV": 196.97049409675085,
+    "pion_forward_momentum_GeV": 1.7633615436298613,
+    "pion_opening_degrees": 159.9989804764892
+  },
+  "26": {
+    "checks": "25 elastic-scattering events verify all recoil formulas, and equal-mass endpoint"
+  },
+  "27": {
+    "checks": "three-dimensional Gaussian charge/current moment integrals, including neutrality and both induced dipoles"
+  },
+  "28": {
+    "checks": "symbolic Lorenz gauge, translated dipole gradient/curl, and magnetic-moment plus symmetric split"
+  },
+  "29": {
+    "checks": "symbolic potential derivatives and all three electric-field decompositions for R>0"
+  },
+  "30": {
+    "checks": "20 independent forward-F / inverse-G tensor transformations of material constitutive laws"
+  },
+  "31": {
+    "checks": "symbolic moving-medium boundary fields, determinant, voltage quadrature, and cubic nonrelativistic remainder"
+  }
+}

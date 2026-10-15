@@ -1,0 +1,722 @@
+{
+  "audit": "Fresh iterative deep-debug, current-run independent evidence",
+  "date": "2026-10-03",
+  "chapter": 8,
+  "coverage": {
+    "problems": 21,
+    "all_problem_statements_and_solutions_read": true,
+    "every_subpart_retraced": true,
+    "problem_spacing_prefixes_preserved": 21
+  },
+  "scope_reconstruction": [
+    "Actual chapter TeX and entire current check script inspected.",
+    "Prior recheck ledgers used only to locate sources, not as current proof.",
+    "All problem pages read from local Jackson OCR and critical formulas/diagrams checked from actual scans."
+  ],
+  "audit_matrix": {
+    "domain": "Per-problem algebra, signs, units, normalization, boundaries, approximation domains and limiting behavior retraced; actual source conventions checked.",
+    "implementation": "Entire calculation script inspected; independent functions added for alternative routes and successful execution checked with warnings-as-errors.",
+    "data_and_io": "Physical inputs traced to supplied problem or primary source; deterministic figure generators run. Captured stdout copied after completion, not streamed to workspace.",
+    "resources": "Finite numerical grids/integrals, bounded file output under owned chapter assets; no services or external mutations and no processes terminated.",
+    "performance": "No speed/optimization claim requested or made; execution completed. Added high-precision/radial-grid/orbit checks are bounded by explicit samples."
+  },
+  "notation_checks": [
+    "SI and peak phasors proportional to exp(ikz-i omega t), checked against printed pp.353–354 and 358–359.",
+    "The scalar gamma denotes the transverse eigenvalue. The attenuation beta is distinguished where Jackson uses that symbol.",
+    "The actual printed p.391 scan, Eqs. (8.131)–(8.136), uses bilinear mode products without conjugation. Imaginary longitudinal fields therefore have negative squared integrals."
+  ],
+  "checks": [
+    {
+      "stage": "baseline",
+      "command": "python3 -W error supplementary/check_ch08.py",
+      "exit": 0,
+      "captured_log": "supplementary/ch08-deep-debug/baseline.log",
+      "note": "All assertions passed; warnings treated as errors."
+    },
+    {
+      "stage": "crc1",
+      "command": "python3 -W error supplementary/check_ch08.py",
+      "exit": 0,
+      "captured_log": "supplementary/ch08-deep-debug/crc1.log",
+      "note": "All assertions passed; warnings treated as errors."
+    },
+    {
+      "stage": "crc2",
+      "command": "python3 -W error supplementary/check_ch08.py",
+      "exit": 0,
+      "captured_log": "supplementary/ch08-deep-debug/crc2.log",
+      "note": "All assertions passed; warnings treated as errors."
+    },
+    {
+      "stage": "final",
+      "command": "python3 -W error supplementary/check_ch08.py",
+      "exit": 0,
+      "captured_log": "supplementary/ch08-deep-debug/final.log",
+      "note": "All assertions passed; warnings treated as errors."
+    }
+  ],
+  "confirmed_new_math_or_statement_bugs": 0,
+  "final_pass_status": "Complete across all assigned chapter problems, using the different routes below; no new confirmed defect. Numerical samples are not universal proofs.",
+  "problems": [
+    {
+      "problem": "8.1",
+      "statement_and_every_solution_subpart_read": true,
+      "subparts": [
+        "a",
+        "b",
+        "c"
+      ],
+      "inspected_sources": [
+        "sections/ch08.tex:9",
+        "supplementary/check_ch08.py: check_01",
+        "ocr/p-421.txt (Jackson printed p.396)",
+        "ocr/p-422.txt (Jackson printed p.397)",
+        "Jackson/source conventions: 353-354: surface-layer fields and dissipation, Section8.1"
+      ],
+      "initial_derivation_checked": "Integrate peak-phasor JxB through skin layer; permeability traction plus conduction force gives exterior Maxwell magnetic stress.",
+      "candidate": "Possible rms versus peak factor two or mu/muc confusion: discarded by exponential integral and time average.",
+      "candidate_status": "discarded/no new defect",
+      "change": "No TeX change in this fresh audit.",
+      "current_verification": {
+        "analytic": "Manual independent algebra/identities and source comparison as recorded; not a machine-checked theorem.",
+        "executable": "check_01",
+        "sample_evidence": "The full chapter suite exited 0 with -W error. Symbolic identities and numerical tolerances are in the named functions; finite numerical samples are not universal proofs."
+      },
+      "independent_final_pass": {
+        "route": "Different route: match the result to exterior electric/magnetic stress and sum distinct-frequency spectral components; dispersive mu cannot factor out.",
+        "result": "No new confirmed mathematical or physical defect found in this independent final pass."
+      },
+      "remaining_limitations": "Linear isotropic macroscopic traction; separate material mechanical stresses are excluded."
+    },
+    {
+      "problem": "8.2",
+      "statement_and_every_solution_subpart_read": true,
+      "subparts": [
+        "a",
+        "b",
+        "c",
+        "d"
+      ],
+      "inspected_sources": [
+        "sections/ch08.tex:88",
+        "supplementary/check_ch08.py: check_02; check_fresh_routes",
+        "ocr/p-422.txt (Jackson printed p.397)",
+        "Jackson/source conventions: 353-354: Section8.1"
+      ],
+      "initial_derivation_checked": "TEM Poynting flux, voltage/current, wall loss and penetrating magnetic energy yield P,gamma,Z0,R,L.",
+      "candidate": "Internal inductance could miss one skin-depth factor: discarded by integral exp(-2u/delta) and omega Lskin=R.",
+      "candidate_status": "discarded/no new defect",
+      "change": "No TeX change in this fresh audit.",
+      "current_verification": {
+        "analytic": "Manual independent algebra/identities and source comparison as recorded; not a machine-checked theorem.",
+        "executable": "check_02; check_fresh_routes",
+        "sample_evidence": "The full chapter suite exited 0 with -W error. Symbolic identities and numerical tolerances are in the named functions; finite numerical samples are not universal proofs."
+      },
+      "independent_final_pass": {
+        "route": "Different route: perturb telegrapher dispersion including Lskin=R/omega; both attenuation and phase correction are R/(2Z0).",
+        "result": "No new confirmed mathematical or physical defect found in this independent final pass."
+      },
+      "remaining_limitations": "Leading small-skin-depth approximation; b is inner radius of outer conductor."
+    },
+    {
+      "problem": "8.3",
+      "statement_and_every_solution_subpart_read": true,
+      "subparts": [
+        "a",
+        "b"
+      ],
+      "inspected_sources": [
+        "sections/ch08.tex:208",
+        "supplementary/check_ch08.py: check_03; check_fresh_routes",
+        "ocr/p-423.txt (Jackson printed p.398)",
+        "Jackson/source conventions: 353-354: Section8.1"
+      ],
+      "initial_derivation_checked": "Wide strips have uniform leading TEM fields; microstrip narrow/wide limits are separated and capacitance is matched to geometry.",
+      "candidate": "Wide-strip R and impedance might be used for narrow microstrip: discarded because solution derives logarithmic narrow-strip behavior and flags current redistribution.",
+      "candidate_status": "discarded/no new defect",
+      "change": "No TeX change in this fresh audit.",
+      "current_verification": {
+        "analytic": "Manual independent algebra/identities and source comparison as recorded; not a machine-checked theorem.",
+        "executable": "check_03; check_fresh_routes",
+        "sample_evidence": "The full chapter suite exited 0 with -W error. Symbolic identities and numerical tolerances are in the named functions; finite numerical samples are not universal proofs."
+      },
+      "independent_final_pass": {
+        "route": "Different route: check parallel-plate LC speed and impedance, then independent telegrapher expansion for conductor loss.",
+        "result": "No new confirmed mathematical or physical defect found in this independent final pass."
+      },
+      "remaining_limitations": "Microstrip approximations are quasi-TEM; fringing and geometric dispersion are not exact solutions."
+    },
+    {
+      "problem": "8.4",
+      "statement_and_every_solution_subpart_read": true,
+      "subparts": [
+        "a",
+        "b"
+      ],
+      "inspected_sources": [
+        "sections/ch08.tex:334",
+        "supplementary/check_ch08.py: check_04; check_fresh_routes",
+        "ocr/p-423.txt (Jackson printed p.398)",
+        "Jackson/source conventions: 358-359: (8.26),(8.34),(8.36); 365-367: loss formulas"
+      ],
+      "initial_derivation_checked": "Positive Bessel roots, angular degeneracies, scalar norms and complete TE wall-current components give both attenuation laws.",
+      "candidate": "TE term m^2/(chi^2-m^2) or Rs proportional sqrt(omega) could be dropped: discarded after deriving surface norm.",
+      "candidate_status": "discarded/no new defect",
+      "change": "No TeX change in this fresh audit.",
+      "current_verification": {
+        "analytic": "Manual independent algebra/identities and source comparison as recorded; not a machine-checked theorem.",
+        "executable": "check_04; check_fresh_routes",
+        "sample_evidence": "The full chapter suite exited 0 with -W error. Symbolic identities and numerical tolerances are in the named functions; finite numerical samples are not universal proofs."
+      },
+      "independent_final_pass": {
+        "route": "Different route: Bessel energy norm and frequency limits; independently minimize TM attenuation to obtain omega=sqrt(3) omega_c.",
+        "result": "No new confirmed mathematical or physical defect found in this independent final pass."
+      },
+      "remaining_limitations": "Loss perturbation fails arbitrarily close to cutoff; stated in solution."
+    },
+    {
+      "problem": "8.5",
+      "statement_and_every_solution_subpart_read": true,
+      "subparts": [
+        "a",
+        "b"
+      ],
+      "inspected_sources": [
+        "sections/ch08.tex:467",
+        "supplementary/check_ch08.py: check_05",
+        "ocr/p-423.txt (Jackson printed p.398)",
+        "ocr/p-424.txt (Jackson printed p.399)",
+        "Jackson/source conventions: 358-359: (8.34),(8.36)"
+      ],
+      "initial_derivation_checked": "Reflection across diagonal gives complete odd TM/even TE triangular modes; all three boundary loss integrals evaluated.",
+      "candidate": "Diagonal normal derivative may miss sqrt2: discarded by explicit arclength and normal normalization.",
+      "candidate_status": "discarded/no new defect",
+      "change": "No TeX change in this fresh audit.",
+      "current_verification": {
+        "analytic": "Manual independent algebra/identities and source comparison as recorded; not a machine-checked theorem.",
+        "executable": "check_05",
+        "sample_evidence": "The full chapter suite exited 0 with -W error. Symbolic identities and numerical tolerances are in the named functions; finite numerical samples are not universal proofs."
+      },
+      "independent_final_pass": {
+        "route": "Different route: square parity extension fixes area norms; direct diagonal sin^6 integral and equal-frequency square comparisons verify attenuation.",
+        "result": "No new confirmed mathematical or physical defect found in this independent final pass."
+      },
+      "remaining_limitations": "High conductivity and frequencies above both compared cutoffs."
+    },
+    {
+      "problem": "8.6",
+      "statement_and_every_solution_subpart_read": true,
+      "subparts": [
+        "a",
+        "b"
+      ],
+      "inspected_sources": [
+        "sections/ch08.tex:585",
+        "supplementary/check_ch08.py: check_06",
+        "ocr/p-424.txt (Jackson printed p.399)",
+        "Jackson/source conventions: 358-359: TE/TM fields; NBS Circular31 2nd ed. p.9"
+      ],
+      "initial_derivation_checked": "Axial sine/cosine endpoints allow TM p=0 but exclude TE p=0; crossing at R/L=.492427374 and TM010 Q include ends and side.",
+      "candidate": "Pure-copper Q might be underdetermined: not hidden; 58 MS/m at20C is explicitly adopted and Q scales sqrt(sigma).",
+      "candidate_status": "discarded/no new defect",
+      "change": "No TeX change in this fresh audit.",
+      "current_verification": {
+        "analytic": "Manual independent algebra/identities and source comparison as recorded; not a machine-checked theorem.",
+        "executable": "check_06",
+        "sample_evidence": "The full chapter suite exited 0 with -W error. Symbolic identities and numerical tolerances are in the named functions; finite numerical samples are not universal proofs."
+      },
+      "independent_final_pass": {
+        "route": "Different route: sum separate end/side surface energies and check lossless energy equipartition; source NBS conductivity value freshly opened at printed p.9.",
+        "result": "No new confirmed mathematical or physical defect found in this independent final pass."
+      },
+      "remaining_limitations": "Numerical Q is a specified room-temperature material estimate, not unique for arbitrary pure copper."
+    },
+    {
+      "problem": "8.7",
+      "statement_and_every_solution_subpart_read": true,
+      "subparts": [
+        "a",
+        "b",
+        "c"
+      ],
+      "inspected_sources": [
+        "sections/ch08.tex:668",
+        "supplementary/check_ch08.py: check_07; check_fresh_routes",
+        "ocr/p-424.txt (Jackson printed p.399)",
+        "Jackson/source conventions: 376: (8.103)-(8.105)"
+      ],
+      "initial_derivation_checked": "Neumann Riccati-Bessel determinant, l=1 trigonometric form and -h/(2a) first correction are consistent; TE family distinguished.",
+      "candidate": "Divided tangent equation can introduce k=0 root: discarded after retaining original determinant and excluding nonphysical oscillatory zero.",
+      "candidate_status": "discarded/no new defect",
+      "change": "No TeX change in this fresh audit.",
+      "current_verification": {
+        "analytic": "Manual independent algebra/identities and source comparison as recorded; not a machine-checked theorem.",
+        "executable": "check_07; check_fresh_routes",
+        "sample_evidence": "The full chapter suite exited 0 with -W error. Symbolic identities and numerical tolerances are in the named functions; finite numerical samples are not universal proofs."
+      },
+      "independent_final_pass": {
+        "route": "Different route: finite-volume Neumann radial operator with1600 cells agrees with Bessel roots for l=1,2,4; Rayleigh average centrifugal potential fixes first correction.",
+        "result": "No new confirmed mathematical or physical defect found in this independent final pass."
+      },
+      "remaining_limitations": "Lowest radial thin-gap expansion does not apply to high radial modes."
+    },
+    {
+      "problem": "8.8",
+      "statement_and_every_solution_subpart_read": true,
+      "subparts": [
+        "a",
+        "b",
+        "c"
+      ],
+      "inspected_sources": [
+        "sections/ch08.tex:758",
+        "supplementary/check_ch08.py: check_08",
+        "ocr/p-424.txt (Jackson printed p.399)",
+        "ocr/p-425.txt (Jackson printed p.400)",
+        "Jackson/source conventions: 376-377: (8.105), Section8.9"
+      ],
+      "initial_derivation_checked": "Stored energy and two surface losses give Q=2h/(delta_e+delta_i) for each l; ideal frequency yields Q4.04914.",
+      "candidate": "Small h/a alone might justify weak loss: discarded; delta_i/h=.489 and about12percent reactive shift are explicitly identified as uncontrolled small-loss approximation.",
+      "candidate_status": "discarded/no new defect",
+      "change": "No TeX change in this fresh audit.",
+      "current_verification": {
+        "analytic": "Manual independent algebra/identities and source comparison as recorded; not a machine-checked theorem.",
+        "executable": "check_08",
+        "sample_evidence": "The full chapter suite exited 0 with -W error. Symbolic identities and numerical tolerances are in the named functions; finite numerical samples are not universal proofs."
+      },
+      "independent_final_pass": {
+        "route": "Different route: dimensional surface-to-volume ratio and conducting versus displacement-current ratios reproduce the numerical validity assessment.",
+        "result": "No new confirmed mathematical or physical defect found in this independent final pass."
+      },
+      "remaining_limitations": "No quantitative accuracy claim for realistic stratified ionosphere."
+    },
+    {
+      "problem": "8.9",
+      "statement_and_every_solution_subpart_read": true,
+      "subparts": [
+        "a",
+        "b",
+        "c"
+      ],
+      "inspected_sources": [
+        "sections/ch08.tex:816",
+        "supplementary/check_ch08.py: check_09",
+        "ocr/p-425.txt (Jackson printed p.400)",
+        "Jackson/source conventions: 365-367: boundary Green identities; printed p.400 problem"
+      ],
+      "initial_derivation_checked": "Self-adjoint curlcurl gives stationary Rayleigh quotient; both trial integrals and minimizing alpha evaluated.",
+      "candidate": "A general unconstrained Maxwell trial may give a false positive-mode upper bound: discarded because divergence-free sector and lower-mode restrictions are stated.",
+      "candidate_status": "discarded/no new defect",
+      "change": "No TeX change in this fresh audit.",
+      "current_verification": {
+        "analytic": "Manual independent algebra/identities and source comparison as recorded; not a machine-checked theorem.",
+        "executable": "check_09",
+        "sample_evidence": "The full chapter suite exited 0 with -W error. Symbolic identities and numerical tolerances are in the named functions; finite numerical samples are not universal proofs."
+      },
+      "independent_final_pass": {
+        "route": "Different route: finite-variation quotient identity eliminates linear terms; denominator positivity and two stationary roots select global polynomial minimum.",
+        "result": "No new confirmed mathematical or physical defect found in this independent final pass."
+      },
+      "remaining_limitations": "Upper bound applies in stated divergence-free TM sector."
+    },
+    {
+      "problem": "8.10",
+      "statement_and_every_solution_subpart_read": true,
+      "subparts": [
+        "a",
+        "b",
+        "c",
+        "d"
+      ],
+      "inspected_sources": [
+        "sections/ch08.tex:913",
+        "supplementary/check_ch08.py: check_10",
+        "ocr/p-425.txt (Jackson printed p.400)",
+        "ocr/p-426.txt (Jackson printed p.401)",
+        "Jackson/source conventions: 358-359: TE field relations; printed pp.400-401 problem"
+      ],
+      "initial_derivation_checked": "Trial transverse field satisfies essential boundary conditions, divergence and axis continuity; curl quotient gives18/(5R^2)+pi^2/d^2.",
+      "candidate": "Nonsmooth axis or cylindrical vector-Laplacian terms could invalidate estimate: discarded after integrable1/r terms and vanishing excision boundary are retained.",
+      "candidate_status": "discarded/no new defect",
+      "change": "No TeX change in this fresh audit.",
+      "current_verification": {
+        "analytic": "Manual independent algebra/identities and source comparison as recorded; not a machine-checked theorem.",
+        "executable": "check_10",
+        "sample_evidence": "The full chapter suite exited 0 with -W error. Symbolic identities and numerical tolerances are in the named functions; finite numerical samples are not universal proofs."
+      },
+      "independent_final_pass": {
+        "route": "Different route: reconstruct vector Laplacian and its volume integral independently, then use orthogonality to lower TM sectors to justify sector bound.",
+        "result": "No new confirmed mathematical or physical defect found in this independent final pass."
+      },
+      "remaining_limitations": "Trial is finite-energy, not an analytic exact axis eigenfield."
+    },
+    {
+      "problem": "8.11",
+      "statement_and_every_solution_subpart_read": true,
+      "subparts": [
+        "whole problem"
+      ],
+      "inspected_sources": [
+        "sections/ch08.tex:1021",
+        "supplementary/check_ch08.py: check_11",
+        "ocr/p-426.txt (Jackson printed p.401)",
+        "Jackson/source conventions: printed p.401 problem; Rayleigh identity from8.9"
+      ],
+      "initial_derivation_checked": "Radial integrals for nu>0 give stated quotient; derivative polynomial has exactly one positive root.",
+      "candidate": "Noninteger apex exponent could be inadmissible: discarded because both field and gradient have finite integrals for nu>0.",
+      "candidate_status": "discarded/no new defect",
+      "change": "No TeX change in this fresh audit.",
+      "current_verification": {
+        "analytic": "Manual independent algebra/identities and source comparison as recorded; not a machine-checked theorem.",
+        "executable": "check_11",
+        "sample_evidence": "The full chapter suite exited 0 with -W error. Symbolic identities and numerical tolerances are in the named functions; finite numerical samples are not universal proofs."
+      },
+      "independent_final_pass": {
+        "route": "Different route: Descartes sign count and divergent endpoint quotients establish global minimum; quadrature and Bessel J2 root compare5.20545 to5.13562.",
+        "result": "No new confirmed mathematical or physical defect found in this independent final pass."
+      },
+      "remaining_limitations": "Variational estimate is approximately1.36percent high; no exact-mode claim."
+    },
+    {
+      "problem": "8.12",
+      "statement_and_every_solution_subpart_read": true,
+      "subparts": [
+        "a",
+        "b"
+      ],
+      "inspected_sources": [
+        "sections/ch08.tex:1070",
+        "supplementary/check_ch08.py: check_12",
+        "ocr/p-426.txt (Jackson printed p.401)",
+        "Jackson/source conventions: 365-367: Green/impedance perturbation; printed p.401"
+      ],
+      "initial_derivation_checked": "Dirichlet shift and complete Neumann shape derivative include rotation of normal; trapezoid shift2pi^2 delta/a^3.",
+      "candidate": "Problem higher-order-slope premise appears violated by trapezoid: derivative term actually vanishes for TE10 because tangential scalar derivative on moving sides is zero.",
+      "candidate_status": "discarded/no new defect",
+      "change": "No TeX change in this fresh audit.",
+      "current_verification": {
+        "analytic": "Manual independent algebra/identities and source comparison as recorded; not a machine-checked theorem.",
+        "executable": "check_12",
+        "sample_evidence": "The full chapter suite exited 0 with -W error. Symbolic identities and numerical tolerances are in the named functions; finite numerical samples are not universal proofs."
+      },
+      "independent_final_pass": {
+        "route": "Different route: use general Hadamard Neumann form and direct weighted side integrals; mean-width shrink gives the same first-order TE sign and scale.",
+        "result": "No new confirmed mathematical or physical defect found in this independent final pass."
+      },
+      "remaining_limitations": "Rectangular TE10 nondegeneracy requires a>b; square needs matrix treatment."
+    },
+    {
+      "problem": "8.13",
+      "statement_and_every_solution_subpart_read": true,
+      "subparts": [
+        "a",
+        "b"
+      ],
+      "inspected_sources": [
+        "sections/ch08.tex:1177",
+        "supplementary/check_ch08.py: check_13",
+        "ocr/p-427.txt (Jackson printed p.402)",
+        "Jackson/source conventions: 365-367: (8.65),(8.68); printed p.402"
+      ],
+      "initial_derivation_checked": "Degenerate generalized matrix, TE impedance quadratic form and full ellipse normal rotation lead to lambda1.836834889.",
+      "candidate": "Using printed incomplete Neumann matrix would give lambda1: existing erratum verified, not new defect.",
+      "candidate_status": "discarded/no new defect",
+      "change": "No TeX change in this fresh audit.",
+      "current_verification": {
+        "analytic": "Manual independent algebra/identities and source comparison as recorded; not a machine-checked theorem.",
+        "executable": "check_13",
+        "sample_evidence": "The full chapter suite exited 0 with -W error. Symbolic identities and numerical tolerances are in the named functions; finite numerical samples are not universal proofs."
+      },
+      "independent_final_pass": {
+        "route": "Different route: map ellipse to disk and perturb anisotropic gradient-energy integral; independent volume result gives same signed cos/sin splitting.",
+        "result": "No new confirmed mathematical or physical defect found in this independent final pass."
+      },
+      "remaining_limitations": "First order in deformation; nearby distinct modes and TE/TM accidental mixing need larger subspace."
+    },
+    {
+      "problem": "8.14",
+      "statement_and_every_solution_subpart_read": true,
+      "subparts": [
+        "a",
+        "b",
+        "c"
+      ],
+      "inspected_sources": [
+        "sections/ch08.tex:1326",
+        "supplementary/check_ch08.py: check_14",
+        "ocr/p-427.txt (Jackson printed p.402)",
+        "ocr/p-428.txt (Jackson printed p.403)",
+        "Jackson/source conventions: 380-383: eikonal (8.111)-(8.117)"
+      ],
+      "initial_derivation_checked": "Invariant n dz/ds reduces sinh(alpha x) to harmonic motion; half-period and optical length independent of launch angle.",
+      "candidate": "Equal spatial period might not imply equal transit time: discarded by integrating n ds, with result n0 pi/alpha.",
+      "candidate_status": "discarded/no new defect",
+      "change": "No TeX change in this fresh audit.",
+      "current_verification": {
+        "analytic": "Manual independent algebra/identities and source comparison as recorded; not a machine-checked theorem.",
+        "executable": "check_14",
+        "sample_evidence": "The full chapter suite exited 0 with -W error. Symbolic identities and numerical tolerances are in the named functions; finite numerical samples are not universal proofs."
+      },
+      "independent_final_pass": {
+        "route": "Different route: differentiate the supplied ray and verify n cos(theta) invariant; integrate optical path using tangent substitution for several launch angles.",
+        "result": "No new confirmed mathematical or physical defect found in this independent final pass."
+      },
+      "remaining_limitations": "Nondispersive geometrical optics and sufficiently broad graded medium."
+    },
+    {
+      "problem": "8.15",
+      "statement_and_every_solution_subpart_read": true,
+      "subparts": [
+        "a",
+        "b",
+        "c"
+      ],
+      "inspected_sources": [
+        "sections/ch08.tex:1392",
+        "supplementary/check_ch08.py: check_15; check_fresh_routes",
+        "ocr/p-428.txt (Jackson printed p.403)",
+        "Jackson/source conventions: 385-387: (8.121)-(8.124)"
+      ],
+      "initial_derivation_checked": "TE f/fprime and TM f/fprime/epsilon matching give correct index ratio and transverse parity; all requested Newton roots and power fractions checked.",
+      "candidate": "TM epsilon ratio or parity might be reversed: discarded by direct right-boundary derivatives and parity reflection.",
+      "candidate_status": "discarded/no new defect",
+      "change": "No TeX change in this fresh audit.",
+      "current_verification": {
+        "analytic": "Manual independent algebra/identities and source comparison as recorded; not a machine-checked theorem.",
+        "executable": "check_15; check_fresh_routes",
+        "sample_evidence": "The full chapter suite exited 0 with -W error. Symbolic identities and numerical tolerances are in the named functions; finite numerical samples are not universal proofs."
+      },
+      "independent_final_pass": {
+        "route": "Different route: solve TM boundary determinant independently for even and odd samples; threshold w to0 sends power into both claddings and fixed-p highV confines it.",
+        "result": "No new confirmed mathematical or physical defect found in this independent final pass."
+      },
+      "remaining_limitations": "Small-xi approximation has explicit near-threshold errors; Newton roots are sampled numerical evidence."
+    },
+    {
+      "problem": "8.16",
+      "statement_and_every_solution_subpart_read": true,
+      "subparts": [
+        "a",
+        "b",
+        "c"
+      ],
+      "inspected_sources": [
+        "sections/ch08.tex:1510",
+        "supplementary/check_ch08.py: check_16",
+        "ocr/p-428.txt (Jackson printed p.403)",
+        "ocr/p-429.txt (Jackson printed p.404)",
+        "Jackson/source conventions: 383: optical delay; 386: (8.121)-(8.124)"
+      ],
+      "initial_derivation_checked": "Implicit mode derivative gives vg=(cC/n1)(1+w)/(C^2+w); Goos-Haenchen derivative2kz/(q beta) and delay plots agree.",
+      "candidate": "Could group velocity violate c/n2 threshold limit or use Vt(0)=0 divisor: discarded; common axis uses Vt(1) and threshold limit is c/n2.",
+      "candidate_status": "discarded/no new defect",
+      "change": "No TeX change in this fresh audit.",
+      "current_verification": {
+        "analytic": "Manual independent algebra/identities and source comparison as recorded; not a machine-checked theorem.",
+        "executable": "check_16",
+        "sample_evidence": "The full chapter suite exited 0 with -W error. Symbolic identities and numerical tolerances are in the named functions; finite numerical samples are not universal proofs."
+      },
+      "independent_final_pass": {
+        "route": "Different route: finite differences of independent dispersion roots versus analytic group velocity, plus highV and threshold energy-location limits.",
+        "result": "No new confirmed mathematical or physical defect found in this independent final pass."
+      },
+      "remaining_limitations": "Material dispersion intentionally neglected."
+    },
+    {
+      "problem": "8.17",
+      "statement_and_every_solution_subpart_read": true,
+      "subparts": [
+        "a",
+        "b",
+        "c"
+      ],
+      "inspected_sources": [
+        "sections/ch08.tex:1602",
+        "supplementary/check_ch08.py: check_17; check_fresh_routes",
+        "ocr/p-429.txt (Jackson printed p.404)",
+        "Jackson/source conventions: 388-390: (8.126)-(8.130)"
+      ],
+      "initial_derivation_checked": "Tangential Maxwell matching produces hybrid determinant; m0 TE/TM roots approach firstJ0 pole; HE11 has exponentially small positive w.",
+      "candidate": "Asymptotic prefactor could omit constant from J1 derivative: discarded after w^-4 cancellation and retaining -1/4 in J1prime/(uJ1).",
+      "candidate_status": "discarded/no new defect",
+      "change": "No TeX change in this fresh audit.",
+      "current_verification": {
+        "analytic": "Manual independent algebra/identities and source comparison as recorded; not a machine-checked theorem.",
+        "executable": "check_17; check_fresh_routes",
+        "sample_evidence": "The full chapter suite exited 0 with -W error. Symbolic identities and numerical tolerances are in the named functions; finite numerical samples are not universal proofs."
+      },
+      "independent_final_pass": {
+        "route": "Different route:100-digit mpmath roots of original determinant compare cancellation-free double-precision equation for multiple V/index pairs.",
+        "result": "No new confirmed mathematical or physical defect found in this independent final pass."
+      },
+      "remaining_limitations": "Numerical samples support asymptote; existence at arbitrarily smallV follows analytic balance, not finite sampling."
+    },
+    {
+      "problem": "8.18",
+      "statement_and_every_solution_subpart_read": true,
+      "subparts": [
+        "a",
+        "b"
+      ],
+      "inspected_sources": [
+        "sections/ch08.tex:1721",
+        "supplementary/check_ch08.py: check_18",
+        "ocr/p-429.txt (Jackson printed p.404)",
+        "Jackson/source conventions: 390-391: (8.131)-(8.136), p.391 scan"
+      ],
+      "initial_derivation_checked": "Scalar Green orthogonality, mixed gradient/rotated-gradient integral, impedances and imaginary longitudinal fields produce Jackson bilinear normalizations.",
+      "candidate": "Negative longitudinal norms might signal sign error: discarded after source scan confirms bilinear, nonconjugated products.",
+      "candidate_status": "discarded/no new defect",
+      "change": "No TeX change in this fresh audit.",
+      "current_verification": {
+        "analytic": "Manual independent algebra/identities and source comparison as recorded; not a machine-checked theorem.",
+        "executable": "check_18",
+        "sample_evidence": "The full chapter suite exited 0 with -W error. Symbolic identities and numerical tolerances are in the named functions; finite numerical samples are not universal proofs."
+      },
+      "independent_final_pass": {
+        "route": "Different route: reconstruct longitudinal fields from divergence; evaluate real power with conjugation separately to check evanescent zero flux and propagating positive flux.",
+        "result": "No new confirmed mathematical or physical defect found in this independent final pass."
+      },
+      "remaining_limitations": "Exactly at cutoff requires normalization by a limit; degenerate scalar bases are chosen orthogonal."
+    },
+    {
+      "problem": "8.19",
+      "statement_and_every_solution_subpart_read": true,
+      "subparts": [
+        "a",
+        "b",
+        "c"
+      ],
+      "inspected_sources": [
+        "sections/ch08.tex:1816",
+        "supplementary/check_ch08.py: check_19",
+        "ocr/p-429.txt (Jackson printed p.404)",
+        "ocr/p-430.txt (Jackson printed p.405)",
+        "Jackson/source conventions: 390-391: (8.135)-(8.136); printed pp.404-405 problem"
+      ],
+      "initial_derivation_checked": "Probe Fourier overlap Fn, normalized TE/TM amplitudes, high-index behavior, one-sided power and reflected image all checked.",
+      "candidate": "Fn pole qn=k0 or maximum radiation resistance factor might be wrong: discarded using direct integral limit and separate accounting of two outgoing directions.",
+      "candidate_status": "discarded/no new defect",
+      "change": "No TeX change in this fresh audit.",
+      "current_verification": {
+        "analytic": "Manual independent algebra/identities and source comparison as recorded; not a machine-checked theorem.",
+        "executable": "check_19",
+        "sample_evidence": "The full chapter suite exited 0 with -W error. Symbolic identities and numerical tolerances are in the named functions; finite numerical samples are not universal proofs."
+      },
+      "independent_final_pass": {
+        "route": "Different route: evaluate current overlap numerically at removable resonance, reconstruct short-circuit standing wave, and recover Pleft=4P sin^2(kL).",
+        "result": "No new confirmed mathematical or physical defect found in this independent final pass."
+      },
+      "remaining_limitations": "Prescribed current profile; zero base current does not define finite radiation resistance."
+    },
+    {
+      "problem": "8.20",
+      "statement_and_every_solution_subpart_read": true,
+      "subparts": [
+        "a",
+        "b",
+        "c"
+      ],
+      "inspected_sources": [
+        "sections/ch08.tex:1963",
+        "supplementary/check_ch08.py: check_20; check_fresh_routes",
+        "ocr/p-430.txt (Jackson printed p.405)",
+        "Jackson/source conventions: 390-391: modal normalizations; printed p.405"
+      ],
+      "initial_derivation_checked": "Constant-current half-loop has zero gradient overlap for every TM mode; TE10 arc integral pi R J1(piR/a) gives stated small-loop power.",
+      "candidate": "Half-loop may need extra return-wall contribution: discarded because tangentialE=0 on metal, so Stokes closure adds zero overlap.",
+      "candidate_status": "discarded/no new defect",
+      "change": "No TeX change in this fresh audit.",
+      "current_verification": {
+        "analytic": "Manual independent algebra/identities and source comparison as recorded; not a machine-checked theorem.",
+        "executable": "check_20; check_fresh_routes",
+        "sample_evidence": "The full chapter suite exited 0 with -W error. Symbolic identities and numerical tolerances are in the named functions; finite numerical samples are not universal proofs."
+      },
+      "independent_final_pass": {
+        "route": "Different route: integrate curl(E_TE) over half-disk and compare to arc/J1 result; exact endpoint-gradient argument also covers evanescentTM.",
+        "result": "No new confirmed mathematical or physical defect found in this independent final pass."
+      },
+      "remaining_limitations": "Loop fully inside guide; constant current and smallR are distinct approximations."
+    },
+    {
+      "problem": "8.21",
+      "statement_and_every_solution_subpart_read": true,
+      "subparts": [
+        "a",
+        "b"
+      ],
+      "inspected_sources": [
+        "sections/ch08.tex:2068",
+        "supplementary/check_ch08.py: check_21",
+        "ocr/p-430.txt (Jackson printed p.405)",
+        "ocr/p-431.txt (Jackson printed p.406)",
+        "Jackson/source conventions: printed pp.405-406; supplied Laplacian"
+      ],
+      "initial_derivation_checked": "Conjugating by h^-1/2 gives curvature -kappa^2/4; square-well matching gives q=b tan(bell/2).",
+      "candidate": "Original theta a/R alone might imply coefficienttheta^2/64: existing small-angle erratum necessary; theta=pi provides falsification.",
+      "candidate_status": "discarded/no new defect",
+      "change": "No TeX change in this fresh audit.",
+      "current_verification": {
+        "analytic": "Manual independent algebra/identities and source comparison as recorded; not a machine-checked theorem.",
+        "executable": "check_21",
+        "sample_evidence": "The full chapter suite exited 0 with -W error. Symbolic identities and numerical tolerances are in the named functions; finite numerical samples are not universal proofs."
+      },
+      "independent_final_pass": {
+        "route": "Different route: solve exact reduced square-well equation x/cosx=|theta|/4, compare weak-angle series and finite-angle qR=.295847034.",
+        "result": "No new confirmed mathematical or physical defect found in this independent final pass."
+      },
+      "remaining_limitations": "Adiabatic reduced model and smoothed bend ends; cited external waveguide papers not used as unverified derivation evidence."
+    }
+  ],
+  "local_render": "TeX unchanged in this audit; only calculation checks/assets updated.",
+  "frozen_sha256": {
+    "sections/ch08.tex": "71b029e4e23aaea84be3d77399e5d9a12431c7c0b549571be626d0053449aaa0",
+    "supplementary/check_ch08.py": "14b42a75dbb328c66fc4a97c65ce98f1e0d23931cd113627e7135b0f4eaa3b1d",
+    "supplementary/ch08_attenuation.tex": "ff7a9e504729067279bc64e56478a3871936b19913623f30da2f51250c0545f1",
+    "supplementary/ch08_cavity_te.tex": "bb690dfb266333bb94f4bb7e0a81d090b5db1624621261637a74716dcd72c438",
+    "supplementary/ch08_cavity_tm.tex": "165013007d1f323a4f996ecd50f43970b31243806f8760b926f896dd53153c28",
+    "supplementary/ch08_group_velocity.tex": "7928231b61ee73f7fba188fe6a036a30b3e70115537e2da542ddf14e1bf98f38",
+    "supplementary/ch08_modal_delay.tex": "bc5474dab13b00cf033b0f156828ebff198dcb4f789b200dfa0661d6014efb81",
+    "supplementary/ch08_rays.tex": "bc261fb7e8b31e248b8a8ad0bc9b1219e999c88f6007aca6d84749cca808d389",
+    "supplementary/ch08-deep-debug/baseline.log": "86ce17bcabe81215ee498586b5429fdad2efc5bad07c7a46a5b5db76e75dd399",
+    "supplementary/ch08-deep-debug/crc1.log": "532ef32406e46726b36c2571eb6b48b9fae6a987e3cac94a7e29dde82bb72148",
+    "supplementary/ch08-deep-debug/crc2.log": "532ef32406e46726b36c2571eb6b48b9fae6a987e3cac94a7e29dde82bb72148",
+    "supplementary/ch08-deep-debug/final.log": "532ef32406e46726b36c2571eb6b48b9fae6a987e3cac94a7e29dde82bb72148"
+  },
+  "textbook": "John David Jackson - Classical Electrodynamics (1998, Wiley) - libgen.li.pdf; PDF page = printed page +25.",
+  "current_source_cache": [
+    "build/ch08-source/p-378.txt",
+    "build/ch08-source/p-379.txt",
+    "build/ch08-source/p-383.txt",
+    "build/ch08-source/p-384.txt",
+    "build/ch08-source/p-390.txt",
+    "build/ch08-source/p-391.txt",
+    "build/ch08-source/p-392.txt",
+    "build/ch08-source/p-401.txt",
+    "build/ch08-source/p-408.txt",
+    "build/ch08-source/p-409.txt",
+    "build/ch08-source/p-410.txt",
+    "build/ch08-source/p-411.txt",
+    "build/ch08-source/p-412.txt",
+    "build/ch08-source/p-413.txt",
+    "build/ch08-source/p-415.txt",
+    "build/ch08-source/p-416.png"
+  ],
+  "targeted_integrity_scan": "Current scan found no broken newline-m unit commands, bare cdots/quad/frac command fragments, or literal comma integration measures. A first broad pattern matched suffixes within valid qquad and dfrac; the identifier-boundary scan eliminated these false positives.",
+  "environment": {
+    "python": "3.14.7",
+    "numpy": "2.4.6",
+    "scipy": "1.18.0",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "external_sources_checked_in_current_audit": [
+    {
+      "url": "https://nvlpubs.nist.gov/nistpubs/Legacy/circ/nbscircular31e2.pdf",
+      "location": "Printed p.9, PDF page index 12",
+      "verified_input": "International annealed copper standard at 20 degrees C: conductivity 58 meter/(ohm mm^2), equivalent to 58 MS/m; resistivity 1.7241 microohm cm.",
+      "applies_to": "8.6"
+    }
+  ],
+  "unchanged_tex_verified_against_baseline_sha256": true
+}

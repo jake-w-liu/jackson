@@ -1,0 +1,60 @@
+{
+  "16.1": "PASS",
+  "16.2 muon times seconds times Z4": [
+    7.48697275256825e-08,
+    7.517758002373218e-08
+  ],
+  "16.2": "PASS",
+  "16.3": "PASS",
+  "16.4 shell causal threshold a/(c*tau)": 1.0,
+  "16.4": "PASS",
+  "16.5 causal step velocities at t=0,1,2,5": [
+    0.0,
+    0.2528482235313356,
+    0.45156233376799926,
+    1.0500120655038487
+  ],
+  "16.5": "PASS",
+  "16.6 negative-mass lower-root turning point": [
+    0.3749999997938414,
+    -7.999999999999999
+  ],
+  "16.6": "PASS",
+  "16.7": "PASS",
+  "16.8": "PASS",
+  "16.9": "PASS",
+  "16.10 first-order smooth-force errors": [
+    0.00012622242335458278,
+    3.006839593289179e-05
+  ],
+  "16.10": "PASS",
+  "16.11 first-order crossing-time errors": [
+    0.0004091654434530412,
+    0.00010247356312409472,
+    2.5640914997682174e-05
+  ],
+  "16.11": "PASS",
+  "16.12 sodium widths and pressures": {
+    "doppler_FWHM_angstrom": 0.019679390277550748,
+    "collision_FWHM_angstrom_per_Pa": 5.124744889147479e-09,
+    "collision_FWHM_angstrom_per_Torr": 6.832431261748267e-07,
+    "collision_rate_per_s_per_Pa": 1389.8564421620322,
+    "pressure_equal_natural_Pa": 23415.79973163551,
+    "pressure_equal_Doppler_Pa": 3840072.179831861
+  },
+  "16.12": "PASS",
+  "16.13 normalized dipole sum": 19.739208802178716,
+  "16.13": "PASS",
+  "fresh_independent_recheck": {
+    "full_oscillator_secular_relative_errors": [
+      0.0007988819163047278,
+      0.0001999300299855289,
+      4.99956254421674e-05
+    ],
+    "finite_contour_arc_errors": [
+      0.060338980899302896,
+      0.03004210194658885
+    ],
+    "checks": "coupled orbit, entire-mass winding, symmetric Fourier pair, causal memory, proper acceleration, gap edge cases, sum-rule contour"
+  }
+}
