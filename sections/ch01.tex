@@ -877,7 +877,7 @@ $\rho=1$. The comparison is
 \end{center}
 At $(1/2,1/4)$ the exact and trial values are $0.720492$ and
 $15\pi/64=0.736311$; at the center they are $0.925782$ and
-$5\pi/16=0.981748$. The respective errors are about $2.20\%$ and $6.04\%$.
+$5\pi/16=0.981748$. The respective errors are about $2.20\%$ and $6.05\%$.
 The variational principle minimizes the functional, not the pointwise error,
 so it does not make this potential a pointwise upper bound everywhere.
 The numerical series uses the stable ratio
@@ -954,7 +954,7 @@ Therefore
 \boxed{\frac{4S_c+S_s}{20}
 =F+\frac3{10}h^2\nabla^2F+\frac{h^4}{40}\nabla^4F+O(h^6).}
 \]
-If $F$ is harmonic in a neighborhood, both displayed Laplacians vanish.
+If $F$ is harmonic in a neighborhood, both displayed Laplacians vanish. Hence the improved average $\langle\!\langle F(0,0)\rangle\!\rangle=(4S_c+S_s)/20$, which the dark-red phrase in the statement names, equals $F(0,0)+O(h^6)$, i.e.\ it is correct through order $h^5$ inclusive, whereas $S_c/4$ and $S_s/4$ keep the leading errors $h^4(F_{xxxx}+F_{yyyy})/48$ and $-h^4(F_{xxxx}+F_{yyyy})/12$.
 For Poisson's equation $\nabla^2\Phi=-\rho/\epsilon_0$, instead rearrange to
 \[
 \boxed{\Phi=\frac{4S_c+S_s}{20}
@@ -1148,7 +1148,7 @@ $C'/\epsilon_0\le10.24756$ and the flux estimate $10.24500$.
 \end{enumerate}
 \solution
 Use $u=4\pi\epsilon_0\Phi$; then $\nabla^2u=-4\pi$.
-Let $(a,b,c)$ denote the values at $(1/4,1/4)$, $(1/2,1/4)$, and $(1/2,1/2)$.
+Let $(a,b,c)$ denote the values at $(1/4,1/4)$, $(1/2,1/4)$, and $(1/2,1/2)$; the convergence plot in part (c) labels them $u_1$, $u_2$, $u_3$.
 The source contribution in Problem 1.22 is
 $3h^2(4\pi)/10=3\pi/40$ for $h=1/4$.
 The axial and diagonal sums are
@@ -1168,7 +1168,7 @@ Multiplying the averaging equation by 20 therefore gives
 Here the symmetry-related self term $2b$ has been moved to the diagonal
 before defining Jacobi and Gauss--Seidel on this three-variable system.
 \begin{enumerate}
-\item[(a)] Starting from $(a_0,b_0,c_0)=(1,1,1)$, Jacobi uses only the old
+\item[(a)] The dark-red ``Jacobi'' in the statement replaces the printed adjective ``Jacobian'': the scheme meant is Jacobi (simultaneous-displacement) iteration, which involves no Jacobian matrix or determinant. Starting from $(a_0,b_0,c_0)=(1,1,1)$, Jacobi uses only the old
 values in each sweep:
 \[
 a_{k+1}=\frac{8b_k+c_k+s}{20},\quad
