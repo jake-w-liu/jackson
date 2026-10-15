@@ -1,0 +1,2468 @@
+% Problems, Chapter 5: Magnetostatics, Faraday's Law, Quasi-Static Fields
+% Jackson, Classical Electrodynamics, 3rd ed.
+% Requires: amsmath, amssymb, tikz
+
+\section*{Problems}
+
+\Needspace{5\baselineskip}
+\par\bigskip
+\noindent\textbf{5.1}\quad Starting with the differential expression
+\[
+d\mathbf{B}=\frac{\mu_{0}I}{4\pi}\,d\mathbf{l}'\times\frac{\mathbf{x}-\mathbf{x}'}{|\mathbf{x}-\mathbf{x}'|^{3}}
+\]
+for the magnetic induction at the point $P$ with coordinate $\mathbf{x}$ produced by an increment of current $I\,d\mathbf{l}'$ at $\mathbf{x}'$, show explicitly that for a closed loop carrying a current $I$ the magnetic induction at $P$ is
+\[
+\mathbf{B}=\frac{\mu_{0}I}{4\pi}\nabla\Omega
+\]
+where $\Omega$ is the solid angle subtended by the loop at the point $P$. This corresponds to a magnetic scalar potential, $\Phi_{M}=-\mu_{0}I\Omega/4\pi$. The sign convention for the solid angle is that $\Omega$ is positive if the point $P$ views the ``inner'' side of the surface spanning the loop, that is, if a unit normal $\mathbf{n}$ to the surface is defined by the direction of current flow via the right-hand rule, $\Omega$ is positive if $\mathbf{n}$ points \emph{away} from the point $P$, and negative otherwise. This is the same convention as in Section 1.6 for the electric dipole layer.
+\solution
+Let $G=|\mathbf x-\mathbf x'|^{-1}$ and orient a spanning surface $S$
+by the right-hand rule for the current. The specified solid angle is
+\[
+\Omega(\mathbf x)=\int_S\frac{\mathbf n'\cdot(\mathbf x'-\mathbf x)}
+{|\mathbf x-\mathbf x'|^3}da'
+=\int_S n'_j\partial_jG\,da'.
+\]
+Here unprimed derivatives act on the observation point, and
+$\partial'_jG=-\partial_jG$. Put
+$\mathbf C=\oint d\mathbf l'\times\nabla'G$.
+Componentwise Stokes's theorem gives
+\[
+\begin{split}
+C_i&=\epsilon_{ijk}\epsilon_{jlm}
+\int_S n'_l\partial'_m\partial'_kG\,da'\\
+&=\int_S[n'_k\partial'_i\partial'_kG-n'_i\nabla'^2G]da'
+=\partial_i\int_Sn'_k\partial_kG\,da'=\partial_i\Omega.
+\end{split}
+\]
+The delta term $\nabla'^2G=-4\pi\delta^3(\mathbf x'-\mathbf x)$ is absent
+when the observation point is off the chosen spanning surface.
+Since $\nabla'G=(\mathbf x-\mathbf x')/|\mathbf x-\mathbf x'|^3$,
+Biot--Savart now gives
+\[
+\boxed{\mathbf B=\frac{\mu_0I}{4\pi}\nabla\Omega,\qquad
+\Phi_M=-\frac{\mu_0I}{4\pi}\Omega,\quad\mathbf B=-\nabla\Phi_M.}
+\]
+For $\mathbf H$ rather than $\mathbf B$, divide this scalar potential by
+$\mu_0$. The solid angle changes by $4\pi$ on crossing a spanning surface.
+One must use a continuous local branch before differentiating; a
+distributional derivative of a discontinuous branch would add a spurious
+sheet term. This multivaluedness is necessary because a path linking the
+wire has $\oint\mathbf H\cdot d\mathbf l=I$, despite the existence of a
+local scalar potential away from the current.
+
+
+\Needspace{5\baselineskip}
+\par\bigskip
+\noindent\textbf{5.2}\quad A long, right cylindrical, ideal solenoid of arbitrary cross section is created by stacking a large number of identical current-carrying loops one above the other, with $N$ coils per unit length and each loop carrying a current $I$. [In practice such a solenoid could be wound on a mandrel machined to the arbitrary cross section. After the coil was made rigid (e.g., with epoxy), the mandrel would be withdrawn.]
+\begin{enumerate}
+\item[(a)] In the approximation that the solenoidal coil is an ideal current sheet and infinitely long, use Problem 5.1 to establish that at any point inside the coil the magnetic field is axial and equal to
+\[
+H=NI
+\]
+and that $H=0$ for any point outside the coil.
+\item[(b)] For a realistic solenoid of circular cross section of radius $a$ ($Na\gg1$), but still infinite in length, show that the ``smoothed'' magnetic field just outside the solenoid (averaged axially over several turns) is not zero, but is the same in magnitude and direction as that of a single wire on the axis carrying a current $I$, even if $Na\to\infty$. Compare fields inside and out.
+\end{enumerate}
+\solution
+\textbf{(a)} Orient the loops counterclockwise as seen from $+z$.
+Let $D$ be their cross section and $u=z'-z$ the height of a source loop
+above the observation point. Its principal solid angle is
+\[
+\Omega_0(u)=\int_D\frac{u\,d^2s'}{[|\mathbf s-\mathbf s'|^2+u^2]^{3/2}}.
+\]
+It is odd in $u$, tends to zero at $u=\pm\infty$, and, for
+$\mathbf s$ strictly inside $D$, tends to $\pm2\pi$ as $u\to0^\pm$.
+The last limit follows by integrating over a small disk centered at
+$\mathbf s$:
+\[
+\int_0^\delta\frac{2\pi u\,s\,ds}{(s^2+u^2)^{3/2}}
+=2\pi\left[\operatorname{sgn}u-\frac{u}{\sqrt{\delta^2+u^2}}\right].
+\]
+Outside $D$ there is no jump.
+
+For interior observation points choose the continuous local branch
+$\widetilde\Omega=\Omega_0(z'-z)+4\pi H(z-z')$; outside use $\Omega_0$.
+The sum of the loop potentials for a finite stack is
+$-NI\int\widetilde\Omega\,dz'/(4\pi)$ for the $\mathbf H$ potential.
+As both ends recede to infinity, derivatives of the principal-angle
+integral vanish: its transverse contributions cancel by oddness, and its
+axial end terms tend to zero. Inside, the added branch contributes
+\[
+\nabla\int4\pi H(z-z')\,dz'=4\pi\widehat{\mathbf z}.
+\]
+There is no such term outside. Problem 5.1 therefore gives
+\[
+\boxed{\mathbf H=NI\,\widehat{\mathbf z}\quad(\mathbf s\in D),
+\qquad\mathbf H=0\quad(\mathbf s\notin\overline D).}
+\]
+This result is independent of the shape of $D$. The jump agrees with
+$\mathbf n\times(\mathbf H_{\rm out}-\mathbf H_{\rm in})=\mathbf K$,
+where $\mathbf K=NI\,\widehat{\mathbf z}\times\mathbf n$.
+
+\textbf{(b)} A continuous helical wire advances by one pitch $1/N$ per
+turn. Axial averaging gives two components of sheet current:
+\[
+K_\phi=NI,\qquad 2\pi aK_z=I,\qquad K_z=\frac{I}{2\pi a}.
+\]
+The second equality follows because a plane perpendicular to the axis
+cuts the single winding once and carries net axial current $I$.
+The azimuthal sheet produces the field in part (a). An Amperian circle
+for the axial sheet gives $2\pi\rho H_\phi=I$ outside, and zero inside.
+Thus, neglecting the spatial ripple between turns,
+\[
+\boxed{\mathbf H_{\rm in}=NI\,\widehat{\mathbf z},\qquad
+\mathbf H_{\rm out}=\frac{I}{2\pi\rho}\widehat{\boldsymbol\phi}.}
+\]
+At $\rho=a^+$, $H_{\rm out}/H_{\rm in}=1/(2\pi Na)$.
+For fixed $I$, the exterior field does not vanish as $N$ increases,
+although its ratio to the interior field does. A return lead can alter
+this exterior field; the result is for the isolated helical winding.
+
+
+\Needspace{5\baselineskip}
+\par\bigskip
+\noindent\textbf{5.3}\quad A right-circular solenoid of finite length $L$ and radius $a$ has $N$ turns per unit length and carries a current $I$. Show that the magnetic induction on the cylinder axis in the limit $NL\to\infty$ is
+\[
+B_{z}=\frac{\mu_{0}NI}{2}\left(\cos\theta_{1}+\cos\theta_{2}\right)
+\]
+where the angles are defined in the figure.
+
+\begin{center}
+\begin{tikzpicture}[scale=1.0]
+  % solenoid: two rows of coil cross-section circles
+  \foreach \i in {0,...,20}{
+    \draw (\i*0.15,0.35) circle (0.055);
+    \draw (\i*0.15,-0.35) circle (0.055);
+  }
+  % dashed end caps
+  \draw[dashed] (-0.08,-0.44) -- (-0.08,0.44);
+  \draw[dashed] (3.08,-0.44) -- (3.08,0.44);
+  % axis
+  \draw (-1.2,0) -- (4.2,0);
+  % point P on the axis, right of center
+  \fill (2.1,0) circle (1.4pt);
+  % lines from ends of solenoid to P
+  \draw (0,0.41) -- (2.1,0);
+  \draw (3.0,0.41) -- (2.1,0);
+  % theta angles: arcs between axis and slanted lines, centered at P
+  \draw[<->] (1.35,0) arc (180:169:0.75);
+  \node at (1.05,0.09) {$\theta_{1}$};
+  \draw[<->] (2.65,0) arc (0:24.5:0.55);
+  \node at (2.8,0.09) {$\theta_{2}$};
+  \node[below right] at (4.0,-0.5) {\textbf{Problem 5.3}};
+\end{tikzpicture}
+\end{center}
+\solution
+First derive the axial field of one loop. Parameterize it by
+\[
+\mathbf x'=(a\cos\phi',a\sin\phi',z'),\qquad
+d\mathbf l'=a(-\sin\phi',\cos\phi',0)d\phi'.
+\]
+Then
+the axial component of $d\mathbf l'\times(\mathbf x-\mathbf x')$
+at $(0,0,z)$ is $a^2d\phi'$. The transverse components integrate to zero,
+so
+\[
+dB_z=\frac{\mu_0(NI\,dz')a^2}
+{2[a^2+(z-z')^2]^{3/2}}.
+\]
+Choose the ends at $\pm L/2$ and integrate:
+\[
+\begin{split}
+B_z(z)&=\frac{\mu_0NI}{2}\int_{-L/2}^{L/2}
+\frac{a^2\,dz'}{[a^2+(z-z')^2]^{3/2}}\\
+&=\frac{\mu_0NI}{2}
+\left[\frac{z+L/2}{\sqrt{a^2+(z+L/2)^2}}
+-\frac{z-L/2}{\sqrt{a^2+(z-L/2)^2}}\right].
+\end{split}
+\]
+The antiderivative used here is
+$u/\sqrt{a^2+u^2}$, whose derivative is $a^2/(a^2+u^2)^{3/2}$.
+For a point between the ends,
+\[
+\cos\theta_1=\frac{z+L/2}{\sqrt{a^2+(z+L/2)^2}},\qquad
+\cos\theta_2=\frac{L/2-z}{\sqrt{a^2+(L/2-z)^2}},
+\]
+which proves the stated result. The algebraic formula also applies
+outside the solenoid, with the corresponding signed cosines.
+The continuum limit replaces the discrete turns by a sheet of current
+$NI$; a long solenoid gives $B_z\to\mu_0NI$ deep inside.
+
+
+\Needspace{5\baselineskip}
+\par\bigskip
+\noindent\textbf{5.4}\quad A magnetic induction $\mathbf{B}$ in a current-free region in a uniform medium is cylindrically symmetric with components $B_{z}(\rho,z)$ and $B_{\rho}(\rho,z)$ and with a known $B_{z}(0,z)$ on the axis of symmetry. The magnitude of the axial field varies slowly in $z$.
+\begin{enumerate}
+\item[(a)] Show that near the axis the axial and radial components of magnetic induction are approximately
+\begin{align*}
+B_{z}(\rho,z)&\simeq B_{z}(0,z)-\left(\frac{\rho^{2}}{4}\right)\!\left[\frac{\partial^{2}B_{z}(0,z)}{\partial z^{2}}\right]+\cdots\\
+B_{\rho}(\rho,z)&\simeq-\left(\frac{\rho}{2}\right)\!\left[\frac{\partial B_{z}(0,z)}{\partial z}\right]+\left(\frac{\rho^{3}}{16}\right)\!\left[\frac{\partial^{3}B_{z}(0,z)}{\partial z^{3}}\right]+\cdots
+\end{align*}
+\item[(b)] What are the magnitudes of the neglected terms, or equivalently what is the criterion defining ``near'' the axis?
+\end{enumerate}
+\solution
+\textbf{(a)} Smooth axial symmetry requires expansions
+\[
+B_z(\rho,z)=\sum_{n=0}^\infty a_n(z)\rho^{2n},\qquad
+B_\rho(\rho,z)=\sum_{n=0}^\infty b_n(z)\rho^{2n+1}.
+\]
+The divergence equation and the azimuthal curl equation are
+\[
+\rho^{-1}\partial_\rho(\rho B_\rho)+\partial_zB_z=0,\qquad
+\partial_zB_\rho-\partial_\rho B_z=0.
+\]
+Equating powers of $\rho$ gives
+\[
+(2n+2)b_n+a_n'=0,\qquad b_n'=2(n+1)a_{n+1}.
+\]
+Combining these, $a_{n+1}=-a_n''/[4(n+1)^2]$.
+Writing $f(z)=B_z(0,z)=a_0(z)$, repeated substitution yields
+\[
+a_n=\frac{(-1)^nf^{(2n)}}{2^{2n}(n!)^2},\qquad
+b_n=\frac{(-1)^{n+1}f^{(2n+1)}}{2^{2n+1}n!(n+1)!}.
+\]
+In particular,
+\[
+\boxed{B_z=f-\frac{\rho^2}{4}f''+\frac{\rho^4}{64}f^{(4)}+\cdots,}
+\qquad
+\boxed{B_\rho=-\frac{\rho}{2}f'+\frac{\rho^3}{16}f'''
+-\frac{\rho^5}{384}f^{(5)}+\cdots.}
+\]
+\textbf{(b)} The first omitted terms in the question are
+$\rho^4f^{(4)}/64$ and $-\rho^5f^{(5)}/384$.
+If derivatives have a common variation length $\ell$,
+$|f^{(n)}|\sim |f|/\ell^n$, the expansion parameter is $\rho/\ell\ll1$.
+More precisely, each omitted term must be small relative to the accuracy
+required of the retained sum. Ratios to $f'$ or $f''$ alone are
+inappropriate where those derivatives happen to vanish. The series is
+local and its radius of convergence cannot extend through a current sheet
+or another field singularity.
+
+
+\Needspace{5\baselineskip}
+\par\bigskip
+\noindent\textbf{5.5}\quad\begin{enumerate}
+\item[(a)] Use the results of Problems 5.4 and 5.3 to find the axial and radial components of magnetic induction in the \emph{central region} ($|z|\ll L/2$) of a long uniform solenoid of radius $a$ and ends at $z=\pm L/2$, including the value of $B_{z}$ just inside the coil ($\rho=a^{-}$).
+\item[(b)] Use Amp\`ere's law to show that the longitudinal magnetic induction just outside the coil is approximately
+\[
+B_{z}(\rho=a^{+},z)\simeq-\left(\frac{2\mu_{0}NIa^{2}}{L^{2}}\right)\!\left(1+\frac{12z^{2}}{L^{2}}-\frac{9a^{2}}{L^{2}}+\cdots\right)
+\]
+For $L\gg a$, the field outside is negligible compared to inside. How does this axial component compare in size to the azimuthal component of Problem 5.2b?
+\item[(c)] Show that at the end of the solenoid the magnetic induction near the axis has components
+\[
+B_{z}\simeq\frac{\mu_{0}NI}{2},\qquad B_{\rho}\simeq\pm\frac{\mu_{0}NI}{4}\left(\frac{\rho}{a}\right)
+\]
+\end{enumerate}
+\solution
+Put $\ell=L/2$ and $B_s=\mu_0NI$. We consider $a,\rho,|z|\ll\ell$.
+The exact on-axis result of 5.3 is
+\[
+\frac{f(z)}{B_s}
+=\frac12\left[\frac{\ell+z}{\sqrt{a^2+(\ell+z)^2}}
++\frac{\ell-z}{\sqrt{a^2+(\ell-z)^2}}\right].
+\]
+Use $(1+x)^{-1/2}=1-x/2+3x^2/8+\cdots$ and then expand in $z/\ell$:
+\[
+\frac f{B_s}
+=1-\frac{a^2}{2\ell^2}-\frac{3a^2z^2}{2\ell^4}
++\frac{3a^4}{8\ell^4}
++O\left(\frac{a^2z^4+a^4z^2+a^6}{\ell^6}\right).
+\]
+\textbf{(a)} Differentiating this axis function and using 5.4 gives
+\[
+\boxed{\frac{B_z}{B_s}
+=1-\frac{a^2}{2\ell^2}
+-\frac{3a^2z^2}{2\ell^4}
++\frac{3a^4}{8\ell^4}
++\frac{3a^2\rho^2}{4\ell^4}+\cdots,\qquad
+\frac{B_\rho}{B_s}=\frac{3a^2\rho z}{2\ell^4}+\cdots.}
+\]
+For example, the next terms in $B_\rho/B_s$ are
+$5a^2\rho z^3/\ell^6-15a^4\rho z/(4\ell^6)
+-15a^2\rho^3z/(4\ell^6)$.
+At the inner wall,
+\[
+B_z(a^-,z)=B_s\left[1-\frac{2a^2}{L^2}
+-\frac{24a^2z^2}{L^4}+\frac{18a^4}{L^4}+\cdots\right].
+\]
+\textbf{(b)} A narrow rectangular Ampere loop straddling the winding
+gives $H_z(a^-)-H_z(a^+)=NI$. Subtracting $B_s$ from the preceding
+expression therefore gives
+\[
+\boxed{B_z(a^+,z)=-\frac{2\mu_0NIa^2}{L^2}
+\left[1+\frac{12z^2}{L^2}-\frac{9a^2}{L^2}+\cdots\right].}
+\]
+It is an axial return field. For an actual helical winding,
+$B_\phi(a^+)=\mu_0I/(2\pi a)$, so near the center
+\[
+\frac{|B_z(a^+)|}{|B_\phi(a^+)|}\simeq
+\frac{4\pi Na^3}{L^2}.
+\]
+Thus either exterior component can dominate, depending on $N,a,L$;
+both can be small compared with the main interior field.
+
+\textbf{(c)} At the upper end $z=\ell$,
+\[
+f(\ell)=\frac{B_s}{2}\frac{L}{\sqrt{L^2+a^2}}
+\simeq\frac{B_s}{2},\qquad
+f'(\ell)=\frac{B_s}{2}
+\left[\frac{a^2}{(L^2+a^2)^{3/2}}-\frac1a\right]
+\simeq-\frac{B_s}{2a}.
+\]
+For $\rho\ll a$ and $L\gg a$, 5.4 then gives
+$B_\rho\simeq B_s\rho/(4a)$. At the lower end the derivative changes
+sign. Consequently
+\[
+\boxed{B_z\simeq B_s/2,\qquad
+B_\rho\simeq\pm B_s\rho/(4a)}
+\]
+at the upper/lower ends, respectively.
+
+
+\Needspace{5\baselineskip}
+\par\bigskip
+\noindent\textbf{5.6}\quad A cylindrical conductor of radius $a$ has a hole of radius $b$ bored parallel to, and centered a distance $d$ from, the cylinder axis ($d+b<a$). The current density is uniform throughout the remaining metal of the cylinder and is parallel to the axis. Use Amp\`ere's law and principle of linear superposition to find the magnitude and the direction of the magnetic-flux density in the hole.
+\solution
+Let the axis of the original cylinder be the origin of transverse
+coordinates, and let the hole center have displacement $\mathbf d$.
+Take $\mathbf J=J\widehat{\mathbf z}$ in the remaining metal.
+For a uniformly filled cylinder, an Amperian circle gives
+$2\pi\rho B_\phi=\mu_0J\pi\rho^2$, or
+\[
+\mathbf B_{\rm full}(\boldsymbol\rho)
+=\frac{\mu_0}{2}\mathbf J\times\boldsymbol\rho.
+\]
+Represent the hole by superposing a cylinder with density $-\mathbf J$
+and local coordinate $\boldsymbol\rho-\mathbf d$. Every point in the
+hole is inside both cylinders, so
+\[
+\boxed{\mathbf B_{\rm hole}
+=\frac{\mu_0}{2}\left[\mathbf J\times\boldsymbol\rho
+-\mathbf J\times(\boldsymbol\rho-\mathbf d)\right]
+=\frac{\mu_0}{2}\mathbf J\times\mathbf d.}
+\]
+The field is uniform, of magnitude $\mu_0Jd/2$, perpendicular both to
+the current and to the displacement toward the hole. If the total
+current is $I$, then $J=I/[\pi(a^2-b^2)]$. A centered hole gives zero
+field, providing a symmetry check.
+
+
+\Needspace{5\baselineskip}
+\par\bigskip
+\noindent\textbf{5.7}\quad A compact circular coil of radius $a$, carrying a current $I$ (perhaps $N$ turns, each with current $I/N$), lies in the $x$-$y$ plane with its center at the origin.
+\begin{enumerate}
+\item[(a)] By elementary means [Eq.~(5.4)] find the magnetic induction at any point on the $z$ axis.
+\item[(b)] An identical coil with the same magnitude and sense of the current is located on the same axis, parallel to, and a distance $b$ above, the first coil. With the coordinate origin relocated at the point midway between the centers of the two coils, determine the magnetic induction on the axis near the origin as an expansion in powers of $z$, up to $z^{4}$ inclusive:
+\[
+B_{z}=\left(\frac{\mu_{0}Ia^{2}}{d^{3}}\right)\!\left[1+\frac{3(b^{2}-a^{2})z^{2}}{2d^{4}}+\frac{15(b^{4}-6b^{2}a^{2}+2a^{4})z^{4}}{16d^{8}}+\cdots\right]
+\]
+where $d^{2}=a^{2}+b^{2}/4$.
+\item[(c)] Show that, off-axis near the origin, the axial and radial components, correct to second order in the coordinates, take the form
+\[
+B_{z}=\sigma_{0}+\sigma_{2}\left(z^{2}-\frac{\rho^{2}}{2}\right);\qquad B_{\rho}=-\sigma_{2}z\rho
+\]
+\item[(d)] For the two coils in part b show that the magnetic induction on the $z$ axis for large $|z|$ is given by the expansion in inverse odd powers of $|z|$ obtained from the small $z$ expansion of part b by the formal substitution, $d\to|z|$.
+\item[(e)] If $b=a$, the two coils are known as a pair of Helmholtz coils. For this choice of geometry the second terms in the expansions of parts b and d are absent ($\sigma_{2}=0$ in part c). The field near the origin is then very uniform. What is the maximum permitted value of $|z|/a$ if the axial field is to be uniform to one part in $10^{4}$, one part in $10^{2}$?
+\end{enumerate}
+\solution
+\textbf{(a)} The element calculation in 5.3 gives
+\[
+\boxed{B_z(0,z)=\frac{\mu_0Ia^2}{2(a^2+z^2)^{3/2}},\qquad
+B_x=B_y=0.}
+\]
+Here $I$ is the total ampere-turns specified in the question.
+
+\textbf{(b)} Put the centers at $z=\pm b/2$ and
+$d^2=a^2+b^2/4$. The exact sum is
+\[
+B_z=\frac{\mu_0Ia^2}{2d^3}
+\left[\left(1+\frac{z^2-bz}{d^2}\right)^{-3/2}
++\left(1+\frac{z^2+bz}{d^2}\right)^{-3/2}\right].
+\]
+The binomial coefficients needed are
+$1,-3/2,15/8,-35/16,315/128$.
+After averaging the two signs, the coefficients of $z^2$ and $z^4$ are
+\[
+-\frac3{2d^2}+\frac{15b^2}{8d^4}
+=\frac{3(b^2-a^2)}{2d^4},
+\]
+\[
+\frac{15}{8d^4}-\frac{105b^2}{16d^6}
++\frac{315b^4}{128d^8}
+=\frac{15(b^4-6a^2b^2+2a^4)}{16d^8}.
+\]
+The odd powers cancel, proving the stated series.
+
+\textbf{(c)} Write its first terms as $f(z)=\sigma_0+\sigma_2z^2+\cdots$,
+where
+\[
+\sigma_0=\frac{\mu_0Ia^2}{d^3},\qquad
+\sigma_2=\sigma_0\frac{3(b^2-a^2)}{2d^4}.
+\]
+Then $f'=2\sigma_2z+\cdots$ and $f''=2\sigma_2+\cdots$.
+Substitution into 5.4 gives
+\[
+\boxed{B_z=\sigma_0+\sigma_2(z^2-\rho^2/2)+O(r^4),\qquad
+B_\rho=-\sigma_2z\rho+O(r^4).}
+\]
+\textbf{(d)} For $|z|\gg d$, factor $|z|^3$ from the exact denominators:
+\[
+B_z=\frac{\mu_0Ia^2}{2|z|^3}
+\sum_{\pm}\left(1\pm\frac b{|z|}+\frac{d^2}{z^2}\right)^{-3/2}.
+\]
+The same binomial calculation yields
+\[
+\boxed{B_z=\frac{\mu_0Ia^2}{|z|^3}
+\left[1+\frac{3(b^2-a^2)}{2z^2}
++\frac{15(b^4-6a^2b^2+2a^4)}{16z^4}+\cdots\right].}
+\]
+This is the stated formal replacement $d\mapsto|z|$ in part (b),
+including its prefactor. It does not replace $a$ or $b$.
+
+\textbf{(e)} At $b=a$, $d^2=5a^2/4$ and
+\[
+\frac{B_z(z)}{B_z(0)}
+=1-\frac{144}{125}(z/a)^4+O((z/a)^6).
+\]
+The fourth-order estimate for relative tolerance $\delta$ is
+$|z|/a\le(125\delta/144)^{1/4}$, namely $0.09652$ for $10^{-4}$
+and $0.30524$ for $10^{-2}$. To determine the actual edge of the
+central uniform interval, solve with the exact field:
+\[
+\frac{(5/4)^{3/2}}2
+\left\{[1+(u-1/2)^2]^{-3/2}+[1+(u+1/2)^2]^{-3/2}\right\}
+=1-\delta,\qquad u=|z|/a.
+\]
+The exact central-interval limits are
+$\boxed{|z|/a\le0.0967727}$ and $\boxed{|z|/a\le0.3137460}$,
+respectively. Substitution into the exact expression gives field ratios
+$0.9999$ and $0.9900$.
+
+
+\Needspace{5\baselineskip}
+\par\bigskip
+\noindent\textbf{5.8}\quad A localized cylindrically symmetric current distribution is such that the current flows only in the azimuthal direction; the current density is a function only of $r$ and $\theta$ (or $\rho$ and $z$): $\mathbf{J}=\hat{\boldsymbol{\phi}}J(r,\theta)$. The distribution is ``hollow'' in the sense that there is a current-free region near the origin, as well as outside.
+\begin{enumerate}
+\item[(a)] Show that the magnetic field can be derived from the azimuthal component of the vector potential, with a multipole expansion
+\[
+A_{\phi}(r,\theta)=-\frac{\mu_{0}}{4\pi}\sum_{L}m_{L}r^{L}P_{L}^{1}(\cos\theta)
+\]
+in the interior and
+\[
+A_{\phi}(r,\theta)=-\frac{\mu_{0}}{4\pi}\sum_{L}\mu_{L}r^{-L-1}P_{L}^{1}(\cos\theta)
+\]
+outside the current distribution.
+\item[(b)] Show that the internal and external multipole moments are
+\[
+m_{L}=-\frac{1}{L(L+1)}\int d^{3}x\;r^{-L-1}P_{L}^{1}(\cos\theta)\,J(r,\theta)
+\]
+and
+\[
+\mu_{L}=-\frac{1}{L(L+1)}\int d^{3}x\;r^{L}P_{L}^{1}(\cos\theta)\,J(r,\theta)
+\]
+\end{enumerate}
+\solution
+\textbf{(a)} Choose the observation azimuth to be zero. Reflection in the
+$x$--$z$ plane cancels the radial part of
+$\mathbf A=(\mu_0/4\pi)\int\mathbf J(\mathbf x')/|\mathbf x-\mathbf x'|\,d^3x'$.
+There is no $z$ component, and
+\[
+A_\phi=\frac{\mu_0}{4\pi}\int
+\frac{J(r',\theta')\cos\phi'}{|\mathbf x-\mathbf x'|}\,d^3x'.
+\]
+Expand the Coulomb kernel as
+$\sum_{L\ge0}r_<^Lr_>^{-L-1}P_L(\cos\gamma)$.
+The addition theorem in real azimuthal form is
+\[
+P_L(\cos\gamma)=P_L(\cos\theta)P_L(\cos\theta')
++2\sum_{m=1}^L\frac{(L-m)!}{(L+m)!}
+P_L^m(\cos\theta)P_L^m(\cos\theta')\cos(m\phi').
+\]
+Multiplication by $\cos\phi'$ and integration over $0\le\phi'<2\pi$
+kills every term except $m=1$, whose cosine integral is $\pi$.
+Thus
+\[
+A_\phi=\frac{\mu_0}{4\pi}\sum_{L=1}^\infty
+\frac{P_L^1(\cos\theta)}{L(L+1)}
+\int d^3x'\,\frac{r_<^L}{r_>^{L+1}}
+P_L^1(\cos\theta')J(r',\theta').
+\]
+\textbf{(b)} In a source-free ball containing the origin, $r<r'$ for
+all source points, so factor out $r^L$. In the exterior of a sphere
+containing all currents, $r>r'$ and one factors out $r^{-L-1}$.
+Define
+\[
+\boxed{m_L=-\frac1{L(L+1)}\int r'^{-L-1}P_L^1(\cos\theta')J\,d^3x',
+\qquad
+\mu_L=-\frac1{L(L+1)}\int r'^LP_L^1(\cos\theta')J\,d^3x'.}
+\]
+Then
+\[
+\boxed{A_{\phi,\rm in}=-\frac{\mu_0}{4\pi}\sum_{L\ge1}m_Lr^LP_L^1,
+\qquad
+A_{\phi,\rm out}=-\frac{\mu_0}{4\pi}\sum_{L\ge1}\mu_Lr^{-L-1}P_L^1.}
+\]
+The moments use the Condon--Shortley convention
+$P_L^1(\cos\theta)=\partial_\theta P_L(\cos\theta)$.
+Finally,
+$B_r=(r\sin\theta)^{-1}\partial_\theta(\sin\theta A_\phi)$ and
+$B_\theta=-r^{-1}\partial_r(rA_\phi)$, with $B_\phi=0$.
+These convergence domains are spherical source-free regions; an
+arbitrary point merely outside the current support need not belong to
+the convergence domain of either expansion.
+
+
+\Needspace{5\baselineskip}
+\par\bigskip
+\noindent\textbf{5.9}\quad The two circular coils of radius $a$ and separation $b$ of Problem 5.7 can be described in cylindrical coordinates by the current density
+\[
+\mathbf{J}=\hat{\boldsymbol{\phi}}I\delta(\rho-a)[\delta(z-b/2)+\delta(z+b/2)]
+\]
+\begin{enumerate}
+\item[(a)] Using the formalism of Problem 5.8, calculate the internal and external multipole moments for $L=1,\ldots,5$.
+\item[(b)] Using the internal multipole expansion of Problem 5.8, write down explicitly an expression for $B_{z}$ on the $z$ axis and relate it to the answer of Problem 5.7b.
+\end{enumerate}
+\solution
+\textbf{(a)} Let $d=\sqrt{a^2+b^2/4}$ and $c=b/(2d)$.
+At the two source rings, $r'=d$ and $\cos\theta'=\pm c$.
+The cylindrical volume element supplies
+$\int J\,d^3x'=2\pi aI$ for each ring.
+Because $P_L^1(-c)=(-1)^{L+1}P_L^1(c)$, even $L$ vanish and odd $L$ give
+\[
+m_L=-\frac{4\pi aI}{L(L+1)d^{L+1}}P_L^1(c),\qquad
+\mu_L=d^{2L+1}m_L.
+\]
+Use
+\[
+P_1^1(c)=-\sqrt{1-c^2},\quad
+P_3^1(c)=-\tfrac32(5c^2-1)\sqrt{1-c^2},\quad
+P_5^1(c)=-\tfrac{15}{8}(21c^4-14c^2+1)\sqrt{1-c^2},
+\]
+with $\sqrt{1-c^2}=a/d$. The explicit moments are
+\[
+\begin{array}{c|c|c}
+L&m_L&\mu_L\\\hline
+1&2\pi Ia^2/d^3&2\pi Ia^2\\[2pt]
+2&0&0\\[2pt]
+3&\pi Ia^2(b^2-a^2)/(2d^7)&\pi Ia^2(b^2-a^2)/2\\[2pt]
+4&0&0\\[2pt]
+5&\pi Ia^2(b^4-6a^2b^2+2a^4)/(8d^{11})
+&\pi Ia^2(b^4-6a^2b^2+2a^4)/8
+\end{array}
+\]
+\textbf{(b)} The identity $\partial_\theta(\sin\theta P_L^1)
+=-L(L+1)\sin\theta P_L$ gives
+\[
+B_{r,\rm in}=\frac{\mu_0}{4\pi}
+\sum_{L\ge1}L(L+1)m_Lr^{L-1}P_L(\cos\theta).
+\]
+On the positive $z$ axis $P_L(1)=1$ and $B_z=B_r$, hence
+\[
+B_z(0,z)=\frac{\mu_0}{4\pi}
+[2m_1+12m_3z^2+30m_5z^4+\cdots].
+\]
+Inserting the table reproduces every coefficient in 5.7(b).
+Reflection symmetry extends this even polynomial to negative $z$.
+
+
+\Needspace{5\baselineskip}
+\par\bigskip
+\noindent\textbf{5.10}\quad A circular current loop of radius $a$ carrying a current $I$ lies in the $x$-$y$ plane with its center at the origin.
+\begin{enumerate}
+\item[(a)] Show that the only nonvanishing component of the vector potential is
+\[
+A_{\phi}(\rho,z)=\frac{\mu_{0}Ia}{\pi}\int_{0}^{\infty}dk\,\cos kz\,I_{1}(k\rho_{<})K_{1}(k\rho_{>})
+\]
+where $\rho_{<}$ ($\rho_{>}$) is the smaller (larger) of $a$ and $\rho$.
+\item[(b)] Show that an alternative expression for $A_{\phi}$ is
+\[
+A_{\phi}(\rho,z)=\frac{\mu_{0}Ia}{2}\int_{0}^{\infty}dk\;e^{-k|z|}J_{1}(ka)J_{1}(k\rho)
+\]
+\item[(c)] Write down integral expressions for the components of magnetic induction, using the expressions of parts a and b. Evaluate explicitly the components of $\mathbf{B}$ on the $z$ axis by performing the necessary integrations.
+\end{enumerate}
+\solution
+The scalar cylindrical Green expansions needed here follow by
+separating the Fourier variable along $z$, or by separating radial
+Bessel modes:
+\[
+\begin{split}
+\frac1{|\mathbf x-\mathbf x'|}
+&=\frac2\pi\sum_{m=-\infty}^{\infty}e^{im(\phi-\phi')}
+\int_0^\infty \cos[k(z-z')]I_m(k\rho_<)K_m(k\rho_>)\,dk,\\
+\frac1{|\mathbf x-\mathbf x'|}
+&=\sum_{m=-\infty}^{\infty}e^{im(\phi-\phi')}
+\int_0^\infty e^{-k|z-z'|}J_m(k\rho)J_m(k\rho')\,dk.
+\end{split}
+\]
+For completeness, the first normalization follows from
+$\int_0^\infty\cos(kz)K_0(ks)\,dk=\pi/[2\sqrt{s^2+z^2}]$ and
+the cylindrical addition theorem for $K_0$.
+The second follows from
+$\int_0^\infty e^{-k|z|}J_0(ks)\,dk=1/\sqrt{s^2+z^2}$
+and the addition theorem for $J_0$.
+
+\textbf{(a),(b)} The current loop has $d\mathbf l'=a\widehat{\boldsymbol\phi}'d\phi'$.
+Projecting onto the observation $\widehat{\boldsymbol\phi}$ supplies
+$\cos(\phi-\phi')$. Its angular integral is $\pi$ for each of $m=\pm1$
+and zero for all other $m$. Consequently the first kernel gives
+\[
+\boxed{A_\phi=\frac{\mu_0Ia}{\pi}\int_0^\infty
+\cos(kz)I_1(k\rho_<)K_1(k\rho_>)\,dk,}
+\]
+and the second gives
+\[
+\boxed{A_\phi=\frac{\mu_0Ia}{2}\int_0^\infty
+e^{-k|z|}J_1(ka)J_1(k\rho)\,dk.}
+\]
+All other components vanish by the same reflection symmetry as in 5.8.
+
+\textbf{(c)} The curl equations are
+$B_\rho=-\partial_zA_\phi$ and
+$B_z=\rho^{-1}\partial_\rho(\rho A_\phi)$.
+Using $(xI_1)'=xI_0$, $(xK_1)'=-xK_0$, and $(xJ_1)'=xJ_0$, one obtains
+\[
+B_\rho=\frac{\mu_0Ia}{\pi}\int_0^\infty
+k\sin(kz)I_1(k\rho_<)K_1(k\rho_>)\,dk,
+\]
+\[
+B_z=\frac{\mu_0Ia}{\pi}\int_0^\infty k\cos(kz)
+\begin{cases}
+I_0(k\rho)K_1(ka),&\rho<a,\\
+-I_1(ka)K_0(k\rho),&\rho>a
+\end{cases}dk,
+\]
+or, for $z\ne0$,
+\[
+\boxed{\begin{aligned}
+B_\rho&=\frac{\mu_0Ia}{2}\operatorname{sgn}(z)
+\int_0^\infty k e^{-k|z|}J_1(ka)J_1(k\rho)\,dk,\\
+B_z&=\frac{\mu_0Ia}{2}\int_0^\infty
+k e^{-k|z|}J_1(ka)J_0(k\rho)\,dk.
+\end{aligned}}
+\]
+At $z=0$ off the wire, take the limiting fields; symmetry gives
+$B_\rho=0$. On the axis $J_1(0)=0$ and $J_0(0)=1$.
+Differentiate the elementary Laplace integral
+$\int_0^\infty e^{-sk}J_0(ak)\,dk=(s^2+a^2)^{-1/2}$ with respect to $a$:
+\[
+\int_0^\infty k e^{-sk}J_1(ak)\,dk=\frac{a}{(s^2+a^2)^{3/2}}.
+\]
+This gives
+$\boxed{B_\rho(0,z)=0,\ B_z(0,z)=\mu_0Ia^2/[2(a^2+z^2)^{3/2}]}$.
+The modified-Bessel representation independently gives the same result:
+differentiate
+$\int_0^\infty\cos(kz)K_0(ka)\,dk=\pi/[2\sqrt{a^2+z^2}]$
+with respect to $a$, producing the required integral of $kK_1(ka)$.
+
+
+\Needspace{5\baselineskip}
+\par\bigskip
+\noindent\textbf{5.11}\quad A circular loop of wire carrying a current $I$ is located with its center at the origin of coordinates and the normal to its plane having spherical angles $\theta_{0}$, $\phi_{0}$. There is an applied magnetic field, $B_{x}=B_{0}(1+\beta y)$ and $B_{y}=B_{0}(1+\beta x)$.
+\begin{enumerate}
+\item[(a)] Calculate the force acting on the loop without making any approximations. Compare your result with the approximate result (5.69). Comment.
+\item[(b)] Calculate the torque in lowest order. Can you deduce anything about the higher order contributions? Do they vanish for the circular loop? What about for other shapes?
+\end{enumerate}
+\solution
+Let the radius be $a$, the area be $S=\pi a^2$, and
+\[
+\mathbf m=IS(\sin\theta_0\cos\phi_0,\sin\theta_0\sin\phi_0,\cos\theta_0).
+\]
+\textbf{(a)} Starting with
+$\mathbf F=I\oint d\mathbf l\times\mathbf B$ and writing
+$B_k=B_{k0}+G_{kj}x_j$, the constant term vanishes.
+Stokes's theorem gives
+$\oint x_j\,dx_i=\epsilon_{jil}S n_l$.
+In indices, the remaining term is
+\[
+F_i=I\epsilon_{ijk}G_{k\ell}\oint x_\ell\,dx_j
+=\epsilon_{ijk}\epsilon_{\ell jn}G_{k\ell}m_n
+=m_kG_{ki}-m_iG_{kk}.
+\]
+Here $\epsilon_{ijk}\epsilon_{\ell jn}=\delta_{i\ell}\delta_{kn}
+-\delta_{in}\delta_{k\ell}$ and $G_{kk}=\nabla\cdot\mathbf B=0$.
+Therefore $F_i=m_j\partial_iB_j$.
+Here $\partial_yB_x=\partial_xB_y=\beta B_0$, and thus
+\[
+\boxed{\mathbf F=\beta B_0(m_y,m_x,0)
+=\beta B_0I\pi a^2\sin\theta_0
+(\sin\phi_0,\cos\phi_0,0).}
+\]
+This is exactly $\nabla(\mathbf m\cdot\mathbf B)$, with no small-loop
+approximation: a linear applied field has no derivatives that could
+couple to higher force multipoles.
+
+\textbf{(b)} To dipole order,
+\[
+\boxed{\mathbf N=\mathbf m\times\mathbf B(0)
+=B_0(-m_z,m_z,m_x-m_y).}
+\]
+One can also see why this is exact for the centered circle. The torque
+integrand is $\mathbf x\times[I\,d\mathbf l\times\mathbf B]$.
+Its correction from the linear part of $\mathbf B$ is odd under
+$(\mathbf x,d\mathbf l)\mapsto(-\mathbf x,-d\mathbf l)$, so opposite
+points cancel. Terms beyond this correction are absent because the field
+is linear.
+
+For a general planar loop with area centroid
+$\overline{\mathbf x}=S^{-1}\int_S\mathbf x\,da$, an explicit surface
+form of the torque is
+\[
+\mathbf N=I\int_S\left[\mathbf n\times\mathbf B(\mathbf x)
++\mathbf x\times\nabla(\mathbf n\cdot\mathbf B)\right]da.
+\]
+This follows by dividing the spanning surface into small loops; all
+interior edges cancel, leaving the original boundary loop.
+For the present linear field it becomes
+\[
+\mathbf N=\mathbf m\times[\mathbf B(0)+G\overline{\mathbf x}]
++\overline{\mathbf x}\times(G^T\mathbf m).
+\]
+Thus a general shape can have a correction about a specified origin.
+It vanishes for every planar shape when the origin is its area centroid,
+not only for circles or shapes with inversion symmetry.
+
+
+\Needspace{5\baselineskip}
+\par\bigskip
+\noindent\textbf{5.12}\quad Two concentric circular loops of radii $a$, $b$ and currents $I$, $I'$, respectively ($b<a$), have an angle $\alpha$ between their planes. Show that the torque on one of the loops is about the line of intersection of the two planes containing the loops and has the \erratum{signed component in the direction of increasing $\alpha$}
+\[
+\erratum{N_\alpha}=\frac{\mu_{0}\pi II'b^{2}}{2a}\sum_{n=0}^{\infty}\frac{(n+1)}{(2n+1)}\left[\frac{\Gamma(n+\frac{3}{2})}{\Gamma(n+2)\Gamma(\frac{3}{2})}\right]^{2}\!\left(\frac{b}{a}\right)^{2n}\!P_{2n+1}^{1}(\cos\alpha)
+\]
+where $P_{l}^{1}(\cos\alpha)$ is an associated Legendre polynomial. Determine the sense of the torque for $\alpha$ an acute angle and the currents in the same (opposite) directions.
+\solution
+Take the larger loop's normal along $z$ and let $\alpha$ be the angle
+through which the smaller normal is rotated about the line of intersection.
+We use $P_l^1(\cos\alpha)=dP_l(\cos\alpha)/d\alpha$.
+For the single larger loop, the interior moment from 5.8 is
+\[
+m_l=-\frac{2\pi I}{l(l+1)a^l}P_l^1(0),\qquad l=1,3,5,\ldots.
+\]
+Its scalar potential for $\mathbf H$ is
+\[
+\Phi_H=-\frac1{4\pi}\sum_l(l+1)m_lr^lP_l(\cos\theta),
+\]
+as direct radial differentiation verifies against the curl of $A_\phi$.
+
+Introduce coordinates with $z'$ normal to the smaller loop.
+Azimuthal averaging about that axis, using the addition theorem, replaces
+$P_l(\cos\theta)$ by $P_l(\cos\alpha)P_l(\cos\theta')$.
+On its spanning disk $z'=0$,
+\[
+\left.\partial_{z'}[r^lP_l(z'/r)]\right|_{z'=0}
+=r^{l-1}P_l'(0)=-r^{l-1}P_l^1(0).
+\]
+Integrating $B_{z'}=-\mu_0\partial_{z'}\Phi_H$ over the disk gives its flux:
+\[
+\begin{split}
+F&=-\frac{\mu_0}{4\pi}\sum_l(l+1)m_lP_l^1(0)P_l(\cos\alpha)
+\int_0^b2\pi r^l\,dr\\
+&=-\frac{\mu_0}{2}\sum_lm_lP_l^1(0)b^{l+1}P_l(\cos\alpha).
+\end{split}
+\]
+Thus
+\[
+M(\alpha)=F/I=\mu_0\pi\sum_{l\ {\rm odd}}
+\frac{[P_l^1(0)]^2}{l(l+1)}
+\frac{b^{l+1}}{a^l}P_l(\cos\alpha).
+\]
+At fixed currents the torque component that increases $\alpha$ is
+$N_\alpha=II'\,dM/d\alpha$. Put $l=2n+1$ and use
+\[
+P_{2n+1}^1(0)=(-1)^{n+1}\frac{(2n+1)!!}{(2n)!!}
+=(-1)^{n+1}(n+1)
+\frac{\Gamma(n+3/2)}{\Gamma(n+2)\Gamma(3/2)}.
+\]
+Then
+\[
+\boxed{N_\alpha=\frac{\mu_0\pi II'b^2}{2a}
+\sum_{n=0}^\infty\frac{n+1}{2n+1}
+\left[\frac{\Gamma(n+3/2)}{\Gamma(n+2)\Gamma(3/2)}\right]^2
+\left(\frac ba\right)^{2n}P_{2n+1}^1(\cos\alpha).}
+\]
+The mechanical interaction potential is $-II'M$, which fixes this sign.
+The displayed expression is a signed component, not an always-positive
+magnitude; the magnitude is $|N_\alpha|$.
+
+For $0<\alpha<\pi/2$, like-directed currents tend to decrease $\alpha$,
+and opposite currents tend to increase it. To establish the sign beyond
+the dipole limit, put $c=\cos\alpha>0$ and parameterize the smaller ring.
+Its cylindrical radius satisfies
+$\rho^2=b^2(\cos^2\varphi+c^2\sin^2\varphi)$, and
+$\mathbf A\cdot d\mathbf l=b^2c(A_\phi/\rho)d\varphi$.
+On the sphere $r=b<a$, the Biot--Savart expression for $A_\phi/\rho$
+has a convergent expansion in nonnegative powers of $\rho^2$ with
+positive coefficients: expand
+$[a^2+b^2-2a\rho\cos\varphi']^{-1/2}$ and integrate its product with
+$\cos\varphi'$. Only positive even cosine integrals survive.
+Hence $M(c)=c$ times a positive, increasing function of $c^2$,
+so $dM/d\alpha=-\sin\alpha\,dM/dc<0$.
+Rotational symmetry leaves only a torque about the line of intersection.
+
+
+\Needspace{5\baselineskip}
+\par\bigskip
+\noindent\textbf{5.13}\quad A sphere of radius $a$ carries a uniform surface-charge distribution $\sigma$. The sphere is rotated about a diameter with constant angular velocity $\omega$. Find the vector potential and magnetic-flux density both inside and outside the sphere.
+\solution
+Take $\boldsymbol\omega=\omega\widehat{\mathbf z}$. The moving surface
+charge is the surface current
+$\mathbf K=\sigma(\boldsymbol\omega\times\mathbf r)
+=\sigma\omega a\sin\theta\,\widehat{\boldsymbol\phi}$.
+It has only the $l=1$ angular dependence, so write
+\[
+A_\phi=\begin{cases}Cr\sin\theta,&r<a,\\D r^{-2}\sin\theta,&r>a.\end{cases}
+\]
+Continuity of $A_\phi$ gives $D=Ca^3$. Taking its curl gives
+\[
+\mathbf B_{\rm in}=2C(\cos\theta\,\widehat{\mathbf r}
+-\sin\theta\,\widehat{\boldsymbol\theta}),\quad
+\mathbf B_{\rm out}=\frac D{r^3}
+(2\cos\theta\,\widehat{\mathbf r}+\sin\theta\,\widehat{\boldsymbol\theta}).
+\]
+The normal component is continuous, while the sheet-current condition is
+$B_{\theta,\rm out}-B_{\theta,\rm in}=\mu_0K_\phi$.
+Thus $3C\sin\theta=\mu_0\sigma\omega a\sin\theta$, giving
+\[
+\boxed{A_\phi=\frac{\mu_0\sigma\omega a}{3}
+\begin{cases}r\sin\theta,&r<a,\\a^3r^{-2}\sin\theta,&r>a,\end{cases}}
+\]
+\[
+\boxed{\mathbf B_{\rm in}=\frac{2\mu_0\sigma\omega a}{3}\widehat{\mathbf z},
+\qquad
+\mathbf B_{\rm out}=\frac{\mu_0\sigma\omega a^4}{3r^3}
+(2\cos\theta\,\widehat{\mathbf r}+\sin\theta\,\widehat{\boldsymbol\theta}).}
+\]
+The external moment is
+$\mathbf m=(4\pi\sigma\omega a^4/3)\widehat{\mathbf z}
+=(Q\omega a^2/3)\widehat{\mathbf z}$.
+Independently, $\mathbf m=\frac12\int\mathbf r\times\mathbf K\,da$
+gives $m_z=(\sigma\omega a^2/2)\int\sin^2\theta\,da
+=4\pi\sigma\omega a^4/3$.
+
+
+\Needspace{5\baselineskip}
+\par\bigskip
+\noindent\textbf{5.14}\quad A long, hollow, right circular cylinder of inner (outer) radius $a$ ($b$), and of relative permeability $\mu_{r}$, is placed in a region of initially uniform magnetic-flux density $\mathbf{B}_{0}$ at right angles to the field. Find the flux density at all points in space, and sketch the logarithm of the ratio of the magnitudes of $\mathbf{B}$ on the cylinder axis to $\mathbf{B}_{0}$ as a function of $\log_{10}\mu_{r}$ for $a^{2}/b^{2}=0.5$, 0.1. Neglect end effects.
+\solution
+Let $\kappa=\mu_r>0$, $\eta=a^2/b^2$, and put the original field along
+$x$. The magnetic scalar potential for $\mathbf H$ obeys the same
+boundary equations as the dielectric-shell potential of Problem 4.8:
+$H_\phi$ and $\mu H_\rho$ are continuous. Define
+\[
+\Delta=(\kappa+1)^2-(\kappa-1)^2\eta,\qquad
+A=\frac{4\kappa}{\Delta},\quad B=\frac{2(\kappa+1)}{\Delta},\quad
+C=\frac{2(\kappa-1)a^2}{\Delta},\quad
+D=\frac{(\kappa^2-1)(b^2-a^2)}{\Delta}.
+\]
+In detail, the trial potential
+$\Phi_H=-(B_0/\mu_0)\cos\phi\{A\rho,\ B\rho+C/\rho,\ \rho-D/\rho\}$
+gives the four interface equations
+\[
+A=B+C/a^2,\quad A=\kappa(B-C/a^2),\quad
+B+C/b^2=1-D/b^2,\quad \kappa(B-C/b^2)=1+D/b^2.
+\]
+The first pair gives
+$C=a^2(\kappa-1)B/(\kappa+1)$ and
+$A=2\kappa B/(\kappa+1)$.
+Adding the last two equations eliminates $D$:
+\[
+(\kappa+1)B-(\kappa-1)C/b^2=2,\qquad
+\frac{(\kappa+1)^2-(\kappa-1)^2\eta}{\kappa+1}B=2.
+\]
+Thus $B=2(\kappa+1)/\Delta$, which gives $A,C$ above.
+Finally
+\[
+\frac D{b^2}=1-B-\frac C{b^2}
+=\frac{\Delta-2(\kappa+1)-2(\kappa-1)\eta}{\Delta}
+=\frac{(\kappa^2-1)(1-\eta)}{\Delta}.
+\]
+The requested induction components are
+\[
+\boxed{\frac{B_\rho}{B_0}=\cos\phi
+\begin{cases}A,&\rho<a,\\\kappa(B-C/\rho^2),&a<\rho<b,\\
+1+D/\rho^2,&\rho>b,\end{cases}}
+\]
+\[
+\boxed{\frac{B_\phi}{B_0}=-\sin\phi
+\begin{cases}A,&\rho<a,\\\kappa(B+C/\rho^2),&a<\rho<b,\\
+1-D/\rho^2,&\rho>b,\end{cases}\qquad B_z=0.}
+\]
+In particular the core field is uniform, with
+\[
+F=\frac{|\mathbf B_{\rm core}|}{B_0}
+=\frac{4\kappa}{(1-\eta)(\kappa^2+1)+2(1+\eta)\kappa}.
+\]
+The logarithmic curves below use $x=\log_{10}\kappa$ and $y=\log_{10}F$.
+They are symmetric under $x\mapsto-x$, since $F(\kappa)=F(1/\kappa)$.
+Both reach $F=1$ at $\kappa=1$; at large $\kappa$,
+$F\sim4/[(1-\eta)\kappa]$, while at small $\kappa$,
+$F\sim4\kappa/(1-\eta)$.
+\begin{center}
+\input{supplementary/figures/ch05-p14.tex}
+\end{center}
+Thus a permeable shell and an ideal diamagnetic shell can both shield
+the cavity, by different limiting boundary conditions.
+
+
+\Needspace{5\baselineskip}
+\par\bigskip
+\noindent\textbf{5.15}\quad Consider two long, straight wires, parallel to the $z$ axis, spaced a distance $d$ apart and carrying currents $I$ in opposite directions. Describe the magnetic field $\mathbf{H}$ in terms of a magnetic scalar potential $\Phi_{M}$, with $\mathbf{H}=-\nabla\Phi_{M}$.
+\begin{enumerate}
+\item[(a)] If the wires are parallel to the $z$ axis with positions, $x=\pm d/2$, $y=0$, show that in the limit of small spacing, the potential is approximately that of a two-dimensional dipole,
+\[
+\Phi_{M}\simeq-\frac{Id\,\sin\phi}{2\pi\rho}+O(d^{2}/\rho^{2})
+\]
+where $\rho$ and $\phi$ are the usual polar coordinates.
+\item[(b)] The closely spaced wires are now centered in a hollow right circular cylinder of steel, of inner (outer) radius $a$ ($b$) and magnetic permeability $\mu=\mu_{r}\mu_{0}$. Determine the magnetic scalar potential in the three regions, $0<\rho<a$, $a<\rho<b$, and $\rho>b$. Show that the field outside the steel cylinder is a two-dimensional dipole field, as in part a, but with a strength reduced by the factor
+\[
+F=\frac{4\mu_{r}b^{2}}{(\mu_{r}+1)^{2}b^{2}-(\mu_{r}-1)^{2}a^{2}}
+\]
+Relate your result to Problem 5.14.
+\item[(c)] Assuming that $\mu_{r}\gg1$, and $b=a+t$, where the thickness $t\ll b$, write down an approximate expression for $F$ and determine its numerical value for $\mu_{r}=200$ (typical of steel at 20 G), $b=1.25$ cm, $t=3$ mm. The shielding effect is relevant for reduction of stray fields in residential and commercial 60 Hz, 110 or 220 V wiring. The figure illustrates the shielding effect for $a/b=0.9$, $\mu_{r}=100$.
+\end{enumerate}
+
+\begin{center}
+\begin{tikzpicture}[scale=1.15]
+  % residual (weak) field lines leaking outside the shell
+  \draw (-1.30,1.09) .. controls (-1.8,1.5) and (-2.1,1.8) .. (-2.35,2.2);
+  \draw (1.30,-1.09) .. controls (1.8,-1.5) and (2.1,-1.8) .. (2.35,-2.2);
+  % field lines looping around the wire pair inside the cavity
+  % (circles through (0,+-0.28), i.e. the two wires hidden behind the
+  %  central white circle)
+  \foreach \c in {0.07,0.13,0.19,0.26,0.34,0.43,0.53,0.62,0.71}{
+    \draw (\c,0) circle ({sqrt(\c*\c+0.0784)});
+    \draw (-\c,0) circle ({sqrt(\c*\c+0.0784)});
+  }
+  % flux crossing the permeable shell at top and bottom (drawn inside the
+  %  shell as nearly radial spokes)
+  \foreach \t in {-63,-56,-49,-42,-35,-28,-21,-14,-7,0,7,14,21,28,35,42,49,56,63}{
+    \draw (0,0.28) -- ({1.7*sin(\t)},{1.7*cos(\t)});
+    \draw (0,-0.28) -- ({-1.7*sin(\t)},{-1.7*cos(\t)});
+  }
+  % steel shell
+  \draw[thick] (0,0) circle (1.53);
+  \draw[thick] (0,0) circle (1.7);
+  % blank core covering the two wires
+  \fill[white] (0,0) circle (0.28);
+  \draw[thick] (0,0) circle (0.28);
+\end{tikzpicture}
+\par\vspace{0.5em}\textbf{Problem 5.15}
+\end{center}
+\solution
+\textbf{(a)} Put $+I\widehat{\mathbf z}$ at $x=d/2$ and
+$-I\widehat{\mathbf z}$ at $x=-d/2$. A straight wire has
+$\mathbf H=(I/2\pi)\nabla\phi$, so a local scalar potential for the pair is
+\[
+\Phi_H=\frac I{2\pi}\{\arg(x+iy+d/2)-\arg(x+iy-d/2)\}.
+\]
+For $\rho\gg d$, expand the logarithms whose imaginary parts give the
+arguments:
+\[
+\ln(w+d/2)-\ln(w-d/2)=\frac d w+\frac{d^3}{12w^3}+\cdots,
+\qquad w=\rho e^{i\phi}.
+\]
+Consequently
+\[
+\boxed{\Phi_H=-\frac{Id}{2\pi\rho}\sin\phi
++O\!\left(I\frac{d^3}{\rho^3}\right).}
+\]
+The next term is actually odd in $d$ and of third order; the
+second-order remainder quoted in the question is a looser estimate.
+
+\textbf{(b)} Work to this dipole order, so $d\ll a$.
+Set $p=Id/(2\pi)$, $\kappa=\mu_r$, $\eta=a^2/b^2$, and
+$\Delta=(\kappa+1)^2-(\kappa-1)^2\eta$. Write
+\[
+\Phi_H=-p\sin\phi
+\begin{cases}\rho^{-1}+A\rho,&0<\rho<a,\\
+B\rho^{-1}+C\rho,&a<\rho<b,\\D\rho^{-1},&\rho>b.\end{cases}
+\]
+Continuity of potential and $\mu\partial_\rho\Phi_H$ gives
+\[
+1+Aa^2=B+Ca^2,\quad Aa^2-1=\kappa(Ca^2-B),\quad
+B+Cb^2=D,\quad\kappa(Cb^2-B)=-D.
+\]
+The last pair gives $C=(\kappa-1)B/[(\kappa+1)b^2]$ and
+$D=2\kappa B/(\kappa+1)$. The first pair then implies
+$(\kappa+1)B-(\kappa-1)Ca^2=2$. Hence
+\[
+\boxed{A=-\frac{(\kappa^2-1)(1-\eta)}{\Delta a^2},\quad
+B=\frac{2(\kappa+1)}{\Delta},\quad
+C=\frac{2(\kappa-1)}{\Delta b^2},\quad
+D=\frac{4\kappa}{\Delta}=F.}
+\]
+The exterior is the original two-dimensional dipole multiplied by $F$.
+This is exactly the core-field transmission factor of 5.14, consistent
+with reciprocity between a source inside and an applied field outside.
+The singular central dipole represents the two wires only at distances
+large compared with $d$.
+
+\textbf{(c)} It is useful to rearrange the exact factor before expanding:
+\[
+F^{-1}=1+\frac{(\kappa-1)^2}{4\kappa}(1-a^2/b^2).
+\]
+For $t=b-a\ll b$,
+$1-a^2/b^2=2t/b-t^2/b^2$, so for $\kappa\gg1$
+\[
+\boxed{F\simeq\frac1{1+\kappa t/(2b)}.}
+\]
+If also $\kappa t/(2b)\gg1$, this further reduces to $2b/(\kappa t)$.
+With the specified numbers these estimates are $0.0400$ and $0.04167$,
+respectively. The exact factor is $0.04564$, because $t/b=0.24$
+is only moderately small. The exact suppression is about a factor
+of $21.9$; the leading thin-shell estimate gives a factor of $25$.
+
+
+\Needspace{5\baselineskip}
+\par\bigskip
+\noindent\textbf{5.16}\quad A circular loop of wire of radius $a$ and negligible thickness carries a current $I$. The loop is centered in a spherical cavity of radius $b>a$ in a large block of soft iron. Assume that the relative permeability of the iron is effectively infinite and that of the medium in the cavity, unity.
+\begin{enumerate}
+\item[(a)] In the approximation of $b\gg a$, show that the magnetic field at the center of the loop is augmented by a factor $(1+a^{3}/2b^{3})$ by the presence of the iron.
+\item[(b)] What is the radius of the ``image'' current loop (carrying the same current) that simulates \erratum{the leading, nearly uniform reaction field of the iron for $r<b$, in the same $b\gg a$ approximation}? \erratum{Check whether a single such loop can reproduce the complete reaction field exactly.}
+\end{enumerate}
+\solution
+\textbf{(a)} For $b\gg a$, the loop's field at the cavity wall is
+dominated by its dipole moment $m=I\pi a^2$. The direct scalar potential
+for $\mathbf H$ there is $m\cos\theta/(4\pi r^2)$.
+Infinite permeability outside makes tangential $\mathbf H$ vanish
+at $r=b$, so the wall must be an equipotential. The regular $l=1$
+reaction potential that cancels its angular variation is
+\[
+\Phi_{H,\rm react}=-\frac{m}{4\pi b^3}r\cos\theta.
+\]
+Taking $-\mu_0\nabla$ gives the uniform reaction induction
+$\mathbf B_{\rm react}=\mu_0m\widehat{\mathbf z}/(4\pi b^3)$.
+Adding the exact free-loop center field $\mu_0I/(2a)$ gives
+\[
+\boxed{B_{\rm center}\simeq\frac{\mu_0I}{2a}
+\left(1+\frac{a^3}{2b^3}\right).}
+\]
+Higher regular multipoles do not contribute at the exact center, so
+this center value is in fact unchanged by retaining the other loop
+multipoles; the dipole approximation is needed for the statement that
+the reaction field is uniform throughout the cavity.
+
+\textbf{(b)} A coaxial image loop carrying the same current $I$ has
+center field $\mu_0I/(2R_{\rm im})$. Matching the leading uniform
+reaction field gives
+\[
+\frac{\mu_0I}{2R_{\rm im}}=\frac{\mu_0Ia^2}{4b^3},\qquad
+\boxed{R_{\rm im}=\frac{2b^3}{a^2}.}
+\]
+Since $R_{\rm im}\gg b$ when $b\gg a$, this image produces an almost
+uniform field over the cavity.
+
+It is not an exact image for all $r<b$ at arbitrary $a/b$.
+Here is a direct check of that necessary qualification.
+For an odd $l$, the real-loop exterior $A_\phi$ is proportional to
+$\mu_l r^{-l-1}P_l^1$, while the regular reaction term is proportional
+to $m_l^{\,R}r^lP_l^1$. The condition $B_\theta(b)=0$ requires
+\[
+\frac{m_l^{\,R}}{\mu_l}=\frac{l}{l+1}b^{-2l-1}.
+\]
+A single same-current image loop of radius $R$ instead has, from 5.8,
+$m_l^{\,R}/\mu_l=R^{-l}a^{-l-1}$.
+The $l=1$ condition demands $R=2b^3/a^2$, whereas $l=3$ demands
+$R^3=4b^7/(3a^4)$. These cannot both hold for $b>a$:
+their combination would require $b^2/a^2=1/6$.
+Thus the equal-current image-loop statement must be understood in
+the leading uniform-field approximation, as made explicit above.
+
+
+\Needspace{5\baselineskip}
+\par\bigskip
+\noindent\textbf{5.17}\quad A current distribution $\mathbf{J}(\mathbf{x})$ exists in a medium of unit relative permeability adjacent to a semi-infinite slab of material having relative permeability $\mu_{r}$ and filling the half-space, $z<0$.
+\begin{enumerate}
+\item[(a)] Show that for $z>0$ the magnetic induction can be calculated by replacing the medium of permeability $\mu_{r}$ by an image current distribution, $\mathbf{J}^{*}$, with components,
+\[
+\left(\frac{\mu_{r}-1}{\mu_{r}+1}\right)\!J_{x}(x,y,-z),\qquad
+\left(\frac{\mu_{r}-1}{\mu_{r}+1}\right)\!J_{y}(x,y,-z),\qquad
+-\left(\frac{\mu_{r}-1}{\mu_{r}+1}\right)\!J_{z}(x,y,-z)
+\]
+\item[(b)] Show that for $z<0$ the magnetic induction appears to be due to a current distribution $[2\mu_{r}/(\mu_{r}+1)]\mathbf{J}$ in a medium of unit relative permeability.
+\end{enumerate}
+\solution
+Let $\mathcal R=\operatorname{diag}(1,1,-1)$ reflect a vector across
+the interface, and let $\mathbf B^{(0)}$ be the field of the original
+current computed in vacuum everywhere.
+Under spatial reflection a current is a polar vector but its magnetic
+field is an axial vector. Direct substitution in Biot--Savart gives
+\[
+\mathbf J_{\rm ref}(\mathbf x)=\mathcal R\mathbf J(\mathcal R\mathbf x),
+\qquad
+\mathbf B_{\rm ref}(\mathbf x)=-\mathcal R\mathbf B^{(0)}(\mathcal R\mathbf x).
+\]
+In particular, at $z=0$ its tangential field reverses sign and its
+normal field keeps its sign.
+
+Take the upper field to be $\mathbf B^{(0)}+\chi\mathbf B_{\rm ref}$
+and the lower field to be $T\mathbf B^{(0)}$. At the interface,
+continuity of $B_n$ and $H_t$ requires
+\[
+1+\chi=T,\qquad 1-\chi=T/\mu_r.
+\]
+Solving gives $\chi=(\mu_r-1)/(\mu_r+1)$ and
+$T=2\mu_r/(\mu_r+1)$.
+Therefore
+\[
+\boxed{\mathbf J^*(x,y,z)=\frac{\mu_r-1}{\mu_r+1}
+(J_x(x,y,-z),J_y(x,y,-z),-J_z(x,y,-z))}
+\]
+is the image distribution for part (a), and
+\[
+\boxed{\mathbf B_{z<0}=\frac{2\mu_r}{\mu_r+1}\mathbf B^{(0)}}
+\]
+proves part (b). Both candidate fields are divergence-free and satisfy
+the correct source-free curl equations in their respective regions,
+the interface conditions, and decay at infinity; uniqueness completes
+the construction. At $\mu_r=1$ the image disappears and $T=1$.
+
+
+\Needspace{5\baselineskip}
+\par\bigskip
+\noindent\textbf{5.18}\quad A circular loop of wire having a radius $a$ and carrying a current $I$ is located in vacuum with its center a distance $d$ away from a semi-infinite slab of permeability $\mu$. Find the force acting on the loop when
+\begin{enumerate}
+\item[(a)] the plane of the loop is parallel to the face of the slab,
+\item[(b)] the plane of the loop is perpendicular to the face of the slab.
+\item[(c)] Determine the limiting form of your answer to parts a and b when $d\gg a$. Can you obtain these limiting values in some simple and direct way?
+\end{enumerate}
+\solution
+Choose the slab as $z<0$, the center as $(0,0,d)$, and write
+$\chi=(\mu-\mu_0)/(\mu+\mu_0)$.
+For each orientation the image is centered at $z=-d$. Let $s=2d$.
+In computing the Lorentz force, the real loop moves in the field of
+an image at its instantaneous position; one does not differentiate
+that position a second time. Equivalently, the mechanical image
+interaction energy carries a factor $1/2$.
+
+\textbf{(a)} A loop parallel to the interface has a same-sense image
+with current $\chi I$. For coaxial equal loops (derived in 5.28),
+\[
+M_\parallel(s)=\mu_0a\left[\left(\frac2k-k\right)K(k)-\frac2kE(k)\right],
+\qquad k=\frac{2a}{\sqrt{4a^2+s^2}}.
+\]
+The force is purely normal, $F_z=\chi I^2M_\parallel'(s)$.
+Using
+$K'=E/[k(1-k^2)]-K/k$, $E'=(E-K)/k$, and
+$dk/ds=-ks/(4a^2+s^2)$ gives
+\[
+\boxed{F_z=-\frac{\mu_0\chi I^2s k}{4a}
+\left[\frac{2-k^2}{1-k^2}E(k)-2K(k)\right]_{s=2d}.}
+\]
+This holds for any $d>0$ in the ideal filament model.
+
+\textbf{(b)} A perpendicular loop must have $d>a$ to lie wholly
+in vacuum. Its image is coplanar with it and carries opposite-sense
+current $-\chi I$. Define the positive coefficients
+\[
+D_n=\frac{[(2n+2)!]^2}
+{2^{2n+2}n!(n+2)![(n+1)!]^2},\qquad
+E_n=D_n\frac{(2n+2)!}{2^{2n+2}[(n+1)!]^2}.
+\]
+The convergent coplanar mutual inductance derived in 5.34 is
+$M_\perp(s)=-\mu_0\pi a\sum_{n\ge0}E_n(a/s)^{2n+3}$.
+Thus the exact force throughout the allowed domain $s=2d>2a$ is
+\[
+\boxed{F_z=-\chi I^2M_\perp'(2d)
+=-\mu_0\pi\chi I^2\sum_{n=0}^\infty
+(2n+3)E_n\left(\frac{a}{2d}\right)^{2n+4}.}
+\]
+All coefficients are positive, so the direction is toward a more
+permeable slab and away from a less permeable one.
+The two in-plane transverse force components cancel by symmetry.
+
+\textbf{(c)} Expanding the preceding results, or using
+$D_0=1/2$ and $E_0=1/4$, gives
+\[
+\boxed{F_{z,\parallel}\sim-\frac{3\mu_0\pi\chi I^2a^4}{32d^4},
+\qquad F_{z,\perp}\sim-\frac{3\mu_0\pi\chi I^2a^4}{64d^4}.}
+\]
+For a direct dipole check, use $m=I\pi a^2$ and separation $s$.
+Parallel-to-interface loops have axial moments $m,\chi m$:
+$U_{\rm pair}=-2\mu_0\chi m^2/(4\pi s^3)$.
+Perpendicular loops have transverse moments $m,-\chi m$:
+$U_{\rm pair}=-\mu_0\chi m^2/(4\pi s^3)$.
+The force on the real dipole is $-\partial_sU_{\rm pair}$.
+Putting $s=2d$ gives the two boxed limits, with the first twice the second.
+
+
+\Needspace{5\baselineskip}
+\par\bigskip
+\noindent\textbf{5.19}\quad A magnetically ``hard'' material is in the shape of a right circular cylinder of length $L$ and radius $a$. The cylinder has a permanent magnetization $M_{0}$, uniform throughout its volume and parallel to its axis.
+\begin{enumerate}
+\item[(a)] Determine the magnetic field $\mathbf{H}$ and magnetic induction $\mathbf{B}$ at all points on the axis of the cylinder, both inside and outside.
+\item[(b)] Plot the ratios $\mathbf{B}/\mu_{0}M_{0}$ and $\mathbf{H}/M_{0}$ on the axis as functions of $z$ for $L/a=5$.
+\end{enumerate}
+\solution
+\textbf{(a)} Let the cylinder occupy $-L/2<z<L/2$, with
+$\mathbf M=M_0\widehat{\mathbf z}$.
+Its volume bound current vanishes, and its curved surface carries
+$\mathbf K_M=\mathbf M\times\widehat{\boldsymbol\rho}
+=M_0\widehat{\boldsymbol\phi}$.
+Thus its induction is that of the ideal finite solenoid in 5.3, with
+$NI$ replaced by $M_0$. Define
+\[
+f(z)=\frac12\left[
+\frac{z+L/2}{\sqrt{a^2+(z+L/2)^2}}
+-\frac{z-L/2}{\sqrt{a^2+(z-L/2)^2}}\right].
+\]
+The answers on the entire axis, with one-sided limits at the end faces, are
+\[
+\boxed{\mathbf B(z)=\mu_0M_0f(z)\widehat{\mathbf z},\qquad
+\mathbf H(z)=M_0[f(z)-\mathbf1_{\{|z|<L/2\}}]\widehat{\mathbf z}.}
+\]
+The subtraction follows from $\mathbf B=\mu_0(\mathbf H+\mathbf M)$.
+The axial induction is continuous across either face, while $H_z$
+jumps by the magnetic pole-sheet strength $M_0$.
+\textbf{(b)} For $L/a=5$, at the center $f(0)=2.5/\sqrt{7.25}=0.928477$,
+so $H_z(0)/M_0=-0.0715233$. At either end $f=\tfrac12(5/\sqrt{26})
+=0.490290$.
+\begin{center}
+\input{supplementary/figures/ch05-p19.tex}
+\end{center}
+The red interior field opposes the magnetization; outside,
+$\mathbf B/\mu_0=\mathbf H$ as required in vacuum.
+
+
+\Needspace{5\baselineskip}
+\par\bigskip
+\noindent\textbf{5.20}\quad\begin{enumerate}
+\item[(a)] Starting from the force equation (5.12) and the fact that a magnetization $\mathbf{M}$ inside a volume $V$ bounded by a surface $S$ is equivalent to a volume current density $\mathbf{J}_{M}=(\nabla\times\mathbf{M})$ and a surface current density $(\mathbf{M}\times\mathbf{n})$, show that in the absence of macroscopic conduction currents the total magnetic force on the body can be written
+\[
+\mathbf{F}=-\int_{V}(\nabla\cdot\mathbf{M})\mathbf{B}_{e}\;d^{3}x+\int_{S}(\mathbf{M}\cdot\mathbf{n})\mathbf{B}_{e}\;da
+\]
+where $\mathbf{B}_{e}$ is the applied magnetic induction (not including that of the body in question). The force is now expressed in terms of the effective charge densities $\rho_{M}$ and $\sigma_{M}$. If the distribution of magnetization is not discontinuous, the surface can be at infinity and the force given by just the volume integral.
+\item[(b)] A sphere of radius $R$ with uniform magnetization has its center at the origin of coordinates and its direction of magnetization making spherical angles $\theta_{0}$, $\phi_{0}$. If the external magnetic field is the same as in Problem 5.11, use the expression of part a to evaluate the components of the force acting on the sphere.
+\end{enumerate}
+\solution
+\textbf{(a)} The external sources are outside the body, so
+$\nabla\times\mathbf B_e=0$ and $\nabla\cdot\mathbf B_e=0$ in its
+neighborhood. Start from both bound-current contributions:
+\[
+\mathbf F=\int_V(\nabla\times\mathbf M)\times\mathbf B_e\,d^3x
++\oint_S(\mathbf M\times\mathbf n)\times\mathbf B_e\,da.
+\]
+The volume integrand has components
+$B_{e,j}\partial_jM_i-B_{e,j}\partial_iM_j$.
+Integrating both derivatives by parts gives the boundary term
+$M_i(\mathbf B_e\cdot\mathbf n)-n_i(\mathbf M\cdot\mathbf B_e)$
+and the volume term
+$M_j\partial_iB_{e,j}-M_i\partial_jB_{e,j}$.
+The surface-current term cancels the boundary term exactly.
+Zero divergence removes its second volume term, leaving
+\[
+F_i=\int_VM_j\partial_iB_{e,j}\,d^3x.
+\]
+Zero curl allows $\partial_iB_{e,j}=\partial_jB_{e,i}$.
+A final integration by parts then gives
+\[
+\boxed{\mathbf F=-\int_V(\nabla\cdot\mathbf M)\mathbf B_e\,d^3x
++\oint_S(\mathbf M\cdot\mathbf n)\mathbf B_e\,da.}
+\]
+These are effective pole densities $\rho_M=-\nabla\cdot\mathbf M$
+and $\sigma_M=\mathbf M\cdot\mathbf n$.
+If imposed external current overlaps $V$, zero curl is unavailable:
+the additional force term is $\int_V\mathbf M\times(\nabla\times\mathbf B_e)d^3x$.
+
+\textbf{(b)} For uniform $\mathbf M$ the volume pole density is zero.
+On the sphere $\sigma_M=M_jn_j$, and the constant part of the external
+field integrates to zero because $\int\mathbf n\,da=0$.
+For its linear part, $x_k=Rn_k$ and
+$\int n_jn_k\,da=(4\pi R^2/3)\delta_{jk}$, so
+\[
+F_i=R\,\partial_kB_{e,i}\,M_j\int n_jn_k\,da
+=\frac{4\pi R^3}{3}M_j\partial_jB_{e,i}.
+\]
+With the field of 5.11 this gives
+\[
+\boxed{\mathbf F=\frac{4\pi R^3}{3}\beta B_0M\sin\theta_0
+(\sin\phi_0,\cos\phi_0,0).}
+\]
+It equals the loop result with
+$\mathbf m=(4\pi R^3/3)\mathbf M$, as expected for an affine field.
+
+
+\Needspace{5\baselineskip}
+\par\bigskip
+\noindent\textbf{5.21}\quad A magnetostatic field is due entirely to a localized distribution of permanent magnetization.
+\begin{enumerate}
+\item[(a)] Show that
+\[
+\int\mathbf{B}\cdot\mathbf{H}\;d^{3}x=0
+\]
+provided the integral is taken over all space.
+\item[(b)] From the potential energy (5.72) of a dipole in an external field, show that for a continuous distribution of permanent magnetization the magnetostatic energy can be written
+\[
+W=\frac{\mu_{0}}{2}\int\mathbf{H}\cdot\mathbf{H}\;d^{3}x=-\frac{\mu_{0}}{2}\int\mathbf{M}\cdot\mathbf{H}\;d^{3}x
+\]
+apart from an additive constant, which is independent of the orientation or position of the various constituent magnetized bodies.
+\end{enumerate}
+\solution
+\textbf{(a)} With no free currents,
+$\mathbf H=-\nabla\Phi_H$ throughout space. Therefore
+\[
+\int\mathbf B\cdot\mathbf H\,d^3x
+=-\int\nabla\cdot(\Phi_H\mathbf B)d^3x
++\int\Phi_H\nabla\cdot\mathbf B\,d^3x=0.
+\]
+The volume term vanishes by $\nabla\cdot\mathbf B=0$.
+For a localized magnetization, $\Phi_H=O(r^{-2})$ and
+$B=O(r^{-3})$, so the surface term at infinity is $O(r^{-3})$ and
+vanishes. Internal interfaces cancel when all space is included.
+
+\textbf{(b)} The pair interaction energy of permanent dipoles is
+$-\mathbf m\cdot\mathbf B_e$. Summing it over the distribution and
+dividing by two to count each pair once gives
+$-\tfrac12\int\mathbf M\cdot\mathbf B\,d^3x$, apart from local
+self-energy terms. Since $\mathbf B=\mu_0(\mathbf H+\mathbf M)$,
+\[
+-\frac12\int\mathbf M\cdot\mathbf B
+=-\frac{\mu_0}{2}\int\mathbf M\cdot\mathbf H
+-\frac{\mu_0}{2}\int M^2.
+\]
+The last term and the local self-energy constants are unchanged by
+translations or rotations of permanently magnetized bodies.
+They may be absorbed into the additive constant specified in the question.
+Part (a) also gives
+\[
+0=\mu_0\int(\mathbf H+\mathbf M)\cdot\mathbf H\,d^3x,
+\quad\text{hence}\quad
+\int H^2=-\int\mathbf M\cdot\mathbf H.
+\]
+Consequently the position- and orientation-dependent energy can be written
+\[
+\boxed{W=\frac{\mu_0}{2}\int H^2d^3x
+=-\frac{\mu_0}{2}\int\mathbf M\cdot\mathbf H\,d^3x+\text{constant}.}
+\]
+The moment magnitudes are fixed here; changing them would change the
+discarded intrinsic energy and would be a different thermodynamic problem.
+
+
+\Needspace{5\baselineskip}
+\par\bigskip
+\noindent\textbf{5.22}\quad Show that in general a long, straight bar of uniform cross-sectional area $A$ with uniform lengthwise magnetization $M$, when placed with its flat end against an infinitely permeable flat surface, adheres with a force given approximately by
+\[
+F\simeq\frac{\mu_{0}}{2}\,AM^{2}
+\]
+Relate your discussion to the electrostatic considerations in Section 1.11.
+\solution
+Resolve contact as the limit of a narrow vacuum gap. The end face has
+effective magnetic surface charge of magnitude $M$.
+Infinite permeability can be represented by an image magnet extending
+the real bar through the plane; the facing image pole has opposite sign.
+For a bar long compared with its transverse size, the far ends make
+negligible contributions in the gap. Each facing pole sheet supplies
+$H=M/2$, so the total gap field is $H=M$, $B=\mu_0M$.
+
+The force on the real face is its pole strength $MA$ times the
+\emph{image} induction $\mu_0M/2$, giving
+\[
+\boxed{F\simeq\frac{\mu_0}{2}AM^2.}
+\]
+The same result follows from the normal vacuum magnetic stress
+$B^2/(2\mu_0)$ times $A$. In the electrostatic capacitor the corresponding
+pressure is $\epsilon_0E^2/2=\sigma^2/(2\epsilon_0)$.
+Using the field of both sheets as the acting external field would
+incorrectly double the force; the face does not exert a net force on itself.
+
+
+\Needspace{5\baselineskip}
+\par\bigskip
+\noindent\textbf{5.23}\quad A right circular cylinder of length $L$ and radius $a$ has a uniform lengthwise magnetization $M$.
+\begin{enumerate}
+\item[(a)] Show that, when it is placed with its flat end against an infinitely permeable plane surface, it adheres with a force
+\[
+F=2\mu_{0}aLM^{2}\left[\frac{K(k)-E(k)}{k}-\frac{K(k_{1})-E(k_{1})}{k_{1}}\right]
+\]
+where
+\[
+k=\frac{2a}{\sqrt{4a^{2}+L^{2}}},\qquad k_{1}=\frac{a}{\sqrt{a^{2}+L^{2}}}
+\]
+\item[(b)] Find the limiting form for the force if $L\gg a$.
+\end{enumerate}
+\solution
+\textbf{(a)} Use magnetic pole disks $\pm M$ at the two end faces and
+the image cylinder across the infinitely permeable plane.
+Let $f(s)>0$ be the attraction of two oppositely charged disks of
+radius $a$, density magnitudes $M$, and axial separation $s$.
+Biot--Savart's equivalent pole force is
+\[
+f(s)=\frac{\mu_0M^2}{4\pi}\int_Dd^2x\int_Dd^2x'
+\frac{s}{[s^2+|\mathbf x-\mathbf x'|^2]^{3/2}}.
+\]
+The overlap area of disks displaced transversely by $t$ is
+\[
+C(t)=2a^2\cos^{-1}(t/2a)-\frac t2\sqrt{4a^2-t^2},\quad
+0\le t\le2a,\qquad C'(t)=-\sqrt{4a^2-t^2}.
+\]
+Integrating by the displacement variable, then by parts, yields
+\[
+\begin{split}
+f(s)&=\frac{\mu_0M^2}{2}\int_0^{2a}
+C(t)\frac{st\,dt}{(s^2+t^2)^{3/2}}\\
+&=\frac{\mu_0M^2}{2}\left[
+\pi a^2-s\int_0^{2a}\frac{\sqrt{4a^2-t^2}}{\sqrt{s^2+t^2}}dt\right].
+\end{split}
+\]
+For the remaining integral put $t=2a\cos u$ and
+$k_s=2a/\sqrt{4a^2+s^2}$. It becomes
+\[
+\frac{4a^2}{\sqrt{4a^2+s^2}}\int_0^{\pi/2}
+\frac{\sin^2u\,du}{\sqrt{1-k_s^2\sin^2u}}
+=\frac{2a}{k_s}[K(k_s)-E(k_s)].
+\]
+Thus
+$f(s)=\mu_0M^2\{\pi a^2/2-as[K(k_s)-E(k_s)]/k_s\}$.
+In particular $f(0^+)=\mu_0M^2\pi a^2/2$.
+
+The four real-image pairs give attraction $f(0)$ and $f(2L)$,
+and two repulsions $f(L)$. Hence
+\[
+F=f(0)-2f(L)+f(2L)
+=\boxed{2\mu_0aLM^2\left[
+\frac{K(k)-E(k)}k-\frac{K(k_1)-E(k_1)}{k_1}\right]},
+\]
+with $k=k_L$ and $k_1=k_{2L}$ exactly as in the question.
+
+\textbf{(b)} At small $k$,
+$K=\frac\pi2(1+k^2/4+\cdots)$ and
+$E=\frac\pi2(1-k^2/4+\cdots)$, so $(K-E)/k=\pi k/4+O(k^3)$.
+When $L\gg a$, $k\simeq2a/L$ and $k_1\simeq a/L$, giving
+\[
+\boxed{F\longrightarrow \frac{\mu_0\pi a^2M^2}{2}.}
+\]
+This agrees with 5.22 for $A=\pi a^2$.
+
+
+\Needspace{5\baselineskip}
+\par\bigskip
+\noindent\textbf{5.24}\quad\begin{enumerate}
+\item[(a)] For the perfectly conducting plane of Section 5.13 with the circular hole in it and the asymptotically uniform tangential magnetic field $\mathbf{H}_{0}$ on one side, calculate the added tangential magnetic field $\mathbf{H}^{(1)}$ on the side of the plane with $\mathbf{H}_{0}$. Show that its components for $\rho>a$ are
+\begin{align*}
+H_{x}^{(1)}&=\frac{2H_{0}a^{3}}{\pi}\frac{xy}{\rho^{4}\sqrt{\rho^{2}-a^{2}}}\\[4pt]
+H_{y}^{(1)}&=\frac{2H_{0}a^{3}}{\pi}\frac{y^{2}}{\rho^{4}\sqrt{\rho^{2}-a^{2}}}+\frac{H_{0}}{\pi}\left[\frac{a}{\rho}\sqrt{1-\frac{a^{2}}{\rho^{2}}}-\sin^{-1}\!\left(\frac{a}{\rho}\right)\right]
+\end{align*}
+\item[(b)] Sketch the lines of surface current flow in the neighborhood of the hole on both sides of the plane.
+\end{enumerate}
+\solution
+Take $\mathbf H_0=H_0\widehat{\mathbf y}$ on the $z>0$ side.
+The scalar potentials in Section 5.13 are
+$\Phi_+=-H_0y+\Phi_1$ and $\Phi_-=-\Phi_1$, with
+\[
+\Phi_1=\frac{2H_0a^2}{\pi}\sin\phi
+\int_0^\infty j_1(ka)e^{-k|z|}J_1(k\rho)\,dk.
+\]
+We evaluate its plane value rather than leaving a Bessel integral.
+The identity
+$a^2j_1(ka)=\int_0^a t\sin(kt)\,dt$, followed by integration by parts
+in $k$, gives, for $t<\rho$,
+\[
+\int_0^\infty\sin(kt)J_1(k\rho)\,dk
+=\frac t\rho\int_0^\infty\cos(kt)J_0(k\rho)\,dk
+=\frac{t}{\rho\sqrt{\rho^2-t^2}}.
+\]
+These oscillatory integrals are understood as limits with positive
+exponential damping, consistent with $z\to0^+$.
+Consequently, for $\rho>a$,
+\[
+\int_0^\infty j_1(ka)J_1(k\rho)\,dk
+=\frac1{a^2\rho}\int_0^a\frac{t^2\,dt}{\sqrt{\rho^2-t^2}}
+=\frac{\rho}{2a^2}f(\rho),
+\]
+where
+$f(\rho)=\sin^{-1}(a/\rho)-(a/\rho)\sqrt{1-a^2/\rho^2}$.
+Thus $\Phi_1(x,y,0)=H_0yf(\rho)/\pi$.
+
+\textbf{(a)} Differentiate explicitly:
+\[
+f'(\rho)=-\frac{2a^3}{\rho^3\sqrt{\rho^2-a^2}},\qquad
+\partial_x\rho=x/\rho,\quad\partial_y\rho=y/\rho.
+\]
+Therefore
+\[
+\boxed{H_x^{(1)}=-\frac{H_0}{\pi}y f'(\rho)\frac x\rho
+=\frac{2H_0a^3}{\pi}\frac{xy}{\rho^4\sqrt{\rho^2-a^2}},}
+\]
+\[
+\boxed{H_y^{(1)}=-\frac{H_0}{\pi}
+\left[f(\rho)+\frac{y^2}{\rho}f'(\rho)\right]
+=\frac{2H_0a^3y^2}{\pi\rho^4\sqrt{\rho^2-a^2}}
++\frac{H_0}{\pi}
+\left[\frac a\rho\sqrt{1-\frac{a^2}{\rho^2}}-\sin^{-1}\frac a\rho\right].}
+\]
+\textbf{(b)} On the upper face the outward normal from the conductor
+is $+\widehat{\mathbf z}$ and on the lower face it is
+$-\widehat{\mathbf z}$. Hence
+\[
+\mathbf K_+=-\!H_0\widehat{\mathbf x}
++\widehat{\mathbf z}\times\mathbf H^{(1)},\qquad
+\mathbf K_-=\widehat{\mathbf z}\times\mathbf H^{(1)}.
+\]
+If $\psi_+=-y+yf/\pi$ and $\psi_-=yf/\pi$, both currents can be written
+$\mathbf K_\pm/H_0=(\partial_y\psi_\pm,-\partial_x\psi_\pm)$.
+Their streamlines are therefore contours of the respective $\psi$.
+At the rim $f(a)=\pi/2$; the currents on the two faces join around
+the edge, whereas there is no conducting sheet in the open disk.
+\begin{center}
+\input{supplementary/figures/ch05-p24.tex}
+\end{center}
+Far from the hole the upper current is uniform toward $-x$, and
+the lower current tends to zero. The square-root edge divergence is
+the ideal zero-thickness conductor's edge field.
+
+
+\Needspace{5\baselineskip}
+\par\bigskip
+\noindent\textbf{5.25}\quad A flat right rectangular loop carrying a constant current $I_{1}$ is placed near a long straight wire carrying a current $I_{2}$. The loop is oriented so that its center is a perpendicular distance $d$ from the wire; the sides of length $a$ are parallel to the wire and the sides of length $b$ make an angle $\alpha$ with the plane containing the wire and the loop's center. The direction of the current $I_{1}$ is the same as that of $I_{2}$ in the side of the rectangle nearest the wire.
+\begin{enumerate}
+\item[(a)] Show that the interaction magnetic energy
+\[
+W_{12}=\int\mathbf{J}_{1}\cdot\mathbf{A}_{2}\;d^{3}x=I_{1}F_{2}
+\]
+(where $F_{2}$ is the magnetic flux from $I_{2}$ linking the rectangular circuit carrying $I_{1}$), is
+\[
+W_{12}=\frac{\mu_{0}I_{1}I_{2}a}{4\pi}\ln\!\left[\frac{4d^{2}+b^{2}+4d\,b\cos\alpha}{4d^{2}+b^{2}-4d\,b\cos\alpha}\right]
+\]
+\item[(b)] Calculate the force between the loop and the wire for fixed currents.
+\item[(c)] Repeat the calculation for a circular loop of radius $a$, whose plane is parallel to the wire and makes an angle $\alpha$ with respect to the plane containing the center of the loop and the wire. Show that the interaction energy is
+\[
+W_{12}=\mu_{0}I_{1}I_{2}\,d\cdot\mathrm{Re}\left\{e^{i\alpha}-\sqrt{e^{2i\alpha}-a^{2}/d^{2}}\right\}
+\]
+Find the force.
+\item[(d)] For both loops, show that when $d\gg a$,$b$ the interaction energy reduces to $W_{12}\simeq\mathbf{m}\cdot\mathbf{B}$, where $\mathbf{m}$ is the magnetic moment of the loop. Explain the sign.
+\end{enumerate}
+\solution
+Put the long wire on the $z$ axis with current $I_2\widehat{\mathbf z}$.
+The loop center is $(d,0,0)$; define the transverse in-plane direction
+$\mathbf u=(\cos\alpha,\sin\alpha,0)$. A convenient vector potential is
+$\mathbf A_2=-(\mu_0I_2/2\pi)\ln\rho\,\widehat{\mathbf z}$.
+Its additive constant cancels around a closed loop.
+
+\textbf{(a)} The two long rectangular sides have transverse positions
+$\mathbf r_\pm=d\widehat{\mathbf x}\pm(b/2)\mathbf u$ and distances
+$r_\pm^2=d^2+b^2/4\pm db\cos\alpha$.
+The near side carries $+I_1\widehat{\mathbf z}$ and the far side the
+opposite current. The transverse sides have $\mathbf A_2\cdot d\mathbf l=0$.
+Thus
+\[
+\begin{split}
+W_{12}&=I_1\oint\mathbf A_2\cdot d\mathbf l
+=I_1a[A_{2z}(r_-)-A_{2z}(r_+)]\\
+&=\frac{\mu_0I_1I_2a}{2\pi}\ln\frac{r_+}{r_-}
+=\boxed{\frac{\mu_0I_1I_2a}{4\pi}
+\ln\frac{4d^2+b^2+4db\cos\alpha}
+{4d^2+b^2-4db\cos\alpha}.}
+\end{split}
+\]
+Stokes's theorem identifies $\oint\mathbf A_2\cdot d\mathbf l=F_2$,
+proving $W_{12}=I_1F_2$ as well.
+
+\textbf{(b)} At fixed currents the force is $+\nabla W_{12}$, with
+the physical loop orientation held fixed. Directly adding the forces on
+the two long sides gives the complete vector answer
+\[
+\boxed{\mathbf F=\frac{\mu_0I_1I_2a}{2\pi}
+\left(\frac{\mathbf r_+}{r_+^2}-\frac{\mathbf r_-}{r_-^2}\right),\qquad F_z=0.}
+\]
+The two transverse sides have equal and opposite $z$ forces.
+Explicitly,
+\[
+\begin{aligned}
+F_x&=\frac{\mu_0I_1I_2a}{2\pi}
+\left[\frac{d+(b/2)\cos\alpha}{r_+^2}
+-\frac{d-(b/2)\cos\alpha}{r_-^2}\right],\\
+F_y&=\frac{\mu_0I_1I_2ab\sin\alpha}{4\pi}
+\left(\frac1{r_+^2}+\frac1{r_-^2}\right).
+\end{aligned}
+\]
+For $\alpha=0$ and $d>b/2$, this is an attraction toward the wire.
+
+\textbf{(c)} Parameterize the circular loop by
+$\mathbf r=d\widehat{\mathbf x}+a\cos\theta\,\mathbf u
+-a\sin\theta\,\widehat{\mathbf z}$, so the nearer side again carries
+current in $+z$. Then
+\[
+W_{12}=\frac{\mu_0I_1I_2a}{2\pi}
+\operatorname{Re}\int_0^{2\pi}
+\cos\theta\ln(d+ae^{i\alpha}\cos\theta)\,d\theta.
+\]
+For $t=ae^{i\alpha}$, integrate by parts and use the elementary
+integral of $(d+t\cos\theta)^{-1}$:
+\[
+\int_0^{2\pi}\cos\theta\ln(d+t\cos\theta)d\theta
+=t\int_0^{2\pi}\frac{\sin^2\theta}{d+t\cos\theta}d\theta
+=\frac{2\pi}{t}\left(d-\sqrt{d^2-t^2}\right).
+\]
+Conjugating inside the real part and simplifying gives
+\[
+\boxed{W_{12}=\mu_0I_1I_2\operatorname{Re}
+\left[de^{i\alpha}-\sqrt{d^2e^{2i\alpha}-a^2}\right].}
+\]
+Choose the square-root branch that approaches $de^{i\alpha}$ as
+$a/d\to0$, and continue it without crossing a wire-loop intersection.
+This branch specification is essential; a principal square root used
+without regard to orientation can give the wrong flux.
+
+At fixed orientation in space, displacement along $x$ differentiates
+$d$ at fixed $\alpha$, whereas displacement along $y$ changes the
+angle relative to the radial plane by $d\alpha/dy=-1/d$.
+Define
+\[
+Z=e^{i\alpha}-\frac{de^{2i\alpha}}{\sqrt{d^2e^{2i\alpha}-a^2}}.
+\]
+The force is therefore
+\[
+\boxed{F_x=\mu_0I_1I_2\operatorname{Re}Z,\qquad
+F_y=\mu_0I_1I_2\operatorname{Im}Z,\qquad F_z=0.}
+\]
+Indeed $F_x=\partial_dW_{12}$ and
+$F_y=-d^{-1}\partial_\alpha W_{12}$.
+
+\textbf{(d)} For the rectangle,
+$\ln[(1+\varepsilon)/(1-\varepsilon)]=2\varepsilon+O(\varepsilon^3)$
+gives $W_{12}\simeq\mu_0I_1I_2ab\cos\alpha/(2\pi d)$.
+For the circle, expand the square root to get
+$W_{12}\simeq\mu_0I_1I_2a^2\cos\alpha/(2d)$.
+In both cases $\mathbf m=I_1S(\widehat{\mathbf z}\times\mathbf u)$
+and $\mathbf B(d)=\mu_0I_2\widehat{\mathbf y}/(2\pi d)$, so these are
+$+\mathbf m\cdot\mathbf B$.
+This is the cross term in the \emph{field energy}. Current sources
+exchange twice its change when mutual inductance changes at fixed
+currents. The mechanical potential is its negative, yielding the
+familiar force and dipole mechanical energy $-\mathbf m\cdot\mathbf B$.
+
+
+\Needspace{5\baselineskip}
+\par\bigskip
+\noindent\textbf{5.26}\quad A two-wire transmission line consists of a pair of nonpermeable parallel wires of radii $a$ and $b$ separated by a distance $d>a+b$. A current flows down one wire and back the other. It is uniformly distributed over the cross section of each wire. Show that the self-inductance per unit length is
+\[
+L=\frac{\mu_{0}}{4\pi}\left[1+2\ln\!\left(\frac{d^{2}}{ab}\right)\right]
+\]
+\solution
+Let the axial densities be $J_1=I/(\pi a^2)$ and
+$J_2=-I/(\pi b^2)$. In two dimensions
+\[
+A_z(\mathbf x)=-\frac{\mu_0}{2\pi}
+\int J_z(\mathbf x')\ln|\mathbf x-\mathbf x'|\,d^2x'.
+\]
+The arbitrary length inside the logarithm cancels because the total
+current is zero. With $W'=\frac12\int J_zA_z\,d^2x$, the energy per
+length is determined by three mean logarithmic distances.
+
+For a unit-normalized uniform disk of radius $a$, its logarithmic
+potential inside is
+\[
+g_a(r)=\frac1{\pi a^2}\int_{D_a}\ln|\mathbf r-\mathbf r'|\,d^2r'
+=\ln a-\frac12+\frac{r^2}{2a^2}.
+\]
+To verify it, use $\nabla^2\ln|\mathbf r-\mathbf r'|=2\pi\delta^2$:
+$r^{-1}(rg_a')'=2/a^2$, so regularity gives $g_a'=r/a^2$.
+Continuity with the exterior $g_a=\ln r$ fixes the constant.
+Disk averaging, with $\langle r^2\rangle=a^2/2$, then gives
+$\langle\ln|\mathbf r-\mathbf r'|\rangle=\ln a-1/4$.
+The second disk similarly gives $\ln b-1/4$.
+For disjoint disks the logarithmic kernel is harmonic in either
+disk separately. Applying the mean-value theorem twice makes the
+cross average exactly $\ln d$.
+
+Therefore
+\[
+W'=-\frac{\mu_0I^2}{4\pi}
+\left[(\ln a-\tfrac14)+(\ln b-\tfrac14)-2\ln d\right]
+=\frac{\mu_0I^2}{4\pi}
+\left[\ln\frac{d^2}{ab}+\frac12\right].
+\]
+Since $W'=L'I^2/2$,
+\[
+\boxed{L'=\frac{\mu_0}{4\pi}
+\left[1+2\ln\frac{d^2}{ab}\right].}
+\]
+Within the stipulated uniform-current model this is exact for
+$d>a+b$, not just for widely separated wires.
+The constant term is the sum of the two internal inductances,
+$\mu_0/(8\pi)$ per wire.
+
+
+\Needspace{5\baselineskip}
+\par\bigskip
+\noindent\textbf{5.27}\quad A circuit consists of a long thin conducting shell of radius $a$ and a parallel return wire of radius $b$ on axis inside. If the current is assumed distributed uniformly throughout the cross section of the wire, calculate the self-inductance per unit length. What is the self-inductance if the inner conductor is a thin hollow tube?
+\solution
+Use $I$ along the inner conductor and $-I$ in the thin outer shell.
+Ampere's law gives
+\[
+B_\phi(r)=
+\begin{cases}
+\mu_0Ir/(2\pi b^2),&0<r<b,\\
+\mu_0I/(2\pi r),&b<r<a,\\
+0,&r>a.
+\end{cases}
+\]
+The energy per unit length is
+\[
+\begin{split}
+W'&=\int_0^b\frac{B_\phi^2}{2\mu_0}2\pi r\,dr
++\int_b^a\frac{B_\phi^2}{2\mu_0}2\pi r\,dr\\
+&=\frac{\mu_0I^2}{4\pi b^4}\frac{b^4}{4}
++\frac{\mu_0I^2}{4\pi}\ln\frac ab
+=\frac{\mu_0I^2}{16\pi}
++\frac{\mu_0I^2}{4\pi}\ln\frac ab.
+\end{split}
+\]
+Thus
+\[
+\boxed{L'=\frac{\mu_0}{2\pi}\ln\frac ab+\frac{\mu_0}{8\pi}.}
+\]
+If the inner conductor is a thin hollow tube, its current is a surface
+sheet and $B=0$ for $r<b$. The internal term disappears:
+$\boxed{L'_{\rm tube}=\mu_0\ln(a/b)/(2\pi)}$.
+The infinitely thin outer shell contributes no internal energy.
+
+
+\Needspace{5\baselineskip}
+\par\bigskip
+\noindent\textbf{5.28}\quad Show that the mutual inductance of two circular coaxial loops in a homogeneous medium of permeability $\mu$ is
+\[
+M_{12}=\mu\sqrt{ab}\left[\left(\frac{2}{k}-k\right)\!K(k)-\frac{2}{k}\,E(k)\right]
+\]
+where
+\[
+k^{2}=\frac{4ab}{\erratum{(a+b)^{2}}+d^{2}}
+\]
+and $a$, $b$ are the radii of the loops, $d$ is the distance between their centers, and $K$ and $E$ are the complete elliptic integrals.
+
+Find the limiting value when $d\ll a$, $b$ and $a\simeq b$.
+\solution
+The Neumann formula is
+$M=\mu(4\pi)^{-1}\oint\oint d\mathbf l_1\cdot d\mathbf l_2/R$.
+For coaxial circles, the integrand depends only on the azimuthal difference:
+\[
+M=\frac{\mu ab}{2}\int_0^{2\pi}
+\frac{\cos\varphi\,d\varphi}
+{\sqrt{a^2+b^2+d^2-2ab\cos\varphi}}.
+\]
+Put $D=\sqrt{(a+b)^2+d^2}$ and $k^2=4ab/D^2$.
+Set $\varphi=2t$. Then $\cos\varphi=2\cos^2t-1$ and
+the denominator is $D\sqrt{1-k^2\cos^2t}$.
+The integrand is symmetric about $t=\pi/2$, so the original integral
+over $0<\varphi<2\pi$ becomes
+\[
+\frac4D\int_0^{\pi/2}
+\frac{2\cos^2t-1}{\sqrt{1-k^2\cos^2t}}dt.
+\]
+Now set $u=\pi/2-t$. The result is
+\[
+\frac4D\int_0^{\pi/2}
+\frac{2\sin^2u-1}{\sqrt{1-k^2\sin^2u}}du
+=\frac4D\left[\frac{2(K-E)}{k^2}-K\right].
+\]
+Here the definitions of $K$ and $E$ give the needed reduction:
+\[
+K-E=\int_0^{\pi/2}
+\frac{1-(1-k^2\sin^2u)}{\sqrt{1-k^2\sin^2u}}du
+=k^2\int_0^{\pi/2}\frac{\sin^2u}{\sqrt{1-k^2\sin^2u}}du.
+\]
+Since $2ab/D=k\sqrt{ab}$, this gives
+\[
+\boxed{M=\mu\sqrt{ab}
+\left[\left(\frac2k-k\right)K(k)-\frac2kE(k)\right].}
+\]
+Here the arguments are elliptic moduli; numerical libraries often
+take the parameter $k^2$ instead.
+
+For nearly coincident loops set
+$\delta=\sqrt{(a-b)^2+d^2}$, so
+$k'=\sqrt{1-k^2}=\delta/D\ll1$.
+Using $K(k)=\ln(4/k')+O(k'^2\ln k')$ and
+$E(k)=1+O(k'^2\ln k')$ gives
+\[
+\boxed{M\simeq\mu\sqrt{ab}
+\left[\ln\frac{4\sqrt{(a+b)^2+d^2}}{\sqrt{(a-b)^2+d^2}}-2\right]
+\simeq\mu a\left[\ln\frac{8a}{\sqrt{(a-b)^2+d^2}}-2\right].}
+\]
+For equal radii this is $\mu a[\ln(8a/|d|)-2]$.
+The logarithmic divergence at exact coincidence belongs to the
+filament model; finite wire radius supplies the cutoff for self-inductance.
+
+
+\Needspace{5\baselineskip}
+\par\bigskip
+\noindent\textbf{5.29}\quad The figure represents a transmission line consisting of two, parallel \emph{perfect} conductors of arbitrary, but constant, cross section. Current flows down one conductor and returns via the other.
+
+\begin{center}
+\begin{tikzpicture}[scale=1.1]
+  % two irregular conductor cross-sections
+  \fill[gray!35] (-1.9,0.6) .. controls (-2.3,1.4) and (-1.2,1.7) .. (-0.7,1.3)
+    .. controls (-0.35,1.0) and (-0.3,0.75) .. (-0.65,0.55)
+    .. controls (-1.0,0.4) and (-1.55,0.15) .. (-1.9,0.6) -- cycle;
+  \draw[thick] (-1.9,0.6) .. controls (-2.3,1.4) and (-1.2,1.7) .. (-0.7,1.3)
+    .. controls (-0.35,1.0) and (-0.3,0.75) .. (-0.65,0.55)
+    .. controls (-1.0,0.4) and (-1.55,0.15) .. (-1.9,0.6) -- cycle;
+  \fill[gray!35] (1.0,-0.9) .. controls (0.4,-1.15) and (-0.6,-1.0) .. (-0.8,-0.55)
+    .. controls (-0.95,-0.2) and (-0.4,0.15) .. (0.1,0.35)
+    .. controls (0.7,0.6) and (1.2,1.1) .. (1.35,1.5)
+    .. controls (1.5,1.9) and (1.75,1.55) .. (1.6,1.2)
+    .. controls (1.45,0.8) and (1.55,0.3) .. (1.45,-0.2)
+    .. controls (1.35,-0.55) and (1.35,-0.75) .. (1.0,-0.9) -- cycle;
+  \draw[thick] (1.0,-0.9) .. controls (0.4,-1.15) and (-0.6,-1.0) .. (-0.8,-0.55)
+    .. controls (-0.95,-0.2) and (-0.4,0.15) .. (0.1,0.35)
+    .. controls (0.7,0.6) and (1.2,1.1) .. (1.35,1.5)
+    .. controls (1.5,1.9) and (1.75,1.55) .. (1.6,1.2)
+    .. controls (1.45,0.8) and (1.55,0.3) .. (1.45,-0.2)
+    .. controls (1.35,-0.55) and (1.35,-0.75) .. (1.0,-0.9) -- cycle;
+  \node at (2.6,-1.5) {\textbf{Problem 5.29}};
+\end{tikzpicture}
+\end{center}
+
+Show that the product of the inductance per unit length $L$ and the capacitance per unit length $C$ is
+\[
+LC=\mu\epsilon
+\]
+where $\mu$ and $\epsilon$ are the permeability and the permittivity of the medium surrounding the conductors. (See the discussion about magnetic fields near perfect conductors at the beginning of Section 5.13.)
+\solution
+Use the perfect-conductor magnetic boundary condition stated in
+Section 5.13: no magnetic field in the conductors and no trapped flux.
+Let the electrostatic transverse field for voltage difference $V$
+be $\mathbf E$, with charges per length $\pm\lambda$, so $\lambda=C'V$.
+In the homogeneous exterior medium, $\mathbf E$ is both curl-free
+and divergence-free, and normal to each conductor.
+
+The rotated field
+$\mathbf H=\gamma\widehat{\mathbf z}\times\mathbf E$ is consequently
+curl-free and divergence-free in the transverse exterior region,
+and tangent to the conductor surfaces. On a contour around one wire,
+\[
+\oint\mathbf H\cdot d\mathbf l
+=\gamma\oint\mathbf E\cdot\mathbf n\,dl
+=\gamma\frac{\lambda}{\epsilon}=I.
+\]
+Thus $\gamma=\epsilon I/\lambda$.
+The energy relation
+$\frac{\epsilon}{2}\int E^2d^2x=C'V^2/2$ then gives
+\[
+W'_m=\frac{\mu}{2}\int H^2d^2x
+=\frac{\mu}{\epsilon}\left(\frac{\epsilon I}{C'V}\right)^2
+\frac{C'V^2}{2}
+=\frac{\mu\epsilon I^2}{2C'}.
+\]
+Comparing with $W'_m=L'I^2/2$ proves
+$\boxed{L'C'=\mu\epsilon}$.
+This result concerns the external inductance of perfect conductors.
+An internal magnetic field, such as that of a uniform-current wire
+in 5.26, adds internal inductance and does not satisfy this same product.
+
+
+\Needspace{5\baselineskip}
+\par\bigskip
+\noindent\textbf{5.30}\quad\begin{enumerate}
+\item[(a)] Show that a surface current density $K(\phi)=I\cos\phi/2R$ flowing in the axial direction on a right circular cylindrical surface of radius $R$ produces inside the cylinder a uniform magnetic induction $B_{0}=\mu_{0}I/4R$ in a direction perpendicular to the cylinder axis. Show that the field outside is that of a two-dimensional dipole.
+\item[(b)] Calculate the total magnetostatic field energy per unit length. How is it divided inside and outside the cylinder?
+\item[(c)] What is the inductance per unit length of the system, viewed as a long circuit with current flowing up one side of the cylinder and back the other?
+\end{enumerate}
+\textbf{Answer:} $L=\pi\mu_{0}/8$.
+\solution
+\textbf{(a)} Set $K_z=K_0\cos\phi$, $K_0=I/(2R)$.
+The axial vector potential solves the two-dimensional Laplace
+equation on either side of the sheet. Regularity, decay of the field,
+and continuity give
+\[
+A_z=C\cos\phi\begin{cases}\rho,&\rho<R,\\R^2/\rho,&\rho>R.\end{cases}
+\]
+Since $B_\rho=\rho^{-1}\partial_\phi A_z$ and
+$B_\phi=-\partial_\rho A_z$,
+\[
+\mathbf B_{\rm in}=-C\widehat{\mathbf y},\qquad
+(B_\rho,B_\phi)_{\rm out}
+=\frac{CR^2}{\rho^2}(-\sin\phi,\cos\phi).
+\]
+The jump $B_{\phi,\rm out}-B_{\phi,\rm in}=\mu_0K_z$ gives
+$2C\cos\phi=\mu_0I\cos\phi/(2R)$.
+Therefore $\boxed{C=B_0=\mu_0I/(4R)}$, and the exterior field is the
+two-dimensional dipole field displayed above.
+
+\textbf{(b)} The energy per length inside is
+$W'_{\rm in}=\pi R^2B_0^2/(2\mu_0)$.
+Outside the magnitude is $B_0R^2/\rho^2$, so
+\[
+W'_{\rm out}=\frac1{2\mu_0}\int_R^\infty
+\frac{B_0^2R^4}{\rho^4}2\pi\rho\,d\rho
+=\frac{\pi R^2B_0^2}{2\mu_0}=W'_{\rm in}.
+\]
+Thus $\boxed{W'_{\rm total}=\pi\mu_0I^2/16}$, divided equally.
+
+\textbf{(c)} The positive axial current integrates to
+$\int_{-\pi/2}^{\pi/2}K_zR\,d\phi=I$; the other half carries $-I$.
+Accordingly the circuit current is precisely the $I$ in the density,
+and
+$\boxed{L'=2W'_{\rm total}/I^2=\pi\mu_0/8}$.
+
+
+\Needspace{5\baselineskip}
+\par\bigskip
+\noindent\textbf{5.31}\quad An accelerator bending magnet consists of $N$ turns of superconducting cable whose current configuration can be described approximately by the axial current density
+\[
+J_{z}(\rho,\phi)=\left(\frac{NI}{2R}\right)\!\cos\phi\;\delta(\rho-R)
+\]
+The right circular current cylinder is centered on the axis of a hollow iron cylinder of inner radius $R'$ ($R'>R$). The relative dimensions ($R$, $R'$ a few centimeters and a magnet length of several meters) permit the use of a two-dimensional approximation, at least away from the ends of the magnet. Assume that the relative permeability of the iron can be taken as infinite. [Then the outer radius of the iron is irrelevant.]
+\begin{enumerate}
+\item[(a)] Show that the magnetic field inside the current sheath is perpendicular to the axis of the cylinder in the direction defined by $\phi=\pm\pi/2$ and has the magnitude
+\[
+B_{0}=\left(\frac{\mu_{0}NI}{4R}\right)\!\left[1+\frac{R^{2}}{R'^{2}}\right]
+\]
+\item[(b)] Show that the magnetic energy inside $r=R$ is augmented (and that outside diminished) relative to the values in the absence of the iron. (Compare part b of Problem 5.30.)
+\item[(c)] Show that the inductance per unit length is
+\[
+\frac{dL}{dz}=\left(\frac{\pi\mu_{0}N^{2}}{8}\right)\!\left[1+\frac{R^{2}}{R'^{2}}\right]
+\]
+\end{enumerate}
+\solution
+Let $c_0=\mu_0NI/(4R)$ and $\eta=R^2/R'^2$.
+Write
+\[
+A_z=\cos\phi\begin{cases}C\rho,&\rho<R,\\
+D\rho+E/\rho,&R<\rho<R'.\end{cases}
+\]
+At the inner face of infinitely permeable iron, tangential $H_\phi$
+vanishes, so $D-E/R'^2=0$.
+At the current sheath, continuity gives $C=D+E/R^2$ and the derivative
+jump gives $2E/R^2=\mu_0NI/(2R)$.
+These equations yield
+$E=c_0R^2$, $D=c_0\eta$, and $C=c_0(1+\eta)$.
+
+\textbf{(a)} As in 5.30 the core field is along $-y$ for the displayed
+positive-current convention and has magnitude
+\[
+\boxed{B_0=c_0(1+\eta)
+=\frac{\mu_0NI}{4R}\left(1+\frac{R^2}{R'^2}\right).}
+\]
+Reversing the current reverses its direction.
+
+\textbf{(b)} Put $W'_0=\pi R^2c_0^2/(2\mu_0)$, the energy in each
+region for the corresponding free-space sheath.
+Inside, $W'_{\rm in}=W'_0(1+\eta)^2$.
+In the gap,
+$B^2=D^2+E^2/\rho^4-2DE\cos(2\phi)/\rho^2$.
+Angular integration removes the last term, giving
+\[
+\begin{split}
+W'_{\rm out}
+&=\frac{\pi}{\mu_0}\int_R^{R'}
+(D^2\rho+E^2/\rho^3)d\rho\\
+&=\frac{\pi}{2\mu_0}
+[D^2(R'^2-R^2)+E^2(R^{-2}-R'^{-2})]
+=\boxed{W'_0(1-\eta^2)}.
+\end{split}
+\]
+The iron contributes zero energy in the infinite-permeability limit.
+Thus the interior energy increases and the exterior energy decreases.
+
+\textbf{(c)} Their sum is $2W'_0(1+\eta)$.
+Dividing twice this energy by the turn current squared gives
+\[
+\boxed{L'=\frac{\pi\mu_0N^2}{8}(1+\eta).}
+\]
+The factor is $N^2$, because $I$ is the current in each turn whereas
+the sheet strength is proportional to $NI$.
+
+
+\Needspace{5\baselineskip}
+\par\bigskip
+\noindent\textbf{5.32}\quad A circular loop of mean radius $a$ is made of wire having a circular cross section of radius $b$, with $b\ll a$. The sketch shows the relevant dimensions and coordinates for this problem.
+
+\begin{center}
+\begin{tikzpicture}[scale=1.15]
+  % torus seen obliquely
+  \draw[thick] (0,0.35) ellipse (2.9 and 1.15);
+  \draw[thick] (-2.35,0.28) arc (150:30:1.15 and 0.55);
+  \draw[thick] (2.35,0.28) arc (30:150:-1.15 and 0.55);
+  % inner far edge of tube opening
+  \draw[thick] (-1.25,0.55) .. controls (0,1.15) and (0,1.15) .. (1.25,0.55);
+  % center O
+  \fill (0,0.1) circle (1.4pt) node[below=2pt] {$O$};
+  % radius a arrow to tube center on right
+  \draw[->] (0,0.1) -- (30:1.9 and 0.75);
+  \node at (0.95,0.52) {$a$};
+  % wire cross-section circle on right
+  \draw[thick] (2.9,0.35) circle (0.42);
+  % radius b inside the cross-section
+  \draw[->] (2.9,0.35) -- (2.62,0.12);
+  \node at (2.68,0.3) {$b$};
+  % phi angle on the cross-section
+  \draw[->] (3.18,0.35) arc (0:55:0.28);
+  \node at (3.32,0.52) {$\phi$};
+  % rho and P outside
+  \draw[->] (2.9,0.35) -- (3.9,0.95);
+  \node at (3.55,0.7) {$\rho$};
+  \fill (3.9,0.95) circle (1.4pt) node[right] {$P$};
+  % current label I on left
+  \node at (-3.1,0.9) {$I$};
+  \draw[->] (-3.0,0.75) .. controls (-2.95,0.6) .. (-2.8,0.5);
+  \node at (3.2,-1.35) {\textbf{Problem 5.32}};
+\end{tikzpicture}
+\end{center}
+
+\begin{enumerate}
+\item[(a)] Using (5.37), the expression for the vector potential of a filamentary circular loop, and appropriate approximations for the elliptic integrals, show that the vector potential at the point $P$ near the wire is approximately
+\[
+A_{\phi}=(\mu_{0}I/2\pi)[\ln(8a/\rho)-2]
+\]
+where $\rho$ is the transverse coordinate shown in the figure and corrections are of order $(\rho/a)\cos\phi$ and $(\rho/a)^{2}$.
+\item[(b)] Since the vector potential of part a is, apart from a constant, just that outside a straight circular wire carrying a current $I$, determine the vector potential inside the wire ($\rho<b$) in the same approximation by requiring continuity of $A_{\phi}$ and its radial derivative at $\rho=b$, assuming that the current is uniform in density inside the wire:
+\[
+A_{\phi}=(\mu_{0}I/4\pi)(1-\rho^{2}/b^{2})+(\mu_{0}I/2\pi)[\ln(8a/b)-2],\qquad\rho<b
+\]
+\item[(c)] Use (5.149) to find the magnetic energy, hence the self-inductance,
+\[
+L=\mu_{0}a[\ln(8a/b)-7/4]
+\]
+Are the corrections of order $b/a$ or $(b/a)^{2}$? What is the change in $L$ if the current is assumed to flow only on the surface of the wire (as occurs at high frequencies when the skin depth is small compared to $b$)?
+\end{enumerate}
+\solution
+Distinguish the large cylindrical radius $s$ about the loop axis
+from the small local distance $\rho$ from the wire center.
+Near the wire, $s=a+\rho\cos\phi$ and $z=\rho\sin\phi$.
+
+\textbf{(a)} From the circular-loop potential, or 5.28 divided by the
+circumference $2\pi s$,
+\[
+A_\varphi=\frac{\mu_0I}{\pi k}\sqrt{\frac as}
+\left[\left(1-\frac{k^2}{2}\right)K(k)-E(k)\right],
+\quad
+k^2=\frac{4as}{(a+s)^2+z^2}.
+\]
+The complementary modulus is
+$k'=\rho/\sqrt{(a+s)^2+z^2}=\rho/(2a)[1+O(\rho/a)]$.
+Use $K=\ln(4/k')+O(k'^2\ln k')$ and
+$E=1+O(k'^2\ln k')$, with $s\simeq a$, $k\simeq1$:
+\[
+\boxed{A_\varphi\simeq\frac{\mu_0I}{2\pi}
+\left[\ln\frac{8a}{\rho}-2\right].}
+\]
+The first geometrical correction is proportional to
+$(\rho/a)\cos\phi$ (with logarithmic coefficients), followed by
+second-order terms. The local angle $\phi$ in the figure is not the
+azimuth $\varphi$ specifying the direction of this vector potential.
+
+\textbf{(b)} Locally the straight-wire equation is
+$\rho^{-1}(\rho A_\varphi')'=-\mu_0I/(\pi b^2)$.
+Integrate once and discard the singular $1/\rho$ derivative at the center:
+$A_\varphi'=-\mu_0I\rho/(2\pi b^2)$.
+Matching its value to the exterior potential at $\rho=b$ gives
+\[
+\boxed{A_\varphi=\frac{\mu_0I}{4\pi}\left(1-\frac{\rho^2}{b^2}\right)
++\frac{\mu_0I}{2\pi}\left[\ln\frac{8a}{b}-2\right],\quad\rho<b.}
+\]
+Its derivative at $b$ is $-\mu_0I/(2\pi b)$, also matching outside.
+
+\textbf{(c)} To this order the volume element is
+$2\pi a\,d^2\rho$, and $J=I/(\pi b^2)$.
+Since $\langle\rho^2\rangle=b^2/2$ in a uniform disk,
+\[
+\langle A_\varphi\rangle
+=\frac{\mu_0I}{8\pi}
++\frac{\mu_0I}{2\pi}\left[\ln\frac{8a}{b}-2\right]
+=\frac{\mu_0I}{2\pi}\left[\ln\frac{8a}{b}-\frac74\right].
+\]
+Therefore
+$W=\tfrac12(2\pi a)I\langle A_\varphi\rangle$
+and
+\[
+\boxed{L=\mu_0a\left[\ln\frac{8a}{b}-\frac74\right].}
+\]
+Every first-order curvature term contains $\cos\phi$ and averages
+to zero, including the first correction to the toroidal volume
+element. The surviving corrections start at second order in $b/a$,
+possibly multiplied by $\ln(a/b)$.
+For surface current the local internal field and its internal energy
+vanish; use $A_\varphi(b)$ in the energy integral instead. Then
+\[
+\boxed{L_{\rm surface}=\mu_0a\left[\ln\frac{8a}{b}-2\right]
+=L-\frac{\mu_0a}{4}.}
+\]
+
+
+\Needspace{5\baselineskip}
+\par\bigskip
+\noindent\textbf{5.33}\quad Consider two current loops (as in Fig.~5.3) whose orientation in space is fixed, but whose relative separation can be changed. Let $O_{1}$ and $O_{2}$ be origins in the two loops, fixed relative to each loop, and $\mathbf{x}_{1}$ and $\mathbf{x}_{2}$ be coordinates of elements $d\mathbf{l}_{1}$ and $d\mathbf{l}_{2}$, respectively, of the loops referred to the respective origins. Let $\mathbf{R}$ be the relative coordinate of the origins, directed from loop 2 to loop 1.
+\begin{enumerate}
+\item[(a)] Starting from (5.10), the expression for the force between the loops, show that it can be written
+\[
+\mathbf{F}_{12}=I_{1}I_{2}\nabla_{R}M_{12}(\mathbf{R})
+\]
+where $M_{12}$ is the mutual inductance of the loops,
+\[
+M_{12}(\mathbf{R})=\frac{\mu_{0}}{4\pi}\oint\oint\frac{d\mathbf{l}_{1}\cdot d\mathbf{l}_{2}}{|\mathbf{x}_{1}-\mathbf{x}_{2}+\mathbf{R}|}
+\]
+and it is assumed that the orientation of the loops does not change with $\mathbf{R}$.
+\item[(b)] Show that the mutual inductance, viewed as a function of $\mathbf{R}$ \erratum{in any open region where the two filaments do not intersect}, is a solution of the Laplace equation,
+\[
+\nabla_{R}^{2}M_{12}(\mathbf{R})=0
+\]
+The importance of this result is that the uniqueness of solutions of the Laplace equation allows the exploitation of the properties of such solutions, provided a solution can be found for a particular value of $\mathbf{R}$.
+\end{enumerate}
+\solution
+\textbf{(a)} Put
+$\mathbf s=\mathbf x_1-\mathbf x_2+\mathbf R$.
+The magnetic force on loop 1 is
+\[
+\mathbf F_{12}=\frac{\mu_0I_1I_2}{4\pi}
+\oint\oint\frac{d\mathbf l_1\times(d\mathbf l_2\times\mathbf s)}{s^3}.
+\]
+Expanding the triple product gives
+$d\mathbf l_2(d\mathbf l_1\cdot\mathbf s)
+-\mathbf s(d\mathbf l_1\cdot d\mathbf l_2)$.
+For fixed loop-2 element,
+$d\mathbf l_1\cdot\mathbf s/s^3=-d(1/s)$, whose integral around
+closed loop 1 is zero. The remaining term is
+$(d\mathbf l_1\cdot d\mathbf l_2)\nabla_R(1/s)$.
+The loop orientations and their local coordinates are independent
+of $\mathbf R$, so the derivative can be taken outside:
+\[
+\boxed{\mathbf F_{12}=I_1I_2\nabla_RM_{12},\qquad
+M_{12}=\frac{\mu_0}{4\pi}\oint\oint
+\frac{d\mathbf l_1\cdot d\mathbf l_2}{|\mathbf x_1-\mathbf x_2+\mathbf R|}.}
+\]
+\textbf{(b)} For any open set of separations in which the filaments
+are disjoint, $s>0$ and $\nabla_R^2(1/s)=0$ throughout the integration.
+Consequently $\boxed{\nabla_R^2M_{12}=0}$ in that set.
+This qualification matters: at intersecting-loop separations, the
+distributional identity instead reads
+\[
+\nabla_R^2M_{12}=-\mu_0\oint\oint d\mathbf l_1\cdot d\mathbf l_2\,
+\delta^3(\mathbf R+\mathbf x_1-\mathbf x_2).
+\]
+Uniqueness and harmonic continuation are therefore used only within
+a current-free region of separation space.
+
+
+\Needspace{5\baselineskip}
+\par\bigskip
+\noindent\textbf{5.34}\quad Two identical circular loops of radius $a$ are initially located a distance $R$ apart on a common axis perpendicular to their planes.
+\begin{enumerate}
+\item[(a)] From the expression $W_{12}=\int d^{3}x\,\mathbf{J}_{1}\cdot\mathbf{A}_{2}$ and the result for $A_{\phi}$ from Problem 5.10b, show that the mutual inductance of the loops is
+\[
+M_{12}=\mu_{0}\pi a^{2}\int_{0}^{\infty}dk\;e^{-kR}J_{1}^{2}(ka)
+\]
+\item[(b)] Show that for $R>2a$, $M_{12}$ has the expansion,
+\[
+M_{12}=\frac{\mu_{0}\pi a}{2}\left[\left(\frac{a}{R}\right)^{3}-3\left(\frac{a}{R}\right)^{5}+\frac{75}{8}\left(\frac{a}{R}\right)^{7}+\cdots\right]
+\]
+\item[(c)] Use the techniques of Section 3.3 for solutions of the Laplace equation to show that the mutual inductance for two coplanar identical circular loops of radius $a$ whose centers are separated by a distance $R>2a$ is
+\[
+M_{12}=-\frac{\mu_{0}\pi a}{4}\left[\left(\frac{a}{R}\right)^{3}+\frac{9}{4}\left(\frac{a}{R}\right)^{5}+\frac{375}{64}\left(\frac{a}{R}\right)^{7}+\cdots\right]
+\]
+\item[(d)] Calculate the forces between the loops in the common axis and coplanar configurations. Relate the answers to those of Problem 5.18.
+\end{enumerate}
+\solution
+\textbf{(a)} The azimuthal potential of loop 1 on loop 2 is constant.
+Multiplying the result in 5.10(b) at $\rho=a,z=R$ by $2\pi aI_2$ gives
+$W_{12}=I_1I_2M_{12}$ with
+\[
+\boxed{M_\parallel(R)=\mu_0\pi a^2
+\int_0^\infty e^{-kR}J_1(ka)^2\,dk.}
+\]
+\textbf{(b)} The power series
+$J_1(x)=\sum_{j\ge0}(-1)^j(x/2)^{2j+1}/[j!(j+1)!]$
+gives
+\[
+J_1(x)^2=\frac{x^2}{4}-\frac{x^4}{16}
++\frac{5x^6}{768}+\cdots.
+\]
+More generally its coefficient of $(-1)^n(x/2)^{2n+2}$ is
+\[
+\sum_{j=0}^n\frac1{j!(j+1)!(n-j)!(n-j+1)!}
+=\frac{(2n+2)!}{n!(n+2)![(n+1)!]^2}.
+\]
+This follows by factoring out $1/[n!(n+2)!]$ and applying the
+binomial convolution to $\sum_j\binom nj\binom{n+2}{j+1}$.
+Integrating each term with
+$\int_0^\infty k^m e^{-kR}dk=m!/R^{m+1}$ gives
+\[
+M_\parallel(R)=\mu_0\pi a\sum_{n=0}^\infty
+(-1)^nD_n(a/R)^{2n+3},
+\quad
+D_n=\frac{[(2n+2)!]^2}{2^{2n+2}n!(n+2)![(n+1)!]^2}.
+\]
+The ratio test gives convergence for $R>2a$.
+For $n=0,1,2$, $D_n=1/2,3/2,75/16$, yielding
+\[
+\boxed{M_\parallel=\frac{\mu_0\pi a}{2}
+\left[(a/R)^3-3(a/R)^5+\frac{75}{8}(a/R)^7+\cdots\right].}
+\]
+\textbf{(c)} With parallel loop normals fixed, rotational symmetry
+makes $M(\mathbf R)$ axisymmetric in separation space.
+By 5.33 it is harmonic for $R>2a$ and decays at infinity.
+The exterior harmonic with axial value $R^{-2n-3}$ is
+$R^{-2n-3}P_{2n+2}(\cos\Theta)$.
+Thus replace each term by this angular form.
+At $\Theta=\pi/2$,
+\[
+P_{2n+2}(0)=(-1)^{n+1}
+\frac{(2n+2)!}{2^{2n+2}[(n+1)!]^2},
+\]
+so all terms in the coplanar mutual inductance are negative:
+\[
+\boxed{M_\perp=-\frac{\mu_0\pi a}{4}
+\left[(a/R)^3+\frac94(a/R)^5+\frac{375}{64}(a/R)^7+\cdots\right].}
+\]
+\textbf{(d)} At fixed currents, $F_R=I_1I_2\,dM/dR$.
+For positive $I_1I_2$,
+\[
+\boxed{F_{R,\parallel}=-\frac{3\mu_0\pi I_1I_2}{2}
+(a/R)^4\left[1-5(a/R)^2+\frac{175}{8}(a/R)^4+\cdots\right],}
+\]
+\[
+\boxed{F_{R,\perp}=+\frac{3\mu_0\pi I_1I_2}{4}
+(a/R)^4\left[1+\frac{15}{4}(a/R)^2+\frac{875}{64}(a/R)^4+\cdots\right].}
+\]
+Coaxial like-current loops attract; coplanar like-current loops repel.
+Reverse one current and both forces reverse.
+For 5.18 use $R=2d$ and $I_2=\chi I_1$ in the axial case,
+but $I_2=-\chi I_1$ in the coplanar case. Both then attract a
+more-permeable slab, with precisely the two dipole limits found there.
+
+
+\Needspace{5\baselineskip}
+\par\bigskip
+\noindent\textbf{5.35}\quad An insulated coil is wound on the surface of a sphere of radius $a$ in such a way as to produce a uniform magnetic induction $B_{0}$ in the $z$ direction inside the sphere and dipole field outside the sphere. The medium inside and outside the sphere has a uniform conductivity $\sigma$ and permeability $\mu$.
+\begin{enumerate}
+\item[(a)] Find the necessary surface current density $\mathbf{K}$ and show that the vector potential describing the magnetic field has only an azimuthal component, given by
+\[
+A_{\phi}=\frac{B_{0}a^{2}}{2}\frac{r_{<}}{r_{>}^{2}}\sin\theta
+\]
+where $r_{<}$ ($r_{>}$) is the smaller (larger) of $r$ and $a$.
+\item[(b)] At $t=0$ the current in the coil is cut off. [The coil's presence may be ignored from now on.] With the neglect of Maxwell's displacement current, the decay of the magnetic field is described by the diffusion equation, (5.160). Using a Laplace transform and a spherical Bessel function expansion (3.113), show that the vector potential at times $t>0$ is given by
+\[
+A_{\phi}=\frac{3B_{0}a}{\pi}\sin\theta\int_{0}^{\infty}e^{-\nu tk^{2}}j_{1}(k)j_{1}\!\left(\frac{kr}{a}\right)dk
+\]
+where $\nu=1/\mu\sigma a^{2}$ is a characteristic decay rate and $j_{1}(x)$ is the spherical Bessel function of order one. Show that the magnetic field at the center of the sphere can be written explicitly in terms of the error function $\Phi(x)$ as
+\[
+B_{z}(0,t)=B_{0}\!\left[\Phi\!\left(\frac{1}{\sqrt{4\nu t}}\right)-\frac{1}{\sqrt{\pi\nu t}}\exp\!\left(-\frac{1}{4\nu t}\right)\right]
+\]
+\item[(c)] Show that the total magnetic energy at time $t>0$ can be written
+\[
+W_{\mathrm{m}}=\frac{6B_{0}^{2}a^{3}}{\mu}\int_{0}^{\infty}e^{-2\nu tk^{2}}[j_{1}(k)]^{2}\;dk
+\]
+Show that at long times ($\nu t\gg1$) the magnetic energy decays asymptotically as
+\[
+W_{\mathrm{m}}\to\frac{\sqrt{2\pi}B_{0}^{2}a^{3}}{24\mu(\nu t)^{3/2}}
+\]
+\item[(d)] Find a corresponding expression for the asymptotic form of the vector potential (at fixed $r$, $\theta$ and $\nu t\to\infty$) and show that it decays as $(\nu t)^{-3/2}$ as well. Since the energy is quadratic in the field strength, there seems to be a puzzle here. Show by numerical or analytic means that the behavior of the magnetic field at time $t$ is such that, for distances small compared to $R=a(\nu t)^{1/2}\gg a$, the field is uniform with strength $(B_{0}/6\pi^{1/2})\,(\nu t)^{-3/2}$, and for distances large compared to $R$, the field is essentially the original dipole field. Explain physically.
+\end{enumerate}
+\solution
+\textbf{(a)} Write $A_\phi=f(r)\sin\theta$.
+A uniform interior field requires $f=B_0r/2$.
+Continuity with the decaying exterior dipole requires
+$f=B_0a^3/(2r^2)$ outside. Thus
+\[
+\boxed{A_\phi=\frac{B_0a^2}{2}\frac{r_<}{r_>^2}\sin\theta.}
+\]
+Its curl gives $B_{r,\rm in}=B_0\cos\theta$,
+$B_{\theta,\rm in}=-B_0\sin\theta$, and
+$B_{r,\rm out}=B_0(a/r)^3\cos\theta$,
+$B_{\theta,\rm out}=(B_0/2)(a/r)^3\sin\theta$.
+The tangential jump is $3B_0\sin\theta/2$, so
+\[
+\boxed{\mathbf K=\frac{3B_0}{2\mu}\sin\theta\,\widehat{\boldsymbol\phi}.}
+\]
+\textbf{(b)} Put $x=r/a$, $\tau=\nu t$, $\nu=(\mu\sigma a^2)^{-1}$.
+The vector diffusion equation reduces to
+\[
+\partial_tf=\nu\mathcal L_xf,\qquad
+\mathcal L_x=\frac{d^2}{dx^2}+\frac2x\frac d{dx}-\frac2{x^2}.
+\]
+Initially $f=(B_0a/2)g(x)$ with $g=x$ for $x<1$ and $g=x^{-2}$
+for $x>1$. Since $g$ is continuous and its first derivative jumps
+from $1$ to $-2$, $\mathcal L_xg=-3\delta(x-1)$.
+The spherical Bessel functions satisfy
+$\mathcal L_xj_1(kx)=-k^2j_1(kx)$ and
+\[
+\int_0^\infty x^2j_1(kx)j_1(qx)dx
+=\frac{\pi}{2k^2}\delta(k-q).
+\]
+The radial operator is self-adjoint with weight $x^2$: integrating
+$u\mathcal L_xv-v\mathcal L_xu$ gives
+$[x^2(uv'-u'v)]_0^\infty$. Apply this to $u=j_1(kx)$ and $v=g(x)$,
+with a vanishing positive convergence factor at infinity if needed for
+the oscillatory integral. The endpoint term vanishes, leaving the
+derivative jump at $x=1$. Hence the initial transform satisfies
+\[
+-k^2\int_0^\infty x^2g(x)j_1(kx)dx
+=\int_0^\infty x^2j_1(kx)\mathcal L_xg(x)dx=-3j_1(k).
+\]
+Thus $\widetilde g(k)=3j_1(k)/k^2$.
+Laplace transformation in time gives
+$(p+\nu k^2)\overline{\widetilde f}(k,p)
+=(B_0a/2)\widetilde g(k)$.
+Inverting the Laplace transform yields $e^{-\nu k^2t}$;
+inverting the spherical Bessel transform, with measure $2k^2dk/\pi$,
+then gives
+\[
+\boxed{A_\phi=\frac{3B_0a}{\pi}\sin\theta
+\int_0^\infty e^{-\tau k^2}j_1(k)j_1(kx)dk.}
+\]
+Near the center $j_1(kx)=kx/3+O(x^3)$ and a potential
+$A_\phi=Cr\sin\theta$ has $B_z=2C$. Hence
+\[
+B_z(0,t)=\frac{2B_0}{\pi}\int_0^\infty e^{-\tau k^2}
+\left(\frac{\sin k}{k}-\cos k\right)dk.
+\]
+The cosine Gaussian integral is
+$\sqrt\pi\,e^{-u^2/(4\tau)}/(2\sqrt\tau)$.
+Integrating this identity from $u=0$ to $u=1$ gives
+$\int e^{-\tau k^2}\sin k\,dk/k=(\pi/2)\operatorname{erf}(1/(2\sqrt\tau))$.
+Therefore
+\[
+\boxed{B_z(0,t)=B_0\left[
+\operatorname{erf}\frac1{2\sqrt\tau}
+-\frac{e^{-1/(4\tau)}}{\sqrt{\pi\tau}}\right].}
+\]
+The question's $\Phi$ denotes this error function, not an electrostatic
+potential. The expression tends to $B_0$ as $t\downarrow0$.
+
+\textbf{(c)} Integration by parts gives
+$\int B^2d^3x=\int\mathbf A\cdot(-\nabla^2\mathbf A)d^3x$.
+The angular integral is $\int\sin^2\theta\,d\Omega=8\pi/3$, so
+\[
+W_m=\frac{4\pi}{3\mu}\int_0^\infty r^2f(-\mathcal L_rf)\,dr.
+\]
+Insert the two Bessel integrals for $f$ and $-\mathcal L_rf$.
+The second supplies $k^2/a^2$; orthogonality in physical radius gives
+$\pi a^3\delta(k-q)/(2k^2)$.
+The prefactors reduce to
+$(4\pi/3\mu)(3B_0a/\pi)^2(\pi a/2)=6B_0^2a^3/\mu$:
+\[
+\boxed{W_m=\frac{6B_0^2a^3}{\mu}
+\int_0^\infty e^{-2\tau k^2}j_1(k)^2dk.}
+\]
+At $\tau\gg1$, only $k=O(\tau^{-1/2})$ contributes.
+Use $j_1(k)=k/3+O(k^3)$ and
+$\int_0^\infty k^2e^{-2\tau k^2}dk=\sqrt\pi/[4(2\tau)^{3/2}]$:
+\[
+\boxed{W_m\sim\frac{\sqrt{2\pi}B_0^2a^3}{24\mu\,\tau^{3/2}}.}
+\]
+As a normalization check, the initial energy is the sum of the uniform
+interior contribution $2\pi B_0^2a^3/(3\mu)$ and the exterior dipole
+contribution $\pi B_0^2a^3/(3\mu)$, namely $\pi B_0^2a^3/\mu$.
+The integral formula agrees, since $\int_0^\infty j_1(k)^2dk=\pi/6$.
+
+\textbf{(d)} At fixed $r$, expand both Bessel factors:
+\[
+A_\phi\sim\frac{3B_0a}{\pi}\frac{x}{9}\sin\theta
+\int_0^\infty k^2e^{-\tau k^2}dk
+=\boxed{\frac{B_0r\sin\theta}{12\sqrt\pi}\tau^{-3/2}.}
+\]
+To describe the changing spatial scale, keep $x/\sqrt\tau$ finite
+and expand only $j_1(k)$. The remaining integral can be evaluated:
+\[
+A_\phi\sim\frac{B_0a^3}{2r^2}\mathcal F(s)\sin\theta,\qquad
+s=\frac{r}{2a\sqrt\tau},\quad
+\mathcal F(s)=\operatorname{erf}s-\frac{2s}{\sqrt\pi}e^{-s^2}.
+\]
+Indeed the integral of $ke^{-\tau k^2}j_1(kx)$ is
+$\pi\mathcal F(x/(2\sqrt\tau))/(2x^2)$, by the same sine and cosine
+integrals used for the center field.
+Taking the curl gives
+\[
+B_r\sim\frac{B_0a^3}{r^3}\mathcal F(s)\cos\theta,\qquad
+B_\theta\sim\frac{B_0a^3}{2r^3}
+[\mathcal F(s)-s\mathcal F'(s)]\sin\theta.
+\]
+For $s\ll1$, $\mathcal F(s)=4s^3/(3\sqrt\pi)+O(s^5)$, so the
+field is uniform to leading order, with
+$\boxed{B_{\rm core}\sim B_0\tau^{-3/2}/(6\sqrt\pi)}$.
+For $s\gg1$, $\mathcal F\to1$ and $\mathcal F'\to0$, giving the
+original dipole field.
+
+There is no conflict between field and total-energy decay: the nearly
+uniform region grows to radius $R=O(a\sqrt\tau)$.
+Its energy scales as $B_{\rm core}^2R^3\sim\tau^{-3}\tau^{3/2}$.
+The exterior dipole energy beyond $R$ scales as $R^{-3}$, the same
+$\tau^{-3/2}$. Magnetic diffusion changes a progressively larger
+volume; it does not multiply a fixed spatial field shape by one
+time-dependent amplitude.
+
+
+\Needspace{5\baselineskip}
+\par\bigskip
+\noindent\textbf{5.36}\quad The time-varying magnetic field for $t>0$ in Problem 5.35 induces an electric field and causes current to flow.
+\begin{enumerate}
+\item[(a)] What components of electric field exist? Determine integral expressions for the components of the electric field and find a simple explicit form of the current density $\mathbf{J}=\sigma\mathbf{E}$ at $t=0^{+}$. Compare your result with the current density of Problem 5.35a. Find the asymptotic behavior of the electric fields in time.
+\item[(b)] With Ohm's law and the electric fields found in part a, show that the total power dissipated in the resistive medium can be written
+\[
+P=\frac{12B_{0}^{2}a^{3}\nu}{\mu}\int_{0}^{\infty}e^{-2\nu tk^{2}}[kj_{1}(k)]^{2}\;dk
+\]
+Note that the power is the negative time derivative of the \emph{magnetic} energy, $W_{\mathrm{m}}$.
+\item[(c)] Because of Ohm's law, the total \emph{electric} energy is $W_{\mathrm{e}}=\epsilon_{0}P/2\sigma$. The total energy is the sum of $W_{\mathrm{e}}$ and $W_{\mathrm{m}}$; its time derivative should be the negative of the power dissipation. Show that the neglect of the energy in the electric field is the same order of approximation as neglect of the displacement current in the equations governing the magnetic field.
+\end{enumerate}
+\solution
+\textbf{(a)} There are no imposed electric charges or scalar-potential
+gradients in this axially symmetric diffusion problem. In the
+divergence-free gauge,
+$\mathbf E=-\partial_t\mathbf A$, so $E_r=E_\theta=0$ and
+\[
+\boxed{E_\phi(r,\theta,t)=\frac{3B_0a\nu}{\pi}\sin\theta
+\int_0^\infty k^2e^{-\tau k^2}j_1(k)j_1(kr/a)dk.}
+\]
+At $t=0^+$ use $\partial_tf=\nu\mathcal L_xf$ and the initial
+$\mathcal L_xg=-3\delta(x-1)$ found in 5.35:
+\[
+E_\phi(0^+)=\frac{3B_0a\nu}{2}\sin\theta\,\delta(r/a-1)
+=\frac{3B_0a^2\nu}{2}\sin\theta\,\delta(r-a).
+\]
+Since $\sigma a^2\nu=1/\mu$,
+\[
+\boxed{\mathbf J(0^+)=\frac{3B_0}{2\mu}
+\sin\theta\,\delta(r-a)\widehat{\boldsymbol\phi}.}
+\]
+This induced sheet current initially replaces exactly the switched-off
+coil current in 5.35(a). It is a distributional limit: at every positive
+time diffusion smooths the sheet, and the instantaneous switch has a
+singular initial dissipation in the ideal diffusion model.
+For fixed $r$ at late times, differentiate the asymptotic potential:
+\[
+\boxed{E_\phi\sim\frac{B_0\nu r\sin\theta}{8\sqrt\pi}\tau^{-5/2}.}
+\]
+This limit is not uniform over radii of order $a\sqrt\tau$ or larger.
+
+\textbf{(b)} Ohmic dissipation is $P=\sigma\int E_\phi^2d^3x$.
+The angular integral is again $8\pi/3$, and the physical radial
+orthogonality integral is $\pi a^3\delta(k-q)/(2k^2)$.
+Consequently
+\[
+P=\sigma\left(\frac{3B_0a\nu}{\pi}\right)^2
+\frac{8\pi}{3}\frac{\pi a^3}{2}
+\int_0^\infty k^2e^{-2\tau k^2}j_1(k)^2dk.
+\]
+Using $\sigma a^2\nu=1/\mu$ reduces this to
+\[
+\boxed{P=\frac{12B_0^2a^3\nu}{\mu}
+\int_0^\infty e^{-2\tau k^2}[kj_1(k)]^2dk
+=-\frac{dW_m}{dt}.}
+\]
+The equality follows independently by differentiating the energy
+integral in 5.35(c) for $t>0$.
+
+\textbf{(c)} Because $\mathbf J=\sigma\mathbf E$,
+$P=\sigma\int E^2d^3x$, whereas
+$W_e=(\epsilon_0/2)\int E^2d^3x$.
+Thus $W_e=\epsilon_0P/(2\sigma)$ as stated.
+If the fields vary on a time scale $T$, the displacement-to-conduction
+current ratio is
+\[
+\frac{|\epsilon_0\partial_t\mathbf E|}{|\sigma\mathbf E|}
+=O\left(\frac{\epsilon_0}{\sigma T}\right).
+\]
+In the energy balance, the discarded term has the same relative order:
+\[
+\frac{|dW_e/dt|}{P}
+=\frac{\epsilon_0}{2\sigma}\left|\frac{d\ln P}{dt}\right|
+=O\left(\frac{\epsilon_0}{\sigma T}\right).
+\]
+For example, at late times $W_m\propto t^{-3/2}$ and
+$P=(3/2)W_m/t\propto t^{-5/2}$, so
+$W_e/W_m=3\epsilon_0/(4\sigma t)$ and
+$|dW_e/dt|/P=5\epsilon_0/(4\sigma t)$.
+Thus retaining electric energy while omitting displacement current
+would mix approximation orders. For times comparable to
+$\epsilon_0/\sigma$, the neglected current and electric energy must
+both be restored; the ideal $t=0^+$ sheet limit is not a claim that
+the quasistatic model resolves arbitrarily fast switching.

@@ -1,0 +1,52 @@
+# LaTeX build artifacts
+*.aux
+*.log
+*.fls
+*.fdb_latexmk
+*.out
+*.toc
+*.lof
+*.lot
+*.bbl
+*.blg
+*.bcf
+*.run.xml
+*.synctex.gz
+*.synctex
+*.nav
+*.snm
+*.vrb
+*.idx
+*.ilg
+*.ind
+*.glo
+*.gls
+*.glg
+*.acn
+*.acr
+*.alg
+*.xdv
+*.latexmain
+
+# OS / editor noise
+.DS_Store
+__pycache__/
+*.pyc
+
+# Working/scratch material (kept locally, not published)
+build/
+supplementary/
+errata/
+*.py
+
+# Copyrighted source material (kept locally, not published)
+/John David Jackson*.pdf
+ocr/
+pages/
+*-source/
+*-sources/
+source_*/
+source[0-9]*
+*Jackson*
+nbs-*
+NBS-*

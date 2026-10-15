@@ -1,0 +1,86 @@
+\documentclass[11pt]{article}
+\usepackage{needspace}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{tikz}
+\usepackage{booktabs}
+\usepackage{microtype}
+\usepackage{xcolor}
+\usepackage[hidelinks]{hyperref}
+\emergencystretch=1.5em
+
+% Dark red marks published errata and corrections established in the solutions.
+\definecolor{erratadarkred}{RGB}{139,0,0}
+\newcommand{\erratum}[1]{\textcolor{erratadarkred}{#1}}
+
+% A solution follows its problem immediately.
+\newcommand{\solution}{%
+  \par\medskip
+  \noindent\textbf{Solution.}\par\nobreak
+  \smallskip\nobreak
+}
+
+\title{\textbf{Classical Electrodynamics}\\[4pt]
+\large Problems and Worked Solutions --- J.~D.~Jackson, 3rd ed.}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+\noindent\small Dark red text marks published errata and additional
+corrections or necessary qualifications explained in the corresponding
+solutions. The solutions follow Jackson's chapter conventions: SI units
+in Chapters 1--10 and Gaussian units in Chapters 11--16, with any
+problem-specific unit changes stated explicitly.\normalsize\par\medskip
+\tableofcontents
+\clearpage
+
+\section{Chapter 1. Introduction to Electrostatics}
+\input{sections/ch01.tex}
+\clearpage
+\section{Chapter 2. Boundary-Value Problems in Electrostatics: I}
+\input{sections/ch02.tex}
+\clearpage
+\section{Chapter 3. Boundary-Value Problems in Electrostatics: II}
+\input{sections/ch03.tex}
+\clearpage
+\section{Chapter 4. Multipoles, Electrostatics of Macroscopic Media, Dielectrics}
+\input{sections/ch04.tex}
+\clearpage
+\section{Chapter 5. Magnetostatics, Faraday's Law, Quasi-Static Fields}
+\input{sections/ch05.tex}
+\clearpage
+\section{Chapter 6. Maxwell Equations, Macroscopic Electromagnetism, Conservation Laws}
+\input{sections/ch06.tex}
+\clearpage
+\section{Chapter 7. Plane Electromagnetic Waves and Wave Propagation}
+\input{sections/ch07.tex}
+\clearpage
+\section{Chapter 8. Waveguides, Resonant Cavities, and Optical Fibers}
+\input{sections/ch08.tex}
+\clearpage
+\section{Chapter 9. Radiating Systems, Multipole Fields and Radiation}
+\input{sections/ch09.tex}
+\clearpage
+\section{Chapter 10. Scattering and Diffraction}
+\input{sections/ch10.tex}
+\clearpage
+\section{Chapter 11. Special Theory of Relativity}
+\input{sections/ch11.tex}
+\clearpage
+\section{Chapter 12. Dynamics of Relativistic Particles and Electromagnetic Fields}
+\input{sections/ch12.tex}
+\clearpage
+\section{Chapter 13. Energy Loss, Scattering; Cherenkov and Transition Radiation}
+\input{sections/ch13.tex}
+\clearpage
+\section{Chapter 14. Radiation by Moving Charges}
+\input{sections/ch14.tex}
+\clearpage
+\section{Chapter 15. Bremsstrahlung, Method of Virtual Quanta, Radiative Beta Processes}
+\input{sections/ch15.tex}
+\clearpage
+\section{Chapter 16. Radiation Damping, Classical Models of Charged Particles}
+\input{sections/ch16.tex}
+
+\end{document}

@@ -1,0 +1,1264 @@
+% Problems, Chapter 4: Multipoles, Electrostatics of Macroscopic Media, Dielectrics
+% Jackson, Classical Electrodynamics, 3rd ed.
+% Requires: amsmath, amssymb, tikz, booktabs (for the data tables)
+
+\section*{Problems}
+
+\Needspace{5\baselineskip}
+\par\bigskip
+\noindent\textbf{4.1}\quad Calculate the multipole moments $q_{lm}$ of the charge distributions shown as parts a and b. Try to obtain results for the nonvanishing moments valid for all $l$, but in each case find the first \emph{two} sets of nonvanishing moments at the very least.
+
+\begin{center}
+\begin{tikzpicture}[scale=1.5]
+  % figure (a): +/-q at +/-a on x and y axes
+  \draw (0,-1.5) -- (0,1.8) node[above] {$z$};
+  \draw (-1.7,0) -- (1.7,0) node[right] {$y$};
+  \draw (225:1.9) node[below left] {$x$} -- (45:1.9);
+  \fill (0.85,0) circle (1.6pt) node[below right=0pt] {$q$};
+  \fill (-0.85,0) circle (1.6pt) node[above left=0pt] {$-q$};
+  \fill (45:0.85) circle (1.6pt) node[above left=0pt] {$-q$};
+  \fill (225:0.85) circle (1.6pt) node[below left=0pt] {$q$};
+  \node at (0.55,0.18) {$a$};
+  \node at (-0.5,0.22) {$a$};
+  \node at (48:0.42) {$a$};
+  \node at (228:0.42) {$a$};
+  \node at (0,-1.9) {(a)};
+\end{tikzpicture}\hspace{3em}
+\begin{tikzpicture}[scale=1.5]
+  % figure (b): +q, -2q, +q on z axis
+  \draw (0,-1.5) -- (0,1.8) node[above] {$z$};
+  \draw (-1.7,0) -- (1.7,0) node[right] {$y$};
+  \draw (225:1.9) node[below left] {$x$} -- (45:1.9);
+  \fill (0,0.85) circle (1.6pt) node[left=3pt] {$+q$};
+  \fill (0,0) circle (1.6pt) node[left=3pt] {$-2q$};
+  \fill (0,-0.85) circle (1.6pt) node[left=3pt] {$+q$};
+  \node[right] at (0.08,0.42) {$a$};
+  \node[right] at (0.08,-0.42) {$a$};
+  \node at (0,-1.9) {(b)};
+\end{tikzpicture}
+\par\vspace{0.5em}\textbf{Problem 4.1}
+\end{center}
+
+\begin{enumerate}
+\item[(c)] For the charge distribution of the second set b write down the multipole expansion for the potential. Keeping only the lowest-order term in the expansion, plot the potential in the $x$-$y$ plane as a function of distance from the origin for distances greater than $a$.
+\item[(d)] Calculate directly from Coulomb's law the exact potential for b in the $x$-$y$ plane. Plot it as a function of distance and compare with the result found in part c.
+\end{enumerate}
+Divide out the asymptotic form in parts c and d to see the behavior at large distances more clearly.
+\solution
+
+We use Jackson's (4.1), (4.3), and (4.7):
+\[
+q_{lm}=\int r^lY_{lm}^{*}\rho\,d^3r,\qquad
+\Phi=\frac{1}{4\pi\epsilon_0}\sum_{l,m}\frac{4\pi}{2l+1}
+\frac{q_{lm}Y_{lm}}{r^{l+1}},\qquad q_{l,-m}=(-1)^m q_{lm}^{*}.
+\]
+Here $Y_{lm}=N_{lm}P_l^m(\cos\theta)e^{im\phi}$ for $m\geq0$,
+$N_{lm}=[(2l+1)(l-m)!/(4\pi(l+m)!)]^{1/2}$, and $P_l^m$
+includes the Condon--Shortley factor $(-1)^m$.
+
+\textbf{(a)} The positive $x$ axis points down and left in the drawing.
+The charges are therefore $+q$ at $a\hat{\mathbf x},a\hat{\mathbf y}$ and
+$-q$ at $-a\hat{\mathbf x},-a\hat{\mathbf y}$. Substitution gives
+\begin{align*}
+q_{lm}&=qa^lN_{lm}P_l^m(0)
+[1+e^{-im\pi/2}-e^{-im\pi}-e^{-3im\pi/2}]\\
+&=qa^lN_{lm}P_l^m(0)[1-(-1)^m][1+e^{-im\pi/2}].
+\end{align*}
+Even $l$ vanish by odd inversion symmetry; $P_l^m(0)=0$ when $l+m$
+is odd. To evaluate the nonzero values, use Rodrigues' polynomial
+and $P_l^m(x)=(-1)^m(1-x^2)^{m/2}d^mP_l/dx^m$:
+\[
+P_l(x)=2^{-l}\sum_{j=0}^{\lfloor l/2\rfloor}
+\frac{(-1)^j(2l-2j)!}{j!(l-j)!(l-2j)!}\,x^{l-2j}.
+\]
+At $x=0$, only the term with $l-2j=m$ survives the $m$ derivatives.
+For even $l+m$ this gives
+\[
+P_l^m(0)=(-1)^{(l+m)/2}
+\frac{(l+m)!}{2^l[(l-m)/2]![(l+m)/2]!}
+=(-1)^{(l+m)/2}\frac{(l+m-1)!!}{(l-m)!!}.
+\]
+The factor $1-(-1)^m$ in the charge sum also requires odd $m$.
+For odd $l$ and positive odd $m\leq l$ the complete answer is
+\[
+\boxed{q_{lm}=2qa^lN_{lm}(-1)^{(l+m)/2}
+\frac{(l+m-1)!!}{(l-m)!!}(1+e^{-im\pi/2}).}
+\]
+Negative $m$ follow by conjugation, and all remaining moments vanish.
+The first two nonzero sets are
+\[
+q_{11}=-qa\sqrt{\frac{3}{2\pi}}(1-i),\qquad q_{1,-1}=-q_{11}^{*},
+\]
+\[
+q_{31}=qa^3\sqrt{\frac{21}{16\pi}}(1-i),\quad
+q_{33}=-qa^3\sqrt{\frac{35}{16\pi}}(1+i),\quad
+q_{3,-1}=-q_{31}^{*},\quad q_{3,-3}=-q_{33}^{*}.
+\]
+As a check, $\mathbf p=2qa(\hat{\mathbf x}+\hat{\mathbf y})$ reproduces
+$q_{11}$ through Jackson's (4.5).
+
+\textbf{(b)} Axial symmetry permits only $m=0$. The central charge
+contributes only to $l=0$, cancelling the other two charges. Since
+$Y_{l0}(0)=\sqrt{(2l+1)/(4\pi)}$ and
+$Y_{l0}(\pi)=(-1)^lY_{l0}(0)$,
+\[
+\boxed{q_{2n,0}=2qa^{2n}\sqrt{\frac{4n+1}{4\pi}},\quad n\geq1.}
+\]
+Thus $q_{20}=qa^2\sqrt{5/\pi}$ and $q_{40}=3qa^4/\sqrt\pi$ are the
+first two sets; all other moments vanish.
+
+\textbf{(c)} Substitution into the potential, using
+$Y_{l0}=\sqrt{(2l+1)/(4\pi)}P_l$, gives
+\[
+\boxed{\Phi(r,\theta)=\frac{2q}{4\pi\epsilon_0r}
+\sum_{n=1}^{\infty}\left(\frac ar\right)^{2n}P_{2n}(\cos\theta),\quad r>a.}
+\]
+In the $x$--$y$ plane let $s=\sqrt{x^2+y^2}$. As $P_2(0)=-1/2$,
+$\Phi_2(s)=-qa^2/(4\pi\epsilon_0s^3)$.
+
+\textbf{(d)} The distances to the three charges are
+$\sqrt{s^2+a^2},s,\sqrt{s^2+a^2}$. Hence
+\[
+\boxed{\Phi_{\rm exact}(s)=\frac{2q}{4\pi\epsilon_0}
+\left(\frac{1}{\sqrt{s^2+a^2}}-\frac1s\right).}
+\]
+Set $u=s/a$ and $v=4\pi\epsilon_0a\Phi/q$. Then
+$v_2=-u^{-3}$ and $v_{\rm exact}=2[(u^2+1)^{-1/2}-u^{-1}]$.
+Dividing by the common asymptotic potential and rationalizing gives
+\begin{align*}
+\frac{\Phi_{\rm exact}}{\Phi_2}
+&=2u^2[1-(1+u^{-2})^{-1/2}]\\
+&=\frac{2}{\sqrt{1+u^{-2}}[1+\sqrt{1+u^{-2}}]}
+=1-\frac{3}{4u^2}+\frac{5}{8u^4}+O(u^{-6}).
+\end{align*}
+The quadrupole term overestimates the magnitude. The ratio increases
+from $2-\sqrt2$ at $u=1$ to $1$ at infinity.
+\begin{center}
+\begin{tikzpicture}[x=1.0cm,y=2.7cm]
+\draw[->] (0.8,-1.07)--(0.8,0.1) node[above left] {$v$};
+\draw[->] (0.8,0)--(5.4,0) node[right] {$u$};
+\foreach \x in {1,2,3,4,5} {\draw (\x,0.02)--(\x,-0.02) node[above=5pt] {\small\x};}
+\foreach \y in {-1,-0.5} {\draw (0.75,\y)--(0.85,\y) node[left=4pt] {\small\y};}
+\draw[blue,thick,domain=1:5,samples=100] plot (\x,{2*(1/sqrt(\x*\x+1)-1/\x)});
+\draw[dashed,thick,domain=1:5,samples=100] plot (\x,{-1/(\x*\x*\x)});
+\node[blue,anchor=west] at (2,-0.5) {\small exact};
+\node[anchor=west] at (2,-0.72) {\small dashed: quadrupole};
+\end{tikzpicture}\hspace{1em}
+\begin{tikzpicture}[x=0.9cm,y=3.3cm]
+\draw[->] (0.8,0.5)--(0.8,1.12) node[above] {$\Phi/\Phi_2$};
+\draw[->] (0.8,0.5)--(5.4,0.5) node[right] {$u$};
+\foreach \x in {1,2,3,4,5} {\draw (\x,0.51)--(\x,0.49) node[below] {\small\x};}
+\foreach \y in {0.6,0.8,1} {\draw (0.75,\y)--(0.85,\y) node[left=4pt] {\small\y};}
+\draw[dashed,thick] (1,1)--(5,1);
+\draw[blue,thick,domain=1:5,samples=100]
+plot (\x,{2/(sqrt(1+1/(\x*\x))*(1+sqrt(1+1/(\x*\x))))});
+\end{tikzpicture}
+\end{center}
+For example the ratios at $u=2,3,5$ are $0.84458,0.92370,0.97097$.
+
+\Needspace{5\baselineskip}
+\par\bigskip
+\noindent\textbf{4.2}\quad A point dipole with dipole moment $\mathbf{p}$ is located at the point $\mathbf{x}_{0}$. From the properties of the derivative of a Dirac delta function, show that for calculation of the potential $\Phi$ or the energy of a dipole in an external field, the dipole can be described by an effective charge density
+\[
+\rho_{\mathrm{eff}}(\mathbf{x})=-\mathbf{p}\cdot\nabla\delta(\mathbf{x}-\mathbf{x}_{0})
+\]
+\solution
+
+The defining distributional identity is
+\[
+\int f(\mathbf x)\partial_i\delta(\mathbf x-\mathbf x_0)\,d^3x
+=-\partial_i f(\mathbf x_0).
+\]
+Thus $\int\rho_{\rm eff}f\,d^3x=\mathbf p\cdot\nabla f(\mathbf x_0)$.
+For an observation point $\mathbf r\ne\mathbf x_0$, put
+$f(\mathbf x)=1/|\mathbf r-\mathbf x|$. The derivative is with respect
+to the source coordinate, so
+\[
+\nabla_{\mathbf x}\frac1{|\mathbf r-\mathbf x|}
+=\frac{\mathbf r-\mathbf x}{|\mathbf r-\mathbf x|^3},\qquad
+\boxed{\Phi(\mathbf r)=\frac{1}{4\pi\epsilon_0}
+\frac{\mathbf p\cdot(\mathbf r-\mathbf x_0)}{|\mathbf r-\mathbf x_0|^3}.}
+\]
+For the energy choose $f=\Phi^{(0)}$, smooth at $\mathbf x_0$. Since
+this is interaction with distinct external sources, there is no factor $1/2$:
+\[
+\boxed{W=\int\rho_{\rm eff}\Phi^{(0)}\,d^3x
+=\mathbf p\cdot\nabla\Phi^{(0)}(\mathbf x_0)
+=-\mathbf p\cdot\mathbf E^{(0)}(\mathbf x_0).}
+\]
+Self-energy is excluded. Taking $f=1$ checks zero total charge;
+taking $f=x_i$ checks $\int x_i\rho_{\rm eff}\,d^3x=p_i$.
+For a further direct construction, place $\pm q$ a displacement
+$\pm\mathbf d/2$ from $\mathbf x_0$. Taylor expansion gives
+\[
+q[\delta(\mathbf x-\mathbf x_0-\mathbf d/2)
+-\delta(\mathbf x-\mathbf x_0+\mathbf d/2)]
+=-q\mathbf d\cdot\nabla\delta(\mathbf x-\mathbf x_0)+O(qd^3).
+\]
+Taking $\mathbf d\to0$ with $q\mathbf d=\mathbf p$ fixed gives the
+same density and fixes its sign.
+
+\Needspace{5\baselineskip}
+\par\bigskip
+\noindent\textbf{4.3}\quad The $l$th term in the multipole expansion (4.1) of the potential is specified by the $(2l+1)$ multipole moments $q_{lm}$. On the other hand, the Cartesian multipole moments,
+\[
+Q_{\alpha\beta\gamma}^{(l)}=\int\rho(\mathbf{x})\,x^{\alpha}y^{\beta}z^{\gamma}\;d^{3}x
+\]
+with $\alpha$, $\beta$, $\gamma$ nonnegative integers subject to the constraint $\alpha+\beta+\gamma=l$, are $(l+1)(l+2)/2$ in number. Thus, for $l>1$ there are more Cartesian multipole moments than seem necessary to describe the term in the potential whose radial dependence is $r^{-l-1}$.
+
+Show that while the $q_{lm}$ transform under rotations as irreducible spherical tensors of rank $l$, the Cartesian multipole moments correspond to reducible spherical tensors of ranks $l$, $l-2$, $l-4$, \ldots, $l_{\min}$, where $l_{\min}=0$ or 1 for $l$ even or odd, respectively. Check that the number of different tensorial components adds up to the total number of Cartesian tensors. Why are only the $q_{lm}$ needed in the expansion (4.1)?
+\solution
+
+Package the Cartesian moments into the symmetric rank-$l$ tensor
+$M_{i_1\cdots i_l}=\int\rho x_{i_1}\cdots x_{i_l}\,d^3x$.
+Its independent components correspond to homogeneous polynomials of degree
+$l$, whose monomials are $x^\alpha y^\beta z^\gamma$ with
+$\alpha+\beta+\gamma=l$. There are $\binom{l+2}{2}$ such monomials.
+
+A homogeneous polynomial has the unique harmonic decomposition
+\[
+F_l(\mathbf x)=H_l(\mathbf x)+r^2H_{l-2}(\mathbf x)
++r^4H_{l-4}(\mathbf x)+\cdots,
+\qquad \nabla^2H_k=0,
+\]
+where each $H_k$ is homogeneous of degree $k$. Here is why traces can
+be removed recursively. For such a harmonic $H_k$, Euler's identity
+$\mathbf x\cdot\nabla H_k=kH_k$ gives
+\begin{align*}
+\nabla^2(r^{2s}H_k)
+&=(\nabla^2r^{2s})H_k+2\nabla r^{2s}\cdot\nabla H_k\\
+&=[2s(2s+1)+4sk]r^{2s-2}H_k
+=2s(2k+2s+1)r^{2s-2}H_k.
+\end{align*}
+The coefficient is nonzero for $s\geq1$. Decompose $\nabla^2F_l$
+recursively and subtract the corresponding $r^{2s}H_k$ terms; the
+remainder is harmonic. The same nonzero coefficients establish uniqueness.
+In tensor language $H_l$ is the symmetric traceless part, while each
+factor $r^2$ corresponds to a Kronecker delta, or trace.
+
+The degree-$k$ harmonic polynomials have the basis
+$\mathcal Y_{km}=r^kY_{km}$, $-k\leq m\leq k$.
+Rotations preserve degree and harmonicity and mix only these $2k+1$
+components. Moreover $L^2Y_{km}=k(k+1)Y_{km}$, and $L_\pm$ connect all
+$m$ in that set; this is the irreducible rank-$k$ representation.
+Therefore the Cartesian moments contain the ranks
+\[
+\boxed{l,\ l-2,\ l-4,\ldots,l_{\min},}
+\]
+whereas the integrals $q_{lm}=\int\rho\mathcal Y_{lm}^{*}\,d^3x$
+select just the irreducible rank-$l$ part. The lower-rank pieces of
+$M^{(l)}$ involve radial weights $r^{2s}$; they are not generally the
+ordinary moments of order $l-2s$.
+
+For $l=2n$, the number of components is
+\[
+\sum_{k=0}^n(4k+1)=(n+1)(2n+1)
+=\frac{(l+1)(l+2)}2;
+\]
+for $l=2n+1$ it is
+\[
+\sum_{k=0}^n(4k+3)=(n+1)(2n+3)
+=\frac{(l+1)(l+2)}2.
+\]
+Finally, Taylor expansion of the Coulomb kernel yields
+\[
+\Phi_l(\mathbf r)=\frac{1}{4\pi\epsilon_0}
+\frac{(-1)^l}{l!}M_{i_1\cdots i_l}
+\partial_{i_1}\cdots\partial_{i_l}\frac1r.
+\]
+Any trace in $M$ contracts two derivatives into
+$\nabla^2(1/r)=0$ at exterior points. Only its symmetric traceless
+part contributes, and that part is fully specified by the $2l+1$
+$q_{lm}$. This explains why the extra Cartesian components do not
+appear in (4.1).
+
+\Needspace{5\baselineskip}
+\par\bigskip
+\noindent\textbf{4.4}\quad\begin{enumerate}
+\item[(a)] Prove the following theorem: For an arbitrary charge distribution $\rho(\mathbf{x})$ the values of the $(2l+1)$ moments of the first nonvanishing multipole are independent of the origin of the coordinate axes, but the values of all higher multipole moments do in general depend on the choice of origin. (The different moments $q_{lm}$ for fixed $l$ depend, of course, on the orientation of the axes.)
+\item[(b)] A charge distribution has multipole moments $q$, $\mathbf{p}$, $Q_{ij}$, \ldots{} with respect to one set of coordinate axes, and moments $q'$, $\mathbf{p}'$, $Q'_{ij}$, \ldots{} with respect to another set whose axes are parallel to the first, but whose origin is located at the point $\mathbf{R}=(X,Y,Z)$ relative to the first. Determine explicitly the connections between the monopole, dipole, and quadrupole moments in the two coordinate frames.
+\item[(c)] If $q\neq0$, can $\mathbf{R}$ be found so that $\mathbf{p}'=0$? If $q\neq0$, $\mathbf{p}\neq0$, or at least $\mathbf{p}\neq0$, can $\mathbf{R}$ be found so that $Q'_{ij}=0$?
+\end{enumerate}
+\solution
+
+\textbf{(a)} Keep the axes parallel and move the origin to $\mathbf R$,
+so that $\mathbf x'=\mathbf x-\mathbf R$. For the regular solid harmonic
+$\mathcal Y_{lm}=r^lY_{lm}$, the finite Taylor expansion is
+\[
+\mathcal Y_{lm}^{*}(\mathbf x-\mathbf R)
+=\sum_{k=0}^l\frac{(-\mathbf R\cdot\nabla)^k}{k!}
+\mathcal Y_{lm}^{*}(\mathbf x).
+\]
+Each derivative on the right is a homogeneous polynomial of degree
+$l-k$ and is harmonic, since differentiation commutes with $\nabla^2$.
+It is consequently a linear combination of the $\mathcal Y_{l-k,m'}$.
+Multiplying by $\rho$ and integrating shows that
+\[
+q'_{lm}=q_{lm}+\text{linear combinations of moments of orders }0,\ldots,l-1.
+\]
+If all moments below order $L$ vanish, then $q'_{Lm}=q_{Lm}$ and all
+moments below $L$ remain zero. Higher moments contain terms involving
+the nonzero order-$L$ moments, so in general they change under
+translation. Particular components may be unchanged for particular
+translations; the theorem does not assert otherwise. Rotations still
+mix the $m$ components within each order.
+
+\textbf{(b)} With $q=\int\rho\,d^3x$, $p_i=\int\rho x_i\,d^3x$, and
+$Q_{ij}=\int\rho(3x_ix_j-r^2\delta_{ij})\,d^3x$,
+\[
+\boxed{q'=q,\qquad p'_i=p_i-qR_i.}
+\]
+For the quadrupole, expand its integrand before integrating:
+\begin{align*}
+3(x_i-R_i)(x_j-R_j)-|\mathbf x-\mathbf R|^2\delta_{ij}
+={}&3x_ix_j-r^2\delta_{ij}-3(R_ix_j+R_jx_i)\\
+&+2(\mathbf R\cdot\mathbf x)\delta_{ij}
++3R_iR_j-R^2\delta_{ij}.
+\end{align*}
+Thus
+\[
+\boxed{Q'_{ij}=Q_{ij}-3(R_ip_j+R_jp_i)
++2\mathbf R\cdot\mathbf p\,\delta_{ij}
++q(3R_iR_j-R^2\delta_{ij}).}
+\]
+The trace remains zero, as it must.
+
+\textbf{(c)} If $q\ne0$, the unique dipole-free origin is
+$\boxed{\mathbf R=\mathbf p/q}$. A quadrupole-free origin generally does
+not exist. To give the precise restriction, define the quadrupole at
+this dipole-free origin,
+\[
+Q^{c}_{ij}=Q_{ij}-\frac{3p_ip_j-p^2\delta_{ij}}q,
+\qquad \mathbf s=\mathbf R-\frac{\mathbf p}q.
+\]
+Completing the square in the transformation law gives
+\[
+Q'_{ij}=Q^c_{ij}+q(3s_is_j-s^2\delta_{ij}).
+\]
+The matrix $3\mathbf s\mathbf s^{\mathsf T}-s^2\mathbf I$ has
+eigenvalue $2s^2$ along $\mathbf s$ and $-s^2$ along each perpendicular
+direction; this identifies the possible spectra of its negative.
+Therefore $Q'=0$ is possible exactly when $Q^c=0$ (choose $\mathbf s=0$),
+or when $Q^c$ has eigenvalues $(-2\lambda,\lambda,\lambda)$ with
+$\lambda/q>0$. The direction of $\mathbf s$ must be the first
+principal axis, and $s^2=\lambda/q$. A generic traceless symmetric
+tensor has three distinct eigenvalues and fails this condition.
+For example, equal pairs of charges $+e$ at $\pm a\hat{\mathbf x}$ and
+$+2e$ at $\pm a\hat{\mathbf y}$ have $q=6e$, $\mathbf p=0$, and
+$Q^c=6ea^2\operatorname{diag}(0,1,-1)$, which cannot be removed by
+translation. Describing this same distribution from another origin
+makes $\mathbf p\ne0$ without removing the obstruction.
+
+If $q=0$ but $\mathbf p\ne0$, choose axes with $\mathbf p=p\hat{\mathbf z}$.
+The six symmetric components transform as
+\begin{gather*}
+Q'_{xx}=Q_{xx}+2pR_z,\quad Q'_{yy}=Q_{yy}+2pR_z,\quad
+Q'_{zz}=Q_{zz}-4pR_z,\\
+Q'_{xy}=Q_{xy},\quad Q'_{xz}=Q_{xz}-3pR_x,\quad
+Q'_{yz}=Q_{yz}-3pR_y.
+\end{gather*}
+Thus $Q'=0$ requires $Q_{xy}=0$ and $Q_{xx}=Q_{yy}$; when these
+conditions hold, choose
+\[
+(R_x,R_y,R_z)=\left(\frac{Q_{xz}}{3p},\frac{Q_{yz}}{3p},
+-\frac{Q_{xx}}{2p}\right).
+\]
+If both $q$ and $\mathbf p$ vanish, the quadrupole is invariant and
+can be zero in a translated frame only if it was zero already.
+
+\Needspace{5\baselineskip}
+\par\bigskip
+\noindent\textbf{4.5}\quad A localized charge density $\rho(x,y,z)$ is placed in an external electrostatic field described by a potential $\Phi^{(0)}(x,y,z)$. The external potential varies slowly in space over the region where the charge density is different from zero. \erratum{Assume that the external sources lie outside a neighborhood of this region, so that $\nabla^2\Phi^{(0)}=0$ there, as in the derivation of (4.23)--(4.24).}
+\begin{enumerate}
+\item[(a)] From first principles calculate the total \emph{force} acting on the charge distribution as an expansion in multipole moments times derivatives of the electric field, up to and including the quadrupole moments. Show that the force is
+\[
+\mathbf{F}=q\mathbf{E}^{(0)}(0)+\{\nabla[\mathbf{p}\cdot\mathbf{E}^{(0)}(\mathbf{x})]\}_{0}+\left\{\nabla\!\left[\frac{1}{6}\sum_{j,k}Q_{jk}\frac{\partial E_{j}^{(0)}}{\partial x_{k}}(\mathbf{x})\right]\right\}_{0}+\cdots
+\]
+Compare this to the expansion (4.24) of the \emph{energy} $W$. Note that (4.24) is a number---it is not a function of $\mathbf{x}$ that can be differentiated! What is its connection to $\mathbf{F}$?
+\item[(b)] Repeat the calculation of part a for the total \emph{torque}. For simplicity, evaluate only one Cartesian component of the torque, say $N_{1}$. Show that this component is
+\[
+N_{1}=[\mathbf{p}\times\mathbf{E}^{(0)}(0)]_{1}+\frac{1}{3}\left[\frac{\partial}{\partial x_{3}}\left(\sum_{j}Q_{2j}E_{j}^{(0)}\right)-\frac{\partial}{\partial x_{2}}\left(\sum_{j}Q_{3j}E_{j}^{(0)}\right)\right]_{0}+\cdots
+\]
+\end{enumerate}
+\solution
+
+As in Jackson's derivation of (4.23)--(4.24), assume that the external
+sources lie outside a neighborhood containing the localized distribution.
+Then $\nabla\cdot\mathbf E^{(0)}=0$ and
+$\nabla\times\mathbf E^{(0)}=0$ there. This source-free condition is
+needed for the stated force formula with only traceless moments.
+All derivatives below are of the external field.
+
+\textbf{(a)} Start with the force on each charge element:
+\[
+F_i=\int\rho(\mathbf x)E_i^{(0)}(\mathbf x)\,d^3x.
+\]
+Taylor-expand the field around the origin, integrate term by term,
+and define $M_{jk}=\int\rho x_jx_k\,d^3x$ and
+$S=\int\rho r^2\,d^3x$:
+\begin{align*}
+F_i&=qE_i^{(0)}(0)+p_j\partial_jE_i^{(0)}(0)
++\frac12M_{jk}\partial_j\partial_kE_i^{(0)}(0)+\cdots,\\
+M_{jk}&=\frac13(Q_{jk}+S\delta_{jk}).
+\end{align*}
+The trace term is $S\nabla^2E_i^{(0)}/6=0$, because
+$\nabla^2\mathbf E^{(0)}=\nabla(\nabla\cdot\mathbf E^{(0)})=0$.
+Electrostatics also gives $\partial_jE_i^{(0)}=\partial_iE_j^{(0)}$,
+so
+\begin{align*}
+p_j\partial_jE_i^{(0)}&=\partial_i(p_jE_j^{(0)}),\\
+Q_{jk}\partial_j\partial_kE_i^{(0)}
+&=\partial_i(Q_{jk}\partial_kE_j^{(0)}).
+\end{align*}
+These identities give exactly
+\[
+\boxed{\mathbf F=q\mathbf E^{(0)}(0)
++\left.\nabla(\mathbf p\cdot\mathbf E^{(0)})\right|_0
++\left.\frac16\nabla(Q_{jk}\partial_kE_j^{(0)})\right|_0+\cdots.}
+\]
+Repeated Cartesian indices are summed. If external charge overlaps the
+region, the additional term $S\nabla(\nabla\cdot\mathbf E^{(0)})/6$
+must be retained; the displayed problem formula alone is then insufficient.
+
+To connect force and energy, let $\mathbf R$ be a \emph{physical rigid
+translation} of the charge distribution and let $\mathbf u$ denote
+coordinates fixed in it. Its interaction energy is the function
+\begin{align*}
+W(\mathbf R)&=\int\rho(\mathbf u)\Phi^{(0)}(\mathbf R+\mathbf u)\,d^3u\\
+&=q\Phi^{(0)}(\mathbf R)-p_jE_j^{(0)}(\mathbf R)
+-\frac16Q_{jk}\partial_kE_j^{(0)}(\mathbf R)+\cdots.
+\end{align*}
+The moments are held fixed while differentiating, and
+$\mathbf F=-\nabla_{\mathbf R}W(\mathbf R)|_{\mathbf R=0}$.
+Equation (4.24) is the value $W(0)$, not a spatial function to which
+one may directly apply $\nabla_{\mathbf x}$.
+
+\textbf{(b)} The torque about the chosen origin is
+\[
+N_1=\int\rho(x_2E_3^{(0)}-x_3E_2^{(0)})\,d^3x.
+\]
+Keeping the constant and linear terms of the field produces
+\begin{align*}
+N_1={}&p_2E_3^{(0)}(0)-p_3E_2^{(0)}(0)
++M_{2j}\partial_jE_3^{(0)}(0)-M_{3j}\partial_jE_2^{(0)}(0)+\cdots\\
+={}&[\mathbf p\times\mathbf E^{(0)}(0)]_1
++\frac13[Q_{2j}\partial_jE_3^{(0)}-Q_{3j}\partial_jE_2^{(0)}]_0
++\frac S3[\partial_2E_3^{(0)}-\partial_3E_2^{(0)}]_0+\cdots.
+\end{align*}
+The last term vanishes by zero curl. Interchanging the derivative and
+field indices in the preceding term then gives
+\[
+\boxed{N_1=[\mathbf p\times\mathbf E^{(0)}(0)]_1
++\frac13[\partial_3(Q_{2j}E_j^{(0)})
+-\partial_2(Q_{3j}E_j^{(0)})]_0+\cdots.}
+\]
+This torque is about the origin; about a different point it changes by
+the usual moment of the total force.
+
+\Needspace{5\baselineskip}
+\par\bigskip
+\noindent\textbf{4.6}\quad A nucleus with quadrupole moment $Q$ finds itself in a cylindrically symmetric electric field with a gradient $(\partial E_{z}/\partial z)_{0}$ along the $z$ axis at the position of the nucleus. \erratum{Take the nuclear symmetry axis along $z$ and the external field to be source-free at the nucleus; these conditions specify the aligned quadrupole energy below.}
+\begin{enumerate}
+\item[(a)] Show that the energy of quadrupole interaction is
+\[
+W=-\frac{e}{4}\,Q\left(\frac{\partial E_{z}}{\partial z}\right)_{0}
+\]
+\item[(b)] If it is known that $Q=2\times10^{-28}$ m$^{2}$ and that $W/h$ is 10 MHz, where $h$ is Planck's constant, calculate $(\partial E_{z}/\partial z)_{0}$ in units of $e/4\pi\epsilon_{0}a_{0}^{3}$, where $a_{0}=4\pi\epsilon_{0}\hbar^{2}/me^{2}=0.529\times10^{-10}$ m is the Bohr radius in hydrogen.
+\item[(c)] Nuclear charge distributions can be approximated by a constant charge density throughout a spheroidal volume of semimajor axis $a$ and semiminor axis $b$. Calculate the quadrupole moment of such a nucleus, assuming that the total charge is $Ze$. Given that Eu$^{153}$ ($Z=63$) has a quadrupole moment $Q=2.5\times10^{-28}$ m$^{2}$ and a mean radius
+\[
+R=(a+b)/2=7\times10^{-15}\ \mathrm{m}
+\]
+determine the fractional difference in radius $(a-b)/R$.
+\end{enumerate}
+\solution
+
+\textbf{(a)} Jackson's nuclear convention (4.25) is
+$Q=Q_{zz}/e$, with dimensions of area. Take the nuclear symmetry axis
+along $z$, as in that definition. Axial symmetry and tracelessness give
+\[
+Q_{zz}=eQ,\qquad Q_{xx}=Q_{yy}=-eQ/2,\qquad Q_{ij}=0\ (i\ne j).
+\]
+At a source-free point of an axially symmetric external field, let
+$G=(\partial_zE_z)_0$. Then
+$\partial_xE_x=\partial_yE_y$ and
+$\partial_xE_x+\partial_yE_y+\partial_zE_z=0$, so each transverse
+entry is $-G/2$. Thus
+\[
+W_Q=-\frac16 Q_{ij}\partial_jE_i
+=-\frac16\left[eQG+2\left(-\frac{eQ}{2}\right)
+\left(-\frac G2\right)\right]
+=\boxed{-\frac{eQG}{4}}.
+\]
+For a nucleus whose symmetry axis makes angle $\beta$ with the field
+axis, write $Q_{ij}=eQ(3\widehat u_i\widehat u_j-\delta_{ij})/2$,
+where $\widehat{\mathbf u}\cdot\widehat{\mathbf z}=\cos\beta$.
+The traceless gradient tensor is
+$G_{ij}=G(3\widehat z_i\widehat z_j-\delta_{ij})/2$. Thus
+\[
+-\frac16Q_{ij}G_{ij}
+=-\frac{eQG}{24}(9\cos^2\beta-3)
+=-\frac{eQG}{4}P_2(\cos\beta).
+\]
+The stated formula uses the aligned convention $\beta=0$.
+
+\textbf{(b)} With $W/h=+10^7\ \mathrm{s}^{-1}$ and $Q>0$,
+\[
+G=-\frac{4h(10^7\ \mathrm{s}^{-1})}{e(2\times10^{-28}\ \mathrm{m}^2)}
+=-8.2713\times10^{20}\ \mathrm{V\,m^{-2}}.
+\]
+Using the problem's rounded $a_0=0.529\times10^{-10}\ \mathrm m$,
+\[
+\frac{e}{4\pi\epsilon_0a_0^3}=9.7271\times10^{21}\ \mathrm{V\,m^{-2}},
+\qquad
+\boxed{\frac{G}{e/(4\pi\epsilon_0a_0^3)}=-0.08503.}
+\]
+If the measured $10$ MHz denotes only the magnitude of a splitting,
+only $|G|$ is determined and the ratio is $0.08503$ in magnitude.
+
+\textbf{(c)} For a prolate spheroid put the semiaxis $a$ along $z$
+and the equal semiaxes $b$ along $x,y$. Its density is
+$\rho=3Ze/(4\pi ab^2)$. Transform the ellipsoid to the unit ball by
+$x=bu$, $y=bv$, $z=aw$. Spherical symmetry on that ball gives
+\[
+\int_{u^2+v^2+w^2\leq1}w^2\,d^3u
+=\frac13\int_0^1 4\pi t^4\,dt=\frac{4\pi}{15}.
+\]
+Since $d^3x=ab^2d^3u$,
+\[
+\int\rho z^2\,d^3x=\frac{Ze a^2}{5},\qquad
+\int\rho x^2\,d^3x=\int\rho y^2\,d^3x=\frac{Ze b^2}{5}.
+\]
+It follows that
+\[
+\boxed{Q=\frac1e\int\rho(2z^2-x^2-y^2)\,d^3x
+=\frac{2Z}{5}(a^2-b^2).}
+\]
+For an oblate spheroid the axial semiaxis is the smaller one, and the
+quadrupole has the opposite sign. Here $Q>0$ selects the prolate case.
+Using $a+b=2R$, with no small-deformation approximation,
+\[
+Q=\frac{4Z}{5}R(a-b),\qquad
+\boxed{\frac{a-b}{R}=\frac{5Q}{4ZR^2}
+=\frac{5(2.5\times10^{-28})}{4(63)(7\times10^{-15})^2}
+=0.10123.}
+\]
+Thus $a\simeq7.354\times10^{-15}$ m and
+$b\simeq6.646\times10^{-15}$ m in this uniform-density model.
+
+\Needspace{5\baselineskip}
+\par\bigskip
+\noindent\textbf{4.7}\quad A localized distribution of charge has a charge density
+\[
+\rho(\mathbf{r})=\frac{1}{64\pi}\,r^{2}e^{-r}\sin^{2}\theta
+\]
+\begin{enumerate}
+\item[(a)] Make a multipole expansion of the potential due to this charge density and determine all the nonvanishing multipole moments. Write down the potential at large distances as a finite expansion in Legendre polynomials.
+\item[(b)] Determine the potential explicitly at any point in space, and show that near the origin, correct to $r^{2}$ inclusive,
+\[
+\Phi(\mathbf{r})\simeq\frac{1}{4\pi\epsilon_{0}}\left[\frac{1}{4}-\frac{r^{2}}{120}P_{2}(\cos\theta)\right]
+\]
+\item[(c)] If there exists at the origin a nucleus with a quadrupole moment $Q=10^{-28}$ m$^{2}$, \erratum{with its symmetry axis along $z$,} determine the magnitude of the interaction energy, assuming that the unit of charge in $\rho(\mathbf{r})$ above is the electronic charge and the unit of length is the hydrogen Bohr radius $a_{0}=4\pi\epsilon_{0}\hbar^{2}/me^{2}=0.529\times10^{-10}$ m. Express your answer as a frequency by dividing by Planck's constant $h$.
+\end{enumerate}
+The charge density in this problem is that for the $m=\pm1$ states of the $2p$ level in hydrogen, while the quadrupole interaction is of the same order as found in molecules.
+\solution
+
+\textbf{(a)} Use $\sin^2\theta=\frac23[1-P_2(\cos\theta)]$ to write
+\[
+\rho=\frac{r^2e^{-r}}{96\pi}[1-P_2(\cos\theta)].
+\]
+Azimuthal integration eliminates $m\ne0$, and Legendre orthogonality
+eliminates $l\ne0,2$. Since
+$\int_0^\infty r^ne^{-r}\,dr=n!$ and
+$\int P_l^2\,d\Omega=4\pi/(2l+1)$, the total charge and the
+Legendre quadrupole integral are
+\[
+q=\frac{4\pi}{96\pi}\,4!=1,\qquad
+\int\rho r^2P_2\,d^3r=-\frac{1}{96\pi}\frac{4\pi}{5}\,6!=-6.
+\]
+Therefore
+\[
+\boxed{q_{00}=\frac1{\sqrt{4\pi}},\qquad
+q_{20}=-6\sqrt{\frac5{4\pi}}=-3\sqrt{\frac5\pi},}
+\]
+with all other moments zero. The large-distance expansion is
+\[
+\boxed{\Phi\sim\frac{1}{4\pi\epsilon_0}
+\left[\frac1r-\frac6{r^3}P_2(\cos\theta)\right].}
+\]
+The density is exponentially localized but is not compactly supported.
+Consequently this finite algebraic expansion is asymptotic, with
+exponentially small corrections at finite $r$; it is not the exact
+potential throughout an exterior charge-free region.
+
+\textbf{(b)} Split the Coulomb integral into source radii $s<r$ and
+$s>r$, using the kernel $r_<^l/r_>^{l+1}$. The same angular
+orthogonality gives
+\[
+4\pi\epsilon_0\Phi=A(r)+B(r)P_2(\cos\theta),
+\]
+\begin{align*}
+A(r)&=\frac1{24}\left[\frac1r\int_0^r s^4e^{-s}\,ds
++\int_r^\infty s^3e^{-s}\,ds\right],\\
+B(r)&=-\frac1{120}\left[\frac1{r^3}\int_0^r s^6e^{-s}\,ds
++r^2\int_r^\infty se^{-s}\,ds\right].
+\end{align*}
+Repeated integration by parts gives
+\[
+\int_r^\infty s^ne^{-s}\,ds=n!e^{-r}\sum_{k=0}^n\frac{r^k}{k!},
+\qquad
+\int_0^r s^ne^{-s}\,ds=n!\left[1-e^{-r}\sum_{k=0}^n\frac{r^k}{k!}\right].
+\]
+Substituting and collecting equal powers yields the explicit answer
+\begin{align*}
+\boxed{A(r)}&=\boxed{\frac1r-e^{-r}\left(\frac1r+\frac34+\frac r4+\frac{r^2}{24}\right)},\\
+\boxed{B(r)}&=\boxed{-\frac6{r^3}+e^{-r}\left(\frac6{r^3}+\frac6{r^2}
++\frac3r+1+\frac r4+\frac{r^2}{24}\right)}.
+\end{align*}
+These expressions apply for $r>0$; their apparent singularities are
+removable at the origin. The integral forms show the cancellations
+without subtracting divergent terms. For small $r$, the needed integrals are
+\begin{gather*}
+\int_0^r s^4e^{-s}\,ds=\frac{r^5}{5}+O(r^6),\qquad
+\int_r^\infty s^3e^{-s}\,ds=6-\frac{r^4}{4}+O(r^5),\\
+\int_0^r s^6e^{-s}\,ds=\frac{r^7}{7}+O(r^8),\qquad
+\int_r^\infty se^{-s}\,ds=1-\frac{r^2}{2}+O(r^3).
+\end{gather*}
+Consequently
+\begin{align*}
+A(r)&=\frac1{24}\left[6+\left(\frac15-\frac14\right)r^4+O(r^5)\right]
+=\frac14-\frac{r^4}{480}+O(r^5),\\
+B(r)&=-\frac1{120}\left[r^2+\left(\frac17-\frac12\right)r^4+O(r^5)\right]
+=-\frac{r^2}{120}+\frac{r^4}{336}+O(r^5),
+\end{align*}
+so
+\[
+\boxed{\Phi=\frac{1}{4\pi\epsilon_0}
+\left[\frac14-\frac{r^2}{120}P_2(\cos\theta)+O(r^4)\right].}
+\]
+For example, differentiating the exact radial functions checks Poisson's
+ equation directly:
+\[
+A''+\frac2rA'=-\frac{r^2e^{-r}}{24},\qquad
+B''+\frac2rB'-\frac6{r^2}B=+\frac{r^2e^{-r}}{24}.
+\]
+
+\textbf{(c)} Restore physical length $\mathbf R=a_0\mathbf r$ and
+charge $q_e$ (equal to $-e$ for an electron). The quadratic physical
+potential is
+\[
+\Phi_Q(\mathbf R)=-\frac{q_e}{4\pi\epsilon_0a_0^3}
+\frac{3Z^2-R^2}{240}.
+\]
+Since $3Z^2-R^2=2Z^2-X^2-Y^2$,
+\[
+\left(\frac{\partial E_Z}{\partial Z}\right)_0
+=-\partial_Z^2\Phi_Q=\frac{q_e}{4\pi\epsilon_0a_0^3}\frac1{60}.
+\]
+For the nuclear quadrupole convention and alignment of Problem 4.6,
+\[
+|W_Q|=\frac{e^2|Q|}{240(4\pi\epsilon_0)a_0^3},\qquad
+\boxed{\frac{|W_Q|}{h}=9.8000\times10^5\ \mathrm{Hz}\simeq0.980\ \mathrm{MHz}.}
+\]
+The sign reverses if the sign of the charge distribution is reversed;
+for an electron and $Q>0$, this aligned quadrupole contribution is positive.
+
+\Needspace{5\baselineskip}
+\par\bigskip
+\noindent\textbf{4.8}\quad A very long, right circular, cylindrical shell of dielectric constant $\epsilon/\epsilon_{0}$ and inner and outer radii $a$ and $b$, respectively, is placed in a previously uniform electric field $E_{0}$ with its axis perpendicular to the field. The medium inside and outside the cylinder has a dielectric constant of unity.
+\begin{enumerate}
+\item[(a)] Determine the potential and electric field in the three regions, neglecting end effects.
+\item[(b)] Sketch the lines of force for a typical case of $b\simeq2a$.
+\item[(c)] Discuss the limiting forms of your solution appropriate for a solid dielectric cylinder in a uniform field, and a cylindrical cavity in a uniform dielectric.
+\end{enumerate}
+\solution
+
+\textbf{(a)} Let $\kappa=\epsilon/\epsilon_0>0$, use cylindrical
+coordinates $(s,\phi,z)$, and take the applied field along $x$, so
+$x=s\cos\phi$. Translation invariance along $z$ and the $\cos\phi$
+boundary condition leave only the cylindrical harmonic of order one.
+The solutions regular at $s=0$ and asymptotic to $-E_0x$ are
+\[
+\Phi=-E_0\cos\phi\begin{cases}
+As,&s<a,\\
+Bs+C/s,&a<s<b,\\
+s-D/s,&s>b.
+\end{cases}
+\]
+There is no free surface charge at either dielectric boundary. Continuity
+of $\Phi$ and of $D_s=-\epsilon\partial_s\Phi$ gives four equations:
+\begin{gather*}
+A=B+C/a^2,\qquad A=\kappa(B-C/a^2),\\
+B+C/b^2=1-D/b^2,\qquad
+\kappa(B-C/b^2)=1+D/b^2.
+\end{gather*}
+The first pair gives
+$C=a^2B(\kappa-1)/(\kappa+1)$ and
+$A=2\kappa B/(\kappa+1)$. Adding the second pair eliminates $D$:
+\[
+(\kappa+1)B-(\kappa-1)C/b^2=2.
+\]
+Define $\eta=a^2/b^2$ and
+$\Delta=(\kappa+1)^2-(\kappa-1)^2\eta$. Substitution gives
+\[
+\boxed{A=\frac{4\kappa}{\Delta},\quad
+B=\frac{2(\kappa+1)}{\Delta},\quad
+C=\frac{2(\kappa-1)a^2}{\Delta},\quad
+D=\frac{(\kappa^2-1)(b^2-a^2)}{\Delta}.}
+\]
+The field is $\mathbf E=E_s\hat{\mathbf s}+E_\phi\hat{\boldsymbol\phi}$,
+with $E_z=0$ and
+\[
+\boxed{\frac{E_s}{E_0}=\cos\phi\begin{cases}
+A,&s<a,\\ B-C/s^2,&a<s<b,\\1+D/s^2,&s>b,
+\end{cases}\quad
+\frac{E_\phi}{E_0}=-\sin\phi\begin{cases}
+A,&s<a,\\B+C/s^2,&a<s<b,\\1-D/s^2,&s>b.
+\end{cases}}
+\]
+Thus the field in the hollow core is uniform, $\mathbf E=AE_0\hat{\mathbf x}$.
+For $\kappa=1$, $A=B=1$ and $C=D=0$, recovering a uniform vacuum field.
+
+\textbf{(b)} The field lines are contours of a stream function.
+In each homogeneous region introduce the stream
+function for $\mathbf D/(\epsilon_0E_0)$:
+\[
+\Psi(s,\phi)=\sin\phi\begin{cases}
+As,&s<a,\\
+\kappa(Bs-C/s),&a<s<b,\\
+s+D/s,&s>b.
+\end{cases}
+\]
+It obeys $D_s/(\epsilon_0E_0)=s^{-1}\partial_\phi\Psi$ and
+$D_\phi/(\epsilon_0E_0)=-\partial_s\Psi$. Hence
+$\mathbf E\cdot\nabla\Psi=0$, and contours of $\Psi$ are field lines.
+The boundary equations above make $\Psi$ continuous across both circles.
+The direction changes there in accordance with continuous $E_\phi$
+and $\epsilon E_s$.
+
+The plot uses $b=2a$, $\kappa=4$:
+$A=64/91$, $B=40/91$, $C/a^2=24/91$, $D/a^2=180/91$.
+The shaded annulus is the dielectric, and arrows point along the field.
+\begin{center}
+\input{supplementary/figures/ch04_8_fieldlines.tex}
+\end{center}
+
+\textbf{(c)} For a solid cylinder set $a\to0$, keeping $b$ fixed.
+The shell becomes the entire interior, with
+\[
+\boxed{\Phi_{\rm in}=-\frac{2E_0}{\kappa+1}s\cos\phi,\qquad
+\Phi_{\rm out}=-E_0\left(s-\frac{\kappa-1}{\kappa+1}\frac{b^2}{s}\right)\cos\phi.}
+\]
+For an isolated cylindrical cavity of radius $a$ in an infinite
+dielectric, denote the prescribed field deep in the dielectric by
+$E_\infty$. The cavity and dielectric potentials are
+\[
+\boxed{\Phi_{\rm cavity}=-\frac{2\kappa}{\kappa+1}E_\infty s\cos\phi,\qquad
+\Phi_{\rm diel}=-E_\infty\left(s+\frac{\kappa-1}{\kappa+1}\frac{a^2}{s}\right)\cos\phi.}
+\]
+To see this limit in the shell solution, first let $b\to\infty$ at
+fixed $s,a$. Then $B\to2/(\kappa+1)$ and
+$A\to4\kappa/(\kappa+1)^2$, so the bulk dielectric field is
+$E_\infty=2E_0/(\kappa+1)$. Expressing the result in terms of this
+bulk field yields the boxed cavity formulas. Keeping the distant
+\emph{vacuum} field $E_0$ fixed instead would retain this additional
+outer-interface screening factor.
+
+\Needspace{5\baselineskip}
+\par\bigskip
+\noindent\textbf{4.9}\quad A point charge $q$ is located in free space a distance $d$ from the center of a dielectric sphere of radius $a$ ($a<d$) and dielectric constant $\epsilon/\epsilon_{0}$.
+\begin{enumerate}
+\item[(a)] Find the potential at all points in space as an expansion in spherical harmonics.
+\item[(b)] Calculate the rectangular components of the electric field \emph{near} the center of the sphere.
+\item[(c)] Verify that, in the limit $\epsilon/\epsilon_{0}\to\infty$, your result is the same as that for the conducting sphere.
+\end{enumerate}
+\solution
+
+\textbf{(a)} Choose the polar axis through the charge, so its position
+is $d\hat{\mathbf z}$, and set $\kappa=\epsilon/\epsilon_0$.
+For $r<d$ its vacuum potential has the expansion
+\[
+\frac{q}{4\pi\epsilon_0|\mathbf r-d\hat{\mathbf z}|}
+=\frac{q}{4\pi\epsilon_0}\sum_{l=0}^\infty
+\frac{r^l}{d^{l+1}}P_l(\cos\theta).
+\]
+Write the interior and exterior solutions as
+\begin{align*}
+\Phi_{\rm in}&=\frac{q}{4\pi\epsilon_0}\sum_{l=0}^\infty
+A_l\frac{r^l}{d^{l+1}}P_l(\cos\theta),\\
+\Phi_{\rm out}&=\frac{q}{4\pi\epsilon_0}\left[
+\frac1{|\mathbf r-d\hat{\mathbf z}|}
++\sum_{l=0}^\infty B_l\frac{a^{2l+1}}{d^{l+1}r^{l+1}}P_l(\cos\theta)\right].
+\end{align*}
+At $r=a$, continuity of potential gives $A_l=1+B_l$.
+Continuity of the normal displacement gives
+$\kappa l A_l=l-(l+1)B_l$. Therefore
+\[
+[(\kappa+1)l+1]B_l=-(\kappa-1)l,
+\qquad
+\boxed{A_l=\frac{2l+1}{(\kappa+1)l+1},\quad
+B_l=-\frac{(\kappa-1)l}{(\kappa+1)l+1}.}
+\]
+These coefficients in the preceding two formulas determine the potential
+everywhere except at the point charge itself. In particular $A_0=1$
+and $B_0=0$: the induced polarization has zero net charge.
+
+These are spherical-harmonic expansions because
+$P_l(\cos\theta)=\sqrt{4\pi/(2l+1)}Y_{l0}(\theta,\phi)$.
+For a source in a general direction $\Omega_d$, replace each $P_l$ by
+\[
+P_l(\hat{\mathbf r}\cdot\hat{\mathbf d})
+=\frac{4\pi}{2l+1}\sum_{m=-l}^lY_{lm}(\Omega)Y_{lm}^{*}(\Omega_d).
+\]
+If an expansion of the direct term is desired also outside $d$, use
+\[
+\frac1{|\mathbf r-\mathbf d|}
+=\sum_{l=0}^\infty\frac{r_<^l}{r_>^{l+1}}
+P_l(\hat{\mathbf r}\cdot\hat{\mathbf d}),\quad
+r_<=\min(r,d),\quad r_>=\max(r,d).
+\]
+The exact Coulomb term avoids convergence qualifications on the sphere
+$r=d$, while the induced series converges throughout $r\geq a$ since
+$a<d$.
+
+\textbf{(b)} Keep $l=0,1,2$ and use
+$rP_1=z$, $r^2P_2=(2z^2-x^2-y^2)/2$. Near the center,
+\[
+\Phi_{\rm in}=\frac{q}{4\pi\epsilon_0}\left[
+\frac1d+\frac{3z}{(\kappa+2)d^2}
++\frac{5(2z^2-x^2-y^2)}{2(2\kappa+3)d^3}
++O\!\left(\frac{r^3}{d^4}\right)\right].
+\]
+Taking the negative Cartesian gradient gives
+\begin{align*}
+\boxed{E_x}&=\boxed{\frac{q}{4\pi\epsilon_0}\frac{5x}{(2\kappa+3)d^3}
++O\!\left(\frac{qr^2}{4\pi\epsilon_0d^4}\right)},\\
+\boxed{E_y}&=\boxed{\frac{q}{4\pi\epsilon_0}\frac{5y}{(2\kappa+3)d^3}
++O\!\left(\frac{qr^2}{4\pi\epsilon_0d^4}\right)},\\
+\boxed{E_z}&=\boxed{-\frac{q}{4\pi\epsilon_0}\left[
+\frac{3}{(\kappa+2)d^2}+\frac{10z}{(2\kappa+3)d^3}\right]
++O\!\left(\frac{qr^2}{4\pi\epsilon_0d^4}\right)}.
+\end{align*}
+In particular the central field is the applied vacuum field at the
+center times $3/(\kappa+2)$.
+
+\textbf{(c)} As $\kappa\to\infty$, $A_l\to0$ for $l\geq1$,
+$A_0=1$, and $B_l\to-1$ for $l\geq1$ while $B_0=0$.
+Thus the sphere is equipotential at $q/(4\pi\epsilon_0d)$.
+Set $d'=a^2/d$. The exterior induced series sums to
+\begin{align*}
+-\frac{q}{4\pi\epsilon_0}\sum_{l=1}^\infty
+\frac{a^{2l+1}}{d^{l+1}r^{l+1}}P_l
+&=\frac1{4\pi\epsilon_0}\left[
+-\frac{qa/d}{|\mathbf r-d'\hat{\mathbf z}|}+\frac{qa/d}{r}\right].
+\end{align*}
+These are the image charge $-qa/d$ at $d'$ and compensating charge
+$+qa/d$ at the center. Their total is zero. The limit is therefore
+an \emph{isolated neutral} conducting sphere, rather than a grounded
+sphere; omitting the compensating central image would give the wrong
+monopole and boundary potential for this dielectric problem.
+
+\Needspace{5\baselineskip}
+\par\bigskip
+\noindent\textbf{4.10}\quad Two concentric conducting spheres of inner and outer radii $a$ and $b$, respectively, carry charges $\pm Q$. The empty space between the spheres is half-filled by a hemispherical shell of dielectric (of dielectric constant $\epsilon/\epsilon_{0}$), as shown in the figure.
+
+\begin{center}
+\begin{tikzpicture}[scale=1.3]
+  % dielectric: right half of the annulus between r=a and r=b
+  \fill[gray!35] (0,1.0) arc (90:-90:1.0) -- (0,-1.6) arc (-90:90:1.6) -- cycle;
+  % spheres
+  \draw[thick] (0,0) circle (1.0);
+  \draw[thick] (0,0) circle (1.6);
+  % interface line of dielectric halves
+  \draw[thin] (0,1.0) -- (0,1.6);
+  \draw[thin] (0,-1.0) -- (0,-1.6);
+  % radii arrows a and b
+  \draw[->] (0,0) -- (140:1.0);
+  \node at (140:1.22) {$a$};
+  \draw[->] (0,0) -- (235:1.6);
+  \node at (235:1.85) {$b$};
+  % +Q and -Q labels with arrows
+  \node at (-2.6,1.4) {$+Q$};
+  % Source p.172: +Q points to the inner conductor.
+  \draw[->] (-2.4,1.3) -- (140:1.0);
+  \node at (-2.7,-0.5) {$-Q$};
+  \draw[->] (-2.5,-0.45) -- (185:1.6);
+\end{tikzpicture}
+\par\vspace{0.5em}\textbf{Problem 4.10}
+\end{center}
+
+\begin{enumerate}
+\item[(a)] Find the electric field everywhere between the spheres.
+\item[(b)] Calculate the surface-charge distribution on the inner sphere.
+\item[(c)] Calculate the polarization-charge density induced on the surface of the dielectric at $r=a$.
+\end{enumerate}
+\solution
+
+\textbf{(a)} Let the inner conductor carry $+Q$ and the outer one
+$-Q$, as in the textbook figure. Seek a radial field
+$\mathbf E=K\hat{\mathbf r}/r^2$. Its potential between the conductors,
+with the outer one set to zero, is
+\[
+\Phi(r)=K\left(\frac1r-\frac1b\right).
+\]
+Both spherical conductors are equipotentials. On the plane separating
+the two hemispheres, this radial field is tangential, so $E_t$ is
+continuous and $D_n=0$ on both sides. Thus all interface conditions
+are satisfied. A Gaussian sphere of radius $a<r<b$ gives
+\[
+Q=\oint\mathbf D\cdot d\mathbf a
+=\epsilon_0\frac K{r^2}(2\pi r^2)
++\epsilon\frac K{r^2}(2\pi r^2)
+=2\pi(\epsilon+\epsilon_0)K.
+\]
+Consequently, by uniqueness for positive permittivities,
+\[
+\boxed{\mathbf E(r)=\frac{Q}{2\pi(\epsilon+\epsilon_0)r^2}\hat{\mathbf r},
+\qquad a<r<b.}
+\]
+For $\epsilon=\epsilon_0$ this reduces to the usual spherical-capacitor
+field $Q/(4\pi\epsilon_0r^2)$.
+
+\textbf{(b)} The free surface charge on the inner conductor is
+$\sigma_f=D_r(a^+)$, since the field inside it is zero. Hence
+\[
+\boxed{\sigma_f=\begin{cases}
+\displaystyle\frac{\epsilon Q}{2\pi(\epsilon+\epsilon_0)a^2},
+&\text{hemisphere touching dielectric},\\[5pt]
+\displaystyle\frac{\epsilon_0 Q}{2\pi(\epsilon+\epsilon_0)a^2},
+&\text{hemisphere touching vacuum}.
+\end{cases}}
+\]
+The two hemispheres carry $Q\epsilon/(\epsilon+\epsilon_0)$ and
+$Q\epsilon_0/(\epsilon+\epsilon_0)$, respectively, which sum to $Q$.
+The finite jump at the equator does not require an additional line
+charge in this solution.
+
+\textbf{(c)} In the dielectric
+$\mathbf P=(\epsilon-\epsilon_0)\mathbf E$. Its outward unit normal
+at its inner surface is $-\hat{\mathbf r}$, so
+\[
+\boxed{\sigma_{\rm pol}(a)=\mathbf P\cdot(-\hat{\mathbf r})
+=-\frac{(\epsilon-\epsilon_0)Q}
+{2\pi(\epsilon+\epsilon_0)a^2}.}
+\]
+This applies only on the dielectric hemisphere. As checks,
+$\rho_{\rm pol}=-\nabla\cdot\mathbf P=0$ within the dielectric,
+the flat interface has no polarization charge because $\mathbf P$
+is tangential, and the bound charge at $r=b$ has opposite total
+charge to that at $r=a$.
+
+\Needspace{5\baselineskip}
+\par\bigskip
+\noindent\textbf{4.11}\quad The following data on the variation of dielectric constant with pressure are taken from the \emph{Smithsonian Physical Tables}, 9th ed., p.~424:
+
+\begin{center}
+\begin{tabular}{c@{\hspace{4em}}c@{\hspace{4em}}l}
+\multicolumn{3}{c}{\textbf{Air at 292 K}}\\[2pt]
+\toprule
+\textbf{Pressure (atm)} & $\boldsymbol{\epsilon/\epsilon_{0}}$ &\\
+\midrule
+20 & 1.0108 & Relative density of air as a function of\\
+40 & 1.0218 & pressure is given in \emph{AIP Handbook},\\
+60 & 1.0333 & [3rd ed., McGraw-Hill, New York\\
+80 & 1.0439 & (1972), p.~4-165].\\
+100 & 1.0548 &\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\begin{center}
+\begin{tabular}{c@{\hspace{3em}}c@{\hspace{4em}}c}
+\multicolumn{3}{c}{\textbf{Pentane (C$_{5}$H$_{12}$) at 303 K}}\\[2pt]
+\toprule
+\textbf{Pressure (atm)} & \textbf{Density (g/cm$^{3}$)} & $\boldsymbol{\epsilon/\epsilon_{0}}$\\
+\midrule
+1 & 0.613 & 1.82\\
+$10^{3}$ & 0.701 & 1.96\\
+$4\times10^{3}$ & 0.796 & 2.12\\
+$8\times10^{3}$ & 0.865 & 2.24\\
+$12\times10^{3}$ & 0.907 & 2.33\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+Test the Clausius--Mossotti relation between dielectric constants and density for air and pentane in the ranges tabulated. Does it hold exactly? Approximately? If approximately, discuss fractional variations in density and $(\epsilon/\epsilon_{0}-1)$. For pentane, compare the Clausius--Mossotti relation to the cruder relation, $(\epsilon/\epsilon_{0}-1)\propto{}$density.
+\solution
+
+Put $\kappa=\epsilon/\epsilon_0$ and
+$F=(\kappa-1)/(\kappa+2)$. For fixed molecular mass and polarizability,
+Clausius--Mossotti says
+\[
+F=\frac{N\gamma_{\rm mol}}{3}=K\rho,\qquad
+\boxed{K=\frac{\kappa-1}{(\kappa+2)\rho}=\text{constant}.}
+\]
+It is $F$, rather than $\kappa$ or $\kappa-1$ itself, that should be
+proportional to mass density.
+
+\textbf{Air.} The pressure table alone does not specify real-gas
+densities. To make the density input explicit, use the primary air
+tables of Hilsenrath et al., \emph{NBS Circular 564} (1955),
+Table 2-1, p.~31, for the compressibility factor
+$Z_g=PV/(nRT)$.\footnote{\raggedright The source is available at
+\texttt{https://nvlpubs.nist.gov/nistpubs/Legacy/circ/}\allowbreak
+\texttt{nbscircular564.pdf}. The input rows, and the independent density
+rows from Table 2-2, p.~37, are transcribed in
+\texttt{supplementary/ch04-source/air\_reference.csv}.
+This supplies a checked density source in place of the AIP reference
+cited in the problem.}
+The relevant rows are
+\begin{center}
+\begin{tabular}{rrrrr}
+\toprule
+$P\ (\mathrm{atm})$&10&40&70&100\\
+\midrule
+$Z_g(290\ \mathrm K)$&0.99623&0.98782&0.98420&0.98600\\
+$Z_g(300\ \mathrm K)$&0.99717&0.99135&0.99000&0.99330\\
+\bottomrule
+\end{tabular}
+\end{center}
+Linearly interpolate in temperature,
+$Z_g(292,P)=0.8Z_g(290,P)+0.2Z_g(300,P)$.
+For the intervening pressures use the cubic interpolating polynomial
+through the four pressure entries:
+\[
+Z_g(P)=\sum_{i=1}^4 Z_g(P_i)
+\prod_{j\ne i}\frac{P-P_j}{P_i-P_j}.
+\]
+Since the temperature and composition are fixed,
+$\rho\propto P/Z_g$, so the reference density cancels:
+\[
+\frac{\rho(P)}{\rho(20)}=\frac{PZ_g(20)}{20Z_g(P)},\qquad
+\frac{K(P)}{K(20)}=
+\frac{F(P)/F(20)}{\rho(P)/\rho(20)}.
+\]
+This gives
+\begin{center}
+\begin{tabular}{rrrrr}
+\toprule
+$P\ (\mathrm{atm})$ & $Z_g$ & $\rho/\rho(20)$ & $10^3F$ & $K/K(20)$\\
+\midrule
+20 & 0.99330 & 1.00000 & 3.58709 & 1.00000\\
+40 & 0.98853 & 2.00965 & 7.21424 & 1.00076\\
+60 & 0.98586 & 3.02264 & 10.97814 & 1.01251\\
+80 & 0.98545 & 4.03185 & 14.42229 & 0.99721\\
+100 & 0.98746 & 5.02955 & 17.93898 & 0.99432\\
+\bottomrule
+\end{tabular}
+\end{center}
+The ratio is approximately constant: its peak-to-peak spread is about
+$1.8\%$ of its 20-atm value. Linear instead of cubic pressure
+interpolation changes the normalized ratios by less than $0.05\%$,
+so the percent-level conclusion does not depend on this interpolation
+choice. These are approximate density-based comparisons, not a claim
+of exact agreement. The dielectric data have no stated uncertainties,
+so their scatter alone should not be assigned a definite microscopic
+cause.
+
+Across the range,
+\[
+\frac{\Delta\rho}{\rho_{20}}\simeq4.0295\quad(403.0\%),\qquad
+\frac{\Delta(\kappa-1)}{\kappa_{20}-1}
+=\frac{0.0548-0.0108}{0.0108}=4.0741\quad(407.4\%).
+\]
+Thus the density and susceptibility increase by almost the same
+fraction even though each changes by roughly a factor of five.
+This is expected because
+$F=(\kappa-1)/[3+(\kappa-1)]\simeq(\kappa-1)/3$ for this gas.
+If ideal-gas densities were used instead, $F/P$ would range from
+$1.7935\times10^{-4}$ to $1.8297\times10^{-4}\ \mathrm{atm}^{-1}$,
+again giving approximate agreement but omitting the real-gas correction.
+
+\textbf{Pentane.} Here the actual densities are given. The two proposed
+constant ratios are $K=F/\rho$ and the cruder
+$J=(\kappa-1)/\rho$, both in $\mathrm{cm^3/g}$:
+\begin{center}
+\begin{tabular}{rrrrr}
+\toprule
+$P\ (\mathrm{atm})$ & $K$ & $K/K_1$ & $J$ & $J/J_1$\\
+\midrule
+1     & 0.350179 & 1.00000 & 1.337684 & 1.00000\\
+1000  & 0.345826 & 0.98757 & 1.369472 & 1.02376\\
+4000  & 0.341513 & 0.97525 & 1.407035 & 1.05184\\
+8000  & 0.338096 & 0.96549 & 1.433526 & 1.07165\\
+12000 & 0.338654 & 0.96709 & 1.466373 & 1.09620\\
+\bottomrule
+\end{tabular}
+\end{center}
+Clausius--Mossotti is again approximate: $K$ varies by about $3.45\%$
+relative to its initial value, whereas $J$ rises by $9.62\%$.
+It is therefore the better of the two proportionalities for these data,
+but neither is exact. The endpoint fractional changes are
+\[
+\frac{\Delta\rho}{\rho_1}=\frac{0.907-0.613}{0.613}=0.47961,
+\qquad
+\frac{\Delta(\kappa-1)}{\kappa_1-1}
+=\frac{1.33-0.82}{0.82}=0.62195.
+\]
+Density rises $47.96\%$, while susceptibility rises $62.20\%$.
+The difference is consistent in direction with the local-field
+correction: differentiating $F=(\kappa-1)/(\kappa+2)=K\rho$ at constant
+$K$ gives
+\[
+\frac{d(\kappa-1)}{\kappa-1}
+=\frac{\kappa+2}{3}\frac{d\rho}{\rho}.
+\]
+The multiplier is close to one for air, but is appreciably larger for
+pentane. The tabulated residual variation of $K$ measures the remaining
+failure of a strictly density-independent molecular-polarizability model.
+
+\Needspace{5\baselineskip}
+\par\bigskip
+\noindent\textbf{4.12}\quad Water vapor is a polar gas whose dielectric constant exhibits an appreciable temperature dependence. The following table gives experimental data on this effect. Assuming that water vapor obeys the ideal gas law, calculate the molecular polarizability as a function of inverse temperature and plot it. From the slope of the curve, deduce a value for the permanent dipole moment of the H$_{2}$O molecule (express the dipole moment in coulomb-meters).
+
+\begin{center}
+\begin{tabular}{c@{\hspace{3em}}c@{\hspace{4em}}c}
+\toprule
+$\mathbf{T(K)}$ & \textbf{Pressure (cm Hg)} & $\boldsymbol{(\epsilon/\epsilon_{0}-1)\times10^{5}}$\\
+\midrule
+393 & 56.49 & 400.2\\
+423 & 60.93 & 371.7\\
+453 & 65.34 & 348.8\\
+483 & 69.75 & 328.7\\
+\bottomrule
+\end{tabular}
+\end{center}
+\solution
+
+Use Jackson's convention $\langle\mathbf p_{\rm mol}\rangle=\epsilon_0\gamma_{\rm mol}\mathbf
+E_{\rm local}$, so the molecular polarizability $\gamma_{\rm mol}$ has units of
+volume. Here $k$ denotes Boltzmann's constant, as in (4.81)--(4.82).
+The alternative SI convention is
+$\alpha=\epsilon_0\gamma_{\rm mol}$, with units $\mathrm{C\,m^2/V}$.
+The ideal gas law gives $N=P/(kT)$. Applying the Clausius--Mossotti
+relation (4.70) to each row, with $\delta=\epsilon/\epsilon_0-1$, yields
+\[
+\boxed{\gamma_{\rm mol}(T)=\frac{3kT}{P}\frac{\delta}{3+\delta},\qquad
+\alpha(T)=\epsilon_0\gamma_{\rm mol}(T).}
+\]
+Here $P$ must be in pascals: $1\ \mathrm{cm\,Hg}=101325/76$
+Pa. The resulting values are
+\begin{center}
+\begin{tabular}{rrrr}
+\toprule
+$T\ (\mathrm K)$ & $10^3/T\ (\mathrm{K}^{-1})$
+& $\gamma_{\rm mol}/(10^{-28}\ \mathrm m^3)$
+& $\alpha/(10^{-39}\ \mathrm{C\,m^2/V})$\\
+\midrule
+393 & 2.54453 & 2.87938 & 2.54946\\
+423 & 2.36407 & 2.66897 & 2.36316\\
+453 & 2.20751 & 2.50133 & 2.21473\\
+483 & 2.07039 & 2.35455 & 2.08476\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+For completeness, the inverse-temperature law follows by averaging the
+permanent dipoles. If $p_0$ is the fixed molecular dipole magnitude and
+$u$ its direction cosine with the local field, its orientation energy
+is $-p_0Eu$. In a weak field $p_0E\ll kT$,
+\begin{align*}
+\langle p_\parallel\rangle
+&=p_0\frac{\int_{-1}^1u\exp[p_0Eu/(kT)]\,du}
+{\int_{-1}^1\exp[p_0Eu/(kT)]\,du}\\
+&=p_0\frac{(p_0E/kT)\int_{-1}^1u^2\,du+O(E^3)}
+{2+O(E^2)}
+=\frac{p_0^2E}{3kT}+O(E^3).
+\end{align*}
+Adding a temperature-independent induced polarizability gives
+\[
+\gamma_{\rm mol}(T)=\gamma_i+\frac{p_0^2}{3\epsilon_0k}\frac1T.
+\]
+An unweighted straight-line fit $\gamma_{\rm mol}=A+B/T$ is obtained from
+$x_i=1/T_i$, $y_i=\gamma_{\rm mol}(T_i)$ by
+\[
+B=\frac{\sum_i(x_i-\bar x)(y_i-\bar y)}{\sum_i(x_i-\bar x)^2},
+\qquad A=\bar y-B\bar x.
+\]
+The four rows give
+\[
+A=6.3875\times10^{-30}\ \mathrm m^3,\qquad
+B=1.10475\times10^{-25}\ \mathrm{m^3\,K}.
+\]
+Thus the requested dipole magnitude is
+\[
+\boxed{p_0=\sqrt{3\epsilon_0kB}=6.365\times10^{-30}\ \mathrm{C\,m}
+\simeq6.4\times10^{-30}\ \mathrm{C\,m}.}
+\]
+The rounding of the data does not warrant interpreting the last digits
+as an experimental precision. The largest deviation of a tabulated
+polarizability from this fitted line is $0.25\%$.
+\begin{center}
+\begin{tikzpicture}[x=8cm,y=4cm]
+\draw[->] (2.0,2.25)--(2.63,2.25) node[right] {$10^3/T$};
+\draw[->] (2.0,2.25)--(2.0,2.99) node[above] {$\gamma_{\rm mol}/(10^{-28}\ \mathrm m^3)$};
+\foreach \x in {2.1,2.2,2.3,2.4,2.5,2.6}
+{\draw (\x,2.265)--(\x,2.235) node[below] {\small\x};}
+\foreach \y in {2.4,2.6,2.8}
+{\draw (1.993,\y)--(2.007,\y) node[left=4pt] {\small\y};}
+\draw[blue,thick,domain=2.06:2.56] plot (\x,{0.0638746474+1.1047451447*\x});
+\foreach \x/\y in {2.544529/2.879382,2.364066/2.668973,2.207506/2.501331,2.070393/2.354547}
+{\fill (\x,\y) circle (1.8pt);}
+\node[blue,anchor=west] at (2.08,2.88) {\small fitted line};
+\end{tikzpicture}
+\end{center}
+Neglecting the small local-field correction would replace
+$3\delta/(3+\delta)$ by $\delta$; retaining it as above is consistent
+with the chapter's definition of molecular polarizability.
+
+\Needspace{5\baselineskip}
+\par\bigskip
+\noindent\textbf{4.13}\quad Two long, coaxial, cylindrical conducting surfaces of radii $a$ and $b$ are lowered vertically into a liquid dielectric. If the liquid rises an average height $h$ between the electrodes when a potential difference $V$ is established between them, show that the susceptibility of the liquid is
+\[
+\chi_{e}=\frac{(b^{2}-a^{2})\rho gh\,\ln(b/a)}{\epsilon_{0}V^{2}}
+\]
+where $\rho$ is the density of the liquid, $g$ is the acceleration due to gravity, and the susceptibility of air is neglected.
+\solution
+
+Neglect end effects, surface tension, and changes of liquid density,
+and take the external reservoir to be large enough that its level is
+fixed. Write $\epsilon=\epsilon_0(1+\chi_e)$ and
+$\Lambda=\ln(b/a)$. A homogeneous length $L$ of the coaxial capacitor
+has radial field $E_r=V/(r\Lambda)$ and capacitance
+\[
+C=\frac{2\pi\epsilon L}{\Lambda}.
+\]
+Raising the dielectric by $dh$ replaces a length $dh$ of air, so
+\[
+\frac{dC}{dh}=\frac{2\pi(\epsilon-\epsilon_0)}{\Lambda}
+=\frac{2\pi\epsilon_0\chi_e}{\Lambda}.
+\]
+At fixed voltage, the battery supplies $V\,dQ=V^2dC$, while the
+field energy increases by $d(\tfrac12CV^2)=\tfrac12V^2dC$.
+Their difference is available for mechanical work, hence
+\[
+F_{\rm electric}\,dh=\frac12V^2dC,\qquad
+F_{\rm electric}=\frac{\pi\epsilon_0\chi_e V^2}{\Lambda}.
+\]
+Equivalently, the mechanical potential at fixed $V$ includes
+$-CV^2/2$, not $+CV^2/2$.
+
+The excess volume of liquid between the electrodes is
+$\pi(b^2-a^2)h$, where $h$ is the area-averaged rise. Its weight,
+after subtracting the hydrostatic support at the external free-surface
+level, is
+\[
+F_g=\rho g\pi(b^2-a^2)h.
+\]
+Force balance gives
+\[
+\rho g\pi(b^2-a^2)h
+=\frac{\pi\epsilon_0\chi_e V^2}{\ln(b/a)},\qquad
+\boxed{\chi_e=\frac{(b^2-a^2)\rho gh\ln(b/a)}{\epsilon_0V^2}.}
+\]
+For a flat column the same result follows by minimizing
+$\rho g\pi(b^2-a^2)h^2/2-C(h)V^2/2$.
+The total electric force can also be checked by integrating the
+leading local dielectric pressure over the annular cross section:
+\[
+\int_a^b\frac12(\epsilon-\epsilon_0)
+\left[\frac{V}{r\ln(b/a)}\right]^2 2\pi r\,dr
+=\frac{\pi\epsilon_0\chi_e V^2}{\ln(b/a)}.
+\]
+Thus use of the average rise is consistent with the varying radial
+field. The susceptibility is positive for a liquid that rises, and
+all dimensions cancel in the boxed expression.

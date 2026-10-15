@@ -1,0 +1,2204 @@
+% Problems, Chapter 8: Waveguides, Resonant Cavities, and Optical Fibers
+% Jackson, Classical Electrodynamics, 3rd ed.
+% Requires: amsmath, amssymb, tikz
+
+\section*{Problems}
+
+\Needspace{5\baselineskip}
+\par\bigskip
+\noindent\textbf{8.1}\quad Consider the electric and magnetic fields in the surface region of an excellent conductor in the approximation of Section 8.1, where the skin depth is very small compared to the radii of curvature of the surface or the scale of significant spatial variation of the fields just outside.
+\begin{enumerate}
+\item[(a)] For a single-frequency component, show that the magnetic field $\mathbf{H}$ and the current density $\mathbf{J}$ are such that $\mathbf{f}$, the time-averaged force per unit area at the surface from the conduction current, is given by
+\[
+\mathbf{f}=-\mathbf{n}\,\frac{\mu_{c}}{4}\,|\mathbf{H}_{\parallel}|^{2}
+\]
+where $\mathbf{H}_{\parallel}$ is the peak parallel component of magnetic field at the surface, $\mu_{c}$ is the magnetic permeability of the conductor, and $\mathbf{n}$ is the outward normal at the surface.
+\item[(b)] If the magnetic permeability $\mu$ outside the surface is different from $\mu_{c}$, is there an additional magnetic force per unit area? What about electric forces?
+\item[(c)] Assume that the fields are a superposition of different frequencies (all high enough that the approximations still hold). Show that the time-averaged force takes the same form as in part a with $|\mathbf{H}_{\parallel}|^{2}$ replaced by $2\langle|\mathbf{H}_{\parallel}|^{2}\rangle$, where the angle brackets $\langle\cdots\rangle$ mean time average.
+\end{enumerate}
+\solution
+
+Use peak phasors with time dependence $e^{-i\omega t}$ and measure
+$u\geq0$ inward from the surface.  Locally the conductor is a
+half-space, and the leading skin-layer fields are
+\[
+\mathbf H(u)=\mathbf H_\parallel e^{-(1-i)u/\delta},\qquad
+\mathbf J=\nabla\times\mathbf H
+=\frac{1-i}{\delta}\,\mathbf n\times\mathbf H,
+\quad \delta=\sqrt{\frac2{\omega\mu_c\sigma}}.
+\]
+Here $\nabla=-\mathbf n\partial_u$ to this order and displacement
+current is negligible compared with $\sigma\mathbf E$.
+
+\textbf{(a)} The time average of the conduction-current force density is
+\[
+\langle\mathbf J\times\mathbf B\rangle
+=\frac{\mu_c}2\operatorname{Re}(\mathbf J\times\mathbf H^*)
+=-\frac{\mu_c}{2\delta}\,\mathbf n
+|\mathbf H_\parallel|^2e^{-2u/\delta},
+\]
+where $(\mathbf n\times\mathbf H)\times\mathbf H^*
+=-\mathbf n|\mathbf H|^2$ since $\mathbf n\cdot\mathbf H=0$.
+Integration through the layer gives
+\[
+\boxed{\mathbf f=\int_0^\infty\langle\mathbf J\times\mathbf B\rangle du
+=-\frac{\mu_c}{4}|\mathbf H_\parallel|^2\mathbf n.}
+\]
+The result is a magnetic pressure directed into the conductor.
+
+\textbf{(b)} This is only the force from the conduction current.
+In the macroscopic Maxwell-stress description, the permeability
+jump also produces the magnetic traction
+\[
+\mathbf f_{\mu}=\frac{\mu_c-\mu}{4}|\mathbf H_\parallel|^2\mathbf n.
+\]
+One way to see the sign and magnitude is to integrate the magnetic
+material-force term $-\tfrac12H^2\nabla\mu$ across the interface:
+$\int\nabla\mu\,du_{\rm outward}=(\mu-\mu_c)\mathbf n$ and
+$\langle H^2\rangle=|H_\parallel|^2/2$.
+Adding the two contributions leaves the exterior magnetic traction
+$-\mu|H_\parallel|^2\mathbf n/4$.
+The surface charge supplies an outward electric traction
+$+\epsilon|E_\perp|^2\mathbf n/4$, to leading order in the
+excellent-conductor approximation.  Thus the leading total
+macroscopic electromagnetic traction is
+\[
+\frac14\left(\epsilon|E_\perp|^2-\mu|H_\parallel|^2\right)\mathbf n.
+\]
+This uses linear, isotropic media and the stated surface approximation;
+mechanical stresses of the material are separate from this
+ electromagnetic traction.  Tangential electric fields and internal
+normal electric fields supply higher-order corrections.
+
+\textbf{(c)} For distinct frequencies, products oscillating at their
+sum or difference average to zero over a sufficiently long time.
+Combine components of the same frequency into a single phasor first.
+For frequency-independent $\mu_c$ in the range considered, summing
+(a) gives
+\[
+\mathbf f=-\frac{\mu_c}{4}\mathbf n\sum_\omega|\mathbf H_\omega|^2
+=-\frac{\mu_c}{2}\mathbf n\langle|\mathbf H_\parallel(t)|^2\rangle.
+\]
+This is the claimed replacement.  If permeability is dispersive,
+the first expression instead contains $\mu_c(\omega)$ in each
+frequency contribution; it cannot in general be factored out.
+
+\Needspace{5\baselineskip}
+\par\bigskip
+\noindent\textbf{8.2}\quad A transmission line consisting of two concentric circular cylinders of metal with conductivity $\sigma$ and skin depth $\delta$, as shown, is filled with a uniform lossless dielectric ($\mu$, $\epsilon$). A TEM mode is propagated along this line. Section 8.1 applies.
+\begin{enumerate}
+\item[(a)] Show that the time-averaged power flow along the line is
+\[
+P=\sqrt{\frac{\mu}{\epsilon}}\;\pi a^{2}\,|H_{0}|^{2}\,\ln\!\left(\frac{b}{a}\right)
+\]
+where $H_{0}$ is the peak value of the azimuthal magnetic field at the surface of the inner conductor.
+\end{enumerate}
+
+\begin{center}
+\begin{tikzpicture}[scale=1.3]
+  % outer conductor (shaded ring)
+  \fill[gray!45,even odd rule] (0,0) circle (1.55) (0,0) circle (1.15);
+  \draw[thick] (0,0) circle (1.55);
+  \draw[thick] (0,0) circle (1.15);
+  % inner conductor (shaded disk)
+  \fill[gray!45] (0,0) circle (0.45);
+  \draw[thick] (0,0) circle (0.45);
+  % b dimension across top
+  \draw[<->] (0,2.05) -- (1.15,2.05);
+  \draw[dashed] (0,1.15) -- (0,2.05);
+  \draw[dashed] (1.15,0) -- (1.15,2.05);
+  \node[above] at (0.58,2.02) {$b$};
+  % a dimension across inner
+  \draw[<->] (0,0.95) -- (0.45,0.95);
+  \draw[dashed] (0,0.45) -- (0,0.95);
+  \draw[dashed] (0.45,0.45) -- (0.45,0.95);
+  \node[above] at (0.22,0.85) {$a$};
+  \node at (2.3,-1.6) {\textbf{Problem 8.2}};
+\end{tikzpicture}
+\end{center}
+
+\begin{enumerate}
+\item[(b)] Show that the transmitted power is attenuated along the line as
+\[
+P(z)=P_{0}e^{-2\gamma z}
+\]
+where
+\[
+\gamma=\frac{1}{2\sigma\delta}\sqrt{\frac{\epsilon}{\mu}}\;
+\frac{\left(\dfrac{1}{a}+\dfrac{1}{b}\right)}{\ln\left(\dfrac{b}{a}\right)}
+\]
+\item[(c)] The characteristic impedance $Z_{0}$ of the line is defined as the ratio of the voltage between the cylinders to the axial current flowing in one of them at any position $z$. Show that for this line
+\[
+Z_{0}=\frac{1}{2\pi}\sqrt{\frac{\mu}{\epsilon}}\,\ln\!\left(\frac{b}{a}\right)
+\]
+\item[(d)] Show that the series resistance and inductance per unit length of the line are
+\begin{align*}
+R&=\frac{1}{2\pi\sigma\delta}\left(\frac{1}{a}+\frac{1}{b}\right)\\
+L&=\left\{\frac{\mu}{2\pi}\ln\!\left(\frac{b}{a}\right)+\frac{\mu_{c}\delta}{4\pi}\left(\frac{1}{a}+\frac{1}{b}\right)\right\}
+\end{align*}
+where $\mu_{c}$ is the permeability of the conductor. The correction to the inductance comes from the penetration of the flux into the conductors by a distance of order $\delta$.
+\end{enumerate}
+\solution
+
+Here $b$ is the radius of the \emph{inner surface} of the outer
+conductor.  Set $\eta=\sqrt{\mu/\epsilon}$ and
+$R_s=1/(\sigma\delta)$, the surface resistance.  To leading order
+in skin depth, the TEM fields in $a<\rho<b$ are
+\[
+H_\phi(\rho)=\frac{aH_0}{\rho},\qquad E_\rho=\eta H_\phi,
+\qquad k=\omega\sqrt{\mu\epsilon}.
+\]
+Ampere's law fixes $I=2\pi aH_0$, while the radial electrostatic
+solution and the plane-wave relation fix $E_\rho$.
+
+\textbf{(a)} With peak phasors the mean axial Poynting flux is
+$\eta|H_\phi|^2/2$.  Therefore
+\[
+P=\frac\eta2\int_a^b\frac{a^2|H_0|^2}{\rho^2}2\pi\rho\,d\rho
+=\boxed{\eta\pi a^2|H_0|^2\ln(b/a)}.
+\]
+
+\textbf{(b)} The dissipated power per unit length on both surfaces is
+\[
+P'_\ell=\frac{R_s}2\oint|H_\parallel|^2dl
+=\pi R_sa^2|H_0|^2\left(\frac1a+\frac1b\right).
+\]
+Conservation of energy requires $dP/dz=-P'_\ell=-2\gamma P$.
+Dividing by the preceding expression for $P$ gives
+\[
+\gamma=\frac{R_s}{2\eta}\frac{a^{-1}+b^{-1}}{\ln(b/a)},
+\qquad P(z)=P(0)e^{-2\gamma z}.
+\]
+
+\textbf{(c)} The voltage magnitude is
+$V=\int_a^bE_\rho d\rho=\eta aH_0\ln(b/a)$.  Consequently
+\[
+\boxed{Z_0=V/I=\frac\eta{2\pi}\ln(b/a).}
+\]
+It is the leading, real characteristic impedance; conductor losses
+produce small complex corrections to the exact impedance.
+
+\textbf{(d)} From $P'_\ell=R|I|^2/2$,
+\[
+\boxed{R=\frac{R_s}{2\pi}\left(\frac1a+\frac1b\right).}
+\]
+The average magnetic energy per unit length in the dielectric is
+\[
+U_{m,\rm ext}=\frac\mu4\int_a^b|H_\phi|^2\,2\pi\rho d\rho
+=\frac{\mu\pi a^2|H_0|^2}{2}\ln(b/a).
+\]
+The penetrating field decays as $e^{-u/\delta}$ in amplitude, giving
+\[
+U_{m,\rm skin}=\frac{\mu_c}{4}\oint dl\,|H_\parallel|^2
+\int_0^\infty e^{-2u/\delta}du
+=\frac{\mu_c\delta\pi a^2|H_0|^2}{4}
+\left(\frac1a+\frac1b\right).
+\]
+Using $U_m=L|I|^2/4$ then gives
+\[
+\boxed{L=\frac\mu{2\pi}\ln(b/a)+
+\frac{\mu_c\delta}{4\pi}\left(\frac1a+\frac1b\right).}
+\]
+As a check, $\omega L_{\rm skin}=R$ because
+$\omega\mu_c\delta/2=1/(\sigma\delta)$, the equality of the
+resistive and reactive parts of the good-conductor surface impedance.
+
+\Needspace{5\baselineskip}
+\par\bigskip
+\noindent\textbf{8.3}\quad\begin{enumerate}
+\item[(a)] A transmission line consists of two identical thin strips of metal, shown in cross section in the sketch. Assuming that $b\gg a$, discuss the propagation of a TEM mode on this line, repeating the derivations of Problem 8.2. Show that
+\begin{align*}
+P&=\frac{ab}{2}\sqrt{\frac{\mu}{\epsilon}}\;|H_{0}|^{2}\\[2pt]
+\gamma&=\frac{1}{a\sigma\delta}\sqrt{\frac{\epsilon}{\mu}}\\[2pt]
+Z_{0}&=\sqrt{\frac{\mu}{\epsilon}}\left(\frac{a}{b}\right)\\[2pt]
+R&=\frac{2}{\sigma\delta b}\\[2pt]
+L&=\left(\frac{\mu a+\mu_{c}\delta}{b}\right)
+\end{align*}
+\end{enumerate}
+
+\begin{center}
+\begin{tikzpicture}[scale=1.0]
+  % top figure: two thin strips
+  \fill[gray!45] (-0.6,0.75) rectangle (4.6,1.05);
+  \draw[thick] (-0.6,0.75) rectangle (4.6,1.05);
+  \fill[gray!45] (-0.6,-0.05) rectangle (4.6,0.25);
+  \draw[thick] (-0.6,-0.05) rectangle (4.6,0.25);
+  \draw[<->] (-0.6,1.35) -- (4.6,1.35);
+  \node[above] at (2.0,1.32) {$b$};
+  \draw[<->] (-1.05,0.25) -- (-1.05,0.75);
+  \node[left] at (-1.1,0.5) {$a$};
+  \node[right] at (4.75,0.45) {$\mu,\epsilon$};
+  % bottom figure: microstrip
+  \fill[gray!45] (-0.6,-2.75) rectangle (4.6,-2.35);
+  \draw[thick] (-0.6,-2.75) rectangle (4.6,-2.35);
+  \fill[gray!15] (-0.6,-2.35) rectangle (4.6,-1.95);
+  \draw[thick] (-0.6,-2.35) rectangle (4.6,-1.95);
+  \fill[gray!45] (0.85,-1.95) rectangle (3.55,-1.6);
+  \draw[thick] (0.85,-1.95) rectangle (3.55,-1.6);
+  \draw[<->] (0.85,-1.3) -- (3.55,-1.3);
+  \node[above] at (2.2,-1.32) {$b$};
+  \draw[<->] (0.2,-2.35) -- (0.2,-1.95);
+  \node[left] at (0.1,-2.15) {$h$};
+  \node[right] at (4.75,-1.55) {$\mu_{0},\epsilon_{0}$};
+  \node[right] at (4.75,-2.15) {$\epsilon$};
+  \node at (5.9,-2.8) {\textbf{Problem 8.3}};
+\end{tikzpicture}
+\end{center}
+
+\begin{enumerate}
+\item[] where the symbols on the left have the same meanings as in Problem 8.2.
+\item[(b)] The lower half of the figure shows the cross section of a microstrip line with a strip of width $b$ mounted on a dielectric substrate of thickness $h$ and dielectric constant $\epsilon$, all on a ground plane. What differences occur here compared to part a if $b\gg h$? If $b\ll h$?
+\end{enumerate}
+\solution
+
+\textbf{(a)} Neglect fringing when $b\gg a$ and assume each metal
+strip is thick compared with its skin depth.  In the gap the fields
+are uniform, with $E_0=\eta H_0$, where
+$\eta=\sqrt{\mu/\epsilon}$.  The voltage and current are
+$V=aE_0$ and $I=bH_0$.  The two inner faces carry opposite axial
+currents; the exterior field is negligible at this order.  Thus
+\[
+P=\frac12ab\eta|H_0|^2,\qquad
+Z_0=\frac VI=\eta\frac ab.
+\]
+The two active surfaces dissipate
+$P'_\ell=(R_s/2)(2b|H_0|^2)=R_sb|H_0|^2$.
+Comparison with $P'_\ell=2\gamma P=R|I|^2/2$ gives
+\[
+\boxed{\gamma=\frac{R_s}{\eta a}
+=\frac1{a\sigma\delta}\sqrt{\frac\epsilon\mu},\qquad
+R=\frac{2R_s}{b}=\frac2{\sigma\delta b}.}
+\]
+The external magnetic energy is $\mu ab|H_0|^2/4$.
+The energy in both skin layers is
+$(\mu_c/4)(2b|H_0|^2)(\delta/2)=\mu_c\delta b|H_0|^2/4$.
+Equating their sum to $L|I|^2/4$ yields
+\[
+\boxed{L=(\mu a+\mu_c\delta)/b.}
+\]
+These are all the stated results, with energy velocity
+$1/\sqrt{\mu\epsilon}$ to leading order.  ``Thin strips'' means
+thin geometrically, not thinner than the penetration depth.
+
+\textbf{(b)} For $b\gg h$, nearly all of the electric and magnetic
+energy lies between the strip and the ground plane.  The preceding
+parallel-plate formulas apply to leading order with $a=h$ and the
+substrate permittivity and permeability; fields at the two strip
+edges provide relative corrections that vanish as $h/b\to0$.
+For finite $b/h$ the air and substrate have different wave speeds,
+so the mode is generally only approximately TEM.
+
+For $b\ll h$ the fields spread transversely over distances of order
+$h$, both in the substrate and in the air.  There is no uniform-field
+plate region.  In the electrically small, quasi-static limit the
+line is described by $Z_0=\sqrt{L'/C'}$ and
+$v=1/\sqrt{L'C'}$, where $C'$ is obtained from the two-dielectric
+electrostatic problem and $L'$ from the corresponding magnetostatic
+problem.  For nonmagnetic media the effective permittivity lies
+between $\epsilon_0$ and $\epsilon$; in the very narrow-strip limit
+its leading value is $(\epsilon+\epsilon_0)/2$, because the local
+field around a strip on the interface occupies two half-spaces.
+To see both this average and the logarithmic dependence, let $\lambda$
+be charge per unit length and consider $b\ll\rho\ll h$. The two
+semicircles in a Gaussian cylinder give
+\[
+\pi\rho(\epsilon+\epsilon_0)E_\rho\simeq\lambda,
+\qquad V\simeq\frac{\lambda}{\pi(\epsilon+\epsilon_0)}\mathcal L,
+\qquad \mathcal L=\ln(h/b)+O(1).
+\]
+The additive constant depends on the near-strip and ground-plane
+geometry. Ampere's law gives $H_\phi\simeq I/(2\pi\rho)$ in the
+same intermediate region. Integrating its magnetic energy gives
+\[
+\frac{\mu_0}{4}\int_b^h\left|\frac{I}{2\pi\rho}\right|^2
+2\pi\rho\,d\rho\simeq\frac{\mu_0|I|^2}{8\pi}\mathcal L
+=\frac{L'|I|^2}{4}.
+\]
+Thus $C'\simeq\pi(\epsilon+\epsilon_0)/\mathcal L$,
+$L'\simeq\mu_0\mathcal L/(2\pi)$, and
+\[
+v\simeq\frac1{\sqrt{\mu_0(\epsilon+\epsilon_0)/2}},\qquad
+Z_0\simeq\frac{\mathcal L}{2\pi}
+\sqrt{\frac{2\mu_0}{\epsilon+\epsilon_0}}.
+\]
+The impedance therefore grows logarithmically with $h/b$. The
+strongly nonuniform strip and return currents also
+require the surface-loss integral with their actual distributions;
+the wide-plate resistance and attenuation formulas no longer apply.
+At wavelengths comparable with the transverse dimensions, the
+mode has longitudinal field components and geometric dispersion,
+so even the quasi-TEM circuit description needs correction.
+
+\Needspace{5\baselineskip}
+\par\bigskip
+\noindent\textbf{8.4}\quad Transverse electric and magnetic waves are propagated along a hollow, right circular cylinder with inner radius $R$ and conductivity $\sigma$.
+\begin{enumerate}
+\item[(a)] Find the cutoff frequencies of the various TE and TM modes. Determine numerically the lowest cutoff frequency (the dominant mode) in terms of the tube radius and the ratio of cutoff frequencies of the next four higher modes to that of the dominant mode. For this part assume that the conductivity of the cylinder is infinite.
+\item[(b)] Calculate the attenuation constants of the waveguide as a function of frequency for the lowest two distinct modes and plot them as a function of frequency.
+\end{enumerate}
+\solution
+
+Let $v=1/\sqrt{\mu\epsilon}$ and $\eta=\sqrt{\mu/\epsilon}$ for
+the lossless filling (vacuum gives $v=c$).  Write the fields as
+$e^{ikz-i\omega t}$, and put $\gamma^2=\omega^2/v^2-k^2$.
+Here $\gamma$ is the transverse eigenvalue parameter of (8.34),
+and $\beta$ below is the attenuation constant of Section 8.5.
+We use $H_z=B_z/\mu$ when evaluating conductor losses; the
+constant factor $\mu$ does not change the scalar eigenvalue problem.
+
+\textbf{(a)} Regular longitudinal fields have radial dependence
+$J_m(\gamma\rho)$ and angular dependence $\cos m\phi$ or
+$\sin m\phi$.  A TM mode has $E_z=0$ on the wall, while a TE
+mode has $\partial_\rho H_z=0$ there.  Thus
+\[
+\boxed{\omega_{c,mn}^{\rm TM}=\frac vR x_{mn},\quad J_m(x_{mn})=0;
+\qquad\omega_{c,mn}^{\rm TE}=\frac vR x'_{mn},\quad J_m'(x'_{mn})=0.}
+\]
+Use positive roots only; the constant Neumann scalar mode does not
+produce a nonzero TE electromagnetic field in a hollow guide.
+For $m>0$ each family has two angular polarizations.  The first
+families, with their cutoffs divided by that of $\mathrm{TE}_{11}$,
+are
+\[
+\begin{array}{c|rr}
+\text{family}&\omega_cR/v&\omega_c/\omega_{c,11}^{\rm TE}\\\hline
+\mathrm{TE}_{11}&1.841183781&1\\
+\mathrm{TM}_{01}&2.404825558&1.306130101\\
+\mathrm{TE}_{21}&3.054236928&1.658844141\\
+\mathrm{TE}_{01}&3.831705970&2.081109995\\
+\mathrm{TM}_{11}&3.831705970&2.081109995\\
+\mathrm{TE}_{31}&4.201188941&2.281786850
+\end{array}
+\]
+The middle two families have the same cutoff.  Thus the table gives
+both the next four families and, if ``higher'' is counted by distinct
+frequency, the next four distinct frequencies.  The dominant cutoff
+is $\omega_c=1.841183781v/R$, or $f_c=0.293033v/R$.
+
+\textbf{(b)} Let $R_s=1/(\sigma\delta)=\sqrt{\omega\mu_c/(2\sigma)}$
+and denote amplitude attenuation by $\beta$, so power decays as
+$e^{-2\beta z}$.  The loss formula is
+\[
+\beta=\frac{R_s}{4P}\oint|H_\parallel|^2dl.
+\]
+For clarity, the field and normalization steps behind this formula
+are as follows. Maxwell's equations, with the phase convention above,
+give the transverse fields in (8.26):
+\begin{align*}
+\mathbf E_t&=\frac{i}{\gamma^2}
+  (k\nabla_tE_z-\omega\mu\widehat{\mathbf z}\times\nabla_tH_z),\\
+\mathbf H_t&=\frac{i}{\gamma^2}
+  (k\nabla_tH_z+\omega\epsilon\widehat{\mathbf z}\times\nabla_tE_z).
+\end{align*}
+For either scalar $\psi$, integration by parts and its Dirichlet
+or Neumann wall condition imply
+\[
+\int|\nabla_t\psi|^2dA
+=-\int\psi^*\nabla_t^2\psi\,dA
++\oint\psi^*\partial_n\psi\,dl=\gamma^2N,
+\qquad N=\int|\psi|^2dA.
+\]
+Inserting the transverse fields into
+$P=\tfrac12\operatorname{Re}\int(\mathbf E_t\times\mathbf H_t^*)
+\cdot\widehat{\mathbf z}\,dA$ then supplies the power formulas below.
+For a TM field $\psi=E_z$ with $N=\int|\psi|^2dA$,
+\[
+P=\frac{\omega\epsilon k}{2\gamma^2}N,\qquad
+\oint|H_\parallel|^2dl
+=\frac{\omega^2\epsilon^2}{\gamma^4}\oint|\partial_n\psi|^2dl.
+\]
+The radial normalization follows directly from Bessel's equation:
+\[
+\frac{d}{dx}\left\{x^2J_m'(x)^2+(x^2-m^2)J_m(x)^2\right\}
+=2xJ_m(x)^2.
+\]
+Its integral from $0$ to $\chi=\gamma R$ gives
+\[
+\int_0^R\rho J_m(\gamma\rho)^2d\rho
+=\frac{R^2}{2}\left[J_m'(\chi)^2+
+\left(1-\frac{m^2}{\chi^2}\right)J_m(\chi)^2\right].
+\]
+At a TM zero, the angular factor cancels between the area integral
+and the boundary integral $R\gamma^2J_m'(\chi)^2$ times that factor.
+This gives
+$\oint|\partial_n\psi|^2dl=2\gamma^2N/R$.  Hence
+\[
+\boxed{\beta_{\rm TM}=
+\frac{R_s}{\eta R\sqrt{1-(\omega_c/\omega)^2}}.}
+\]
+For TE modes put $\psi=H_z$.  At the wall the longitudinal field
+and the tangential transverse field both contribute:
+\[
+P=\frac{\omega\mu k}{2\gamma^2}N,\qquad
+\oint|H_\parallel|^2dl
+=\oint\left(|\psi|^2+\frac{k^2}{\gamma^4}|\partial_s\psi|^2\right)dl.
+\]
+For $\chi=x'_{mn}$ the Bessel norm and the angular derivative give
+\[
+\frac{\oint|\psi|^2dl}{N}=\frac{2}{R(1-m^2/\chi^2)},\qquad
+\oint|\partial_s\psi|^2dl=\frac{m^2}{R^2}\oint|\psi|^2dl.
+\]
+Substitute $k^2=(\omega/v)^2-\chi^2/R^2$. To display the
+simplification, put $t=\omega_c/\omega$; the dimensionless factor is
+\[
+\frac{t^2}{1-m^2/\chi^2}
+\left[1+\frac{m^2}{\chi^2}\frac{1-t^2}{t^2}\right]
+=t^2+\frac{m^2}{\chi^2-m^2}.
+\]
+Therefore
+\[
+\boxed{\beta_{{\rm TE},mn}=
+\frac{R_s}{\eta R\sqrt{1-(\omega_c/\omega)^2}}
+\left[\left(\frac{\omega_c}{\omega}\right)^2+
+\frac{m^2}{\chi^2-m^2}\right].}
+\]
+Use $m=1$, $\chi=1.841183781$ for the lowest TE mode, and the
+TM formula with $\omega_cR/v=2.404825558$ for the next distinct
+mode.  The plot retains $R_s\propto\sqrt\omega$; the normalization
+uses its value at the dominant cutoff.
+\begin{center}\input{supplementary/ch08_attenuation.tex}\end{center}
+The perturbative formulas apply above cutoff when the attenuation is
+small compared with $k$.  Their divergences arbitrarily close to
+cutoff mark a failure of that approximation, not an infinite physical
+loss.  Below cutoff there is already evanescent decay in a perfect guide.
+
+\Needspace{5\baselineskip}
+\par\bigskip
+\noindent\textbf{8.5}\quad A waveguide is constructed so that the cross section of the guide forms a right triangle with sides of length $a$, $a$, $\sqrt{2}a$, as shown. The medium inside has $\mu_{r}=\epsilon_{r}=1$.
+\begin{enumerate}
+\item[(a)] Assuming infinite conductivity for the walls, determine the possible modes of propagation and their cutoff frequencies.
+\end{enumerate}
+
+\begin{center}
+\begin{tikzpicture}[scale=1.15]
+  % shaded triangular wall border
+  \fill[gray!40] (0,0) -- (3.2,0) -- (3.2,3.2) -- cycle;
+  \fill[white] (0.55,0.45) -- (2.7,0.45) -- (2.7,2.6) -- cycle;
+  \draw[thick] (0,0) -- (3.2,0) -- (3.2,3.2) -- cycle;
+  \draw[thick] (0.55,0.45) -- (2.7,0.45) -- (2.7,2.6) -- cycle;
+  % a dimension on right
+  \draw[<->] (2.7,2.6) -- (2.7,0.45);
+  \node[right] at (2.85,1.55) {$a$};
+  \node at (3.6,-0.6) {\textbf{Problem 8.5}};
+\end{tikzpicture}
+\end{center}
+
+\begin{enumerate}
+\item[(b)] For the lowest modes of each type calculate the attenuation constant, assuming that the walls have large, but finite, conductivity. Compare the result with that for a square guide of side $a$ made from the same material.
+\end{enumerate}
+\solution
+
+Choose the triangle $0<y<x<a$, one half of the square
+$0<x,y<a$.  Reflection across $x=y$ converts the triangular
+boundary conditions into a parity condition in the square.
+
+\textbf{(a)} TM fields vanish on all three sides.  Antisymmetric
+combinations of the square's Dirichlet modes give
+\[
+E_z=E_0\left[\sin\frac{m\pi x}{a}\sin\frac{n\pi y}{a}
+-\sin\frac{n\pi x}{a}\sin\frac{m\pi y}{a}\right],
+\quad m>n\geq1.
+\]
+TE fields have zero normal derivative.  The required symmetric
+Neumann combinations are
+\[
+H_z=H_0\left[\cos\frac{m\pi x}{a}\cos\frac{n\pi y}{a}
++\cos\frac{n\pi x}{a}\cos\frac{m\pi y}{a}\right],
+\quad m\geq n\geq0,\quad(m,n)\ne(0,0).
+\]
+For $m=n$ the redundant factor of two can be absorbed into $H_0$.
+Reflection gives a complete set, and for both types
+\[
+\boxed{\omega_{c,mn}=\frac{\pi c}{a}\sqrt{m^2+n^2},\qquad
+k^2=(\omega/c)^2-(\pi/a)^2(m^2+n^2).}
+\]
+There is no TEM mode in this simply connected hollow cross section.
+The lowest TE and TM fields are respectively
+$\cos(\pi x/a)+\cos(\pi y/a)$ and the antisymmetric $(2,1)$
+combination; their cutoffs are $\pi c/a$ and $\sqrt5\pi c/a$.
+
+\textbf{(b)} Set $R_s=1/(\sigma\delta)$, $\eta_0=\sqrt{\mu_0/\epsilon_0}$,
+$t=\omega_c/\omega$ and $s=\sqrt{1-t^2}$ for the mode in question.
+For TM modes the general surface-loss expression is
+\[
+\beta_{\rm TM}=\frac{R_s\omega\epsilon_0}{2k\gamma^2}
+\frac{\oint|\partial_n\psi|^2dl}{\int|\psi|^2dA}.
+\]
+For the lowest TM mode of unit longitudinal amplitude,
+$\psi^2$ is symmetric across the diagonal. Orthogonality of the
+two sine products over the full square therefore gives
+$N=\tfrac12[2(a/2)^2]=a^2/4$. The bottom and right normal
+derivatives, up to an irrelevant overall sign, are
+\[
+\frac{\pi}{a}\left[\sin\frac{2\pi x}{a}-2\sin\frac{\pi x}{a}\right],
+\qquad
+\frac{\pi}{a}\left[2\sin\frac{\pi y}{a}+\sin\frac{2\pi y}{a}\right].
+\]
+Their squared integrals are each
+$(\pi/a)^2(a/2)(1+4)=5\pi^2/(2a)$. On the diagonal, put
+$x=y=u$, use $dl=\sqrt2\,du$, and find
+$|\partial_n\psi|^2=(8\pi^2/a^2)\sin^6(\pi u/a)$.
+Since $\int_0^\pi\sin^6v\,dv=5\pi/16$, the diagonal contributes
+$5\sqrt2\pi^2/(2a)$.  Consequently
+\[
+\boxed{\beta_{{\rm TM},21}^{\triangle}
+=\frac{R_s}{\eta_0a\sqrt{1-(\omega_{c,21}/\omega)^2}}
+(2+\sqrt2).}
+\]
+
+For the lowest TE field $\psi=\cos(\pi x/a)+\cos(\pi y/a)$,
+$\gamma=\pi/a$ and direct integrals on the same three sides give
+\[
+N=\frac{a^2}2,\qquad S_0=\oint\psi^2dl=a(3+2\sqrt2),\qquad
+S_1=\oint|\partial_s\psi|^2dl=\frac{\pi^2}{a}(1+\sqrt2).
+\]
+For example, the bottom and right contributions to $S_0$ are each
+$3a/2$, while the diagonal gives $2\sqrt2a$; their contributions
+to $S_1$ are $\pi^2/(2a),\pi^2/(2a),\sqrt2\pi^2/a$.
+Use
+\[
+\beta_{\rm TE}=\frac{R_s\gamma^2}{2\omega\mu_0kN}
+\left(S_0+\frac{k^2}{\gamma^4}S_1\right)
+\]
+to obtain
+\[
+\boxed{\beta_{{\rm TE},10}^{\triangle}
+=\frac{R_s}{\eta_0a s}
+\left[(1+\sqrt2)+(2+\sqrt2)t^2\right].}
+\]
+For comparison, the square of side $a$ has
+\[
+\beta_{{\rm TE},10}^{\square}=\frac{R_s}{\eta_0a s}(1+2t^2),
+\quad\omega_{c,10}^{\square}=\pi c/a,
+\qquad
+\beta_{{\rm TM},11}^{\square}=\frac{2R_s}{\eta_0a s},
+\quad\omega_{c,11}^{\square}=\sqrt2\pi c/a.
+\]
+The TE cutoffs are the same, so their attenuation ratio at fixed
+frequency is $[(1+\sqrt2)+(2+\sqrt2)t^2]/(1+2t^2)$.
+For TM the square has the lower cutoff.  At a fixed frequency above
+both cutoffs, the ratio is
+$(1+1/\sqrt2)s_{\square}/s_{\triangle}$.
+
+\Needspace{5\baselineskip}
+\par\bigskip
+\noindent\textbf{8.6}\quad A resonant cavity of copper consists of a hollow, right circular cylinder of inner radius $R$ and length $L$, with flat end faces.
+\begin{enumerate}
+\item[(a)] Determine the resonant frequencies of the cavity for all types of waves. With $(1/\sqrt{\mu\epsilon}\,R)$ as a unit of frequency, plot the lowest four resonant frequencies of each type as a function of $R/L$ for $0<R/L<2$. Does the same mode have the lowest frequency for all $R/L$?
+\item[(b)] If $R=2$ cm, $L=3$ cm, and the cavity is made of pure copper, what is the numerical value of $Q$ for the lowest resonant mode?
+\end{enumerate}
+\solution
+
+\textbf{(a)} Separation in $z$ imposes different axial standing waves:
+$E_z=\psi(\rho,\phi)\cos(p\pi z/L)$ for TM, with $p=0,1,\ldots$,
+and $H_z=\psi(\rho,\phi)\sin(p\pi z/L)$ for TE, with $p=1,2,\ldots$.
+At an end plate the tangential electric field must vanish.
+For TM fields it is proportional to $\partial_zE_z$, so a cosine
+standing wave satisfies both end conditions. For TE fields it is
+proportional to $H_z$, so a sine is required. The TM solution with
+$p=0$ remains nonzero; the analogous TE sine would vanish identically.
+The side-wall conditions are those of Problem 8.4, so
+\[
+\boxed{\omega_{mnp}^{\rm TM}=\frac1{\sqrt{\mu\epsilon}R}
+\sqrt{x_{mn}^2+(p\pi R/L)^2},\qquad
+\omega_{mnp}^{\rm TE}=\frac1{\sqrt{\mu\epsilon}R}
+\sqrt{x_{mn}'^{\,2}+(p\pi R/L)^2}.}
+\]
+Here $m=0,1,\ldots$, $n=1,2,\ldots$ and only positive radial roots
+are retained.  Every $m>0$ family has two angular polarizations.
+The plots show the four smallest frequencies at each aspect ratio,
+counting a polarization pair once.  The ordering can change as
+axial and radial families cross, so the plotted curves are the
+ordered eigenvalues, not four fixed mode labels.
+\begin{center}
+\input{supplementary/ch08_cavity_tm.tex}\quad
+\input{supplementary/ch08_cavity_te.tex}
+\end{center}
+The lowest TM frequency is always $\mathrm{TM}_{010}$,
+$\omega R\sqrt{\mu\epsilon}=2.404825558$; the lowest TE frequency
+is always $\mathrm{TE}_{111}$,
+$\sqrt{1.841183781^2+\pi^2(R/L)^2}$.
+Their crossing occurs at
+\[
+\frac RL=\frac{\sqrt{2.404825558^2-1.841183781^2}}\pi
+=0.492427374.
+\]
+Thus a long cavity has $\mathrm{TE}_{111}$ as its lowest mode,
+whereas a shorter cavity has $\mathrm{TM}_{010}$.
+
+\textbf{(b)} For $R/L=2/3$ the lowest mode is $\mathrm{TM}_{010}$.
+Write $x=x_{01}$ and $H_\phi=H_1J_1(x\rho/R)$; the fields are
+independent of $z$.  At resonance the average electric and magnetic
+energies are equal, so
+\[
+Q=\frac{\omega U}{P_{\ell}}
+=\frac{\omega\mu\int_V|H|^2dV}{R_s\oint_S|H_\parallel|^2dS}.
+\]
+The radial Bessel integral, using $J_0(x)=0$, is
+$\int_0^R\rho J_1^2(x\rho/R)d\rho=R^2J_1^2(x)/2$.
+Indeed, $J_1'=J_0-J_1/x$ gives $J_1'(x)=-J_1(x)/x$ at this
+root; inserting it into the Bessel norm identity derived in
+Problem 8.4 cancels the two terms proportional to $J_1^2/x^2$.
+Consequently the volume integral is
+$\pi R^2L|H_1|^2J_1^2(x)$, while the side wall and the two end
+plates contribute respectively
+$2\pi RL|H_1|^2J_1^2(x)$ and
+$2\pi R^2|H_1|^2J_1^2(x)$.  Therefore
+\[
+\boxed{Q=\frac{\omega\mu}{R_s}\frac{RL}{2(R+L)}
+=\frac\mu{\mu_c}\frac{RL}{\delta(R+L)}.}
+\]
+For the numerical estimate take vacuum inside, $\mu_c=\mu_0$,
+and room-temperature copper represented by
+$\sigma=5.80\times10^7\ {\rm S\,m^{-1}}$ (100\% IACS at
+$20^\circ$C, NBS \emph{Copper Wire Tables}, Circular 31,
+2nd ed., 1914, p.~9).  With $R=0.020$ m and $L=0.030$ m,
+\[
+\omega=3.60474\times10^{10}\ \mathrm{s^{-1}},\quad
+f=5.73713\ \mathrm{GHz},\quad\delta=8.72487\times10^{-7}\ \mathrm{m},
+\quad\boxed{Q\simeq1.38\times10^4.}
+\]
+The material estimate is explicit: $Q=1.37538\times10^4
+\sqrt{\sigma/(5.80\times10^7\ {\rm S\,m^{-1}})}$ under these
+geometric and permeability assumptions.  A more precise value for
+``pure copper'' requires its temperature and conductivity.
+
+\Needspace{5\baselineskip}
+\par\bigskip
+\noindent\textbf{8.7}\quad A resonant cavity consists of the empty space between two perfectly conducting, concentric spherical shells, the smaller having an outer radius $a$ and the larger an inner radius $b$. As shown in Section 8.9, the azimuthal magnetic field has a radial dependence given by spherical Bessel functions, $j_{l}(kr)$ and $n_{l}(kr)$, where $k=\omega/c$.
+\begin{enumerate}
+\item[(a)] Write down the transcendental equation for the characteristic frequencies of the cavity for arbitrary $l$.
+\item[(b)] For $l=1$ use the explicit forms of the spherical Bessel functions to show that the characteristic frequencies are given by
+\[
+\frac{\tan kh}{kh}=\frac{\left(k^{2}+\dfrac{1}{ab}\right)}{k^{2}+ab\left(k^{2}-\dfrac{1}{a^{2}}\right)\!\left(k^{2}-\dfrac{1}{b^{2}}\right)}
+\]
+where $h=b-a$.
+\item[(c)] For $h/a\ll1$, verify that the result of part b yields the frequency found in Section 8.9, and find the first order correction in $h/a$. [The result of part b seems to have been derived first by J.~J. Thomson and published in his book \emph{Recent Researches in Electricity and Magnetism}, Oxford Clarendon Press, 1893, pp.~373 ff.]
+\end{enumerate}
+\solution
+
+\textbf{(a)} For the electric-multipole (TM) family used in
+Section 8.9, put
+$u_l(r)=r[A j_l(kr)+B n_l(kr)]$.  The radial equation and the
+conducting boundary conditions are
+\[
+u_l''+\left[k^2-\frac{l(l+1)}{r^2}\right]u_l=0,\qquad
+u_l'(a)=u_l'(b)=0.
+\]
+The tangential electric field is proportional to $u_l'$.  Eliminating
+$A,B$ gives
+\[
+\boxed{[j_l(ka)+ka j_l'(ka)][n_l(kb)+kb n_l'(kb)]
+-[n_l(ka)+ka n_l'(ka)][j_l(kb)+kb j_l'(kb)]=0.}
+\]
+Take $l\geq1$ and nonzero $k$; the $2l+1$ azimuthal orientations
+are degenerate.  For completeness the cavity also has a
+magnetic-multipole (TE) family, whose tangential electric field
+vanishes when $u_l(a)=u_l(b)=0$.  Its equation is
+$j_l(ka)n_l(kb)-n_l(ka)j_l(kb)=0$.
+Parts (b)--(c) concern the first, Schumann-resonance family.
+
+\textbf{(b)} For $l=1$,
+\[
+j_1(x)=\frac{\sin x}{x^2}-\frac{\cos x}{x},\qquad
+n_1(x)=-\frac{\cos x}{x^2}-\frac{\sin x}{x}.
+\]
+Define $A_r=k^2-r^{-2}$ and $B_r=k/r$.  Direct differentiation gives
+\[
+\frac d{dr}[rj_1(kr)]=k^{-2}[A_r\sin(kr)+B_r\cos(kr)],\quad
+\frac d{dr}[rn_1(kr)]=k^{-2}[-A_r\cos(kr)+B_r\sin(kr)].
+\]
+Their determinant reduces by angle-subtraction identities to
+\[
+(A_aA_b+B_aB_b)\sin(kh)+(A_aB_b-B_aA_b)\cos(kh)=0.
+\]
+Now
+\[
+A_aB_b-B_aA_b=-\frac{kh}{ab}\left(k^2+\frac1{ab}\right),\quad
+ab(A_aA_b+B_aB_b)=k^2+ab(k^2-a^{-2})(k^2-b^{-2}).
+\]
+Division gives exactly the stated formula for $\tan(kh)/(kh)$.
+At poles or zeros of quantities used in that division, the determinant
+form is the safe equation.  In particular the formal $k=0$ solution
+of the divided equation is spurious: a static monopole field is not
+a nonzero $l=1$ oscillatory mode.
+
+\textbf{(c)} For the lowest radial mode and $h/a\ll1$, the
+Neumann eigenfunction is constant at zeroth order.  Integrating the
+radial equation across the gap eliminates $u_l''$ by the two boundary
+conditions and gives the exact identity for the positive lowest mode
+\[
+k^2=l(l+1)\frac{\int_a^{a+h}u_l(r)r^{-2}\,dr}
+{\int_a^{a+h}u_l(r)\,dr}.
+\]
+Normalize $u_l$ to have a fixed mean. Its first-order change then
+has zero integral, so its contribution multiplied by the zeroth-order
+constant $r^{-2}=a^{-2}+O(h/a^3)$ cancels from this ratio.
+To first order in $h/a$ its eigenvalue is therefore the
+average centrifugal potential:
+\[
+k^2=\frac{l(l+1)}h\int_a^{a+h}\frac{dr}{r^2}
++O(h^2/a^4)
+=\frac{l(l+1)}{a(a+h)}+O(h^2/a^4).
+\]
+Equivalently this follows by expanding the determinant in (b);
+changes in the almost constant eigenfunction affect no first-order
+term.  For $l=1$,
+\[
+\boxed{\omega=\frac{\sqrt2c}{a}
+\left[1-\frac h{2a}+O((h/a)^2)\right].}
+\]
+The leading term is Eq.~(8.105), and the first correction replaces
+the earth's radius by the mid-gap radius to this order.  Higher
+radial modes instead have $k\sim n\pi/h$ and are not described by
+this low-frequency expansion.
+
+\Needspace{5\baselineskip}
+\par\bigskip
+\noindent\textbf{8.8}\quad For the Schumann resonances of Section 8.9 calculate the $Q$ values on the assumption that the earth has a conductivity $\sigma_{e}$ and the ionosphere has a conductivity $\sigma_{i}$, with corresponding skin depths $\delta_{e}$ and $\delta_{i}$.
+\begin{enumerate}
+\item[(a)] Show that to lowest order in $h/a$ the $Q$ value is given by $Q=Nh/(\delta_{e}+\delta_{i})$ and determine the numerical factor $N$ for all $l$.
+\item[(b)] For the lowest Schumann resonance evaluate the $Q$ value assuming $\sigma_{e}=0.1$ $(\Omega\mathrm{m})^{-1}$, $\sigma_{i}=10^{-5}$ $(\Omega\mathrm{m})^{-1}$, $h=10^{2}$ km.
+\item[(c)] Discuss the validity of the approximations used in part a for the range of parameters used in part b.
+\end{enumerate}
+\solution
+
+\textbf{(a)} In a thin cavity the lowest radial Schumann modes have
+almost constant $u_l=rH_\phi$ across the gap, so the tangential
+magnetic field changes only by relative order $h/a$.  Let
+$\mathcal H=\int |H_\parallel(a,\Omega)|^2a^2d\Omega$.
+The mean total stored energy, using equality of electric and magnetic
+energies, and the wall dissipation are
+\[
+U=\frac{\mu_0}2h\mathcal H[1+O(h/a)],\qquad
+P_\ell=\frac{R_{s,e}+R_{s,i}}2\mathcal H[1+O(h/a)].
+\]
+Here both conductors are taken as nonmagnetic and
+$R_{s,j}=1/(\sigma_j\delta_j)=\omega\mu_0\delta_j/2$.
+The common angular integral cancels for every $l\geq1$:
+\[
+\boxed{Q=\frac{\omega\mu_0h}{R_{s,e}+R_{s,i}}
+=\frac{2h}{\delta_e+\delta_i},\qquad N=2.}
+\]
+There is implicit $l$ dependence through the frequency entering the
+skin depths, $\omega_l\simeq c\sqrt{l(l+1)}/a$.
+
+\textbf{(b)} Use $a=6.371\times10^6$ m and the ideal lowest
+frequency $\omega_1=66.5469\ \mathrm{s^{-1}}$
+($f_1=10.5913$ Hz).  The specified conductivities give
+\[
+\delta_e=\sqrt{\frac2{\omega_1\mu_0\sigma_e}}
+=4.89042\times10^2\ \mathrm{m},\qquad
+\delta_i=4.89042\times10^4\ \mathrm{m}.
+\]
+For $h=10^5$ m,
+\[
+\boxed{Q\simeq\frac{2\times10^5}{489.042+48904.2}=4.04914.}
+\]
+This is the result of the specified homogeneous-conductor model,
+using its ideal resonance frequency to evaluate the losses.
+
+\textbf{(c)} The geometrical thin-gap parameter is $h/a=0.0157$,
+and even $\delta_i/a=0.00768$ is small, so curvature corrections to
+the local skin-layer treatment are modest.  Displacement current is
+also negligible: $\omega\epsilon_0/\sigma_i\simeq5.9\times10^{-5}$,
+and its ratio is smaller still in the earth.  However,
+$\delta_i/h\simeq0.489$ and $Q$ is only about four.  The use of
+unperturbed cavity fields to calculate a small damping correction is
+therefore not quantitatively controlled by a very small loss
+parameter.  The first-order frequency shift of magnitude
+$\omega/(2Q)$ is already about $12\%$; an accurate answer requires
+solving with the finite surface impedances, and a realistic
+ionospheric profile may require more than a homogeneous half-space.
+
+\Needspace{5\baselineskip}
+\par\bigskip
+\noindent\textbf{8.9}\quad A hollow volume $V$ containing a uniform isotropic linear medium ($\epsilon$, $\mu$) is bounded by a perfectly conducting closed surface $S$ (which may have more than one disconnected part). A harmonic electric field inside the cavity satisfies the vector Helmholtz equation,
+\[
+\nabla\times(\nabla\times\mathbf{E})=k^{2}\mathbf{E}\qquad\text{with }k^{2}=\omega^{2}\mu\epsilon
+\]
+The boundary condition is $\mathbf{n}\times\mathbf{E}=0$ (and $\mathbf{n}\cdot\mathbf{B}=0$) on $S$.
+\begin{enumerate}
+\item[(a)] Show that
+\[
+k^{2}=\frac{\displaystyle\int_{V}\mathbf{E}^{*}\cdot[\nabla\times(\nabla\times\mathbf{E})]\;d^{3}x}{\displaystyle\int_{V}\mathbf{E}^{*}\cdot\mathbf{E}\;d^{3}x}
+\]
+is a variational principle for the eigenvalue $k^{2}$ in the sense that a change of $\mathbf{E}\to\mathbf{E}+\delta\mathbf{E}$, where both $\mathbf{E}$ and $\delta\mathbf{E}$ satisfy the boundary conditions on $S$, leads to only second-order changes in $k^{2}$.
+\item[(b)] Apply the variational principle to the $\mathrm{TM}_{010}$ mode of a right cylindrical cavity of radius $R$ and length $d$, using the trial longitudinal electric field $E_{z}=E_{0}\cos(\pi\rho/2R)$ [no variational parameters]. Show that the estimate of the eigenvalue is
+\[
+kR=\frac{\pi}{2}\sqrt{\frac{\pi^{2}+4}{\pi^{2}-4}}
+\]
+Compare numerically with the known eigenvalue, the root $x_{01}$ of $J_{0}(x)$.
+\item[(c)] Repeat the calculation of part b with $E_{z}=E_{0}[1+\alpha(\rho/R)^{2}-(1+\alpha)(\rho/R)^{4}]$, where $\alpha$ is a variational parameter. Show that for this trial function the best estimate is
+\[
+kR=\left[80\cdot\left(\frac{17-2\sqrt{34}}{68+\sqrt{34}}\right)\right]^{1/2}
+\]
+How much better is this truly variational calculation than part b?
+\end{enumerate}
+\solution
+
+\textbf{(a)} Write $\mathcal A=\nabla\times\nabla\times$ and
+$\langle\mathbf F,\mathbf G\rangle=\int_V\mathbf F^*\cdot\mathbf G\,dV$.
+Integration by parts gives
+\[
+\langle\mathbf F,\mathcal A\mathbf G\rangle
+=\int_V(\nabla\times\mathbf F)^*\cdot(\nabla\times\mathbf G)dV
+-\oint_S\mathbf n\cdot[\mathbf F^*\times(\nabla\times\mathbf G)]dS.
+\]
+The boundary term vanishes if $\mathbf n\times\mathbf F=0$,
+so $\mathcal A$ is symmetric on the admissible cavity fields.
+For $\mathcal A\mathbf E=k^2\mathbf E$ and
+$N=\langle\mathbf E,\mathbf E\rangle$, expansion of the Rayleigh
+quotient $\mathcal R$ gives
+\[
+\delta\mathcal R=\frac{2\operatorname{Re}
+\langle\delta\mathbf E,(\mathcal A-k^2)\mathbf E\rangle}{N}=0.
+\]
+More explicitly the exact difference for a finite admissible variation is
+\[
+\mathcal R[\mathbf E+\delta\mathbf E]-k^2
+=\frac{\langle\delta\mathbf E,(\mathcal A-k^2)\delta\mathbf E\rangle}
+{\langle\mathbf E+\delta\mathbf E,\mathbf E+\delta\mathbf E\rangle},
+\]
+which is quadratic at leading order.  For upper bounds to positive
+Maxwell eigenvalues use divergence-free trial fields, and for an
+excited mode also restrict to its invariant symmetry subspace or
+remove overlaps with lower modes.  The trials below are
+$z$-independent longitudinal fields and therefore divergence-free.
+
+\textbf{(b)} Put $u=\rho/R$ and $f(u)=\cos(\pi u/2)$.
+The common axial and angular factors cancel, leaving
+\[
+k^2R^2=\frac{\int_0^1u[f'(u)]^2du}{\int_0^1uf(u)^2du}.
+\]
+Using $\cos^2x=(1+\cos2x)/2$ and integration by parts,
+\[
+\int_0^1u\cos^2\frac{\pi u}2du=\frac14-\frac1{\pi^2},\qquad
+\int_0^1u\sin^2\frac{\pi u}2du=\frac14+\frac1{\pi^2}.
+\]
+Thus
+\[
+kR=\frac\pi2\sqrt{\frac{\pi^2+4}{\pi^2-4}}
+=2.414612798.
+\]
+The exact value $x_{01}=2.404825558$ is smaller by $0.40698\%$
+when the error is measured relative to the exact frequency.
+
+\textbf{(c)} For $f=1+\alpha u^2-(1+\alpha)u^4$, expand the
+polynomials and integrate their powers of $u$:
+\[
+\int_0^1uf^2du=\frac{\alpha^2+7\alpha+16}{60},\qquad
+\int_0^1u(f')^2du=\frac{\alpha^2+4\alpha+6}{3}.
+\]
+Therefore
+\[
+\mathcal R(\alpha)R^2=20\frac{\alpha^2+4\alpha+6}{\alpha^2+7\alpha+16},
+\quad
+\frac{d(\mathcal RR^2)}{d\alpha}
+=20\frac{3\alpha^2+20\alpha+22}{(\alpha^2+7\alpha+16)^2}.
+\]
+The minimizing stationary point is
+$\alpha=(-10+\sqrt{34})/3$; the other root gives the larger
+stationary quotient.  Substitution yields
+\[
+\boxed{kR=\left[80\frac{17-2\sqrt{34}}{68+\sqrt{34}}\right]^{1/2}
+=2.405021472.}
+\]
+The relative error is $0.0081467\%$, about fifty times smaller
+than the error in (b).  Both results lie above the exact fundamental
+TM eigenvalue, as the variational principle requires in this sector.
+
+\Needspace{5\baselineskip}
+\par\bigskip
+\noindent\textbf{8.10}\quad Use the variational principle of Problem 8.9 in terms of the electric field $\mathbf{E}$ to find an estimate of the eigenvalue for $k^{2}$ for the $\mathrm{TE}_{111}$ mode in a right circular cylinder cavity of radius $R$ and length $d$ with perfectly conducting walls. Use as a trial function $B_{z}=B_{0}(\rho/R)(1-\rho/2R)\cos\phi\sin(\pi z/d)$. [This function satisfies the boundary conditions of $B_{z}=0$ at $z=0$ and $z=d$, and $\partial B_{z}/\partial\rho=0$ at $\rho=R$.]
+\begin{enumerate}
+\item[(a)] First show that the variational principle can be reexpressed as
+\[
+k^{2}=\frac{\displaystyle\int_{V}(\nabla\times\mathbf{E}^{*})\cdot(\nabla\times\mathbf{E})\;d^{3}x}{\displaystyle\int_{V}\mathbf{E}^{*}\cdot\mathbf{E}\;d^{3}x}
+\]
+\item[(b)] Show that the (transverse) components of the (trial) electric field are
+\[
+E_{\rho}=E_{0}(1-\rho/2R)\,\sin\phi\,\sin(\pi z/d);\qquad
+E_{\phi}=E_{0}(1-\rho/R)\,\cos\phi\,\sin(\pi z/d)
+\]
+\item[(c)] Calculate the curl of $\mathbf{E}$ and show that the approximation for $k^{2}$ is
+\[
+k^{2}=\frac{18}{5R^{2}}+\frac{\pi^{2}}{d^{2}}
+\]
+Compare with the exact result. For small enough $d/R$, this mode has a larger eigenvalue than the $\mathrm{TM}_{010}$ mode. Why should the present variational estimate be at all reliable?
+\item[(d)] The original variational expression in Problem 8.9 has an equivalent integrand in the numerator, $\mathbf{E}^{*}\cdot[\nabla(\nabla\cdot\mathbf{E})-\nabla^{2}\mathbf{E}]$. Discuss the relative merits of this integrand compared with the square of the curl of $\mathbf{E}$ in part a for the present problem.
+\end{enumerate}
+\solution
+
+Put $u=\rho/R$ and $q=\pi/d$.
+\textbf{(a)} The integration-by-parts identity in Problem 8.9 has
+zero surface term because $\mathbf n\times\mathbf E=0$.
+Consequently its numerator is $\int|\nabla\times\mathbf E|^2dV$,
+which gives the stated curl-squared quotient.  This form requires
+only square-integrable first derivatives of the trial field.
+
+\textbf{(b)} The transverse TE electric field is proportional to
+$\hat{\mathbf z}\times\nabla_tB_z$.  For the proposed $B_z$,
+\[
+-\frac1\rho\partial_\phi B_z
+=\frac{B_0}{R}(1-u/2)\sin\phi\sin qz,\qquad
+\partial_\rho B_z=\frac{B_0}{R}(1-u)\cos\phi\sin qz.
+\]
+Absorb the common proportionality constant into $E_0$ to obtain
+exactly the two trial components in the question.  They satisfy
+$E_\phi(R)=0$, vanish at both end faces, and have $E_z=0$.
+Moreover
+\[
+\nabla\cdot\mathbf E=
+\frac{E_0\sin\phi\sin qz}{\rho}
+[(1-u)-(1-u)]=0.
+\]
+At the axis the leading cylindrical components combine into the
+finite Cartesian vector $E_0\hat{\mathbf y}\sin qz$.
+
+\textbf{(c)} The curl is
+\begin{align*}
+(\nabla\times\mathbf E)_\rho&=-qE_0(1-u)\cos\phi\cos qz,\\
+(\nabla\times\mathbf E)_\phi&=qE_0(1-u/2)\sin\phi\cos qz,\\
+(\nabla\times\mathbf E)_z&=-\frac{3E_0}{2R}\cos\phi\sin qz.
+\end{align*}
+The field norm follows from $\int_0^{2\pi}\sin^2\phi\,d\phi=
+\int_0^{2\pi}\cos^2\phi\,d\phi=\pi$ and the corresponding axial
+integrals $d/2$:
+\[
+N=\frac{\pi dR^2|E_0|^2}{2}
+\int_0^1u[(1-u/2)^2+(1-u)^2]du
+=\frac{5\pi dR^2|E_0|^2}{32}.
+\]
+The transverse curl contributes $q^2N$ and its longitudinal component
+contributes $9\pi d|E_0|^2/16$.  Therefore
+\[
+\boxed{k^2=\frac{18}{5R^2}+\frac{\pi^2}{d^2}.}
+\]
+The exact result is $(x'_{11}/R)^2+(\pi/d)^2$, with
+$x_{11}'^{\,2}=3.389957717$.  The trial replaces this transverse
+number by $3.6$, a $6.20\%$ error in that term, corresponding to at
+most $3.05\%$ error in frequency and a smaller error as $d/R$ shrinks.
+
+Reliability does not require $\mathrm{TE}_{111}$ to be the absolute
+lowest cavity mode.  The trial belongs to the $m=1$, first axial
+TE sector.  Its transverse field is a rotated gradient, whereas a
+TM transverse field is a gradient of a Dirichlet scalar.  Their
+cross integral is a boundary integral with that scalar zero on the
+wall, and vanishes.  Angular and axial orthogonality remove the
+other TE sectors.  Hence this is a Rayleigh upper bound to the
+lowest mode in the appropriate invariant sector even when a TM
+mode lies below it.
+
+\textbf{(d)} The alternatives are mathematically equivalent if the
+vector Laplacian, including derivatives of cylindrical unit vectors,
+is evaluated correctly and all integrable axis terms are retained.
+The present field is continuous at the axis but its first derivatives
+are direction-dependent there; second derivatives contain $1/\rho$
+terms. In fact the cylindrical vector Laplacian gives
+\[
+(\nabla^2\mathbf E)_\rho=-q^2E_\rho
+-\frac{3E_0}{2R\rho}\sin\phi\sin qz,\qquad
+(\nabla^2\mathbf E)_\phi=-q^2E_\phi.
+\]
+The extra contribution to $-\int\mathbf E^*\cdot\nabla^2\mathbf E\,dV$
+is
+\[
+\frac{3|E_0|^2}{2R}\frac{\pi d}{2}
+\int_0^R\left(1-\frac{\rho}{2R}\right)d\rho
+=\frac{9\pi d|E_0|^2}{16},
+\]
+as in (c). These terms are integrable with the area element
+$\rho\,d\rho\,d\phi$,
+but make $\mathbf E^*\cdot[\nabla\nabla\cdot\mathbf E-\nabla^2\mathbf E]$
+more cumbersome and cancellation-prone.  Excising a small cylinder
+around the axis and then shrinking it gives a vanishing additional
+boundary term, so no singular contribution is lost by the
+curl-squared form.  It is the simpler positive integral for this trial.
+
+\Needspace{5\baselineskip}
+\par\bigskip
+\noindent\textbf{8.11}\quad Apply the variational method of Problem 8.9 to estimate the resonant frequency of the lowest TM mode in a ``breadbox'' cavity with perfectly conducting walls, of length $d$ in the $z$ direction, radius $R$ for the curved quarter-circle ``front'' of the breadbox, and the ``bottom'' and ``back'' of the box defined by the plane segments ($y=0$, $0<x<R$) and ($x=0$, $0<y<R$), respectively. Use the trial function,
+\[
+E_{z}=E_{0}(\rho/R)^{\nu}(1-\rho/R)\sin 2\phi
+\]
+for the only component of electric field present. This function gives vanishing tangential component of $\mathbf{E}$ on the boundary surfaces; the index $\nu$ is a variational parameter. Show that
+\[
+k^{2}R^{2}=\frac{(\nu+2)(2\nu+3)(\nu^{2}+\nu+4)}{\nu(2\nu+1)}
+\]
+Minimize with respect to $\nu$ to find the best estimate of $kR$ from the given trial function. Compare with the exact answer, $kR=5.13562$, the first root of $J_{2}(x)$.
+\solution
+
+The lowest TM cavity mode is independent of $z$, so the axial length
+and field amplitude cancel in the Rayleigh quotient.  Set
+$u=\rho/R$ and $f=u^\nu(1-u)$; finite gradient energy at the apex
+requires $\nu>0$.  Angular integration over $0<\phi<\pi/2$ gives
+the same factor $\pi/4$ for $\sin^22\phi$ and $\cos^22\phi$.
+Consequently
+\[
+k^2R^2=\frac{\int_0^1[u(f')^2+4f^2/u]du}{\int_0^1uf^2du}.
+\]
+Use $f'=\nu u^{\nu-1}-(\nu+1)u^\nu$ to evaluate the numerator:
+\begin{align*}
+D&=\frac{\nu^2+4}{2\nu}
+-\frac{2\nu(\nu+1)+8}{2\nu+1}
++\frac{(\nu+1)^2+4}{2\nu+2},\\
+N&=\frac1{2\nu+2}-\frac2{2\nu+3}+\frac1{2\nu+4}.
+\end{align*}
+Combining these fractions gives exactly
+\[
+\boxed{k^2R^2=\frac{(\nu+2)(2\nu+3)(\nu^2+\nu+4)}{\nu(2\nu+1)}.}
+\]
+Its derivative has positive denominator and numerator
+\[
+8\nu^5+24\nu^4+18\nu^3-47\nu^2-96\nu-24.
+\]
+There is exactly one positive root by Descartes' rule of signs.
+The quotient diverges as $\nu\downarrow0$ and as $\nu\to\infty$,
+so that root is the global minimum.  Numerical root finding gives
+\[
+\nu_*=1.56757838,\qquad \boxed{kR=5.20544971.}
+\]
+The exact eigenfunction is $J_2(x_{21}\rho/R)\sin2\phi$ with
+$x_{21}=5.13562230$.  The trial frequency is $1.36\%$ high.
+The noninteger optimum is admissible in the finite-energy variational
+space, although it does not reproduce the exact analytic $\rho^2$
+behavior at the corner; a richer trial space could improve that shape.
+
+\Needspace{5\baselineskip}
+\par\bigskip
+\noindent\textbf{8.12}\quad A waveguide with lossless dielectric inside and perfectly conducting walls has a cross-sectional contour $C$ that departs slightly from a comparison contour $C_{0}$ whose fields are known. The difference in boundaries is described by $\delta(x,y)$, the length measured from $C_{0}$ to $C$ along the normal to $C_{0}$ at the boundary point $(x,y)$. The derivative $d\delta/ds$ along the boundary is higher order in small quantities.
+\begin{enumerate}
+\item[(a)] If the eigenvalue parameters and solutions for $C$ and $C_{0}$ are $(\gamma^{2},\psi)$ and $(\gamma_{0}^{2},\psi_{0})$, respectively, without degeneracy, show that to first order in $\delta$
+\[
+\gamma^{2}-\gamma_{0}^{2}=-\frac{\displaystyle\oint_{C_{0}}\delta(x,y)\!\left[\left|\frac{\partial\psi_{0}}{\partial n}\right|^{2}-\psi_{0}^{*}\frac{\partial^{2}\psi_{0}}{\partial n^{2}}\right]dl}{\displaystyle\int_{S_{0}}|\psi_{0}|^{2}\;dx\;dy}
+\]
+where only the first (second) term in the numerator occurs for TM (TE) modes. [\emph{Hint}: Follow the same general approach as used in Section 8.6 for the effects of finite conductivity.]
+\item[(b)] Determine the perturbed value of $\gamma^{2}$ for the lowest TE and TM modes ($\mathrm{TE}_{1,0}$ and $\mathrm{TM}_{1,1}$) in a rectangular guide if the change in shape is as shown in the accompanying sketch.
+\end{enumerate}
+
+\begin{center}
+\begin{tikzpicture}[scale=1.0]
+  % axes
+  \draw[->] (0,0) -- (4.3,0) node[below right] {$x$};
+  \draw[->] (0,0) -- (0,3.3) node[above] {$y$};
+  \node[below] at (3.9,-0.05) {$a$};
+  \node[left] at (-0.05,2.9) {$b$};
+  % dashed original rectangle
+  \draw[dashed] (0,0) rectangle (3.9,2.9);
+  % new boundary: trapezoid wider at bottom, narrower at top
+  \draw[thick] (0,0) -- (0.32,2.9) -- (3.58,2.9) -- (3.9,0) -- cycle;
+  % delta marks at top corners
+  \draw[<->] (0.02,2.6) -- (0.3,2.6);
+  \node at (0.16,2.85) {$\delta$};
+  \draw[<->] (3.88,2.6) -- (3.6,2.6);
+  \node at (3.74,2.85) {$\delta$};
+  % new boundary label with arrows to slanted sides
+  \node at (1.95,1.4) {New};
+  \node at (1.95,1.05) {boundary};
+  \draw[->] (1.35,1.35) -- (0.35,1.6);
+  \draw[->] (2.55,1.35) -- (3.6,1.6);
+  \node at (4.6,-0.6) {\textbf{Problem 8.12}};
+\end{tikzpicture}
+\end{center}
+\solution
+
+Take the normal outward from the guide cross section and let a positive
+$\delta(s)$ expand the domain.  Write
+$\psi=\psi_0+\delta\psi$ and
+$\gamma^2=\gamma_0^2+\delta\gamma^2$.
+\textbf{(a)} Subtract the two transverse Helmholtz equations and
+use Green's identity on the original domain:
+\[
+\delta\gamma^2\int_{S_0}|\psi_0|^2dA
+=-\oint_{C_0}\left[\psi_0^*\partial_n\delta\psi
+-\delta\psi\,\partial_n\psi_0^*\right]dl+O(\delta^2).
+\]
+For TM, the displaced Dirichlet condition is
+$\delta\psi=-\delta\,\partial_n\psi_0$ on $C_0$.
+Since $\psi_0=0$ there, substitution gives
+\[
+\delta\gamma^2=-\frac{\oint\delta|\partial_n\psi_0|^2dl}{N},
+\qquad N=\int|\psi_0|^2dA.
+\]
+For TE, the displaced outward normal is
+$\mathbf n-\delta'(s)\mathbf t$ to first order.  Expansion of the
+Neumann condition therefore gives
+\[
+\partial_n\delta\psi=-\delta\partial_n^2\psi_0
++\delta'\partial_s\psi_0.
+\]
+Under the problem's assumption that $\delta'$ is higher order, omit
+the last term.  Then
+$\delta\gamma^2=\oint\delta\psi_0^*\partial_n^2\psi_0dl/N$,
+which together with the TM result proves the displayed formula.
+For a general deformation the slope term must be retained.  An
+integration by parts around the contour, using
+$\partial_n^2\psi_0=-\gamma_0^2\psi_0-\partial_s^2\psi_0$
+on a Neumann boundary, gives the more general form
+\[
+\boxed{\delta\gamma_{\rm TE}^2=
+\frac{\oint\delta[|\partial_s\psi_0|^2-\gamma_0^2|\psi_0|^2]dl}{N}.}
+\]
+This qualification matters for the ellipse in Problem 8.13.
+
+\textbf{(b)} Let the positive symbol $\delta$ in the sketch denote
+the inward displacement at either top corner.  The two side
+boundaries move by the outward-normal amount
+$\delta_n(y)=-\delta y/b$; the horizontal boundaries do not move.
+Assume $a>b$ so that the stated $\mathrm{TE}_{10}$ mode is
+nondegenerate.  Its unperturbed field is
+$\psi_0=\cos(\pi x/a)$, with $N=ab/2$.
+On the sloping sides $\partial_s\psi_0=0$ and
+$\psi_0\partial_n^2\psi_0=-\pi^2/a^2$, so the slope correction
+vanishes even though $\delta_n'$ is first order.  Thus
+\[
+\delta\gamma_{\rm TE}^2
+=\frac{2\int_0^b(-\delta y/b)(-\pi^2/a^2)dy}{ab/2}
+=\frac{2\pi^2\delta}{a^3}.
+\]
+For $\mathrm{TM}_{11}$,
+$\psi_0=\sin(\pi x/a)\sin(\pi y/b)$ and $N=ab/4$.
+On either side $(\partial_n\psi_0)^2=(\pi/a)^2\sin^2(\pi y/b)$.
+Using $\int_0^by\sin^2(\pi y/b)dy=b^2/4$ gives the same shift.
+Therefore
+\[
+\boxed{\gamma_{\rm TE}^2=\frac{\pi^2}{a^2}
+\left(1+\frac{2\delta}{a}\right)+O(\delta^2),\qquad
+\gamma_{\rm TM}^2=\frac{\pi^2}{a^2}+\frac{\pi^2}{b^2}
++\frac{2\pi^2\delta}{a^3}+O(\delta^2).}
+\]
+The positive shifts agree with the reduction in mean width from $a$
+to $a-\delta$.  For a square, the degenerate TE pair must instead
+be treated together as in Problem 8.13.
+
+\Needspace{5\baselineskip}
+\par\bigskip
+\noindent\textbf{8.13}\quad To treat perturbations if there is a degeneracy of modes in guides or cavities under ideal conditions, one must use degenerate-state perturbation theory. Consider the two-dimensional (waveguide) situation in which there is an $N$-fold degeneracy in the ideal circumstances (of perfect conductivity or chosen shape of cross section), with no other nearby modes. There are $N$ linearly independent solutions $\psi_{0}^{(i)}$, chosen to be orthogonal, to the transverse wave equation, $(\nabla_{t}^{2}+\gamma_{0}^{2})\psi_{0}^{(i)}=0$, $i=1,2,\ldots,N$. In response to the perturbation, the degeneracy is in general lifted. There is a set of perturbed eigenvalues, $\gamma_{k}^{2}$, with associated eigenmodes, $\psi_{k}$, which can be expanded (in lowest order) in terms of the $N$ unperturbed eigenmodes: $\psi_{k}=\sum_{i}a_{i}\psi_{0}^{(i)}$.
+\begin{enumerate}
+\item[(a)] Show that the generalization of (8.68) for finite conductivity (and the corresponding expression in Problem 8.12 on distortion of the shape of a waveguide) is the set of algebraic equations,
+\[
+\sum_{i=1}^{N}\;[(\gamma^{2}-\gamma_{0}^{2})N_{j}\delta_{ji}+\Delta_{ji}]a_{i}=0\qquad(j=1,2,\ldots,N)
+\]
+where
+\[
+N_{j}=\int_{A}|\psi_{0}^{(j)}|^{2}\;da\qquad\text{and}\qquad
+\Delta_{ji}=f\oint_{C}\frac{\partial\psi_{0}^{(j)*}}{\partial n}\,\frac{\partial\psi_{0}^{(i)}}{\partial n}\;dl
+\]
+for finite conductivity \erratum{of TM modes (as in Eq.~(8.68))}, and
+\[
+\Delta_{ji}=\oint_C\delta\left[
+\partial_n\psi_0^{(j)*}\partial_n\psi_0^{(i)}
+-\psi_0^{(j)*}\partial_n^2\psi_0^{(i)}\right]dl
++\erratum{\oint_C\frac{d\delta}{ds}\,
+\psi_0^{(j)*}\partial_s\psi_0^{(i)}\,dl}
+\]
+for distortion of the boundary shape. \erratum{The extra term accounts
+for rotation of the normal. It vanishes for TM modes and may be
+neglected for TE modes only under the higher-order slope assumption
+of Problem 8.12. That assumption does not apply to the ellipse in (b).}
+\item[(b)] The lowest mode in a circular guide of radius $R$ is the twofold degenerate $\mathrm{TE}_{11}$ mode, with fields given by
+\[
+\psi^{(\pm)}=B_{z}=B_{0}J_{1}(\gamma_{0}\rho)\,\exp(\pm i\phi)\,\exp(ikz-i\omega t)
+\]
+The eigenvalue parameter is $\gamma_{0}=1.841/R$, corresponding to the first root of $dJ_{1}(x)/dx$. Suppose that the circular waveguide is distorted along its length into an elliptical shape with semimajor and semiminor axes, $a=R+\Delta R$, $b=R-\Delta R$, respectively. To first order in $\Delta R/R$, the area and circumference of the guide remain unchanged. Show that the degeneracy is lifted by the distortion and that to first order in $\Delta R/R$, $\gamma_{1}^{2}=\gamma_{0}^{2}(1+\lambda\Delta R/R)$ and $\gamma_{2}^{2}=\gamma_{0}^{2}(1-\lambda\Delta R/R)$. Determine the numerical value of $\lambda$ and find the eigenmodes as linear combinations of $\psi^{(\pm)}$. Explain physically why the eigenmodes turn out as they do.
+\end{enumerate}
+\solution
+
+\textbf{(a)} Multiply the perturbed wave equation by
+$\psi_0^{(j)*}$, subtract its unperturbed adjoint equation, and
+integrate over the cross section.  Orthogonality makes the volume
+term $(\gamma^2-\gamma_0^2)N_ja_j$.  Linearizing the boundary
+condition supplies a boundary term linear in every $a_i$.
+For the TM surface-impedance condition of Eq.~(8.65), with its
+normal directed \emph{into} the guide, the boundary value is
+$f\partial_n\psi_0$.  Equivalently, with the outward normal used
+here it is $-f\partial_n\psi_0$.  Green's identity therefore gives
+\[
+\sum_i[(\gamma^2-\gamma_0^2)N_j\delta_{ji}+\Delta_{ji}]a_i=0,
+\qquad
+\Delta_{ji}=f\oint\partial_n\psi_0^{(j)*}\partial_n\psi_0^{(i)}dl.
+\]
+Normal reversal has no effect on the product of the two derivatives.
+This quoted finite-conductivity formula is the TM formula; setting
+Neumann derivatives to zero does not describe TE conductor loss.
+For TE the surface-impedance perturbation gives instead
+\[
+\Delta^{\rm TE}_{ji}=(1+i)\frac{R_s\gamma_0^2}{\omega\mu}
+\oint\left[\psi_0^{(j)*}\psi_0^{(i)}
++\frac{k^2}{\gamma_0^4}\partial_s\psi_0^{(j)*}\partial_s\psi_0^{(i)}\right]dl.
+\]
+For a diagonal matrix element this yields
+$\delta\gamma^2=-2(1+i)k\beta$, with $\beta$ obtained by the
+surface-loss calculation in Problem 8.4.  To see the off-diagonal
+terms, take $\psi=B_z$ as in (8.36) and in part (b), and form
+an arbitrary superposition $\psi=\sum_i a_i\psi_i$.
+Its wall-current norm is the quadratic form
+\[
+\oint|\mathbf H_\parallel|^2dl=
+\frac1{\mu^2}\sum_{j,i}a_j^*a_i\oint\left[\psi_j^*\psi_i+
+\frac{k^2}{\gamma_0^4}(\partial_s\psi_j^*)(\partial_s\psi_i)\right]dl.
+\]
+Here $\parallel$ means tangential to the conducting wall. Its
+longitudinal and contour-tangent magnetic-field components are
+orthogonal, giving the two terms. The factor $1/\mu^2$ converts
+$\mathbf B$ to $\mathbf H$. The modal power is
+$(\omega k/2\mu\gamma_0^2)\sum_iN_i|a_i|^2$.
+Equating $2\beta P$ to $(R_s/2)\oint|\mathbf H_\parallel|^2dl$
+fixes the dissipative quadratic form; the equal reactive and
+resistive parts of a good conductor supply its factor $1+i$.
+Since this holds for every set of complex $a_i$, polarization of
+the quadratic form fixes every matrix element as displayed.
+If TE and TM families are mutually degenerate, both sets of fields
+and their mutual surface-current overlaps must be included.
+
+For a displaced boundary the Dirichlet calculation gives
+$\Delta_{ji}=\oint\delta\partial_n\psi_j^*\partial_n\psi_i dl$.
+The general Neumann calculation in Problem 8.12 gives
+\begin{align*}
+\Delta_{ji}^{\rm TE}
+&=-\oint\delta\psi_j^*\partial_n^2\psi_i dl
++\oint\delta'\psi_j^*\partial_s\psi_i dl\\
+&=\oint\delta\left[\gamma_0^2\psi_j^*\psi_i
+-\partial_s\psi_j^*\partial_s\psi_i\right]dl.
+\end{align*}
+The second line follows by integrating the tangential second
+derivative by parts.  It is Hermitian for a real shape perturbation.
+When $\delta'$ is of higher order, the first line reduces to the
+shape formula originally quoted.  For finite-conductivity TM modes
+and either shape problem, nontrivial coefficients require
+\[
+\det[(\gamma^2-\gamma_0^2)\mathbf N+\boldsymbol\Delta]=0.
+\]
+Equivalently, diagonalize
+$\mathbf N^{-1/2}\boldsymbol\Delta\mathbf N^{-1/2}$; its negative
+eigenvalues are the first-order shifts of $\gamma^2$.
+
+\textbf{(b)} Put $x=x'_{11}=1.841183781$ and suppress the common
+$z,t$ factors.  To first order the ellipse is the radial deformation
+$\delta(\phi)=\Delta R\cos2\phi$.  Its tangential derivative is
+$\delta'=-2(\Delta R/R)\sin2\phi$, of the same perturbative order;
+it cannot be discarded.  In the basis
+$\psi_\pm=B_0J_1(\gamma_0\rho)e^{\pm i\phi}$, both norms are
+\[
+N=\pi R^2|B_0J_1(x)|^2(1-x^{-2}).
+\]
+The diagonal shape matrix elements vanish because the integrals of
+$\cos2\phi$ vanish.  For the off-diagonal element,
+$\psi_+^*\psi_-=|B_0J_1(x)|^2e^{-2i\phi}$ and
+$\partial_s\psi_+^*\partial_s\psi_-=-R^{-2}\psi_+^*\psi_-$.
+Since $\int_0^{2\pi}\cos2\phi\,e^{-2i\phi}d\phi=\pi$,
+\[
+\Delta_{+-}=\Delta_{-+}
+=\pi R\Delta R|B_0J_1(x)|^2(\gamma_0^2+R^{-2}).
+\]
+The combinations $(\psi_++\psi_-)/\sqrt2\propto\cos\phi$
+and $(\psi_+-\psi_-)/(i\sqrt2)\propto\sin\phi$ diagonalize this
+matrix.  Their shifts are
+\[
+\boxed{\gamma_{\cos}^2=\gamma_0^2
+\left(1-\lambda\frac{\Delta R}{R}\right),\qquad
+\gamma_{\sin}^2=\gamma_0^2
+\left(1+\lambda\frac{\Delta R}{R}\right),\quad
+\lambda=\frac{x^2+1}{x^2-1}=1.836834889.}
+\]
+The reflection axes of the ellipse select standing angular patterns;
+a traveling $e^{\pm i\phi}$ pattern no longer has a single
+eigenvalue.  The $\cos\phi$ longitudinal magnetic field varies
+mainly across the longer $x$ direction and has the lower transverse
+wave number; its electric field is predominantly along $y$.
+The other polarization has the opposite ordering.
+
+As an independent check, map the ellipse to the unit disk by
+$x=(1+\varepsilon)X$, $y=(1-\varepsilon)Y$.
+The Neumann Rayleigh quotient changes by
+\[
+\delta\gamma^2=\frac{2\varepsilon
+\int(|\partial_Y\psi|^2-|\partial_X\psi|^2)dA}{\int|\psi|^2dA}.
+\]
+For $J_1(x\rho/R)\cos\phi$, direct radial and angular integration
+gives $-1.836834889\,\varepsilon\gamma_0^2$, agreeing with the
+complete boundary perturbation.  Omitting normal rotation would
+instead give $\lambda=1$, which fails this independent check.
+
+\Needspace{5\baselineskip}
+\par\bigskip
+\noindent\textbf{8.14}\quad Consider an optical fiber with a graded index of refraction for rays confined to the $x$-$z$ plane, $n(x)=n(0)\,\mathrm{sech}(\alpha x)$. The fiber has large enough transverse dimensions ($x$) to contain all rays of interest, which are evidently symmetric about $x=0$. The invariant $\bar{n}=n(x_{\max})=n(0)\cos\theta(0)$.
+\begin{enumerate}
+\item[(a)] Solve the eikonal equations for the transverse coordinate $x(z)$ of the ray and show that
+\[
+\alpha x=\sinh^{-1}[\sinh(\alpha x_{\max})\,\sin(\alpha z)]
+\]
+where the origin in $z$ is chosen when the ray has $x=0$. Sketch rays over one half-period for ``launch angles'' $\theta(0)=\pi/6$, $\pi/4$, and $\pi/3$.
+\item[(b)] Find the half-period $Z$ of the ray. Does it depend on $\bar{n}$?
+\item[(c)] Show that the optical path length for a half period, $L_{\mathrm{opt}}=\int n(x)\;ds$ is $L_{\mathrm{opt}}=n(0)Z$. Comment on the effectiveness of this particular grading of the index.
+\end{enumerate}
+\emph{Hint}: In the computation of $L_{\mathrm{opt}}$, a useful change of variables is $\sinh(\alpha x)=\sinh(\alpha x_{\max})\sin t$. The resulting integral can be done by contour integration:
+\[
+\int_{0}^{\pi/2}\frac{d\theta}{1+a^{2}\sin^{2}\theta}=\frac{\pi}{2\sqrt{1+a^{2}}}
+\]
+\solution
+
+\medskip\noindent\textbf{(a)} Write $n_0=n(0)$, $\theta_0=\theta(0)$ and take $0\leq\theta_0<\pi/2$.
+The eikonal equation $d(n\widehat{\mathbf t})/ds=\nabla n$
+has a conserved $z$ component,
+\[
+n\frac{dz}{ds}=\bar n=n_0\cos\theta_0.
+\]
+Thus $dx/dz=\pm\sqrt{n^2/\bar n^2-1}$.  With
+$A=\tan\theta_0=\sinh(\alpha x_{\max})$ and
+$y=\sinh(\alpha x)$ this becomes
+\[
+\left(\frac{dy}{dz}\right)^2
+=\alpha^2\left[A^2-y^2\right].
+\]
+Starting at $x(0)=0$ with positive slope gives $y=A\sin\alpha z$;
+continuing smoothly through the turning point gives
+\[
+\boxed{x(z)=\alpha^{-1}\operatorname{arsinh}
+ [\tan\theta_0\sin(\alpha z)].}
+\]
+The three requested rays are plotted below.  Their different heights
+are $\alpha x_{\max}=\operatorname{arsinh}(\tan\theta_0)$.
+\begin{center}\input{supplementary/ch08_rays.tex}\end{center}
+\medskip\noindent\textbf{(b)} The next crossing of the axis is at
+\[
+\boxed{Z=\pi/\alpha,}
+\]
+independent of $\bar n$.  The axial ray is the limiting case of this
+family; its transverse oscillation amplitude is zero.
+
+\medskip\noindent\textbf{(c)} For the optical length use $ds/dz=n/\bar n$:
+\begin{align*}
+L_{\rm opt}
+ &=\frac{n_0^2}{\alpha\bar n}
+ \int_0^\pi\frac{dt}{1+A^2\sin^2t}\\
+ &=\frac{n_0^2}{\alpha\bar n}
+ \frac{\pi}{\sqrt{1+A^2}}
+ =\boxed{\frac{\pi n_0}{\alpha}=n_0Z}.
+\end{align*}
+For example the half-range integral follows immediately by
+$u=\tan t$:
+$\int_0^\infty du/[1+(1+A^2)u^2]=\pi/(2\sqrt{1+A^2})$.
+The longer geometrical paths at larger launch angles are exactly
+compensated by their lower refractive indices.  In geometrical optics,
+with nondispersive $n(x)$, all these rays have the same transit time
+$n_0Z/c$ and no differential delay over a half-period.  Material
+dispersion and corrections outside the ray approximation are not
+included in this conclusion.
+
+\Needspace{5\baselineskip}
+\par\bigskip
+\noindent\textbf{8.15}\quad Discuss the TE and TM modes in the dielectric slab waveguide of Section 8.11.A as a boundary-value problem.
+\begin{enumerate}
+\item[(a)] Show that (8.123) emerges as the determining relation for both even and odd modes (in $x$) and that even or odd $p$ goes with the evenness or oddness of the mode, defined by the symmetry in $x$ of the transverse fields.
+\item[(b)] Show that the eigenvalues of $\xi$ for the TE modes are given approximately by
+\[
+\xi\approx\frac{(p+1)\pi}{2(V+1)}\left[1-\frac{(p+1)^{2}\pi^{2}}{24(V+1)^{3}}\right]
+\]
+The lowest order result is accurate for $V\gg1$ and small $p$. Check the accuracy of the full expression against solution of (8.123) by Newton's method for $V=1,2,3$.
+\item[(c)] Calculate the power flow in the $z$ direction (per unit length in the $y$ direction) within the core ($|x|<a$) and in the cladding ($|x|>a$) for the even TE modes and show that the fractions are
+\[
+F_{\mathrm{core}}=\frac{1}{S}\left[1+\frac{\sin(2V\xi)}{2V\xi}\right]\qquad\text{and}\qquad
+F_{\mathrm{clad}}=\frac{1}{S}\left[\frac{\cos^{2}(V\xi)}{V\sqrt{1-\xi^{2}}}\right]
+\]
+where
+\[
+S=\left[1+\frac{\sin(2V\xi)}{2V\xi}\right]+\left[\frac{\cos^{2}(V\xi)}{V\sqrt{1-\xi^{2}}}\right]
+\]
+where $\xi$ is the root of (8.123) for the $p$th mode. Find corresponding expressions for the odd TE modes.
+\end{enumerate}
+\solution
+
+\medskip\noindent\textbf{(a)} Assume isotropic, lossless, nonmagnetic media, with no variation in $y$.
+Set $k_0=\omega/c$ and define
+\[
+q^2=n_1^2k_0^2-k_z^2,\quad
+\beta^2=k_z^2-n_2^2k_0^2,\quad
+u=qa=V\xi,\quad w=\beta a=V\sqrt{1-\xi^2}.
+\]
+Here $u,w>0$ for a bound mode and $u^2+w^2=V^2$.
+For TE polarization take $E_y=E_0f(x)e^{ik_zz-i\omega t}$.
+In the core, $f=\cos qx$ for even modes or $f=\sin qx$ for odd
+modes.  Outside, match to $f(a)e^{-\beta(x-a)}$ at the right
+surface and to its parity reflection at the left surface.
+Continuity of $E_y$ and $H_z=\partial_xE_y/(i\omega\mu_0)$
+requires continuity of $f,f'$.  Therefore
+\[
+u\tan u=w\quad(\hbox{even TE}),\qquad
+-u\cot u=w\quad(\hbox{odd TE}).
+\]
+For TM polarization replace $E_y$ by $H_y$.  Continuity of $H_y$
+and $E_z=-\partial_xH_y/(i\omega\epsilon)$ requires continuity
+of $f$ and $f'/\epsilon$, giving the same equations with
+$w\mapsto(n_1^2/n_2^2)w$.  The combined result is
+\[
+\boxed{\tan(V\xi-p\pi/2)=f\,\frac{\sqrt{1-\xi^2}}{\xi},
+\quad f=1\ (\mathrm{TE}),\quad f=\frac{n_1^2}{n_2^2}\ (\mathrm{TM}).}
+\]
+The root belonging to $p$ lies in
+$p\pi/2<u<(p+1)\pi/2$; even $p$ is an even transverse field,
+and odd $p$ is odd.  The longitudinal component has the opposite
+parity, which explains why specifying transverse parity matters.
+A bound mode exists when $V>p\pi/2$, with no positive threshold
+for $p=0$.
+
+\medskip\noindent\textbf{(b)} For TE modes the phase equation can be written without tangent poles:
+since $w/u=\sqrt{1-\xi^2}/\xi$ and $0<\xi<1$,
+$\arctan(w/u)=\arccos\xi=\pi/2-\arcsin\xi$. Thus
+\[
+V\xi+\arcsin\xi=(p+1)\pi/2.
+\]
+Expanding $\arcsin\xi=\xi+\xi^3/6+O(\xi^5)$ and putting
+$A_p=(p+1)\pi/[2(V+1)]$ first on the cubic term gives
+\[
+\xi=A_p-\frac{A_p^3}{6(V+1)}+\cdots
+=\boxed{\frac{(p+1)\pi}{2(V+1)}
+ \left[1-\frac{(p+1)^2\pi^2}{24(V+1)^3}\right].}
+\]
+A stable Newton implementation uses $t=\arccos\xi$ and
+$F(t)=V\cos t-t-p\pi/2$, with
+\[
+t_{j+1}=t_j+\frac{V\cos t_j-t_j-p\pi/2}{V\sin t_j+1}.
+\]
+The supplementary program retains a bracket $0<t<\pi/2$ and
+bisects if a Newton step leaves it.  It gives all bound TE modes
+at the requested values:
+\begin{center}
+\begin{tabular}{rrrrr}
+\toprule
+$V$&$p$&Newton $\xi$&Approximate $\xi$&Relative error (\%)\\
+\midrule
+1&0&0.7390851332&0.7450254073&0.8037\\
+2&0&0.5149332647&0.5156239102&0.1341\\
+2&1&0.9477471335&0.9833986280&3.7617\\
+3&0&0.3900403167&0.3901757844&0.0347\\
+3&1&0.7596208867&0.7652117854&0.7360\\
+\bottomrule
+\end{tabular}
+\end{center}
+The larger error near threshold is expected because $\xi$ is then
+near one, outside the small-$\xi$ expansion.
+
+\medskip\noindent\textbf{(c)} The local longitudinal power density is
+$S_z=k_z|E_y|^2/(2\omega\mu_0)$.  Let
+$P_*=k_z|E_0|^2a/(2\omega\mu_0)$.
+For even modes direct integration gives
+\begin{align*}
+P_{\rm core}&=P_*\int_{-1}^1\cos^2(ut)\,dt
+ =P_*\left[1+\frac{\sin2u}{2u}\right],\\
+P_{\rm clad}&=\frac{k_z|E_0|^2}{2\omega\mu_0}
+ 2\cos^2u\int_0^\infty e^{-2\beta x}\,dx
+ =P_*\frac{\cos^2u}{w}.
+\end{align*}
+Dividing by their sum gives precisely the stated fractions.  For
+odd modes define
+\[
+S_o=1-\frac{\sin2u}{2u}+\frac{\sin^2u}{w}.
+\]
+Then
+\[
+\boxed{F_{\rm core}^{(o)}=\frac{1-\sin(2u)/(2u)}{S_o},\qquad
+F_{\rm clad}^{(o)}=\frac{\sin^2u/w}{S_o}.}
+\]
+The two claddings are both included.  Their fraction tends to one
+at a mode's threshold ($w\downarrow0$), and to zero for a fixed
+mode as $V\to\infty$.
+
+\Needspace{5\baselineskip}
+\par\bigskip
+\noindent\textbf{8.16}\quad The longitudinal phase velocity in the dielectric slab waveguide of the preceding problem is $v_{p}=\omega/k_{z}=c/(n_{1}\cos\theta_{p})$. Intermodal dispersion occurs because the dielectric media have dispersion and also because the group velocity differs intrinsically for different modes.
+\begin{enumerate}
+\item[(a)] Making the approximation that the dielectrics' dispersion can be neglected, show that the group velocity $v_{g}=d\omega/dk_{z}$ for the $\mathrm{TE}_{p}$ mode is
+\[
+v_{g}=\frac{c\,\cos\theta_{p}}{n_{1}}\left[\frac{1+\beta_{p}a}{\cos^{2}\theta_{p}+\beta_{p}a}\right]
+\]
+where $\theta_{p}$ is the eigenangle of the $p$th mode ($\cos\theta_{p}=\sqrt{1-2\Delta\xi_{p}^{2}}$) and $\beta_{p}$ is given by (8.124). Interpret the departure from $v_{p}v_{g}=c^{2}/n_{1}^{2}$ (as in metallic waveguides; $\beta_{p}\to\infty$) in terms of the Goos--H\"anchen effect and ray-like propagation at the simple phase speed $c/n_{1}$. [\emph{Hint}: Write the eigenvalue relation (8.121) in terms of the independent variable $\omega$ and the dependent variable $k_{z}$ and differentiate with respect to $\omega$.]
+\item[(b)] Write a program to evaluate $v_{g}$ versus $V/V_{t}$, where $V_{t}=p\pi/2$ is the threshold frequency variable for the $p^{\mathrm{th}}$ mode. Make a plot of $v_{g}/c$ for $n_{1}=1.5$, $n_{2}=1.0$ for $p=0,1,2,\ldots,6$ as a function of $V/V_{t}(p=1)$ on the range $(0,10)$.
+\item[(c)] Relate the results of part b to the optical path length difference for the step-index fiber shown in Fig.~8.12b. Can you generate a plot from the results for $v_{g}(p)$ at fixed $V$ for $n_{1}=1.01$, $n_{2}=1.0$ to compare with the ``classical'' ray result?
+\end{enumerate}
+\solution
+
+\medskip\noindent\textbf{(a)} Keep $n_1,n_2$ independent of frequency, as stipulated.  Put
+$W=\omega a/c$, $K=k_za$, $u=qa$, $w=\beta a$ and
+$C=\cos\theta_p=K/(n_1W)$.  The TE phase relation is
+\[
+u=\arctan(w/u)+p\pi/2.
+\]
+Its differential is
+\[
+(V^2+w)\,du=u\,dw,
+\]
+whereas differentiation of
+$u^2=n_1^2W^2-K^2$, $w^2=K^2-n_2^2W^2$ gives
+\[
+u\,du=n_1^2W\,dW-K\,dK,\qquad
+w\,dw=K\,dK-n_2^2W\,dW.
+\]
+Multiplying the differential phase equation by $uw$ and inserting
+these two differentials gives
+\[
+w(V^2+w)(n_1^2W\,dW-K\,dK)
+=u^2(K\,dK-n_2^2W\,dW).
+\]
+The coefficient of $K\,dK$ is $V^2(1+w)$.
+Also $n_1^2w^2+n_2^2u^2=(n_1^2-n_2^2)K^2=V^2K^2/W^2$.
+Collecting the $dW$ terms and cancelling $V^2$ therefore yields
+\[
+K\frac{dK}{dW}=\frac{n_1^2Ww+K^2/W}{1+w},\qquad
+\frac{dK}{dW}=n_1\frac{C^2+w}{C(1+w)}.
+\]
+Since $v_g/c=dW/dK$, the result is
+\[
+\boxed{v_g=\frac{cC}{n_1}\frac{1+w}{C^2+w}.}
+\]
+In particular
+\[
+v_pv_g=\frac{c^2}{n_1^2}\frac{1+w}{C^2+w}
+>\frac{c^2}{n_1^2}
+\]
+for a nonaxial, finitely confined mode.  A simple zigzag ray with
+speed $c/n_1$ would have $v_{g,z}=cC/n_1$.
+The reflection phase varies with $\omega$ and $k_z$, producing a
+Goos--H\"anchen displacement.  For TE reflection
+$\phi=-2\arctan(\beta/q)$, its displacement along the interface is
+\[
+-\left.\frac{\partial\phi}{\partial k_z}\right|_\omega
+=\frac{2k_z}{q\beta}.
+\]
+The wave packet thus advances along the interface as well as along
+the core ray segments.  The associated cladding field carries part
+of the energy in the lower-index medium.  These effects account
+for the factor $(1+w)/(C^2+w)>1$; neglecting the reflection-phase
+derivative would miss it.  As $w\to\infty$ the core ray expression
+is recovered.  At a threshold $w\to0$, $C\to n_2/n_1$ and
+$v_g\to c/n_2$, consistently with the energy being mostly outside.
+
+\medskip\noindent\textbf{(b)} The program solves the phase relation independently for each $p$,
+then evaluates the boxed expression.  Since $V_t(0)=0$, the common
+horizontal scale is $V_t(1)=\pi/2$, as specified in the plot request.
+Each higher branch starts at $V/(\pi/2)=p$.
+\begin{center}\input{supplementary/ch08_group_velocity.tex}\end{center}
+All curves tend to $c/n_1$ for large $V$ at fixed $p$.  They need
+not be monotone: the transition from cladding-dominated propagation
+to the oblique core ray can produce a minimum.
+
+\medskip\noindent\textbf{(c)} For a length $L$ the optical length inferred from delay is
+$c\tau=cL/v_g$, while the simple ray expression is
+$n_1L/\cos\theta$.  The following comparison uses $n_1=1.01$,
+$n_2=1$; each colored curve joins the discrete modes at a fixed $V$.
+\begin{center}\input{supplementary/ch08_modal_delay.tex}\end{center}
+The vertical coordinate is the percent excess delay relative to
+$n_1L/c$.  Away from the weakly confined highest modes, the points
+approach $100(1/\cos\theta-1)$ as $V$ increases.  This is the
+step-index optical-path difference of Fig.~8.12b.  Near threshold
+the delay is reduced by cladding propagation, so applying the
+core-only ray formula there overestimates it.  Even in this
+nondispersive model different modes have different delays; material
+dispersion would add a further frequency dependence.
+
+\Needspace{5\baselineskip}
+\par\bigskip
+\noindent\textbf{8.17}\quad Consider the propagating modes in a cylindrical optical fiber waveguide of radius $a$ with a step index of refraction, $n_{1}$ in the core ($\rho<a$) and $n_{2}<n_{1}$ in the cladding ($\rho>a$). Assume that the fields vary as $e^{im\phi+ik_{z}z-i\omega t}$. For bound modes, the fields in the core (cladding) are proportional to ordinary (modified) Bessel functions $J_{\nu}(K_{\nu})$ with appropriate values of $\nu$ and argument, as in (8.128).
+\begin{enumerate}
+\item[(a)] Show that for $m\neq0$ the eigenvalue relation for the transverse parameter $\gamma_{mn}$ (and $\beta_{mn}$) is
+\[
+\left(\frac{n_{1}^{2}}{\gamma}\frac{J'_{m}}{J_{m}}+\frac{n_{2}^{2}}{\beta}\frac{K'_{m}}{K_{m}}\right)\!\left(\frac{1}{\gamma}\frac{J'_{m}}{J_{m}}+\frac{1}{\beta}\frac{K'_{m}}{K_{m}}\right)
+=\frac{m^{2}}{a^{2}}\left(\frac{n_{1}^{2}}{\gamma^{2}}+\frac{n_{2}^{2}}{\beta^{2}}\right)\!\left(\frac{1}{\gamma^{2}}+\frac{1}{\beta^{2}}\right)
+\]
+where $\gamma^{2}=n_{1}^{2}\omega^{2}/c^{2}-k_{z}^{2}$ and $\beta^{2}=k_{z}^{2}-n_{2}^{2}\omega^{2}/c^{2}$, while primes indicate derivatives with respect to the argument, and the argument of $J_{m}$ ($K_{m}$) is $\gamma a$ ($\beta a$). The first subscript on $\gamma$ is the azimuthal index $m$; the second designates the $n$th root of the eigenvalue equation for fixed $m$.
+\item[(b)] Determine the eigenvalue equation for the $m=0$ modes (TE and TM) and show that the lowest ``cutoff'' frequency corresponds to $V=2.405$, the first root of $J_{0}(x)$, where ``cutoff'' is the frequency below which the guide radiates rather than confines.
+\item[(c)] Show that the lowest $HE$ mode ($HE_{11}$) has no cutoff frequency and that for $V\ll1$ the decay parameter $\beta a\approx Ae^{-B/V^{2}}$. Find $A$ and $B$ in terms of $n_{1}$ and $n_{2}$.
+\end{enumerate}
+\solution
+
+\medskip\noindent\textbf{(a)} Take $\mu=\mu_0$, $\epsilon_i=n_i^2\epsilon_0$ and put
+$k_0=\omega/c$.  At $\rho=a$ let the continuous longitudinal
+field amplitudes be $E$ and $H$.  In each region Maxwell's equations
+give
+\[
+\mathbf E_t=\frac{i}{g^2}
+ (k_z\nabla_tE_z-\omega\mu_0\widehat{\mathbf z}\times\nabla_tH_z),
+\quad
+\mathbf H_t=\frac{i}{g^2}
+ (k_z\nabla_tH_z+\omega\epsilon\widehat{\mathbf z}\times\nabla_tE_z),
+\]
+with $g^2=\gamma^2$ inside and $g^2=-\beta^2$ outside.
+The radial logarithmic derivatives of the longitudinal fields are
+$\gamma J_m'/J_m$ and $\beta K_m'/K_m$ respectively.  Define
+\[
+D=\frac{J_m'}{\gamma J_m}+\frac{K_m'}{\beta K_m},\quad
+F=\frac{n_1^2J_m'}{\gamma J_m}+\frac{n_2^2K_m'}{\beta K_m},\quad
+C_m=\frac{mk_z}{a}(\gamma^{-2}+\beta^{-2}).
+\]
+Continuity of $E_\phi,H_\phi$ becomes the two homogeneous equations
+\[
+C_m E+i\omega\mu_0D H=0,\qquad
+ i\omega\epsilon_0F E-C_m H=0.
+\]
+A nonzero solution requires
+\[
+FD=\frac{k_z^2}{k_0^2}\frac{m^2}{a^2}
+ (\gamma^{-2}+\beta^{-2})^2.
+\]
+The identity
+\[
+\frac{n_1^2}{\gamma^2}+\frac{n_2^2}{\beta^2}
+=\frac{k_z^2}{k_0^2}(\gamma^{-2}+\beta^{-2})
+\]
+follows by substituting the definitions of $\gamma,\beta$ and
+converts this determinant to the equation in part (a).  The normal
+$D,B$ conditions then follow from the tangential Maxwell equations.
+
+\medskip\noindent\textbf{(b)} For $m=0$ the two equations decouple.  With $u=\gamma a$,
+$w=\beta a$, $u^2+w^2=V^2$, they are
+\[
+\boxed{\frac{J_0'(u)}{uJ_0(u)}+
+ \frac{K_0'(w)}{wK_0(w)}=0\quad(\mathrm{TE}),}
+\]
+\[
+\boxed{n_1^2\frac{J_0'(u)}{uJ_0(u)}+
+ n_2^2\frac{K_0'(w)}{wK_0(w)}=0\quad(\mathrm{TM}).}
+\]
+At loss of confinement, $w\downarrow0$ and
+$K_0'(w)/(wK_0(w))\sim-1/[w^2(-\log(w/2)-\gamma_E)]$
+diverges negatively.  Cancellation requires the positive pole of
+the $J_0$ term, with $u$ approaching a zero of $J_0$ from above.
+The lowest threshold is therefore
+\[
+\boxed{V_t=x_{01}=2.4048255577\ldots .}
+\]
+
+\medskip\noindent\textbf{(c)} For the fundamental hybrid mode put $m=1$, and abbreviate
+$S=n_1^2+n_2^2$,
+$A_u=J_1'(u)/(uJ_1(u))$, $B_w=K_1'(w)/(wK_1(w))$.
+The determinant in dimensionless form is
+\[
+(n_1^2A_u+n_2^2B_w)(A_u+B_w)
+=(n_1^2/u^2+n_2^2/w^2)(1/u^2+1/w^2).
+\]
+For $w\ll u\ll1$, start with
+\[
+J_1(u)=\frac u2-\frac{u^3}{16}+\frac{u^5}{384}+O(u^7),
+\qquad
+K_1(w)=\frac1w+\frac w2
+ \left[\log(w/2)+\gamma_E-\frac12\right]+O(w^3\log w).
+\]
+Differentiating and dividing these series gives
+\[
+B_w=-w^{-2}-L+O(w^2L^2),\quad L=-\log(w/2)-\gamma_E,
+\qquad A_u=u^{-2}-\tfrac14-\tfrac{u^2}{96}+O(u^4).
+\]
+The $w^{-4}$ terms cancel identically. The $w^{-2}$ coefficients
+on the left and right are $2n_2^2L-SA_u$ and $S/u^2$.
+Equating them gives
+\[
+2n_2^2L=S(A_u+u^{-2})
+=S\left(\frac2{u^2}-\frac14-\frac{u^2}{96}+\cdots\right).
+\]
+As $u^2=V^2-w^2$ and $w$ is exponentially small, this becomes
+\[
+\log(w/2)=-\gamma_E-\frac{S}{n_2^2V^2}
+ +\frac{S}{8n_2^2}+O(V^2).
+\]
+Exponentiating yields
+\[
+\boxed{\beta a\sim A\exp(-B/V^2),\qquad
+ A=2\exp\!\left[-\gamma_E+\frac{n_1^2+n_2^2}{8n_2^2}\right],
+ \quad B=\frac{n_1^2+n_2^2}{n_2^2}.}
+\]
+The relative correction to this leading expression is $O(V^2)$.
+There is a positive but exponentially small decay constant at
+arbitrarily small positive $V$: the $HE_{11}$ branch has no
+positive cutoff.  Its very long cladding tail should not be confused
+with a well-confined ray.  The supplementary code solves a
+cancellation-free form of the determinant in $\log w$ and checks
+this limit; for $n_1=1.5,n_2=1,V=0.3$ it finds
+$\log w=-35.58739754$, versus $-35.58892959$ from the asymptote.
+
+\Needspace{5\baselineskip}
+\par\bigskip
+\noindent\textbf{8.18}\quad\begin{enumerate}
+\item[(a)] From the use of Green's theorem in two dimensions show that the TM and TE modes in a waveguide defined by the boundary-value problems (8.34) and (8.36) are orthogonal in the sense that
+\[
+\int_{A}E_{z\lambda}E_{z\mu}\;da=0\qquad\text{for }\lambda\neq\mu
+\]
+for TM modes, and a corresponding relation for $H_{z}$ for TE modes.
+\item[(b)] Prove that the relations (8.131)--(8.134) form a consistent set of normalization conditions for the fields, including the circumstances when $\lambda$ is a TM mode and $\mu$ is a TE mode.
+\end{enumerate}
+\solution
+
+\medskip\noindent\textbf{(a)} Use a uniform real $\epsilon,\mu$ and a perfectly conducting
+boundary.  Choose real scalar eigenfunctions of
+$-\nabla_t^2$, Dirichlet for TM and Neumann for TE.
+For two scalar eigenfunctions $f_\lambda,f_\mu$, Green's identity
+is
+\[
+(\gamma_\lambda^2-\gamma_\mu^2)
+ \int_A f_\lambda f_\mu\,da
+=\oint_{\partial A}
+ (f_\lambda\partial_nf_\mu-f_\mu\partial_nf_\lambda)\,dl=0.
+\]
+Thus different eigenvalues are orthogonal.  Within a degenerate
+eigenspace choose an orthogonal basis; the eigenvalue equation
+alone does not make arbitrary degenerate linear combinations
+orthogonal.  This establishes the stated relation for $E_z$ and
+its TE counterpart for $H_z$.  The constant Neumann scalar is
+excluded because it produces no TE field.
+
+\medskip\noindent\textbf{(b)} Let $D_\lambda,N_\lambda$ be Dirichlet and nonconstant Neumann
+scalars normalized to $\int_A f_\lambda f_\mu\,da=\delta_{\lambda\mu}$.
+Integration by parts gives
+\[
+\int_A\nabla_tf_\lambda\cdot\nabla_tf_\mu\,da
+=\gamma_\mu^2\delta_{\lambda\mu}.
+\]
+The normalized transverse electric fields can therefore be chosen as
+\[
+\mathbf E_\lambda^{\rm TM}=\frac{\nabla_tD_\lambda}{\gamma_\lambda},
+\qquad
+\mathbf E_\lambda^{\rm TE}=
+ -\frac{\widehat{\mathbf z}\times\nabla_tN_\lambda}{\gamma_\lambda}.
+\]
+Within either family their inner product is $\delta_{\lambda\mu}$.
+For a mixed pair, $\nabla_t\cdot(\widehat{\mathbf z}\times\nabla_tN)=0$
+and $D=0$ on the wall imply
+\[
+\int_A\nabla_tD\cdot(\widehat{\mathbf z}\times\nabla_tN)\,da
+=\oint_{\partial A}D(\widehat{\mathbf z}\times\nabla_tN)
+ \cdot\mathbf n\,dl=0.
+\]
+This proves (8.131) for all pairs, including accidental degeneracy
+between TE and TM families.
+
+With $k_\lambda^2=\omega^2\mu\epsilon-\gamma_\lambda^2$,
+\[
+\mathbf H_\lambda=\frac{\widehat{\mathbf z}\times\mathbf E_\lambda}
+ {Z_\lambda},\qquad
+Z_{\rm TM}=\frac{k_\lambda}{\omega\epsilon},\quad
+Z_{\rm TE}=\frac{\omega\mu}{k_\lambda},
+\]
+so the remaining transverse bilinear integrals follow directly:
+\[
+\int_A\mathbf H_\lambda\cdot\mathbf H_\mu\,da
+ =\frac{\delta_{\lambda\mu}}{Z_\lambda^2},\qquad
+\frac12\int_A(\mathbf E_\lambda\times\mathbf H_\mu)
+ \cdot\widehat{\mathbf z}\,da
+ =\frac{\delta_{\lambda\mu}}{2Z_\lambda}.
+\]
+Finally $\nabla\cdot\mathbf E=\nabla\cdot\mathbf H=0$ gives
+\[
+E_{z\lambda}^{\rm TM}=-\frac{i\gamma_\lambda}{k_\lambda}D_\lambda,
+\qquad
+H_{z\lambda}^{\rm TE}=-\frac{i\gamma_\lambda}{k_\lambda Z_\lambda}N_\lambda,
+\]
+and consequently
+\[
+\boxed{\int_A E_{z\lambda}E_{z\mu}\,da
+ =-\frac{\gamma_\lambda^2}{k_\lambda^2}\delta_{\lambda\mu},
+\qquad
+\int_A H_{z\lambda}H_{z\mu}\,da
+ =-\frac{\gamma_\lambda^2}{k_\lambda^2Z_\lambda^2}\delta_{\lambda\mu}.}
+\]
+These are exactly the signs and factors of (8.134): the textbook
+uses bilinear products, without complex conjugation, and longitudinal
+fields are imaginary when the transverse electric field is real.
+For a propagating mode $Z$ is positive and the power of amplitude
+$A$ is $|A|^2/(2Z)$.  For an evanescent mode the bilinear equations
+remain algebraic normalization identities, while the actual mean
+power uses $\tfrac12\operatorname{Re}(\mathbf E\times\mathbf H^*)$
+and is zero for a single decaying mode.  Exactly at cutoff,
+$k=0$, these field conventions must be interpreted by a rescaled
+limit rather than by division by zero.
+
+\Needspace{5\baselineskip}
+\par\bigskip
+\noindent\textbf{8.19}\quad The figure shows a cross-sectional view of an infinitely long rectangular waveguide with the center conductor of a coaxial line extending vertically a distance $h$ into its interior at $z=0$. The current along the probe oscillates sinusoidally in time with frequency $\omega$, and its variation in space can be approximated as $I(y)=I_{0}\sin[(\omega/c)(h-y)]$. The thickness of the probe can be neglected. The frequency is such that only the $\mathrm{TE}_{10}$ mode can propagate in the guide.
+
+\begin{center}
+\begin{tikzpicture}[scale=1.05]
+  % guide cross-section
+  \draw[thick] (0,0) rectangle (4.4,2.6);
+  \draw[<->] (0,3.0) -- (4.4,3.0);
+  \node[above] at (2.2,2.95) {$a$};
+  \draw[<->] (4.7,0) -- (4.7,2.6);
+  \node[right] at (4.7,1.3) {$b$};
+  % probe from bottom
+  \fill[gray!45] (2.55,0) rectangle (2.75,1.9);
+  \draw[thick] (2.55,0) rectangle (2.75,1.9);
+  \foreach \y in {0.15,0.35,...,1.8}{\draw (2.55,\y) -- (2.75,\y+0.15);}
+  % h dimension
+  \draw[<->] (3.1,0) -- (3.1,1.9);
+  \node[right] at (3.15,1.0) {$h$};
+  % x dimension from left wall
+  \draw[<->] (0,0.75) -- (2.55,0.75);
+  \node[above] at (1.2,0.78) {$x$};
+  \node at (5.5,-0.5) {\textbf{Problem 8.19}};
+\end{tikzpicture}
+\end{center}
+
+\begin{enumerate}
+\item[(a)] Calculate the amplitudes for excitation of both TE and TM modes for all $(m,n)$ and show how the amplitudes depend on $m$ and $n$ for $m,n\gg1$ for a fixed frequency $\omega$.
+\item[(b)] For the propagating mode show that the power radiated in the positive $z$ direction is
+\[
+P=\frac{\mu c^{2}I_{0}^{2}}{\omega kab}\sin^{2}\!\left(\frac{\pi X}{a}\right)\sin^{4}\!\left(\frac{\omega h}{2c}\right)
+\]
+with an equal amount in the opposite direction. Here $k$ is the wave number for the $\mathrm{TE}_{10}$ mode.
+\item[(c)] Discuss the modifications that occur if the guide, instead of running off to infinity in both directions, is terminated with a perfectly conducting surface at $z=L$. What values of $L$ will maximize the power flow for a fixed current $I_{0}$? What is the radiation resistance of the probe (defined as the ratio of power flow to one-half the square of the current at the base of the probe) at maximum?
+\end{enumerate}
+\solution
+
+\medskip\noindent\textbf{(a)} Use $X$ for the horizontal probe position marked $x$ in the sketch,
+and $k_0=\omega/c$.  The prescribed current is
+\[
+\mathbf J=\widehat{\mathbf y} I_0\sin[k_0(h-y)]
+ \delta(x-X)\delta(z),\qquad 0<y<h.
+\]
+Normalize the transverse electric fields to unit squared integral,
+as in (8.131).  Put
+\[
+q_m=m\pi/a,\quad q_n=n\pi/b,\quad
+\gamma_{mn}^2=q_m^2+q_n^2,\quad
+k_{mn}=\sqrt{k_0^2-\gamma_{mn}^2},
+\]
+choosing $k>0$ for propagation and $\operatorname{Im}k>0$ for decay.
+With $N_{mn}=\sqrt{(2-\delta_{m0})(2-\delta_{n0})/(ab)}$,
+the components needed in the source integral are
+\[
+E_{y,mn}^{\rm TM}=N_{mn}\frac{q_n}{\gamma_{mn}}
+ \sin(q_mx)\cos(q_ny),\qquad
+E_{y,mn}^{\rm TE}=N_{mn}\frac{q_m}{\gamma_{mn}}
+ \sin(q_mx)\cos(q_ny).
+\]
+TM requires $m,n\geq1$; TE permits either index to be zero but
+excludes $(0,0)$.  These signs agree with (8.135)--(8.136).
+The product-to-sum identity gives the elementary source integral:
+\[
+F_n=\int_0^h\sin[k_0(h-y)]\cos(q_ny)\,dy
+ =\frac{\cos(q_nh)-\cos(k_0h)}2
+ \left(\frac1{k_0-q_n}+\frac1{k_0+q_n}\right).
+\]
+Combining the fractions,
+\[
+F_n=\frac{k_0[\cos(q_nh)-\cos(k_0h)]}{k_0^2-q_n^2}.
+\]
+When $q_n=k_0$, its continuous limit is
+$F_n=(h/2)\sin(k_0h)$, so the apparent denominator singularity is
+removable.
+
+Reciprocity, (8.146), gives
+$A_\lambda^{(\pm)}=-(Z_\lambda/2)\int\mathbf J\cdot
+\mathbf E_\lambda^{(\mp)}d^3x$.
+The transverse source at $z=0$ therefore excites equal amplitudes
+in both directions:
+\[
+\boxed{A_{mn}^{{\rm TM},\pm}
+=-\frac{I_0Z_{mn}^{\rm TM}}2 N_{mn}\frac{q_n}{\gamma_{mn}}
+ \sin(q_mX)F_n,\qquad Z_{mn}^{\rm TM}=\frac{k_{mn}}{\omega\epsilon},}
+\]
+\[
+\boxed{A_{mn}^{{\rm TE},\pm}
+=-\frac{I_0Z_{mn}^{\rm TE}}2 N_{mn}\frac{q_m}{\gamma_{mn}}
+ \sin(q_mX)F_n,\qquad Z_{mn}^{\rm TE}=\frac{\omega\mu}{k_{mn}}.}
+\]
+In particular all $m=0$ TE amplitudes vanish.  At fixed $\omega$
+and $m,n\gg1$, $k\sim i\gamma$ and $F_n=O(n^{-2})$.
+Keeping the oscillating trigonometric factors understood,
+\[
+A^{\rm TM}_{mn}=O(n^{-1}),\qquad
+A^{\rm TE}_{mn}=O\!\left(\frac{m}{(m^2+n^2)n^2}\right).
+\]
+When both indices grow at a fixed ratio these are $O(M^{-1})$
+and $O(M^{-3})$, respectively.  Some coefficients vanish faster
+or exactly by symmetry.  These are source-plane amplitudes; at
+$z\ne0$ the high modes also contain $e^{-\gamma|z|}$.
+
+\medskip\noindent\textbf{(b)} For $\mathrm{TE}_{10}$,
+$F_0=2\sin^2(k_0h/2)/k_0$, $N_{10}=\sqrt{2/(ab)}$, so
+\[
+A_{10}^{\pm}=-\frac{ZI_0}{k_0}\sqrt{\frac2{ab}}
+ \sin\frac{\pi X}{a}\sin^2\frac{k_0h}{2}.
+\]
+Since the power in either outgoing wave is $|A_{10}|^2/(2Z)$,
+\[
+\boxed{P=\frac{ZI_0^2}{abk_0^2}
+ \sin^2\frac{\pi X}{a}\sin^4\frac{k_0h}{2}
+=\frac{\mu c^2I_0^2}{\omega kab}
+ \sin^2\frac{\pi X}{a}\sin^4\frac{\omega h}{2c}.}
+\]
+Here $I_0$ is a peak phasor amplitude; replace $I_0^2$ by
+$|I_0|^2$ if its phase has not been chosen real.
+
+\medskip\noindent\textbf{(c)} A short at $z=L>0$ reflects transverse electric fields with
+coefficient $-1$.  Equivalently add a negative image probe at
+$z=2L$.  The outgoing amplitude at $z<0$ for each mode is
+\[
+A_{mn}^{\rm left}=A_{mn}^{-}(1-e^{2ik_{mn}L}).
+\]
+In $0<z<L$ the field is a standing-wave combination with zero
+tangential electric field at the short.  The same image construction
+includes the evanescent near fields; for those modes $e^{2ikL}$
+is real and decaying.  Only the propagating mode transports power
+far to the left, giving
+\[
+P_{\rm left}=4P\sin^2kL,\qquad
+\boxed{L=(2j+1)\pi/(2k),\quad j=0,1,\ldots}
+\]
+for maxima at fixed prescribed current.  The maximum is $4P$,
+compared with total power $2P$ in the unterminated guide.
+With $I_{\rm base}=I_0\sin k_0h$, the radiation resistance there is
+\[
+\boxed{R_{\rm rad,max}=\frac{4P}{|I_{\rm base}|^2/2}
+ =\frac{2Z}{abk_0^2}\sin^2\frac{\pi X}{a}
+ \tan^2\frac{k_0h}{2}.}
+\]
+This definition presumes nonzero base current; a prescribed profile
+with zero base current cannot be assigned a finite resistance by
+that ratio.  A physical source of fixed voltage would also have
+its current changed by the reflected wave, whereas the problem
+holds $I_0$ fixed.
+
+\Needspace{5\baselineskip}
+\par\bigskip
+\noindent\textbf{8.20}\quad An infinitely long rectangular waveguide has a coaxial line terminating in the short side of the guide with the thin central conductor forming a semicircular loop of radius $R$ whose center is a height $h$ above the floor of the guide, as shown in the accompanying cross-sectional view. The half-loop is in the plane $z=0$ and its radius $R$ is sufficiently small that the current can be taken as having a constant value $I_{0}$ everywhere on the loop.
+
+\begin{center}
+\begin{tikzpicture}[scale=1.1]
+  % guide cross-section
+  \draw[thick] (0.7,0) rectangle (4.7,2.5);
+  \draw[<->] (0.7,2.85) -- (4.7,2.85);
+  \node[above] at (2.7,2.8) {$a$};
+  \draw[<->] (5.0,0) -- (5.0,2.5);
+  \node[right] at (5.0,1.25) {$b$};
+  % coax line terminating at the left wall
+  \draw[thick] (-0.5,1.55) -- (0.7,1.55);
+  \draw[thick] (-0.5,1.75) -- (0.7,1.75);
+  \fill[gray!35] (-0.5,1.55) rectangle (0.7,1.75);
+  \foreach \x in {-0.4,-0.2,0.0,0.2,0.4,0.6}{\draw (\x,1.75) -- (\x+0.1,1.55);}
+  % semicircular half-loop bulging into the guide, vertical diameter 2R
+  %  (center at height h = 1.25, ends on the wall at 1.25 +- 0.4)
+  \draw[thick] (0.7,1.65) arc (90:-90:0.4);
+  \draw[thick] (0.7,1.65) arc (90:-90:0.32);
+  % datum lines at the two ends of the diameter, with arrowheads
+  \draw (0.85,1.65) -- (1.45,1.65);
+  \draw[->] (1.15,1.85) -- (1.15,1.66);
+  \draw (0.85,0.85) -- (1.45,0.85);
+  \draw[->] (1.15,0.65) -- (1.15,0.84);
+  \node at (1.75,1.25) {$2R$};
+  % h dimension: floor to the center of the loop
+  \draw (1.1,1.25) -- (2.6,1.25);
+  \draw[<->] (2.6,0) -- (2.6,1.25);
+  \node[right] at (2.65,0.62) {$h$};
+  \node at (5.6,-0.5) {\textbf{Problem 8.20}};
+\end{tikzpicture}
+\end{center}
+
+\begin{enumerate}
+\item[(a)] Prove that to the extent that the current is constant around the half-loop, the TM modes are not excited. Give a physical explanation of this lack of excitation.
+\item[(b)] Determine the amplitude for the lowest TE mode in the guide and show that its value is independent of the height $h$.
+\item[(c)] Show that the power radiated in either direction in the lowest TE mode is
+\[
+P=\frac{I_{0}^{2}}{16}\,Z\,\frac{a}{b}\left(\frac{\pi R}{a}\right)^{4}
+\]
+where $Z$ is the wave impedance of the $\mathrm{TE}_{10}$ mode. Here assume $R\ll a,b$.
+\end{enumerate}
+\solution
+
+\medskip\noindent\textbf{(a)} The mode coefficient for the filament is
+\[
+A_\lambda^{\pm}=-\frac{Z_\lambda I_0}{2}
+ \int_{\rm arc}\mathbf E_{t\lambda}\cdot d\boldsymbol\ell.
+\]
+For TM modes $\mathbf E_t=\nabla_tD/\gamma$, where $D$ vanishes
+on the metal boundary.  Consequently
+\[
+\int_{\rm arc}\mathbf E_t^{\rm TM}\cdot d\boldsymbol\ell
+=\frac{D(\hbox{end})-D(\hbox{start})}{\gamma}=0.
+\]
+This proves the absence of every TM mode, including evanescent
+ones, without a small-$R$ expansion.  The constant current together
+with its return in the wall forms a solenoidal transverse loop.
+It has magnetic circulation and no varying line charge along the
+arc, so its transverse overlap with a gradient field is zero.
+If the current varied around the loop, integration by parts would
+leave a term involving that variation and TM excitation could occur.
+
+\medskip\noindent\textbf{(b)} Choose the direction of current to increase
+$\vartheta$ in
+\[
+x=R\cos\vartheta,\qquad y=h+R\sin\vartheta,
+\qquad -\pi/2\leq\vartheta\leq\pi/2.
+\]
+For TE$_{10}$, $E_y=\sqrt{2/(ab)}\sin(\pi x/a)$ and $E_x=0$.
+Its overlap is independent of $h$:
+\begin{align*}
+\int_{\rm arc}\mathbf E_t\cdot d\boldsymbol\ell
+ &=\sqrt{\frac2{ab}}R\int_{-\pi/2}^{\pi/2}
+ \cos\vartheta\sin\!\left(\frac{\pi R}{a}\cos\vartheta\right)d\vartheta\\
+ &=\sqrt{\frac2{ab}}\,\pi R J_1(\pi R/a).
+\end{align*}
+The last identity follows by differentiating
+$\int_{-\pi/2}^{\pi/2}\cos(t\cos\vartheta)d\vartheta=\pi J_0(t)$.
+Thus, for constant current, the exact coefficient is
+\[
+\boxed{A_{10}^{\pm}=-\frac{ZI_0}2\sqrt{\frac2{ab}}
+ \pi R J_1(\pi R/a).}
+\]
+Reversing the loop orientation reverses its sign but not its power.
+For $R\ll a,b$, $J_1(t)=t/2+O(t^3)$, and therefore
+\[
+A_{10}^{\pm}=-ZI_0\sqrt{\frac2{ab}}\frac{\pi^2R^2}{4a}
+ [1+O(R^2/a^2)].
+\]
+\medskip\noindent\textbf{(c)} The power in either direction is
+\[
+\boxed{P=\frac{|A_{10}|^2}{2Z}
+ =\frac{I_0^2}{16}Z\frac ab
+ \left(\frac{\pi R}{a}\right)^4
+ [1+O(R^2/a^2)].}
+\]
+The exact constant-current result before this expansion is
+$P=ZI_0^2\pi^2R^2J_1^2(\pi R/a)/(4ab)$.
+The independence of $h$ follows from the absence of any $y$
+dependence in the TE$_{10}$ field, provided the entire loop remains
+inside the guide.
+
+\Needspace{5\baselineskip}
+\par\bigskip
+\noindent\textbf{8.21}\quad A hollow metallic waveguide with a distortion in the form of a localized bend or increase in cross section can support nonpropagating (``bound state'') configurations of fields in the vicinity of the distortion. Consider a rectangular guide that has its distortion confined to a plane, as shown in the figure, and $\mathrm{TE}_{10}$ as its lowest propagating mode, with perpendicular electric field $E_{\perp}=\psi$. On either side of the distortion the guide is straight and of width $a$. Without distortion, $\psi=E_{0}\sin(\pi y/a)\exp(\pm ikz)$, where $k^{2}=(\omega/c)^{2}-(\pi/a)^{2}$. The distortion is described by a curvature $\kappa(s)=1/R(s)$ and a width $w(s)$. Locally the element of area in the plane is $dA=h(s,t)\;ds\;dt$, where $s$ is the length along the guide wall and $t$ the transverse coordinate, as shown in the figure, and $h(s,t)=1-\kappa(s)t$. In terms of $s$ and $t$ the Laplacian is
+\[
+\nabla^{2}\psi=\frac{1}{h}\frac{\partial}{\partial t}\left(h\frac{\partial\psi}{\partial t}\right)+\frac{1}{h}\frac{\partial}{\partial s}\left(\frac{1}{h}\frac{\partial\psi}{\partial s}\right)
+\]
+If the distortions are very small and change slowly in $s$ on the scale of the width $a$, an ansatz for the solution is
+\[
+\psi(s,t)=\frac{u(s)}{\sqrt{h(s,t)}}\cdot\sin\!\left[\frac{\pi t}{w(s)}\right]
+\]
+[The factor in the denominator is equivalent to the factor $\rho^{-1/2}$ familiar from Bessel functions that converts the radial part of the Laplacian in polar coordinates to a simple second partial derivative (plus an additional term without derivatives).]
+\begin{enumerate}
+\item[(a)] Show that substitution of the ansatz into the two-dimensional wave equation, $(\nabla^{2}+\omega^{2}/c^{2})\psi=0$, leads to the equation for $u(s)$,
+\[
+\frac{d^{2}u}{ds^{2}}+[k^{2}-v(s)]u=0\qquad\text{with }v(s)=\pi^{2}\!\left(\frac{1}{w^{2}(s)}-\frac{1}{a^{2}}\right)-\frac{1}{4}\,\kappa^{2}(s)
+\]
+if small terms are neglected. Interpret $v(s)$ in analogy with the Schr\"odinger equation in one dimension.
+\item[(b)] If the distortion is in the form of a bend through an angle $\theta$ with constant radius of curvature $R\gg a$, show that for $\theta a/R\ll1$ \erratum{and $|\theta|\ll1$} there is a ``bound state'' at frequency $\omega_{0}$ where
+\[
+\omega_{0}^{2}\approx\left(\frac{\pi c}{a}\right)^{2}\!\left[1-\left(\frac{\theta a}{8\pi R}\right)^{2}\right]
+\]
+\end{enumerate}
+\erratum{The additional small-angle assumption is needed for the stated leading coefficient; the finite-angle bound state is treated in the solution.}
+
+References: J.~Goldstone and R.~L. Jaffe, \emph{Phys. Rev. B} \textbf{45}, 14100 (1992); J.~P. Carini, J.~T. Londergan, K.~Mullen, and D.~P. Murdock, \emph{Phys. Rev. B} \textbf{48}, 4503 (1993).
+
+\begin{center}
+\begin{tikzpicture}[scale=1.0]
+  % curved guide walls (gentle bend)
+  \draw[thick] (-2.6,1.1) .. controls (-1.0,1.6) and (0.8,1.55) .. (2.6,0.9);
+  \draw[thick] (-2.6,0.0) .. controls (-1.0,0.5) and (0.8,0.45) .. (2.6,-0.15);
+  % s arrow along top wall
+  \draw[->] (0.0,1.55) -- (0.65,1.5) node[above] {$s$};
+  % w(s) double arrow between walls near s=0 region
+  \draw[<->] (-0.15,1.42) -- (-0.15,0.38);
+  \node[below] at (-0.15,0.25) {$w(s)$};
+  % t arrow transverse (dashed centerline downward)
+  \draw[dashed] (0.5,1.5) .. controls (0.45,0.9) and (0.42,0.45) .. (0.4,0.0)
+    .. controls (0.35,-1.0) and (0.3,-1.8) .. (0.28,-2.6);
+  \draw[->] (0.5,1.35) -- (0.42,0.55) node[right=2pt] {$t$};
+  \node[right] at (0.6,-1.4) {$\kappa(s)=1/R(s)$};
+  \node at (2.9,-2.4) {\textbf{Problem 8.21}};
+\end{tikzpicture}
+\end{center}
+\solution
+
+\medskip\noindent\textbf{(a)} Put $f(s,t)=u(s)\sin[\pi t/w(s)]$ and $\psi=h^{-1/2}f$.
+At fixed $s$, $h_t=-\kappa$, and direct differentiation gives
+\[
+\frac1h\partial_t(h\partial_t\psi)
+=h^{-1/2}\left(\partial_t^2f+
+ \frac{\kappa^2}{4h^2}f\right).
+\]
+For $|\kappa|a\ll1$, slowly varying width and curvature, and a
+longitudinal amplitude varying on scales large compared with $a$,
+the longitudinal part can be expanded explicitly as
+\[
+\frac1h\partial_s(h^{-1}\partial_s\psi)
+=h^{-1/2}\left[\frac{f_{ss}}{h^2}
+-\frac{2h_s f_s}{h^3}
++\left(\frac{5h_s^2}{4h^4}-\frac{h_{ss}}{2h^3}\right)f\right].
+\]
+Here $h_s=-t\kappa'$ and $h_{ss}=-t\kappa''$. Writing
+$\vartheta=\pi t/w(s)$ also gives
+\[
+f_{ss}=u''\sin\vartheta+2u'\vartheta_s\cos\vartheta
++u\vartheta_{ss}\cos\vartheta-u\vartheta_s^2\sin\vartheta,
+\quad
+\vartheta_s=-\frac{\pi t w'}{w^2},\quad
+\vartheta_{ss}=-\frac{\pi t w''}{w^2}
++\frac{2\pi t(w')^2}{w^3}.
+\]
+Discarding these width and curvature derivatives, and replacing
+$h^{-2}$ by $1$ in the slow longitudinal derivative term, leaves
+$h^{-1/2}u''\sin(\pi t/w)$. These are precisely the stated
+adiabatic and small-curvature approximations.
+Using $\partial_t^2f=-(\pi/w)^2f$ and $h^{-2}=1+O(\kappa a)$
+in the curvature term gives
+\[
+u''+\left[\frac{\omega^2}{c^2}-\frac{\pi^2}{w^2(s)}
+ +\frac{\kappa^2(s)}4\right]u=0.
+\]
+Separating the straight-guide cutoff gives the stated equation,
+\[
+\boxed{-u''+v(s)u=k^2u,\qquad
+v(s)=\pi^2\left[\frac1{w^2(s)}-\frac1{a^2}\right]
+ -\frac{\kappa^2(s)}4.}
+\]
+It is a one-dimensional Schr\"odinger eigenproblem with energy
+$k^2$.  A widening makes the first term attractive; curvature
+makes the second term attractive regardless of the direction of
+bending.  A localized negative potential in one dimension supports
+a bound ground state.  Here $k^2=-q^2<0$ means fields decay in
+the straight sections, with frequency below $\pi c/a$; it does
+not mean a negative electromagnetic frequency squared.
+
+\medskip\noindent\textbf{(b)} For a bend of constant radius and unchanged width, the reduced
+potential is a square well of depth $1/(4R^2)$ and length
+$\ell=R|\theta|$.  Smooth end transitions much shorter than $R$
+and than $\ell$, but longer than $a$, give the same leading well
+limit while preserving the slow-variation assumption of (a).
+This smooth-well interpretation requires $a\ll\ell$ as well as
+$a\ll R$. With the
+origin at its center the even ground-state solution is proportional
+to $\cos(bs)$ inside and $e^{-q(|s|-\ell/2)}$ outside, where
+\[
+b^2=\frac1{4R^2}-q^2,\qquad
+\boxed{q=b\tan(b\ell/2).}
+\]
+For a weak, short well, $b\ell/2\ll1$.  This requires
+$|\theta|\ll1$, independently of $a/R$.  Expanding the tangent
+then gives
+\[
+q=\frac{\ell}{8R^2}[1+O(\theta^2)]
+=\frac{|\theta|}{8R}[1+O(\theta^2)].
+\]
+Since $\omega_0^2/c^2=(\pi/a)^2-q^2$, the requested leading
+small-angle result is
+\[
+\boxed{\omega_0^2\simeq\left(\frac{\pi c}{a}\right)^2
+ \left[1-\left(\frac{\theta a}{8\pi R}\right)^2\right].}
+\]
+The retained relative shift is small when $|\theta|a/R\ll1$,
+but that condition alone does not justify its coefficient.
+This is the reason for the red correction to part (b).
+For finite angles the full reduced-model answer remains available:
+let $x\in(0,\pi/2)$ solve
+\[
+\frac{x}{\cos x}=\frac{|\theta|}{4},\qquad
+qR=\tfrac12\sin x,\qquad
+\omega_0^2=\left(\frac{\pi c}{a}\right)^2-
+ \frac{c^2\sin^2x}{4R^2}.
+\]
+For example $\theta=\pi$ gives $qR=0.2958470340$, whereas
+$|\theta|/8=0.3926990817$.  Taking $R/a$ arbitrarily large
+satisfies the originally printed $\theta a/R\ll1$ without
+removing this discrepancy.  Thus the small-angle requirement is
+mathematical, not merely a preference about how tightly the guide
+should bend.

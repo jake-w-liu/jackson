@@ -1,0 +1,1632 @@
+% Problems, Chapter 10: Scattering and Diffraction
+% Jackson, Classical Electrodynamics, 3rd ed.
+% Requires: amsmath, amssymb, tikz
+
+\section*{Problems}
+
+\Needspace{5\baselineskip}
+\par\bigskip
+\noindent\textbf{10.1}\quad\begin{enumerate}
+\item[(a)] Show that for arbitrary initial polarization, the scattering cross section of a perfectly conducting sphere of radius $a$, summed over outgoing polarizations, is given in the long-wavelength limit by
+\[
+\frac{d\sigma}{d\Omega}\,(\boldsymbol{\epsilon}_{0},\mathbf{n}_{0},\mathbf{n})=k^{4}a^{6}\left[\frac{5}{4}-|\boldsymbol{\epsilon}_{0}\cdot\mathbf{n}|^{2}-\frac{1}{4}\,|\mathbf{n}\cdot(\mathbf{n}_{0}\times\boldsymbol{\epsilon}_{0})|^{2}-\mathbf{n}_{0}\cdot\mathbf{n}\right]
+\]
+where $\mathbf{n}_{0}$ and $\mathbf{n}$ are the directions of the incident and scattered radiations, respectively, while $\boldsymbol{\epsilon}_{0}$ is the (perhaps complex) unit polarization vector of the incident radiation ($\boldsymbol{\epsilon}_{0}^{*}\cdot\boldsymbol{\epsilon}_{0}=1$; $\mathbf{n}_{0}\cdot\boldsymbol{\epsilon}_{0}=0$).
+\item[(b)] If the incident radiation is linearly polarized, show that the cross section is
+\[
+\frac{d\sigma}{d\Omega}\,(\boldsymbol{\epsilon}_{0},\mathbf{n}_{0},\mathbf{n})=k^{4}a^{6}\left[\frac{5}{8}\,(1+\cos^{2}\theta)-\cos\theta-\frac{3}{8}\sin^{2}\theta\,\cos2\phi\right]
+\]
+where $\mathbf{n}\cdot\mathbf{n}_{0}=\cos\theta$ and the azimuthal angle $\phi$ is measured from the direction of the linear polarization.
+\item[(c)] What is the ratio of scattered intensities at $\theta=\pi/2$, $\phi=0$ and $\theta=\pi/2$, $\phi=\pi/2$? Explain physically in terms of the induced multipoles and their radiation patterns.
+\end{enumerate}
+\solution
+Use phasors with time dependence $e^{-i\omega t}$, and put
+$\mathbf h=\mathbf n_0\times\boldsymbol\epsilon_0$. Jackson's induced moments
+(10.12)--(10.14) are
+\[
+\mathbf p=4\pi\epsilon_0a^3E_0\boldsymbol\epsilon_0,\qquad
+\frac{\mathbf m}{c}=-2\pi\epsilon_0a^3E_0\mathbf h .
+\]
+The electric dipole field is proportional to
+$\mathbf p-\mathbf n(\mathbf n\cdot\mathbf p)$ and the magnetic dipole field
+to $-\mathbf n\times\mathbf m/c$. Thus the normalized outgoing amplitude is
+\[
+\mathbf f=k^2a^3\left[
+\boldsymbol\epsilon_0-\mathbf n(\mathbf n\cdot\boldsymbol\epsilon_0)
++\frac12\mathbf n\times\mathbf h\right].
+\]
+\textbf{(a)} Summing over any two orthonormal outgoing transverse
+polarizations gives $\sum_s|\boldsymbol\epsilon_s^*\cdot\mathbf f|^2
+=\mathbf f^*\cdot\mathbf f$. Now
+\[
+|\boldsymbol\epsilon_0-\mathbf n(\mathbf n\cdot\boldsymbol\epsilon_0)|^2
+=1-|\mathbf n\cdot\boldsymbol\epsilon_0|^2,\qquad
+|\mathbf n\times\mathbf h|^2=1-|\mathbf n\cdot\mathbf h|^2,
+\]
+and the electric--magnetic cross term follows from
+\[
+\boldsymbol\epsilon_0^*\cdot(\mathbf n\times\mathbf h)
+=\boldsymbol\epsilon_0^*\cdot
+[\mathbf n_0(\mathbf n\cdot\boldsymbol\epsilon_0)
+-\boldsymbol\epsilon_0(\mathbf n\cdot\mathbf n_0)]
+=-\mathbf n\cdot\mathbf n_0.
+\]
+Consequently
+\[
+\boxed{\frac{d\sigma}{d\Omega}=k^4a^6
+\left[\frac54-|\mathbf n\cdot\boldsymbol\epsilon_0|^2
+-\frac14|\mathbf n\cdot\mathbf h|^2-\mathbf n\cdot\mathbf n_0\right].}
+\]
+
+\textbf{(b)} Choose $\mathbf n_0=\widehat{\mathbf z}$ and
+$\boldsymbol\epsilon_0=\widehat{\mathbf x}$, so $\mathbf h=\widehat{\mathbf y}$.
+The bracket becomes
+$5/4-\sin^2\theta\cos^2\phi-\sin^2\theta\sin^2\phi/4-\cos\theta$.
+Using $\cos^2\phi=(1+\cos2\phi)/2$ gives
+\[
+\frac{d\sigma}{d\Omega}=k^4a^6
+\left[\frac58(1+\cos^2\theta)-\cos\theta
+-\frac38\sin^2\theta\cos2\phi\right].
+\]
+Its integral is $10\pi k^4a^6/3$, independent of the incident polarization.
+
+\textbf{(c)} At $\theta=\pi/2$ the two values are $k^4a^6/4$ and
+$k^4a^6$, respectively, hence $I_{\phi=0}/I_{\phi=\pi/2}=1/4$.
+Along $\widehat{\mathbf x}$ the electric dipole does not radiate and only
+the magnetic dipole contributes; along $\widehat{\mathbf y}$ the magnetic
+dipole does not radiate and only the electric dipole contributes.
+Their effective radiation moments obey $|\mathbf m|/c=|\mathbf p|/2$,
+so their isolated intensities have ratio $1/4$.
+
+\Needspace{5\baselineskip}
+\par\bigskip
+\noindent\textbf{10.2}\quad Electromagnetic radiation with elliptic polarization, described (in the notation of Section 7.2) by the polarization vector,
+\[
+\boldsymbol{\epsilon}=\frac{1}{\sqrt{1+r^{2}}}\left(\boldsymbol{\epsilon}_{+}+re^{i\alpha}\boldsymbol{\epsilon}_{-}\right)
+\]
+is scattered by a perfectly conducting sphere of radius $a$. Generalize the amplitude in the scattering cross section (10.71), which applies for $r=0$ or $r=\infty$, and calculate the cross section for scattering in the long-wavelength limit. Show that
+\[
+\frac{d\sigma}{d\Omega}=k^{4}a^{6}\left[\frac{5}{8}\,(1+\cos^{2}\theta)-\cos\theta-\frac{3}{4}\left(\frac{r}{1+r^{2}}\right)\sin^{2}\theta\,\cos(2\phi-\alpha)\right]
+\]
+Compare with Problem 10.1.
+\solution
+Let $\boldsymbol\epsilon_\pm=(\widehat{\mathbf x}\pm
+i\widehat{\mathbf y})/\sqrt2$ and $\mathbf n_0=\widehat{\mathbf z}$.
+Linearity of the fields, rather than addition of intensities, gives
+\[
+\mathbf f=\frac{k^2a^3}{\sqrt{1+r^2}}
+(\mathbf A_++re^{i\alpha}\mathbf A_-),\qquad
+\mathbf A_\pm=\boldsymbol\epsilon_\pm
+-\mathbf n(\mathbf n\cdot\boldsymbol\epsilon_\pm)
++\frac12\mathbf n\times(\widehat{\mathbf z}\times\boldsymbol\epsilon_\pm).
+\]
+In the spherical-harmonic notation of (10.71) the same expression is
+\[
+\mathbf f=\sqrt{\frac{2\pi}{3}}\,k^2a^3
+\frac{(\mathbf X_{11}-2i\mathbf n\times\mathbf X_{11})
++re^{i\alpha}(\mathbf X_{1,-1}+2i\mathbf n\times\mathbf X_{1,-1})}
+{\sqrt{1+r^2}},
+\]
+up to an irrelevant common phase. The relative phase is fixed by the
+circular vectors specified above. Directly,
+\[
+|\mathbf n\cdot\boldsymbol\epsilon|^2
+=\frac{\sin^2\theta}{2}
+\left[1+\frac{2r}{1+r^2}\cos(2\phi-\alpha)\right],
+\quad
+|\mathbf n\cdot(\widehat{\mathbf z}\times\boldsymbol\epsilon)|^2
+=\frac{\sin^2\theta}{2}
+\left[1-\frac{2r}{1+r^2}\cos(2\phi-\alpha)\right].
+\]
+Substitution into 10.1 gives
+\[
+\boxed{\frac{d\sigma}{d\Omega}=k^4a^6
+\left[\frac58(1+\cos^2\theta)-\cos\theta
+-\frac{3r}{4(1+r^2)}\sin^2\theta\cos(2\phi-\alpha)\right].}
+\]
+For $r=0$ or $r\to\infty$ the azimuthal term vanishes, reproducing
+(10.71). For $r=1$ the polarization is linear, along azimuth
+$\alpha/2$ up to a common phase; this is 10.1(b) with
+$\phi\mapsto\phi-\alpha/2$. The total is $10\pi k^4a^6/3$.
+
+\Needspace{5\baselineskip}
+\par\bigskip
+\noindent\textbf{10.3}\quad A solid uniform sphere of radius $R$ and conductivity $\sigma$ acts as a scatterer of a plane-wave beam of unpolarized radiation of frequency $\omega$, with $\omega R/c\ll1$. The conductivity is large enough that the skin depth $\delta$ is small compared to $R$.
+\begin{enumerate}
+\item[(a)] Justify and use a magnetostatic scalar potential to determine the magnetic field around the sphere, assuming the conductivity is infinite. (Remember that $\omega\neq0$.)
+\item[(b)] Use the technique of Section 8.1 to determine the absorption cross section of the sphere. Show that it varies as $(\omega)^{1/2}$ provided $\sigma$ is independent of frequency.
+\end{enumerate}
+\solution
+Take the sphere to be nonmagnetic, with exterior permeability $\mu_0$.
+\textbf{(a)} In a region of size $R\ll c/\omega$, the incident magnetic
+field is nearly uniform. To leading quasistatic order the exterior field
+is curl-free and divergence-free. Infinite conductivity at nonzero
+frequency forces the oscillating field inside to vanish: it is not the
+static problem of a sphere placed in a preexisting penetrating flux.
+Choose the polar axis along $\mathbf H_i=H_i\widehat{\mathbf z}$ and write
+\[
+\Psi_m=-H_i r\cos\vartheta+\frac{A\cos\vartheta}{r^2},
+\qquad \mathbf H=-\boldsymbol\nabla\Psi_m .
+\]
+The boundary condition $H_r(R)=0$ gives $A=-H_iR^3/2$. Hence
+\[
+H_r=H_i\left(1-\frac{R^3}{r^3}\right)\cos\vartheta,\qquad
+H_\vartheta=-H_i\left(1+\frac{R^3}{2r^3}\right)\sin\vartheta .
+\]
+In particular $\mathbf m=-2\pi R^3\mathbf H_i$ and
+$H_\vartheta(R)=-3H_i\sin\vartheta/2$.
+
+\textbf{(b)} The planar skin-layer solution of Section 8.1 applies locally
+when $\delta=\sqrt{2/(\mu_0\sigma\omega)}\ll R$.
+Its dissipated time-averaged power per area is
+$\tfrac12 R_s|\mathbf H_t|^2$, where
+$R_s=1/(\sigma\delta)=\mu_0\omega\delta/2$.
+Therefore
+\[
+P_{\rm abs}=\frac{R_s}{2}\frac94|H_i|^2R^2
+\int\sin^2\vartheta\,d\Omega
+=3\pi R_sR^2|H_i|^2 .
+\]
+Divide by the incident flux $Z_0|H_i|^2/2$:
+\[
+\boxed{\sigma_{\rm abs}=6\pi R^2\frac{R_s}{Z_0}
+=3\pi k\delta R^2
+=3\pi R^2\sqrt{\frac{2\epsilon_0\omega}{\sigma}}.}
+\]
+The result applies to each incident polarization and hence to unpolarized
+radiation. Its $\sqrt\omega$ behavior assumes frequency-independent
+$\sigma$ and a range where both $kR\ll1$ and $\delta/R\ll1$ hold.
+Electric-field corrections to the surface current enter at higher order
+in $kR$.
+
+\Needspace{5\baselineskip}
+\par\bigskip
+\noindent\textbf{10.4}\quad An unpolarized wave of frequency $\omega=ck$ is scattered by a \emph{slightly} lossy uniform isotropic dielectric sphere of radius $R$ much smaller than a wavelength. The sphere is characterized by an ordinary real dielectric constant $\epsilon_{r}$ and a real conductivity $\sigma$. The parameters are such that the skin depth $\delta$ is very \emph{large} compared to the radius $R$.
+\begin{enumerate}
+\item[(a)] Calculate the differential and total \emph{scattering} cross sections.
+\item[(b)] Show that the absorption cross section is
+\[
+\sigma_{\mathrm{abs}}=12\pi R^{2}\frac{(RZ_{0}\sigma)}{(\epsilon_{r}+2)^{2}+(Z_{0}\sigma/k)^{2}}
+\]
+\item[(c)] From part a write down the forward scattering amplitude and use the optical theorem to evaluate the total cross section. Compare your answer with the sum of the scattering and absorption cross sections from parts a and b. Comment.
+\end{enumerate}
+\solution
+Put
+\[
+\widetilde\epsilon_r=\epsilon_r+i s,\qquad
+s=\frac{\sigma}{\epsilon_0\omega}=\frac{Z_0\sigma}{k},\qquad
+A=\frac{\widetilde\epsilon_r-1}{\widetilde\epsilon_r+2},\qquad
+D=(\epsilon_r+2)^2+s^2 .
+\]
+Here $\mu=\mu_0$, and the electrostatic internal-field approximation
+requires $|k\sqrt{\widetilde\epsilon_r}\,R|\ll1$ as well as $kR\ll1$.
+For an ordinary dielectric this follows from the stated long wavelength
+and weak skin effect. To match the quasistatic fields, align the polar
+axis with $\mathbf E_i$ and write
+\[
+\Phi_{\rm in}=-C_{\rm in}E_i r\cos\theta,\qquad
+\Phi_{\rm out}=-E_i r\cos\theta+
+C_{\rm out}E_iR^3\frac{\cos\theta}{r^2}.
+\]
+Potential and normal-displacement continuity require
+\[
+C_{\rm in}=1-C_{\rm out},\qquad
+\widetilde\epsilon_r C_{\rm in}=1+2C_{\rm out}.
+\]
+Thus $C_{\rm out}=A$ and
+$C_{\rm in}=3/(\widetilde\epsilon_r+2)$, giving
+\[
+\mathbf E_{\rm in}=\frac{3}{\widetilde\epsilon_r+2}\mathbf E_i,\qquad
+\mathbf p=4\pi\epsilon_0R^3 A\,\mathbf E_i .
+\]
+
+\textbf{(a)} The electric dipole amplitude is
+$\mathbf f=k^2R^3 A[\boldsymbol\epsilon_0-
+\mathbf n(\mathbf n\cdot\boldsymbol\epsilon_0)]$.
+Summing outgoing and averaging incident polarizations yields
+\[
+\boxed{\frac{d\sigma_{\rm sc}}{d\Omega}
+=k^4R^6\frac{(\epsilon_r-1)^2+s^2}{D}
+\frac{1+\cos^2\theta}{2},\qquad
+\sigma_{\rm sc}=\frac{8\pi}{3}k^4R^6
+\frac{(\epsilon_r-1)^2+s^2}{D}.}
+\]
+
+\textbf{(b)} Joule heating is
+\[
+P_{\rm abs}=\frac{\sigma}{2}|\mathbf E_{\rm in}|^2
+\frac{4\pi R^3}{3}
+=\frac{6\pi\sigma R^3|E_i|^2}{D}.
+\]
+Dividing by $|E_i|^2/(2Z_0)$ gives
+\[
+\boxed{\sigma_{\rm abs}=\frac{12\pi R^3Z_0\sigma}{D}.}
+\]
+
+\textbf{(c)} The forward amplitude in the original polarization is
+$f(0)=k^2R^3 A$. Since $\operatorname{Im}A=3s/D$, the optical theorem gives
+\[
+\frac{4\pi}{k}\operatorname{Im} f(0)
+=\frac{12\pi R^3Z_0\sigma}{D}=\sigma_{\rm abs}.
+\]
+It misses the positive scattering term. This is the approximation-order
+issue discussed after (10.149)--(10.151): a real leading polarizability
+does scatter, although its leading forward amplitude has no imaginary part.
+For example, the radiation-reaction completion of the dipole response is
+\[
+A_{\rm rad}=\frac{A}{1-\frac{2i}{3}k^3R^3 A}.
+\]
+Writing $b=2k^3R^3/3$, one checks
+\[
+\operatorname{Im}A_{\rm rad}
+=\frac{\operatorname{Im}A+b|A|^2}{|1-ibA|^2},\qquad
+|A_{\rm rad}|^2=\frac{|A|^2}{|1-ibA|^2}.
+\]
+Thus extinction equals absorption plus scattering at consistent dipole
+order. Dynamic depolarization also corrects the real part at relative
+order $(kR)^2$; the radiative imaginary part is still necessary.
+
+\Needspace{5\baselineskip}
+\par\bigskip
+\noindent\textbf{10.5}\quad The scattering by the dielectric sphere of Problem 10.4 was treated as purely electric dipole scattering. This is adequate unless it happens that the real dielectric constant $\epsilon/\epsilon_{0}$ is very large. In these circumstances a magnetic dipole contribution, even though higher order in $kR$, may be important. \erratum{Retain the internal quasistatic condition $|k\sqrt{\widetilde\epsilon_r}R|\ll1$. In (a) the displayed moment is its conduction-current part; in (b) the displayed cross section retains material absorption, with radiative extinction to be added when comparable.}
+\begin{enumerate}
+\item[(a)] Show that the changing magnetic flux of the incident wave induces an azimuthal current flow in the sphere and produces a magnetic dipole moment,
+\[
+\mathbf{m}=\frac{i4\pi\sigma Z_{0}}{k\mu_{0}}\,(kR)^{2}\,\frac{R^{3}}{30}\,\mathbf{B}_{\mathrm{inc}}
+\]
+\item[(b)] Show that application of the optical theorem to the coherent sum of the electric and magnetic dipole contributions leads to a total cross section,
+\[
+\sigma_{t}=12\pi R^{2}(RZ_{0}\sigma)\!\left[\frac{1}{(\epsilon_{r}+2)^{2}+(Z_{0}\sigma/k)^{2}}+\frac{1}{90}\,(kR)^{2}\right]
+\]
+(Compare Landau and Lifshitz, \emph{Electrodynamics of Continuous Media}, p.~323).
+\end{enumerate}
+\solution
+The required approximation is $|k\sqrt{\widetilde\epsilon_r}R|\ll1$,
+not merely $kR\ll1$ and $\delta\gg R$. In this limit the internal magnetic
+field can be replaced by its spatially uniform incident value.
+
+\textbf{(a)} Faraday's law, $\boldsymbol\nabla\times\mathbf E=i\omega
+\mathbf B_i$, is satisfied by
+\[
+\mathbf E_{\rm rot}=\frac{i\omega}{2}\mathbf B_i\times\mathbf r .
+\]
+For $\mathbf B_i$ along $z$, this is an azimuthal field
+$E_\varphi=i\omega B_i\rho/2$, giving
+$\mathbf J_{\rm cond}=i\sigma\omega\,\mathbf B_i\times\mathbf r/2$.
+Using $\int_{r<R}r_i r_j\,d^3r=(4\pi R^5/15)\delta_{ij}$,
+\[
+\begin{split}
+\mathbf m_{\rm cond}
+&=\frac12\int\mathbf r\times\mathbf J_{\rm cond}\,d^3r\\
+&=\frac{i\sigma\omega}{4}\int
+[\mathbf B_i r^2-\mathbf r(\mathbf r\cdot\mathbf B_i)]\,d^3r
+=\frac{2\pi i}{15}\sigma\omega R^5\mathbf B_i\\
+&=\boxed{\frac{i4\pi\sigma Z_0}{k\mu_0}
+(kR)^2\frac{R^3}{30}\mathbf B_i}.
+\end{split}
+\]
+This is the \emph{conduction-current} moment requested. A dielectric also
+has the polarization current $-i\omega\epsilon_0(\epsilon_r-1)\mathbf E$.
+Together the two give, to the same order,
+\[
+\mathbf m=\frac{2\pi}{15\mu_0}
+(\widetilde\epsilon_r-1)k^2R^5\mathbf B_i.
+\]
+Its real part affects scattering but not leading material absorption.
+
+\textbf{(b)} Let $\mathbf h=\mathbf n_0\times\boldsymbol\epsilon_0$ and write
+$\mathbf m/c=4\pi\epsilon_0R^3 E_i B\,\mathbf h$.
+Then
+\[
+B=\frac{(\widetilde\epsilon_r-1)(kR)^2}{30},
+\qquad
+\mathbf f=k^2R^3\left\{
+A[\boldsymbol\epsilon_0-\mathbf n(\mathbf n\cdot\boldsymbol\epsilon_0)]
+-B\,\mathbf n\times\mathbf h\right\}.
+\]
+Forward, $-\mathbf n_0\times\mathbf h=\boldsymbol\epsilon_0$,
+so $f(0)=k^2R^3(A+B)$.
+Since $\operatorname{Im}B=s(kR)^2/30$, the optical theorem at the
+retained absorptive order gives
+\[
+\boxed{\sigma_t^{(\rm material)}
+=12\pi R^2(RZ_0\sigma)
+\left[\frac1{(\epsilon_r+2)^2+s^2}
++\frac{(kR)^2}{90}\right].}
+\]
+An independent check of the magnetic term is direct Joule heating:
+\[
+P_m=\frac{\sigma\omega^2|B_i|^2}{8}
+\int\rho^2\,d^3r
+=\frac{\pi\sigma\omega^2R^5|B_i|^2}{15},
+\quad
+\sigma_{{\rm abs},m}=\frac{2\pi}{15}R^3Z_0\sigma(kR)^2.
+\]
+The electric term is suppressed by $|\widetilde\epsilon_r+2|^{-2}$;
+this explains the importance of magnetic absorption at large dielectric
+constant. As in 10.4(c), the displayed total omits radiative extinction:
+the dipole scattering term $8\pi k^4R^6(|A|^2+|B|^2)/3$ must be added
+when comparable, with consistent radiative corrections to the moments.
+The displayed expression is not the complete extinction at $\sigma=0$.
+
+\Needspace{5\baselineskip}
+\par\bigskip
+\noindent\textbf{10.6}\quad\begin{enumerate}
+\item[(a)] Show that for the scattered wave (10.57) the \emph{normalized} scattering amplitude (10.138) is
+\[
+\mathbf{f}=\frac{1}{ik}\sqrt{\frac{\pi}{2}}\sum_{l}\sqrt{2l+1}\;[\alpha_{\pm}(l)\mathbf{X}_{l,\pm1}\pm i\beta_{\pm}(l)\mathbf{n}\times\mathbf{X}_{l,\pm1}]
+\]
+where the polarization vector of the incident wave is $(\boldsymbol{\epsilon}_{1}\pm i\boldsymbol{\epsilon}_{2})/\sqrt{2}$.
+\item[(b)] Deduce an expression for the total cross section of $\sigma_{t}$ from the optical theorem (10.139) and the above expression for $\mathbf{f}$.
+\end{enumerate}
+\solution
+\textbf{(a)} In (10.57), insert
+\[
+h_l^{(1)}(kr)\sim(-i)^{l+1}\frac{e^{ikr}}{kr},\qquad
+\frac1k\boldsymbol\nabla\times(h_l^{(1)}\mathbf X_{lm})
+\sim i h_l^{(1)}\mathbf n\times\mathbf X_{lm}.
+\]
+The factor $i^l(-i)^{l+1}=-i$ is independent of $l$.
+The incident electric vector in (10.55) has norm $\sqrt2$;
+normalization supplies the additional $1/\sqrt2$.
+The coefficient of $E_i e^{ikr}/r$ is therefore
+\[
+\boxed{\mathbf f=\frac1{ik}\sqrt{\frac\pi2}
+\sum_{l=1}^\infty\sqrt{2l+1}
+[\alpha_\pm(l)\mathbf X_{l,\pm1}
+\pm i\beta_\pm(l)\mathbf n\times\mathbf X_{l,\pm1}].}
+\]
+
+\textbf{(b)} At the north pole, using the spherical harmonics with
+Condon--Shortley phase and $\mathbf X_{lm}=\mathbf L Y_{lm}/\sqrt{l(l+1)}$,
+\[
+\mathbf X_{l,\pm1}(0,\phi)
+=\sqrt{\frac{2l+1}{8\pi}}\,\boldsymbol\epsilon_\pm,\qquad
+\widehat{\mathbf z}\times\boldsymbol\epsilon_\pm
+=\mp i\boldsymbol\epsilon_\pm.
+\]
+These limits follow, for example, from
+$Y_{l1}\sim-\sqrt{(2l+1)l(l+1)/(16\pi)}\,\theta e^{i\phi}$.
+Consequently
+\[
+\boldsymbol\epsilon_\pm^*\cdot\mathbf f(0)
+=\frac1{4ik}\sum_l(2l+1)[\alpha_\pm(l)+\beta_\pm(l)],
+\]
+and the optical theorem (10.139) gives
+\[
+\boxed{\sigma_t=-\frac{\pi}{k^2}
+\sum_l(2l+1)\operatorname{Re}[\alpha_\pm(l)+\beta_\pm(l)].}
+\]
+For a rotationally invariant sphere the helicities have identical
+coefficients. Adding (10.61)'s scattering and absorption expressions
+gives the same answer, since
+$2-|1+\alpha|^2-|1+\beta|^2+|\alpha|^2+|\beta|^2
+=-2\operatorname{Re}(\alpha+\beta)$.
+
+\Needspace{5\baselineskip}
+\par\bigskip
+\noindent\textbf{10.7}\quad Discuss the scattering of a plane wave of electromagnetic radiation by a nonpermeable, dielectric sphere of radius $a$ and dielectric constant $\epsilon_{r}$.
+\begin{enumerate}
+\item[(a)] By finding the fields inside the sphere and matching to the incident plus scattered wave outside the sphere, determine without any restriction on $ka$ the multipole coefficients in the scattered wave. Define suitable phase shifts for the problem.
+\item[(b)] Consider the long-wavelength limit ($ka\ll1$) and determine explicitly the differential and total scattering cross sections. Compare your results with those of Section 10.1.B.
+\item[(c)] In the limit $\epsilon_{r}\to\infty$ compare your results to those for the perfectly conducting sphere.
+\end{enumerate}
+\solution
+Let $x=ka$, $\nu=\sqrt{\epsilon_r}$, $y=\nu x$, with permeability
+$\mu_0$ on both sides. For an absorbing sphere choose
+$\operatorname{Im}\nu\geq0$. Introduce Riccati functions
+\[
+\psi_l(z)=zj_l(z),\quad \chi_l(z)=zn_l(z),\quad
+\xi_l(z)=zh_l^{(1)}(z)=\psi_l(z)+i\chi_l(z).
+\]
+A prime denotes differentiation with respect to the entire argument.
+
+\textbf{(a)} The regular interior fields are combinations of
+$j_l(\nu kr)\mathbf X_{lm}$ and
+$(\nu k)^{-1}\boldsymbol\nabla\times[j_l(\nu kr)\mathbf X_{lm}]$.
+The exterior radial functions are $j_l(kr)+\alpha_lh_l^{(1)}(kr)/2$
+for the magnetic multipole and $j_l(kr)+\beta_lh_l^{(1)}(kr)/2$
+for the electric multipole. Set $\alpha_l=-2b_l$, $\beta_l=-2a_l$.
+Tangential $E,H$ continuity gives, with normalized interior amplitudes
+$t_M,t_E$,
+\[
+\begin{array}{ll}
+\psi_l(x)-b_l\xi_l(x)=t_M\psi_l(y),&
+\psi_l'(x)-b_l\xi_l'(x)=\nu t_M\psi_l'(y),\\
+\psi_l(x)-a_l\xi_l(x)=\nu t_E\psi_l(y),&
+\psi_l'(x)-a_l\xi_l'(x)=t_E\psi_l'(y).
+\end{array}
+\]
+Elimination yields the coefficients at arbitrary size:
+\[
+\boxed{b_l=
+\frac{\psi_l(y)\psi_l'(x)-\nu\psi_l(x)\psi_l'(y)}
+{\psi_l(y)\xi_l'(x)-\nu\xi_l(x)\psi_l'(y)},\qquad
+a_l=
+\frac{\nu\psi_l(y)\psi_l'(x)-\psi_l(x)\psi_l'(y)}
+{\nu\psi_l(y)\xi_l'(x)-\xi_l(x)\psi_l'(y)}.}
+\]
+Either pair determines the interior amplitude; keeping the pair instead
+of dividing only by $\psi_l(y)$ also handles its zeros.
+For clarity, define
+$\mathbf M_{lm}^{\rm in}=j_l(\nu kr)\mathbf X_{lm}$ and
+$\mathbf N_{lm}^{\rm in}=(\nu k)^{-1}\nabla\times
+\mathbf M_{lm}^{\rm in}$. The normalized circular incident wave has
+$d_l=i^l\sqrt{2\pi(2l+1)}$ in (10.55). Its complete internal field is
+\[
+\mathbf E_{\rm in}=E_i\sum_{l=1}^\infty d_l\nu
+[t_M(l)\mathbf M_{l,\pm1}^{\rm in}
+\pm t_E(l)\mathbf N_{l,\pm1}^{\rm in}],\qquad
+\mathbf B_{\rm in}=\frac{\nabla\times\mathbf E_{\rm in}}{i\omega}.
+\]
+For real positive $\epsilon_r$, let $N_M,D_M$ be the numerator of $b_l$
+and the same expression with exterior $\psi_l$ replaced by $\chi_l$.
+Then $b_l=N_M/(N_M+iD_M)$, and suitable phase shifts are
+\[
+\tan\delta_l=N_M/D_M,\quad 1+\alpha_l=e^{2i\delta_l};
+\qquad
+\tan\delta_l'=N_E/D_E,\quad 1+\beta_l=e^{2i\delta_l'}.
+\]
+Continuous phase branches cover zeros of $D$. Absorption makes the
+phase shifts complex. The cross sections are
+\[
+\sigma_{\rm sc}=\frac{2\pi}{k^2}\sum_l(2l+1)(|a_l|^2+|b_l|^2),
+\quad
+\sigma_t=\frac{2\pi}{k^2}\sum_l(2l+1)\operatorname{Re}(a_l+b_l).
+\]
+
+\textbf{(b)} Expand $j_l(z)=z^l/(2l+1)!!+O(z^{l+2})$ and
+$n_l(z)=-(2l-1)!!/z^{l+1}+O(z^{-l+1})$. For fixed $\epsilon_r$
+and thus $|y|\ll1$,
+\[
+a_1=-\frac{2i}{3}\frac{\epsilon_r-1}{\epsilon_r+2}x^3+O(x^5),
+\qquad
+b_1=-\frac{i}{45}(\epsilon_r-1)x^5+O(x^7).
+\]
+Higher electric multipoles start at $x^{2l+1}$. For unpolarized incidence,
+\[
+\boxed{\frac{d\sigma}{d\Omega}
+=k^4a^6\left|\frac{\epsilon_r-1}{\epsilon_r+2}\right|^2
+\frac{1+\cos^2\theta}{2},\quad
+\sigma_{\rm sc}=\frac{8\pi}{3}k^4a^6
+\left|\frac{\epsilon_r-1}{\epsilon_r+2}\right|^2.}
+\]
+This agrees with (10.6)--(10.11). For fixed initial polarization the
+amplitude is the transverse projection of
+$k^2a^3(\epsilon_r-1)\boldsymbol\epsilon_0/(\epsilon_r+2)$.
+
+\textbf{(c)} The perfect-conductor coefficients are
+\[
+b_l^{\rm PEC}=\psi_l(x)/\xi_l(x),\qquad
+a_l^{\rm PEC}=\psi_l'(x)/\xi_l'(x),
+\]
+equivalent to (10.68). They are approached if $|\nu|\to\infty$ with
+sufficient absorption to suppress internal standing-wave resonances
+(for example $\operatorname{Im}\nu\,x\to\infty$).
+A strictly real $\epsilon_r\to+\infty$ has no pointwise limit along
+all sequences: at any zero $\psi_l(\nu x)=0$, the exact electric
+coefficient is $\psi_l(x)/\xi_l(x)$, rather than the PEC derivative
+ratio; such zeros occur for arbitrarily large $\nu$.
+Away from the shrinking resonance intervals the PEC expressions result.
+
+The small-$x$ expansion in (b) is not uniform in $\epsilon_r$.
+Taking $\epsilon_r\to\infty$ in that electric-only approximation gives
+$8\pi k^4a^6/3$, whereas a PEC sphere has magnetic moment
+$\mathbf m=-2\pi a^3\mathbf H_i$ and total $10\pi k^4a^6/3$.
+The condition $|\nu x|\ll1$ has failed before the conductor limit;
+interchanging these limits loses the magnetic response.
+
+\Needspace{5\baselineskip}
+\par\bigskip
+\noindent\textbf{10.8}\quad Consider the scattering of a plane wave by a nonpermeable sphere of radius $a$ and very good, but not perfect, conductivity following the spherical multipole field approach of Section 10.4. Assume that $ka\ll1$ and that the skin depth $\delta<a$. \erratum{The local surface-impedance approximation is controlled for $\delta\ll a$; the comparison at $\delta=a$ in (d) is a formal extrapolation of that model.}
+\begin{enumerate}
+\item[(a)] Show from the analysis of Section 8.1 that
+\[
+\frac{Z_{s}}{Z_{0}}=\frac{k\delta}{2}\,(1-i)
+\]
+\item[(b)] In the long-wavelength limit, show that for $l=1$ the coefficients $\alpha_{\pm}(l)$ and $\beta_{\pm}(l)$ in (10.65) are
+\begin{align*}
+\alpha_{\pm}(1)&\simeq-\frac{2i}{3}\,(ka)^{3}\left[\frac{\left(1-\dfrac{\delta}{a}\right)-i\,\dfrac{\delta}{a}}{\left(1+\dfrac{\delta}{2a}\right)+i\,\dfrac{\delta}{2a}}\right]\\[8pt]
+\beta_{\pm}(1)&\simeq\frac{4i}{3}\,(ka)^{3}
+\end{align*}
+\item[(c)] Write out explicitly the differential scattering cross section, correct to \emph{first} order in $\delta/a$ and lowest order in $ka$.
+\item[(d)] Using (10.61), evaluate the absorption cross section. Show that to first order in $\delta$ it is $\sigma_{\mathrm{abs}}\simeq3\pi(k\delta)a^{2}$. How different is the value if $\delta=a$?
+\end{enumerate}
+\solution
+Put $x=ka$ and $d=\delta/a$. The local surface-impedance treatment requires
+$d\ll1$ for controlled accuracy; a rational function of $d$ does not
+extend that boundary condition to skin depths comparable with $a$.
+
+\textbf{(a)} The decaying planar skin-layer solution is proportional to
+$\exp[-(1-i)s/\delta]$, where $s$ measures depth. Faraday's law gives
+\[
+Z_s=\frac{1-i}{\sigma\delta}
+=\frac{\mu_0\omega\delta}{2}(1-i),\qquad
+\boxed{\frac{Z_s}{Z_0}=\frac{k\delta}{2}(1-i).}
+\]
+
+\textbf{(b)} Put $z_s=Z_s/Z_0$, $\psi_l(x)=xj_l(x)$, and
+$\xi_l(x)=xh_l^{(1)}(x)$. Multiplying the first of (10.65) by $x$
+gives
+\[
+\psi_l+\frac{\alpha_l}{2}\xi_l
+=iz_s\left(\psi_l'+\frac{\alpha_l}{2}\xi_l'\right),\qquad
+\alpha_l=-2\frac{\psi_l-iz_s\psi_l'}{\xi_l-iz_s\xi_l'}.
+\]
+Primes here denote derivatives with respect to $x$. For $x\ll1$,
+write $D_l=(2l-1)!!$, so $(2l+1)!!=(2l+1)D_l$. The needed terms are
+\[
+\psi_l\simeq\frac{x^{l+1}}{(2l+1)D_l},\quad
+\psi_l'\simeq\frac{(l+1)x^l}{(2l+1)D_l},\quad
+\xi_l\simeq-iD_lx^{-l},\quad
+\xi_l'\simeq ilD_lx^{-l-1}.
+\]
+Consequently the numerator is
+$x^l[x-i(l+1)z_s]/[(2l+1)D_l]$, while the denominator is
+$-iD_lx^{-l-1}(x+ilz_s)$. Their ratio gives
+\[
+\alpha_l\simeq-\frac{2ix^{2l+1}}
+{(2l+1)[(2l-1)!!]^2}
+\frac{x-i(l+1)Z_s/Z_0}{x+ilZ_s/Z_0}.
+\]
+For $l=1$, substitute $Z_s/Z_0=xd(1-i)/2$:
+\[
+\boxed{\alpha_1=-\frac{2i}{3}x^3 F(d),\quad
+F(d)=\frac{1-d-id}{1+d/2+id/2},\qquad
+\beta_1=\frac{4i}{3}x^3+O(x^5).}
+\]
+For $\beta$ the second boundary equation replaces $z_s$ by $1/z_s$.
+At $l=1$ the ratio becomes
+\[
+\frac{x-2i/z_s}{x+i/z_s}
+=\frac{xz_s-2i}{xz_s+i}=-2+O(x^2d),
+\]
+which gives the displayed $\beta_1$. Neither coefficient depends on
+helicity.
+
+\textbf{(c)} The electric dipole retains its PEC value; the magnetic
+dipole is multiplied by $F$. For unpolarized incidence,
+\[
+\frac{d\sigma}{d\Omega}
+=k^4a^6\left[\frac{1+|F|^2/4}{2}(1+\cos^2\theta)
+-\operatorname{Re}F\cos\theta\right].
+\]
+Since $F=1-\tfrac32(1+i)d+O(d^2)$,
+\[
+\boxed{\frac{d\sigma}{d\Omega}=k^4a^6
+\left[\frac58(1+\cos^2\theta)-\cos\theta
++d\left\{-\frac38(1+\cos^2\theta)+\frac32\cos\theta\right\}
++O(d^2,x^2)\right].}
+\]
+For a specified polarization the answer is
+$k^4a^6|\boldsymbol\epsilon_0-\mathbf n(\mathbf n\cdot
+\boldsymbol\epsilon_0)+(F/2)\mathbf n\times
+(\mathbf n_0\times\boldsymbol\epsilon_0)|^2$.
+
+\textbf{(d)} Equation (10.61) gives
+\[
+\sigma_{\rm abs}=\frac{\pi}{2k^2}\sum_l(2l+1)
+[-2\operatorname{Re}(\alpha_l+\beta_l)-|\alpha_l|^2-|\beta_l|^2].
+\]
+At the leading material-loss order $x^3d$ only
+$\operatorname{Re}\alpha_1$ is needed. The higher $x^6$ scattering terms
+must be accompanied by the radiative $x^6$ real parts of the coefficients;
+discarding both consistently avoids a spurious negative loss at $d=0$.
+Since
+\[
+\operatorname{Im}F=-\frac{3d/2}{1+d+d^2/2},\qquad
+\operatorname{Re}\alpha_1=-\frac{x^3d}{1+d+d^2/2},
+\]
+the impedance model gives
+\[
+\boxed{\sigma_{\rm abs}\simeq
+\frac{3\pi k\delta a^2}{1+d+d^2/2}
+=3\pi k\delta a^2[1+O(d)].}
+\]
+Formally setting $d=1$ gives $2/5$ of the first-order extrapolation,
+a $60\%$ reduction. This comparison belongs to the rational model;
+the planar impedance approximation is not controlled at $\delta=a$.
+The linear result agrees with 10.3.
+
+\Needspace{5\baselineskip}
+\par\bigskip
+\noindent\textbf{10.9}\quad In the scattering of light by a gas very near the critical point the scattered light is observed to be ``whiter'' (i.e., its spectrum is less predominantly peaked toward the blue) than far from the critical point. Show that this can be understood by the fact that the volumes of the density fluctuations become large enough that Rayleigh's law fails to hold. In particular, consider the lowest order approximation to the scattering by a uniform dielectric sphere of radius $a$ whose dielectric constant $\epsilon_{r}$ differs only slightly from unity.
+\begin{enumerate}
+\item[(a)] Show that for $ka\gg1$, the differential cross section is sharply peaked in the forward direction and the total scattering cross section is approximately
+\[
+\sigma\simeq\frac{\pi}{2}\,(ka)^{2}|\epsilon_{r}-1|^{2}a^{2}
+\]
+with a $k^{2}$, rather than $k^{4}$, dependence on frequency.
+\item[(b)] Show that for arbitrary $ka$ the total cross section to lowest order in $(\epsilon_{r}-1)$ is the expression given in part a, multiplied by the function
+\begin{align*}
+F(z)={}&1+5z^{-2}-\tfrac{7}{2}z^{-4}(1-\cos2z)-z^{-3}\sin2z\\
+&-4(z^{-2}-z^{-4})\int_{0}^{2z}\frac{1-\cos t}{t}\;dt
+\end{align*}
+where $z=2ka$. [This result is due to Lord Rayleigh, 1914.]
+\end{enumerate}
+\solution
+Set $\Delta=\epsilon_r-1$. In the first Born approximation (10.31),
+the induced polarization is $\epsilon_0\Delta\mathbf E_i$ throughout
+the sphere. Its Fourier transform is
+\[
+\int_{r<a}e^{i\mathbf q\cdot\mathbf r}\,d^3r
+=4\pi\frac{\sin(qa)-qa\cos(qa)}{q^3},\qquad
+q=2k\sin(\theta/2).
+\]
+Thus, with $u=qa$,
+\[
+\frac{d\sigma}{d\Omega}
+=k^4a^6|\Delta|^2\frac{1+\cos^2\theta}{2}
+\left[\frac{\sin u-u\cos u}{u^3}\right]^2 .
+\]
+This is the coefficient of $|\Delta|^2$ at fixed $ka$.
+For a uniform approximation at large $ka$, the phase perturbation across
+the sphere must also be small: $ka|\Delta|\ll1$. Small contrast alone
+does not permit $ka$ to grow without bound.
+
+\textbf{(a)} The form factor is largest for $u\lesssim1$, hence
+$\theta\lesssim1/(ka)$ at large $ka$. In this forward cone set
+$(1+\cos^2\theta)/2\simeq1$ and $d\Omega\simeq2\pi u\,du/(ka)^2$:
+\[
+\sigma\simeq2\pi k^2a^4|\Delta|^2
+\int_0^\infty\frac{(\sin u-u\cos u)^2}{u^5}\,du
+=\boxed{\frac{\pi}{2}k^2a^4|\Delta|^2}.
+\]
+The finite integral $A_0(z)$ evaluated explicitly below tends to $1/4$
+as $z\to\infty$, which supplies the displayed normalization. Compared with Rayleigh's $k^4$ law, the
+forward peak keeps its $k^4$ height but its solid angle shrinks as $k^{-2}$.
+Large correlated density fluctuations consequently produce less
+preferential enhancement of blue light.
+
+\textbf{(b)} Put $z=2ka$. Since
+$\cos\theta=1-2u^2/z^2$ and $d\Omega=8\pi u\,du/z^2$, exactly within
+Born theory,
+\[
+\sigma=\frac{\pi}{2}k^2a^4|\Delta|^2F(z),\qquad
+F(z)=4\int_0^z
+\left(1-\frac{2u^2}{z^2}+\frac{2u^4}{z^4}\right)
+\frac{(\sin u-u\cos u)^2}{u^5}\,du.
+\]
+For an explicit reduction define
+$A_j(z)=\int_0^z(\sin u-u\cos u)^2u^{j-5}\,du$ for $j=0,2,4$.
+Then $F=4A_0-8A_2/z^2+8A_4/z^4$.
+Expand the square into
+$\tfrac12(1-\cos2u)-u\sin2u+\tfrac12u^2(1+\cos2u)$,
+integrate the negative powers by parts, and retain the finite lower-end
+limits before combining terms. In terms of
+$H(z)=\gamma+\ln(2z)-\operatorname{Ci}(2z)$, the intermediate integrals are
+\[
+\begin{split}
+A_0&=\frac14-\frac1{4z^2}+\frac{\sin2z}{4z^3}
+-\frac{1-\cos2z}{8z^4},\\
+A_2&=\frac H2+\frac{\sin2z}{2z}
+-\frac{1-\cos2z}{4z^2}-\frac12,\\
+A_4&=\frac{z^2}{4}+\frac{z\sin2z}{4}
++\frac H2+\frac58(\cos2z-1).
+\end{split}
+\]
+Differentiating each returns its defining integrand, and each tends to
+zero at the lower endpoint. Combining them yields
+\[
+\boxed{\begin{aligned}
+F(z)={}&1+\frac5{z^2}
+-\frac{7(1-\cos2z)}{2z^4}-\frac{\sin2z}{z^3}\\
+&-4\left(\frac1{z^2}-\frac1{z^4}\right)
+[\gamma+\ln(2z)-\operatorname{Ci}(2z)] .
+\end{aligned}}
+\]
+Here $\gamma+\ln(2z)-\operatorname{Ci}(2z)
+=\int_0^{2z}(1-\cos t)\,dt/t$.
+The expression has a removable singularity at zero; the integral form
+makes positivity and the limit transparent:
+\[
+F(z)=\frac{4z^2}{27}+O(z^4),\quad
+\sigma\longrightarrow\frac{8\pi}{27}k^4a^6|\Delta|^2,\qquad
+F(z)\longrightarrow1\quad(z\to\infty).
+\]
+The small-$z$ value agrees with the weak-contrast limit of 10.7(b).
+
+\Needspace{5\baselineskip}
+\par\bigskip
+\noindent\textbf{10.10}\quad The aperture or apertures in a perfectly conducting plane screen can be viewed as the location of effective sources that produce radiation (the diffracted fields). An aperture whose dimensions are small compared with a wavelength acts as a source of dipole radiation with the contributions of other multipoles being negligible.
+\begin{enumerate}
+\item[(a)] Beginning with (10.101) show that the effective electric and magnetic dipole moments can be expressed in terms of integrals of the tangential electric field in the aperture as follows:
+\begin{align}
+\mathbf{p}&=\epsilon\mathbf{n}\int(\mathbf{x}\cdot\mathbf{E}_{\mathrm{tan}})\;da\tag{9.72}\\[4pt]
+\mathbf{m}&=\frac{2}{i\omega\mu}\int(\mathbf{n}\times\mathbf{E}_{\mathrm{tan}})\;da\notag
+\end{align}
+where $\mathbf{E}_{\mathrm{tan}}$ is the \emph{exact} tangential electric field in the aperture, $\mathbf{n}$ is the normal to the plane screen, directed into the region of interest, and the integration is over the area of the openings.
+\item[(b)] Show that the expression for the magnetic moment can be transformed into
+\[
+\mathbf{m}=\frac{2}{\mu}\int\mathbf{x}(\mathbf{n}\cdot\mathbf{B})\;da\tag{9.74}
+\]
+Be careful about possible contributions from the edge of the aperture where some components of the fields are singular if the screen is infinitesimally thick.
+\end{enumerate}
+\solution
+Let $\mathbf N$ be the fixed aperture normal (the problem's $\mathbf n$)
+and $\mathbf n=\mathbf r/r$ the observation direction. In a homogeneous
+medium let $v=1/\sqrt{\epsilon\mu}$ and $k=\omega/v$.
+The radiation limit of Smythe's exact relation is
+\[
+\mathbf E(\mathbf r)=\frac{ik e^{ikr}}{2\pi r}\,
+\mathbf n\times\int_A(\mathbf N\times\mathbf E_t)
+e^{-ik\mathbf n\cdot\mathbf x'}\,da'.
+\]
+\textbf{(a)} Define $\mathbf K=\int_A\mathbf N\times\mathbf E_t\,da$
+and $T_{ij}=\int_A x_iE_{t,j}\,da$, with $i,j$ in the aperture plane.
+The zeroth term of the exponential gives
+$ik e^{ikr}\mathbf n\times\mathbf K/(2\pi r)$.
+Compare this with the magnetic dipole field
+$-k^2e^{ikr}\mathbf n\times\mathbf m/(4\pi\epsilon v r)$:
+\[
+\boxed{\mathbf m=\frac{2}{i\omega\mu}\mathbf K.}
+\]
+The next term is
+\[
+\mathbf E^{(1)}=\frac{k^2e^{ikr}}{2\pi r}
+\,\mathbf n\times\left[\mathbf N\times(T^{\mathsf T}\mathbf n)\right].
+\]
+Its electric dipole part is supplied by the two-dimensional trace
+$T_{ij}\mapsto\tfrac12(\operatorname{tr}T)
+(\delta_{ij}-N_iN_j)$, and equals
+\[
+\frac{k^2e^{ikr}}{4\pi r}(\operatorname{tr}T)
+[\mathbf N-\mathbf n(\mathbf n\cdot\mathbf N)].
+\]
+The remaining trace-free tensor is of higher multipole type.
+Comparison with the electric dipole radiation field gives
+\[
+\boxed{\mathbf p=\epsilon\mathbf N\,\operatorname{tr}T
+=\epsilon\mathbf N\int_A\mathbf x'\cdot\mathbf E_t\,da'.}
+\]
+For a quasistatic aperture field $\mathbf E_t=-\boldsymbol\nabla_t\Phi$,
+with $\Phi=0$ on its rim, integration by parts gives
+$T_{ij}=\delta_{ij}\int_A\Phi\,da$, so the trace selection is especially
+explicit. The formulas using the exact field retain the leading dipole
+terms; higher powers of the aperture size times $k$ generate retardation
+and higher multipoles.
+
+\textbf{(b)} Set $\mathbf N=\widehat{\mathbf z}$ and use
+$i\omega B_z=\partial_xE_y-\partial_yE_x$. Integration by parts gives
+\[
+i\omega\int_A(x,y,0)B_z\,da
+=\int_A(-E_y,E_x,0)\,da+
+\oint_{\partial A}(x,y,0)(E_y\nu_x-E_x\nu_y)\,ds .
+\]
+Here $\boldsymbol\nu$ is the outward in-plane normal and
+$E_y\nu_x-E_x\nu_y=\mathbf E_t\cdot\mathbf t$ is the component
+\emph{parallel} to the rim. Regulate the integral by a contour a distance
+$\eta$ inside a smooth edge. For the finite-energy thin-screen solution,
+the component perpendicular to the rim can diverge as $\eta^{-1/2}$,
+but the parallel component vanishes as $\eta^{1/2}$. Thus the line term
+vanishes, rather than inheriting the singularity of the other component.
+Taking the limit and substituting in part (a) gives
+\[
+\boxed{\mathbf m=\frac2\mu\int_A\mathbf x'
+(\mathbf N\cdot\mathbf B)\,da'.}
+\]
+This argument also identifies precisely which edge behavior is needed;
+one may not simply assume that every electric-field component is bounded.
+
+\Needspace{5\baselineskip}
+\par\bigskip
+\noindent\textbf{10.11}\quad A perfectly conducting flat screen occupies half of the $x$-$y$ plane (i.e., $x<0$). A plane wave of intensity $I_{0}$ and wave number $k$ is incident along the $z$ axis from the region $z<0$. Discuss the values of the diffracted fields in the plane parallel to the $x$-$y$ plane defined by $z=Z>0$. Let the coordinates of the observation point be $(X,0,Z)$.
+\begin{enumerate}
+\item[(a)] Show that, for the usual scalar Kirchhoff approximation and in the limit $Z\gg X$ and $\sqrt{kZ}\gg1$, the diffracted field is
+\[
+\psi(X,0,Z,t)\simeq I_{0}^{1/2}e^{ikZ-i\omega t}\!\left(\frac{1+i}{2i}\right)\sqrt{\frac{2}{\pi}}\int_{-\xi}^{\infty}e^{it^{2}}\;dt
+\]
+where $\xi=(k/2Z)^{1/2}X$.
+\item[(b)] Show that the intensity can be written
+\[
+I=|\psi|^{2}=\frac{I_{0}}{2}\left[(C(\xi)+\tfrac{1}{2})^{2}+(S(\xi)+\tfrac{1}{2})^{2}\right]
+\]
+where $C(\xi)$ and $S(\xi)$ are the so-called Fresnel integrals. Determine the asymptotic behavior of $I$ for $\xi$ large and positive (illuminated region) and $\xi$ large and negative (shadow region). What is the value of $I$ at $X=0$? Make a sketch of $I$ as a function of $X$ for fixed $Z$.
+\item[(c)] Use the vector formula (10.101) to obtain a result equivalent to that of part a. Compare the two expressions.
+\end{enumerate}
+\solution
+The open part of the plane is $x'>0$. Normalize the scalar amplitude so
+that its squared modulus is intensity.
+\textbf{(a)} For $|X|\ll Z$ and $kZ\gg1$ the obliquity factor is unity,
+the slowly varying denominator is $Z$, and
+\[
+R=|\mathbf r-\mathbf r'|
+\simeq Z+\frac{(x'-X)^2+y'^2}{2Z}.
+\]
+The scalar Kirchhoff integral becomes
+\[
+\psi\simeq\frac{k\sqrt{I_0}\,e^{ikZ-i\omega t}}{2\pi iZ}
+\int_0^\infty e^{ik(x'-X)^2/(2Z)}dx'
+\int_{-\infty}^\infty e^{iky'^2/(2Z)}dy'.
+\]
+The second integral is $\sqrt{2\pi Z/k}\,e^{i\pi/4}$.
+With $u=\sqrt{k/(2Z)}(x'-X)$ and $\xi=\sqrt{k/(2Z)}X$,
+\[
+\boxed{\psi=\sqrt{I_0}e^{ikZ-i\omega t}A(\xi),\qquad
+A(\xi)=\frac{1-i}{\sqrt{2\pi}}\int_{-\xi}^{\infty}e^{iu^2}\,du.}
+\]
+This coefficient is precisely the one in the question. Convergence can
+be defined by a vanishing positive Gaussian damping.
+
+\textbf{(b)} With the question's argument convention define
+\[
+C(\xi)=\sqrt{\frac2\pi}\int_0^\xi\cos u^2\,du,\qquad
+S(\xi)=\sqrt{\frac2\pi}\int_0^\xi\sin u^2\,du .
+\]
+These equal the more usual Fresnel functions at argument
+$\sqrt{2/\pi}\,\xi$. Both tend to $1/2$ at positive infinity.
+Thus
+\[
+A=\frac{1-i}{2}[(C+\tfrac12)+i(S+\tfrac12)],\qquad
+\boxed{\frac I{I_0}=\frac12[(C+\tfrac12)^2+(S+\tfrac12)^2].}
+\]
+Integration by parts in the tail gives
+\[
+\int_\xi^\infty e^{iu^2}du
+=e^{i\xi^2}\left[\frac{i}{2\xi}+\frac1{4\xi^3}
++O(\xi^{-5})\right]\quad(\xi>0).
+\]
+Consequently
+\[
+\frac I{I_0}=
+\begin{cases}
+1-\dfrac{\cos(\xi^2+\pi/4)}{\sqrt\pi\,\xi}
++\dfrac1{4\pi\xi^2}+O(\xi^{-3}),&\xi\to+\infty,\\[6pt]
+\dfrac1{4\pi\xi^2}+O(|\xi|^{-6}),&\xi\to-\infty .
+\end{cases}
+\]
+At the geometrical edge $A(0)=1/2$, so $I(0)=I_0/4$.
+The scale on the plot is $X=\sqrt{2Z/k}\,\xi$.
+\begin{center}\input{supplementary/figures/ch10_11_fresnel.tex}\end{center}
+
+\textbf{(c)} Set the aperture field equal to
+$E_0\boldsymbol\epsilon$ on $x'>0$, where
+$\boldsymbol\epsilon\cdot\widehat{\mathbf z}=0$.
+In (10.101) the leading curl acts on $e^{ikZ}$:
+$\boldsymbol\nabla\times\to ik\widehat{\mathbf z}\times$.
+Since $\widehat{\mathbf z}\times
+(\widehat{\mathbf z}\times\boldsymbol\epsilon)=-\boldsymbol\epsilon$,
+the coefficient is $-ik/(2\pi Z)=k/(2\pi iZ)$, the same as in (a).
+Hence
+\[
+\mathbf E=E_0e^{ikZ-i\omega t}A(\xi)\boldsymbol\epsilon
++O((kZ)^{-1/2}E_0),\qquad
+\mathbf B\simeq\widehat{\mathbf z}\times\mathbf E/c .
+\]
+For a component polarized along $x$, transversality also requires
+$E_z=(i/k)\partial_X E_x$ at the next paraxial order; an incident
+$y$ component has no such leading longitudinal correction.
+The scalar and vector intensities agree to the retained order, while the
+vector relation supplies the polarization and these smaller corrections.
+
+\Needspace{5\baselineskip}
+\par\bigskip
+\noindent\textbf{10.12}\quad A linearly polarized plane wave of amplitude $E_{0}$ and wave number $k$ is incident on a circular opening of radius $a$ in an otherwise perfectly conducting flat screen. The incident wave vector makes an angle $\alpha$ with the normal to the screen. The polarization vector is perpendicular to the plane of incidence.
+\begin{enumerate}
+\item[(a)] Calculate the diffracted fields and the power per unit solid angle transmitted through the opening, using the vector Smythe--Kirchhoff formula (10.101) with the assumption that the tangential electric field in the opening is the unperturbed incident field.
+\item[(b)] Compare your result in part a with the standard scalar Kirchhoff approximation and with the result in Section 10.9 for the polarization vector in the plane of incidence.
+\end{enumerate}
+\solution
+Take the aperture normal along $z$, the incident wave vector in the
+$xz$ plane, and $\mathbf E_i=E_0\widehat{\mathbf y}
+e^{ik(x\sin\alpha+z\cos\alpha)}$. Define
+\[
+\xi^2=(\sin\theta\cos\phi-\sin\alpha)^2+
+\sin^2\theta\sin^2\phi,\qquad
+D(u)=\frac{2J_1(u)}u,\quad D(0)=1.
+\]
+\textbf{(a)} The aperture Fourier transform is
+\[
+\int_A e^{-ik[(n_x-\sin\alpha)x'+n_yy']}\,da'
+=2\pi\int_0^a\rho J_0(k\xi\rho)\,d\rho
+=\pi a^2D(ka\xi).
+\]
+Because $\widehat{\mathbf z}\times\mathbf E_i=-E_0\widehat{\mathbf x}$,
+(10.109) gives
+\[
+\boxed{\mathbf E_{\perp}
+=-\frac{ik a^2E_0}{2r}e^{ikr-i\omega t}
+D(ka\xi)\,\mathbf n\times\widehat{\mathbf x},\qquad
+\mathbf B_{\perp}=\frac1c\mathbf n\times\mathbf E_{\perp}.}
+\]
+Therefore, writing $C_0=|E_0|^2k^2a^4/(8Z_0)$,
+\[
+\boxed{\frac{dP_\perp}{d\Omega}
+=C_0(1-\sin^2\theta\cos^2\phi)D(ka\xi)^2.}
+\]
+Equivalently $C_0=P_0(ka)^2/(4\pi\cos\alpha)$, where
+$P_0=|E_0|^2\pi a^2\cos\alpha/(2Z_0)$ is the incident power on the hole.
+
+\textbf{(b)} The scalar Kirchhoff result and the in-plane polarization
+result (10.114), at the same $E_0$, are
+\[
+\frac{dP_{\rm scalar}}{d\Omega}
+=C_0\left(\frac{\cos\theta+\cos\alpha}{2}\right)^2D^2,\qquad
+\frac{dP_\parallel}{d\Omega}
+=C_0\cos^2\alpha(1-\sin^2\theta\sin^2\phi)D^2.
+\]
+All contain the same diffraction factor. The scalar expression cannot
+distinguish polarizations; the vector factors are the radiation patterns
+of the corresponding aperture magnetic currents. In the incident
+direction $(\theta,\phi)=(\alpha,0)$ all three factors equal
+$\cos^2\alpha$. At normal incidence the two vector patterns rotate into
+one another under $\phi\mapsto\phi+\pi/2$. When $ka\gg1$ their common
+narrow main beam makes the approximations nearly coincide.
+
+\Needspace{5\baselineskip}
+\par\bigskip
+\noindent\textbf{10.13}\quad Discuss the diffraction of a plane wave by a circular hole of radius $a$, following Section 10.9, but using a vector Kirchhoff approximation based on (10.90) instead of the Smythe formula (10.101).
+\begin{enumerate}
+\item[(a)] Show that the diffracted electric field in this approximation differs from (10.112) in two ways, first, that $\cos\alpha$ is replaced by $(\cos\theta+\cos\alpha)/2$, and second, by the addition of a term proportional to $(\mathbf{k}\times\boldsymbol{\epsilon}_{3})$. Compare with the obliquity factors $\mathcal{O}$ of the scalar theory.
+\item[(b)] Evaluate the ratio of the scattered power for this vector Kirchhoff approximation to that of (10.114) for the conditions shown in Fig.~10.14. Sketch the two angular distributions.
+\end{enumerate}
+\solution
+Use the geometry and $D(ka\xi)$ of 10.12, now with
+$\mathbf E_i/E_0=\widehat{\mathbf x}\cos\alpha-
+\widehat{\mathbf z}\sin\alpha$ and $c\mathbf B_i/E_0=\widehat{\mathbf y}$.
+\textbf{(a)} Before making a Kirchhoff replacement, project (10.90)
+onto the transverse radiation field, equivalently use (10.92).
+The aperture electric and magnetic terms then give
+\[
+\begin{split}
+\mathbf E_K
+&=\frac{ikE_0e^{ikr}}{4\pi r}\,\pi a^2D\,
+\{-\widehat{\mathbf x}+n_x\mathbf n+
+\cos\alpha\,\mathbf n\times\widehat{\mathbf y}\}\\
+&=\boxed{\frac{iE_0a^2e^{ikr}}{2r}D\,
+\left[\frac{\cos\theta+\cos\alpha}{2}
+\,\mathbf k\times\widehat{\mathbf y}
+-\frac{\sin\theta\sin\phi}{2}
+\,\mathbf k\times\widehat{\mathbf z}\right].}
+\end{split}
+\]
+The identity used is
+$-\widehat{\mathbf x}+n_x\mathbf n
+=\mathbf n\times(n_z\widehat{\mathbf y}-n_y\widehat{\mathbf z})$.
+Thus the coefficient $\cos\alpha$ of the Smythe expression becomes
+$(\cos\theta+\cos\alpha)/2$, accompanied by the stated extra term.
+The former is the scalar Kirchhoff obliquity factor; the scalar formula
+cannot represent the second, polarization-dependent term.
+
+There is a useful consistency subtlety. Directly replacing all three
+fields in (10.90) by discontinuously truncated incident values, without
+first taking the transverse part, leaves an unphysical radial term
+proportional to $(\sin\alpha-n_x)\mathbf n$. The exact boundary data
+cancel it. Equation (10.92) implements that exact transversality before
+the approximation and specifies the radiation prescription used here.
+
+\textbf{(b)} The squared vector factor simplifies to
+\[
+|(\cos\theta+\cos\alpha)\mathbf n\times\widehat{\mathbf y}
+-n_y\mathbf n\times\widehat{\mathbf z}|^2
+=(\cos\theta+\cos\alpha)^2+\sin^2\alpha\,n_y^2 .
+\]
+Consequently
+\[
+\boxed{\frac{(dP/d\Omega)_K}{(dP/d\Omega)_S}
+=\frac{(\cos\theta+\cos\alpha)^2+
+\sin^2\alpha\sin^2\theta\sin^2\phi}
+{4\cos^2\alpha(1-\sin^2\theta\sin^2\phi)}.}
+\]
+At common diffraction zeros this denotes the ratio of the smooth
+envelopes. Figure 10.14 has $\alpha=\pi/4$, $ka=\pi$ (one wavelength
+in diameter). In its $E$ plane, $\phi=0$ with signed angle
+$-\pi/2\leq\theta\leq\pi/2$,
+\[
+R_E=\tfrac12(\cos\theta+1/\sqrt2)^2 .
+\]
+In its perpendicular $H$ plane, $\phi=\pi/2$,
+\[
+R_H=\frac{(\cos\theta+1/\sqrt2)^2+\tfrac12\sin^2\theta}
+{2\cos^2\theta}.
+\]
+For example,
+\[
+\begin{array}{c|rrrr}
+\theta&0^\circ&30^\circ&45^\circ&60^\circ\\ \hline
+R_E&1.4571&1.2374&1.0000&0.7286\\
+R_H&1.4571&1.7332&2.2500&3.6642
+\end{array}
+\]
+At grazing observation $R_E=1/4$; $R_H$ diverges because the Smythe
+$H$-plane intensity vanishes, while the Kirchhoff one remains finite.
+The curves below use the common normalization $C_0$ from 10.12 and
+include the diffraction factor, not just these envelopes.
+\begin{center}\input{supplementary/figures/ch10_13_circular.tex}\end{center}
+
+\Needspace{5\baselineskip}
+\par\bigskip
+\noindent\textbf{10.14}\quad A rectangular opening with sides of length $a$ and $b\geq a$ defined by $x=\pm(a/2)$, $y=\pm(b/2)$ exists in a flat, perfectly conducting plane sheet filling the $x$-$y$ plane. A plane wave is normally incident with its polarization vector making an angle $\beta$ with the long edges of the opening.
+\begin{enumerate}
+\item[(a)] Calculate the diffracted fields and power per unit solid angle with the vector Smythe--Kirchhoff relation (10.109), assuming that the tangential electric field in the opening is the incident unperturbed field.
+\item[(b)] Calculate the corresponding result of the scalar Kirchhoff approximation.
+\item[(c)] For $b=a$, $\beta=45^{\circ}$, $ka=4\pi$, compute the vector and scalar approximations to the diffracted power per unit solid angle as a function of the angle $\theta$ for $\phi=0$. Plot a graph showing a comparison between the two results.
+\end{enumerate}
+\solution
+Let $\mathbf e=\sin\beta\,\widehat{\mathbf x}
++\cos\beta\,\widehat{\mathbf y}$, since the long edges run along $y$,
+and define $\operatorname{sinc}u=\sin u/u$, continuously equal to one
+at zero. The rectangular aperture transform is
+\[
+{\cal A}(\theta,\phi)=ab\,
+\operatorname{sinc}\!\left(\frac{ka}{2}\sin\theta\cos\phi\right)
+\operatorname{sinc}\!\left(\frac{kb}{2}\sin\theta\sin\phi\right).
+\]
+\textbf{(a)} In (10.109),
+\[
+\boxed{\mathbf E_v=\frac{ikE_0e^{ikr-i\omega t}}{2\pi r}
+{\cal A}\,\mathbf n\times(\widehat{\mathbf z}\times\mathbf e),
+\qquad \mathbf B_v=\mathbf n\times\mathbf E_v/c.}
+\]
+The angular distribution is therefore
+\[
+\boxed{\frac{dP_v}{d\Omega}
+=\frac{|E_0|^2 k^2|{\cal A}|^2}{8\pi^2Z_0}
+\left[\cos^2\theta+\sin^2\theta\sin^2(\phi+\beta)\right].}
+\]
+The factor follows from
+$|\mathbf n\times(\widehat{\mathbf z}\times\mathbf e)|^2
+=\cos^2\theta+(\mathbf n\cdot\mathbf e)^2$.
+
+\textbf{(b)} The scalar field has the same aperture transform, multiplied
+by $(1+\cos\theta)/2$ instead of the vector factor, hence
+\[
+\boxed{\frac{dP_s}{d\Omega}
+=\frac{|E_0|^2 k^2|{\cal A}|^2}{8\pi^2Z_0}
+\left(\frac{1+\cos\theta}{2}\right)^2.}
+\]
+Both give the same intensity on axis; the scalar result is independent
+of $\beta$.
+
+\textbf{(c)} For the parameters specified, normalize to the common axial
+value $P_* = |E_0|^2 k^2a^4/(8\pi^2Z_0)$. Then
+\[
+\boxed{\frac1{P_*}\frac{dP_v}{d\Omega}
+=\frac{1+\cos^2\theta}{2}\operatorname{sinc}^2(2\pi\sin\theta),
+\quad
+\frac1{P_*}\frac{dP_s}{d\Omega}
+=\frac{(1+\cos\theta)^2}{4}\operatorname{sinc}^2(2\pi\sin\theta).}
+\]
+The common zeros occur at $\theta=30^\circ,90^\circ$.
+Their difference is the nonnegative quantity
+$\tfrac14(1-\cos\theta)^2\operatorname{sinc}^2(2\pi\sin\theta)$.
+At $\theta=45^\circ,60^\circ$ the vector values are
+$0.03530,0.01174$ and the scalar values $0.03429,0.01057$.
+\begin{center}\input{supplementary/figures/ch10_14_square.tex}\end{center}
+
+\Needspace{5\baselineskip}
+\par\bigskip
+\noindent\textbf{10.15}\quad A cylindrical coaxial transmission line of inner radius $a$ and outer radius $b$ has its axis along the negative $z$ axis. Both inner and outer conductors end at $z=0$, and the outer one is connected to an infinite plane copper flange occupying the whole $x$-$y$ plane (except for the annulus of inner radius $a$ and outer radius $b$ around the origin). The transmission line is excited at frequency $\omega$ in its dominant TEM mode, with the peak voltage between the cylinders being $V$. Use the vector Smythe--Kirchhoff approximation to discuss the radiated fields, the angular distribution of radiation, and the total power radiated.
+\solution
+Assume vacuum in the coax and neglect the finite surface resistance of
+the copper flange. The prescribed Smythe--Kirchhoff approximation uses
+the unperturbed TEM aperture field
+\[
+\mathbf E_t(\rho,0)=\frac{V}{\rho\ln(b/a)}\widehat{\boldsymbol\rho},
+\qquad a<\rho<b.
+\]
+Here $V$ is a \emph{peak phasor voltage}; time-averaged powers contain
+$1/2$. Put $\ell=\ln(b/a)$ and $q=k\sin\theta$. Choosing the observation
+azimuth as zero during the integral,
+\[
+\begin{split}
+\int_A\widehat{\mathbf z}\times\mathbf E_t\,
+e^{-i\mathbf k_t\cdot\mathbf r'}da'
+&=\frac{V}{\ell}\int_a^b d\rho\int_0^{2\pi}
+\widehat{\boldsymbol\varphi}'e^{-iq\rho\cos\varphi'}d\varphi'\\
+&=-\frac{2\pi iV}{q\ell}[J_0(qa)-J_0(qb)]
+\widehat{\boldsymbol\varphi}.
+\end{split}
+\]
+Since $\mathbf n\times\widehat{\boldsymbol\varphi}
+=-\widehat{\boldsymbol\theta}$, the radiation fields are
+\[
+\boxed{E_\theta=-\frac{Ve^{ikr-i\omega t}}{r\ell}
+\frac{J_0(ka\sin\theta)-J_0(kb\sin\theta)}{\sin\theta},
+\qquad B_\varphi=E_\theta/c.}
+\]
+All other leading $1/r$ components vanish. The apparent axial singularity
+is removable: the numerator is
+$k^2(b^2-a^2)\sin^2\theta/4+O(\sin^4\theta)$, so $E_\theta=0$ on axis.
+The polarization is meridional and the intensity is azimuthally symmetric:
+\[
+\boxed{\frac{dP}{d\Omega}=\frac{|V|^2}{2Z_0\ell^2}
+\frac{[J_0(ka\sin\theta)-J_0(kb\sin\theta)]^2}{\sin^2\theta}.}
+\]
+Only the upper hemisphere is radiated into, giving the convergent
+one-dimensional formula, valid at arbitrary $ka,kb$ within this model,
+\[
+\boxed{P=\frac{\pi|V|^2}{Z_0\ell^2}
+\int_0^{\pi/2}
+\frac{[J_0(ka\sin\theta)-J_0(kb\sin\theta)]^2}{\sin\theta}\,d\theta.}
+\]
+For $kb\ll1$,
+\[
+P\simeq\frac{\pi|V|^2 k^4(b^2-a^2)^2}{24Z_0\ell^2},
+\qquad
+\frac{dP}{d\Omega}\simeq
+\frac{|V|^2 k^4(b^2-a^2)^2}{32Z_0\ell^2}\sin^2\theta .
+\]
+This is the pattern of a normal electric dipole; the zeroth aperture
+magnetic moment vanishes by rotational symmetry.
+
+The incident TEM power for the same voltage is
+$P_{\rm TEM}=|V|^2/(2Z_c)=\pi|V|^2/(Z_0\ell)$, with
+$Z_c=Z_0\ell/(2\pi)$. Thus the displayed integral divided by $\ell$ is
+the approximate transmission fraction. At large $ka,kb$ with fixed
+$b/a$, set $u=k\sin\theta$ in its forward-dominated contribution and use
+\[
+\int_0^\infty[J_0(au)-J_0(bu)]^2\,\frac{du}{u}=\ln(b/a)
+\]
+to obtain $P/P_{\rm TEM}\to1$. To verify this last integral, call its
+left side $I(a,b)$. Hankel inversion of a disk indicator gives
+$\int_0^\infty J_0(au)J_1(bu)\,du=1/b$ for $a<b$, while
+$\int_0^\infty J_0(bu)J_1(bu)\,du=1/(2b)$ follows by integrating
+$-\tfrac12\,d[J_0(bu)^2]/du$. Therefore
+\[
+\partial_b I=2\int_0^\infty[J_0(au)-J_0(bu)]J_1(bu)\,du
+=\frac1b,\qquad I(a,a)=0,
+\]
+which proves $I=\ln(b/a)$ (oscillatory integrals can be Abel regulated).
+At small apertures the actual reflected
+TEM wave changes the aperture field; prescribing the unperturbed field
+does not determine the true input reflection coefficient.
+
+\Needspace{5\baselineskip}
+\par\bigskip
+\noindent\textbf{10.16}\quad\begin{enumerate}
+\item[(a)] Show from (10.125) that the integral of the shadow scattering differential cross section, summed over outgoing polarizations, can be written in the short-wavelength limit as
+\[
+\sigma_{\mathrm{sh}}=\int d^{2}x_{\perp}\int d^{2}x'_{\perp}\cdot\frac{1}{4\pi^{2}}\int e^{i(\mathbf{x}_{\perp}-\mathbf{x}'_{\perp})\cdot\mathbf{k}_{\perp}}\;d^{2}k_{\perp}
+\]
+and therefore is equal to the projected area of the scatterer, independent of its detailed shape.
+\item[(b)] Apply the optical theorem to the ``shadow'' amplitude (10.125) to obtain the total cross section under the assumption that in the forward direction the contribution from the illuminated side of the scatterer is negligible in comparison.
+\end{enumerate}
+\solution
+Let $\chi_A(\mathbf x_\perp)$ be the indicator of the projected shadow.
+Equation (10.125), divided by incident amplitude, reads in its narrow
+forward cone
+\[
+\mathbf f_{\rm sh}\simeq\frac{ik}{2\pi}
+\boldsymbol\epsilon_0\int_A e^{-i\mathbf k_\perp\cdot\mathbf x_\perp}
+d^2x_\perp .
+\]
+\textbf{(a)} In that cone the outgoing polarization sum tends to
+$|\boldsymbol\epsilon_0|^2=1$, and
+$d\Omega\simeq d^2k_\perp/k^2$. The transverse wave-number domain can
+be extended to the entire plane at the retained short-wave order.
+Expanding the modulus squared gives
+\[
+\sigma_{\rm sh}\simeq\int_A d^2x_\perp\int_A d^2x'_\perp
+\frac1{4\pi^2}\int_{\mathbb R^2}
+e^{i(\mathbf x_\perp-\mathbf x'_\perp)\cdot\mathbf k_\perp}
+\,d^2k_\perp .
+\]
+The inner Fourier integral is
+$\delta^{(2)}(\mathbf x_\perp-\mathbf x'_\perp)$, or equivalently
+Parseval's theorem gives $\int|\chi_A|^2d^2x_\perp$. Hence
+\[
+\boxed{\sigma_{\rm sh}=A_{\rm proj}\quad\hbox{to leading short-wave order}.}
+\]
+Only the projected area enters, including any holes in that projection.
+
+\textbf{(b)} At $\mathbf k_\perp=0$,
+$f_{\rm sh}(0)=ikA_{\rm proj}/(2\pi)$ in the original polarization.
+Under the stated dominance assumption the optical theorem gives
+\[
+\boxed{\sigma_t=\frac{4\pi}{k}\operatorname{Im} f(0)
+\simeq2A_{\rm proj}.}
+\]
+One projected area is the shadow diffraction contribution. The other
+is removed through reflection and/or absorption on the illuminated
+surface; its division depends on the material. This is compatible with
+the area result in (a), since (a) is only one contribution to extinction.
+
+\Needspace{5\baselineskip}
+\par\bigskip
+\noindent\textbf{10.17}\quad\begin{enumerate}
+\item[(a)] Using the approximate amplitudes of Section 10.10, show that, for a linearly polarized plane wave of wave number $k$ incident on a perfectly conducting sphere of radius $a$ in the limit of large $ka$, the differential scattering cross section in the $E$ plane ($\boldsymbol{\epsilon}_{0}$, $\mathbf{k}_{0}$, and $\mathbf{k}$ coplanar) is
+\begin{align*}
+\frac{d\sigma}{d\Omega}\,(E\text{ plane})=\frac{a^{2}}{4}&\left[4\cot^{2}\theta\,J_{1}^{2}(ka\sin\theta)+1\right.\\
+&\left.-\,4\cot\theta\,J_{1}(ka\sin\theta)\sin\!\left(2\,ka\,\sin\frac{\theta}{2}\right)\right]
+\end{align*}
+and in the $H$ plane ($\boldsymbol{\epsilon}_{0}$ perpendicular to $\mathbf{k}_{0}$ and $\mathbf{k}$) is
+\begin{align*}
+\frac{d\sigma}{d\Omega}\,(H\text{ plane})=\frac{a^{2}}{4}&\left[4\operatorname{cosec}^{2}\theta\,J_{1}^{2}(ka\sin\theta)+1\right.\\
+&\left.+\,4\operatorname{cosec}\theta\,J_{1}(ka\sin\theta)\sin\!\left(2\,ka\,\sin\frac{\theta}{2}\right)\right]
+\end{align*}
+(The dashed curve in Fig.~10.16 is the average of these two expressions.)
+\item[(b)] Look up the exact calculations in \emph{King and Wu} (Appendix) or \emph{Bowman, Senior and Uslenghi} (pp.~402--405). Are the \emph{qualitative} aspects of the interference between the diffractive and reflective amplitudes exhibited in part a in agreement with the exact results? What about quantitative agreement?
+\end{enumerate}
+\solution
+Put $x=ka$, $\chi=2x\sin(\theta/2)$ and
+$g=J_1(x\sin\theta)/\sin\theta$, interpreted continuously at a forward
+axis. The amplitudes here have the incident electric amplitude divided
+out.
+
+\textbf{(a)} The shadow amplitude (10.127) is
+$ia g\,\boldsymbol\epsilon_0$, with projection onto the outgoing
+transverse polarization understood. The reflected amplitude (10.132) is
+$(a/2)e^{-i\chi}\boldsymbol\epsilon_r$, where
+$\boldsymbol\epsilon_r=-\boldsymbol\epsilon_0+
+2(\mathbf n_s\cdot\boldsymbol\epsilon_0)\mathbf n_s$ and
+$\mathbf n_s\parallel\mathbf n-\mathbf n_0$.
+
+For observation in the $xz$ plane,
+$\mathbf n_s=(\cos(\theta/2),0,-\sin(\theta/2))$.
+An incident $x$ polarization has
+$\boldsymbol\epsilon_r=\widehat{\boldsymbol\theta}$ and
+$\widehat{\boldsymbol\theta}\cdot\widehat{\mathbf x}=\cos\theta$.
+An incident $y$ polarization has
+$\boldsymbol\epsilon_r=-\widehat{\mathbf y}$. Thus
+\[
+f_E=\frac a2[e^{-i\chi}+2ig\cos\theta],\qquad
+f_H=\frac a2[-e^{-i\chi}+2ig].
+\]
+Squaring the coherent sums, including their relative phases, gives
+\[
+\boxed{\frac{d\sigma_E}{d\Omega}=\frac{a^2}{4}
+[1+4g^2\cos^2\theta-4g\cos\theta\sin\chi],}
+\qquad
+\boxed{\frac{d\sigma_H}{d\Omega}=\frac{a^2}{4}
+[1+4g^2+4g\sin\chi].}
+\]
+These are the requested cotangent and cosecant expressions.
+Their average is the unpolarized approximation in Fig.~10.16.
+The stationary-phase reflected amplitude requires
+$2ka\sin(\theta/2)\gg1$; the shadow expression was derived for a narrow
+forward cone. Extending both formulas over all angles is the plotted
+approximation, and is not a uniform large-$ka$ expansion, particularly
+near backward scattering.
+
+\textbf{(b)} Jackson's Fig.~10.16, printed p.~500, explicitly reproduces
+the \emph{King--Wu} exact result at $ka=10$. It shows much stronger dips
+below the geometrical-optics level than the approximate unpolarized
+curve. The discussion on printed p.~499 identifies stronger interference
+in the $E$ plane than in the $H$ plane. For a quantitative comparison
+in the separate planes, evaluate the exact conducting-sphere series
+(10.57), (10.68), without a high-frequency approximation:
+\[
+a_l=\frac{\psi_l'(x)}{\xi_l'(x)},\qquad
+b_l=\frac{\psi_l(x)}{\xi_l(x)},\qquad
+f_{E,H}=\frac{i}{k}S_{E,H},
+\]
+\[
+\begin{split}
+S_E&=\sum_{l=1}^\infty\frac{2l+1}{l(l+1)}
+(a_l\tau_l+b_l\pi_l),\\
+S_H&=\sum_{l=1}^\infty\frac{2l+1}{l(l+1)}
+(a_l\pi_l+b_l\tau_l).
+\end{split}
+\]
+Here $\pi_l=P_l'(\cos\theta)$,
+$\tau_l=l\cos\theta\,\pi_l-(l+1)\pi_{l-1}$, with $\pi_0=0,\pi_1=1$.
+For numerical generation use
+$\pi_{l+1}=[(2l+1)\cos\theta\,\pi_l-(l+1)\pi_{l-1}]/l$.
+This recurrence remains finite at the axes. At $x=10$, increasing the
+sum from $l_{\max}=30$ to $40$ does not change the reported digits.
+The table and curves use $4(d\sigma/d\Omega)/a^2$:
+\[
+\begin{array}{r|rr|rr}
+\theta&\text{exact }E&\text{approx. }E&
+\text{exact }H&\text{approx. }H\\ \hline
+0^\circ&106.358&101.000&106.358&101.000\\
+10^\circ&51.808&31.267&41.859&58.719\\
+20^\circ&5.668&2.491&2.754&1.348\\
+30^\circ&1.398&0.258&2.900&5.060\\
+45^\circ&0.0992&0.9361&1.551&1.094\\
+60^\circ&0.9579&1.4389&1.193&0.7108\\
+90^\circ&1.1133&1.0000&1.0773&1.1814
+\end{array}
+\]
+\begin{center}\input{supplementary/figures/ch10_17_mie.tex}\end{center}
+The coherent two-amplitude picture correctly predicts oscillations about
+the reflection level and a polarization-dependent interference sign.
+Quantitative agreement at $ka=10$ is poor for the locations and depths
+of the minima; at $45^\circ$ the $E$-plane approximation is about
+$9.4$ times the exact value. The exact $H$ pattern settles toward the
+reflection level with much smaller oscillations than the exact $E$ pattern.
+These numerical comparisons use the converged exact series; the
+historical graph inspected is the King--Wu reproduction in Jackson,
+rather than a claim to have accessed the original Appendix pages.
+
+\Needspace{5\baselineskip}
+\par\bigskip
+\noindent\textbf{10.18}\quad Discuss the diffraction due to a small, circular hole of radius $a$ in a flat, perfectly conducting sheet, assuming that $ka\ll1$.
+\begin{enumerate}
+\item[(a)] If the fields near the screen on the incident side are normal $\mathbf{E}_{0}e^{-i\omega t}$ and tangential $\mathbf{B}_{0}e^{-i\omega t}$, show that the diffracted electric field in the Fraunhofer zone is
+\[
+\mathbf{E}=\frac{e^{ikr-i\omega t}}{3\pi r}\,k^{2}a^{3}\!\left[2c\,\frac{\mathbf{k}}{k}\times\mathbf{B}_{0}+\frac{\mathbf{k}}{k}\times\!\left(\mathbf{E}_{0}\times\frac{\mathbf{k}}{k}\right)\right]
+\]
+where $\mathbf{k}$ is the wave vector in the direction of observation.
+\item[(b)] Determine the angular distribution of the diffracted radiation and show that the total power transmitted through the hole is
+\[
+P=\frac{2}{27\pi Z_{0}}\,k^{4}a^{6}(4c^{2}B_{0}^{2}+E_{0}^{2})
+\]
+\end{enumerate}
+\solution
+The fields $\mathbf E_0,\mathbf B_0$ mean the fields on the incident
+side of the \emph{closed} screen, locally away from the small perturbation
+caused by the hole. They need not equal the amplitudes of an incident
+traveling wave alone.
+
+\textbf{(a)} The circular-hole static polarizabilities (9.75), printed
+p.~424, have opposite signs as viewed from the two sides of the screen.
+On the transmitted side the effective moments are
+\[
+\mathbf p=\frac43\epsilon_0a^3\mathbf E_0,\qquad
+\mathbf m=-\frac8{3\mu_0}a^3\mathbf B_0 .
+\]
+Substituting them into the electric and magnetic dipole radiation fields
+(10.2) gives
+\[
+\begin{split}
+\mathbf E&=\frac{k^2e^{ikr-i\omega t}}{4\pi\epsilon_0r}
+\left[\mathbf p-\mathbf n(\mathbf n\cdot\mathbf p)
+-\frac{\mathbf n\times\mathbf m}{c}\right]\\
+&=\boxed{\frac{k^2a^3e^{ikr-i\omega t}}{3\pi r}
+[2c\,\mathbf n\times\mathbf B_0+
+\mathbf E_0-\mathbf n(\mathbf n\cdot\mathbf E_0)]}.
+\end{split}
+\]
+Here $1/(\mu_0\epsilon_0c)=c$ and
+$\mathbf E_0-\mathbf n(\mathbf n\cdot\mathbf E_0)
+=\mathbf n\times(\mathbf E_0\times\mathbf n)$.
+Also $\mathbf B_{\rm rad}=\mathbf n\times\mathbf E/c$.
+
+\textbf{(b)} For possibly complex phasors the angular distribution is
+\[
+\boxed{\frac{dP}{d\Omega}=\frac{k^4a^6}{18\pi^2Z_0}
+\left[4c^2\bigl(|\mathbf B_0|^2-|\mathbf n\cdot\mathbf B_0|^2\bigr)
++|\mathbf E_0|^2-|\mathbf n\cdot\mathbf E_0|^2
++4c\,\operatorname{Re}\{\mathbf E_0^*\cdot
+(\mathbf n\times\mathbf B_0)\}\right].}
+\]
+Integrate over the transmitted hemisphere. Its second moments are
+$\int n_in_j\,d\Omega=(2\pi/3)\delta_{ij}$.
+Thus each isolated dipole pattern integrates to $4\pi/3$ times its
+squared moment. Since $\mathbf E_0$ is normal and $\mathbf B_0$
+tangential, the interference term is proportional to $n_x$ or $n_y$;
+its azimuthal integral vanishes. Therefore
+\[
+\boxed{P=\frac{2k^4a^6}{27\pi Z_0}
+(4c^2|\mathbf B_0|^2+|\mathbf E_0|^2).}
+\]
+For real amplitudes this is the expression stated. It is half the
+full-space dipole power, since the aperture emits here into one side only.
+
+\Needspace{5\baselineskip}
+\par\bigskip
+\noindent\textbf{10.19}\quad Specialize the discussion of Problem 10.18 to the diffraction of a plane wave by the small, circular hole. Treat the general case of oblique incidence at an angle $\alpha$ to the normal, with polarization in and perpendicular to the plane of incidence.
+\begin{enumerate}
+\item[(a)] Calculate the angular distributions of the diffracted radiation and compare them to the vector Smythe--Kirchhoff approximation results of Section 10.9 and Problem 10.12 in the limit $ka\ll1$.
+\item[(b)] For the conditions of Fig.~10.14 (but for $ka\ll1$) compute the diffraction intensity in the plane of incidence and compare the relative values with the solid curve in Fig.~10.14. (Use a protractor and a ruler to read off the values from Fig.~10.14 at several angles.)
+\item[(c)] Show that the transmission coefficient [defined above (10.116)] for the two states of polarization are
+\begin{align*}
+T_{\parallel}&=\frac{64}{27\pi^{2}}\,(ka)^{4}\!\left(\frac{4+\sin^{2}\alpha}{4\cos\alpha}\right)\\[4pt]
+T_{\perp}&=\frac{64}{27\pi^{2}}\,(ka)^{4}\cos\alpha
+\end{align*}
+Note that these transmission coefficients are a factor $(ka)^{2}$ smaller than those given by the vector Smythe--Kirchhoff approximation in the same limit.
+\end{enumerate}
+\solution
+Let the transmitted side be $z>0$, let incidence be in the $xz$ plane,
+and set $s=\sin\alpha$, $c_\alpha=\cos\alpha$.
+Use a common incident traveling-wave electric amplitude $E_i$.
+
+\textbf{(a)} For in-plane (TM) polarization,
+$\mathbf E_i=E_i(c_\alpha,0,-s)$ and $c\mathbf B_i=E_i\widehat{\mathbf y}$.
+Adding the reflected wave at a closed PEC plane cancels tangential $E$
+and doubles normal $E$ and tangential $B$:
+\[
+\mathbf E_0=-2E_i s\,\widehat{\mathbf z},\qquad
+c\mathbf B_0=2E_i\widehat{\mathbf y}.
+\]
+For perpendicular (TE) polarization,
+$\mathbf E_i=E_i\widehat{\mathbf y}$ and
+$c\mathbf B_i=E_i(-c_\alpha,0,s)$, hence
+\[
+\mathbf E_0=0,\qquad
+c\mathbf B_0=-2E_i c_\alpha\,\widehat{\mathbf x}.
+\]
+Insert these into 10.18. With
+$C_B=2|E_i|^2k^4a^6/(9\pi^2Z_0)$,
+\[
+\boxed{\begin{aligned}
+\frac{dP_\parallel}{d\Omega}
+&=C_B[4(1-n_y^2)+s^2(1-n_z^2)-4s n_x],\\
+\frac{dP_\perp}{d\Omega}
+&=4C_B c_\alpha^2(1-n_x^2).
+\end{aligned}}
+\]
+The TM interference term follows from
+$(\mathbf n\times\widehat{\mathbf y})\cdot
+[\widehat{\mathbf z}-n_z\mathbf n]=n_x$.
+This step fixes its sign.
+
+For comparison, set $D(ka\xi)\to1$ in the Smythe--Kirchhoff results
+of 10.12:
+\[
+\left(\frac{dP_\parallel}{d\Omega}\right)_{\!S}
+=C_0 c_\alpha^2(1-n_y^2),\qquad
+\left(\frac{dP_\perp}{d\Omega}\right)_{\!S}
+=C_0(1-n_x^2),\quad C_0=\frac{|E_i|^2k^2a^4}{8Z_0}.
+\]
+The exact leading small-hole result scales as $k^4a^6$, while the
+unperturbed-aperture model scales as $k^2a^4$. The TE shapes agree,
+with a different amplitude; the TM result also includes a normal
+electric dipole and its interference with the magnetic dipole, which
+changes the shape.
+
+\textbf{(b)} In the $E$ plane let $\theta$ be signed, so
+$\mathbf n=(\sin\theta,0,\cos\theta)$. At $\alpha=45^\circ$,
+\[
+\frac{dP_\parallel}{d\Omega}
+=C_B(2-\sin\theta/\sqrt2)^2.
+\]
+Normalize each curve to its own value at $\theta=45^\circ$.
+The source figure was measured using rays from the aperture origin on
+a $400$-dpi rendering of Jackson's printed p.~495; radial length is
+intensity in this polar diagram. The retained crop and measured radial
+intervals are in \texttt{supplementary/ch10-source}.
+\[
+\begin{array}{r|rrr}
+\theta&
+\text{small hole }ka\ll1&
+\text{Fig.~10.14 solid, ruler}&
+\text{Smythe formula }ka=\pi\\ \hline
+0^\circ&1.778&0.25&0.248\\
+15^\circ&1.467&0.58&0.596\\
+30^\circ&1.205&0.89&0.899\\
+45^\circ&1.000&1.00&1.000\\
+60^\circ&0.856&0.94&0.939\\
+75^\circ&0.771&0.84&0.846
+\end{array}
+\]
+The ruler readings have approximately $0.02$--$0.03$ uncertainty
+from line thickness and locating the origin. The final column is an
+independent evaluation of
+$D(\pi|\sin\theta-1/\sqrt2|)^2$ and checks the interpretation of
+the printed polar graph. A small hole radiates broadly, with greater
+TM intensity toward negative signed angles, whereas the wavelength-size
+hole in Fig.~10.14 has its main lobe near the incident direction.
+Merely shrinking $ka$ in the unperturbed-aperture field model would
+give a constant $E$-plane envelope and also misses this dipole interference.
+
+\textbf{(c)} The incident power intercepted by the aperture is
+$P_0=|E_i|^2\pi a^2c_\alpha/(2Z_0)$.
+The hemispherical integrals from 10.18 give
+\[
+P_\parallel=\frac{8|E_i|^2 k^4a^6}{27\pi Z_0}(4+s^2),\qquad
+P_\perp=\frac{32|E_i|^2 k^4a^6}{27\pi Z_0}c_\alpha^2 .
+\]
+Dividing each by $P_0$ yields
+\[
+\boxed{T_\parallel=\frac{64}{27\pi^2}(ka)^4
+\frac{4+\sin^2\alpha}{4\cos\alpha},\qquad
+T_\perp=\frac{64}{27\pi^2}(ka)^4\cos\alpha .}
+\]
+For comparison $T_{\parallel,S}=(ka)^2c_\alpha/3$ and
+$T_{\perp,S}=(ka)^2/(3c_\alpha)$; at fixed nongrazing angle, the
+exact coefficients are smaller by an additional order $(ka)^2$.
+The apparent divergence of the TM coefficient at grazing incidence
+comes from normalizing by $P_0\propto\cos\alpha$, not divergent radiated
+power; the limiting grazing setup requires care with illumination.
+
+\Needspace{5\baselineskip}
+\par\bigskip
+\noindent\textbf{10.20}\quad A suspension of transparent fibers in a clear liquid is modeled as a collection of scatterers, each being a right circular cylinder of radius $a$ and length $L$ of uniform dielectric material whose electric susceptibility differs from the surrounding medium by a small fractional amount $\delta\epsilon/\epsilon$.
+\begin{enumerate}
+\item[(a)] Show that \erratum{using the amplitude to first order in $\delta\epsilon/\epsilon$}, the scattering cross section per scatterer for unpolarized radiation of wave number $k$ is
+\[
+\frac{d\sigma}{d\Omega}=\left|\frac{\delta\epsilon}{\epsilon}\right|^{2}\frac{k^{4}a^{4}L^{2}}{32}\,(1+\cos^{2}\theta)\!\left|\frac{2J_{1}(q_{\perp}a)}{q_{\perp}a}\cdot\frac{\sin(q_{\parallel}L/2)}{q_{\parallel}L/2}\right|^{2}
+\]
+where $J_{1}(z)$ is the Bessel function of order unity and $q_{\parallel}$ ($q_{\perp}$) is the component of the wave number transfer parallel (perpendicular) to the cylinder axis.
+\item[(b)] In the limit of very slender cylinders ($ka\ll1$), show that the scattering cross section, averaged over the orientation of the cylinder (appropriate for an ensemble of randomly oriented fibers), is
+\[
+\left\langle\frac{d\sigma}{d\Omega}\right\rangle=\left|\frac{\delta\epsilon}{\epsilon}\right|^{2}\frac{k^{4}a^{4}L^{2}}{32}\,(1+\cos^{2}\theta)\!\left[\frac{2}{qL}\,\mathrm{Si}(qL)-\left(\frac{\sin(qL/2)}{qL/2}\right)^{2}\right]
+\]
+where $\mathrm{Si}(x)=\int_{0}^{x}[(\sin x)/x]\;dx$ is the sine integral (\emph{Abramowitz and Stegun}, p.~231) and $q^{2}=2k^{2}(1-\cos\theta)$.
+\item[(c)] Plot the square-bracketed quantity in part b as a function of $q^{2}L^{2}$ on the range $(0,100)$. Verify that the cross section is the expected one when $kL\ll1$ and show that when $kL\gg1$ (but $ka\ll1$) the total scattering cross section is approximately
+\[
+\sigma_{\mathrm{scatt}}\approx\frac{11\pi^{2}}{60}\left|\frac{\delta\epsilon}{\epsilon}\right|^{2}k^{3}a^{4}L\!\left\{1+O\!\left[\frac{1}{kL},\frac{\ln(kL)}{kL}\right]\right\}
+\]
+Comment on the frequency dependence.
+\end{enumerate}
+\solution
+Write $\eta=\delta\epsilon/\epsilon$, let $\widehat{\mathbf u}$ be the
+fiber axis, and use the host-medium wave number $k$.
+The first Born approximation uses the incident field in the excess
+polarization. Besides $|\eta|\ll1$, its use for long objects requires
+the accumulated internal phase perturbation to remain small along
+relevant propagation paths.
+
+\textbf{(a)} With the cylinder centered at the origin, separate the
+volume Fourier transform into axial and transverse factors:
+\[
+\begin{split}
+{\cal V}(\mathbf q)
+&=\int_{-L/2}^{L/2}e^{iq_\parallel z}\,dz
+\int_0^a\rho\,d\rho\int_0^{2\pi}
+e^{iq_\perp\rho\cos\varphi}\,d\varphi\\
+&=\pi a^2L\,
+\frac{2J_1(q_\perp a)}{q_\perp a}
+\frac{\sin(q_\parallel L/2)}{q_\parallel L/2}.
+\end{split}
+\]
+The normalized polarized amplitude (10.31) is
+$f_{\epsilon'\epsilon}=k^2\eta{\cal V}
+(\boldsymbol\epsilon'^*\cdot\boldsymbol\epsilon)/(4\pi)$.
+The sum over outgoing and average over incident polarizations is
+$(1+\cos^2\theta)/2$. Therefore
+\[
+\boxed{\frac{d\sigma}{d\Omega}
+=|\eta|^2\frac{k^4a^4L^2}{32}(1+\cos^2\theta)
+\left|\frac{2J_1(q_\perp a)}{q_\perp a}
+\frac{\sin(q_\parallel L/2)}{q_\parallel L/2}\right|^2.}
+\]
+It is the \emph{amplitude} that is first order in $\eta$;
+the leading cross section is second order.
+
+\textbf{(b)} If $ka\ll1$, then $q_\perp a\leq2ka\ll1$ and the Bessel
+factor is one to relative order $(ka)^2$.
+For an isotropic axis orientation,
+$\mu=\widehat{\mathbf q}\cdot\widehat{\mathbf u}$ is uniform on $[-1,1]$.
+With $u=qL$ the remaining average is
+\[
+H(u)=\frac12\int_{-1}^1
+\left[\frac{\sin(u\mu/2)}{u\mu/2}\right]^2d\mu
+=\frac2u\int_0^{u/2}\frac{\sin^2t}{t^2}\,dt .
+\]
+Integrating by parts,
+\[
+\int_0^v\frac{\sin^2t}{t^2}\,dt
+=-\frac{\sin^2v}{v}+\int_0^v\frac{\sin2t}{t}\,dt
+=\operatorname{Si}(2v)-\frac{\sin^2v}{v}.
+\]
+Consequently
+\[
+\boxed{H(u)=\frac{2\operatorname{Si}(u)}u
+-\left[\frac{\sin(u/2)}{u/2}\right]^2,}
+\]
+which multiplies the prefactor in (a). Kinematics gives
+$q^2=|\mathbf k_0-\mathbf k|^2=2k^2(1-\cos\theta)$.
+
+\textbf{(c)} The plot uses $u^2=q^2L^2$ on its horizontal axis.
+\begin{center}\input{supplementary/figures/ch10_20_fibers.tex}\end{center}
+Expanding the orientation integral term by term gives
+\[
+H(u)=1-\frac{u^2}{36}+\frac{u^4}{1800}+O(u^6).
+\]
+Thus for $kL\ll1$ the object has Born electric dipole moment
+$\epsilon\eta\pi a^2L\,\mathbf E_i$ and
+\[
+\boxed{\sigma_{\rm sc}=\frac{\pi}{6}|\eta|^2k^4a^4L^2
+[1+O((kL)^2,(ka)^2)]}.
+\]
+Indeed $\int(1+\cos^2\theta)d\Omega=16\pi/3$ supplies this coefficient.
+
+For $u\gg1$, integration by parts in the sine-integral tail gives
+$H(u)=\pi/u-2/u^2+O(u^{-3})$; the leading oscillatory $u^{-2}$
+terms cancel between the two terms defining $H$.
+Inserting $\pi/(qL)$ into the total angular integral yields
+\[
+\begin{split}
+\sigma_{\rm sc}
+&\simeq\frac{\pi^2}{16}|\eta|^2k^3a^4L
+\int_{-1}^1\frac{1+\mu^2}{\sqrt{2(1-\mu)}}\,d\mu,\\
+\int_{-1}^1\frac{1+\mu^2}{\sqrt{2(1-\mu)}}\,d\mu
+&=2\int_0^1[1+(1-2t^2)^2]\,dt
+=4-\frac83+\frac85=\frac{44}{15},
+\end{split}
+\]
+where $t=\sqrt{(1-\mu)/2}$. Therefore
+\[
+\boxed{\sigma_{\rm sc}\simeq\frac{11\pi^2}{60}
+|\eta|^2k^3a^4L.}
+\]
+The forward cap $qL\lesssim1$ contributes a relative $O((kL)^{-1})$
+correction; the $u^{-2}$ term integrated outside that cap gives
+$O(\ln(kL)/(kL))$. These explain the stated error orders.
+For frequency-independent contrast and host index the long, thin
+random fibers have a $k^3$ law, between the point-particle $k^4$ law
+and the large weak-contrast sphere's $k^2$ law in 10.9.

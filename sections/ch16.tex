@@ -1,0 +1,1045 @@
+% Problems, Chapter 16: Radiation Damping, Classical Models of Charged Particles
+% Jackson, Classical Electrodynamics, 3rd ed.
+% Requires: amsmath, amssymb, tikz
+
+\section*{Problems}
+
+\Needspace{5\baselineskip}
+\par\bigskip
+\noindent\textbf{16.1}\quad A nonrelativistic particle of charge $e$ and mass $m$ is bound by a linear, isotropic, restoring force with force constant $m\omega_{0}^{2}$.
+
+Using (16.13) and (16.16) of Section 16.2, show that the energy and angular momentum of the particle both decrease exponentially from their initial values as $e^{-\Gamma t}$, where $\Gamma=\omega_{0}^{2}\tau$. Quantum mechanically, the mean excitation energy of an oscillator decays in exactly the same way because the total radiative transition probability for a state with quantum numbers $n_{0}$, $l_{0}$ is $\Gamma(n_{0},l_{0})=n_{0}\Gamma$. The decay of the angular momentum approaches the classical law only for $l_{0}\gg1$.
+\solution
+
+We use Gaussian units and write $\tau_r=2e^2/(3mc^3)$ for the
+radiation-reaction time (the $\tau$ of this question). The equations
+(16.13) and (16.16) describe \emph{secular}, orbit-averaged changes;
+they require $\omega_0\tau_r\ll1$.
+For $V=\tfrac12m\omega_0^2r^2$, their explicit forms are
+\[
+\frac{d\mathcal E}{dt}=-\frac{\tau_r}{m}
+\left\langle(V')^2\right\rangle
+=-m\tau_r\omega_0^4\langle r^2\rangle,
+\qquad
+\frac{d\mathbf L}{dt}=-\frac{\tau_r}{m}
+\left\langle\frac{V'}r\right\rangle\mathbf L
+=-\tau_r\omega_0^2\mathbf L.
+\]
+To express the first in terms of energy, write the unperturbed orbit
+$\mathbf r=\mathbf A\cos\omega_0t+\mathbf B\sin\omega_0t$.
+A full-period average gives
+\[
+\langle r^2\rangle=\frac{A^2+B^2}{2},\quad
+\langle v^2\rangle=\omega_0^2\frac{A^2+B^2}{2},\quad
+\mathcal E=\frac m2\langle v^2+\omega_0^2r^2\rangle
+=m\omega_0^2\langle r^2\rangle.
+\]
+Thus both differential equations have the same decay constant:
+\[
+\boxed{\mathcal E(t)=\mathcal E(0)e^{-\Gamma t},\qquad
+\mathbf L(t)=\mathbf L(0)e^{-\Gamma t},\qquad
+\Gamma=\omega_0^2\tau_r.}
+\]
+The angular-momentum direction is unchanged. The energy here is the
+slowly varying orbital energy; small within-cycle corrections are
+outside the averaging approximation. In the reduced-order oscillator
+$\ddot{\mathbf r}+\Gamma\dot{\mathbf r}+\omega_0^2\mathbf r=0$,
+the coordinate amplitude decays as $e^{-\Gamma t/2}$, giving the same
+energy envelope. The quantum comparison in the question concerns
+excitation energy above the ground state, whose zero-point energy is
+not radiated away.
+
+\Needspace{5\baselineskip}
+\par\bigskip
+\noindent\textbf{16.2}\quad A nonrelativistic electron of charge $-e$ and mass $m$ bound in an attractive Coulomb potential ($-Ze^{2}/r$) moves in a circular orbit in the absence of radiation reaction.
+\begin{enumerate}
+\item[(a)] Show that both the energy and angular-momentum equations (16.13) and (16.16) lead to the solution for the slowly changing orbit radius,
+\[
+r^{3}(t)=r_{0}^{3}-9Z(c\tau)^{3}\frac{t}{\tau}
+\]
+where $r_{0}$ is the value of $r(t)$ at $t=0$.
+\item[(b)] For circular orbits in a Bohr atom the orbit radius and the principal quantum number $n$ are related by $r=n^{2}a_{0}/Z$. If the transition probability for transitions from $n\to(n-1)$ is defined as $-dn/dt$, show that the result of part a agrees with that found in Problem 14.21.
+\item[(c)] From part a calculate the numerical value of the times taken for a mu meson of mass $m=207m_{e}$ to fall from a circular orbit with principal quantum number $n_{1}=10$ to one with $n_{2}=4$, and $n_{2}=1$. These are reasonable estimates of the time taken for a mu meson to cascade down to its lowest orbit after capture by an isolated atom.
+\end{enumerate}
+\solution
+
+Put $A=Ze^2$ and $\tau_r=2e^2/(3mc^3)$. The orbit remains nearly
+circular when its radiative evolution is slow compared with a period.
+
+\textbf{(a)} Circular force balance and the orbital energy give
+\[
+v^2=\frac A{mr},\qquad
+\mathcal E=-\frac A{2r},\qquad
+L=\sqrt{mAr}.
+\]
+The energy equation is
+\[
+\frac A{2r^2}\dot r
+=-\frac{\tau_r}{m}\frac{A^2}{r^4},
+\quad\hbox{hence}\quad
+\dot r=-\frac{2\tau_r A}{mr^2}.
+\]
+Independently, the angular-momentum equation gives
+\[
+\dot L=-\frac{\tau_r A}{mr^3}L,
+\qquad \dot L=\frac L{2r}\dot r,
+\]
+which yields the same $\dot r$. Multiply it by $3r^2$ and use
+$e^2/m=3c^3\tau_r/2$:
+\[
+\frac{d(r^3)}{dt}=-\frac{6\tau_r Ze^2}{m}
+=-9Zc^3\tau_r^2.
+\]
+Integration from $t=0$ gives
+\[
+\boxed{r^3(t)=r_0^3-9Z(c\tau_r)^3\frac t{\tau_r}.}
+\]
+This formal shrinking-orbit law ceases to apply when the orbit is no
+longer nonrelativistic and slowly varying; it does not describe the
+final singular collapse of a point-particle model reliably.
+
+\textbf{(b)} For a particle of mass $m$, define its Bohr length
+$a_m=\hbar^2/(me^2)$, so $r=n^2a_m/Z$.
+Since $r^3=n^6a_m^3/Z^3$, differentiation gives
+\[
+6n^5\frac{a_m^3}{Z^3}\dot n=-9Zc^3\tau_r^2,
+\qquad
+-\dot n=\frac{3Z^4c^3\tau_r^2}{2a_m^3n^5}.
+\]
+Substitute $a_m=\hbar/(mc\alpha)$ and
+$\tau_r=2\alpha\hbar/(3mc^2)$:
+\[
+\boxed{-\dot n=\frac23\alpha(Z\alpha)^4
+\frac{mc^2}{\hbar}\frac1{n^5},}
+\]
+exactly the classical transition-rate estimate in 14.21.
+
+\textbf{(c)} Integrate $dt=dn/\dot n$ from $n_1$ down to $n_2$.
+Since $\dot n<0$, reversing the integration limits gives the positive time
+\[
+\Delta t=\frac{3\hbar}{2Z^4\alpha^5mc^2}
+\int_{n_2}^{n_1}n^5dn
+=\boxed{\frac{\hbar(n_1^6-n_2^6)}{4Z^4\alpha^5mc^2}.}
+\]
+For the specified $m=207m_e$,
+$\hbar/(4\alpha^5mc^2)=7.51776552\times10^{-14}$ s. Thus
+\[
+\boxed{\Delta t_{10\to4}=\frac{7.48697\times10^{-8}}{Z^4}\ {\rm s},
+\qquad
+\Delta t_{10\to1}=\frac{7.51776\times10^{-8}}{Z^4}\ {\rm s}.}
+\]
+No nuclear charge was specified, so the $Z^{-4}$ dependence is retained;
+for hydrogen set $Z=1$. Most of the classical cascade time is spent
+at large $n$. These are the requested classical estimates, with a fixed
+point nucleus, no screening or recoil, and the supplied mass ratio.
+
+\Needspace{5\baselineskip}
+\par\bigskip
+\noindent\textbf{16.3}\quad An electron moving in an attractive Coulomb field ($-Ze^{2}/r$) with binding energy $\epsilon$ and angular momentum $L$ has an elliptic orbit,
+\[
+\frac{1}{r}=\frac{Ze^{2}m}{L^{2}}\left[1+\sqrt{1-\frac{2\epsilon L^{2}}{Z^{2}e^{4}m}}\;\cos(\theta-\theta_{0})\right]
+\]
+The eccentricity of the ellipse is given by the square root multiplying the cosine.
+\begin{enumerate}
+\item[(a)] By performing the appropriate time averages over the orbit, show that the secular changes in energy and angular momentum are
+\begin{align*}
+\frac{d\epsilon}{dt}&=\frac{2^{3/2}}{3}\frac{Z^{3}e^{8}m^{1/2}}{c^{3}}\frac{\epsilon^{3/2}}{L^{5}}\left(3-\frac{2\epsilon L^{2}}{Z^{2}e^{4}m}\right)\\[4pt]
+\frac{dL}{dt}&=-\frac{2^{5/2}}{3}\frac{Ze^{4}}{m^{1/2}c^{3}}\frac{\epsilon^{3/2}}{L^{2}}
+\end{align*}
+\item[(b)] If the initial values of $\epsilon$ and $L$ are $\epsilon_{0}$ and $L_{0}$, show that
+\[
+\epsilon(L)=\frac{Z^{2}e^{4}m}{2L^{2}}\left[1-\left(\frac{L}{L_{0}}\right)^{3}\right]+\frac{\epsilon_{0}}{L_{0}}\,L
+\]
+Calculate the eccentricity of the ellipse, and show that it decreases from its initial value as $(L/L_{0})^{3/2}$, showing that the orbit tends to become circular as time goes on.
+\item[(c)] Compare your results here to the special case of a circular orbit of Problem 16.2.
+\end{enumerate}
+\emph{Hint}: In performing the time averages make use of Kepler's law of equal areas ($dt=mr^{2}\;d\theta/L$) to convert time integrals to angular integrals.
+\solution
+
+Let $A=Ze^2$, let $\varepsilon>0$ denote the binding energy, and
+write the eccentricity as $\eta$ to distinguish it from the charge.
+Set the periapsis at $\theta=0$. The orbit and its parameters are
+\[
+r=\frac p{1+\eta\cos\theta},\quad
+p=\frac{L^2}{mA},\quad
+\eta^2=1-\frac{2\varepsilon L^2}{mA^2},\quad
+T=2\pi\sqrt{\frac{m[A/(2\varepsilon)]^3}{A}}
+=\frac{2\pi A\sqrt m}{(2\varepsilon)^{3/2}}.
+\]
+
+\textbf{(a)} Since $dt=mr^2d\theta/L$, the two needed averages are
+\begin{align*}
+\langle r^{-4}\rangle
+&=\frac m{TLp^2}\int_0^{2\pi}(1+\eta\cos\theta)^2d\theta
+=\frac{2\pi m}{TLp^2}(1+\eta^2/2),\\
+\langle r^{-3}\rangle
+&=\frac m{TLp}\int_0^{2\pi}(1+\eta\cos\theta)d\theta
+=\frac{2\pi m}{TLp}.
+\end{align*}
+Here $\int\cos\theta\,d\theta=0$ and
+$\int\cos^2\theta\,d\theta=\pi$ over the full period.
+The energy radiated makes the binding energy increase:
+\[
+\dot\varepsilon=\frac{2e^2A^2}{3m^2c^3}\langle r^{-4}\rangle,
+\qquad
+\dot L=-\frac{2e^2AL}{3m^2c^3}\langle r^{-3}\rangle.
+\]
+Insert $p=L^2/(mA)$ and $2\pi/T=(2\varepsilon)^{3/2}/(A\sqrt m)$:
+\[
+\dot\varepsilon=
+\frac{2^{5/2}e^2A^3\sqrt m}{3c^3}
+\frac{\varepsilon^{3/2}}{L^5}(1+\eta^2/2),\qquad
+\dot L=-\frac{2^{5/2}e^2A}{3\sqrt m c^3}
+\frac{\varepsilon^{3/2}}{L^2}.
+\]
+Finally $1+\eta^2/2=[3-2\varepsilon L^2/(mA^2)]/2$
+and $e^2A^3=Z^3e^8$, $e^2A=Ze^4$ give both formulas in the question.
+
+\textbf{(b)} Put $C=mA^2$. Dividing the two rates gives
+\[
+\frac{d\varepsilon}{dL}=
+-\frac C{2L^3}\left(3-\frac{2\varepsilon L^2}C\right)
+=\frac\varepsilon L-\frac{3C}{2L^3}.
+\]
+Multiplication by $1/L$ makes the left side a total derivative:
+\[
+\frac d{dL}\left(\frac\varepsilon L\right)
+=-\frac{3C}{2L^4},\qquad
+\frac\varepsilon L-\frac{\varepsilon_0}{L_0}
+=\frac C2(L^{-3}-L_0^{-3}).
+\]
+Therefore
+\[
+\boxed{\varepsilon(L)=\frac{mZ^2e^4}{2L^2}
+\left[1-(L/L_0)^3\right]+\frac{\varepsilon_0}{L_0}L.}
+\]
+Substitution in the eccentricity relation yields
+\[
+\eta^2=\left(1-\frac{2\varepsilon_0L_0^2}{C}\right)(L/L_0)^3,
+\qquad
+\boxed{\eta=\eta_0(L/L_0)^{3/2}.}
+\]
+Since $\dot L<0$, a bound ellipse becomes progressively more circular
+within this secular approximation.
+
+\textbf{(c)} For an initially circular orbit $\eta_0=0$, hence
+$\eta=0$ and $\varepsilon=C/(2L^2)=A/(2r)$ at every later secular time.
+With $L^2=mAr$, the angular-momentum rate in (a) becomes
+$\dot L=-\tau_r AL/(mr^3)$. Using $\dot L=L\dot r/(2r)$ gives
+$\dot r=-2\tau_r A/(mr^2)$ and the law in 16.2, with no additional
+assumption about a finite eccentricity.
+
+\Needspace{5\baselineskip}
+\par\bigskip
+\noindent\textbf{16.4}\quad A classical model of an electron is a spherical shell of charge of radius $a$ and total charge $e$.
+\begin{enumerate}
+\item[(a)] Using (16.30) for the ``mass'' $M(\omega)$ and the angular average of $e^{i\omega R/c}/R$, show that
+\[
+M(\omega)=m+\frac{2}{3}\frac{e^{2}}{ac^{2}}\cdot\left(\frac{e^{i\xi}-1-i\xi}{i\xi}\right)
+\]
+where $\xi=2\omega a/c$, and $m=m_{0}+2e^{2}/3ac^{2}$ is the physical mass of the electron.
+\item[(b)] Expand in powers of the frequency ($\xi$) and show that, to lowest nontrivial order, $M(\omega)$ has a zero in the upper half-plane at $\omega\tau=i$, where $\tau=2e^{2}/3mc^{3}$. What is the physical significance of such a zero?
+\item[(c)] For the exact result of part a, show that the zeros of $\omega M(\omega)$, if any, are defined by the two simultaneous equations, proportional to the real and imaginary parts of $i\omega M(\omega)$,
+\begin{align*}
+e^{-y}\cos x-1+y(1-a/c\tau)&=0\\
+e^{-y}\sin x-x(1-a/c\tau)&=0
+\end{align*}
+where $x=\mathrm{Re}\;\xi$ and $y=\mathrm{Im}\;\xi$. Find the condition on the radius $a$ such that $\omega M(\omega)$ has no zeros in the upper half-$\omega$-plane. Express the condition also in terms of the mechanical mass $m_{0}$ for fixed physical mass. What about zeros and/or singularities in the lower half-plane?
+\end{enumerate}
+\solution
+
+Write $\tau_r=2e^2/(3mc^3)$ and $h=a/(c\tau_r)>0$.
+Here $m$ is the fixed positive physical mass; $m_0$ may have either sign.
+
+\textbf{(a)} Equation (16.30) is
+\[
+M(\omega)=m_0+\frac{2}{3c^2}\int d^3x\,d^3x'\,
+\rho(\mathbf x)\rho(\mathbf x')\frac{e^{i\omega R/c}}R.
+\]
+Fix one point on the spherical shell and let $u$ be the cosine of the
+angle to the other point. Their separation satisfies
+$R^2=2a^2(1-u)$, so $du=-R\,dR/a^2$. Its normalized angular average is
+\[
+\frac12\int_{-1}^1\frac{e^{i\omega R/c}}Rdu
+=\frac1{2a^2}\int_0^{2a}e^{i\omega R/c}dR
+=\frac1a\frac{e^{i\xi}-1}{i\xi},\qquad \xi=\frac{2\omega a}c.
+\]
+The remaining shell integral multiplies this average by $e^2$.
+Thus, with $m=m_0+2e^2/(3ac^2)$,
+\[
+\boxed{M=m_0+\frac{2e^2}{3ac^2}\frac{e^{i\xi}-1}{i\xi}
+=m+\frac{2e^2}{3ac^2}\frac{e^{i\xi}-1-i\xi}{i\xi}.}
+\]
+The value at $\xi=0$ is its continuous limit, $M(0)=m$.
+
+\textbf{(b)} Expanding the exponential first gives
+\[
+\frac{e^{i\xi}-1-i\xi}{i\xi}
+=\frac{i\xi}{2}-\frac{\xi^2}{6}-\frac{i\xi^3}{24}+\cdots,
+\qquad M=m[1+i\omega\tau_r+O(\omega^2a\tau_r/c)].
+\]
+The truncated expression vanishes at $\omega\tau_r=i$.
+Because the response is $v(\omega)=F(\omega)/[-i\omega M(\omega)]$,
+this is a pole associated with a homogeneous $e^{t/\tau_r}$ runaway.
+It is a zero of the \emph{truncated} mass function, not necessarily of
+the exact finite-radius model. For $a\gtrsim c\tau_r$, its frequency
+is outside the small-$|\xi|$ expansion used to obtain it.
+
+\textbf{(c)} Multiplying $M/m$ by $i\xi h$ gives the equation
+\[
+e^{i\xi}-1-i(1-h)\xi=0.
+\]
+It describes zeros of $\omega M$, including the free-particle zero
+at $\omega=0$, which is not a zero of $M$ itself.
+With $r=1-h$, $\xi=x+iy$, its real and imaginary parts are
+\[
+e^{-y}\cos x-1+ry=0,\qquad e^{-y}\sin x-rx=0,
+\]
+as asserted. If $h\ge1$, then $r\le0$: for $y>0$ the first equation
+would require $e^{-y}\cos x=1-ry\ge1$, which is impossible.
+For $0<h<1$, set $x=0$ and consider
+$f(y)=e^{-y}-1+ry$. Here $f(0)=0$, $f'(0)=-h<0$,
+$f''(y)>0$, and $f(y)\to+\infty$ as $y\to+\infty$.
+There is exactly one additional positive root. Therefore
+\[
+\boxed{\text{No upper-half-plane zero}\quad\Longleftrightarrow\quad
+ a\ge c\tau_r\quad\Longleftrightarrow\quad m_0\ge0.}
+\]
+There are no off-axis upper-half-plane roots even when $m_0<0$.
+For $x\ne0$, eliminate $r$ between the two equations to get
+$e^y=\cos x+y\sin x/x\le1+y$, contradicting $e^y>1+y$ for $y>0$.
+
+For completeness, the zeros can be parameterized for $r\ne0$ by the
+branches of Lambert's function:
+\[
+\xi_k=i\left[\frac1r+W_k\!\left(-\frac{e^{-1/r}}r\right)\right].
+\]
+This follows by putting $z=-i\xi$ and
+$(z-1/r)e^{z-1/r}=-e^{-1/r}/r$.
+One branch gives the already identified root at zero.
+For $h>1$ all other roots lie strictly in the lower half-plane;
+for $0<h<1$ one is on the positive imaginary axis and the remaining
+nonzero roots lie in the lower half-plane. They occur in pairs
+$\xi,-\xi^*$ off the imaginary axis. At the borderline $h=1$,
+$e^{i\xi}=1$ and the nonzero roots are real, $\xi=2\pi n$:
+the model then has undamped modes rather than strictly damped ones.
+The exact $M$ is entire: its apparent singularity at zero is removable,
+and it has no finite poles. Its zeros give poles of the response;
+lower-half-plane poles describe decaying transients. The exponential
+also means that infinity is not a removable singularity of $M$.
+
+\Needspace{5\baselineskip}
+\par\bigskip
+\noindent\textbf{16.5}\quad The particle of Problem 16.4, \erratum{with $a>c\tau$ (positive mechanical mass),} is initially at rest in a spatially uniform, but time-varying electric field $E(t)=E_{0}\Theta(t)$.
+\begin{enumerate}
+\item[(a)] Show that its speed in the direction of the field is given by the integral
+\[
+v(t)=-\frac{eE_{0}a}{\pi c}\int_{-\infty}^{\infty}d\xi\;\frac{e^{-iT\xi}}{\xi^{2}M(\xi)}
+\]
+where $T=ct/2a$.
+\item[(b)] From the analytic properties of $M(\xi)$ established in part c of Problem 16.4, show that $v(t)=0$ for $t\leq0$ (no preacceleration).
+\end{enumerate}
+\solution
+
+Let $F_0=eE_0$, $\tau_r=2e^2/(3mc^3)$, and assume the stable
+finite-radius case $a>c\tau_r$, equivalently $m_0>0$.
+The contour prescription at real-axis poles is part of the initial
+rest condition.
+
+\textbf{(a)} Use Jackson's symmetric Fourier pair (printed p.~753),
+\[
+\widetilde f(\omega)=\frac1{\sqrt{2\pi}}\int f(t)e^{i\omega t}dt,
+\qquad
+f(t)=\frac1{\sqrt{2\pi}}\int\widetilde f(\omega)e^{-i\omega t}d\omega.
+\]
+Regularizing the step by $e^{-\epsilon t}$ gives
+\[
+\widetilde F(\omega)=\lim_{\epsilon\downarrow0}
+\frac{F_0}{\sqrt{2\pi}}\int_0^\infty e^{(i\omega-\epsilon)t}dt
+=\frac{iF_0}{\sqrt{2\pi}(\omega+i0)}.
+\]
+Equation (16.29), $-i\omega M\widetilde v=\widetilde F$, then gives
+$\widetilde v=-F_0/[\sqrt{2\pi}\,\omega^2M(\omega)]$, with the
+integration line passing above the zero-frequency pole. The inverse
+transform supplies the second factor $1/\sqrt{2\pi}$. Consequently
+\[
+v(t)=-\frac{F_0}{2\pi}\int_{\mathbb R+i0}
+\frac{e^{-i\omega t}}{\omega^2M(\omega)}d\omega.
+\]
+Set $\xi=2a\omega/c$, $T=ct/(2a)$ and
+$d\omega/\omega^2=(2a/c)d\xi/\xi^2$. This yields
+\[
+\boxed{v(t)=-\frac{eE_0a}{\pi c}
+\int_{\mathbb R+i0}\frac{e^{-iT\xi}}{\xi^2M(\xi)}d\xi.}
+\]
+The real-line integral in the question must be understood with this
+retarded prescription, rather than as an ordinary integral through
+a double pole.
+
+\textbf{(b)} For $t<0$, close the contour in the upper half-plane.
+There are no enclosed poles by 16.4 and the contour passes above
+$\xi=0$. In this half-plane $e^{i\xi}$ is bounded and
+$M(\xi)\to m_0\ne0$ as $|\xi|\to\infty$.
+The factor $e^{-iT\xi}$ decays for $T<0$, and even at $T=0$ the
+integrand falls as $\xi^{-2}$, making the arc contribution vanish.
+Cauchy's theorem therefore gives
+\[
+\boxed{v(t)=0\quad(t\le0).}
+\]
+One can check the initial behavior directly. Let $d=2a/c$ and
+$k=2e^2/(3ac^2d)$. The exact mass function gives the causal delay equation
+\[
+m_0\dot v(t)+k[v(t)-v(t-d)]=F(t).
+\]
+For $0<t<d$ its history is zero, so
+$v(t)=(F_0/k)(1-e^{-kt/m_0})$; in particular $v(0)=0$.
+At $m_0=0$ a causal solution still exists, but it has an instantaneous
+right-hand jump $v(0^+)=F_0/k$ and real undamped response poles.
+For $m_0<0$ the upper-plane runaway pole invalidates the stated
+real-line contour argument: a prescription excluding runaway behavior
+then produces preacceleration. A causal contour above that pole
+instead retains the runaway. The positive-mass qualification separates
+these different cases.
+
+\Needspace{5\baselineskip}
+\par\bigskip
+\noindent\textbf{16.6}\quad A particle of bare mass $m_{0}$ and charge $e$ has a charge density, $\rho(\mathbf{x})=e\;e^{-r/a}/4\pi a^{2}r$.
+\begin{enumerate}
+\item[(a)] Show that the charge form factor is $f(\mathbf{k})=(1+k^{2}a^{2})^{-1}$.
+\item[(b)] Show that the mass, (16.33), is
+\[
+m=m_{0}+\frac{mc\tau}{2a}
+\]
+\item[(c)] Show that the zeros of $M(\omega)$, (16.34), in the complex $\omega$ plane, are given by
+\[
+\omega\tau=-i(c\tau/a)\left[1\pm(1-2a/c\tau)^{-1/2}\right]
+\]
+\item[(d)] Find the trajectories of the roots in the complex $\omega$ plane for $m_{0}>0$ and $m_{0}<0$. Find the limiting form for the roots when $a/c\tau\ll1$ and $a/c\tau\gg1$. Discuss.
+\end{enumerate}
+\solution
+
+Set $h=a/(c\tau_r)>0$, $\tau_r=2e^2/(3mc^3)$, and use the retarded
+frequency convention of 16.4--16.5.
+
+\textbf{(a)} Spherical symmetry gives
+\[
+f(k)=\frac1e\int\rho(\mathbf x)e^{-i\mathbf k\cdot\mathbf x}d^3x
+=\frac1{a^2k}\int_0^\infty e^{-r/a}\sin(kr)dr.
+\]
+The integral is the imaginary part of
+$\int_0^\infty e^{-(a^{-1}-ik)r}dr=(a^{-1}-ik)^{-1}$;
+its imaginary part is $k/(a^{-2}+k^2)$. Therefore
+\[
+\boxed{f(k)=\frac1{1+a^2k^2},\qquad f(0)=1,}
+\]
+which also checks the total-charge normalization.
+
+\textbf{(b)} The radial version of (16.33) is
+\[
+m-m_0=\frac{4e^2}{3\pi c^2}\int_0^\infty f(k)^2dk
+=\frac{4e^2}{3\pi ac^2}\int_0^\infty\frac{dq}{(1+q^2)^2}.
+\]
+Putting $q=\tan\theta$ makes the last integral
+$\int_0^{\pi/2}\cos^2\theta\,d\theta=\pi/4$. Hence
+\[
+\boxed{m=m_0+\frac{e^2}{3ac^2}
+=m_0+\frac{mc\tau_r}{2a},\qquad \frac{m_0}{m}=1-\frac1{2h}.}
+\]
+
+\textbf{(c)} To evaluate the frequency dependence put $s=\omega a/c$.
+The radial mass integral becomes
+\[
+M=m_0+\frac{4e^2}{3\pi ac^2}
+\int_0^\infty\frac{q^2\,dq}{(1+q^2)^2(q^2-s^2)},\qquad \operatorname{Im}s>0.
+\]
+The partial fractions are
+\[
+\frac{q^2}{(1+q^2)^2(q^2-s^2)}
+=\frac{s^2}{(1+s^2)^2}\left(\frac1{q^2-s^2}-\frac1{q^2+1}\right)
++\frac1{1+s^2}\frac1{(q^2+1)^2}.
+\]
+The three integrals are $i\pi/(2s)$, $\pi/2$, and $\pi/4$.
+For the first, closing the even full-line integrand above the real axis
+encloses the pole $q=s$ with residue $1/(2s)$; half the full-line
+integral is $i\pi/(2s)$.
+Combining the terms gives
+\[
+\frac\pi4\frac{1-s^2+2is}{(1+s^2)^2}
+=\frac\pi{4(1-is)^2},\qquad
+\boxed{M=m_0+\frac{m}{2h}(1-is)^{-2}.}
+\]
+The apparent exception at $s=i$ in the partial fractions is removed
+by continuity. A zero of $M$ for $m_0\ne0$ obeys
+$(1-is)^2=(1-2h)^{-1}$, hence
+\[
+\boxed{\omega\tau_r=-\frac i h
+\left[1\pm(1-2h)^{-1/2}\right].}
+\]
+There is also a double pole of $M$ at $\omega=-ic/a$; it is a zero,
+not a pole, of the mechanical response $1/[-i\omega M]$.
+
+\textbf{(d)} For $m_0>0$ one has $h>1/2$. The roots are
+\[
+\omega\tau_r=\pm\frac1{h\sqrt{2h-1}}-\frac i h.
+\]
+Both are damped. In coordinates $X=\operatorname{Re}(\omega\tau_r)$,
+$Y=\operatorname{Im}(\omega\tau_r)$, their trajectories satisfy
+\[
+X^2=-\frac{Y^3}{Y+2},\qquad -2<Y<0.
+\]
+As $h\downarrow1/2$ their real parts tend to opposite infinities and
+$Y\to-2$; as $h\to\infty$ both approach the origin from below, with
+\[
+\omega\tau_r=\pm\frac1{\sqrt2h^{3/2}}[1+O(h^{-1})]-\frac i h.
+\]
+For $m_0<0$, $0<h<1/2$ and both roots are imaginary:
+\[
+\omega_+\tau_r=\frac i h[(1-2h)^{-1/2}-1],\qquad
+\omega_-\tau_r=-\frac i h[(1-2h)^{-1/2}+1].
+\]
+The first is a runaway, the second a decaying mode.
+The upper root rises monotonically from $Y=1$ to $+\infty$.
+The lower root first rises from $-\infty$ to $Y=-8$, then returns
+to $-\infty$. To locate that turning point put
+$s=(1-2h)^{-1/2}$:
+\[
+\frac d{dh}\frac{1+s}{h}
+=\frac{hs^3-1-s}{h^2},\qquad
+hs^3-1-s=\tfrac12(s^3-3s-2)
+=\tfrac12(s-2)(s+1)^2.
+\]
+Thus $s=2$, $h=3/8$, and $Y_-=-(1+2)/(3/8)=-8$.
+Expanding
+$(1-2h)^{-1/2}=1+h+3h^2/2+\cdots$ gives
+\[
+\omega_+\tau_r=i[1+3h/2+O(h^2)],\qquad
+\omega_-\tau_r=-i[2/h+1+3h/2+O(h^2)].
+\]
+The point limit retains the Abraham--Lorentz runaway at $i/\tau_r$;
+the other root goes to negative imaginary infinity. As $h\uparrow1/2$
+the two roots go to opposite imaginary infinities. At exactly $h=1/2$,
+$m_0=0$ and $M=m/(1-is)^2$ has no finite zeros: the displayed root
+formula is then interpreted through its limits, not evaluated at its
+singular denominator. The plot shows these branches; arrows indicate
+increasing $h$.
+\begin{center}\input{supplementary/figures/ch16-p06.tex}\end{center}
+
+\Needspace{5\baselineskip}
+\par\bigskip
+\noindent\textbf{16.7}\quad The Dirac (1938) relativistic theory of classical point electrons has as its equation of motion,
+\[
+\frac{dp_{\mu}}{d\tau}=F_{\mu}^{\mathrm{ext}}+F_{\mu}^{\mathrm{rad}}
+\]
+where $p_{\mu}$ is the particle's 4-momentum, $\tau$ is the particle's proper time, and $F_{\mu}^{\mathrm{rad}}$ is the covariant generalization of the radiative reaction force (16.8).
+
+Using the requirement that any force must satisfy $F_{\mu}p^{\mu}=0$, show that
+\[
+F_{\mu}^{\mathrm{rad}}=\frac{2e^{2}}{3mc^{3}}\left[\frac{d^{2}p_{\mu}}{d\tau^{2}}+\frac{p_{\mu}}{m^{2}c^{2}}\left(\frac{dp_{\nu}}{d\tau}\frac{dp^{\nu}}{d\tau}\right)\right]
+\]
+\solution
+
+Use metric $(+,-,-,-)$, with $p_\mu p^\mu=m^2c^2$.
+In this problem a dot denotes a derivative with respect to proper time.
+Differentiating the mass-shell relation once and twice gives
+\[
+p\cdot\dot p=0,\qquad p\cdot\ddot p=-\dot p\cdot\dot p.
+\]
+The covariant local term corresponding to the nonrelativistic jerk is
+$\ddot p_\mu$. Its component along $p_\mu$ must be removed because a
+four-force cannot change the rest mass. The orthogonal projection is
+\[
+\ddot p_\mu-\frac{p_\mu}{m^2c^2}(p\cdot\ddot p)
+=\ddot p_\mu+\frac{p_\mu}{m^2c^2}(\dot p\cdot\dot p).
+\]
+After raising the index, the contravariant spatial component in the
+instantaneous nonrelativistic limit is $m\,d^2\mathbf v/dt^2$;
+the covariant spatial components of both momentum and force have the
+opposite sign. The known force
+$2e^2\,d^2\mathbf v/(3c^3dt^2)$ fixes its coefficient. Thus
+\[
+\boxed{F_\mu^{\rm rad}=\frac{2e^2}{3mc^3}
+\left[\ddot p_\mu+\frac{p_\mu}{m^2c^2}(\dot p\cdot\dot p)\right].}
+\]
+Contraction with $p^\mu$ explicitly gives zero.
+This construction uses the same local jerk-order radiation-reaction
+model as the stated Dirac equation; orthogonality alone would not rule
+out arbitrary additional transverse forces of other orders.
+
+\Needspace{5\baselineskip}
+\par\bigskip
+\noindent\textbf{16.8}\quad\begin{enumerate}
+\item[(a)] Show that for relativistic motion in one dimension the equation of motion of Problem 16.7 can be written in the form,
+\[
+\dot{p}-\frac{2e^{2}}{3mc^{3}}\left(\ddot{p}-\frac{p\dot{p}^{2}}{p^{2}+m^{2}c^{2}}\right)=\sqrt{1+\frac{p^{2}}{m^{2}c^{2}}}\;f(\tau)
+\]
+where $p$ is the momentum in the direction of motion, a dot means differentiation with respect to proper time, and $f(\tau)$ is the ordinary Newtonian force as a function of proper time.
+\item[(b)] Show that the substitution of $p=mc\sinh y$ reduces the relativistic equation to the Abraham--Lorentz form (16.9) in $y$ and $\tau$. Write down the general solution for $p(\tau)$, with the initial condition that
+\[
+p(\tau)=p_{0}\qquad\text{at}\qquad\tau=0
+\]
+\end{enumerate}
+\solution
+
+To avoid confusing two different times, retain $\tau$ for proper time
+and write $\tau_r=2e^2/(3mc^3)$ for the damping constant.
+
+\textbf{(a)} In one-dimensional motion
+$p^\mu=(\sqrt{p^2+m^2c^2},p,0,0)$, so
+\[
+\dot p^0=\frac{p\dot p}{\sqrt{p^2+m^2c^2}},\qquad
+\dot p_\mu\dot p^\mu
+=-\frac{m^2c^2\dot p^2}{p^2+m^2c^2}.
+\]
+The spatial external four-force is $F^1_{\rm ext}=\gamma f(\tau)$,
+with $\gamma=\sqrt{1+p^2/(m^2c^2)}$.
+The spatial Lorentz--Dirac equation from 16.7 is therefore
+\[
+\boxed{\dot p-\tau_r\left(\ddot p-
+\frac{p\dot p^2}{p^2+m^2c^2}\right)=\gamma f(\tau).}
+\]
+
+\textbf{(b)} Set $p=mc\sinh y$. Then
+\[
+\dot p=mc\cosh y\,\dot y,\qquad
+\ddot p=mc(\cosh y\,\ddot y+\sinh y\,\dot y^2),
+\]
+\[
+\frac{p\dot p^2}{p^2+m^2c^2}=mc\sinh y\,\dot y^2.
+\]
+The quadratic terms cancel and division by $\gamma=\cosh y$ gives
+$\dot y-\tau_r\ddot y=f/(mc)$, the Abraham--Lorentz equation in
+rapidity and proper time.
+Put $u=\dot y$. Multiplication by $e^{-\tau/\tau_r}$ gives
+\[
+\frac d{d\tau}(u e^{-\tau/\tau_r})
+=-\frac{f(\tau)}{mc\tau_r}e^{-\tau/\tau_r},
+\quad
+u(\tau)=e^{\tau/\tau_r}
+\left[C-\frac1{mc\tau_r}\int_0^\tau e^{-s/\tau_r}f(s)ds\right].
+\]
+Here $C=u(0)$ remains an arbitrary initial rapidity derivative.
+Integrating once more and interchanging the finite integrals yields
+\[
+\begin{split}
+y(\tau)&=\operatorname{arsinh}\frac{p_0}{mc}
++C\tau_r(e^{\tau/\tau_r}-1)\\
+&\quad-\frac1{mc}\int_0^\tau
+[e^{(\tau-s)/\tau_r}-1]f(s)ds,
+\qquad \boxed{p(\tau)=mc\sinh y(\tau).}
+\end{split}
+\]
+The one specified momentum fixes $y(0)$, but leaves $C$ free;
+a second-order equation for $y$ needs another condition.
+If runaway behavior is excluded and the integral converges, set
+\[
+C=\frac1{mc\tau_r}\int_0^\infty e^{-s/\tau_r}f(s)ds.
+\]
+Then $\dot y=(mc)^{-1}\int_0^\infty e^{-s}f(\tau+\tau_rs)ds$,
+which exhibits the future-force dependence of the nonrunaway solution.
+
+\Needspace{5\baselineskip}
+\par\bigskip
+\noindent\textbf{16.9}\quad\begin{enumerate}
+\item[(a)] Show that the radiation reaction force in the Lorentz--Dirac equation of Problem 16.7 can be expressed alternatively as
+\[
+F_{\mu}^{\mathrm{rad}}=\frac{2e^{2}}{3mc^{3}}\left[\left(g_{\mu\nu}-\frac{p_{\mu}p_{\nu}}{m^{2}c^{2}}\right)\!\frac{d^{2}p^{\nu}}{d\tau^{2}}\right]
+\]
+\item[(b)] The relativistic generalization of (16.10) can be obtained by replacing $d^{2}p^{\nu}/d\tau^{2}$ by $g^{\nu\alpha}dF^{\mathrm{ext}}_{\alpha}/d\tau$ in the expression for $F_{\mu}^{\mathrm{rad}}$. Show that the spatial part of the generalization of (16.10) becomes
+\[
+\frac{d\mathbf{p}}{dt}=\mathbf{F}+\erratum{\tau}\left[\gamma\frac{d\mathbf{F}}{dt}-\frac{\gamma^{3}}{c^{2}}\frac{d\mathbf{v}}{dt}\times(\mathbf{v}\times\mathbf{F})\right]
+\]
+where $\mathbf{F}$ is the spatial part of $\mathbf{F}^{\mu}_{\mathrm{ext}}/\gamma$. For a charged particle in external electric and magnetic fields $\mathbf{F}$ is the Lorentz force.
+\end{enumerate}
+Reference: G.~W. Ford and R.~F. O'Connell, \emph{Phys. Lett.} A \textbf{174}, 182 (1993).
+\solution
+
+Write $\tau_r=2e^2/(3mc^3)$, reserving $\tau$ for proper time.
+
+\textbf{(a)} The differentiated mass-shell identity from 16.7 gives
+$p_\nu\ddot p^\nu=-\dot p_\nu\dot p^\nu$. Consequently
+\[
+\left(g_{\mu\nu}-\frac{p_\mu p_\nu}{m^2c^2}\right)\ddot p^\nu
+=\ddot p_\mu+\frac{p_\mu}{m^2c^2}\dot p_\nu\dot p^\nu,
+\]
+which proves the projected expression for $F_\mu^{\rm rad}$.
+
+\textbf{(b)} Replace $\ddot p^\mu$ in this projected term by
+$dF_{\rm ext}^\mu/d\tau$. This is reduction of order, valid through
+first order in $\tau_r$. Write ordinary laboratory time derivatives
+explicitly and put $\mathbf a=d\mathbf v/dt$:
+\[
+p^\mu=m\gamma(c,\mathbf v),\qquad
+F^\mu_{\rm ext}=\gamma(\mathbf v\cdot\mathbf F/c,\mathbf F),\qquad
+\frac d{d\tau}=\gamma\frac d{dt}.
+\]
+For $W^\mu=dF^\mu_{\rm ext}/d\tau$ the spatial component is
+$\mathbf W=\gamma(d\gamma/dt)\mathbf F+\gamma^2d\mathbf F/dt$.
+Since $p\cdot F_{\rm ext}=0$,
+\[
+p\cdot W=-\frac{dp}{d\tau}\cdot F_{\rm ext}
+=m\gamma^3\mathbf a\cdot\mathbf F.
+\]
+For example the terms containing $d\gamma/dt$ cancel in this scalar
+product between its time and spatial components; the remaining spatial
+term is $-m\gamma^3\mathbf a\cdot\mathbf F$ before the minus sign.
+Projection, followed by division by $\gamma$, therefore gives
+\[
+\frac{d\mathbf p}{dt}=\mathbf F+\tau_r
+\left[\gamma\frac{d\mathbf F}{dt}
++\frac{d\gamma}{dt}\mathbf F
+-\frac{\gamma^3}{c^2}\mathbf v(\mathbf a\cdot\mathbf F)\right].
+\]
+Use $d\gamma/dt=\gamma^3\mathbf v\cdot\mathbf a/c^2$ and
+$\mathbf a\times(\mathbf v\times\mathbf F)
+=\mathbf v(\mathbf a\cdot\mathbf F)-\mathbf F(\mathbf a\cdot\mathbf v)$:
+\[
+\boxed{\frac{d\mathbf p}{dt}=\mathbf F+\tau_r
+\left[\gamma\frac{d\mathbf F}{dt}
+-\frac{\gamma^3}{c^2}\frac{d\mathbf v}{dt}\times
+(\mathbf v\times\mathbf F)\right].}
+\]
+The transcription had omitted the multiplier $\tau_r$ before the
+bracket; the textbook's printed page 772 includes it, and its units
+are required to convert a force derivative to a force.
+For a consistently explicit first-order equation, evaluate the
+acceleration and force derivatives inside the bracket using the
+zeroth-order Lorentz-force motion. Changes from substituting the
+corrected motion there start at order $\tau_r^2$.
+
+\Needspace{5\baselineskip}
+\par\bigskip
+\noindent\textbf{16.10}\quad The Abraham--Lorentz equation of motion (16.9) can be replaced by an integro-differential equation if the external force is considered a function of time.
+\begin{enumerate}
+\item[(a)] Show that a first integral of (16.9) that eliminates the possibility of ``runaway'' solutions is
+\[
+m\dot{\mathbf{v}}(t)=\int_{0}^{\infty}e^{-s}\mathbf{F}(t+\tau s)\;ds
+\]
+\item[(b)] Show that a Taylor expansion of the force for small $\tau$ leads to the \erratum{formal, generally asymptotic} series
+\[
+m\dot{\mathbf{v}}(t)\erratum{\sim}\sum_{n=0}^{\infty}\tau^{n}\frac{d^{n}\mathbf{F}(t)}{dt^{n}}
+\]
+The approximate equation (16.10) contains the first two terms of the infinite series.
+\item[(c)] For a step-function force in one dimension, $F(t)=F_{0}\Theta(t)$, solve the integro-differential equation of part a for the acceleration and velocity for $t<0$ and $t>0$ for a particle at rest at $t=-\infty$. Plot $ma/F_{0}$ and $mv/F_{0}\tau$ in units of $t/\tau$. Compare with the solution from (16.10). Comment.
+\end{enumerate}
+\solution
+
+\textbf{(a)} Write the Abraham--Lorentz equation as
+$\mathbf a-\tau_r\dot{\mathbf a}=\mathbf F/m$,
+where $\tau_r=2e^2/(3mc^3)$.
+An integrating factor gives
+\[
+\frac d{dt}(e^{-t/\tau_r}\mathbf a)
+=-\frac{e^{-t/\tau_r}}{m\tau_r}\mathbf F(t).
+\]
+Impose the nonrunaway boundary condition
+$e^{-t/\tau_r}\mathbf a(t)\to0$ as $t\to+\infty$ and integrate from
+$t$ to infinity. With $t'=t+\tau_rs$, the result is
+\[
+\boxed{m\mathbf a(t)=\frac1{\tau_r}\int_t^\infty
+ e^{-(t'-t)/\tau_r}\mathbf F(t')dt'
+=\int_0^\infty e^{-s}\mathbf F(t+\tau_rs)ds.}
+\]
+The force must not grow so rapidly that this integral fails to converge.
+
+\textbf{(b)} At any fixed truncation order $N$, Taylor's formula gives
+\[
+\mathbf F(t+\tau_rs)=\sum_{n=0}^N
+\frac{(\tau_rs)^n}{n!}\mathbf F^{(n)}(t)
++R_{N+1}(t,s,\tau_r).
+\]
+Since $\int_0^\infty e^{-s}s^n ds=n!$, integration yields
+\[
+m\mathbf a(t)=\sum_{n=0}^N\tau_r^n\mathbf F^{(n)}(t)
++\int_0^\infty e^{-s}R_{N+1}\,ds.
+\]
+Under the corresponding derivative bounds the last term is
+$O(\tau_r^{N+1})$. Thus the infinite expression is generally an
+\emph{asymptotic} series, written with $\sim$; equality requires
+convergence and justification of the interchange.
+For example $F(t)=F_0/[1+(t/T)^2]$ gives coefficients
+$F^{(2n)}(0)=(-1)^n(2n)!F_0/T^{2n}$, so the series diverges for every
+nonzero $\tau_r$, although the force integral is finite.
+Keeping only $n=0,1$ gives $m\mathbf a=\mathbf F+\tau_r\dot{\mathbf F}$,
+the reduced-order approximation (16.10).
+
+\textbf{(c)} For $t<0$ the step contributes only for
+$s>-t/\tau_r$; for $t>0$ it contributes on the entire positive axis.
+Hence
+\[
+\boxed{\frac{ma}{F_0}=\begin{cases}e^{t/\tau_r},&t<0,\\1,&t>0,\end{cases}
+\qquad
+\frac{mv}{F_0\tau_r}=\begin{cases}e^{t/\tau_r},&t<0,\\1+t/\tau_r,&t>0.
+\end{cases}}
+\]
+The velocity follows by integration from rest at $-\infty$; its two
+branches and the acceleration are continuous at zero.
+The nonrunaway solution accelerates before the force turns on.
+For the reduced-order equation,
+\[
+ma_{\rm red}=F_0[\Theta(t)+\tau_r\delta(t)],\qquad
+mv_{\rm red}=F_0[t\Theta(t)+\tau_r\Theta(t)].
+\]
+It has no preacceleration but an impulsive acceleration and a velocity
+jump at the step. An ideal discontinuity does not meet the slowly
+varying-force condition needed for a uniform small-$\tau_r$ expansion.
+The two velocities agree after turn-on, but their onset behavior differs.
+\begin{center}\input{supplementary/figures/ch16-p10.tex}\end{center}
+
+\Needspace{5\baselineskip}
+\par\bigskip
+\noindent\textbf{16.11}\quad A nonrelativistic particle of charge $e$ and mass $m$ is accelerated in one-dimensional motion across a gap of width $d$ by a constant electric field. The mathematical idealization is that the particle has applied to it an external force $m\alpha$ while its coordinate lies in the interval $(0,d)$. Without radiation damping the particle, having initial velocity $v_{0}$, is accelerated uniformly for a time $T=(-v_{0}/\alpha)+\sqrt{(v_{0}^{2}/\alpha^{2})+(2d/\alpha)}$, emerging at $x=d$ with a final velocity $v_{1}=\sqrt{v_{0}^{2}+2\alpha d}$.
+
+With radiation damping the motion is altered so that the particle takes a time $T'$ to cross the gap and emerges with a velocity $v'_{1}$.
+\begin{enumerate}
+\item[(a)] Solve the integro-differential equation of motion, including damping, assuming $T$ and $T'$ large compared to $\tau$. Sketch a velocity-versus-time diagram for the motion with and without damping.
+\item[(b)] Show that to lowest order in $\tau$,
+\begin{align*}
+T'&=T-\tau\!\left(1-\frac{v_{0}}{v_{1}}\right)\\[6pt]
+v'_{1}&=v_{1}-\frac{\alpha^{2}\tau}{v_{1}}\,T
+\end{align*}
+\item[(c)] Verify that the sum of the energy radiated and the change in the particle's kinetic energy is equal to the work done by the applied field.
+\end{enumerate}
+\solution
+
+Let $\tau_r=2e^2/(3mc^3)$, choose entry at $x=0,t=0$, and write
+$T'$ for the exit time. The prescribed $v_0$ is the incoming velocity
+before the preacceleration region. Take $\alpha>0$, $d>0$, $v_0\ge0$.
+
+\textbf{(a)} Along the monotone crossing trajectory the force is
+$m\alpha$ for $0<t<T'$ and zero otherwise. Inserting this finite pulse
+in the nonrunaway force integral of 16.10 gives
+\[
+a(t)=\begin{cases}
+\alpha(1-e^{-T'/\tau_r})e^{t/\tau_r},&t<0,\\
+\alpha[1-e^{(t-T')/\tau_r}],&0<t<T',\\
+0,&t>T'.
+\end{cases}
+\]
+For example in the middle interval the allowed integration range is
+$0<s<(T'-t)/\tau_r$, whose exponential integral is
+$1-e^{(t-T')/\tau_r}$.
+Integrating $a$ and imposing $v(-\infty)=v_0$ gives
+\[
+\boxed{v(t)=\begin{cases}
+v_0+\alpha\tau_r(1-e^{-T'/\tau_r})e^{t/\tau_r},&t<0,\\
+v_0+\alpha[t+\tau_r-\tau_r e^{(t-T')/\tau_r}],&0<t<T',\\
+v_0+\alpha T',&t>T'.
+\end{cases}}
+\]
+Both transitions are continuous. In particular $v(0)$ is slightly
+larger than $v_0$ and $v_1'=v_0+\alpha T'$.
+The spatial crossing condition determines $T'$ self-consistently:
+\begin{align*}
+d=\int_0^{T'}v(t)dt
+&=v_0T'+\frac\alpha2T'^2+\alpha\tau_rT'
+-\alpha\tau_r^2(1-e^{-T'/\tau_r}).
+\end{align*}
+Its derivative with respect to $T'$ is
+$v_0+\alpha T'+\alpha\tau_r(1-e^{-T'/\tau_r})>0$ for $T'>0$,
+so the positive crossing time is unique. For $T'\gg\tau_r$ the
+exponential is negligible except in the short entry and exit layers.
+The plot compares this solution with the undamped piecewise linear
+velocity for one representative $T/\tau_r\gg1$ case.
+\begin{center}\input{supplementary/figures/ch16-p11.tex}\end{center}
+
+\textbf{(b)} Write $T'=T+\delta T$ in the crossing condition and use
+$d=v_0T+\alpha T^2/2$. Keeping terms linear in $\tau_r$ gives
+\[
+0=(v_0+\alpha T)\delta T+\alpha\tau_rT+O(\tau_r^2),\qquad
+\delta T=-\frac{\alpha\tau_rT}{v_1},\quad v_1=v_0+\alpha T.
+\]
+Therefore
+\[
+\boxed{T'=T-\tau_r(1-v_0/v_1)+O(\tau_r^2),\qquad
+v_1'=v_1-\frac{\alpha^2\tau_rT}{v_1}+O(\tau_r^2).}
+\]
+The earlier entry preacceleration shortens the time spent in the gap,
+while the final kinetic energy is lower because energy is radiated.
+
+\textbf{(c)} With $E=e^{-T'/\tau_r}$, integrate the squared acceleration
+on the two nonzero intervals:
+\[
+\int_{-\infty}^0a^2dt=\frac{\alpha^2\tau_r}{2}(1-E)^2,
+\quad
+\int_0^{T'}a^2dt=\alpha^2
+\left[T'-2\tau_r(1-E)+\frac{\tau_r}{2}(1-E^2)\right].
+\]
+Their sum is $\alpha^2[T'-\tau_r(1-E)]$.
+Since the Larmor power is $m\tau_ra^2$,
+\[
+W_{\rm rad}=m\tau_r\alpha^2[T'-\tau_r(1-E)],\qquad
+\Delta K=m\alpha(v_0T'+\alpha T'^2/2).
+\]
+Adding and using the exact crossing condition gives
+\[
+\boxed{\Delta K+W_{\rm rad}=m\alpha d=W_{\rm ext}.}
+\]
+This equality includes the radiation before entry. In the local
+Abraham--Lorentz energy equation the extra total derivative is the
+Schott term $m\tau_rva$; it vanishes at both asymptotic endpoints,
+which is why it does not alter the integrated balance.
+
+\Needspace{5\baselineskip}
+\par\bigskip
+\noindent\textbf{16.12}\quad A classical model for the description of collision broadening of spectral lines is that the oscillator is interrupted by a collision after oscillating for a time $T$ so that the coherence of the wave train is lost.
+\begin{enumerate}
+\item[(a)] Taking the oscillator used in Section 16.7 and assuming that the probability that a collision will occur between time $T$ and $(T+dT)$ is $(\nu e^{-\nu T}\;dT)$, where $\nu$ is the mean collision frequency, show that the averaged spectral distribution is
+\[
+\frac{dI(\omega)}{d\omega}=\frac{I_{0}}{2\pi}\frac{\Gamma+2\nu}{(\omega-\omega_{0})^{2}+\left(\dfrac{\Gamma}{2}+\nu\right)^{2}}
+\]
+so that the breadth of the line is $(2\nu+\Gamma)$.
+\item[(b)] For the sodium doublet at 5893 \AA\ the oscillator strength is $f=0.975$, so that the natural width is essentially the classical value, $\Delta\lambda=1.2\times10^{-4}$ \AA. Estimate the Doppler width of the line, assuming the sodium atoms are in thermal equilibrium at a temperature of 500K, and compare it with the natural width. Assuming a collision cross section of $10^{-16}$ cm$^{2}$, determine the collision breadth of the sodium doublet as a function of the pressure of the sodium vapor. For what pressure is the collision breadth equal to the natural breadth? The Doppler breadth?
+\end{enumerate}
+\solution
+
+\textbf{(a)} Treat a collision as destroying phase coherence, with
+uncorrelated phases after it, while retaining the specified radiative
+amplitude decay $e^{-\Gamma t/2}$. This is the phase-interruption model
+in the question. Let $I_0$ be the total radiated energy, as in (16.72),
+and put $\Delta=\omega-\omega_0$, absorbing any small fixed line shift
+in $\omega_0$.
+For two times separated by $s$, the probability of no intervening
+collision is obtained directly from the given waiting-time density:
+\[
+\Pr(T>s)=\int_s^\infty\nu e^{-\nu T}dT=e^{-\nu s}.
+\]
+Products of amplitudes before and after an intervening collision average
+to zero. Thus the averaged squared Fourier amplitude is proportional to
+\begin{align*}
+\mathcal S(\Delta)
+&=\int_0^\infty dt\int_0^\infty dt'\,
+ e^{-\Gamma(t+t')/2}e^{-\nu|t-t'|}e^{i\Delta(t-t')}\\
+&=2\operatorname{Re}\int_0^\infty du\,e^{-\Gamma u}
+ \int_0^\infty ds\,e^{-(\Gamma/2+\nu-i\Delta)s}\\
+&=\frac2\Gamma\operatorname{Re}\frac1{\Gamma/2+\nu-i\Delta}
+=\frac{\Gamma+2\nu}{\Gamma[\Delta^2+(\Gamma/2+\nu)^2]}.
+\end{align*}
+Here the two triangles $t>t'$ and $t<t'$ use $u=\min(t,t')$ and
+$s=|t-t'|$; their diagonal has zero integration measure.
+The same normalization as the uncollided wave train is
+$I_0\Gamma/(2\pi)$, giving
+\[
+\boxed{\frac{dI}{d\omega}=\frac{I_0}{2\pi}
+\frac{\Gamma+2\nu}{(\omega-\omega_0)^2+(\Gamma/2+\nu)^2}.}
+\]
+Its area over the narrow-line frequency approximation is $I_0$.
+At half maximum $|\Delta|=\Gamma/2+\nu$, so the full width at half
+maximum is $\Gamma+2\nu$.
+Permanently terminating radiation at the first collision would also
+reduce the total energy; it is not the phase-loss model just averaged.
+
+\textbf{(b)} Use full widths at half maximum throughout, consistent
+with the line-breadth convention of Section 16.7.
+The line-of-sight Maxwell distribution is proportional to
+$e^{-Mv_z^2/(2k_BT)}$. With $\delta\omega=\omega_0v_z/c$,
+its half-maximum points obey
+$Mv_z^2/(2k_BT)=\ln2$. Thus
+\[
+\Delta\lambda_D=\lambda_0\sqrt{\frac{8k_BT\ln2}{Mc^2}}.
+\]
+For $M\simeq23\,u$, $T=500$ K, and $\lambda_0=5893$ \AA,
+\[
+\boxed{\Delta\lambda_D=1.96794\times10^{-2}\ \text{\AA},}
+\]
+about $164$ times the supplied natural width
+$\Delta\lambda_{\!N}=1.2\times10^{-4}$ \AA.
+The one-sided $1/e$ Gaussian width is smaller by $2\sqrt{\ln2}$;
+it must not be compared as if it were the full width.
+
+For collisions of identical sodium atoms, the relative Maxwell speed
+has reduced mass $M/2$, and its mean is
+$\bar v_{\rm rel}=\sqrt{16k_BT/(\pi M)}=959.45$ m/s.
+Using ideal-gas density $n=P/(k_BT)$ and the given
+$\sigma=10^{-16}$ cm$^2=10^{-20}$ m$^2$,
+\[
+\nu=n\sigma\bar v_{\rm rel}
+=(1.38986\times10^3\ {\rm s}^{-1}{\rm Pa}^{-1})P.
+\]
+The collision contribution to angular-frequency FWHM is $2\nu$.
+Since $|d\lambda/d\omega|=\lambda_0^2/(2\pi c)$,
+\[
+\boxed{\Delta\lambda_C=\frac{\lambda_0^2\nu}{\pi c}
+=(5.12474\times10^{-9}\ \text{\AA/Pa})P
+=(6.83243\times10^{-7}\ \text{\AA/Torr})P_{\rm Torr}.}
+\]
+Consequently
+\[
+\boxed{P_{C=N}=2.34158\times10^4\ {\rm Pa}\simeq176\ {\rm Torr},}
+\qquad
+\boxed{P_{C=D}=3.84007\times10^6\ {\rm Pa}\simeq28{,}800\ {\rm Torr}.}
+\]
+These are estimates within the specified constant-cross-section,
+ideal-gas collision model. The comparisons are between individual
+broadening contributions; a Gaussian Doppler profile convolved with
+a Lorentzian natural/collision profile is a Voigt profile, whose total
+width is not obtained by simply adding all three widths.
+
+\Needspace{5\baselineskip}
+\par\bigskip
+\noindent\textbf{16.13}\quad A single particle oscillator under the action of an applied electric field $\mathbf{E}_{0}e^{-i\omega t}$ has a dipole moment given by
+\[
+\mathbf{p}=\alpha(\omega)\mathbf{E}_{0}e^{-i\omega t}
+\]
+\begin{enumerate}
+\item[(a)] Show that the total dipole cross section can be written as
+\[
+\sigma_{t}(\omega)=\frac{2\pi}{c}\,[-i\omega\alpha(\omega)+\text{c.c.}]
+\]
+\item[(b)] Using only the facts that all the normal modes of oscillation must have some damping and that the polarizability $\alpha(\omega)$ must approach the free-particle value $(-e^{2}/m\omega^{2})$ at high frequencies, show that the cross section satisfies the dipole sum rule,
+\[
+\int_{0}^{\infty}\sigma_{t}(\omega)\;d\omega=\frac{2\pi^{2}e^{2}}{mc}
+\]
+(The discussion of Kramers--Kronig dispersion relations in Chapter 7 is clearly relevant.)
+\end{enumerate}
+\solution
+
+\textbf{(a)} The total cross section means extinction, namely scattering
+plus any absorption. For phasor $\mathbf p=\alpha\mathbf E_0$,
+the mean work taken from the incident field is
+\[
+\overline P=\frac12\operatorname{Re}
+[(-i\omega\mathbf p)\cdot\mathbf E_0^*]
+=\frac\omega2\operatorname{Im}\alpha\,|\mathbf E_0|^2.
+\]
+The incident plane-wave flux in Gaussian units is
+$c|\mathbf E_0|^2/(8\pi)$. Dividing gives
+\[
+\boxed{\sigma_t=\frac{4\pi\omega}{c}\operatorname{Im}\alpha
+=\frac{2\pi}{c}[-i\omega\alpha+\text{c.c.}].}
+\]
+If the only damping is radiative this equals the total scattered power
+cross section; otherwise it also contains the absorbed part.
+
+\textbf{(b)} The causal response of a stable damped oscillator is
+analytic for $\operatorname{Im}z>0$; its normal-mode poles lie below
+the real axis. A real time-domain response also gives
+$\alpha(-\omega)=\alpha(\omega)^*$.
+Consider $z\alpha(z)$ on a semicircle of radius $R$ in the upper
+half-plane, traversed counterclockwise, with the real segment going
+from $-R$ to $R$. The specified high-frequency limit is
+$z\alpha(z)\sim-e^2/(mz)$.
+On the arc $z=Re^{i\theta}$, $dz=iz\,d\theta$, hence
+\[
+\lim_{R\to\infty}\int_{\rm arc}z\alpha(z)dz
+=-\frac{ie^2}{m}\int_0^\pi d\theta=-\frac{i\pi e^2}{m}.
+\]
+There are no enclosed poles, so the real-axis integral is
+$i\pi e^2/m$. Pair its negative and positive parts using the reality
+relation:
+\[
+\int_{-\infty}^{\infty}\omega\alpha(\omega)d\omega
+=\int_0^\infty\omega[\alpha(\omega)-\alpha(\omega)^*]d\omega
+=2i\int_0^\infty\omega\operatorname{Im}\alpha(\omega)d\omega.
+\]
+It follows that $\int_0^\infty\omega\operatorname{Im}\alpha\,d\omega
+=\pi e^2/(2m)$. Multiplication by the factor in (a) proves
+\[
+\boxed{\int_0^\infty\sigma_t(\omega)d\omega
+=\frac{2\pi^2e^2}{mc}.}
+\]
+The sum does not depend on the resonance frequencies or widths.
+The analyticity and high-frequency behavior are essential: extending
+a low-frequency radiation-reaction approximation beyond its validity
+can introduce an upper-half-plane runaway pole or the wrong asymptotic
+mass, in which case that approximate response cannot be used for this
+contour proof.

@@ -1,0 +1,1698 @@
+% Problems, Chapter 12: Dynamics of Relativistic Particles and Electromagnetic Fields
+% Jackson, Classical Electrodynamics, 3rd ed.
+% Requires: amsmath, amssymb, tikz
+
+\section*{Problems}
+
+\Needspace{5\baselineskip}
+\par\bigskip
+\noindent\textbf{12.1}\quad\begin{enumerate}
+\item[(a)] Show that the Lorentz invariant Lagrangian (in the sense of Section 12.1B)
+\[
+L=-\frac{mU_{\alpha}U^{\alpha}}{2}-\frac{q}{c}\,U_{\alpha}A^{\alpha}
+\]
+gives the correct relativistic equations of motion for a particle of mass $m$ and charge $q$ interacting with an external field described by the 4-vector potential $A^{\alpha}(x)$.
+\item[(b)] Define the canonical momenta and write out the effective Hamiltonian in both covariant and space-time form. The effective Hamiltonian is a Lorentz invariant. What is its value?
+\end{enumerate}
+\solution
+
+\medskip\noindent\textbf{(a)} Use $g_{\alpha\beta}=\operatorname{diag}(1,-1,-1,-1)$,
+$x^0=ct$, $U^\alpha=dx^\alpha/d\tau$ and Gaussian units.
+As in Section 12.1B, vary the four coordinates before imposing
+$U_\alpha U^\alpha=c^2$; substituting that constraint into the
+Lagrangian before variation would incorrectly remove its kinetic term.
+The derivatives entering the Euler--Lagrange equation are
+\[
+\frac{\partial L}{\partial U^\alpha}=-mU_\alpha-\frac qc A_\alpha,
+\qquad
+\frac{\partial L}{\partial x^\alpha}
+=-\frac qc U^\beta\partial_\alpha A_\beta.
+\]
+Consequently
+\[
+-m\frac{dU_\alpha}{d\tau}
+-\frac qc U^\beta\partial_\beta A_\alpha
++\frac qc U^\beta\partial_\alpha A_\beta=0,
+\]
+or
+\[
+\boxed{m\frac{dU^\alpha}{d\tau}
+ =\frac qc F^{\alpha\beta}U_\beta.}
+\]
+Antisymmetry of $F$ gives $d(U^2)/d\tau=0$, so the proper-time
+normalization, once imposed initially, is preserved.  Its spatial
+and time components are respectively
+$d\mathbf p/dt=q(\mathbf E+\mathbf v\times\mathbf B/c)$ and
+$d(\gamma mc^2)/dt=q\mathbf E\cdot\mathbf v$.
+
+\medskip\noindent\textbf{(b)} For consistency with Jackson's (12.33)--(12.34), define the physical
+canonical four-momentum with the minus sign used there:
+\[
+P_\alpha=-\frac{\partial L}{\partial U^\alpha}
+=mU_\alpha+\frac qc A_\alpha,
+\qquad \widetilde H=P_\alpha U^\alpha+L.
+\]
+Eliminating $U$ gives
+\[
+\boxed{\widetilde H=\frac1{2m}
+ \left(P_\alpha-\frac qc A_\alpha\right)
+ \left(P^\alpha-\frac qc A^\alpha\right).}
+\]
+In space-time notation $P^\alpha=(W/c,\mathbf P)$,
+$W=\gamma mc^2+q\Phi$, $\mathbf P=\gamma m\mathbf v+q\mathbf A/c$,
+so
+\[
+\boxed{\widetilde H=\frac1{2m}
+ \left[\frac{(W-q\Phi)^2}{c^2}
+ -\left|\mathbf P-\frac qc\mathbf A\right|^2\right]
+ =\frac12mc^2.}
+\]
+This invariant generates proper-time motion; it is not the laboratory
+energy $W$.  Hamilton's equations reproduce the force equation when
+applied before substituting its on-shell value: explicitly,
+\[
+\frac{dx^\alpha}{d\tau}=\frac{\partial\widetilde H}{\partial P_\alpha}
+=\frac1m\left(P^\alpha-\frac qc A^\alpha\right)=U^\alpha,
+\qquad
+\frac{dP_\alpha}{d\tau}
+=-\frac{\partial\widetilde H}{\partial x^\alpha}
+=\frac qc U^\beta\partial_\alpha A_\beta.
+\]
+Differentiating $P_\alpha=mU_\alpha+(q/c)A_\alpha$ in the
+second equation supplies the antisymmetric field tensor in part (a).
+If instead one uses
+the ordinary Legendre definition $\pi_\alpha=\partial L/\partial U^\alpha$
+for this negative-sign action, then $\pi=-P$ and
+$K=\pi_\alpha U^\alpha-L=-\widetilde H=-mc^2/2$.
+The sign difference is entirely a convention; the boxed positive
+value uses the convention explicitly requested by Section 12.1B.
+
+\Needspace{5\baselineskip}
+\par\bigskip
+\noindent\textbf{12.2}\quad\begin{enumerate}
+\item[(a)] Show from Hamilton's principle that Lagrangians that differ only by a total time derivative of some function of the coordinates and time are equivalent in the sense that they yield the same Euler--Lagrange equations of motion.
+\item[(b)] Show explicitly that the gauge transformation $A^{\alpha}\to A^{\alpha}+\partial^{\alpha}\Lambda$ of the potentials in the charged-particle Lagrangian (12.12) merely generates another equivalent Lagrangian.
+\end{enumerate}
+\solution
+
+\medskip\noindent\textbf{(a)} Let $L'=L+dF(\mathbf q,t)/dt$, with $F$ differentiable.  For
+paths with fixed endpoints,
+\[
+S'[\mathbf q]-S[\mathbf q]=F(\mathbf q_f,t_f)-F(\mathbf q_i,t_i),
+\qquad \delta(S'-S)=0.
+\]
+Thus stationary paths coincide.  The actions need not have identical
+numerical values: it is their variations that agree.
+One can also check the Euler--Lagrange expression directly.  Since
+\[
+\frac{dF}{dt}=F_t+\sum_jF_{q_j}\dot q_j,
+\]
+its contribution for coordinate $q_i$ is
+\[
+\frac d{dt}F_{q_i}
+-\left(F_{tq_i}+\sum_jF_{q_jq_i}\dot q_j\right)=0.
+\]
+
+\medskip\noindent\textbf{(b)} In the metric used here $A^\alpha=(\Phi,\mathbf A)$, so the
+stated transformation means
+\[
+\Phi' =\Phi+\frac1c\partial_t\Lambda,\qquad
+\mathbf A'=\mathbf A-\nabla\Lambda.
+\]
+Substitute into (12.12),
+$L=-mc^2\sqrt{1-v^2/c^2}-q\Phi+(q/c)\mathbf v\cdot\mathbf A$:
+\[
+L'-L=-\frac qc\left(\partial_t\Lambda+
+ \mathbf v\cdot\nabla\Lambda\right)
+=\boxed{-\frac qc\frac{d\Lambda(\mathbf x(t),t)}{dt}.}
+\]
+This is part (a) with $F=-q\Lambda/c$.  The equivalent covariant
+statement is $\Delta L_\tau=-(q/c)d\Lambda/d\tau$.
+Canonical energy and momentum change with the gauge, but the kinetic
+momentum and electromagnetic force do not.
+
+\Needspace{5\baselineskip}
+\par\bigskip
+\noindent\textbf{12.3}\quad A particle with mass $m$ and charge $e$ moves in a uniform, static, electric field $\mathbf{E}_{0}$.
+\begin{enumerate}
+\item[(a)] Solve for the velocity and position of the particle as explicit functions of time, assuming that the initial velocity $\mathbf{v}_{0}$ was perpendicular to the electric field.
+\item[(b)] Eliminate the time to obtain the trajectory of the particle in space. Discuss the shape of the path for short and long times (define ``short'' and ``long'' times).
+\end{enumerate}
+\solution
+
+\medskip\noindent\textbf{(a)} Choose $\mathbf E_0=E_0\widehat{\mathbf x}$ and
+$\mathbf v_0=v_0\widehat{\mathbf y}$, and set the initial position
+to zero.  Write $F=eE_0$, $p_0=\gamma_0mv_0$,
+$\gamma_0=(1-v_0^2/c^2)^{-1/2}$.  The force equation integrates to
+\[
+p_x=Ft,\quad p_y=p_0,\quad p_z=0,\qquad
+\gamma mc=\sqrt{(\gamma_0mc)^2+F^2t^2}.
+\]
+The last equality uses $m^2c^2+p_0^2=\gamma_0^2m^2c^2$.
+Therefore
+\[
+\boxed{v_x=\frac{cFt}{\sqrt{(\gamma_0mc)^2+F^2t^2}},\qquad
+v_y=\frac{cp_0}{\sqrt{(\gamma_0mc)^2+F^2t^2}},\quad v_z=0.}
+\]
+For the position integrals put $\xi=Ft/(\gamma_0mc)$.
+The antiderivatives are
+$\int \xi\,d\xi/\sqrt{1+\xi^2}=\sqrt{1+\xi^2}$
+and $\int d\xi/\sqrt{1+\xi^2}=\operatorname{arsinh}\xi$.
+Subtracting their values at $t=0$ gives, for $F\ne0$,
+\[
+\boxed{x(t)=\frac{\gamma_0mc^2}{F}
+ \left[\sqrt{1+\left(\frac{Ft}{\gamma_0mc}\right)^2}-1\right],
+\quad
+ y(t)=\frac{p_0c}{F}\operatorname{arsinh}
+ \left(\frac{Ft}{\gamma_0mc}\right).}
+\]
+\medskip\noindent\textbf{(b)} The signs also cover a negative charge.  Eliminating $t$ when
+$p_0\ne0$ yields a catenary turned on its side:
+\[
+\boxed{x=\frac{\gamma_0mc^2}{F}
+ \left[\cosh\left(\frac{Fy}{p_0c}\right)-1\right].}
+\]
+The crossover time is $t_* =\gamma_0mc/|F|$, when the gained
+longitudinal momentum is comparable with the initial total energy
+in units of $c$.  For $|t|\ll t_*$,
+\[
+x=\frac{Ft^2}{2\gamma_0m}+O(t^4),\qquad
+ y=v_0t+O(t^3),\qquad
+x\simeq\frac{F}{2\gamma_0mv_0^2}y^2.
+\]
+For $t\gg t_*$,
+\[
+x\simeq\operatorname{sgn}(F)c(t-t_*),\qquad
+ y\simeq\frac{p_0c}{|F|}\log(2t/t_*).
+\]
+The velocity tends to $\operatorname{sgn}(F)c\widehat{\mathbf x}$;
+the transverse displacement still grows logarithmically.
+If $v_0=0$, the trajectory is simply the field line $y=z=0$,
+and if $F=0$ the continuous limit is uniform straight motion.
+
+\Needspace{5\baselineskip}
+\par\bigskip
+\noindent\textbf{12.4}\quad It is desired to make an $E\times B$ velocity selector with uniform, static, crossed, electric and magnetic fields over a length $L$. If the entrance and exit slit widths are $\Delta x$, discuss the interval $\Delta u$ of velocities, around the mean value $u=cE/B$, that is transmitted by the device as a function of the mass, the momentum or energy of the incident particles, the field strengths, the length of the selector, and any other relevant variables. Neglect fringing effects at the ends. Base your discussion on the practical facts that $L\sim$ few meters, $E_{\max}\sim3\times10^{6}$ V/m, $\Delta x\sim10^{-3}$--$10^{-4}$ m, $u\sim0.5$--$0.995c$. (It is instructive to consider the equation of motion in a frame moving at the mean speed $u$ along the beam direction, as well as in the laboratory.)
+
+References: C.~A. Coombes et al., \emph{Phys. Rev.} \textbf{112}, 1303 (1958); P.~Eberhard, M.~L. Good, and H.~K. Ticho, \emph{Rev. Sci. Instrum.} \textbf{31}, 1054 (1960).
+\solution
+
+Take the beam along $z$, $\mathbf E=E\widehat{\mathbf x}$ and
+$\mathbf B=B\widehat{\mathbf y}$, with $E,B>0$.
+Let $u=cE/B$, $\Gamma=(1-u^2/c^2)^{-1/2}$ and write the incident
+speed as $u+\delta u$.  The following bandwidth calculation is a
+linearization about the selected orbit; it is reliable only when
+$|\Gamma^2\delta u|\ll c$ and angular deviations are small.
+
+In the frame moving at $u$, $E'=0$, $B'=B/\Gamma$, and the small
+incident velocity is $v_z'=\Gamma^2\delta u$.
+The cyclotron frequency there is
+$\omega'=qB/(\Gamma mc)$.  To first order in the velocity mismatch,
+\[
+x'=-\frac{\Gamma^2\delta u}{\omega'}(1-\cos\omega't'),
+\qquad z'=\frac{\Gamma^2\delta u}{\omega'}\sin\omega't'.
+\]
+At the exit plane $t'=L/(\Gamma u)$ to zeroth order, sufficient
+in the already first-order transverse displacement.  Hence
+\[
+\boxed{d\equiv x(L)-x(0)=D\,\delta u,\qquad
+D=-\frac{\Gamma^3mc}{qB}(1-\cos\varphi),\quad
+\varphi=\frac{qBL}{\Gamma^2mc\,u}
+ =\frac{qEL}{\Gamma^2mu^2}.}
+\]
+The SI version replaces $qB/c$ by $qB$ and has $B=E/u$.
+The same result follows in the laboratory from
+\[
+\dot v_x=-\frac{qB}{\Gamma mc}\delta v_z,
+\qquad \delta\dot v_z=\frac{qB}{\Gamma^3mc}v_x,
+\]
+whose oscillation frequency is $qB/(\Gamma^2mc)$.
+For an initial small angle $\eta=v_x(0)/u$, the displacement gains
+$\Gamma u\eta\sin\varphi/\omega'$; thus the beam emittance and
+collimation also determine resolution.
+
+For two equal slits of full width $\Delta x$ and a parallel beam
+uniformly illuminating the entrance slit, the transmitted fraction
+at a given speed is
+\[
+T(\delta u)=\max\left(0,1-\frac{|D\delta u|}{\Delta x}\right).
+\]
+Thus the full interval with nonzero geometrical transmission is
+\[
+\boxed{\Delta u_{\rm support}=\frac{2\Delta x}{|D|}.}
+\]
+The full width at half maximum is half this value.  A pencil beam
+starting at the center of the entrance slit also has full acceptance
+width $\Delta x/|D|$.  Stating this convention avoids an arbitrary
+factor of two in the bandwidth.
+
+When $|\varphi|\ll1$,
+\[
+D\simeq-\frac{qEL^2}{2\Gamma m u^3},\qquad
+\boxed{\frac{\Delta u_{\rm support}}u
+ \simeq\frac{4\Gamma m u^2\Delta x}{|q|EL^2}
+ =\frac{4pu\Delta x}{|q|EL^2}.}
+\]
+Here $p=\Gamma mu$, and $pu=\mathcal E\,u^2/c^2$ for total
+particle energy $\mathcal E$.  Narrower slits, longer guides and
+larger electric fields improve this small-phase resolution, while
+large momentum worsens it.  Magnetic field and electric field
+cannot be varied independently at fixed selected speed.
+At $\varphi=2\pi j$ the linear transverse displacement vanishes:
+refocusing defeats the selector.  If the electric field is adjustable,
+the first-lobe sensitivity is proportional to
+$(1-\cos\varphi)/\varphi$; its maximum satisfies
+$\tan(\varphi/2)=\varphi$ and occurs at $\varphi=2.33112237$.
+
+For illustration use $L=2$ m, $E=3$ MV/m and $\Delta x=0.1$ mm.
+The magnetic field is $0.0200$--$0.0101$ T over the stated speed
+range.  The linear formula gives
+\begin{center}
+\begin{tabular}{llrr}
+\toprule
+Particle&$u/c$&$\varphi$&$\Delta u_{\rm support}/u$\\
+\midrule
+electron&0.5&35.2251&$1.71\times10^{-3}$\\
+electron&0.9&2.75423&$6.23\times10^{-5}$\\
+electron&0.995&0.118304&$1.69\times10^{-4}$\\
+proton&0.5&0.0191842&$9.03\times10^{-3}$\\
+proton&0.9&0.0015000&$5.81\times10^{-2}$\\
+proton&0.995&$6.4430\times10^{-5}$&$0.310$ (extrapolation)\\
+\bottomrule
+\end{tabular}
+\end{center}
+The last entry violates the narrow-band assumption and is not a
+physical interval centered on $0.995c$.  Integrating the exact
+relativistic force equation gives the connected interval $0.9500180c<v<c$ for nonzero slit
+overlap, with all speeds between the mean and
+$c$ accepted; the device has poor velocity discrimination there.
+For the electrons at $0.5c$, reducing the field to the first-lobe
+optimum improves resolution and avoids the high-order oscillatory
+response.  Widening the slits to 1 mm multiplies the local linear
+bandwidth by ten, until the linear approximation itself fails.
+For a broad incident spectrum one must use the exact trajectories,
+since additional disconnected transmission bands can occur.
+
+\Needspace{5\baselineskip}
+\par\bigskip
+\noindent\textbf{12.5}\quad A particle of mass $m$ and charge $e$ moves in the laboratory in crossed, static, uniform, electric and magnetic fields. $\mathbf{E}$ is parallel to the $x$ axis; $\mathbf{B}$ is parallel to the $y$ axis.
+\begin{enumerate}
+\item[(a)] For $|\mathbf{E}|<\erratum{|\mathbf{B}|}$ make the necessary Lorentz transformation described in Section 12.3 to obtain explicitly parametric equations for the particle's trajectory.
+\item[(b)] Repeat the calculation of part a for $|\mathbf{E}|>\erratum{|\mathbf{B}|}$.
+\end{enumerate}
+\solution
+
+Use Gaussian units, choose the initial event as the origin, and
+write the signed components as $\mathbf E=E\widehat{\mathbf x}$,
+$\mathbf B=B\widehat{\mathbf y}$.  A boost along $z$ with speed
+$w$ acts on coordinates by
+\[
+x=x',\quad y=y',\quad z=\Gamma_w(z'+wt'),\quad
+ t=\Gamma_w(t'+wz'/c^2).
+\]
+It transforms the initial four-velocity according to
+$U'^0_0=\Gamma_w(U^0_0-wU^z_0/c)$,
+$U'^z_0=\Gamma_w(U^z_0-wU^0_0/c)$, with $U'^x_0=U^x_0$,
+$U'^y_0=U^y_0$.  Thus the following formulas accommodate arbitrary
+initial velocity, not just a particle initially at rest.
+
+\medskip\noindent\textbf{(a)} For $|E|<|B|$, choose $w=cE/B$.  Then
+$E'=0$, $B'=B/\Gamma_w$ and the primed energy $\gamma'mc^2$
+is constant.  Define the signed frequency
+$\Omega'=eB'/(\gamma'mc)$ and $v'_{i0}=U'^i_0/\gamma'$.
+The two coupled equations are
+$\dot v'_x=-\Omega'v'_z$, $\dot v'_z=\Omega'v'_x$;
+$v'_y$ is constant.  Integration gives
+\begin{align*}
+x'&=\frac{v'_{x0}}{\Omega'}\sin\Omega't'
+ +\frac{v'_{z0}}{\Omega'}(\cos\Omega't'-1),\\
+y'&=v'_{y0}t',\\
+z'&=\frac{v'_{z0}}{\Omega'}\sin\Omega't'
+ +\frac{v'_{x0}}{\Omega'}(1-\cos\Omega't').
+\end{align*}
+Together with the inverse boost these are explicit parametric
+laboratory trajectories, with parameter $t'$.  They describe a
+helical motion in the magnetic frame and its $\mathbf E\times\mathbf B$
+drift in the laboratory.
+
+\medskip\noindent\textbf{(b)} For $|E|>|B|$, choose $w=cB/E$.  Now
+$B'=0$, $E'=E/\Gamma_w$.  Proper time is the convenient parameter;
+set $\kappa=eE'/(mc)$.  The primed equations are
+\[
+\frac{dU'^0}{d\tau}=\kappa U'^x,\qquad
+\frac{dU'^x}{d\tau}=\kappa U'^0,\qquad
+U'^y=U'^y_0,\quad U'^z=U'^z_0.
+\]
+Their integrated trajectory is
+\begin{align*}
+ct'&=\frac{U'^0_0\sinh\kappa\tau+
+ U'^x_0(\cosh\kappa\tau-1)}{\kappa},\\
+x'&=\frac{U'^x_0\sinh\kappa\tau+
+ U'^0_0(\cosh\kappa\tau-1)}{\kappa},\\
+y'&=U'^y_0\tau,\qquad z'=U'^z_0\tau.
+\end{align*}
+Applying the same inverse boost gives $x(\tau),y(\tau),z(\tau),t(\tau)$.
+Here the particle gains unbounded energy rather than gyrating at
+constant energy.  The formulas with zero frequency are interpreted
+by their sine or hyperbolic-sine limits.  The separate null-field
+case $|E|=|B|$ is excluded by the question's strict inequalities;
+it is included in the general solution of Problem 12.6.
+
+\Needspace{5\baselineskip}
+\par\bigskip
+\noindent\textbf{12.6}\quad Static, uniform electric and magnetic fields, $\mathbf{E}$ and $\mathbf{B}$, make an angle of $\theta$ with respect to each other.
+\begin{enumerate}
+\item[(a)] By a suitable choice of axes, solve the force equation for the motion of a particle of charge $e$ and mass $m$ in rectangular coordinates.
+\item[(b)] For $\mathbf{E}$ and $\mathbf{B}$ parallel, show that with appropriate constants of integration, etc., the parametric solution can be written
+\begin{gather*}
+x=AR\sin\phi,\qquad y=AR\cos\phi,\qquad z=\frac{R}{\rho}\sqrt{1+A^{2}}\,\cosh(\rho\phi)\\[4pt]
+ct=\frac{R}{\rho}\sqrt{1+A^{2}}\,\sinh(\rho\phi)
+\end{gather*}
+where $R=(mc^{2}/eB)$, $\rho=(E/B)$, $A$ is an arbitrary constant, and $\phi$ is the parameter [actually $c/R$ times the proper time].
+\end{enumerate}
+\solution
+
+\medskip\noindent\textbf{(a)} For the general initial-value problem choose
+$\mathbf B=B\widehat{\mathbf z}$ and
+$\mathbf E=E\sin\theta\,\widehat{\mathbf x}
++E\cos\theta\,\widehat{\mathbf z}$.  Define signed inverse times
+\[
+f=\frac{eE\sin\theta}{mc},\qquad
+h=\frac{eE\cos\theta}{mc},\qquad b=\frac{eB}{mc}.
+\]
+With $X=(ct,x,y,z)^{\mathsf T}$ and $U=dX/d\tau$, the four
+rectangular equations are the constant-coefficient system
+\[
+\frac{dU}{d\tau}=MU,\qquad
+M=\begin{pmatrix}0&f&0&h\\ f&0&b&0\\0&-b&0&0\\h&0&0&0\end{pmatrix}.
+\]
+This form includes the energy equation and avoids time-dependent
+$\gamma$ coefficients.  To evaluate its solution explicitly, put
+\[
+S=f^2+h^2-b^2,\quad D=\sqrt{S^2+4h^2b^2},\quad
+\kappa^2=(D+S)/2,\quad \Omega^2=(D-S)/2.
+\]
+The characteristic identity is
+$M^4-SM^2-h^2b^2\mathbf1=0$: expansion of
+$\det(\lambda\mathbf1-M)$ gives
+$\lambda^4-(f^2+h^2-b^2)\lambda^2-h^2b^2
+=(\lambda^2-\kappa^2)(\lambda^2+\Omega^2)$, and
+Cayley--Hamilton replaces $\lambda$ by $M$.
+For $D\ne0$ define
+\[
+P_e=\frac{M^2+\Omega^2\mathbf1}{D},\qquad
+P_b=\frac{\kappa^2\mathbf1-M^2}{D}.
+\]
+These complementary projectors obey $M^2P_e=\kappa^2P_e$ and
+$M^2P_b=-\Omega^2P_b$.  Thus no unevaluated matrix exponential
+is needed:
+\begin{align*}
+U(\tau)={}&\left\{P_e\left[\cosh\kappa\tau\,\mathbf1+
+ \frac{\sinh\kappa\tau}{\kappa}M\right]
+ +P_b\left[\cos\Omega\tau\,\mathbf1+
+ \frac{\sin\Omega\tau}{\Omega}M\right]\right\}U_0,\\
+X(\tau)-X_0={}&\left\{P_e\left[\frac{\sinh\kappa\tau}{\kappa}\mathbf1+
+ \frac{\cosh\kappa\tau-1}{\kappa^2}M\right]\right.\\
+&\left.\hspace{13mm}+P_b\left[\frac{\sin\Omega\tau}{\Omega}\mathbf1+
+ \frac{1-\cos\Omega\tau}{\Omega^2}M\right]\right\}U_0.
+\end{align*}
+The four entries give the requested rectangular coordinates for
+any initial four-velocity $U_0$ satisfying $U_0^2=c^2$.
+Terms with a zero $\kappa$ or $\Omega$ have their continuous limits,
+e.g. $(1-\cos\Omega\tau)/\Omega^2\to\tau^2/2$.
+If $D=0$, the field is zero or null ($E=B$, $\mathbf E\perp\mathbf B$).
+Then $M^3=0$ and the complete nonsingular solution is
+\[
+U=(\mathbf1+\tau M+\tfrac12\tau^2M^2)U_0,\qquad
+X=X_0+(\tau\mathbf1+\tfrac12\tau^2M+\tfrac16\tau^3M^2)U_0.
+\]
+In all cases $M^{\mathsf T}g+gM=0$, which verifies that the
+four-velocity normalization is conserved.
+
+\medskip\noindent\textbf{(b)} For parallel fields $f=0$, the $(U^0,U^z)$ pair is hyperbolic and
+the $(U^x,U^y)$ pair rotates.  Put
+$R=mc^2/(eB)$, $\rho=E/B$, $\phi=c\tau/R$.
+Choose integration constants so that
+\[
+U^0=c\sqrt{1+A^2}\cosh(\rho\phi),\quad
+U^z=c\sqrt{1+A^2}\sinh(\rho\phi),\quad
+U^x=Ac\cos\phi,\quad U^y=-Ac\sin\phi.
+\]
+These satisfy $U^2=c^2$ and all four equations directly.
+Integrating, with the permitted coordinate offsets, gives
+\[
+\boxed{x=AR\sin\phi,\quad y=AR\cos\phi,\quad
+z=\frac R\rho\sqrt{1+A^2}\cosh(\rho\phi),\quad
+ct=\frac R\rho\sqrt{1+A^2}\sinh(\rho\phi).}
+\]
+The apparently divergent constant in $z$ as $E\to0$ is removed
+by shifting its origin before taking the limit; the physical motion
+then becomes the usual helix or circle.
+
+\Needspace{5\baselineskip}
+\par\bigskip
+\noindent\textbf{12.7}\quad A constant uniform magnetic induction $B$ in the negative $z$ direction exists in a region limited by the planes $x=0$ and $x=a$. For $x<0$ and $x>a$, there is no magnetic induction.
+\begin{enumerate}
+\item[(a)] Determine the total electromagnetic momentum $\mathbf{G}$ in magnitude and direction of the combination of a particle with point charge $q$ at $(x_{0},y_{0},z_{0})$ in the presence of this magnetic induction. Find $\mathbf{G}$ for the charge located on either side of and within the region occupied by the magnetic field. Assume the particle is at rest or in nonrelativistic motion. \erratum{For the ideal infinite slab, take symmetric circular limits in each transverse plane when evaluating the field momentum.}
+\item[(b)] The particle is normally incident on the field region from $x<0$ with nonrelativistic momentum $p$. Assuming that $p>\erratum{|q|}Ba/c$, determine the components of momentum after the particle has emerged into the field-free region, $x>a$. Compare the components of the sum of mechanical (particle) and electromagnetic momenta initially and finally. Why are some components of the sum conserved and some not?
+\item[(c)] Assume that $p<\erratum{|q|}Ba/2c$ and that the initial conditions are such that the particle's motion is confined within the region of the magnetic induction at fixed $z$. Discuss the conservation, or lack of it, of the components of the sum of mechanical and electromagnetic momentum as the particle moves in its path. Comment.
+\end{enumerate}
+\solution
+
+\medskip\noindent\textbf{(a)} Compute the interaction field momentum
+$\mathbf G=(4\pi c)^{-1}\int\mathbf E_q\times\mathbf B\,d^3x$;
+the point charge's divergent self-energy is not part of this cross
+term.  The ideal infinite slab is interpreted with symmetric
+transverse integration.  This prescription sets integrals of the
+odd transverse Coulomb components to zero; without a prescription
+some all-space component integrals are only conditionally convergent.
+At a fixed $x$,
+\[
+\int_{\mathbb R^2}E_x\,dy\,dz
+=2\pi q\int_0^\infty
+ \frac{(x-x_0)s\,ds}{[(x-x_0)^2+s^2]^{3/2}}
+=2\pi q\,\operatorname{sgn}(x-x_0).
+\]
+As $\mathbf B=-B\widehat{\mathbf z}$,
+$\mathbf E\times\mathbf B=B(-E_y,E_x,0)$, and therefore
+\[
+\boxed{\mathbf G=\frac{qB}{2c}\widehat{\mathbf y}
+\begin{cases}
+a,&x_0<0,\\
+a-2x_0,&0\leq x_0\leq a,\\
+-a,&x_0>a.
+\end{cases}}
+\]
+Its magnitude is the absolute value of the displayed coefficient;
+its direction reverses with that coefficient.  The result is
+continuous at both walls and independent of $y_0,z_0$.
+
+\medskip\noindent\textbf{(b)} For normal incidence set $p_x=p>0$, $p_y=0$ before the slab.
+The force components in the slab obey
+\[
+\dot p_x=-\frac{qB}{c}v_y,\qquad
+\dot p_y=\frac{qB}{c}v_x,
+\qquad p_x^2+p_y^2=p^2.
+\]
+Consequently $p_y=qBx/c$ on the first traversal.  If
+$p>|q|Ba/c$, the particle exits through $x=a$ with
+\[
+\boxed{p_{x,f}=\sqrt{p^2-(qBa/c)^2},\qquad
+p_{y,f}=qBa/c,\qquad p_{z,f}=0.}
+\]
+The initial and final sums of particle and cross-field momentum are
+\[
+\mathbf P_i=(p,qBa/(2c),0),\qquad
+\mathbf P_f=(\sqrt{p^2-(qBa/c)^2},qBa/(2c),0).
+\]
+The $y,z$ components are conserved, but the $x$ component changes.
+The external currents and supports maintaining the slab exchange
+momentum with the particle-field subsystem.  The slab is
+translation invariant along $y,z$, but its two interfaces break
+translation invariance along $x$.
+
+\medskip\noindent\textbf{(c)} For an orbit entirely inside the slab, let its center be $(x_c,y_c)$
+and its radius $r_g=pc/(|q|B)<a/2$, with
+$r_g<x_c<a-r_g$.  Integrating the same equations gives
+\[
+p_y=\frac{qB}{c}(x-x_c),\qquad
+p_x=-\frac{qB}{c}(y-y_c).
+\]
+It follows that
+\[
+\boxed{P_y=p_y+G_y=\frac{qB}{c}(a/2-x_c),\qquad P_z=0,}
+\]
+whereas $P_x=p_x$ oscillates.  Even though the orbit never touches
+the interfaces, the source apparatus still exchanges $x$ momentum
+through its interaction with the charge's field.  The result does
+not describe an isolated mechanical system.  The charge-sign
+corrections in the inequalities make explicit the intended radius
+conditions; the originally printed inequalities assumed $q>0$.
+
+\Needspace{5\baselineskip}
+\par\bigskip
+\noindent\textbf{12.8}\quad In Problems 6.5 and 6.6 a nonvanishing momentum of the electromagnetic fields was found for a charge and a current-carrying toroid at rest. This paradox is among situations involving ``hidden momentum.'' Since the field momentum is proportional to $1/c^{2}$, you may infer that relativistic effects may enter the considerations.
+\begin{enumerate}
+\item[(a)] Consider the charge carriers in the toroid (or other current-carrying systems) of mass $m$, charge $e$, and individual mechanical momentum $\mathbf{p}=\gamma m\mathbf{v}$, and the current density $\mathbf{J}=en\mathbf{v}$, where $n$ is the number density of carriers and $\gamma$ is the relativistic Lorentz factor. Use conservation of energy for each charge carrier to show that, for the ``static'' field situation of Problem 6.5, the total mechanical momentum of the charge carriers,
+\[
+\mathbf{P}_{\mathrm{mech}}=\int d^{3}x\;\gamma nm\mathbf{v}=-\frac{1}{c^{2}}\int d^{3}x\;\Phi\mathbf{J}
+\]
+just opposite to the field momentum of Problem 6.5a.
+\item[(b)] Consider the toroid of Problem 6.6 to be of rectangular cross section, with width $w$ and height $h$ both small compared to $a$, and hollow tubes of uniform cross section $A_{w}$. Show that the electrostatic potential energy difference between the inner and outer vertical segments of each tube yields the change in $\gamma mc^{2}$ necessary to generate a net vertical mechanical momentum equal and opposite to the result of Problem 6.6a, with due regard to differences in units.
+\end{enumerate}
+Reference: Vaidman, \emph{op.\ cit.}
+\solution
+
+\medskip\noindent\textbf{(a)} For a charge carrier on a stationary closed stream, energy
+conservation in the electrostatic field gives
+\[
+\gamma mc^2+e\Phi=\mathcal E_{\rm stream}.
+\]
+Since $\mathbf J=en\mathbf v$, its mechanical momentum density is
+\[
+\gamma nm\mathbf v
+=\frac{\mathcal E_{\rm stream}}{ec^2}\mathbf J
+-\frac{\Phi\mathbf J}{c^2}.
+\]
+A localized steady current has $\nabla\cdot\mathbf J=0$ and
+$\int\mathbf J\,d^3x=0$, by integrating
+$\partial_j(x_iJ_j)$ over space.  Apply this separately to each
+closed stream if their energy constants differ.  The first term
+then integrates to zero and
+\[
+\boxed{\mathbf P_{\rm mech}=-\frac1{c^2}
+ \int\Phi\mathbf J\,d^3x=-\mathbf P_{\rm field}.}
+\]
+The density $n$ need not be constant: conservation of current
+requires its product with the local speed to adjust as the carriers
+accelerate and decelerate.  Replacing $\gamma$ by a common constant
+would incorrectly discard this order-$1/c^2$ momentum.
+
+\medskip\noindent\textbf{(b)} For the small rectangular turn let the inner and outer vertical
+segments have potentials $\Phi_i,\Phi_o$, and take conventional
+current $I$ upward on the inner segment.  This orientation produces
+positive azimuthal $B$ and positive axial field momentum for a
+positive central charge $Q$.  The energy difference gives
+\[
+mc^2(\gamma_i-\gamma_o)=-e(\Phi_i-\Phi_o).
+\]
+Each segment has length $h$ and tube area $A_w$; because
+$en_jv_jA_w=I$, its signed vertical momentum is
+$\pm\gamma_jm I h/e$.  Hence per turn
+\[
+P_{z,\rm turn}=\frac{mIh}{e}(\gamma_i-\gamma_o)
+=-\frac{Ih}{c^2}(\Phi_i-\Phi_o).
+\]
+In Gaussian units $\Phi_i-\Phi_o\simeq Qw/a^2$, so $N$ turns
+have
+\[
+\boxed{P_{z,\rm mech}\simeq-\frac{N I Qwh}{c^2a^2}.}
+\]
+In SI units the potential difference is instead
+$Qw/(4\pi\epsilon_0a^2)$, giving, with $A=wh$,
+\[
+\boxed{P_{z,\rm mech}\simeq-\frac{\mu_0QINA}{4\pi a^2},}
+\]
+exactly opposite to Problem 6.6(a).  Reversing the current reverses
+both momenta.  The transverse contributions vanish by symmetry
+around the toroid; the tube area cancels because it fixes carrier
+number and speed through the same current constraint.
+
+\Needspace{5\baselineskip}
+\par\bigskip
+\noindent\textbf{12.9}\quad The magnetic field of the earth can be represented approximately by a magnetic dipole of magnetic moment $M=8.1\times10^{25}$ gauss-cm$^{3}$. Consider the motion of energetic electrons in the neighborhood of the earth under the action of this dipole field (Van Allen electron belts). [Note that $\mathbf{M}$ points south.]
+\begin{enumerate}
+\item[(a)] Show that the equation for a line of magnetic force is $r=r_{0}\sin^{2}\theta$, where $\theta$ is the usual polar angle (colatitude) measured from the axis of the dipole, and find an expression for the magnitude of $B$ along any line of force as a function of $\theta$.
+\item[(b)] A positively charged particle circles around a line of force in the equatorial plane with a gyration radius $a$ and a mean radius $R$ ($a\ll R$). Show that the particle's azimuthal position (east longitude) changes approximately linearly in time according to
+\[
+\phi(t)=\phi_{0}-\frac{3}{2}\left(\frac{a}{R}\right)^{2}\!\omega_{B}(t-t_{0})
+\]
+where $\omega_{B}$ is the frequency of gyration at radius $R$.
+\item[(c)] If, in addition to its circular motion of part b, the particle has a small component of velocity parallel to the lines of force, show that it undergoes small oscillations in $\theta$ around $\theta=\pi/2$ with a frequency $\Omega=(3/\sqrt{2})(a/R)\omega_{B}$. Find the change in longitude per cycle of oscillation in latitude.
+\item[(d)] For an electron of 10 MeV kinetic energy at a mean radius $R=3\times10^{7}$ m, find $\omega_{B}$ and $a$, and so determine how long it takes to drift once around the earth and how long it takes to execute one cycle of oscillation in latitude. Calculate the same quantities for an electron of 10 keV at the same radius.
+\end{enumerate}
+\solution
+
+\medskip\noindent\textbf{(a)} Let $M$ denote the magnitude of the dipole moment.  In spherical
+coordinates about its axis,
+\[
+B_r=\frac{2M\cos\theta}{r^3},\qquad
+B_\theta=\frac{M\sin\theta}{r^3}.
+\]
+A field line has $dr/(r\,d\theta)=B_r/B_\theta=2\cot\theta$.
+Integration gives $\log r=2\log\sin\theta+\mathrm{constant}$,
+and therefore
+\[
+\boxed{r=r_0\sin^2\theta,\qquad
+ B(\theta)=\frac{M}{r_0^3}
+ \frac{\sqrt{1+3\cos^2\theta}}{\sin^6\theta}.}
+\]
+Here $r_0$ is the equatorial radius of that line.
+
+\medskip\noindent\textbf{(b)} At the geographic equator Earth's southward moment produces a
+northward $\mathbf B$.  The field magnitude is $B=M/R^3$ and
+$\nabla B=-(3B/R)\widehat{\mathbf R}$.
+Equation (12.55), or averaging the force on the small gyrating
+current loop, gives
+\[
+\mathbf v_D=\frac{c\mu_g}{qB^2}\mathbf B\times\nabla B,
+\qquad
+\mu_g=\frac{p_\perp^2}{2\gamma mB}
+ =\frac{q\omega_Ba^2}{2c}.
+\]
+Indeed, the small current loop experiences
+$\mathbf F_{\nabla B}=-\mu_g\nabla B$. Its slowly drifting center
+balances this force with $q\mathbf v_D\times\mathbf B/c$.
+Crossing that balance with $\mathbf B$ and taking
+$\mathbf v_D\perp\mathbf B$ gives the displayed drift velocity.
+For a positive charge $\omega_B=qB/(\gamma mc)>0$, so
+\[
+v_{D\phi}=-\frac{3a^2\omega_B}{2R},\qquad
+\boxed{\phi(t)=\phi_0-\frac32(a/R)^2\omega_B(t-t_0).}
+\]
+The direction is westward for positive charges and eastward for
+electrons.  The approximation requires $a/R\ll1$; $a$ and $R$
+refer to the unperturbed local gyration and guiding center.
+
+\medskip\noindent\textbf{(c)} For the small parallel motion put $\lambda=\pi/2-\theta$.
+Along the same field line $r=R\cos^2\lambda$, and expansion gives
+\[
+\frac{B(\lambda)}{B_0}
+=\frac{\sqrt{1+3\sin^2\lambda}}{\cos^6\lambda}
+=1+\frac92\lambda^2+O(\lambda^4).
+\]
+Arc length from the equator is $s=R\lambda+O(\lambda^3)$.
+Conservation of $p_\perp^2/B$, with constant total $\gamma$, gives
+the mirror force $\dot p_\parallel=-\mu_g\partial_sB$.
+Thus
+\[
+\gamma m\ddot s=-\frac{9\mu_gB_0}{R^2}s,
+\qquad
+\boxed{\Omega^2=\frac{9v_\perp^2}{2R^2},\quad
+\Omega=\frac3{\sqrt2}\frac aR\omega_B.}
+\]
+This is a small-amplitude bounce frequency.  The extra curvature
+drift from the small parallel velocity is second order in that
+velocity and is omitted consistently.  Over a full bounce,
+\[
+\boxed{\Delta\phi=-\frac32\left(\frac aR\right)^2\omega_B
+ \frac{2\pi}{\Omega}=-\sqrt2\pi\frac aR}
+\]
+for a positive charge; the electron sign is opposite.
+
+\medskip\noindent\textbf{(d)} For the numerical values convert the given moment to
+$M=8.1\times10^{15}\ \mathrm{T\,m^3}$, giving
+$B=M/R^3=3.00\times10^{-7}$ T at $R=3.00\times10^7$ m.
+In SI units use
+\[
+\gamma=1+\frac{K}{m_ec^2},\quad
+v=c\sqrt{1-\gamma^{-2}},\quad
+|\omega_B|=\frac{eB}{\gamma m_e},\quad a=\frac v{|\omega_B|},
+\]
+\[
+T_D=\frac{2\pi}{(3/2)(a/R)^2|\omega_B|},\qquad
+T_{\rm bounce}=\frac{2\pi\sqrt2R}{3v}.
+\]
+These correspond to nearly equatorial pitch, as in parts (b),(c).
+\begin{center}
+\begin{tabular}{lrr}
+\toprule
+Quantity&$K=10$ MeV&$K=10$ keV\\
+\midrule
+$\gamma$&20.5695&1.01957\\
+$|\omega_B|$ (rad/s)&2565.18&51751.8\\
+$a$ (m)&$1.16732\times10^5$&1129.53\\
+$T_D$ (s)&107.854&57096.6\\
+$T_{\rm bounce}$ (s)&0.296748&1.52010\\
+\bottomrule
+\end{tabular}
+\end{center}
+Thus the drifts take about 1.80 min and 15.9 h, respectively.
+The small-radius ratios are $0.00389$ and $3.77\times10^{-5}$,
+consistent with the expansion used here.
+
+\Needspace{5\baselineskip}
+\par\bigskip
+\noindent\textbf{12.10}\quad A charged particle finds itself instantaneously in the equatorial plane of the earth's magnetic field (assumed to be a dipole field) at a distance $R$ from the center of the earth. Its velocity vector at that instant makes an angle $\alpha$ with the equatorial plane ($v_{\parallel}/v_{\perp}=\tan\alpha$). Assuming that the particle spirals along the lines of force with a gyration radius $a\ll R$, and that the flux linked by the orbit is a constant of the motion, find an equation for the maximum magnetic latitude $\lambda$ reached by the particle as a function of the angle $\alpha$. Plot a graph (\emph{not a sketch}) of $\lambda$ versus $\alpha$. Mark parametrically along the curve the values of $\alpha$ for which a particle at radius $R$ in the equatorial plane will hit the earth (radius $R_{0}$) for $R/R_{0}=1.2$, 1.5, 2.0, 2.5, 3, 4, 5.
+\solution
+
+In a static magnetic field the total momentum magnitude $p$ is
+constant.  The linked-flux invariant is equivalent to
+$p_\perp^2/B=\mathrm{constant}$.  At the equator
+$p_{\perp0}=p\cos\alpha$ because $\alpha$ is measured from the
+equatorial plane, rather than from the field direction.
+At the turning point all momentum is transverse, so
+\[
+\frac{p^2\cos^2\alpha}{B_0}=\frac{p^2}{B_m},\qquad
+\frac{B_m}{B_0}=\sec^2\alpha.
+\]
+Using the field-line equation from Problem 12.9 gives
+\[
+\boxed{\cos^2\alpha=
+ \frac{\cos^6\lambda}{\sqrt{1+3\sin^2\lambda}}.}
+\]
+For $f(\lambda)=\cos^6\lambda/\sqrt{1+3\sin^2\lambda}$,
+\[
+\frac{f'}f=-6\tan\lambda
+-\frac{3\sin\lambda\cos\lambda}{1+3\sin^2\lambda}<0
+\qquad(0<\lambda<\pi/2).
+\]
+Thus on $0\leq\alpha,\lambda\leq\pi/2$ the right side decreases
+from one to zero, so there is exactly one turning
+latitude for each launch angle.  The sign of the initial parallel
+velocity chooses the northern or southern turning point; the
+formula gives its magnitude.  The curve below is computed from
+this equation, with the limiting endpoints included.
+\begin{center}\input{supplementary/ch12_mirror.tex}\end{center}
+A field line of equatorial radius $R$ intersects Earth when
+$R\cos^2\lambda_E=R_0$.  Consequently
+\[
+\boxed{\lambda_E=\arccos\sqrt{R_0/R},\qquad
+\alpha_E=\arccos\left[
+ \frac{(R_0/R)^{3/2}}{(4-3R_0/R)^{1/4}}\right].}
+\]
+The marked points have the following values:
+\begin{center}
+\begin{tabular}{rrr}
+\toprule
+$R/R_0$&$\alpha_E$ (degrees)&$\lambda_E$ (degrees)\\
+\midrule
+1.2&46.5759&24.0948\\
+1.5&62.7595&35.2644\\
+2.0&73.6699&45.0000\\
+2.5&78.7220&50.7685\\
+3.0&81.5915&54.7356\\
+4.0&84.6582&60.0000\\
+5.0&86.2233&63.4349\\
+\bottomrule
+\end{tabular}
+\end{center}
+For $|\alpha|<\alpha_E$ the particle mirrors above the surface;
+for $|\alpha|\geq\alpha_E$ it reaches Earth before, or exactly
+at, its formal mirror point.  This conclusion uses the ideal dipole
+and guiding-center approximation, neglecting the finite gyration
+radius in the surface-intersection condition.
+
+\Needspace{5\baselineskip}
+\par\bigskip
+\noindent\textbf{12.11}\quad Consider the precession of the spin of a muon, initially longitudinally polarized, as the muon moves in a circular orbit in a plane perpendicular to a uniform magnetic field $\mathbf{B}$.
+\begin{enumerate}
+\item[(a)] Show that the difference $\Omega$ of the spin precession frequency and the orbital gyration frequency is
+\[
+\Omega=\frac{eBa}{m_{\mu}c}
+\]
+independent of the muon's energy, where $a=(g-2)/2$ is the magnetic moment anomaly. (Find equations of motion for the components of spin along the mutually perpendicular directions defined by the particle's velocity, the radius vector from the center of the circle to the particle, and the magnetic field.)
+\item[(b)] For the CERN Muon Storage Ring, the orbit radius is $R=2.5$ meters and $B=17\times10^{3}$ gauss. What is the momentum of the muon? What is the time dilatation factor $\gamma$? How many periods of precession $T=2\pi/\Omega$ occur per observed laboratory mean lifetime of the muons? [$m_{\mu}=105.66$ MeV, $\tau_{0}=2.2\times10^{-6}$ s, $a\simeq\alpha/2\pi$].
+\item[(c)] Express the difference frequency $\Omega$ in units of the orbital rotation frequency and compute how many precessional periods (at the difference frequency) occur per rotation for a 300 MeV muon, a 300 MeV electron, a 5 GeV electron (this last typical of the $e^{+}e^{-}$ storage ring at Cornell).
+\end{enumerate}
+\solution
+
+\medskip\noindent\textbf{(a)} Let $a=(g-2)/2$ and choose $\widehat{\mathbf b}$ along the field.
+For $\mathbf E=0$ and $\boldsymbol\beta\cdot\mathbf B=0$, the BMT
+rest-spin equation (11.170) reduces to
+\[
+\frac{d\mathbf s}{dt}=\boldsymbol\omega_s\times\mathbf s,
+\qquad
+\boldsymbol\omega_s=-\frac e{m_\mu c}
+ \left(a+\frac1\gamma\right)\mathbf B.
+\]
+The velocity and radius vectors rotate with
+$\boldsymbol\omega_c=-e\mathbf B/(\gamma m_\mu c)$.
+Thus in the frame rotating with the orbit,
+\[
+\left(\frac{d\mathbf s}{dt}\right)_{\rm orbit}
+=(\boldsymbol\omega_s-\boldsymbol\omega_c)\times\mathbf s
+=-\frac{ea}{m_\mu c}\mathbf B\times\mathbf s.
+\]
+For a positive charge let $\widehat{\mathbf t}=\mathbf v/v$ and
+$\widehat{\mathbf r}=\widehat{\mathbf b}\times\widehat{\mathbf t}$
+be the outward radius direction.  With
+$\Omega=eaB/(m_\mu c)$ the component equations are
+\[
+\dot s_t=\Omega s_r,\qquad
+\dot s_r=-\Omega s_t,\qquad \dot s_b=0.
+\]
+Initially longitudinal spin has
+$s_t=s\cos\Omega t$, $s_r=-s\sin\Omega t$, $s_b=0$.
+Hence the difference-frequency magnitude
+\[
+\boxed{|\Omega|=\frac{|e|Ba}{m_\mu c}}
+\]
+is independent of energy.  Reversing the charge reverses the
+precession direction without changing this magnitude.
+
+\medskip\noindent\textbf{(b)} For the given ring, $B=1.7$ T and $R=2.5$ m.  Converting the
+Gaussian orbit relation $pc=eBR$ to SI gives $p=eBR$, or
+\[
+p[\mathrm{GeV}/c]=0.299792458\,B[\mathrm T]R[\mathrm m].
+\]
+With the specified rest energy and $a=\alpha/(2\pi)$,
+\[
+\boxed{p=1.27412\ {\rm GeV}/c,\quad
+\gamma=\sqrt{1+(pc/m_\mu c^2)^2}=12.1001,}
+\]
+\[
+|\Omega|=1.67944\times10^6\ {\rm rad/s},\quad
+T=3.74123\ \mu{\rm s},\quad
+\boxed{\frac{\gamma\tau_0}{T}=7.1153.}
+\]
+This uses the approximation to the anomaly requested by the problem,
+not a fitted modern value.
+
+\medskip\noindent\textbf{(c)} In any such orbit,
+\[
+\boxed{\frac{|\Omega|}{|\omega_c|}=a\gamma,}
+\]
+which is also the number of spin-orbit difference cycles per orbital
+revolution.  Interpreting the quoted MeV/GeV values as total energies,
+\begin{center}
+\begin{tabular}{lr}
+\toprule
+Particle and total energy&Cycles per orbit\\
+\midrule
+300 MeV muon&0.00329759\\
+300 MeV electron&0.681847\\
+5 GeV electron&11.3641\\
+\bottomrule
+\end{tabular}
+\end{center}
+If ``300 MeV'' is instead taken as kinetic energy, one must use
+$\gamma=1+K/(mc^2)$: the three numbers become
+$0.00445900$, $0.683008$ and $11.3653$, respectively.
+The distinction matters most for the muon, so the energy convention
+has been made explicit.
+
+\Needspace{5\baselineskip}
+\par\bigskip
+\noindent\textbf{12.12}\quad In Section 11.11 the BMT equation of motion for the spin of a particle of charge $e$ and a magnetic moment with an arbitrary $g$ factor was obtained.
+\begin{enumerate}
+\item[(a)] Verify that (11.171) is the correct equation for the time derivative of the longitudinal component of the rest-frame spin vector $\mathbf{s}$.
+\item[(b)] Let $\hat{\mathbf{n}}$ be a unit 3-vector perpendicular to $\hat{\boldsymbol{\beta}}$ and coplanar with $\hat{\boldsymbol{\beta}}$ and $\mathbf{s}$ ($\hat{\mathbf{n}}$ is generally time dependent). Let $\theta$ be the angle between $\hat{\boldsymbol{\beta}}$ and $\mathbf{s}$. Show that the time rate of change of $\theta$ can be written as
+\[
+\frac{d\theta}{dt}=\frac{e}{mc}\left[\left(\frac{g}{2}-1\right)\!\hat{\mathbf{n}}\cdot(\hat{\boldsymbol{\beta}}\times\mathbf{B})+\left(\frac{g\beta}{2}-\frac{1}{\beta}\right)\!\hat{\mathbf{n}}\cdot\mathbf{E}\right]
+\]
+where $\mathbf{E}$ and $\mathbf{B}$ are the fields in the laboratory and $c\boldsymbol{\beta}=c\beta\hat{\boldsymbol{\beta}}$ is the particle's instantaneous velocity in the laboratory.
+\item[(c)] For a particle moving undeflected through an $E\times B$ velocity selector and with $(\hat{\mathbf{n}}\times\hat{\boldsymbol{\beta}})\cdot\mathbf{B}=B$, find $d\theta/dt$ in terms of the gyration frequency $eB/\gamma mc$.
+\item[(d)] By defining the two 4-vectors, $L^{\alpha}=(\gamma\beta,\gamma\hat{\boldsymbol{\beta}})$ and $N^{\alpha}=(0,\hat{\mathbf{n}})$, show that $d\theta/d\tau$ can be written in the quasi-covariant form
+\[
+\frac{d\theta}{d\tau}=\frac{e}{mc}\left[\frac{g}{2}\,L_{\alpha}-\frac{1}{v}\,U_{\alpha}\right]\!F^{\alpha\beta}N_{\beta}
+\]
+where $U^{\alpha}$ is the particle's 4-velocity.
+\end{enumerate}
+\solution
+
+\medskip\noindent\textbf{(a)} Write $a_g=g/2-1$, $\mathbf b=\hat{\boldsymbol\beta}$ and
+$\mathbf E_\perp=\mathbf E-\mathbf b(\mathbf b\cdot\mathbf E)$.
+Equations (11.168) and (11.170), in the notation needed here, are
+\[
+\dot{\mathbf b}=\frac e{mc\gamma\beta}
+ [\mathbf E_\perp+\beta\mathbf b\times\mathbf B],
+\qquad \dot{\mathbf s}=\boldsymbol\omega_s\times\mathbf s,
+\]
+\[
+\boldsymbol\omega_s=-\frac e{mc}\left[
+ (a_g+\gamma^{-1})\mathbf B
+ -\frac{a_g\gamma}{\gamma+1}(\boldsymbol\beta\cdot\mathbf B)
+  \boldsymbol\beta
+ -(a_g+(\gamma+1)^{-1})\boldsymbol\beta\times\mathbf E\right].
+\]
+Differentiate the longitudinal component $h=\mathbf b\cdot\mathbf s$:
+\[
+\dot h=\mathbf s\cdot(\dot{\mathbf b}+\mathbf b\times\boldsymbol\omega_s).
+\]
+The term in $\boldsymbol\omega_s$ parallel to $\mathbf b$ drops
+out.  Use
+$\mathbf b\times(\boldsymbol\beta\times\mathbf E)=-\beta\mathbf E_\perp$.
+The remaining coefficients combine as
+\begin{align*}
+\dot{\mathbf b}+\mathbf b\times\boldsymbol\omega_s
+=\frac e{mc}\bigg[&-a_g\mathbf b\times\mathbf B\\
+&+\left(\frac1{\gamma\beta}-\frac{\beta}{\gamma+1}
+-a_g\beta\right)\mathbf E_\perp\bigg].
+\end{align*}
+Since $1/(\gamma\beta)-\beta/(\gamma+1)=1/\beta-\beta$,
+\[
+\boxed{\dot h=-\frac e{mc}\mathbf s_\perp\cdot
+ \left[a_g\mathbf b\times\mathbf B+
+ \left(\frac{g\beta}2-\frac1\beta\right)\mathbf E\right].}
+\]
+This verifies the precise form of (11.171), including the derivative
+of the velocity direction, which cannot be omitted.
+
+\medskip\noindent\textbf{(b)} The spin length is constant because its derivative is a cross
+product.  Write
+$h=s\cos\theta$, $\mathbf s_\perp=s\sin\theta\,\hat{\mathbf n}$.
+Dividing $\dot h=-s\sin\theta\,\dot\theta$ by the same factor
+therefore gives
+\[
+\boxed{\dot\theta=\frac e{mc}\left[
+ \left(\frac g2-1\right)\hat{\mathbf n}\cdot(\mathbf b\times\mathbf B)
+ +\left(\frac{g\beta}2-\frac1\beta\right)\hat{\mathbf n}\cdot\mathbf E
+ \right].}
+\]
+At exactly parallel spin, the direction $\hat{\mathbf n}$ is fixed
+by a continuous limit from the ensuing rotation plane.
+
+\medskip\noindent\textbf{(c)} For the undeflected selector $\mathbf E=-\boldsymbol\beta\times\mathbf B$,
+and the stated orientation gives
+$\hat{\mathbf n}\cdot(\mathbf b\times\mathbf B)=B$,
+$\hat{\mathbf n}\cdot\mathbf E=-\beta B$.  Thus
+\[
+\dot\theta=\frac{eB}{mc}
+ \left[\frac g2-1-\beta\left(\frac{g\beta}2-\frac1\beta\right)\right]
+=\boxed{\frac g{2\gamma}\frac{eB}{\gamma mc}.}
+\]
+There is spin rotation even though the reference trajectory is straight.
+
+\medskip\noindent\textbf{(d)} Finally $L_\alpha=(\gamma\beta,-\gamma\mathbf b)$,
+$U_\alpha=(\gamma c,-\gamma c\beta\mathbf b)$,
+$N_\alpha=(0,-\hat{\mathbf n})$, so, with $v=c\beta$,
+\[
+\frac g2L_\alpha-\frac1vU_\alpha
+=\gamma\left(\frac{g\beta}2-\frac1\beta,
+ -\left(\frac g2-1\right)\mathbf b\right).
+\]
+Using $F^{0i}=-E_i$, $F^{ij}=-\epsilon_{ijk}B_k$, its contraction
+with $F^{\alpha\beta}N_\beta$ is
+\[
+\gamma\left[
+\left(\frac{g\beta}2-\frac1\beta\right)\hat{\mathbf n}\cdot\mathbf E
++\left(\frac g2-1\right)\hat{\mathbf n}\cdot(\mathbf b\times\mathbf B)
+\right].
+\]
+Because $d\theta/d\tau=\gamma\,d\theta/dt$, this is precisely the
+claimed quasi-covariant expression.  ``Quasi'' is appropriate because
+the laboratory-defined directions and speed enter $L,N$ and $v$.
+
+\Needspace{5\baselineskip}
+\par\bigskip
+\noindent\textbf{12.13}\quad\begin{enumerate}
+\item[(a)] Specialize the Darwin Lagrangian (12.82) to the interaction of two charged particles ($m_{1}$, $q_{1}$) and ($m_{2}$, $q_{2}$). Introduce reduced particle coordinates, $\mathbf{r}=\mathbf{x}_{1}-\mathbf{x}_{2}$, $\mathbf{v}=\mathbf{v}_{1}-\mathbf{v}_{2}$ and also center of mass coordinates. Write out the Lagrangian in the reference frame in which the velocity of the center of mass vanishes and evaluate the canonical momentum components, $p_{x}=\partial L/\partial v_{x}$, etc.
+\item[(b)] Calculate the Hamiltonian to first order in $1/c^{2}$ and show that it is
+\[
+H=\frac{p^{2}}{2}\left(\frac{1}{m_{1}}+\frac{1}{m_{2}}\right)+\frac{q_{1}q_{2}}{r}-\frac{p^{4}}{8c^{2}}\left(\frac{1}{m_{1}^{3}}+\frac{1}{m_{2}^{3}}\right)+\frac{q_{1}q_{2}}{2m_{1}m_{2}c^{2}}\left(\frac{p^{2}+(\mathbf{p}\cdot\hat{\mathbf{r}})^{2}}{r}\right)
+\]
+Compare with the various terms in (42.1) of Bethe and Salpeter [\emph{op.\ cit.} (Section 12.6), p.~193]. Discuss the agreements and disagreements.
+\end{enumerate}
+\solution
+
+\medskip\noindent\textbf{(a)} Drop the constant rest energies and retain terms through $c^{-2}$.
+The two-particle form of the Darwin Lagrangian is
+\[
+L=\sum_{i=1}^2\left(\frac{m_iv_i^2}2+\frac{m_iv_i^4}{8c^2}\right)
+-\frac{Q}{r}+\frac{Q}{2c^2r}
+ [\mathbf v_1\cdot\mathbf v_2+
+ (\mathbf v_1\cdot\hat{\mathbf r})(\mathbf v_2\cdot\hat{\mathbf r})],
+\quad Q=q_1q_2.
+\]
+Introduce $M=m_1+m_2$, $\mu=m_1m_2/M$ and
+$\mathbf R=(m_1\mathbf x_1+m_2\mathbf x_2)/M$.
+Then
+\[
+\mathbf v_1=\mathbf V+\frac{m_2}{M}\mathbf v,\qquad
+\mathbf v_2=\mathbf V-\frac{m_1}{M}\mathbf v.
+\]
+At $\mathbf V=0$ define
+$C=m_1(m_2/M)^4+m_2(m_1/M)^4
+=\mu^4(m_1^{-3}+m_2^{-3})$ and $v_r=\mathbf v\cdot\hat{\mathbf r}$.
+Substitution term by term gives
+\[
+\boxed{L=\frac12\mu v^2-\frac Qr+
+ \frac{C v^4}{8c^2}-\frac{Q\mu}{2Mc^2r}(v^2+v_r^2).}
+\]
+For example the interaction sign follows from
+$\mathbf v_1\cdot\mathbf v_2=-(\mu/M)v^2$.
+The three canonical momentum components are
+\[
+\boxed{p_i=\mu v_i+\frac{C}{2c^2}v^2v_i
+-\frac{Q\mu}{Mc^2r}(v_i+v_r\hat r_i),\qquad i=x,y,z.}
+\]
+The Newtonian center-of-mass velocity and the exact center-of-energy
+velocity differ at order $c^{-2}$.  Eliminating the latter at zero
+total canonical momentum changes this reduced Lagrangian only at
+order $c^{-4}$, since its leading center term is $M V^2/2$.
+
+\medskip\noindent\textbf{(b)} Forming $H=\mathbf p\cdot\mathbf v-L$ before inversion gives
+\[
+H=\frac12\mu v^2+\frac Qr+
+ \frac{3Cv^4}{8c^2}-\frac{Q\mu}{2Mc^2r}(v^2+v_r^2).
+\]
+Iterate the momentum equation once, substituting $\mathbf p/\mu$
+only in its already order-$c^{-2}$ terms:
+\[
+\mathbf v=\frac{\mathbf p}{\mu}
+-\frac{C p^2\mathbf p}{2\mu^4c^2}
++\frac{Q}{M\mu c^2r}
+ [\mathbf p+(\mathbf p\cdot\hat{\mathbf r})\hat{\mathbf r}]
++O(c^{-4}).
+\]
+Consequently the correction from $\mu v^2/2$ is
+$-Cp^4/(2\mu^4c^2)+Q[p^2+p_r^2]/(M\mu c^2r)$.
+Combining it with the two explicit corrections above yields
+\begin{align*}
+H={}&\frac{p^2}{2\mu}+\frac Qr
+-\frac{Cp^4}{8\mu^4c^2}
++\frac{Q}{2M\mu c^2r}(p^2+p_r^2)+O(c^{-4})\\
+={}&\boxed{\frac{p^2}{2}\left(\frac1{m_1}+\frac1{m_2}\right)+\frac Qr
+-\frac{p^4}{8c^2}\left(\frac1{m_1^3}+\frac1{m_2^3}\right)
++\frac{Q[p^2+(\mathbf p\cdot\hat{\mathbf r})^2]}
+ {2m_1m_2c^2r}.}
+\end{align*}
+
+In Bethe and Salpeter's actual (42.1), p.~193, these are $H_0$
+(nonrelativistic Coulomb and kinetic energy), $H_1$ (the quartic
+kinetic correction) and the classical limit of $H_2$ (orbit--orbit
+interaction).  Their $p_r^2=r^{-2}\mathbf r\cdot(\mathbf r\cdot\mathbf p)\mathbf p$
+has a specified operator ordering; the classical momenta commute.
+Their $H_3$ contains spin--orbit and spin--other-orbit interactions,
+$H_4$ is an explicitly $\hbar$-dependent derivative term, and $H_5$
+contains dipole and contact spin--spin terms.  None is produced by
+classical spinless point charges.  In particular the name ``Darwin
+Lagrangian'' does not imply that the quantum contact correction is
+already present.  These differences reflect the quantum and spin
+degrees of freedom, rather than a discrepancy in the classical
+order-$c^{-2}$ interaction.
+
+\Needspace{5\baselineskip}
+\par\bigskip
+\noindent\textbf{12.14}\quad An alternative Lagrangian density for the electromagnetic field is
+\[
+\mathcal{L}=-\frac{1}{8\pi}\,\partial_{\alpha}A_{\beta}\partial^{\alpha}A^{\beta}-\frac{1}{c}\,J_{\alpha}A^{\alpha}
+\]
+\begin{enumerate}
+\item[(a)] Derive the Euler--Lagrange equations of motion. Are they the Maxwell equations? Under what assumptions?
+\item[(b)] Show explicitly, and with what assumptions, that this Lagrangian density differs from (12.85) by a 4-divergence. Does this added 4-divergence affect the action or the equations of motion?
+\end{enumerate}
+\solution
+
+\medskip\noindent\textbf{(a)} Vary $A_\beta$ as the field coordinates.  The derivatives are
+\[
+\frac{\partial\mathcal L}{\partial(\partial_\alpha A_\beta)}
+=-\frac1{4\pi}\partial^\alpha A^\beta,
+\qquad
+\frac{\partial\mathcal L}{\partial A_\beta}=-\frac1cJ^\beta.
+\]
+Thus the four Euler--Lagrange equations are
+\[
+\boxed{\Box A^\beta=\frac{4\pi}{c}J^\beta.}
+\]
+In contrast, the inhomogeneous Maxwell equation in potentials is
+\[
+\partial_\alpha F^{\alpha\beta}
+=\Box A^\beta-\partial^\beta D=\frac{4\pi}{c}J^\beta,
+\qquad D=\partial_\alpha A^\alpha.
+\]
+They agree in Lorenz gauge $D=0$ (or more generally if $D$ is a
+space-time constant).  The homogeneous equations hold identically
+because $F=dA$.  Conservation of the source current gives
+$\Box D=0$ from the alternative equations, but does not by itself
+set $D$ to zero: one also needs Lorenz-compatible initial and boundary
+data.  In particular $D=\partial_tD=0$ initially eliminates the
+unwanted homogeneous solution.
+
+\medskip\noindent\textbf{(b)} To compare the actions, introduce
+\[
+I=\partial_\alpha A_\beta\partial^\alpha A^\beta,\qquad
+K=\partial_\alpha A_\beta\partial^\beta A^\alpha.
+\]
+Since $F_{\alpha\beta}F^{\alpha\beta}=2(I-K)$,
+$\mathcal L_{\rm alt}-\mathcal L_{\rm Maxwell}=-K/(8\pi)$.
+The product rule twice gives
+\begin{align*}
+K&=\partial_\alpha(A_\beta\partial^\beta A^\alpha)
+-A_\beta\partial^\beta D\\
+&=\partial_\alpha(A_\beta\partial^\beta A^\alpha-A^\alpha D)+D^2.
+\end{align*}
+Therefore the exact off-gauge identity is
+\[
+\boxed{\mathcal L_{\rm alt}=\mathcal L_{\rm Maxwell}
+-\frac{D^2}{8\pi}
+-\frac1{8\pi}\partial_\alpha
+ (A_\beta\partial^\beta A^\alpha-A^\alpha D).}
+\]
+Under the Lorenz condition the $D^2$ term vanishes and the difference
+is a four-divergence.  Its action integral is a boundary integral;
+it can shift the numerical action, but not the bulk equations for
+compactly supported variations or boundary conditions that make its
+variation vanish.  Off Lorenz gauge there is also a gauge-fixing
+term, so claiming unconditional equivalence by a divergence would
+be incorrect.  Imposing the gauge consistently on the variations,
+or on the initial-value solution of part (a), is essential.
+
+\Needspace{5\baselineskip}
+\par\bigskip
+\noindent\textbf{12.15}\quad Consider the Proca equations for a localized steady-state distribution of current that has only a static magnetic moment. This model can be used to study the observable effects of a finite photon mass on the earth's magnetic field. Note that if the magnetization is $\mathcal{M}(\mathbf{x})$ the current density can be written as $\mathbf{J}=c(\nabla\times\mathcal{M})$.
+\begin{enumerate}
+\item[(a)] Show that if $\mathcal{M}=\mathbf{m}f(\mathbf{x})$, where $\mathbf{m}$ is a fixed vector and $f(\mathbf{x})$ is a localized scalar function, the vector potential is
+\[
+\mathbf{A}(\mathbf{x})=-\mathbf{m}\times\nabla\int f(\mathbf{x}')\,\frac{e^{-\mu|\mathbf{x}-\mathbf{x}'|}}{|\mathbf{x}-\mathbf{x}'|}\;d^{3}x'
+\]
+\item[(b)] If the magnetic dipole is a point dipole at the origin [$f(\mathbf{x})=\delta(\mathbf{x})$], show that the magnetic field away from the origin is
+\[
+\mathbf{B}(\mathbf{x})=[3\hat{\mathbf{r}}(\hat{\mathbf{r}}\cdot\mathbf{m})-\mathbf{m}]\!\left(1+\mu r+\frac{\mu^{2}r^{2}}{3}\right)\!\frac{e^{-\mu r}}{r^{3}}-\tfrac{2}{3}\mu^{2}\mathbf{m}\,\frac{e^{-\mu r}}{r}
+\]
+\item[(c)] The result of part b shows that at fixed $r=R$ (on the surface of the earth), the earth's magnetic field will appear as a dipole angular distribution, plus an added constant magnetic field (an apparently external field) antiparallel to $\mathbf{m}$. Satellite and surface observations lead to the conclusion that this ``external'' field is less than $4\times10^{-3}$ times the dipole field at the magnetic equator. Estimate a lower limit on $\mu^{-1}$ in earth radii and an upper limit on the photon mass in grams from this datum.
+
+This method of estimating $\mu$ is due to E.~Schr\"odinger, \emph{Proc. R. Irish Acad.} \textbf{A49}, 135 (1943). See A.~S. Goldhaber and M.~M. Nieto, \emph{Phys. Rev. Lett.} \textbf{21}, 567 (1968).
+\end{enumerate}
+\solution
+
+\medskip\noindent\textbf{(a)} For a stationary conserved current the Proca equation in Gaussian
+units is
+\[
+(\nabla^2-\mu^2)\mathbf A=-\frac{4\pi}{c}\mathbf J,\qquad
+\mathbf A(\mathbf x)=\frac1c\int
+ \frac{e^{-\mu|\mathbf x-\mathbf x'|}}{|\mathbf x-\mathbf x'|}
+ \mathbf J(\mathbf x')\,d^3x'.
+\]
+Insert $\mathbf J=c\nabla'\times[\mathbf m f(\mathbf x')]$
+and integrate by parts.  The surface term vanishes for localized
+$f$, and $\nabla'G(\mathbf x-\mathbf x')=-\nabla G$ gives
+\begin{align*}
+\mathbf A
+ &=\int f(\mathbf x')\mathbf m\times\nabla'G\,d^3x'\\
+ &=-\mathbf m\times\nabla
+ \int f(\mathbf x')\frac{e^{-\mu|\mathbf x-\mathbf x'|}}
+ {|\mathbf x-\mathbf x'|}\,d^3x'.
+\end{align*}
+This proves part (a), and $\nabla\cdot\mathbf A=0$ as required.
+
+\medskip\noindent\textbf{(b)} For a point dipole put $Y(r)=e^{-\mu r}/r$.  The vector identity
+for the curl of a cross product gives, away from the origin,
+\[
+\mathbf B=\nabla\times(-\mathbf m\times\nabla Y)
+=(\mathbf m\cdot\nabla)\nabla Y-\mathbf m\nabla^2Y.
+\]
+Here
+\[
+Y'=-\frac{e^{-\mu r}}{r^2}(1+\mu r),\quad
+Y''=\frac{e^{-\mu r}}{r^3}(2+2\mu r+\mu^2r^2),\quad
+\nabla^2Y=\mu^2Y,
+\]
+and
+$\partial_i\partial_jY=(Y''-Y'/r)\hat r_i\hat r_j+(Y'/r)\delta_{ij}$.
+Therefore, writing $s=\mu r$,
+\begin{align*}
+\mathbf B&=\frac{e^{-s}}{r^3}
+ \{(3+3s+s^2)\hat{\mathbf r}(\hat{\mathbf r}\cdot\mathbf m)
+ -(1+s+s^2)\mathbf m\}\\
+&=\boxed{[3\hat{\mathbf r}(\hat{\mathbf r}\cdot\mathbf m)-\mathbf m]
+ \left(1+s+\frac{s^2}3\right)\frac{e^{-s}}{r^3}
+ -\frac23\mu^2\mathbf m\frac{e^{-s}}r.}
+\end{align*}
+A distributional point-dipole field also has its usual
+$(8\pi/3)\mathbf m\delta^{(3)}(\mathbf x)$ contact term; it is
+excluded by the question's ``away from the origin'' qualification.
+
+\medskip\noindent\textbf{(c)} On a sphere of radius $R$, the amplitude of the dipole-shaped
+part at its equator is
+$B_d=(m/R^3)(1+s+s^2/3)e^{-s}$, while the apparent uniform
+external component has magnitude
+$B_e=(2m/3R^3)s^2e^{-s}$ and points opposite to $\mathbf m$.
+The given observational ratio imposes
+\[
+\frac{B_e}{B_d}=\frac{(2/3)s^2}{1+s+s^2/3}<0.004.
+\]
+To leading order, $s<\sqrt{0.006}=0.07746$, hence
+\[
+\boxed{\mu^{-1}\gtrsim13R.}
+\]
+Retaining the displayed expression gives the positive root
+$s<0.0806015$, or $\mu^{-1}>12.4067R$.
+With $R=6.371\times10^8$ cm and $m_\gamma=\hbar\mu/c$,
+\[
+\boxed{m_\gamma<4.45\times10^{-48}\ \mathrm{g}}
+\]
+for the full ratio, about $4.3\times10^{-48}$ g at leading order.
+These are the bounds from the datum and model supplied in the
+problem, rather than a claim about the current best photon-mass limit.
+
+\Needspace{5\baselineskip}
+\par\bigskip
+\noindent\textbf{12.16}\quad\begin{enumerate}
+\item[(a)] Starting with the Proca Lagrangian density (12.91) and following the same procedure as for the electromagnetic fields, show that the symmetric stress-energy-momentum tensor for the Proca \emph{fields} is
+\[
+\Theta^{\alpha\beta}=\frac{1}{4\pi}\left[g^{\alpha\gamma}F_{\gamma\lambda}F^{\lambda\beta}+\frac{1}{4}\,g^{\alpha\beta}F_{\lambda\nu}F^{\lambda\nu}+\mu^{2}\!\left(A^{\alpha}A^{\beta}-\frac{1}{2}\,g^{\alpha\beta}A_{\lambda}A^{\lambda}\right)\right]
+\]
+\item[(b)] For these fields in interaction with the external source $J^{\beta}$, as in (12.91), show that the differential conservation laws take the same form as for the electromagnetic fields, namely,
+\[
+\partial_{\alpha}\Theta^{\alpha\beta}=\frac{J_{\lambda}F^{\lambda\beta}}{c}
+\]
+\item[(c)] Show explicitly that the time-time and space-time components of $\Theta^{\alpha\beta}$ are
+\begin{align*}
+\Theta^{00}&=\frac{1}{8\pi}\left[E^{2}+B^{2}+\mu^{2}(A^{0}A^{0}+\mathbf{A}\cdot\mathbf{A})\right]\\[4pt]
+\Theta^{i0}&=\frac{1}{4\pi}\left[(\mathbf{E}\times\mathbf{B})_{i}+\mu^{2}A^{i}A^{0}\right]
+\end{align*}
+\end{enumerate}
+\solution
+
+\medskip\noindent\textbf{(a)} Use the free-field part of (12.91),
+\[
+\mathcal L_f=-\frac{F_{\lambda\nu}F^{\lambda\nu}}{16\pi}
+ +\frac{\mu^2A_\lambda A^\lambda}{8\pi},\qquad
+\frac{\partial\mathcal L_f}{\partial(\partial_\alpha A_\lambda)}
+=-\frac{F^{\alpha\lambda}}{4\pi}.
+\]
+The canonical tensor is
+\[
+T^{\alpha\beta}=-\frac1{4\pi}F^{\alpha\lambda}\partial^\beta A_\lambda
+-g^{\alpha\beta}\mathcal L_f.
+\]
+Use $\partial^\beta A_\lambda=F^\beta{}_{\lambda}+\partial_\lambda A^\beta$
+and expand the latter term by the product rule:
+\begin{align*}
+T^{\alpha\beta}={}&\frac1{4\pi}F^\alpha{}_{\lambda}F^{\lambda\beta}
+-g^{\alpha\beta}\mathcal L_f
+-\frac1{4\pi}\partial_\lambda(F^{\alpha\lambda}A^\beta)
++\frac1{4\pi}(\partial_\lambda F^{\alpha\lambda})A^\beta.
+\end{align*}
+For a free Proca field,
+$\partial_\lambda F^{\lambda\alpha}+\mu^2A^\alpha=0$, so the
+last term is $\mu^2A^\alpha A^\beta/(4\pi)$.
+Adding the divergence improvement cancels the penultimate term
+and gives
+\[
+\boxed{\Theta^{\alpha\beta}=\frac1{4\pi}\left[
+ g^{\alpha\gamma}F_{\gamma\lambda}F^{\lambda\beta}
+ +\frac14g^{\alpha\beta}F_{\lambda\nu}F^{\lambda\nu}
+ +\mu^2\left(A^\alpha A^\beta-\frac12g^{\alpha\beta}A_\lambda A^\lambda\right)
+\right].}
+\]
+It is symmetric.  The same field tensor, which can also be obtained
+by varying the free-field action with respect to the metric, is used
+in the presence of prescribed sources.  The interaction energy is
+not included as an extra term in this field tensor.
+
+\medskip\noindent\textbf{(b)} For a conserved external current the Proca equations imply
+\[
+\partial_\alpha F^{\alpha\beta}+\mu^2A^\beta
+=\frac{4\pi}{c}J^\beta,
+\qquad \partial_\alpha A^\alpha=0\quad(\mu\ne0).
+\]
+The divergence of the Maxwell part of $\Theta$ follows from the
+Bianchi identity.  In explicit contracted form it gives
+\[
+F^{\alpha\lambda}\partial_\alpha F_\lambda{}^\beta
+=-\tfrac14\partial^\beta(F_{\lambda\nu}F^{\lambda\nu}),
+\]
+so the derivatives acting on the second $F$ cancel those of $F^2/4$:
+\[
+\partial_\alpha\Theta_M^{\alpha\beta}
+=\frac1{4\pi}(\partial_\alpha F^{\alpha\lambda})F_\lambda{}^\beta
+=\frac1cJ_\lambda F^{\lambda\beta}
+-\frac{\mu^2}{4\pi}A_\lambda F^{\lambda\beta}.
+\]
+For clarity, the mass contribution has divergence
+\begin{align*}
+\partial_\alpha\Theta_{\mu}^{\alpha\beta}
+&=\frac{\mu^2}{4\pi}
+ [(\partial_\alpha A^\alpha)A^\beta+
+ A^\alpha\partial_\alpha A^\beta-A_\lambda\partial^\beta A^\lambda]\\
+&=\frac{\mu^2}{4\pi}A_\lambda F^{\lambda\beta}.
+\end{align*}
+The two mass terms cancel, proving
+\[
+\boxed{\partial_\alpha\Theta^{\alpha\beta}
+=\frac1cJ_\lambda F^{\lambda\beta}.}
+\]
+Current conservation is essential here; without it an additional
+$\mu^2A^\beta(\partial\cdot A)/(4\pi)$ term remains.
+
+\medskip\noindent\textbf{(c)} Finally $F^{0i}=-E_i$, $F^{ij}=-\epsilon_{ijk}B_k$ give
+$F_{\lambda\nu}F^{\lambda\nu}=2(B^2-E^2)$.
+For the $00$ component the Maxwell terms combine to
+$(E^2+B^2)/2$, and the mass term is
+$\mu^2[(A^0)^2+\mathbf A^2]/2$ inside the factor $1/(4\pi)$.
+For $i0$, $g^{i0}=0$ and the field product is $(\mathbf E\times\mathbf B)_i$.
+Thus
+\[
+\boxed{\Theta^{00}=\frac{E^2+B^2+\mu^2[(A^0)^2+\mathbf A^2]}{8\pi},
+\qquad
+\Theta^{i0}=\frac{(\mathbf E\times\mathbf B)_i+\mu^2A^iA^0}{4\pi}.}
+\]
+Both the energy density and its mass contribution are nonnegative.
+
+\Needspace{5\baselineskip}
+\par\bigskip
+\noindent\textbf{12.17}\quad Consider the ``Thomson'' scattering of Proca waves (photons with mass) by a free electron.
+\begin{enumerate}
+\item[(a)] As a preliminary, show that for an incident plane wave of unit amplitude, $\mathbf{A}=\boldsymbol{\epsilon}_{0}\cos(kz-\omega t)$, where $\boldsymbol{\epsilon}_{0}$ is a polarization vector of unit magnitude describing either longitudinal ($l$) or transverse ($t$) fields, the time-averaged energy fluxes (measured by $\Theta^{30}$) are $F_{t}=\omega k/8\pi$ and $F_{l}=(\mu/\omega)^{2}F_{t}$. Show also for arbitrary polarization that the ratio of time-averaged energy flux to energy density is
+\[
+\frac{\langle\Theta^{30}\rangle}{\langle\Theta^{00}\rangle}=\beta=\frac{k}{\omega}=\sqrt{1-\frac{\mu^{2}}{\omega^{2}}}
+\]
+as expected for particles of mass $\mu$.
+\item[(b)] For polarization $\boldsymbol{\epsilon}_{0}$ initially and polarization $\boldsymbol{\epsilon}$ finally, show that the ``Thomson'' cross section for scattering is
+\[
+\frac{d\sigma}{d\Omega}\,(\boldsymbol{\epsilon},\boldsymbol{\epsilon}_{0})=r_{0}^{2}E_{0}\,|\boldsymbol{\epsilon}^{*}\cdot\boldsymbol{\epsilon}_{0}|^{2}\,\frac{F_{\mathrm{out}}}{F_{\mathrm{in}}}
+\]
+where $r_{0}$ is the classical electron radius, $E_{0}$ is a factor for the efficiency of the incident Proca field in exciting the electron, and the final factor is a ratio of the outgoing to incident fluxes. What is the value of $E_{0}$?
+\item[(c)] For an unpolarized \emph{transverse} wave incident, show that the scattering cross section is
+\[
+\left(\frac{d\sigma}{d\Omega}\right)_{t}=\frac{r_{0}^{2}}{2}\left[1+\cos^{2}\theta+\left(\frac{\mu}{\omega}\right)^{2}\sin^{2}\theta\right]
+\]
+where the first term is the familiar transverse to transverse scattering and the second is transverse to longitudinal.
+\item[(d)] For a \emph{longitudinally} polarized wave incident, show that the cross section, summed over outgoing polarizations, is
+\[
+\left(\frac{d\sigma}{d\Omega}\right)_{l}=\left(\frac{\mu}{\omega}\right)^{2}r_{0}^{2}\!\left[\sin^{2}\theta+\left(\frac{\mu}{\omega}\right)^{2}\cos^{2}\theta\right]
+\]
+where the first term is the longitudinal to transverse scattering and the second is longitudinal to longitudinal.
+
+Note that in the limit $\mu/\omega\to0$, the longitudinal fields decouple and we recover the standard Thomson cross section.
+\end{enumerate}
+\solution
+
+\medskip\noindent\textbf{(a)} The formulas in this problem use $c=1$, so
+$\omega^2=k^2+\mu^2$; retain Gaussian normalization of fields.
+For a plane wave write
+$\mathbf A=\boldsymbol\epsilon\cos\phi$, $\phi=kz-\omega t$,
+and decompose $\boldsymbol\epsilon=\boldsymbol\epsilon_t+
+\epsilon_l\widehat{\mathbf z}$.
+The Lorenz condition requires
+$A^0=(k/\omega)\epsilon_l\cos\phi$.  Differentiation gives
+\[
+\mathbf E=-\omega\left(\boldsymbol\epsilon_t+
+ \frac{\mu^2}{\omega^2}\epsilon_l\widehat{\mathbf z}\right)\sin\phi,
+\qquad
+\mathbf B=-k\widehat{\mathbf z}\times\boldsymbol\epsilon_t\sin\phi.
+\]
+For transverse unit amplitude, averaging $\sin^2\phi$ and
+$\cos^2\phi$ gives
+\[
+\langle\Theta^{00}\rangle_t
+=\frac{\omega^2+k^2+\mu^2}{16\pi}=\frac{\omega^2}{8\pi},
+\qquad F_t=\frac{\omega k}{8\pi}.
+\]
+For longitudinal unit amplitude $\mathbf B=0$, and the two
+averages instead are
+\[
+\langle\Theta^{00}\rangle_l
+=\frac{\mu^4/\omega^2+\mu^2(1+k^2/\omega^2)}{16\pi}
+=\frac{\mu^2}{8\pi},\qquad
+F_l=\frac{\mu^2k}{8\pi\omega}.
+\]
+Consequently $F_l=(\mu/\omega)^2F_t$.
+For arbitrary polarization the transverse and longitudinal
+contributions are orthogonal in the quadratic energy and flux:
+\[
+\langle\Theta^{00}\rangle
+=\frac{\omega^2|\boldsymbol\epsilon_t|^2+\mu^2|\epsilon_l|^2}{8\pi},
+\qquad
+\boxed{\frac{\langle\Theta^{30}\rangle}{\langle\Theta^{00}\rangle}
+=\frac k\omega=\sqrt{1-\mu^2/\omega^2}.}
+\]
+The physical energy-transport speed with $c$ restored is $ck/\omega$
+when $\omega$ is expressed in inverse-length units.
+
+\medskip\noindent\textbf{(b)} In the Thomson limit the electron displacement is small, its motion
+nonrelativistic, and recoil can be neglected.  Let
+$s=\mu^2/\omega^2$ and let $d_0=1$ for incident transverse
+polarization, $d_0=s$ for incident longitudinal polarization.
+The electric-field amplitude is $\omega d_0$ per unit incident
+vector-potential amplitude. With $e^{-i\omega t}$ phasors,
+$\mathbf E_0=i\omega d_0\boldsymbol\epsilon_0$ and
+$-i\omega m\mathbf v_0=e\mathbf E_0$, so
+$\mathbf v_0=-ed_0\boldsymbol\epsilon_0/m$.
+To first order in the displacement the current is
+$\mathbf J_0(\mathbf x)=e\mathbf v_0\delta^{(3)}(\mathbf x)$.
+Inserting it into the outgoing Helmholtz integral
+$\mathbf A_{\rm sc}=\int e^{ik|\mathbf x-\mathbf x'|}
+\mathbf J_0(\mathbf x')/|\mathbf x-\mathbf x'|\,d^3x'$
+gives
+\[
+\mathbf A_{\rm sc}\simeq-\frac{e^2}{m}\frac{e^{ikr}}r
+ d_0\boldsymbol\epsilon_0.
+\]
+The overall minus sign is the driven electron's phase reversal;
+it disappears from the cross section.
+Projection onto a unit outgoing polarization $\boldsymbol\epsilon$
+multiplies this by $\boldsymbol\epsilon^*\cdot\boldsymbol\epsilon_0$.
+Power per solid angle is amplitude squared times the corresponding
+unit-amplitude flux.  With $r_0=e^2/m$ in these units,
+\[
+\boxed{\frac{d\sigma}{d\Omega}(\boldsymbol\epsilon,\boldsymbol\epsilon_0)
+=r_0^2 E_0|\boldsymbol\epsilon^*\cdot\boldsymbol\epsilon_0|^2
+ \frac{F_{\rm out}}{F_{\rm in}},\quad
+E_0=d_0^2=\begin{cases}1,&t\hbox{ incident},\\
+(\mu/\omega)^4,&l\hbox{ incident}.
+\end{cases}}
+\]
+For a coherent mixture of incident transverse and longitudinal
+polarizations the force acts on
+$\boldsymbol\epsilon_{0t}+s\boldsymbol\epsilon_{0l}$, rather
+than multiplying the entire vector by one scalar; the displayed
+$E_0$ applies to the pure $t,l$ channels requested here.
+
+\medskip\noindent\textbf{(c)} Choose scattering in the $xz$ plane at angle $\theta$ from the
+incident $z$ direction.  Convenient outgoing polarizations are
+$\boldsymbol\epsilon_\theta=(\cos\theta,0,-\sin\theta)$,
+$\boldsymbol\epsilon_\phi=(0,1,0)$ and
+$\boldsymbol\epsilon_l=(\sin\theta,0,\cos\theta)$.
+For equally weighted incident $x,y$ polarizations the transverse
+sum of squared overlaps is $(1+\cos^2\theta)/2$; the longitudinal
+sum is $\sin^2\theta/2$.  Their flux ratios are one and $s$.
+Therefore
+\[
+\boxed{\left(\frac{d\sigma}{d\Omega}\right)_t
+=\frac{r_0^2}{2}[1+\cos^2\theta+s\sin^2\theta].}
+\]
+\medskip\noindent\textbf{(d)} For incident longitudinal polarization $\boldsymbol\epsilon_0=
+\widehat{\mathbf z}$, the corresponding overlaps are
+$\sin^2\theta$ and $\cos^2\theta$.
+Multiplying by $E_0=s^2$ and the flux ratios $1/s$ and one gives
+\[
+\boxed{\left(\frac{d\sigma}{d\Omega}\right)_l
+=s r_0^2[\sin^2\theta+s\cos^2\theta].}
+\]
+As an integral check,
+$\sigma_t=(8\pi/3)r_0^2(1+s/2)$ and $\sigma_l=s\sigma_t$.
+The massless limit leaves the usual Thomson result and removes
+both incident and outgoing longitudinal contributions.
+
+\Needspace{5\baselineskip}
+\par\bigskip
+\noindent\textbf{12.18}\quad Prove, by means of the divergence theorem in four dimensions or otherwise, that for source-free electromagnetic fields confined to a finite region of space, the 3-space integrals of $\Theta^{00}$ and $\Theta^{0i}$ transform as the components of a constant 4-vector, as implied by (12.106).
+\solution
+
+Let $\Sigma$ be any spacelike hypersurface with future-directed
+surface element $d\Sigma_\alpha$, and define
+\[
+P^\beta[\Sigma]=\frac1c\int_\Sigma
+ \Theta^{\alpha\beta}d\Sigma_\alpha.
+\]
+The tensor and directed surface element transform covariantly;
+contracting their first index leaves a four-vector index $\beta$.
+This fact alone does not yet prove that equal-time integrals in
+different frames are the same four-vector, because the equal-time
+surfaces are different.  Surface independence supplies the missing step.
+
+Take two such surfaces and close the intervening four-volume with
+a distant timelike boundary.  The divergence theorem and
+$\partial_\alpha\Theta^{\alpha\beta}=0$ give
+\[
+0=\int_{\mathcal V}\partial_\alpha\Theta^{\alpha\beta}\,d^4x
+=\int_{\Sigma_2}\Theta^{\alpha\beta}d\Sigma_\alpha
+-\int_{\Sigma_1}\Theta^{\alpha\beta}d\Sigma_\alpha
++\int_{\rm side}\Theta^{\alpha\beta}d\Sigma_\alpha.
+\]
+Localization makes the side term vanish as the boundary is removed.
+Thus $P^\beta[\Sigma_2]=P^\beta[\Sigma_1]$.
+For a compact wave packet this comparison remains valid even for
+a tilted hyperplane: its slope is subluminal, so sufficiently distant
+parts of the closing surface lie outside the packet's causal support.
+Suitable decaying fields work as well if their boundary flux tends to zero.
+
+On a laboratory $t=\mathrm{constant}$ plane,
+$d\Sigma_\alpha=(d^3x,0,0,0)$, so
+\[
+P^0=\frac1c\int\Theta^{00}\,d^3x=E_{\rm em}/c,\qquad
+P^i=\frac1c\int\Theta^{0i}\,d^3x.
+\]
+A Lorentz transformation maps this plane to a generally tilted
+plane in the primed frame, on which the integral is
+$\Lambda^\beta{}_{\gamma}P^\gamma$.  By surface independence
+one may replace it by $t'=\mathrm{constant}$.  Hence
+\[
+\boxed{P'^\beta=\Lambda^\beta{}_{\gamma}P^\gamma.}
+\]
+Taking $\Sigma_1,\Sigma_2$ as two parallel constant-time planes
+also proves $dP^\beta/dt=0$.  The integrals of
+$\Theta^{00},\Theta^{0i}$ therefore form the constant four-vector
+$(E_{\rm em},c\mathbf P_{\rm em})$.
+The premise is a free localized field; if confining walls exert
+forces, their momentum exchange must be included and the field
+subsystem alone does not satisfy this proof's source-free boundary
+conditions.
+
+\Needspace{5\baselineskip}
+\par\bigskip
+\noindent\textbf{12.19}\quad Source-free electromagnetic fields exist in a localized region of space. Consider the various conservation laws that are contained in the integral of $\partial_{\alpha}M^{\alpha\beta\gamma}=0$ over all space, where $M^{\alpha\beta\gamma}$ is defined by (12.117).
+\begin{enumerate}
+\item[(a)] Show that when $\beta$ and $\gamma$ are both space indices conservation of the total field angular momentum follows.
+\item[(b)] Show that when $\beta=0$ the conservation law is
+\[
+\frac{d\mathbf{X}}{dt}=\frac{c^{2}\mathbf{P}_{em}}{E_{em}}
+\]
+where $\mathbf{X}$ is the coordinate of the center of mass of the electromagnetic fields, defined by
+\[
+\mathbf{X}\int u\;d^{3}x=\int\mathbf{x}u\;d^{3}x
+\]
+where $u$ is the electromagnetic energy density and $E_{em}$ and $\mathbf{P}_{em}$ are the total energy and momentum of the fields.
+\end{enumerate}
+\solution
+
+\medskip\noindent\textbf{(a)} Equation (12.117) defines
+\[
+M^{\alpha\beta\gamma}
+=x^\beta\Theta^{\alpha\gamma}-x^\gamma\Theta^{\alpha\beta}.
+\]
+Its divergence is
+\[
+\partial_\alpha M^{\alpha\beta\gamma}
+=x^\beta\partial_\alpha\Theta^{\alpha\gamma}
+-x^\gamma\partial_\alpha\Theta^{\alpha\beta}
++\Theta^{\beta\gamma}-\Theta^{\gamma\beta}=0.
+\]
+Both the source-free conservation law and the symmetry of $\Theta$
+are used.  Integrate over space, use $\partial_0=c^{-1}\partial_t$,
+and discard the vanishing flux at infinity.  The six antisymmetric
+quantities
+\[
+\mathcal J^{\beta\gamma}=\frac1c\int M^{0\beta\gamma}\,d^3x
+\]
+are constants.
+
+For spatial indices,
+\[
+\mathcal J^{ij}=\int(x^ig^j-x^jg^i)\,d^3x,
+\qquad g^i=\Theta^{0i}/c.
+\]
+The three independent components are equivalent to
+\[
+\boxed{\mathbf L_{\rm em}=\int\mathbf x\times\mathbf g\,d^3x
+=\frac1{4\pi c}\int\mathbf x\times(\mathbf E\times\mathbf B)\,d^3x,
+\quad \frac{d\mathbf L_{\rm em}}{dt}=0.}
+\]
+\medskip\noindent\textbf{(b)} For $\beta=0,\gamma=i$, with $u=\Theta^{00}$,
+\begin{align*}
+\mathcal J^{0i}
+&=\frac1c\int(ct\Theta^{0i}-x^iu)\,d^3x\\
+&=ctP_{\rm em}^i-\frac{E_{\rm em}}cX^i.
+\end{align*}
+Energy and momentum are separately constant.  Differentiating the
+last equation therefore yields
+\[
+0=cP_{\rm em}^i-\frac{E_{\rm em}}c\frac{dX^i}{dt},
+\qquad
+\boxed{\frac{d\mathbf X}{dt}=\frac{c^2\mathbf P_{\rm em}}{E_{\rm em}}.}
+\]
+Here the defined ``center of mass'' is the center of energy.
+It moves uniformly even though the local field energy changes and
+propagates.  The result requires $E_{\rm em}>0$; for the zero-field
+solution the centroid is undefined, rather than an additional
+physical degree of freedom.
+
+\Needspace{5\baselineskip}
+\par\bigskip
+\noindent\textbf{12.20}\quad A uniform superconductor with London penetration depth $\lambda_{L}$ fills the half-space $x>0$. The vector potential is tangential and for $x<0$ is given by
+\[
+A_{y}=(ae^{ikx}+be^{-ikx})e^{-i\omega t}
+\]
+Find the vector potential inside the superconductor. Determine expressions for the electric and magnetic fields at the surface. Evaluate the surface impedance $Z_{s}$ (in Gaussian units, $4\pi/c$ times the ratio of tangential electric field to tangential magnetic field). Show that in the appropriate limit your result for $Z_{s}$ reduces to that given in Section 12.9.
+\solution
+
+Use the stated $e^{-i\omega t}$ convention, $k=\omega/c>0$,
+and the transverse gauge with $\Phi=0$.
+Equation (12.99), $J_y=-cA_y/(4\pi\lambda_L^2)$, turns the
+wave equation inside the material into
+\[
+\frac{d^2A_y}{dx^2}+
+ \left(k^2-\lambda_L^{-2}\right)A_y=0.
+\]
+Define $q=\sqrt{k^2-\lambda_L^{-2}}$, choosing $\operatorname{Im}q\geq0$
+and positive real $q$ above threshold.  The decaying or outgoing
+solution in the half-space is
+\[
+A_y=C e^{iqx-i\omega t},\qquad x>0.
+\]
+The tangential electric and magnetic fields are
+$E_y=ikA_y$ and $B_z=\partial_xA_y$.
+There is no delta-function sheet current in this finite-penetration
+London model, so both are continuous at $x=0$.  Thus
+\[
+a+b=C,\qquad k(a-b)=qC,
+\]
+and solution of these two equations gives
+\[
+\boxed{b=\frac{k-q}{k+q}a,\qquad
+A_y(x>0)=\frac{2ka}{k+q}e^{iqx-i\omega t}.}
+\]
+In particular the surface fields are
+\[
+\boxed{E_y(0)=\frac{2ik^2a}{k+q}e^{-i\omega t},\qquad
+B_z(0)=\frac{2ikqa}{k+q}e^{-i\omega t}.}
+\]
+For $\omega<c/\lambda_L$ put
+$\kappa=\sqrt{\lambda_L^{-2}-\omega^2/c^2}$, so $q=i\kappa$.
+The defined Gaussian surface impedance is
+\[
+\boxed{Z_s=\frac{4\pi}{c}\frac{E_y(0)}{B_z(0)}
+=\frac{4\pi k}{cq}
+=-\frac{4\pi i\omega}{c^2\kappa}.}
+\]
+It is purely inductive with this time convention.  When
+$k\lambda_L\ll1$,
+\[
+\boxed{Z_s\simeq-\frac{4\pi i\omega\lambda_L}{c^2}
+=-\frac{8\pi^2i}{c}\frac{\lambda_L}{\lambda},}
+\]
+where $\lambda=2\pi c/\omega$.  This is Section 12.9's result;
+in SI units it is $Z_s=-i\omega\mu_0\lambda_L$.
+For $k>\lambda_L^{-1}$ the same ideal model has real $q$ and a
+positive real impedance representing energy propagation into the
+bulk.  At $q=0$ use the continuous field solution; its magnetic
+surface field vanishes and the impedance ratio diverges.
+
+\Needspace{5\baselineskip}
+\par\bigskip
+\noindent\textbf{12.21}\quad A two-fluid model for the electrodynamics of superconductors posits two types of electron, normal and superconducting, with number densities, charges, masses, and collisional damping constants, $n_{j}$, $e_{j}$, $m_{j}$, and $\gamma_{j}$, respectively ($j=\mathrm{N},\mathrm{S}$). The electrical conductivity consists of the sum of two terms of the Drude form (7.58) with $f_{0}N\to n_{j}$, $e\to e_{j}$, $m\to m_{j}$, $\gamma_{0}\to\gamma_{j}$. The normal (superconducting) electrons are distinguished by $\gamma_{\mathrm{N}}\neq0$ ($\gamma_{\mathrm{S}}=0$).
+\begin{enumerate}
+\item[(a)] Show that the conductivity of the superconductor at very low frequencies is largely imaginary (inductive) with a small resistive component from the normal electrons.
+\item[(b)] Show that use of Ohm's law with the conductivity of part a in the Maxwell equations results in the static London equation for the electric field in the limit $\omega\to0$, with the penetration depth (12.100), provided the carriers are identified with the superconducting component of the electric fluid.
+\end{enumerate}
+\solution
+
+\medskip\noindent\textbf{(a)} Let $D_j=n_je_j^2/m_j$ and use $e^{-i\omega t}$.
+The Drude equation for each component is
+$m_j(\gamma_j-i\omega)\mathbf v_j=e_j\mathbf E$, so
+\[
+\sigma(\omega)=\frac{D_N}{\gamma_N-i\omega}+\frac{D_S}{-i\omega}.
+\]
+For $\omega\ll\gamma_N$ and a nonzero superconducting density,
+\[
+\boxed{\sigma(\omega)=\frac{iD_S}{\omega}+\sigma_n
++i\frac{D_N\omega}{\gamma_N^2}+O(\omega^2),
+\qquad \sigma_n=\frac{D_N}{\gamma_N}>0.}
+\]
+The imaginary term dominates when
+$\omega\sigma_n\ll D_S$.  To see its inductive sign directly,
+\[
+\frac1\sigma=-\frac{i\omega}{D_S}
++\frac{\sigma_n\omega^2}{D_S^2}+O(\omega^3).
+\]
+Thus the leading voltage-to-current response is inductive and the
+small positive real part is dissipative.
+
+\medskip\noindent\textbf{(b)} In the homogeneous transverse problem, Maxwell's equations are
+\[
+\nabla\times\mathbf E=\frac{i\omega}{c}\mathbf B,\qquad
+\nabla\times\mathbf B=
+ \left(-\frac{i\omega}{c}+\frac{4\pi\sigma}{c}\right)\mathbf E.
+\]
+Take the curl of the first equation and use $\nabla\cdot\mathbf E=0$
+in the bulk.  This gives
+\[
+\nabla^2\mathbf E+
+ \left(\frac{\omega^2}{c^2}+\frac{4\pi i\omega\sigma}{c^2}\right)
+ \mathbf E=0.
+\]
+Substitution of the low-frequency conductivity makes the bracket
+\[
+-\frac{4\pi D_S}{c^2}
++\frac{4\pi i\omega\sigma_n}{c^2}+O(\omega^2).
+\]
+It therefore tends to the static London operator:
+\[
+\boxed{\nabla^2\mathbf E-\lambda_L^{-2}\mathbf E=0,
+\qquad
+\lambda_L=\sqrt{\frac{m_Sc^2}{4\pi n_Se_S^2}}.}
+\]
+This is (12.100) with the carriers identified as the superconducting
+component.  The normal component contributes the vanishing
+order-$\omega$ loss term, not the finite penetration scale.
+The statement concerns the limit of a time-dependent transverse
+response.  A finite stationary electric field would, by
+$\partial_t\mathbf J_S=D_S\mathbf E$, continually accelerate the
+supercurrent; a static equilibrium does not sustain such a bulk
+field.  If $n_S=0$ the finite London length disappears, as expected
+for a normal conductor.
+

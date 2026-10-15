@@ -1,0 +1,2404 @@
+% Problems, Chapter 11: Special Theory of Relativity
+% Jackson, Classical Electrodynamics, 3rd ed.
+% Requires: amsmath, amssymb, tikz
+
+\section*{Problems}
+
+\noindent\emph{Conventions for the solutions.} This chapter of the source
+uses Gaussian electromagnetic units. We use
+$g_{\alpha\beta}=\operatorname{diag}(1,-1,-1,-1)$,
+$x^0=ct$, $F^{0i}=-E_i$, and $F^{ij}=-\varepsilon_{ijk}B_k$,
+as in Eqs.~(11.69), (11.75), and (11.137), pp.~542, 556.
+Spatial subscripts on $\mathbf E,\mathbf B$ are ordinary Cartesian
+components, not covariant four-vector indices.  The dual has
+$(\mathbf E,\mathbf B)\mapsto(\mathbf B,-\mathbf E)$
+[Eq.~(11.140)]; macroscopic $\epsilon,\mu$ are dimensionless in
+these Gaussian constitutive laws [Eq.~(11.145), p.~557].
+For the particle-kinematics Problems 11.19--11.26, masses and momenta
+are expressed in energy units, equivalently setting $c=1$; factors
+of $c$ are restored when converting a distance or a time.
+
+\Needspace{5\baselineskip}
+\par\bigskip
+\noindent\textbf{11.1}\quad Two equivalent inertial frames $K$ and $K'$ are such that $K'$ moves in the positive $x$ direction with speed $v$ as seen from $K$. The spatial coordinate axes in $K'$ are parallel to those in $K$ and the two origins are coincident at times $t=t'=0$.
+\begin{enumerate}
+\item[(a)] Show that the isotropy and homogeneity of space-time and equivalence of different inertial frames (first postulate of relativity) require that the most general transformation between the space-time coordinates $(x,y,z,t)$ and $(x',y',z',t')$ is the \emph{linear} transformation,
+\[
+x'=f(v^{2})x-vf(v^{2})t;\qquad t'=g(v^{2})t-vh(v^{2})x;\qquad y'=y;\qquad z'=z
+\]
+and the inverse,
+\[
+x=f(v^{2})x'+vf(v^{2})t';\qquad t=g(v^{2})t'+vh(v^{2})x';\qquad y=y';\qquad z=z'
+\]
+where $f$, $g$, and $h$ are functions of $v^{2}$, the structures of the $x'$ and $x$ equations are determined by the definition of the inertial frames in relative motion, and the signs in the inverse equation are a reflection of the reversal of roles of the two frames.
+\item[(b)] Show that consistency of the initial transformation and its inverse requires
+\[
+f=g\qquad\text{and}\qquad f^{2}-v^{2}fh=1
+\]
+\item[(c)] If a physical entity has speed $u'$ parallel to the $x'$ axis in $K'$, show that its speed $u$ parallel to the $x$ axis in $K$ is
+\[
+u=\frac{u'+v}{1+vu'(h/f)}
+\]
+Using the second postulate $2'$ (universal limiting speed $C$), show that $h=f/C^{2}$ is required and that the Lorentz transformation of the coordinates results. The universal limiting speed $C$ is to be determined from experiment.
+\end{enumerate}
+\solution
+\textbf{(a)} Let $X$ denote the four coordinate components, and let
+$T_v(X)$ map them between the two frames. Homogeneity means that
+the transformed displacement between two events depends only on
+their displacement: $T_v(X+A)-T_v(X)=T_v(A)$ after choosing coincident
+origins. Thus $T_v$ is additive. Continuity of the coordinate map
+extends additivity from rational to real multiples, so it is linear.
+Rotational symmetry about the relative-velocity axis forbids mixing
+of $(x,t)$ with the transverse coordinates. With parallel transverse
+axes their transformation is $y'=a(v)y$, $z'=a(v)z$.
+The inverse has factor $a(-v)$, so $a(v)a(-v)=1$. Isotropy under
+reversal of the $x$ direction makes $a(-v)=a(v)$; continuity from
+$a(0)=1$ consequently gives $a=1$.
+
+Write the remaining linear equations as $x'=Ax+Bt$,
+$t'=Cx+Dt$. The origin of $K'$ follows $x=vt$, and hence
+$B=-vA$. Under simultaneous reversal of the $x$ axes, $v$ changes
+sign while $x'$ and $x$ change sign and $t',t$ do not. Therefore
+$A,D$ are even functions of $v$, and $C$ is odd. Set
+$A=f(v^2)$, $D=g(v^2)$, $C=-vh(v^2)$:
+\[
+\boxed{x'=f(x-vt),\qquad t'=gt-vhx,\qquad y'=y,\quad z'=z.}
+\]
+The relativity principle says the inverse is the same rule with
+$v\to-v$, giving exactly the inverse in the question. The usual
+shared orientation of clocks and rods fixes the branch continuous
+with the identity at $v=0$.
+\textbf{(b)} Substitute the primed equations into the inverse:
+\begin{align*}
+x&=f[fx-vft+v(gt-vhx)]
+=(f^2-v^2fh)x+vf(g-f)t,\\
+t&=g(gt-vhx)+vh(fx-vft)
+=(g^2-v^2fh)t+vh(f-g)x.
+\end{align*}
+For these to hold for every $x,t$, and for nonzero $v$, the
+coefficient of $t$ in the first is zero, so $f=g$; the coefficient
+of $x$ is one, so
+\[
+\boxed{f=g,\qquad f^2-v^2fh=1.}
+\]
+Continuity includes $v=0$.
+\textbf{(c)} Along the moving entity's path $dx'=u'\,dt'$.
+Differentiating the inverse and taking their ratio gives
+\[
+u=\frac{f(dx'+vdt')}{fdt'+vhdx'}
+=\boxed{\frac{u'+v}{1+vu'h/f}.}
+\]
+The map is continuous and monotonic on the physical velocity
+interval. Equivalence of frames requires its universal upper
+endpoint $u'=C$ to map to $u=C$ (one may take a limit from below
+if no massive entity attains $C$). Thus
+\[
+C(1+vCh/f)=C+v,
+\qquad\boxed{h=f/C^2}.
+\]
+Substitution into part (b) gives
+$f^2(1-v^2/C^2)=1$. On the identity branch,
+\[
+\boxed{f=\frac1{\sqrt{1-v^2/C^2}},\qquad
+x'=f(x-vt),\quad t'=f(t-vx/C^2).}
+\]
+These are the Lorentz transformations with invariant limiting speed
+$C$; identifying $C$ with the vacuum light speed is experimental
+input, as emphasized in the question.
+
+\Needspace{5\baselineskip}
+\par\bigskip
+\noindent\textbf{11.2}\quad Consider three inertial frames and coordinates $K(x,t)$, $K'(x',t')$, and $K''(x'',t'')$. Frame $K'$ moves in the $x$ direction with speed $v_{1}$ relative to $K$; frame $K''$ moves with speed $v_{2}$ relative to $K'$, and speed $v_{3}$ relative to $K$. By considering the group property of the transformations of Problem 11.1 (including the results of parts a and b), $(x'',t'')\to(x',t')\to(x,t)$ and $(x'',t'')\to(x,t)$ directly, show that $|h(v^{2})/f(v^{2})|$ is a universal constant with the dimensions of an inverse speed squared.
+
+This approach obtains the Lorentz transformation without reference to electromagnetism or the second postulate, but requires experiment to show that $h/f>0$.
+
+\emph{Reference}: Y.~P. Terletskii, \emph{Paradoxes in the Theory of Relativity}, Plenum Press, New York (1968), pp.~17--25.
+\solution
+Use the inverse transformation of Problem 11.1 and write
+$\kappa(v)=h(v^2)/f(v^2)$. On the $(x,t)$ column it is
+\[
+M(v)=f(v^2)\begin{pmatrix}1&v\\\kappa(v)v&1\end{pmatrix}.
+\]
+Two successive transformations give
+\[
+M(v_1)M(v_2)=f_1f_2
+\begin{pmatrix}
+1+\kappa_2v_1v_2&v_1+v_2\\
+\kappa_1v_1+\kappa_2v_2&1+\kappa_1v_1v_2
+\end{pmatrix}.
+\]
+By the group property this must have the form $M(v_3)$, whose
+two diagonal entries are equal. For $v_1v_2\ne0$ this forces
+$\kappa_1=\kappa_2$. Since the two velocities are arbitrary, and
+continuity extends the result to zero, the signed ratio itself is
+universal:
+\[
+\boxed{h(v^2)/f(v^2)=\kappa=\text{constant},\qquad
+[\kappa]=[\text{speed}]^{-2}.}
+\]
+Comparison of the upper right and diagonal entries then gives
+\[
+v_3=\frac{v_1+v_2}{1+\kappa v_1v_2},\qquad
+f_3=f_1f_2(1+\kappa v_1v_2),\qquad
+f(v^2)=(1-\kappa v^2)^{-1/2}.
+\]
+For $\kappa>0$ put $\kappa=1/C^2$ and obtain Lorentz kinematics.
+For $\kappa=0$, $f=1$ and the transformations are Galilean.
+A negative $\kappa$ leads locally to a different, rotation-like
+kinematics with no finite invariant positive speed. The algebra
+alone has not measured the sign or the magnitude of $\kappa$;
+experiment selects the positive value $1/c^2$. In particular,
+proving a universal magnitude does not by itself exclude the
+zero, Galilean case.
+
+\Needspace{5\baselineskip}
+\par\bigskip
+\noindent\textbf{11.3}\quad Show explicitly that two successive Lorentz transformations in the same direction are equivalent to a single Lorentz transformation with a velocity
+\[
+v=\frac{v_{1}+v_{2}}{1+(v_{1}v_{2}/c^{2})}
+\]
+This is an alternative way to derive the parallel-velocity addition law.
+\solution
+Write $\beta_i=v_i/c$ and $\gamma_i=(1-\beta_i^2)^{-1/2}$.
+On $(ct,x)$ a boost from a frame to one moving in the positive
+$x$ direction is
+\[
+\Lambda(\beta_i)=\gamma_i
+\begin{pmatrix}1&-\beta_i\\-\beta_i&1\end{pmatrix}.
+\]
+The two-step transformation is
+\[
+\Lambda(\beta_2)\Lambda(\beta_1)
+=\gamma_1\gamma_2
+\begin{pmatrix}
+1+\beta_1\beta_2&-(\beta_1+\beta_2)\\
+-(\beta_1+\beta_2)&1+\beta_1\beta_2
+\end{pmatrix}.
+\]
+Factoring out its common diagonal coefficient identifies
+\[
+\beta=\frac{\beta_1+\beta_2}{1+\beta_1\beta_2},\qquad
+\gamma=\gamma_1\gamma_2(1+\beta_1\beta_2).
+\]
+To check that this factor is the required Lorentz gamma, compute
+\[
+1-\beta^2
+=\frac{(1+\beta_1\beta_2)^2-(\beta_1+\beta_2)^2}
+{(1+\beta_1\beta_2)^2}
+=\frac{(1-\beta_1^2)(1-\beta_2^2)}{(1+\beta_1\beta_2)^2}.
+\]
+The transverse coordinates are unchanged by both transformations,
+so this proves equality of the full four-dimensional maps and gives
+\[
+\boxed{v=\frac{v_1+v_2}{1+v_1v_2/c^2}.}
+\]
+Equivalently, writing $\beta_i=\tanh\zeta_i$ makes the product a
+boost of rapidity $\zeta_1+\zeta_2$; the same result is the
+hyperbolic-tangent addition formula.
+
+\Needspace{5\baselineskip}
+\par\bigskip
+\noindent\textbf{11.4}\quad A possible clock is shown in the figure. It consists of a flashtube $F$ and a photocell $P$ shielded so that each views only the mirror $M$, located a distance $d$ away, and mounted rigidly with respect to the flashtube-photocell assembly. The electronic innards of the box are such that when the photocell responds to a light flash from the mirror, the flashtube is triggered with a negligible delay and emits a short flash toward the mirror. The clock thus ``ticks'' once every $(2d/c)$ seconds when at rest.
+
+\begin{center}
+\begin{tikzpicture}[scale=1.1]
+  % mirror M at top
+  \fill[gray!45] (-0.35,2.9) rectangle (1.35,3.1);
+  \node[right] at (1.45,3.0) {$M$};
+  % dimension d on left
+  \draw[<->] (-1.05,0.75) -- (-1.05,2.95);
+  \node[left] at (-1.1,1.85) {$d$};
+  \draw (-1.05,0.75) -- (-1.0,0.75);
+  \draw (-1.05,2.95) -- (-0.35,2.95);
+  % Source p.569: flash travels F -> M -> P (not P -> M -> F).
+  \draw[->,erratadarkred] (0.72,2.88) -- (0.58,0.82);
+  \draw[->,erratadarkred] (0.94,0.82) -- (0.78,2.88);
+  % photocell and flashtube
+  \node[left] at (0.28,0.62) {$P$};
+  \draw (0.5,0.6) circle (0.22);
+  \draw (0.61,0.63) arc (30:150:0.11);
+  \draw (0.62,0.42) -- (0.62,0.0);
+  \draw (0.88,0.42) -- (0.88,0.0);
+  \node[right] at (1.25,0.62) {$F$};
+  \draw (1.0,0.6) circle (0.22);
+  \draw (1.0,0.6) ellipse (0.055 and 0.11);
+  % box at bottom
+  \fill[gray!45] (0.1,0.0) rectangle (1.4,-0.5);
+  \node at (2.9,-0.8) {\textbf{Problem 11.4}};
+\end{tikzpicture}
+\end{center}
+
+\begin{enumerate}
+\item[(a)] Suppose that the clock moves with a uniform velocity $v$, perpendicular to the line from $PF$ to $M$, relative to an observer. Using the second postulate of relativity, show by explicit geometrical or algebraic construction that the observer sees the relativistic time dilatation as the clock moves by.
+\item[(b)] Suppose that the clock moves with a velocity $v$ parallel to the line from $PF$ to $M$. Verify that here, too, the clock is observed to tick more slowly, by the same time dilatation factor.
+\end{enumerate}
+\solution
+The arrows are restored to the source figure's $F\to M\to P$
+direction (Jackson, p.~569).
+Treat the flashtube and photocell as effectively at one point, as
+implicit in the stipulated rest period $\Delta\tau=2d/c$.
+The measured period below is a coordinate-time interval between
+successive emissions in the observer's inertial frame; travel-time
+changes from clock to observer would additionally produce a Doppler
+shift of received flashes.
+\textbf{(a)} Let $T_\uparrow$ be the outward travel time with the
+clock moving transversely at speed $v$. The mirror advances by
+$vT_\uparrow$, so the light ray has length
+$\sqrt{d^2+v^2T_\uparrow^2}$. Constancy of light speed gives
+\[
+c^2T_\uparrow^2=d^2+v^2T_\uparrow^2,
+\qquad T_\uparrow=\frac{d}{\sqrt{c^2-v^2}}=\frac{\gamma d}{c}.
+\]
+The return leg has the same geometry and duration. Therefore
+\[
+\boxed{\Delta t=2\gamma d/c=\gamma\Delta\tau.}
+\]
+\textbf{(b)} Now the clock's longitudinal separation in the observer's
+frame is $\ell=d/\gamma$. Choose the mirror ahead of the emitting
+assembly in the direction of motion. On the outward leg the light
+catches a receding mirror:
+$cT_\uparrow=\ell+vT_\uparrow$, giving
+$T_\uparrow=\ell/(c-v)$.
+On the return leg the emitting assembly approaches the light, giving
+$T_\downarrow=\ell/(c+v)$. Thus
+\[
+\Delta t=\frac\ell{c-v}+\frac\ell{c+v}
+=\frac{2c\ell}{c^2-v^2}
+=\boxed{\frac{2\gamma d}{c}=\gamma\Delta\tau.}
+\]
+The contraction of the longitudinal mirror separation is essential:
+using its rest length directly in these laboratory travel equations
+would count one gamma factor too many.
+
+\Needspace{5\baselineskip}
+\par\bigskip
+\noindent\textbf{11.5}\quad A coordinate system $K'$ moves with a velocity $\mathbf{v}$ relative to another system $K$. In $K'$ a particle has a velocity $\mathbf{u}'$ and an acceleration $\mathbf{a}'$. Find the Lorentz transformation law for accelerations, and show that in the system $K$ the components of acceleration parallel and perpendicular to $\mathbf{v}$ are
+\begin{align*}
+\mathbf{a}_{\parallel}&=\frac{\left(1-\dfrac{v^{2}}{c^{2}}\right)^{3/2}}{\left(1+\dfrac{\mathbf{v}\cdot\mathbf{u}'}{c^{2}}\right)^{3}}\,\mathbf{a}'_{\parallel}\\[8pt]
+\mathbf{a}_{\perp}&=\frac{\left(1-\dfrac{v^{2}}{c^{2}}\right)}{\left(1+\dfrac{\mathbf{v}\cdot\mathbf{u}'}{c^{2}}\right)^{3}}\left(\mathbf{a}'_{\perp}+\frac{\mathbf{v}}{c^{2}}\times(\mathbf{a}'\times\mathbf{u}')\right)
+\end{align*}
+\solution
+Let $s=1+\mathbf v\cdot\mathbf u'/c^2$ and
+$\gamma=(1-v^2/c^2)^{-1/2}$, with parallel/perpendicular projections
+relative to the fixed boost velocity $\mathbf v$. The inverse
+coordinate transformation and velocity-addition law give
+\[
+dt=\gamma s\,dt',\qquad
+\mathbf u_\parallel=\frac{\mathbf u'_\parallel+\mathbf v}{s},
+\qquad\mathbf u_\perp=\frac{\mathbf u'_\perp}{\gamma s},
+\qquad\frac{ds}{dt'}=\frac{\mathbf v\cdot\mathbf a'}{c^2}.
+\]
+Differentiate the first velocity quotient and divide by $dt/dt'$:
+\[
+\mathbf a_\parallel
+=\frac{s\mathbf a'_\parallel
+-(\mathbf u'_\parallel+\mathbf v)(\mathbf v\cdot\mathbf a')/c^2}
+{\gamma s^3}.
+\]
+All vectors in this numerator are parallel to $\mathbf v$.
+Writing their signed scalar components along that axis reduces its
+coefficient to
+$a'_\parallel[1+vu'_\parallel/c^2
+-v(u'_\parallel+v)/c^2]=a'_\parallel(1-v^2/c^2)$.
+Hence
+\[
+\boxed{\mathbf a_\parallel=\frac{\mathbf a'_\parallel}{\gamma^3s^3}.}
+\]
+For the perpendicular quotient the same operations give
+\[
+\mathbf a_\perp=
+\frac{s\mathbf a'_\perp
+-\mathbf u'_\perp(\mathbf v\cdot\mathbf a')/c^2}{\gamma^2s^3}.
+\]
+The triple-product identity gives
+\[
+\mathbf v\times(\mathbf a'\times\mathbf u')
+=\mathbf a'(\mathbf v\cdot\mathbf u')
+-\mathbf u'(\mathbf v\cdot\mathbf a').
+\]
+Its parallel part is zero; its perpendicular part is
+$\mathbf a'_\perp(\mathbf v\cdot\mathbf u')
+-\mathbf u'_\perp(\mathbf v\cdot\mathbf a')$.
+Consequently
+\[
+\boxed{\mathbf a_\perp=
+\frac{\mathbf a'_\perp+
+\mathbf v\times(\mathbf a'\times\mathbf u')/c^2}{\gamma^2s^3}.}
+\]
+These are the requested formulas. As a check, for a particle
+instantaneously at rest in $K'$, $s=1$, and the familiar proper-to-lab
+relations are $a_\parallel=a'_\parallel/\gamma^3$ and
+$a_\perp=a'_\perp/\gamma^2$.
+
+\Needspace{5\baselineskip}
+\par\bigskip
+\noindent\textbf{11.6}\quad Assume that a rocket ship leaves the earth in the year 2100. One of a set of twins born in 2080 remains on earth; the other rides in the rocket. The rocket ship is so constructed that it has an acceleration $g$ in its own rest frame (this makes the occupants feel at home). It accelerates in a straight-line path for 5 years (by its own clocks), decelerates at the same rate for 5 more years, turns around, accelerates for 5 years, decelerates for 5 years, and lands on earth. The twin in the rocket is 40 years old.
+\begin{enumerate}
+\item[(a)] What year is it on earth?
+\item[(b)] How far away from the earth did the rocket ship travel?
+\end{enumerate}
+\solution
+Treat the earth as an inertial frame, use flat spacetime, and take
+$g$ to be the constant magnitude of the rocket's proper acceleration.
+For one-dimensional motion introduce rapidity $\eta$:
+\[
+v=c\tanh\eta,\qquad \frac{dt}{d\tau}=\cosh\eta,
+\qquad\frac{dx}{d\tau}=c\sinh\eta.
+\]
+The longitudinal result of Problem 11.5 gives $dv/dt=g/\gamma^3$;
+combining it with $dv/d\eta=c\operatorname{sech}^2\eta$ and
+$dt/d\tau=\gamma$ gives $d\eta/d\tau=g/c$ during outward acceleration.
+Starting at rest and integrating,
+\[
+\eta=\frac{g\tau}{c},\qquad
+ t(\tau)=\frac cg\sinh\frac{g\tau}{c},\qquad
+ x(\tau)=\frac{c^2}{g}\left(\cosh\frac{g\tau}{c}-1\right).
+\]
+Let $\tau_0=5$ years and $\eta_0=g\tau_0/c$.
+In the second leg the rapidity decreases from $\eta_0$ to zero:
+\[
+\Delta t_2=\frac cg\int_0^{\eta_0}\cosh\eta\,d\eta
+=\frac cg\sinh\eta_0,\qquad
+\Delta x_2=\frac{c^2}g\int_0^{\eta_0}\sinh\eta\,d\eta
+=\frac{c^2}g(\cosh\eta_0-1).
+\]
+The two return legs have these same time increments and the negatives
+of these displacements. The rocket is momentarily at rest at the
+most distant point; no instantaneous velocity reversal is required.
+Thus
+\[
+\boxed{t_{\rm earth}=\frac{4c}{g}\sinh\eta_0,\qquad
+x_{\max}=\frac{2c^2}{g}(\cosh\eta_0-1).}
+\]
+Using $g=9.80665\,\mathrm{m\,s^{-2}}$ and a Julian year of
+$365.25$ days gives $\eta_0=5.1614764$.
+\textbf{(a)} The elapsed earth time is $337.9189$ years, so arrival
+is in approximately the year
+\[
+\boxed{2438\quad(2100+337.9189).}
+\]
+The earth twin is then about $357.9$ years old; the rocket twin has
+aged the stipulated 20 years and is 40.
+\textbf{(b)} The maximum separation, reached halfway through the
+proper-time journey, is
+\[
+\boxed{x_{\max}=167.0331\ \text{light-years}
+=1.58026\times10^{15}\,\mathrm{km}.}
+\]
+The precise fractions of a year depend on the specified value of
+$g$ and the convention for the duration of a year; the formulas
+above retain both explicitly.
+
+\Needspace{5\baselineskip}
+\par\bigskip
+\noindent\textbf{11.7}\quad In the reference frame $K$ two very evenly matched sprinters are lined up a distance $d$ apart on the $y$ axis for a race parallel to the $x$ axis. Two starters, one beside each man, will fire their starting pistols at slightly different times, giving a handicap to the better of the two runners. The time difference in $K$ is $T$.
+\begin{enumerate}
+\item[(a)] For what range of time differences will there be a reference frame $K'$ in which there is no handicap, and for what range of time differences is there a frame $K'$ in which there is a true (not apparent) handicap?
+\item[(b)] Determine explicitly the Lorentz transformation to the frame $K'$ appropriate for each of the two possibilities in part a, finding the velocity of $K'$ relative to $K$ and the space-time positions of each sprinter in $K'$.
+\end{enumerate}
+\solution
+Choose the first start event as $(t,x,y,z)=(0,0,0,0)$ and the
+second as $(T,0,d,0)$, taking $d>0$ and allowing either sign of $T$.
+Their invariant interval is
+$s^2=c^2T^2-d^2$. A boost of signed speed $V$ along $y$ gives
+\[
+t'=\Gamma(t-Vy/c^2),\qquad y'=\Gamma(y-Vt),
+\qquad x'=x,\quad z'=z,
+\quad \Gamma=(1-V^2/c^2)^{-1/2}.
+\]
+The first event stays at the origin, while the second is
+\[
+(t_2',x_2',y_2',z_2')=
+\bigl(\Gamma(T-Vd/c^2),0,\Gamma(d-VT),0\bigr).
+\]
+\textbf{(a) and (b), spacelike separation.} If $|cT|<d$, choose
+\[
+\boxed{V=c^2T/d,\qquad
+(t_2',x_2',y_2',z_2')=(0,0,\sqrt{d^2-c^2T^2},0).}
+\]
+Both starts are simultaneous in this frame, so the time offset can
+be removed. This includes $T=0$, for which $V=0$.
+\textbf{(a) and (b), timelike separation.} If $|cT|>d$, choose
+\[
+\boxed{V=d/T,\qquad
+(t_2',x_2',y_2',z_2')=
+(\operatorname{sgn}T\sqrt{T^2-d^2/c^2},0,0,0).}
+\]
+The two starts now occur at the same spatial coordinate, separated
+by a nonzero proper time. Their ordering cannot be reversed by an
+inertial transformation, so this is a genuine temporal handicap.
+At the limiting cases $|cT|=d$ the separation is lightlike: no boost
+with $|V|<c$ makes the distinct events simultaneous or colocated,
+and their temporal ordering is still fixed. The formal speeds above
+would be $\pm c$ and do not define an inertial frame.
+
+These are the requested spacetime positions of the start events.
+For completeness, a sprinter still waiting at the fixed laboratory
+coordinate $y=y_i$ has world line $y_i'=y_i/\Gamma-Vt'$.
+After starting, if its laboratory running speed is $u_i$ along $x$,
+velocity transformation gives $u_{ix}'=u_i/\Gamma$, $u_{iy}'=-V$.
+Together with the corresponding start event these specify its
+subsequent uniform-running world line without assuming numerical
+speeds not supplied in the question.
+
+\Needspace{5\baselineskip}
+\par\bigskip
+\noindent\textbf{11.8}\quad\begin{enumerate}
+\item[(a)] Use the relativistic velocity addition law and the invariance of phase to discuss the Fizeau experiments on the velocity of propagation of light in moving liquids. Show that for liquid flow at a speed $v$ parallel or antiparallel to the path of the light the speed of the light, as observed in the laboratory, is given to first order in $v$ by
+\[
+u=\frac{c}{n(\omega)}\pm v\left(1-\frac{1}{n^{2}}+\frac{\omega}{n}\frac{dn(\omega)}{d\omega}\right)
+\]
+where $\omega$ is the frequency of the light in the laboratory (in the liquid and outside it) and $n(\omega)$ is the index of refraction of the liquid. Because of the extinction theorem, it is assumed that the light travels with speed $u'=c/n(\omega')$ relative to the moving liquid.
+\item[(b)] Consult the paper of W.~M. Macek, J.~R. Schneider, and R.~M. Salamon [\emph{J. Appl. Phys.} \textbf{35}, 2556 (1964)] and discuss the status of the Fizeau experiments.
+\end{enumerate}
+\solution
+\textbf{(a)} Let $s=+1$ for flow along the light and $s=-1$
+for opposite flow; choose the light propagation direction as $+x$
+in each case. Invariance of the phase $kx-\omega t=k'x'-\omega't'$
+under a boost of speed $sv$ gives the wave four-vector law
+\[
+\omega'=\gamma_v(\omega-svk),\qquad
+k'=\gamma_v(k-sv\omega/c^2).
+\]
+Taking the ratio of the inverse relations,
+$\omega=\gamma_v(\omega'+svk')$ and
+$k=\gamma_v(k'+sv\omega'/c^2)$, gives the collinear
+\emph{phase}-velocity addition rule
+\[
+u=\frac{\omega}{k}=\frac{u'+sv}{1+svu'/c^2},
+\qquad u'=\frac{c}{n(\omega')}.
+\]
+This derivation explains why the rule applies to the wave phase
+here; it is not an assumption about a photon trajectory in matter.
+To first order in $v/c$, substitute the zero-flow wave number
+$k=n(\omega)\omega/c$ into the frequency shift:
+\[
+\omega'-\omega=-s\frac vc n(\omega)\omega+O(\omega v^2/c^2).
+\]
+Consequently the rest-frame index and phase speed are
+\begin{align*}
+n(\omega')&=n(\omega)-s\frac vc\omega n(\omega)
+\frac{dn}{d\omega}+O(v^2/c^2),\\
+u'&=\frac cn+s v\frac\omega n\frac{dn}{d\omega}+O(v^2/c).
+\end{align*}
+Expanding the velocity denominator supplies a distinct correction:
+\[
+u=(u'+sv)(1-svu'/c^2)+O(v^2/c)
+=u'+sv(1-u'^2/c^2)+O(v^2/c).
+\]
+The factor multiplying $v$ needs only the zero-order value
+$u'=c/n$. Hence
+\[
+\boxed{u=\frac{c}{n(\omega)}\pm v\left[
+1-\frac1{n(\omega)^2}+\frac\omega{n(\omega)}\frac{dn}{d\omega}\right]
++O(v^2/c).}
+\]
+The laboratory apparatus and liquid interfaces are stationary, so
+the laboratory frequency is fixed across the interfaces. The
+Doppler shift belongs to the material rest frame. Omitting it
+would lose the dispersion term. In terms of vacuum wavelength
+$\lambda=2\pi c/\omega$, the coefficient is equivalently
+$f=1-n^{-2}-(\lambda/n)\,dn/d\lambda$.
+
+For a traversed laboratory length $\ell$, the directional phase
+accumulations $\phi_\pm=\omega\ell/u_\pm$ obey
+\[
+\phi_- -\phi_+=\frac{2\omega\ell v}{c^2}n^2f+O(v^2/c^2)
+=\frac{2\omega\ell v}{c^2}
+\left(n^2-1+\omega n\frac{dn}{d\omega}\right)+O(v^2/c^2).
+\]
+Thus interference measures a small differential phase, without
+having to measure the absolute propagation speed. Reversing the
+flow reverses this signal. Nondispersive vacuum has $n=1$ and
+$f=0$, a useful limiting check.
+\textbf{(b)} The cited article is W.~M. Macek, J.~R. Schneider,
+and R.~M. Salamon, ``Measurement of Fresnel Drag with the Ring
+Laser,'' \emph{J. Appl. Phys.} \textbf{35}, 2556--2557 (1964),
+DOI \href{https://doi.org/10.1063/1.1702908}{10.1063/1.1702908}.
+The ring-laser extension measures the two oppositely circulating
+resonances. Its relation to part (a) follows by imposing the
+resonance condition $\phi_\pm(\omega_\pm)=2\pi N$.
+If $\omega_0$ is their common frequency at zero flow and
+$\delta\phi_\pm$ their flow-induced phase changes, linearization
+gives
+\[
+\phi_0'(\omega_0)\delta\omega_\pm+\delta\phi_\pm=0,
+\qquad
+|\omega_+-\omega_-|=
+\frac{|\delta\phi_+-\delta\phi_-|}{\phi_0'(\omega_0)}.
+\]
+Defining the cavity group optical length $L_g=c\phi_0'(\omega_0)$,
+this predicts, for a single moving segment of length $\ell$,
+\[
+|\nu_+-\nu_-|=\frac{2\ell|v|}{\lambda L_g}
+\left|n^2-1+\omega n\frac{dn}{d\omega}\right|.
+\]
+The optical phase difference is thereby converted into a beat
+frequency. Material dispersion enters both the numerator and the
+round-trip phase derivative; treating the latter as a geometric
+length requires negligible cavity dispersion.
+
+For experimentally checked status, Bilger and Zavodny's primary
+1972 report describes a triangular ring laser at $0.6328\,\mu$m
+with fused silica and finds drag consistent, within its stated
+errors, with the theory including dispersion. A later direct
+water-flow experiment by Lahaye, Labastie, and Mathevet (2012)
+also reports agreement with the relativistic phase shift and
+identifies the earlier ring-laser work as extending the test to
+solids, liquids, and gases. These results support the coefficient
+in part (a), including a separately testable dispersive correction;
+``drag'' denotes this propagation effect and does not require a
+material aether.
+\footnote{Primary reports checked: H.~R. Bilger and A.~T. Zavodny,
+\emph{Phys. Rev. A} \textbf{5}, 591 (1972), publisher abstract,
+\url{https://doi.org/10.1103/PhysRevA.5.591}; T.~Lahaye,
+P.~Labastie, and R.~Mathevet, \emph{Am. J. Phys.} \textbf{80},
+497--505 (2012), \url{https://doi.org/10.1119/1.3690117}.
+The 1964 article's publisher record was checked, but its full text
+was inaccessible during this preparation. Thus no numerical
+precision, raw data, or dispersion measurement is attributed here
+to that inaccessible paper; the experimental assessment uses the
+accessible primary reports above.}
+
+\Needspace{5\baselineskip}
+\par\bigskip
+\noindent\textbf{11.9}\quad An infinitesimal Lorentz transformation and its inverse can be written as
+\begin{align*}
+x'^{\alpha}&=(g^{\alpha\beta}+\epsilon^{\alpha\beta})x_{\beta}\\
+x^{\alpha}&=(g^{\alpha\beta}+\epsilon'^{\alpha\beta})x'_{\beta}
+\end{align*}
+where $\epsilon^{\alpha\beta}$ and $\epsilon'^{\alpha\beta}$ are infinitesimal.
+\begin{enumerate}
+\item[(a)] Show from the definition of the inverse that $\epsilon'^{\alpha\beta}=-\epsilon^{\alpha\beta}$.
+\item[(b)] Show from the preservation of the norm that $\epsilon^{\alpha\beta}=-\epsilon^{\beta\alpha}$.
+\item[(c)] By writing the transformation in terms of contravariant components on both sides of the equation, show that $\epsilon^{\alpha\beta}$ is equivalent to the matrix $L$ (11.93).
+\end{enumerate}
+\solution
+Use $g=\operatorname{diag}(1,-1,-1,-1)$ and define the mixed
+matrix $L^\alpha{}_{\beta}=\epsilon^{\alpha\gamma}g_{\gamma\beta}$,
+so $x'^\alpha=(\delta^\alpha{}_{\beta}+L^\alpha{}_{\beta})x^\beta$.
+\textbf{(a)} Composing the inverse and forward maps gives
+$(I+L')(I+L)=I+L'+L+O(\epsilon^2)$. The identity requirement is
+$L'=-L$. Multiplication by $g^{\beta\gamma}$ raises the second
+index and proves
+\[
+\boxed{\epsilon'^{\alpha\beta}=-\epsilon^{\alpha\beta}}
+\]
+to the retained order.
+\textbf{(b)} Norm preservation is
+$(I+L)^{\mathsf T}g(I+L)=g$, hence
+$L^{\mathsf T}g+gL=0$. Equivalently, direct substitution in
+$x'^\alpha x'_\alpha=x^\alpha x_\alpha$ gives
+\[
+0=2\epsilon^{\alpha\beta}x_\alpha x_\beta
+=(\epsilon^{\alpha\beta}+\epsilon^{\beta\alpha})x_\alpha x_\beta
+\]
+for every $x$. Its symmetric coefficient must vanish:
+\[
+\boxed{\epsilon^{\alpha\beta}=-\epsilon^{\beta\alpha}.}
+\]
+\textbf{(c)} Lowering the second index changes the signs of the
+spatial columns, so $L^{0}{}_{i}=L^{i}{}_{0}=-\epsilon^{0i}$ and
+$L^i{}_j=-\epsilon^{ij}$. Set
+$\epsilon^{0i}=\zeta_i$ and
+$\epsilon^{ij}=-\varepsilon_{ijk}\vartheta_k$. The explicit map is
+\[
+L=\begin{pmatrix}
+0&-\zeta_1&-\zeta_2&-\zeta_3\\
+-\zeta_1&0&\vartheta_3&-\vartheta_2\\
+-\zeta_2&-\vartheta_3&0&\vartheta_1\\
+-\zeta_3&\vartheta_2&-\vartheta_1&0
+\end{pmatrix}
+=\boxed{-\boldsymbol\vartheta\cdot\mathbf S
+-\boldsymbol\zeta\cdot\mathbf K.}
+\]
+This is (11.93) to infinitesimal order. Antisymmetry of the
+both-upper-index $\epsilon^{\alpha\beta}$ is thus consistent with
+the symmetric time-space block of the mixed matrix $L$; they have
+different index placements.
+
+\Needspace{5\baselineskip}
+\par\bigskip
+\noindent\textbf{11.10}\quad\begin{enumerate}
+\item[(a)] For the Lorentz boost and rotation matrices $\mathbf{K}$ and $\mathbf{S}$ show that
+\begin{align*}
+(\boldsymbol{\epsilon}\cdot\mathbf{S})^{3}&=-\boldsymbol{\epsilon}\cdot\mathbf{S}\\
+(\boldsymbol{\epsilon}'\cdot\mathbf{K})^{3}&=\boldsymbol{\epsilon}'\cdot\mathbf{K}
+\end{align*}
+where $\boldsymbol{\epsilon}$ and $\boldsymbol{\epsilon}'$ are any real unit 3-vectors.
+\item[(b)] Use the results of part a to show that
+\[
+\exp(-\zeta\hat{\boldsymbol{\beta}}\cdot\mathbf{K})=I-\hat{\boldsymbol{\beta}}\cdot\mathbf{K}\sinh\zeta+(\hat{\boldsymbol{\beta}}\cdot\mathbf{K})^{2}[\cosh\zeta-1]
+\]
+\end{enumerate}
+\solution
+The matrices (11.91) act on a four-vector $(a^0,\mathbf a)$ as
+\[
+S(\mathbf e)(a^0,\mathbf a)=(0,\mathbf e\times\mathbf a),\qquad
+K(\mathbf e)(a^0,\mathbf a)=(\mathbf e\cdot\mathbf a,a^0\mathbf e),
+\]
+where $S(\mathbf e)=\mathbf e\cdot\mathbf S$ and similarly for $K$.
+\textbf{(a)} For a unit $\mathbf e$, applying the first map twice gives
+\[
+S^2(\mathbf e)(a^0,\mathbf a)
+=(0,\mathbf e(\mathbf e\cdot\mathbf a)-\mathbf a).
+\]
+Taking another cross product with $\mathbf e$ annihilates the first
+term and changes the second to $-\mathbf e\times\mathbf a$.
+Since this holds on every four-vector, $\boxed{S^3(\mathbf e)=-S(\mathbf e)}$.
+For the boost map,
+\[
+K^2(\mathbf e)(a^0,\mathbf a)
+=(a^0,\mathbf e(\mathbf e\cdot\mathbf a)),
+\]
+and the next application returns
+$(\mathbf e\cdot\mathbf a,a^0\mathbf e)$.
+Thus $\boxed{K^3(\mathbf e)=K(\mathbf e)}$.
+\textbf{(b)} Put $K=\widehat{\boldsymbol\beta}\cdot\mathbf K$.
+For every positive integer $j$, the preceding identity gives
+$K^{2j}=K^2$ and $K^{2j+1}=K$. Separating odd and even powers in
+the exponential series gives
+\begin{align*}
+e^{-\zeta K}
+&=I-K\sum_{j=0}^\infty\frac{\zeta^{2j+1}}{(2j+1)!}
+ +K^2\sum_{j=1}^\infty\frac{\zeta^{2j}}{(2j)!}\\
+&=\boxed{I-K\sinh\zeta+K^2(\cosh\zeta-1).}
+\end{align*}
+The identity includes the transverse subspace, on which $K$ vanishes
+and the transformation is exactly the identity.
+
+\Needspace{5\baselineskip}
+\par\bigskip
+\noindent\textbf{11.11}\quad Two Lorentz transformations differ by an infinitesimal amount. In the notation of Section 11.7 they are represented by $A_{1}=e^{L}$, $A_{2}=e^{L+\delta L}$. Without using explicit matrix representations show that \emph{to first order in} $\delta L$ the Lorentz transformation $A=A_{2}A_{1}^{-1}$ can be written as
+\[
+A=I+\delta L+\frac{1}{2!}\,[L,\delta L]+\frac{1}{3!}\,[L,[L,\delta L]]+\frac{1}{4!}\,[L,[L,[L,\delta L]]]+\cdots
+\]
+\emph{Hint}: The early terms can be found by brute force, but alternatively consider the Taylor series expansion in $\lambda$ of the operator $A(\lambda)=e^{\lambda(L+\delta L)}e^{-\lambda L}$ and then put $\lambda=1$.
+\solution
+Define $A(\lambda)=e^{\lambda(L+\delta L)}e^{-\lambda L}$ and
+differentiate without commuting $L$ and $\delta L$:
+\[
+\frac{dA}{d\lambda}=(L+\delta L)A-AL=[L,A]+\delta L\,A,
+\qquad A(0)=I.
+\]
+Write $A=I+B+O(\delta L^2)$ with $B$ first order. Its equation is
+\[
+B'=[L,B]+\delta L,\qquad B(0)=0.
+\]
+To solve it, conjugate by $e^{-\lambda L}$:
+\[
+\frac d{d\lambda}(e^{-\lambda L}Be^{\lambda L})
+=e^{-\lambda L}\delta L e^{\lambda L}.
+\]
+Integrating and changing the integration variable gives
+\[
+B(\lambda)=\int_0^\lambda e^{sL}\delta L e^{-sL}\,ds.
+\]
+The conjugated operator has derivatives
+$\frac{d^n}{ds^n}(e^{sL}\delta Le^{-sL})|_{s=0}
+=\operatorname{ad}_L^n(\delta L)$, where
+$\operatorname{ad}_L X=[L,X]$. Thus
+\[
+B(\lambda)=\sum_{n=0}^\infty
+\frac{\lambda^{n+1}}{(n+1)!}\operatorname{ad}_L^n(\delta L).
+\]
+Putting $\lambda=1$ proves, with no matrix representation,
+\[
+\boxed{A=I+\delta L+\frac{[L,\delta L]}{2!}
++\frac{[L,[L,\delta L]]}{3!}
++\frac{[L,[L,[L,\delta L]]]}{4!}+\cdots
++O(\delta L^2).}
+\]
+Here $L$ need not be small. The expansion is only in the variation
+$\delta L$; replacing the full answer by $I+\delta L$ would lose
+terms of that same first order whenever the generators do not commute.
+
+\Needspace{5\baselineskip}
+\par\bigskip
+\noindent\textbf{11.12}\quad Apply the result of Problem 11.11 to a purely algebraic \erratum{derivation} of (11.116) on Thomas precession.
+\begin{enumerate}
+\item[(a)] With
+\begin{align*}
+L&=-\frac{\boldsymbol{\beta}\cdot\mathbf{K}(\tanh^{-1}\beta)}{\beta}\\[6pt]
+L+\delta L&=-\frac{(\boldsymbol{\beta}+\delta\boldsymbol{\beta}_{\parallel}+\delta\boldsymbol{\beta}_{\perp})\cdot\mathbf{K}(\tanh^{-1}\beta')}{\beta'}
+\end{align*}
+where $\beta'=\sqrt{(\boldsymbol{\beta}+\delta\boldsymbol{\beta}_{\parallel})^{2}+(\delta\boldsymbol{\beta}_{\perp})^{2}}$, show that
+\[
+\delta L=-\gamma^{2}\delta\boldsymbol{\beta}_{\parallel}\cdot\mathbf{K}-\frac{\delta\boldsymbol{\beta}_{\perp}\cdot\mathbf{K}(\tanh^{-1}\beta)}{\beta}
+\]
+\item[(b)] Using the commutation relations for $\mathbf{K}$ and $\mathbf{S}$, show that
+\begin{align*}
+C_{1}&=[L,\delta L]=-\left(\frac{\tanh^{-1}\beta}{\beta}\right)^{2}\!(\boldsymbol{\beta}\times\delta\boldsymbol{\beta}_{\perp})\cdot\mathbf{S}\\
+C_{2}&=[L,C_{1}]=(\tanh^{-1}\beta)^{2}\,\delta L_{\perp}\\
+C_{3}&=[L,C_{2}]=(\tanh^{-1}\beta)^{2}C_{1}\\
+C_{4}&=[L,C_{3}]=(\tanh^{-1}\beta)^{4}\,\delta L_{\perp}
+\end{align*}
+where $\delta L_{\perp}$ is the term in $\delta L$ involving $\delta\boldsymbol{\beta}_{\perp}$.
+\item[(c)] Sum the series of terms for $A_{T}=A_{2}A_{1}^{-1}$ to obtain
+\[
+A_{T}=I-(\gamma^{2}\delta\boldsymbol{\beta}_{\parallel}+\gamma\delta\boldsymbol{\beta}_{\perp})\cdot\mathbf{K}-\frac{\gamma^{2}}{\gamma+1}\,(\boldsymbol{\beta}\times\delta\boldsymbol{\beta}_{\perp})\cdot\mathbf{S}
+\]
+correct to first order in $\delta\boldsymbol{\beta}$. [See D. Shelupsky, \emph{Am. J. Phys.} \textbf{35}, 650 (1967).]
+\end{enumerate}
+\solution
+Put $\eta=\tanh^{-1}\beta$ and
+$\mathbf n=\boldsymbol\beta/\beta$, so $L=-\eta\mathbf n\cdot\mathbf K$.
+\textbf{(a)} To first order, the magnitude changes by
+$\delta\beta=\mathbf n\cdot\delta\boldsymbol\beta_\parallel$,
+whereas the direction changes by
+$\delta\mathbf n=\delta\boldsymbol\beta_\perp/\beta$.
+Since $d\eta/d\beta=(1-\beta^2)^{-1}=\gamma^2$,
+\[
+\delta(\eta\mathbf n)
+=\gamma^2\delta\boldsymbol\beta_\parallel
++\frac\eta\beta\delta\boldsymbol\beta_\perp,
+\]
+and hence
+\[
+\boxed{\delta L=-\gamma^2\delta\boldsymbol\beta_\parallel\cdot\mathbf K
+-\frac\eta\beta\delta\boldsymbol\beta_\perp\cdot\mathbf K.}
+\]
+\textbf{(b)} Equation (11.99) implies
+$[\mathbf a\cdot\mathbf K,\mathbf b\cdot\mathbf K]
+=-(\mathbf a\times\mathbf b)\cdot\mathbf S$ and
+$[\mathbf a\cdot\mathbf K,\mathbf b\cdot\mathbf S]
+=(\mathbf a\times\mathbf b)\cdot\mathbf K$.
+The parallel part commutes with $L$, so
+\[
+C_1=-\frac{\eta^2}{\beta^2}
+ (\boldsymbol\beta\times\delta\boldsymbol\beta_\perp)\cdot\mathbf S.
+\]
+One further commutator uses
+$\boldsymbol\beta\times(\boldsymbol\beta\times
+\delta\boldsymbol\beta_\perp)=-\beta^2\delta\boldsymbol\beta_\perp$:
+\[
+C_2=-\frac{\eta^3}{\beta}\delta\boldsymbol\beta_\perp\cdot\mathbf K
+=\eta^2\delta L_\perp.
+\]
+The next two immediately give $C_3=\eta^2C_1$ and
+$C_4=\eta^4\delta L_\perp$, as stated. The induction continues
+alternating the same two operators.
+\textbf{(c)} Inserting them in Problem 11.11 groups the series as
+\begin{align*}
+A_T={}&I+\delta L_\parallel
++\delta L_\perp\left(1+\frac{\eta^2}{3!}+\frac{\eta^4}{5!}+\cdots\right)\\
+&+C_1\left(\frac1{2!}+\frac{\eta^2}{4!}+\frac{\eta^4}{6!}+\cdots\right)\\
+={}&I+\delta L_\parallel
++\frac{\sinh\eta}{\eta}\delta L_\perp
++\frac{\cosh\eta-1}{\eta^2}C_1.
+\end{align*}
+Use $\sinh\eta=\gamma\beta$, $\cosh\eta=\gamma$, and
+$(\gamma-1)/\beta^2=\gamma^2/(\gamma+1)$ to obtain
+\[
+\boxed{A_T=I-(\gamma^2\delta\boldsymbol\beta_\parallel
++\gamma\delta\boldsymbol\beta_\perp)\cdot\mathbf K
+-\frac{\gamma^2}{\gamma+1}
+(\boldsymbol\beta\times\delta\boldsymbol\beta_\perp)\cdot\mathbf S
++O(\delta\boldsymbol\beta^2).}
+\]
+The rotation term is the infinitesimal Thomas rotation in the
+coordinate-transformation convention of (11.116). All apparent
+$1/\beta$ factors have regular limits as $\beta\to0$; in particular
+the rotation starts at $-\tfrac12(\boldsymbol\beta\times
+\delta\boldsymbol\beta)\cdot\mathbf S$.
+
+\Needspace{5\baselineskip}
+\par\bigskip
+\noindent\textbf{11.13}\quad An infinitely long straight wire of negligible cross-sectional area is at rest and has a uniform linear charge density $q_{0}$ in the inertial frame $K'$. The frame $K'$ (and the wire) move with a velocity $\mathbf{v}$ parallel to the direction of the wire with respect to the laboratory frame $K$.
+\begin{enumerate}
+\item[(a)] Write down the electric and magnetic fields in cylindrical coordinates in the rest frame of the wire. Using the Lorentz transformation properties of the fields, find the components of the electric and magnetic fields in the laboratory.
+\item[(b)] What are the charge and current densities associated with the wire in its rest frame? In the laboratory?
+\item[(c)] From the laboratory charge and current densities, calculate directly the electric and magnetic fields in the laboratory. Compare with the results of part a.
+\end{enumerate}
+\solution
+Take the wire along $z$ and $\mathbf v=v\hat{\mathbf z}$.
+\textbf{(a)} A Gaussian cylinder of radius $\rho$ and length $L$
+in the rest frame gives $2\pi\rho L E'_\rho=4\pi q_0L$.
+There is no current in that frame, so
+\[
+\mathbf E'=\frac{2q_0}{\rho}\hat{\boldsymbol\rho},\qquad
+\mathbf B'=0.
+\]
+The inverse of the field transformation (11.149) has
+$\boldsymbol\beta\to-\boldsymbol\beta$. Since the electric field
+is transverse and $\rho' =\rho$, it gives
+\[
+\boxed{E_\rho=\frac{2\gamma q_0}{\rho},\qquad
+B_\phi=\frac{2\gamma\beta q_0}{\rho},}
+\]
+with every other component zero. In particular
+$\hat{\mathbf z}\times\hat{\boldsymbol\rho}=\hat{\boldsymbol\phi}$
+fixes the sign of $B_\phi$.
+\textbf{(b)} To avoid confusing charge density with the cylindrical
+radius, denote volume charge density by $\rho_e$. In Cartesian
+transverse coordinates the distributions are
+\[
+\rho'_e=q_0\delta(x')\delta(y'),\quad \mathbf J'=0.
+\]
+Transform the four-current $(c\rho'_e,\mathbf0)$ by the inverse
+boost. The transverse delta functions are unchanged, yielding
+\[
+\boxed{\rho_e=\gamma q_0\delta(x)\delta(y),\qquad
+\mathbf J=\gamma q_0v\delta(x)\delta(y)\hat{\mathbf z}.}
+\]
+Equivalently the laboratory line charge and current are
+$\lambda=\gamma q_0$ and $I=\lambda v$.
+\textbf{(c)} The densities are time independent. Gauss's law gives
+$E_\rho(2\pi\rho L)=4\pi\lambda L$, while the Gaussian-unit
+Amp\`ere law gives $B_\phi(2\pi\rho)=4\pi I/c$. Consequently
+$E_\rho=2\lambda/\rho$ and $B_\phi=2I/(c\rho)$, which reproduce
+both transformed fields, including their directions.
+
+\Needspace{5\baselineskip}
+\par\bigskip
+\noindent\textbf{11.14}\quad\begin{enumerate}
+\item[(a)] Express the Lorentz scalars $F^{\alpha\beta}F_{\alpha\beta}$, $\mathcal{F}^{\alpha\beta}F_{\alpha\beta}$, and $\mathcal{F}^{\alpha\beta}\mathcal{F}_{\alpha\beta}$ in terms of $\mathbf{E}$ and $\mathbf{B}$. Are there any other invariants quadratic in the field strengths $\mathbf{E}$ and $\mathbf{B}$?
+\item[(b)] Is it possible to have an electromagnetic field that appears as a purely electric field in one inertial frame and as a purely magnetic field in some other inertial frame? What are the criteria imposed on $\mathbf{E}$ and $\mathbf{B}$ such that there is an inertial frame in which there is no electric field?
+\item[(c)] For macroscopic media, $\mathbf{E}$, $\mathbf{B}$ form the field tensor $F^{\alpha\beta}$ and $\mathbf{D}$, $\mathbf{H}$ the tensor $G^{\alpha\beta}$. What further invariants can be formed? What are their explicit expressions in terms of the 3-vector fields?
+\end{enumerate}
+\solution
+\textbf{(a)} Lowering both indices changes the signs of the
+$0i$ entries but leaves the spatial entries unchanged. Antisymmetry
+counts each independent entry twice, so
+\begin{align*}
+F^{\alpha\beta}F_{\alpha\beta}
+ &=2(-E_x^2-E_y^2-E_z^2+B_x^2+B_y^2+B_z^2)
+ =\boxed{2(B^2-E^2)},\\
+\mathcal F^{\alpha\beta}F_{\alpha\beta}
+ &=2[-\mathbf B\cdot\mathbf E+(-\mathbf E)\cdot\mathbf B]
+ =\boxed{-4\mathbf E\cdot\mathbf B},\\
+\mathcal F^{\alpha\beta}\mathcal F_{\alpha\beta}
+ &=\boxed{2(E^2-B^2)}.
+\end{align*}
+Here (11.140) substitutes $(\mathbf E,\mathbf B)\mapsto
+(\mathbf B,-\mathbf E)$ to form the dual. Thus there are only two
+independent quadratic invariants. Indeed a rotational scalar
+quadratic in the two vectors is a linear combination of $E^2$,
+$B^2$, and $\mathbf E\cdot\mathbf B$; invariance under a boost
+requires the first two coefficients to be opposite. The dot product
+is a pseudoscalar under a spatial reflection, but a scalar under
+proper Lorentz transformations.
+\textbf{(b)} A nonzero purely electric field has $B^2-E^2<0$;
+a purely magnetic field has $B^2-E^2>0$. The invariant cannot
+change sign, so the proposed conversion is impossible unless the
+entire field is zero. For a frame with $\mathbf E'=0$, the necessary
+conditions for a nonzero field are
+\[
+\boxed{\mathbf E\cdot\mathbf B=0,\qquad B^2>E^2.}
+\]
+They are also sufficient. Choose the frame velocity
+\[
+\boldsymbol\beta=\frac{\mathbf E\times\mathbf B}{B^2},
+\qquad |\boldsymbol\beta|=E/B<1.
+\]
+Then $\boldsymbol\beta\cdot\mathbf E=0$ and
+$\boldsymbol\beta\times\mathbf B=-\mathbf E$, so (11.149)
+gives $\mathbf E'=0$.  These are pointwise criteria: for a
+nonuniform field to be purely magnetic throughout a region, one
+constant boost must eliminate $\mathbf E$ at every point of that
+region.  Independent pointwise choices do not establish such a
+global frame.  The remaining field has magnitude
+$\sqrt{B^2-E^2}$. A nonzero null field, with
+$\mathbf E\cdot\mathbf B=0$ and $E=B$, would require a light-speed
+boost and is not an exception. The identically zero field is a
+separate trivial case.
+\textbf{(c)} Forming the same contractions with $G$, whose entries
+are $(\mathbf D,\mathbf H)$, gives the four additional independent
+quadratic invariants
+\begin{align*}
+G^{\alpha\beta}G_{\alpha\beta}&=2(H^2-D^2),\\
+\mathcal G^{\alpha\beta}G_{\alpha\beta}&=-4\mathbf D\cdot\mathbf H,\\
+F^{\alpha\beta}G_{\alpha\beta}&=2(\mathbf B\cdot\mathbf H-
+\mathbf E\cdot\mathbf D),\\
+\mathcal F^{\alpha\beta}G_{\alpha\beta}
+=F^{\alpha\beta}\mathcal G_{\alpha\beta}
+&=-2(\mathbf B\cdot\mathbf D+\mathbf E\cdot\mathbf H).
+\end{align*}
+Dualizing both factors supplies no new quantity:
+$\mathcal G\!:\!\mathcal G=-G\!:\!G$ and
+$\mathcal F\!:\!\mathcal G=-F\!:\!G$, where the colon denotes the
+full index contraction. Constitutive relations can impose further
+relations among these quantities for a particular medium.
+
+\Needspace{5\baselineskip}
+\par\bigskip
+\noindent\textbf{11.15}\quad In a certain reference frame a static, uniform, electric field $E_{0}$ is parallel to the $x$ axis, and a static, uniform, magnetic induction $B_{0}=2E_{0}$ lies in the $x$-$y$ plane, making an angle $\theta$ with the axis. Determine the relative velocity of a reference frame in which the electric and magnetic fields are parallel. What are the fields in that frame for $\theta\ll1$ and $\theta\to(\pi/2)$?
+\solution
+Write $s=\sin\theta$ and $h=\cos\theta$, with $0\leq\theta\leq\pi$
+for the angle between the two initial fields. Choose a boost perpendicular to the initial fields, $\boldsymbol\beta=b\hat{\mathbf z}$.
+Then $\mathbf E=E_0\hat{\mathbf x}$ and
+$\mathbf B=2E_0(h\hat{\mathbf x}+s\hat{\mathbf y})$ give
+\[
+\mathbf E'=\gamma E_0[(1-2bs)\hat{\mathbf x}+2bh\hat{\mathbf y}],
+\quad
+\mathbf B'=\gamma E_0[2h\hat{\mathbf x}+(2s-b)\hat{\mathbf y}].
+\]
+Their cross product vanishes if
+\[
+(1-2bs)(2s-b)-4bh^2
+=2s(1+b^2)-5b=0.
+\]
+The root continuous with $b=0$ at $s=0$ and less than unity is
+\[
+\boxed{\mathbf v=c\frac{4\sin\theta}
+ {5+\sqrt{25-16\sin^2\theta}}\hat{\mathbf z}.}
+\]
+For $s\ne0$ the other root is its reciprocal, and is not a physical
+boost. The displayed transformed fields with this $b$ also specify
+their common direction. This frame is not unique: a subsequent
+boost along the common field direction preserves parallelism.
+
+For $\theta\ll1$ the quadratic gives $b=2\theta/5+O(\theta^3)$,
+$\gamma=1+2\theta^2/25+O(\theta^4)$, so, to first order,
+\[
+\boxed{\mathbf E'=E_0(\hat{\mathbf x}+\tfrac45\theta\hat{\mathbf y})
++O(E_0\theta^2),\qquad
+\mathbf B'=2E_0(\hat{\mathbf x}+\tfrac45\theta\hat{\mathbf y})
++O(\theta^2).}
+\]
+The fields tilt through $4\theta/5$ at this order. Their exact
+magnitudes can also be found without further component algebra.
+The invariants give $B'^2-E'^2=3E_0^2$ and
+$E'B'=2E_0^2|\cos\theta|$ once their cross product vanishes.
+For $0\leq\theta<\pi/2$ they point in the same direction;
+for $\pi/2<\theta\leq\pi$ they are antiparallel. If ``parallel''
+is meant to exclude antiparallel directions, that latter range
+has no solution, because the negative invariant $\mathbf E\cdot\mathbf B$
+cannot become positive. The displayed boost makes the fields
+collinear throughout the range. Solving the quadratic for $E'^2$ gives
+\[
+E'^2=\frac{E_0^2}{2}[\sqrt{9+16\cos^2\theta}-3],\qquad
+B'^2=\frac{E_0^2}{2}[\sqrt{9+16\cos^2\theta}+3].
+\]
+Thus $E'=E_0(1-2\theta^2/5+O(\theta^4))$ and
+$B'=2E_0(1-\theta^2/10+O(\theta^4))$.
+As $\theta\to\pi/2$, $b\to1/2$, $\gamma\to2/\sqrt3$, and the
+component formulas give
+\[
+\boxed{\mathbf E'\to0,\qquad \mathbf B'\to\sqrt3E_0\hat{\mathbf y}.}
+\]
+At the endpoint ``parallel'' therefore means a vanishing cross
+product; the zero electric field has no direction.
+
+\Needspace{5\baselineskip}
+\par\bigskip
+\noindent\textbf{11.16}\quad In the rest frame of a conducting medium the current density satisfies Ohm's law, $\mathbf{J}'=\sigma\mathbf{E}'$, where $\sigma$ is the conductivity and primes denote quantities in the rest frame.
+\begin{enumerate}
+\item[(a)] Taking into account the possibility of convection current as well as conduction current, show that the covariant generalization of Ohm's law is
+\[
+J^{\alpha}-\frac{1}{c^{2}}\,(U_{\beta}J^{\beta})U^{\alpha}=\frac{\sigma}{c}\,F^{\alpha\beta}U_{\beta}
+\]
+where $U^{\alpha}$ is the 4-velocity of the medium.
+\item[(b)] Show that if the medium has a velocity $\mathbf{v}=c\boldsymbol{\beta}$ with respect to some inertial frame that the 3-vector current in that frame is
+\[
+\mathbf{J}=\gamma\sigma[\mathbf{E}+\boldsymbol{\beta}\times\mathbf{B}-\boldsymbol{\beta}(\boldsymbol{\beta}\cdot\mathbf{E})]+\rho\mathbf{v}
+\]
+where $\rho$ is the charge density observed in that frame.
+\item[(c)] If the medium is uncharged in its rest frame ($\rho'=0$), what is the charge density and the expression for $\mathbf{J}$ in the frame of part b? This is the relativistic generalization, in the Gaussian units of this chapter, of the equation $\erratum{\mathbf{J}=\sigma(\mathbf{E}+\mathbf{v}\times\mathbf{B}/c)}$ (compare the SI form on p.~320).
+\end{enumerate}
+\solution
+\textbf{(a)} The proper charge density is the scalar
+$\rho_0=U_\beta J^\beta/c^2$. Decompose the four-current into a
+convective part $\rho_0 U^\alpha$ and an orthogonal conduction
+part $j^\alpha=J^\alpha-\rho_0U^\alpha$, for which
+$U_\alpha j^\alpha=0$. In the medium's rest frame,
+$U'^\alpha=(c,\mathbf0)$, $\rho_0=\rho'$, and
+$j'^\alpha=(0,\mathbf J')$. Since $F'^{i0}=E'_i$,
+\[
+\frac\sigma c F'^{\alpha\beta}U'_\beta
+=(0,\sigma\mathbf E')=j'^\alpha.
+\]
+Equality of these four-vectors in one frame implies equality in
+all frames:
+\[
+\boxed{J^\alpha-\frac{U_\beta J^\beta}{c^2}U^\alpha
+=\frac\sigma c F^{\alpha\beta}U_\beta.}
+\]
+The right side is automatically orthogonal to $U$ because $F$ is
+antisymmetric. Here $\sigma$ is the scalar conductivity defined
+by a local, isotropic rest-frame Ohm law.
+\textbf{(b)} With $U^\alpha=\gamma(c,\mathbf v)$, lower indices
+ give $U_\alpha=\gamma(c,-\mathbf v)$. The temporal and spatial
+components of the covariant equation are respectively
+\[
+\rho-\gamma\rho_0=\frac{\gamma\sigma}{c}
+\boldsymbol\beta\cdot\mathbf E,
+\qquad
+\mathbf J-\gamma\rho_0\mathbf v
+=\gamma\sigma(\mathbf E+\boldsymbol\beta\times\mathbf B).
+\]
+Substitute $\gamma\rho_0=\rho-(\gamma\sigma/c)
+\boldsymbol\beta\cdot\mathbf E$ into the second equation:
+\[
+\boxed{\mathbf J=\rho\mathbf v+\gamma\sigma
+[\mathbf E+\boldsymbol\beta\times\mathbf B
+-\boldsymbol\beta(\boldsymbol\beta\cdot\mathbf E)].}
+\]
+\textbf{(c)} If $\rho'=\rho_0=0$, the two component equations
+instead directly give
+\[
+\boxed{\rho=\frac{\gamma\sigma}{c}\boldsymbol\beta\cdot\mathbf E,
+\qquad\mathbf J=\gamma\sigma(\mathbf E+
+\boldsymbol\beta\times\mathbf B).}
+\]
+A neutral conductor need not remain locally neutral in a frame
+where its conduction current moves. At small $v/c$, the current
+reduces to $\sigma(\mathbf E+\mathbf v\times\mathbf B/c)$.
+The factor $1/c$ in the corrected statement is required by the
+Gaussian units used in this chapter; the reference on printed
+p.~320 is in the earlier SI-unit part of the book.
+
+\Needspace{5\baselineskip}
+\par\bigskip
+\noindent\textbf{11.17}\quad The electric and magnetic fields (11.152) of a charge in uniform motion can be obtained from Coulomb's law in the charge's rest frame and the fact that the field strength $F^{\alpha\beta}$ is an antisymmetric tensor of rank 2 without considering \emph{explicitly} the Lorentz transformation. The idea is the following. For a charge in uniform motion the only relevant variables are the charge's 4-velocity $U^{\alpha}$ and the relative coordinate $X^{\alpha}=x^{\alpha}_{p}-x^{\alpha}_{q}$, where $x^{\alpha}_{p}$ and $x^{\alpha}_{q}$ are the 4-vector coordinates of the observation point and the charge, respectively. The only \erratum{ordinary antisymmetric tensor formed without a Levi-Civita tensor} is $(X^{\alpha}U^{\beta}-X^{\beta}U^{\alpha})$. \erratum{The dual tensor is excluded by the absence of a magnetic field in the charge rest frame.} Thus the electromagnetic field $F^{\alpha\beta}$ must be this tensor multiplied by some scalar function of the possible scalar products, $X_{\alpha}X^{\alpha}$, $X_{\alpha}U^{\alpha}$, $U_{\alpha}U^{\alpha}$.
+\begin{enumerate}
+\item[(a)] For the geometry of Fig.~11.8 the coordinates of $P$ and $q$ at a common time in $K$ can be written $x^{\alpha}_{p}=(ct,\mathbf{b})$, $x^{\alpha}_{q}=(ct,\mathbf{v}t)$, with $\mathbf{b}\cdot\mathbf{v}=0$. By considering the general form of $F^{\alpha\beta}$ in the rest frame of the charge, show that
+\[
+F^{\alpha\beta}=\frac{q}{c}\frac{(X^{\alpha}U^{\beta}-X^{\beta}U^{\alpha})}{\left[\dfrac{1}{c^{2}}\,(U_{\alpha}X^{\alpha})^{2}-X_{\alpha}X^{\alpha}\right]^{3/2}}
+\]
+Verify that this yields the expressions (11.152) in the inertial frame $K$.
+\item[(b)] Repeat the calculation, using as the starting point the common-time coordinates in the rest frame, $x'^{\,\alpha}_{p}=(ct',\mathbf{b}-\mathbf{v}t')$ and $x'^{\,\alpha}_{q}=(ct',0)$. Show that
+\[
+F^{\alpha\beta}=\frac{q}{c}\frac{(Y^{\alpha}U^{\beta}-Y^{\beta}U^{\alpha})}{(-Y_{\alpha}Y^{\alpha})^{3/2}}
+\]
+where $Y'^{\alpha}=x'^{\,\alpha}_{p}-x'^{\,\alpha}_{q}$. Verify that the fields are the same as in part a. Note that to obtain the results of (11.152) it is necessary to use the time $t$ of the observation point $P$ in $K$ as the time parameter.
+\item[(c)] Finally, consider the coordinate $x^{\alpha}_{p}=(ct,\mathbf{b})$ and the ``retarded-time'' coordinate $x^{\alpha}_{q}=[ct-R,\boldsymbol{\beta}(ct-R)]$ where $R$ is the distance between $P$ and $q$ at the retarded time. Define the difference as $Z^{\alpha}=[R,\mathbf{b}-\boldsymbol{\beta}(ct-R)]$. Show that in terms of $Z^{\alpha}$ and $U^{\alpha}$ the field is
+\[
+F^{\alpha\beta}=\frac{q}{c}\frac{(Z^{\alpha}U^{\beta}-Z^{\beta}U^{\alpha})}{\left(\dfrac{1}{c}\,U_{\alpha}Z^{\alpha}\right)^{3}}
+\]
+\end{enumerate}
+\solution
+Let $X\wedge U$ denote $X^\alpha U^\beta-X^\beta U^\alpha$.
+A dual tensor constructed with the Levi-Civita tensor is also
+algebraically possible, but its coefficient must vanish: in the
+rest frame it would supply a radial magnetic field, absent from
+Coulomb's solution. Thus the ordinary tensor specified in the
+question is the relevant one.
+\textbf{(a)} In the rest frame, $U'=(c,\mathbf0)$, and
+\[
+S^2\equiv\frac{(U\cdot X)^2}{c^2}-X^2
+=(X'^0)^2-[(X'^0)^2-|\mathbf X'|^2]=|\mathbf X'|^2.
+\]
+Also $(X'\wedge U')^{i0}=cX'^i$. Matching
+$F'^{i0}=qX'^i/|\mathbf X'|^3$ fixes both the coefficient and
+its radial dependence, independently of the rest-frame time
+separation. Hence
+\[
+\boxed{F^{\alpha\beta}=\frac qc\frac{(X\wedge U)^{\alpha\beta}}{S^3}.}
+\]
+For simultaneous laboratory events,
+$X=(0,\mathbf r)$, $\mathbf r=\mathbf b-\mathbf vt$, and
+$U=\gamma(c,\mathbf v)$. Since $\mathbf b\cdot\mathbf v=0$,
+\[
+U\cdot X=\gamma v^2t,\qquad X^2=-b^2-v^2t^2,
+\quad S^2=b^2+\gamma^2v^2t^2.
+\]
+Reading the tensor entries gives
+\[
+\boxed{\mathbf E=\frac{q\gamma(\mathbf b-\mathbf vt)}
+{(b^2+\gamma^2v^2t^2)^{3/2}},\qquad
+\mathbf B=\boldsymbol\beta\times\mathbf E.}
+\]
+In particular its longitudinal component is
+$-q\gamma vt/(b^2+\gamma^2v^2t^2)^{3/2}$ and its transverse
+component is $q\gamma\mathbf b/(b^2+\gamma^2v^2t^2)^{3/2}$,
+which are (11.152).
+\textbf{(b)} Now $Y'=(0,\mathbf b-\mathbf vt')$, so
+$U'\cdot Y'=0$ and $S^2=-Y^2$. At the observation event
+$\mathbf x_p=\mathbf b$, the time transformation is $t'=\gamma t$.
+Boosting $Y'$ back to the laboratory therefore gives
+\[
+Y^0=-\gamma^2v^2t/c,\qquad
+\mathbf Y=\mathbf b-\gamma^2\mathbf vt.
+\]
+Equivalently, without components,
+\[
+Y=X-\frac{U\cdot X}{c^2}U,\qquad
+Y\wedge U=X\wedge U,\qquad
+-Y^2=\frac{(U\cdot X)^2}{c^2}-X^2.
+\]
+Consequently
+\[
+\boxed{F^{\alpha\beta}=\frac qc
+\frac{(Y\wedge U)^{\alpha\beta}}{(-Y^2)^{3/2}}}
+\]
+has precisely the numerator and denominator of part (a).
+For example $Y^ic\gamma-Y^0\gamma v_i
+=c\gamma(b_i-v_it)$, displaying explicitly the otherwise
+important cancellation of the extra factors of $\gamma$.
+\textbf{(c)} In the retarded construction,
+$Z=(R,\mathbf r+\boldsymbol\beta R)=X+[R/(\gamma c)]U$.
+Thus $Z\wedge U=X\wedge U$. The retarded separation is null,
+$Z^2=0$, and the scalar $S^2$ is unchanged by adding any multiple
+of $U$ to $X$. Therefore $S^2=(U\cdot Z/c)^2$.
+The positive, retarded root fixes the sign: writing
+$\mathbf r+\boldsymbol\beta R=R\mathbf n$,
+\[
+\frac{U\cdot Z}{c}=\gamma R(1-\boldsymbol\beta\cdot\mathbf n)>0
+\quad (|\boldsymbol\beta|<1).
+\]
+It follows that
+\[
+\boxed{F^{\alpha\beta}=\frac qc
+\frac{(Z\wedge U)^{\alpha\beta}}{(U\cdot Z/c)^3}.}
+\]
+The three choices select different events on the same straight
+charge world line, while leaving its perpendicular separation
+from the observation event unchanged.
+
+\Needspace{5\baselineskip}
+\par\bigskip
+\noindent\textbf{11.18}\quad The electric and magnetic fields of a particle of charge $q$ moving in a straight line with speed $v=\beta c$, given by (11.152), become more and more concentrated as $\beta\to1$, as is indicated in Fig.~11.9. Choose axes so that the charge moves along the $z$ axis in the positive direction, passing the origin at $t=0$. Let the spatial coordinates of the observation point be $(x,y,z)$ and define the transverse vector $\mathbf{r}_{\perp}$, with components $x$ and $y$. Consider the fields and the source in the limit of $\beta=1$.
+\begin{enumerate}
+\item[(a)] Show that the fields can be written as
+\[
+\mathbf{E}=2q\,\frac{\mathbf{r}_{\perp}}{r_{\perp}^{2}}\,\delta(ct-z);\qquad
+\mathbf{B}=2q\,\frac{\hat{\mathbf{v}}\times\mathbf{r}_{\perp}}{r_{\perp}^{2}}\,\delta(ct-z)
+\]
+where $\hat{\mathbf{v}}$ is a unit vector in the direction of the particle's velocity.
+\item[(b)] Show by substitution into the Maxwell equations that these fields are consistent with a 4-vector source density,
+\[
+J^{\alpha}=qcv^{\alpha}\delta^{(2)}(\mathbf{r}_{\perp})\delta(ct-z)
+\]
+where the 4-vector $v^{\alpha}=(1,\hat{\mathbf{v}})$.
+\item[(c)] Show that the fields of part a are derivable from either of the following 4-vector potentials,
+\[
+A^{0}=A^{z}=-2q\delta(ct-z)\,\ln(\lambda r_{\perp});\qquad\mathbf{A}_{\perp}=0
+\]
+or
+\[
+A^{0}=0=A^{z};\qquad\mathbf{A}_{\perp}=-2q\Theta(ct-z)\,\nabla_{\perp}\ln(\lambda r_{\perp})
+\]
+where $\lambda$ is an irrelevant parameter setting the scale of the logarithm.
+
+Show that the two potentials differ by a gauge transformation and find the gauge function, $\chi$.
+\end{enumerate}
+Reference: R.~Jackiw, D.~Kabat, and M.~Ortiz, \emph{Phys. Lett.} B \textbf{277}, 148 (1992).
+\solution
+Interpret the limit distributionally; it describes a formal
+lightlike source, not a massive particle accelerated to $c$.
+\textbf{(a)} With $s=z-vt$, the finite-speed fields are
+\[
+\mathbf E_\perp=\frac{q\gamma\mathbf r_\perp}
+{(r_\perp^2+\gamma^2s^2)^{3/2}},\qquad
+E_z=\frac{q\gamma s}{(r_\perp^2+\gamma^2s^2)^{3/2}},\qquad
+\mathbf B=\beta\hat{\mathbf z}\times\mathbf E_\perp.
+\]
+For fixed $r_\perp>0$, test the first kernel against a smooth
+compactly supported function $f(z)$ and set $u=\gamma(z-vt)$:
+\[
+\int\frac{\gamma f(z)\,dz}{(r_\perp^2+\gamma^2(z-vt)^2)^{3/2}}
+=\int\frac{f(vt+u/\gamma)\,du}{(r_\perp^2+u^2)^{3/2}}
+\longrightarrow \frac{2f(ct)}{r_\perp^2}.
+\]
+The last integral follows from the primitive
+$u/[r_\perp^2\sqrt{r_\perp^2+u^2}]$. For the longitudinal kernel the same change of variable gives
+\[
+\left|\int\frac{\gamma(z-vt)f(z)\,dz}
+{(r_\perp^2+\gamma^2(z-vt)^2)^{3/2}}\right|
+\leq\frac{\|f\|_\infty}{\gamma}
+\int_{-\infty}^{\infty}\frac{|u|\,du}{(r_\perp^2+u^2)^{3/2}}
+=\frac{2\|f\|_\infty}{\gamma r_\perp}\longrightarrow0.
+\]
+Consequently
+\[
+\boxed{\mathbf E=\mathbf D_\perp\delta(ct-z),\qquad
+\mathbf B=\hat{\mathbf z}\times\mathbf D_\perp\delta(ct-z),
+\quad\mathbf D_\perp=\frac{2q\mathbf r_\perp}{r_\perp^2}.}
+\]
+Here $\mathbf D_\perp$ is only an auxiliary vector, not a material
+displacement field. Its $1/r_\perp$ singularity is locally
+integrable in the transverse plane.
+\textbf{(b)} A small transverse circle gives
+$\oint (\mathbf r_\perp/r_\perp^2)\cdot d\mathbf a=2\pi$;
+therefore
+$\nabla_\perp\cdot\mathbf D_\perp=4\pi q\delta^{(2)}(\mathbf r_\perp)$.
+Also $\nabla_\perp\times\mathbf D_\perp=0$ distributionally,
+since $\mathbf D_\perp=2q\nabla_\perp\ln r_\perp$.
+Put $\delta=\delta(ct-z)$ and let $\delta'$ mean differentiation
+with respect to its argument. Then
+\begin{align*}
+\nabla\cdot\mathbf E&=4\pi q\delta^{(2)}(\mathbf r_\perp)\delta,
+&\nabla\cdot\mathbf B&=0,\\
+\nabla\times\mathbf E&=-\hat{\mathbf z}\times\mathbf D_\perp\delta',
+&\frac1c\partial_t\mathbf B&=\hat{\mathbf z}\times\mathbf D_\perp\delta',\\
+\nabla\times\mathbf B&=\hat{\mathbf z}
+(\nabla_\perp\cdot\mathbf D_\perp)\delta+\mathbf D_\perp\delta',
+&\frac1c\partial_t\mathbf E&=\mathbf D_\perp\delta'.
+\end{align*}
+The derivative terms cancel in both curl equations. The surviving
+sources are $\rho=q\delta^{(2)}(\mathbf r_\perp)\delta$ and
+$\mathbf J=c\rho\hat{\mathbf z}$, or
+\[
+\boxed{J^\alpha=qc(1,\hat{\mathbf z})\,
+\delta^{(2)}(\mathbf r_\perp)\delta(ct-z).}
+\]
+They satisfy $\partial_t\rho+\nabla\cdot\mathbf J=0$.
+\textbf{(c)} Set $L=\ln(\lambda r_\perp)$. For the first potential,
+$\Phi=A_z=-2q\delta L$, $\mathbf A_\perp=0$.
+Then $\mathbf E_\perp=-\nabla_\perp\Phi=2q\delta\nabla_\perp L$,
+while
+$E_z=-\partial_z\Phi-c^{-1}\partial_tA_z
+=-2q\delta'L+2q\delta'L=0$.
+The curl of $A_z\hat{\mathbf z}$ is
+$2q\delta\hat{\mathbf z}\times\nabla_\perp L$, as required.
+
+For the second potential, $\Phi=A_z=0$ and
+$\mathbf A_\perp=-2q\Theta(ct-z)\nabla_\perp L$.
+Its time derivative gives the same $\mathbf E$, and its
+$z$ derivative gives the same $\mathbf B$; its transverse curl
+is zero. In the convention
+$\mathbf A_2=\mathbf A_1+\nabla\chi$,
+$\Phi_2=\Phi_1-c^{-1}\partial_t\chi$, the gauge function is
+\[
+\boxed{\chi=-2q\Theta(ct-z)\ln(\lambda r_\perp).}
+\]
+Indeed $c^{-1}\partial_t\chi=-2q\delta L=\Phi_1$,
+$\partial_z\chi=2q\delta L=-A_{1z}$, and its transverse gradient
+is precisely $\mathbf A_{2\perp}$. Changing $\lambda$ leaves the
+fields unchanged.
+
+\Needspace{5\baselineskip}
+\par\bigskip
+\noindent\textbf{11.19}\quad A particle of mass $M$ and 4-momentum $P$ decays into two particles of masses $m_{1}$ and $m_{2}$.
+\begin{enumerate}
+\item[(a)] Use the conservation of energy and momentum in the form, $p_{2}=P-p_{1}$, and the invariance of scalar products of 4-vectors to show that the total energy of the first particle in the rest frame of the decaying particle is
+\[
+E_{1}=\frac{M^{2}+m_{1}^{2}-m_{2}^{2}}{2M}
+\]
+and that $E_{2}$ is obtained by interchanging $m_{1}$ and $m_{2}$.
+\item[(b)] Show that the \emph{kinetic energy} $T_{i}$ of the $i$th particle in the same frame is
+\[
+T_{i}=\Delta M\!\left(1-\frac{m_{i}}{M}-\frac{\Delta M}{2M}\right)
+\]
+where $\Delta M=M-m_{1}-m_{2}$ is the mass excess or $Q$ value of the process.
+\item[(c)] The charged pi-meson ($M=139.6$ MeV) decays into a mu-meson ($m_{1}=105.7$ MeV) and a neutrino ($m_{2}=0$). Calculate the kinetic energies of the mu-meson and the neutrino in the pi-meson's rest frame. The unique kinetic energy of the muon is the signature of a two-body decay. It entered importantly in the discovery of the pi-meson in photographic emulsions by Powell and coworkers in 1947.
+\end{enumerate}
+\solution
+\textbf{(a)} In energy units the mass-shell conditions are
+$P^2=M^2$ and $p_i^2=m_i^2$. Square $p_2=P-p_1$:
+\[
+m_2^2=M^2+m_1^2-2P\cdot p_1.
+\]
+In the parent rest frame $P=(M,\mathbf0)$, so
+$P\cdot p_1=ME_1$. Therefore
+\[
+\boxed{E_1=\frac{M^2+m_1^2-m_2^2}{2M},\qquad
+E_2=\frac{M^2+m_2^2-m_1^2}{2M}.}
+\]
+These satisfy $E_1+E_2=M$. Momentum conservation makes the
+momenta equal and opposite, with common magnitude
+\[
+p_*^2=E_1^2-m_1^2
+=\frac{[M^2-(m_1+m_2)^2][M^2-(m_1-m_2)^2]}{4M^2}.
+\]
+The decay is kinematically possible if $M\geq m_1+m_2$.
+\textbf{(b)} Subtract $m_i$ and use
+$m_j=M-m_i-\Delta M$:
+\begin{align*}
+T_i&=\frac{(M-m_i)^2-m_j^2}{2M}\\
+&=\frac{(M-m_i-m_j)(M-m_i+m_j)}{2M}\\
+&=\boxed{\Delta M\left(1-\frac{m_i}{M}-\frac{\Delta M}{2M}\right).}
+\end{align*}
+In particular $T_1+T_2=\Delta M$, as energy conservation requires.
+\textbf{(c)} With the stated masses, $\Delta M=33.9$ MeV and
+\[
+E_\nu=p_*=
+\frac{(139.6)^2-(105.7)^2}{2(139.6)}=29.7839183\ \mathrm{MeV}.
+\]
+The neutrino has zero rest energy, while
+$E_\mu=139.6-E_\nu=109.8160817$ MeV. Hence
+\[
+\boxed{T_\mu=4.11608\ \mathrm{MeV},\qquad
+T_\nu=29.78392\ \mathrm{MeV}.}
+\]
+Their sum is $33.9$ MeV, and their momentum magnitudes are both
+$29.78392$ MeV/$c$.
+
+\Needspace{5\baselineskip}
+\par\bigskip
+\noindent\textbf{11.20}\quad The lambda particle ($\Lambda$) is a neutral baryon of mass $M=1115$ MeV that decays with a lifetime of $\tau=2.9\times10^{-10}$ s into a nucleon of mass $m_{1}\simeq939$ MeV and a pi-meson of mass $m_{2}\simeq140$ MeV. It was first observed in flight by its charged decay mode $\Lambda\to p+\pi^{-}$ in cloud chambers. The charged tracks originate from a single point and have the appearance of an inverted vee or lambda. The particles' identities and momenta can be inferred from their ranges and curvature in the magnetic field of the chamber.
+\begin{enumerate}
+\item[(a)] Using conservation of momentum and energy and the invariance of scalar products of 4-vectors show that, if the opening angle $\theta$ between the two tracks is measured, the mass of the decaying particle can be found from the formula
+\[
+M^{2}=m_{1}^{2}+m_{2}^{2}+2E_{1}E_{2}-2p_{1}p_{2}\cos\theta
+\]
+where here $p_{1}$ and $p_{2}$ are the magnitudes of the 3-momenta.
+\item[(b)] A lambda particle is created with a total energy of 10 GeV in a collision in the top plate of a cloud chamber. How far on the average will it travel in the chamber before decaying? What range of opening angles will occur for a 10 GeV lambda if the decay is more or less isotropic in the lambda's rest frame?
+\end{enumerate}
+\solution
+\textbf{(a)} The parent four-momentum is $P=p_1+p_2$ in
+any frame. Squaring it and using the on-shell conditions gives
+\[
+\boxed{M^2=m_1^2+m_2^2+2(E_1E_2-\mathbf p_1\cdot\mathbf p_2)
+=m_1^2+m_2^2+2E_1E_2-2p_1p_2\cos\theta.}
+\]
+The measured momenta determine $E_i=\sqrt{p_i^2+m_i^2}$, so this
+is a mass reconstruction from the tracks, without knowing the
+parent's original energy.
+\textbf{(b)} For $E_\Lambda=10^4$ MeV,
+\[
+\gamma=\frac{10^4}{1115}=8.96861,\qquad
+\beta=\sqrt{1-\gamma^{-2}}=0.993764.
+\]
+The proper decay law is $\exp(-t'/\tau)$, and $t=\gamma t'$,
+so the mean distance traveled is
+\[
+\boxed{\langle\ell\rangle=\beta\gamma c\tau
+=\sqrt{(10^4/1115)^2-1}\,(299792458)(2.9\times10^{-10})
+=0.77487\ \mathrm m.}
+\]
+For the angular range, first solve the two-body problem in the
+parent rest frame:
+\[
+E_1^*=944.10135\ \mathrm{MeV},\quad
+E_2^*=170.89865\ \mathrm{MeV},\quad
+p_* =\sqrt{(E_1^*)^2-939^2}=98.01199\ \mathrm{MeV}.
+\]
+Choose the laboratory parent velocity along $z$ and put
+$u=\cos\theta_*$ for the proton's rest-frame emission angle.
+The transverse momenta remain opposite, while the longitudinal
+momenta become
+\[
+p_{1z}=\gamma(p_*u+\beta E_1^*),\qquad
+p_{2z}=\gamma(-p_*u+\beta E_2^*),\qquad
+|\mathbf p_{1\perp}|=|\mathbf p_{2\perp}|=p_*\sqrt{1-u^2}.
+\]
+Both longitudinal momenta are positive for every $-1\leq u\leq1$,
+since $\beta E_i^*>p_*$. Thus the opening angle is the sum
+\[
+\theta(u)=\tan^{-1}\frac{\sqrt{1-u^2}}{\gamma(u+a)}
++\tan^{-1}\frac{\sqrt{1-u^2}}{\gamma(b-u)},\quad
+ a=\frac{\beta E_1^*}{p_*},\quad b=\frac{\beta E_2^*}{p_*}.
+\]
+It is zero at $u=\pm1$. To locate its maximum, set $k=1/\gamma$.
+Differentiating the two arctangents gives
+\[
+\frac{d\theta}{du}=\frac{k}{\sqrt{1-u^2}}
+\left[\frac{1-bu}{(b-u)^2+k^2(1-u^2)}
+-\frac{1+au}{(a+u)^2+k^2(1-u^2)}\right].
+\]
+For an explicit algebraic reduction, the numerator after cross
+multiplication factors as
+\[
+\begin{aligned}
+&(1-bu)[(a+u)^2+k^2(1-u^2)]
+ -(1+au)[(b-u)^2+k^2(1-u^2)]\\
+&\quad=(a+b)[(k^2-1)u^3+(2-ab-k^2)u+a-b].
+\end{aligned}
+\]
+Since $a+b>0$, the stationary condition is
+\[
+(k^2-1)u^3+(2-ab-k^2)u+a-b=0.
+\]
+The sole root in $(-1,1)$ is $u=0.527082$; substitution gives
+$\theta_{\max}=0.08780948$ rad. Hence
+\[
+\boxed{0\leq\theta\leq5.03111^\circ.}
+\]
+For an isotropic decay $u$ is uniform on $[-1,1]$, so the full
+interval is populated; its endpoints are limiting configurations
+of zero measure. Equal transverse emission ($u=0$) need not
+maximize the opening angle when the daughter masses are unequal.
+
+\Needspace{5\baselineskip}
+\par\bigskip
+\noindent\textbf{11.21}\quad If a system of mass $M$ decays or transforms at rest into a number of particles, the sum of whose masses is less than $M$ by an amount $\Delta M$,
+\begin{enumerate}
+\item[(a)] show that the maximum kinetic energy of the $i$th particle (mass $m_{i}$) is
+\[
+(T_{i})_{\max}=\Delta M\!\left(1-\frac{m_{i}}{M}-\frac{\Delta M}{2M}\right)
+\]
+\item[(b)] determine the maximum kinetic energies in MeV and also the ratios to $\Delta M$ for each of the particles in the following decays or transformations of particles at rest:
+\begin{align*}
+\mu&\to e+\nu+\bar{\nu}\\
+K^{+}&\to\pi^{+}+\pi^{-}+\pi^{+}\\
+K^{\pm}&\to e^{\pm}+\pi^{0}+\nu\\
+K^{\pm}&\to\mu^{\pm}+\pi^{0}+\nu\\
+p+\bar{p}&\to2\pi^{+}+2\pi^{-}+\pi^{0}\\
+p+\bar{p}&\to K^{+}+K^{-}+3\pi^{0}
+\end{align*}
+\end{enumerate}
+\solution
+\textbf{(a)} Combine every daughter except $i$ into a
+four-vector $Q=\sum_{j\ne i}p_j$ with invariant mass $M_R=\sqrt{Q^2}$.
+When $M_R>0$, work in its rest frame: each constituent energy is
+at least its rest mass, so $M_R\geq\sum_{j\ne i}m_j$.
+If every remaining particle is massless, a collinear set can instead
+have $Q^2=0$; it has no rest frame, but obeys the same bound
+$M_R\geq0$.  Massive constituents attain their bound when they share
+a common velocity.  If the remainder contains both massive and
+massless particles, equality may require the massless energies to
+tend to zero.  The maximum below then denotes a kinematic supremum. Treating $i$ and the
+remainder as the two bodies in Problem 11.19 gives
+\[
+E_i=\frac{M^2+m_i^2-M_R^2}{2M}.
+\]
+This decreases with $M_R^2$, and therefore its upper endpoint
+uses $M_R=\sum_{j\ne i}m_j=M-m_i-\Delta M$. Subtracting $m_i$
+and factoring the difference of squares gives
+\[
+\boxed{(T_i)_{\max}=\frac{(M-m_i)^2-(M-m_i-\Delta M)^2}{2M}
+=\Delta M\left(1-\frac{m_i}{M}-\frac{\Delta M}{2M}\right).}
+\]
+This is a kinematic endpoint; a matrix element or phase-space
+factor can make the decay rate vanish at that exact endpoint.
+It does not assert that every daughter simultaneously has its
+maximum energy.
+\textbf{(b)} Use the rounded masses in the neighboring problems,
+\begin{gather*}
+m_e=0.511,\qquad m_\mu=105.7,\qquad m_{\pi^\pm}=139.6,\\
+m_{\pi^0}=135.0,\qquad m_p=938.5,\qquad m_{K^\pm}=493.7
+\qquad(\mathrm{MeV}),
+\end{gather*}
+and zero neutrino masses. The kaon mass is the rounded value of
+$493.677$ MeV in the Particle Data Group's charged-kaon mass
+review (2025 update). For annihilation at rest $M=2m_p=1877$ MeV.
+For each row first compute $\Delta M=M-\sum_jm_j$, then the
+fraction $f_i=1-m_i/M-\Delta M/(2M)$, and finally
+$(T_i)_{\max}=\Delta M f_i$. For example the three-pion kaon
+decay has $\Delta M=493.7-3(139.6)=74.9$ MeV and
+\[
+f_\pi=1-\frac{139.6}{493.7}-\frac{74.9}{2(493.7)}
+=0.6413814,\qquad (T_\pi)_{\max}=48.0395\ \mathrm{MeV}.
+\]
+Applying exactly this calculation to each distinct daughter species
+gives the complete table; identical or charge-conjugate daughters
+in the same row have the same endpoint.
+\begin{center}\small
+\begin{tabular}{llrrr}
+\toprule
+Parent process & Daughter & $\Delta M$ (MeV) & $(T_i)_{\max}$ (MeV) & $f_i$\\
+\midrule
+$\mu\to e\nu\bar\nu$ & $e$ &105.189&52.3402&0.497583\\
+& each $\nu,\bar\nu$ &105.189&52.8488&0.502417\\
+$K^+\to\pi^+\pi^-\pi^+$ & each $\pi$ &74.900&48.0395&0.641381\\
+$K^\pm\to e^\pm\pi^0\nu$ & $e^\pm$ &358.189&227.8817&0.636205\\
+& $\pi^0$ &358.189&130.3073&0.363795\\
+& $\nu$ &358.189&228.2524&0.637240\\
+$K^\pm\to\mu^\pm\pi^0\nu$ & $\mu^\pm$ &253.000&134.0075&0.529674\\
+& $\pi^0$ &253.000&118.9925&0.470326\\
+& $\nu$ &253.000&188.1742&0.743772\\
+$p\bar p\to2\pi^+2\pi^-\pi^0$ & each $\pi^\pm$ &1183.600&722.3933&0.610336\\
+& $\pi^0$ &1183.600&725.2939&0.612786\\
+$p\bar p\to K^+K^-3\pi^0$ & each $K^\pm$ &484.600&294.5810&0.607885\\
+& each $\pi^0$ &484.600&387.1895&0.798988\\
+\bottomrule
+\end{tabular}\end{center}
+The displayed precision documents the calculation with the stated
+rounded inputs, rather than implying more precise mass measurements.
+\footnote{Mass input: Particle Data Group, ``Charged Kaon Mass,''
+\href{https://pdg.lbl.gov/2025/reviews/rpp2024-rev-charged-kaon-mass.pdf}{PDG charged-kaon mass review (2025)}.}
+
+\Needspace{5\baselineskip}
+\par\bigskip
+\noindent\textbf{11.22}\quad The presence in the universe of an apparently uniform ``sea'' of blackbody radiation at a temperature of roughly 3K gives one mechanism for an upper limit on the energies of photons that have traveled an appreciable distance since their creation. Photon-photon collisions can result in the creation of a charged particle and its antiparticle (``pair creation'') if there is sufficient energy in the center of ``mass'' of the two photons. The lowest threshold and also the largest cross section occurs for an electron-positron pair.
+\begin{enumerate}
+\item[(a)] Taking the energy of a typical 3K photon to be $E=2.5\times10^{-4}$ eV, calculate the energy for an incident photon such that there is energy just sufficient to make an electron-positron pair. For photons with energies larger than this threshold value, the cross section increases to a maximum of the order of $(e^{2}/mc^{2})^{2}$ and then decreases slowly at higher energies. This interaction is one mechanism for the disappearance of such photons as they travel cosmological distances.
+\item[(b)] There is some evidence for a diffuse x-ray background with photons having energies of several hundred electron volts or more. Beyond 1 keV the spectrum falls as $E^{-n}$ with $n\simeq1.5$. Repeat the calculation of the threshold incident energy, assuming that the energy of the photon in the ``sea'' is 500 eV.
+\end{enumerate}
+\solution
+For photon energies $E_\gamma$ and $\varepsilon$ and the
+angle $\psi$ between their propagation directions, their total
+four-momentum satisfies
+\[
+s=(k_1+k_2)^2=2E_\gamma\varepsilon(1-\cos\psi).
+\]
+At the electron-positron threshold the two particles have no
+relative momentum in their center-of-momentum frame, so
+$s_{\rm th}=(2m_ec^2)^2$. Consequently
+\[
+E_{\gamma,\rm th}(\psi)=\frac{2(m_ec^2)^2}
+{\varepsilon(1-\cos\psi)}.
+\]
+The lowest threshold is for a head-on encounter, $\psi=\pi$;
+parallel photons cannot create a pair at any finite energy. With
+$m_ec^2=0.511\times10^6$ eV the minimum becomes
+\[
+\boxed{E_{\gamma,\rm th}=\frac{(0.511\times10^6\ \mathrm{eV})^2}
+{\varepsilon}.}
+\]
+\textbf{(a)} The specified $\varepsilon=2.5\times10^{-4}$ eV gives
+\[
+\boxed{E_{\gamma,\rm th}=1.044484\times10^{15}\ \mathrm{eV}
+\simeq1.04\ \mathrm{PeV}.}
+\]
+\textbf{(b)} At $\varepsilon=500$ eV the corresponding value is
+\[
+\boxed{E_{\gamma,\rm th}=5.22242\times10^8\ \mathrm{eV}
+\simeq522\ \mathrm{MeV}.}
+\]
+These are minimum kinematic thresholds for the selected background
+photon energies. A distribution of energies and incidence angles
+produces an attenuation band, rather than a sharp universal cutoff;
+no cross-section or mean-free-path estimate is needed to determine
+these thresholds.
+
+\Needspace{5\baselineskip}
+\par\bigskip
+\noindent\textbf{11.23}\quad In a collision process a particle of mass $m_{2}$, at rest in the laboratory, is struck by a particle of mass $m_{1}$, momentum $\mathbf{p}_{\mathrm{LAB}}$ and total energy $E_{\mathrm{LAB}}$. In the collision the two initial particles are transformed into two others of mass $m_{3}$ and $m_{4}$. The configurations of the momentum vectors in the center of momentum (cm) frame (traditionally called the center-of-mass frame) and the laboratory frame are shown in the figure.
+
+\begin{center}
+\begin{tikzpicture}[scale=0.9]
+  % --- Laboratory frame ---
+  \begin{scope}
+    % incoming m1 with p_LAB
+    \fill (-3.2,0) circle (1.5pt) node[left] {$m_{1}$};
+    \draw[->,thick] (-2.9,0) -- (-0.6,0) node[midway,above] {$\mathbf{p}_{\mathrm{LAB}}$};
+    % collision point / masses
+    \fill (-0.4,0) circle (1.5pt);
+    \node[above left] at (-0.55,0.15) {$m_{2}$};
+    \node[above] at (-0.1,0.15) {$m_{3}$};
+    \node[below] at (-0.15,-0.1) {$m_{4}$};
+    % outgoing p3 at theta3
+    \draw[->,thick] (-0.4,0) -- (1.8,0.9) node[right] {$\mathbf{p}_{3}$};
+    \draw[dashed] (-0.4,0) -- (1.7,0);
+    \draw[->] (0.5,0) arc (0:22.249:0.9);
+    \node at (0.8,0.2) {$\theta_{3}$};
+    % outgoing p4 at theta4 below
+    \draw[->,thick] (-0.4,0) -- (1.2,-0.9) node[right] {$\mathbf{p}_{4}$};
+    \draw[->] (0.35,0) arc (0:-29.358:0.75);
+    \node at (0.65,-0.27) {$\theta_{4}$};
+    \node[below] at (-0.2,-1.5) {Laboratory frame};
+  \end{scope}
+  % --- cm frame ---
+  \begin{scope}[xshift=7.2cm]
+    % m1 -> p'  rightward
+    \fill (-3.4,0) circle (1.5pt) node[left] {$m_{1}$};
+    \draw[->,thick] (-3.1,0) -- (-0.9,0) node[midway,above] {$\mathbf{p}'$};
+    % m2 <- -p' leftward
+    \fill (2.2,0) circle (1.5pt) node[right] {$m_{2}$};
+    \draw[->,thick] (1.9,0) -- (0.4,0) node[midway,below] {$-\mathbf{p}'$};
+    % collision
+    \fill (-0.4,0) circle (1.5pt);
+    \node[above] at (-0.1,0.15) {$m_{3}$};
+    \node[below] at (-0.15,-0.1) {$m_{4}$};
+    % outgoing q' at angle theta'
+    \draw[->,thick] (-0.4,0) -- (1.7,0.95) node[right] {$\mathbf{q}'$};
+    \draw[->] (0.4,0) arc (0:24.341:0.8);
+    \node at (0.65,0.22) {$\theta'$};
+    % outgoing -q' opposite
+    \draw[->,thick,erratadarkred] (-0.4,0) -- (-2.5,-0.95) node[below,text=black] {$-\mathbf{q}'$};
+    \node[below] at (-0.2,-1.5) {cm frame};
+  \end{scope}
+  \node at (4.7,-2.2) {\textbf{Problem 11.23}};
+\end{tikzpicture}
+\end{center}
+
+\begin{enumerate}
+\item[(a)] Use invariant scalar products to show that the total energy $W$ in the cm frame has its square given by
+\[
+W^{2}=m_{1}^{2}+m_{2}^{2}+2m_{2}E_{\mathrm{LAB}}
+\]
+and that the cms 3-momentum $\mathbf{p}'$ is
+\[
+\mathbf{p}'=\frac{m_{2}\mathbf{p}_{\mathrm{LAB}}}{W}
+\]
+\item[(b)] Show that the Lorentz transformation parameters $\boldsymbol{\beta}_{\mathrm{cm}}$ and $\gamma_{\mathrm{cm}}$ describing the velocity of the cm frame in the laboratory are
+\[
+\boldsymbol{\beta}_{\mathrm{cm}}=\frac{\mathbf{p}_{\mathrm{LAB}}}{m_{2}+E_{\mathrm{LAB}}},\qquad
+\gamma_{\mathrm{cm}}=\frac{m_{2}+E_{\mathrm{LAB}}}{W}
+\]
+\item[(c)] Show that the results of parts a and b reduce in the nonrelativistic limit to the familiar expressions,
+\begin{align*}
+W&\simeq m_{1}+m_{2}+\left(\frac{m_{2}}{m_{1}+m_{2}}\right)\!\frac{p_{\mathrm{LAB}}^{2}}{2m_{1}}\\
+\mathbf{p}'&\simeq\left(\frac{m_{2}}{m_{1}+m_{2}}\right)\!\mathbf{p}_{\mathrm{LAB}},\qquad
+\boldsymbol{\beta}_{\mathrm{cm}}\simeq\frac{\mathbf{p}_{\mathrm{LAB}}}{m_{1}+m_{2}}
+\end{align*}
+\end{enumerate}
+\solution
+The cm diagram's outgoing arrows are collinear and equal in
+length, as required by $\mathbf q'+(-\mathbf q')=0$ and as drawn
+in the source figure (p.~575).  Let the incident momentum define
+the positive $z$ axis and write $p=|\mathbf p_{\rm LAB}|$,
+$E=E_{\rm LAB}$.
+\textbf{(a)} The initial four-momenta are
+$p_1=(E,\mathbf p_{\rm LAB})$ and $p_2=(m_2,\mathbf0)$.
+Their sum has invariant square
+\[
+\boxed{W^2=(p_1+p_2)^2=m_1^2+m_2^2+2m_2E.}
+\]
+This equals its energy squared in the frame where total momentum
+vanishes. The incident energy in that frame follows from
+$P\cdot p_1=WE_1'=m_1^2+m_2E$:
+\[
+(p')^2=(E_1')^2-m_1^2
+=\frac{(m_1^2+m_2E)^2-m_1^2(m_1^2+m_2^2+2m_2E)}{W^2}
+=\frac{m_2^2(E^2-m_1^2)}{W^2}.
+\]
+A collinear boost does not change the direction of the incident
+momentum in this case, and therefore
+\[
+\boxed{\mathbf p'=\frac{m_2}{W}\mathbf p_{\rm LAB}.}
+\]
+The outgoing masses constrain whether the reaction can occur,
+$W\geq m_3+m_4$, but do not alter these initial-state formulas.
+\textbf{(b)} Transform the total four-momentum
+$P=(E+m_2,\mathbf p_{\rm LAB})$. Requiring
+$\mathbf P'=0$ gives $p-\beta_{\rm cm}(E+m_2)=0$.
+The invariant $W^2=(E+m_2)^2-p^2$ then fixes gamma:
+\[
+\boxed{\boldsymbol\beta_{\rm cm}=\frac{\mathbf p_{\rm LAB}}{E+m_2},
+\qquad\gamma_{\rm cm}=\frac{E+m_2}{W}.}
+\]
+For example the transformed incident momentum is
+$\gamma_{\rm cm}(p-\beta_{\rm cm}E)=m_2p/W$,
+an independent check of part (a).
+\textbf{(c)} At $p\ll m_1$ expand
+$E=m_1+p^2/(2m_1)+O(p^4/m_1^3)$, whence
+\[
+W^2=(m_1+m_2)^2+\frac{m_2}{m_1}p^2+O(p^4).
+\]
+Taking the square root with
+$\sqrt{A^2+\delta}=A+\delta/(2A)+O(\delta^2)$ gives
+\[
+\boxed{W=m_1+m_2+\frac{m_2}{m_1+m_2}\frac{p^2}{2m_1}+O(p^4).}
+\]
+Keeping the leading terms in the exact momentum and velocity
+relations similarly gives
+\[
+\boxed{\mathbf p'\simeq\frac{m_2}{m_1+m_2}\mathbf p_{\rm LAB},
+\qquad \boldsymbol\beta_{\rm cm}\simeq
+\frac{\mathbf p_{\rm LAB}}{m_1+m_2}.}
+\]
+Restoring ordinary mass units in the last expression supplies the
+factor $1/c$ appropriate to $\boldsymbol\beta$; the actual center
+of mass velocity is the total momentum divided by the total mass.
+
+\Needspace{5\baselineskip}
+\par\bigskip
+\noindent\textbf{11.24}\quad The threshold kinetic energy $T_{\mathrm{th}}$ in the laboratory for a given reaction is the kinetic energy of the incident particle on a stationary target just sufficient to make the center of mass energy $W$ equal to the sum of the rest energies of the particles in the final state. Calculate the threshold kinetic energies for the following processes. Express your answers in MeV or GeV and also in units of the rest energy of the incident particle (unless it is a massless particle).
+\begin{enumerate}
+\item[(a)] Pi-meson photoproduction, $\gamma p\to\pi^{0}p$
+\[
+(m_{p}=938.5\ \mathrm{MeV},\qquad m_{\pi^{0}}=135.0\ \mathrm{MeV})
+\]
+\item[(b)] Nucleon-antinucleon pair production in nucleon-nucleon collisions, for example, $pp\to ppp\bar{p}$.
+\item[(c)] Nucleon-antinucleon pair production in electron-electron collisions, $e^{-}e^{-}\to e^{-}e^{-}p\bar{p}$ and $e^{+}e^{-}\to p\bar{p}$ ($m_{e}=0.511$ MeV).
+\end{enumerate}
+\solution
+For a projectile of mass $m_1$, a stationary target of mass
+$m_2$, and total final rest mass $M_f$, set the invariant from
+Problem 11.23 equal to $M_f^2$:
+\[
+M_f^2=m_1^2+m_2^2+2m_2(m_1+T_{\rm th}).
+\]
+Solving for the kinetic energy gives, for the endothermic
+processes considered here,
+\[
+\boxed{T_{\rm th}=\frac{M_f^2-(m_1+m_2)^2}{2m_2}.}
+\]
+For a photon $m_1=0$ and its kinetic energy means its entire energy.
+The threshold final particles share a common laboratory velocity;
+they are all at rest relative to one another in the cm frame.
+\textbf{(a)} Here $M_f=m_p+m_{\pi^0}$, and hence
+\[
+E_{\gamma,\rm th}
+=\frac{(m_p+m_{\pi^0})^2-m_p^2}{2m_p}
+=m_{\pi^0}+\frac{m_{\pi^0}^2}{2m_p}
+=\boxed{144.710\ \mathrm{MeV}.}
+\]
+The $9.710$ MeV above the pion rest energy accounts for the
+unavoidable laboratory recoil.
+\textbf{(b)} For $pp\to ppp\bar p$, $M_f=4m_p$ and
+$m_1=m_2=m_p$. Thus
+\[
+\boxed{T_{\rm th}=\frac{16m_p^2-4m_p^2}{2m_p}
+=6m_p=5631.0\ \mathrm{MeV}=5.6310\ \mathrm{GeV}.}
+\]
+In incident-particle rest-energy units the answer is exactly $6$.
+\textbf{(c)} For $e^-e^-\to e^-e^-p\bar p$,
+$M_f=2m_e+2m_p$, so
+\begin{align*}
+T_{\rm th}&=\frac{(2m_e+2m_p)^2-4m_e^2}{2m_e}
+=4m_p+\frac{2m_p^2}{m_e}\\
+&=\boxed{3.451043\times10^6\ \mathrm{MeV}
+=3451.043\ \mathrm{GeV}=6.753508\times10^6m_e.}
+\end{align*}
+For $e^+e^-\to p\bar p$, the final mass is only $2m_p$, giving
+\begin{align*}
+T_{\rm th}&=\frac{4m_p^2-4m_e^2}{2m_e}
+=\frac{2m_p^2}{m_e}-2m_e\\
+&=\boxed{3.447288\times10^6\ \mathrm{MeV}
+=3447.288\ \mathrm{GeV}=6.746160\times10^6m_e.}
+\end{align*}
+All numbers use the question's $m_p=938.5$ MeV and $m_e=0.511$
+MeV. The very large fixed-target energies reflect the small mass
+of the stationary electron in the denominator of the invariant;
+they are not thresholds for a collider with both beams moving.
+
+\Needspace{5\baselineskip}
+\par\bigskip
+\noindent\textbf{11.25}\quad In colliding beam machines such as the Tevatron at Fermilab or the numerous $e^{+}e^{-}$ storage rings, counterrotating relativistic beams of particles are stored and made to collide more or less head-on in one or more interaction regions. Let the particles in the two beams have masses $m_{1}$ and $m_{2}$ and momenta $p_{1}$ and $p_{2}$, respectively, and let them intersect with a crossing angle $\theta$, \erratum{defined as the departure from head-on incidence, so the angle between their momentum vectors is $\pi-\theta$}.
+\begin{enumerate}
+\item[(a)] Show that, to order $(m/p)^{2}$ inclusive, the square of the total energy in the cm frame is
+\[
+W^{2}=4p_{1}p_{2}\cos^{2}\frac{\theta}{2}+(p_{1}+p_{2})\!\left(\frac{m_{1}^{2}}{p_{1}}+\frac{m_{2}^{2}}{p_{2}}\right)
+\]
+\item[(b)] Show that the cm inertial frame has a velocity in the laboratory given by
+\[
+\beta_{\mathrm{cm}}=\frac{(p_{1}+p_{2})\erratum{\sin(\theta/2)}}{(E_{1}+E_{2})\sin\alpha}
+\]
+where
+\[
+\tan\alpha=\left(\frac{p_{1}+p_{2}}{p_{1}-p_{2}}\right)\tan\frac{\theta}{2}
+\]
+The angle $\alpha$ is defined in the figure.
+\item[(c)] Check that the results of part b agree with those of Problem 11.23b.
+\item[(d)] If the crossing angle is $\theta=20^{\circ}$ and the colliding protons have $p_{1}=p_{2}=100$ GeV/$c$, is the laboratory frame a reasonable approximation to the cm frame? Consider, for example, a proton-proton inelastic collision involving pion production and examine the collinearity of two pions produced with equal and opposite momenta of 10 GeV/$c$ in the cm frame.
+\end{enumerate}
+
+\begin{center}
+\begin{tikzpicture}[scale=1.0]
+  \draw[->] (-3.2,0) -- (3.2,0) node[right] {$x$};
+  \draw[->] (0,-0.7) -- (0,2.4) node[above] {$y$};
+  \draw (-3,-0.8) -- (0,0) -- (3,-0.8);
+  \draw[->,thick] (-2.6,-0.6933) -- (-0.6,-0.16)
+    node[midway,below] {$\mathbf p_1$};
+  \draw[->,thick] (2.6,-0.6933) -- (0.6,-0.16)
+    node[midway,below] {$\mathbf p_2$};
+  \fill (0,0) circle (1.5pt);
+  \draw (-1.4,0) arc (180:194.9314:1.4);
+  \draw (1.4,0) arc (0:-14.9314:1.4);
+  \node at (-1.9,-0.15) {$\theta/2$};
+  \node at (1.9,-0.15) {$\theta/2$};
+  \draw[->,thick] (0,0) -- (0.8,2.1)
+    node[above right] {$\boldsymbol\beta_{\rm cm}$};
+  \draw[->,erratadarkred] (0.9,0) arc (0:69.1455:0.9);
+  \node[text=erratadarkred] at (1.02,0.6) {$\alpha$};
+  \node at (0,-1.2) {\textbf{Problem 11.25}};
+\end{tikzpicture}
+\end{center}
+\solution
+The source figure on printed p.~576 measures $\alpha$ from
+the horizontal axis. The corrected diagram and angle convention
+in the statement make this explicit. Put $h=\theta/2$ and choose
+\[
+\mathbf p_1=p_1(\cos h,\sin h,0),\qquad
+\mathbf p_2=p_2(-\cos h,\sin h,0).
+\]
+Their included angle is $\pi-\theta$, so head-on collision is
+$\theta=0$.
+\textbf{(a)} Their scalar product is
+$\mathbf p_1\cdot\mathbf p_2=-p_1p_2\cos\theta$. Thus exactly
+\[
+W^2=m_1^2+m_2^2+2E_1E_2+2p_1p_2\cos\theta.
+\]
+Expand $E_i=p_i+m_i^2/(2p_i)+O(m_i^4/p_i^3)$:
+\[
+2E_1E_2=2p_1p_2+\frac{p_2m_1^2}{p_1}
++\frac{p_1m_2^2}{p_2}+O(m^4/p^2).
+\]
+Combining the explicit rest-mass terms with these corrections and
+using $1+\cos\theta=2\cos^2h$ yields
+\[
+\boxed{W^2=4p_1p_2\cos^2h+
+(p_1+p_2)\left(\frac{m_1^2}{p_1}+\frac{m_2^2}{p_2}\right)
++O(m^4/p^2).}
+\]
+The expansion assumes both beams are relativistic; the exact
+formula preceding it has no such restriction.
+\textbf{(b)} The total momentum components and boost vector are
+\[
+P_x=(p_1-p_2)\cos h,\quad P_y=(p_1+p_2)\sin h,
+\qquad\boldsymbol\beta_{\rm cm}=\frac{(P_x,P_y,0)}{E_1+E_2}.
+\]
+Consequently $\alpha=\operatorname{atan2}(P_y,P_x)$ satisfies
+\[
+\boxed{\tan\alpha=\frac{p_1+p_2}{p_1-p_2}\tan h,
+\qquad\beta_{\rm cm}=\frac{(p_1+p_2)\sin h}
+{(E_1+E_2)\sin\alpha}.}
+\]
+Using $\operatorname{atan2}$ supplies the correct quadrant when
+$p_2>p_1$. If $P_y=0$, use the nonsingular equivalent
+$\beta_{\rm cm}=\sqrt{P_x^2+P_y^2}/(E_1+E_2)$.
+If the total momentum vanishes, the cm frame is the laboratory
+and its direction $\alpha$ is undefined.
+\textbf{(c)} Set $p_2=0$ in these \emph{exact} part (b) formulas.
+Then $E_2=m_2$, $\mathbf P=\mathbf p_1$, and
+$\boldsymbol\beta_{\rm cm}=\mathbf p_1/(E_1+m_2)$.
+Also $\gamma_{\rm cm}=(E_1+m_2)/W$, since
+$W^2=(E_1+m_2)^2-p_1^2$. These are Problem 11.23b.
+The ultrarelativistic expansion in part (a), containing $1/p_2$,
+should not be used for this limit.
+\textbf{(d)} Equal beams give $\alpha=\pi/2$ and
+\[
+\beta_{\rm cm}=\frac{p}{\sqrt{p^2+m_p^2}}\sin10^\circ
+=0.173641,\qquad\gamma_{\rm cm}=1.015425,
+\]
+using $p=100$ GeV and $m_p=0.9385$ GeV. The invariant energy is
+$W=2\sqrt{m_p^2+p^2\cos^210^\circ}=196.9705$ GeV.
+To assess direction changes, take a back-to-back pion pair of
+momenta $\pm q\hat{\mathbf n}$ in the cm frame, with $q=10$ GeV
+and $E_\pi^*=\sqrt{q^2+(0.1396)^2}=10.000974$ GeV.
+Decompose $\hat{\mathbf n}$ relative to the cm velocity, with
+$u=\hat{\mathbf n}\cdot\hat{\boldsymbol\beta}_{\rm cm}$. The
+laboratory components are
+\[
+p_{\pm,\parallel}=\gamma_{\rm cm}(\pm qu+\beta_{\rm cm}E_\pi^*),
+\quad\mathbf p_{\pm,\perp}=\pm q\mathbf n_\perp.
+\]
+For emission perpendicular to the boost ($u=0$), both pions gain
+the same longitudinal momentum
+$\gamma_{\rm cm}\beta_{\rm cm}E_\pi^*=1.76336$ GeV. Their
+opening angle is therefore
+\[
+\boxed{\Theta=2\tan^{-1}\frac{q}{\gamma_{\rm cm}\beta_{\rm cm}E_\pi^*}
+=159.9990^\circ,}
+\]
+about $20^\circ$ away from collinearity. Along the boost ($u=\pm1$)
+the momenta remain opposite because $q>\beta_{\rm cm}E_\pi^*$;
+intermediate orientations give intermediate deviations. Thus the
+laboratory is close to the cm frame for percent-level total-energy
+estimates, but does not approximate back-to-back directions well
+when angular correlations at the degree level matter.
+
+\Needspace{5\baselineskip}
+\par\bigskip
+\noindent\textbf{11.26}\quad In an elastic scattering process the incident particle imparts energy to the stationary target. The energy $\Delta E$ lost by the incident particle appears as recoil kinetic energy of the target. In the notation of Problem 11.23, $m_{3}=m_{1}$ and $m_{4}=m_{2}$, while $\Delta E=T_{4}=E_{4}-m_{4}$.
+\begin{enumerate}
+\item[(a)] Show that $\Delta E$ can be expressed in the following different ways,
+\begin{align*}
+\Delta E&=\frac{m_{2}}{W^{2}}\,p_{\mathrm{LAB}}^{2}(1-\cos\theta')\\[4pt]
+\Delta E&=\frac{2m_{2}p_{\mathrm{LAB}}^{2}\cos^{2}\theta_{4}}{W^{2}+p_{\mathrm{LAB}}^{2}\sin^{2}\theta_{4}}\\[4pt]
+\Delta E&=\frac{Q^{2}}{2m_{2}}
+\end{align*}
+where $Q^{2}=-(p_{1}-p_{3})^{2}=(\mathbf{p}_{1}-\mathbf{p}_{3})^{2}-(E_{1}-E_{3})^{2}$ is the Lorentz invariant momentum transfer (squared).
+\item[(b)] Show that for charged particles other than electrons incident on stationary electrons ($m_{1}\gg m_{2}$) the maximum energy loss is approximately
+\[
+\Delta E_{\max}\simeq2\gamma^{2}\beta^{2}m_{e}
+\]
+where $\gamma$ and $\beta$ are characteristic of the incident particle and $\gamma\ll(m_{1}/m_{e})$. Give this result a simple interpretation by considering the relevant collision in the rest frame of the incident particle and then transforming back to the laboratory.
+\item[(c)] For electron-electron collisions, show that the maximum energy transfer is
+\[
+\Delta E_{\max}^{(e)}=(\gamma-1)m_{e}
+\]
+\end{enumerate}
+\solution
+\textbf{(a)} Use the cm boost of Problem 11.23 and let
+$p_*=m_2p_{\rm LAB}/W$. Elasticity leaves this momentum magnitude
+unchanged. The target initially has cm longitudinal momentum
+$-p_*$ and finally has longitudinal momentum $-p_*\cos\theta'$,
+with the same cm energy $E_2^*$. Transforming its energy back gives
+\[
+m_2=\gamma_{\rm cm}(E_2^*-\beta_{\rm cm}p_*),\quad
+E_4=\gamma_{\rm cm}(E_2^*-\beta_{\rm cm}p_*\cos\theta').
+\]
+Subtract the equations and use
+$\gamma_{\rm cm}\beta_{\rm cm}=p_{\rm LAB}/W$:
+\[
+\boxed{\Delta E=\frac{m_2p_{\rm LAB}^2}{W^2}(1-\cos\theta').}
+\]
+For the laboratory-angle form, write $P=p_1+p_2$ and
+$p_3=P-p_4$. The relation $p_3^2=m_1^2$ implies
+$2P\cdot p_4=W^2+m_2^2-m_1^2=2m_2(E_{\rm LAB}+m_2)$.
+Set $T=E_4-m_2$ and $p_4=\sqrt{T^2+2m_2T}$; cancellation
+of the rest terms leaves
+\[
+(E_{\rm LAB}+m_2)T=p_{\rm LAB}\sqrt{T^2+2m_2T}\cos\theta_4.
+\]
+For $T>0$, square and divide by $T$ to get
+\[
+T[(E_{\rm LAB}+m_2)^2-p_{\rm LAB}^2\cos^2\theta_4]
+=2m_2p_{\rm LAB}^2\cos^2\theta_4.
+\]
+Since $(E_{\rm LAB}+m_2)^2=W^2+p_{\rm LAB}^2$,
+\[
+\boxed{\Delta E=\frac{2m_2p_{\rm LAB}^2\cos^2\theta_4}
+{W^2+p_{\rm LAB}^2\sin^2\theta_4}.}
+\]
+The original unsquared equation restricts a recoiling target to
+$0\leq\theta_4\leq\pi/2$; $T=0$ follows by continuity.
+Finally momentum conservation gives $p_1-p_3=p_4-p_2$, hence
+\[
+Q^2=-(p_4-p_2)^2=-[2m_2^2-2m_2E_4]=2m_2T,
+\qquad\boxed{\Delta E=Q^2/(2m_2).}
+\]
+\textbf{(b)} The first form is largest at $\theta'=\pi$.
+With $m_2=m_e$, $E_{\rm LAB}=\gamma m_1$, and
+$p_{\rm LAB}=\gamma\beta m_1$, its exact value is
+\[
+\Delta E_{\max}=\frac{2m_e\gamma^2\beta^2}
+{1+2\gamma m_e/m_1+(m_e/m_1)^2}
+\simeq\boxed{2m_e\gamma^2\beta^2},
+\]
+provided $m_e/m_1\ll1$ and $\gamma m_e/m_1\ll1$.
+In the heavy projectile's rest frame the initial electron has
+energy $\gamma m_e$ and momentum $-\gamma\beta m_e$.
+Neglecting projectile recoil, maximal transfer reverses this
+momentum to $+\gamma\beta m_e$. Transforming back to the
+laboratory gives
+\[
+E_{e,f}=\gamma(\gamma m_e+\beta\gamma\beta m_e)
+=\gamma^2m_e(1+\beta^2),
+\]
+so $E_{e,f}-m_e=2\gamma^2\beta^2m_e$, the same result.
+\textbf{(c)} For equal masses the exact denominator is $2(1+\gamma)$:
+\[
+\boxed{\Delta E_{\max}^{(e)}=
+\frac{2m_e\gamma^2\beta^2}{2(1+\gamma)}
+=m_e\frac{\gamma^2-1}{\gamma+1}=(\gamma-1)m_e.}
+\]
+This is complete transfer of the incoming kinetic energy to the
+initially stationary, labeled electron. Because the final electrons
+are identical, an experimental convention that calls the more
+energetic outgoing electron the ``incident'' electron instead
+restricts the labeled loss to half this value; it does not change
+the kinematic endpoint asked for here.
+
+\Needspace{5\baselineskip}
+\par\bigskip
+\noindent\textbf{11.27}\quad\begin{enumerate}
+\item[(a)] A charge density $\rho'$ of zero total charge, but with a dipole moment $\mathbf{p}$, exists in reference frame $K'$. There is no current density in $K'$. The frame $K'$ moves with a velocity $\mathbf{v}=\boldsymbol{\beta}c$ in the frame $K$. Find the charge and current densities $\rho$ and $\mathbf{J}$ in the frame $K$ and show that there is a magnetic dipole moment, $\mathbf{m}=(\mathbf{p}\times\boldsymbol{\beta})/2$, correct to first order in $\beta$. What is the electric dipole moment in $K$ to the same order in $\beta$?
+\item[(b)] Instead of the charge density, but no current density, in $K'$, consider no charge density, but a \erratum{localized, time-independent} current density $\mathbf{J}'$ that has a magnetic dipole moment $\mathbf{m}$. Find the charge and current densities in $K$ and show that to first order in $\beta$ there is an electric dipole moment $\mathbf{p}=\boldsymbol{\beta}\times\mathbf{m}$ in addition to the magnetic dipole moment.
+\end{enumerate}
+\solution
+Take localized, stationary rest-frame sources, and let
+$\mathbf R=\mathbf x-\mathbf vt$ measure position from their moving
+center. Rest and laboratory simultaneous positions are related by
+$\mathbf r'=\mathbf R_\perp+\gamma\mathbf R_\parallel$, with
+$d^3x=d^3r'/\gamma$.
+\textbf{(a)} The inverse boost of $(c\rho',\mathbf0)$ gives exactly
+\[
+\boxed{\rho(\mathbf x,t)=\gamma\rho'(\mathbf r'),\qquad
+\mathbf J(\mathbf x,t)=\gamma\rho'(\mathbf r')\mathbf v.}
+\]
+The total charge stays zero. The dipole integral transforms as
+\[
+\mathbf p_K=\int\mathbf x\rho\,d^3x
+=\int(\mathbf vt+\mathbf r'_\perp+\mathbf r'_\parallel/\gamma)
+\rho'(\mathbf r')\,d^3r'
+=\mathbf p_\perp+\mathbf p_\parallel/\gamma.
+\]
+The translation term vanishes by neutrality. Thus
+$\mathbf p_K=\mathbf p+O(\beta^2)$. With the Gaussian definition
+of the magnetic moment,
+\[
+\mathbf m_K=\frac1{2c}\int\mathbf x\times\mathbf J\,d^3x
+=\frac12\mathbf p_K\times\boldsymbol\beta
+=\boxed{\tfrac12\mathbf p\times\boldsymbol\beta+O(\beta^3).}
+\]
+The factor $1/2$ is the current-moment definition, rather than a
+field transformation factor.
+\textbf{(b)} For the steady rest current $\mathbf J'(\mathbf r')$
+and $\rho'=0$, the exact transformed densities are
+\[
+\boxed{\rho=\frac\gamma c\boldsymbol\beta\cdot\mathbf J'(\mathbf r'),
+\qquad \mathbf J=\mathbf J'_\perp(\mathbf r')+
+\gamma\mathbf J'_\parallel(\mathbf r').}
+\]
+To first order the spatial distortion and $\gamma-1$ are quadratic,
+so $\mathbf J=\mathbf J'(\mathbf R)+O(\beta^2)$ and
+$\rho=\boldsymbol\beta\cdot\mathbf J'(\mathbf R)/c+O(\beta^3)$.
+For a localized divergence-free current, integration of
+$\partial_k(r_iJ'_k)$ gives $\int J'_i\,d^3r'=0$, so the
+induced total charge vanishes. Integrating the divergence of
+$r_ir_j\mathbf J'$ similarly gives
+\[
+0=\int(r_iJ'_j+r_jJ'_i)\,d^3r'.
+\]
+Thus $M_{ij}=\int r_iJ'_j\,d^3r'$ is antisymmetric. Since
+$m_k=(2c)^{-1}\varepsilon_{kij}M_{ij}$, its inverse is
+$M_{ij}=c\varepsilon_{ijk}m_k$. The electric moment is therefore
+\[
+(p_K)_i=\frac{\beta_j}{c}M_{ij}
+=\varepsilon_{ijk}\beta_jm_k,
+\qquad\boxed{\mathbf p_K=\boldsymbol\beta\times\mathbf m+O(\beta^2).}
+\]
+At this order the magnetic moment integral retains its rest value,
+$\mathbf m_K=\mathbf m+O(\beta^2)$.
+Steadiness is needed for that last claim: a time-dependent rest
+current is sampled at different rest times on a laboratory
+simultaneity slice. The statement now explicitly supplies this
+assumption, as appropriate for a transported permanent dipole.
+
+\Needspace{5\baselineskip}
+\par\bigskip
+\noindent\textbf{11.28}\quad Revisit Problems 6.21 and 6.22 from the viewpoint of Lorentz transformations. An electric dipole instantaneously at rest at the origin in the frame $K'$ has potentials, $\erratum{\Phi'}=\mathbf{p}\cdot\mathbf{r}'/r'^{3}$, and $\mathbf{A}'=0$ (and thus only an electric field). The frame $K'$ moves with uniform velocity $\mathbf{v}=\boldsymbol{\beta}c$ in the frame $K$.
+\begin{enumerate}
+\item[(a)] Show that in frame $K$ to first order in $\beta$ the potentials are
+\[
+\Phi=\frac{\mathbf{p}\cdot\mathbf{R}}{R^{3}},\qquad
+\mathbf{A}=\boldsymbol{\beta}\,\frac{(\mathbf{p}\cdot\mathbf{R})}{R^{3}}
+\]
+where $\mathbf{R}=\mathbf{x}-\mathbf{x}_{0}(t)$, with $\mathbf{v}=d\mathbf{x}_{0}/dt$ at time $t$.
+\item[(b)] Show explicitly that the potentials in $K$ satisfy the Lorentz condition.
+\item[(c)] Show that to first order in $\beta$ the electric field $\mathbf{E}$ in $K$ is just the electric dipole field (centered at $\mathbf{x}_{0}$), or a dipole field plus time-dependent higher multipoles, if viewed from a fixed origin, and the magnetic field is $\mathbf{B}=\boldsymbol{\beta}\times\mathbf{E}$. Where is the effective magnetic dipole moment of Problem 6.21 or 11.27a?
+\end{enumerate}
+\solution
+Assume a permanent dipole $\mathbf p$ and constant
+$\boldsymbol\beta$, with coincident origins at $t=0$.
+\textbf{(a)} The inverse four-potential transformation gives
+$\Phi=\gamma\Phi'$ and $\mathbf A=\gamma\boldsymbol\beta\Phi'$
+because $\mathbf A'=0$. At the same observation event,
+$\mathbf r'=\mathbf R_\perp+\gamma\mathbf R_\parallel
+=\mathbf R+O(\beta^2)$. Therefore, through first order,
+\[
+\boxed{\Phi=\frac{\mathbf p\cdot\mathbf R}{R^3},\qquad
+\mathbf A=\boldsymbol\beta\frac{\mathbf p\cdot\mathbf R}{R^3}.}
+\]
+The time dependence is entirely through
+$\mathbf R=\mathbf x-\mathbf x_0(t)$, with
+$\dot{\mathbf x}_0=c\boldsymbol\beta$.
+\textbf{(b)} For any function of $\mathbf R$,
+$c^{-1}\partial_t=-\boldsymbol\beta\cdot\nabla$. Hence the
+Lorenz condition is satisfied directly:
+\[
+\boxed{\nabla\cdot\mathbf A+\frac1c\partial_t\Phi
+=\boldsymbol\beta\cdot\nabla\Phi-
+\boldsymbol\beta\cdot\nabla\Phi=0.}
+\]
+\textbf{(c)} Since $\mathbf A$ already contains one power of
+$\beta$, its time derivative contributes only at order $\beta^2$.
+For $R>0$, with $\mathbf n=\mathbf R/R$,
+\begin{align*}
+\mathbf E&=-\nabla\Phi+O(\beta^2)
+=\boxed{\frac{3\mathbf n(\mathbf n\cdot\mathbf p)-\mathbf p}{R^3}
++O(\beta^2)},\\
+\mathbf B&=\nabla\times(\boldsymbol\beta\Phi)
+=\nabla\Phi\times\boldsymbol\beta
+=\boxed{\boldsymbol\beta\times\mathbf E+O(\beta^3)}.
+\end{align*}
+If expanded about the fixed origin for $r>|\mathbf x_0|$,
+the potential is
+\[
+\Phi=\frac{\mathbf p\cdot\mathbf x}{r^3}
+-(\mathbf x_0\cdot\nabla)\frac{\mathbf p\cdot\mathbf x}{r^3}
++\cdots
+=\frac{\mathbf p\cdot\mathbf n_r}{r^2}
++\frac{3(\mathbf x_0\cdot\mathbf n_r)(\mathbf p\cdot\mathbf n_r)
+-\mathbf x_0\cdot\mathbf p}{r^3}+\cdots.
+\]
+The second term is the electric quadrupole potential, with
+$Q_{ij}=3(x_{0i}p_j+x_{0j}p_i)-2\delta_{ij}\mathbf x_0\cdot\mathbf p$,
+and is time dependent even though the intrinsic dipole is fixed.
+
+To locate the magnetic moment explicitly, use
+$(\mathbf p\times\boldsymbol\beta)\times\mathbf R
+=\boldsymbol\beta(\mathbf p\cdot\mathbf R)
+-\mathbf p(\boldsymbol\beta\cdot\mathbf R)$ to split
+\[
+\mathbf A=\underbrace{\frac{\mathbf m\times\mathbf R}{R^3}}_{\mathbf A_m}
++\underbrace{\frac{\mathbf p(\boldsymbol\beta\cdot\mathbf R)
++\boldsymbol\beta(\mathbf p\cdot\mathbf R)}{2R^3}}_{\mathbf A_{\rm sym}},
+\qquad\mathbf m=\tfrac12\mathbf p\times\boldsymbol\beta.
+\]
+The numerator of $\mathbf A_{\rm sym}$ has zero curl. Its radial
+factor nevertheless gives the nonzero field
+\[
+\mathbf B_{\rm sym}=-\frac{3}{2R^3}\mathbf n\times
+[\mathbf p(\boldsymbol\beta\cdot\mathbf n)
++\boldsymbol\beta(\mathbf p\cdot\mathbf n)].
+\]
+Thus the magnetic dipole field of $\mathbf m$ is present but must
+be added to this symmetric contribution. To check its displacement current, let $\mathbf E_p(\mathbf x)$
+be the static dipole field at the fixed origin.  The first
+translation term is $\mathbf E_Q=-(\mathbf x_0\cdot\nabla)\mathbf E_p$,
+so
+\[
+\frac1c\partial_t\mathbf E_Q
+=-(\boldsymbol\beta\cdot\nabla)\mathbf E_p.
+\]
+At this same fixed-origin multipole order, the curl of the static
+magnetic dipole term vanishes away from the source, while
+\[
+\nabla\times\mathbf B_{\rm sym}
+=\nabla\times(\boldsymbol\beta\times\mathbf E_p)
+=\boldsymbol\beta(\nabla\cdot\mathbf E_p)
+-(\boldsymbol\beta\cdot\nabla)\mathbf E_p
+=-(\boldsymbol\beta\cdot\nabla)\mathbf E_p.
+\]
+Thus it is precisely the magnetic contribution needed for the
+translating quadrupole's displacement current, as in Problem 6.22. Adding both magnetic terms gives
+$\boldsymbol\beta\times\mathbf E$; interpreting that entire field
+as the field of a stationary magnetic dipole would discard the
+second term. Point-source contact terms can be obtained by taking
+the displayed potentials distributionally; the ordinary formulas
+above are for $R>0$.
+
+\Needspace{5\baselineskip}
+\par\bigskip
+\noindent\textbf{11.29}\quad Instead of the electric dipole potential of Problem 11.28, consider a point magnetic moment $\mathbf{m}$ in the moving frame $K'$, with its potentials, $\Phi'=0$, $\mathbf{A}'=\mathbf{m}\times\mathbf{r}'/r'^{3}$ (and so only a magnetic field).
+\begin{enumerate}
+\item[(a)] Show that to first order in $\beta$ the potentials in $K$ are
+\[
+\Phi=\frac{(\boldsymbol{\beta}\times\mathbf{m})\cdot\mathbf{R}}{R^{3}},\qquad
+\mathbf{A}=\frac{(\mathbf{m}\times\mathbf{R})}{R^{3}}
+\]
+Note that the scalar potential is the same as the static potential of the electric dipole moment of Problem 11.27b. [But this gives only the irrotational part of the electric field.]
+\item[(b)] Calculate the electric and magnetic fields in $K$ from the potentials and show that the electric field can be expressed alternatively as
+\begin{align*}
+\mathbf{E}&=\mathbf{E}_{\mathrm{dipole}}(\mathbf{p}_{\mathrm{eff}}=\boldsymbol{\beta}\times\mathbf{m})-\mathbf{m}\times\frac{[3\mathbf{n}(\mathbf{n}\cdot\boldsymbol{\beta})-\boldsymbol{\beta}]}{R^{3}}\\[6pt]
+\mathbf{E}&=\mathbf{E}_{\mathrm{dipole}}\!\left(\mathbf{p}_{\mathrm{eff}}=\frac{\boldsymbol{\beta}}{2}\times\mathbf{m}\right)+\frac{3}{2}\,\mathbf{n}\times\frac{[\mathbf{m}(\mathbf{n}\cdot\boldsymbol{\beta})+\boldsymbol{\beta}(\mathbf{n}\cdot\mathbf{m})]}{R^{3}}\\[6pt]
+\mathbf{E}&=\mathbf{B}\times\boldsymbol{\beta}
+\end{align*}
+where $\mathbf{B}$ is the magnetic dipole field. In light of Problem 6.22, comment on the interpretation of the different forms.
+\end{enumerate}
+\solution
+\textbf{(a)} The inverse potential transformation is
+$\Phi=\gamma(\Phi'+\boldsymbol\beta\cdot\mathbf A')$,
+$\mathbf A_\parallel=\gamma(\mathbf A'_\parallel+
+\boldsymbol\beta\Phi')$, and $\mathbf A_\perp=\mathbf A'_\perp$.
+With $\Phi'=0$, and $\mathbf r'=\mathbf R+O(\beta^2)$, this gives
+\[
+\Phi=\frac{\boldsymbol\beta\cdot(\mathbf m\times\mathbf R)}{R^3}
+=\boxed{\frac{(\boldsymbol\beta\times\mathbf m)\cdot\mathbf R}{R^3}},
+\qquad\boxed{\mathbf A=\frac{\mathbf m\times\mathbf R}{R^3}}
+\]
+to the requested order. The potential is in Lorenz gauge:
+$\nabla\cdot\mathbf A=0$ and $c^{-1}\partial_t\Phi=O(\beta^2)$.
+\textbf{(b)} Put $\mathbf p=\boldsymbol\beta\times\mathbf m$ and
+$\mathbf n=\mathbf R/R$. For $R>0$ the curl gives
+\[
+\boxed{\mathbf B=\frac{3\mathbf n(\mathbf n\cdot\mathbf m)-\mathbf m}{R^3}
++O(\beta^2).}
+\]
+The electric field has both a gradient and a time-derivative part:
+\[
+-\nabla\Phi=\mathbf E_{\rm dipole}(\mathbf p),\qquad
+-\frac1c\partial_t\mathbf A
+=(\boldsymbol\beta\cdot\nabla)\frac{\mathbf m\times\mathbf R}{R^3}.
+\]
+Use
+$(\boldsymbol\beta\cdot\nabla)(\mathbf R/R^3)
+=[\boldsymbol\beta-3\mathbf n(\mathbf n\cdot\boldsymbol\beta)]/R^3$
+to obtain the first requested form:
+\[
+\boxed{\mathbf E=\mathbf E_{\rm dipole}(\boldsymbol\beta\times\mathbf m)
+-\frac{\mathbf m\times[3\mathbf n(\mathbf n\cdot\boldsymbol\beta)
+-\boldsymbol\beta]}{R^3}.}
+\]
+To rearrange it explicitly, use the vector identity
+\[
+\mathbf p=\mathbf n(\mathbf n\cdot\mathbf p)
++(\mathbf n\cdot\mathbf m)\boldsymbol\beta\times\mathbf n
+-(\mathbf n\cdot\boldsymbol\beta)\mathbf m\times\mathbf n.
+\]
+It follows by resolving both $\boldsymbol\beta$ and $\mathbf m$
+into components parallel and perpendicular to $\mathbf n$;
+the cross product of the two transverse components is
+$\mathbf n(\mathbf n\cdot\mathbf p)$.
+Subtracting half the dipole field from the first expression and
+using this identity leaves
+\[
+\boxed{\mathbf E=\mathbf E_{\rm dipole}(\tfrac12\boldsymbol\beta\times\mathbf m)
++\frac{3}{2R^3}\mathbf n\times
+[\mathbf m(\mathbf n\cdot\boldsymbol\beta)
++\boldsymbol\beta(\mathbf n\cdot\mathbf m)].}
+\]
+Alternatively substitute the identity for
+$\mathbf n(\mathbf n\cdot\mathbf p)$ in the first expression.
+The terms proportional to $\mathbf m\times\mathbf n$ cancel,
+leaving
+\[
+\mathbf E=\frac{3(\mathbf n\cdot\mathbf m)\mathbf n\times\boldsymbol\beta
+-\mathbf m\times\boldsymbol\beta}{R^3}
+=\boxed{\mathbf B\times\boldsymbol\beta}.
+\]
+This agrees with the inverse field transformation from a purely
+magnetic rest field. The physical electric moment inferred from
+the charge density is the full $\boldsymbol\beta\times\mathbf m$
+of 11.27b. The first expression separates the irrotational field
+of that moment from the induction field. The second is a useful
+symmetric/antisymmetric rearrangement, dual to 6.22; its half-size
+dipole coefficient does not change the charge moment. The third
+makes the Lorentz transformation manifest. None of these partial
+terms by itself is the entire electric field.
+
+For a point moment the displayed formulas are ordinary fields
+away from $R=0$. The contact terms, if needed, follow by testing
+the derivative of $R_j/R^3$ over a small sphere:
+$\int n_in_j\,d\Omega=(4\pi/3)\delta_{ij}$ gives
+\[
+\partial_i\frac{R_j}{R^3}
+=\operatorname{PV}\frac{\delta_{ij}-3n_in_j}{R^3}
++\frac{4\pi}{3}\delta_{ij}\delta^{(3)}(\mathbf R).
+\]
+Since $\nabla\times(\mathbf m\times\mathbf R/R^3)
+=\mathbf m\nabla\cdot(\mathbf R/R^3)
+-(\mathbf m\cdot\nabla)(\mathbf R/R^3)$, its contact coefficient
+is $(4\pi-4\pi/3)\mathbf m=(8\pi/3)\mathbf m$.
+The two electric contributions give respectively
+$-(4\pi/3)\mathbf p\delta^{(3)}(\mathbf R)$ and
+$(4\pi/3)(\mathbf m\times\boldsymbol\beta)\delta^{(3)}(\mathbf R)$.
+Their sum is $-(8\pi/3)\mathbf p\delta^{(3)}(\mathbf R)$,
+so $\mathbf E=\mathbf B\times\boldsymbol\beta$ holds also
+as a distribution.
+
+\Needspace{5\baselineskip}
+\par\bigskip
+\noindent\textbf{11.30}\quad An isotropic linear material medium, characterized by the constitutive relations (in its rest frame $K'$), $\mathbf{D}'=\epsilon\mathbf{E}'$ and $\mu\mathbf{H}'=\mathbf{B}'$, is in uniform translation with velocity $\mathbf{v}$ in the inertial frame $K$. By exploiting the fact that $F_{\mu\nu}=(\mathbf{E},\mathbf{B})$ and $G_{\mu\nu}=(\mathbf{D},\mathbf{H})$ transform as second rank 4-tensors under Lorentz transformations, show that the macroscopic fields $\mathbf{D}$ and $\mathbf{H}$ are given in terms of $\mathbf{E}$ and $\mathbf{B}$ by
+\begin{align*}
+\mathbf{D}&=\epsilon\mathbf{E}+\gamma^{2}\!\left(\epsilon-\frac{1}{\mu}\right)\![\beta^{2}\mathbf{E}_{\perp}+\boldsymbol{\beta}\times\mathbf{B}]\\[6pt]
+\mathbf{H}&=\frac{1}{\mu}\,\mathbf{B}+\gamma^{2}\!\left(\epsilon-\frac{1}{\mu}\right)\![-\beta^{2}\mathbf{B}_{\perp}+\boldsymbol{\beta}\times\mathbf{E}]
+\end{align*}
+where $\mathbf{E}_{\perp}$ and $\mathbf{B}_{\perp}$ are components perpendicular to $\mathbf{v}$.
+\solution
+Decompose every field parallel and perpendicular to
+$\boldsymbol\beta$. Boosting the laboratory field tensor into
+the medium rest frame gives
+\[
+\mathbf E'_\parallel=\mathbf E_\parallel,\quad
+\mathbf B'_\parallel=\mathbf B_\parallel,\quad
+\mathbf E'_\perp=\gamma(\mathbf E_\perp+\boldsymbol\beta\times\mathbf B),
+\quad
+\mathbf B'_\perp=\gamma(\mathbf B_\perp-\boldsymbol\beta\times\mathbf E).
+\]
+Apply $\mathbf D'=\epsilon\mathbf E'$ and
+$\mathbf H'=\mathbf B'/\mu$, then transform $G$ back to the
+laboratory. Its inverse boost has the same structure as that of
+$(\mathbf E,\mathbf B)$, with velocity sign reversed:
+\begin{align*}
+\mathbf D_\parallel&=\epsilon\mathbf E_\parallel,
+&\mathbf H_\parallel&=\mathbf B_\parallel/\mu,\\
+\mathbf D_\perp&=\gamma(\mathbf D'_\perp-\boldsymbol\beta\times\mathbf H'),
+&\mathbf H_\perp&=\gamma(\mathbf H'_\perp+\boldsymbol\beta\times\mathbf D').
+\end{align*}
+Substituting the rest constitutive laws and then the first boost,
+\begin{align*}
+\mathbf D_\perp
+&=\gamma^2\left[\epsilon(\mathbf E_\perp+\boldsymbol\beta\times\mathbf B)
+-\frac1\mu\boldsymbol\beta\times
+(\mathbf B_\perp-\boldsymbol\beta\times\mathbf E)\right]\\
+&=\gamma^2\left[(\epsilon-\beta^2/\mu)\mathbf E_\perp
++(\epsilon-1/\mu)\boldsymbol\beta\times\mathbf B\right],\\
+\mathbf H_\perp
+&=\gamma^2\left[\frac1\mu(\mathbf B_\perp-\boldsymbol\beta\times\mathbf E)
++\epsilon\boldsymbol\beta\times
+(\mathbf E_\perp+\boldsymbol\beta\times\mathbf B)\right]\\
+&=\gamma^2\left[(1/\mu-\epsilon\beta^2)\mathbf B_\perp
++(\epsilon-1/\mu)\boldsymbol\beta\times\mathbf E\right].
+\end{align*}
+The second equalities use
+$\boldsymbol\beta\times(\boldsymbol\beta\times\mathbf E)
+=-\beta^2\mathbf E_\perp$, and the same identity for $\mathbf B$.
+Finally $\gamma^2(1-\beta^2)=1$ implies
+\[
+\gamma^2(\epsilon-\beta^2/\mu)=\epsilon+
+\gamma^2\beta^2(\epsilon-1/\mu),\qquad
+\gamma^2(1/\mu-\epsilon\beta^2)=1/\mu-
+\gamma^2\beta^2(\epsilon-1/\mu).
+\]
+Adding the parallel components now gives
+\[
+\boxed{\mathbf D=\epsilon\mathbf E+\gamma^2(\epsilon-1/\mu)
+[\beta^2\mathbf E_\perp+\boldsymbol\beta\times\mathbf B],}
+\]
+\[
+\boxed{\mathbf H=\mathbf B/\mu+\gamma^2(\epsilon-1/\mu)
+[-\beta^2\mathbf B_\perp+\boldsymbol\beta\times\mathbf E].}
+\]
+They reduce to the rest constitutive laws at $\beta=0$ and to
+$\mathbf D=\mathbf E$, $\mathbf H=\mathbf B$ for vacuum.
+The derivation assumes the stated local, isotropic constitutive
+law in the material rest frame; a dispersive nonlocal law would
+also require transforming its frequency and wave-vector arguments.
+
+\Needspace{5\baselineskip}
+\par\bigskip
+\noindent\textbf{11.31}\quad Consider a hollow right-circular cylinder of magnetic insulator (\erratum{relative permittivity $\epsilon$ and permeability $\mu$} and inner and outer radii $a$ and $b$) set in rotation about its axis at angular speed $\omega$ in a uniform axial magnetic field $B_{0}$. \erratum{Neglect end effects and assume no free charge or current on either cylindrical surface.} In 1913 the Wilsons measured the voltage difference between its inner and outer surfaces caused by a radial internal electric field. Assuming that locally the relations of Problem 11.30 hold, that the velocity $\mathbf{v}=\omega\rho\hat{\boldsymbol{\phi}}$, and that there are only the field components $E_{\rho}$ and $B_{z}$, which are independent of $z$ and $\phi$, solve the equations $\nabla\cdot\mathbf{D}=0$ and $\nabla\times\mathbf{H}=0$ within the cylinder and show that the internal fields are
+\[
+E_{\rho}=-\frac{\mu\omega\rho B_{0}}{c(1-\omega^{2}\rho^{2}/c^{2})}\left(1-\frac{1}{\mu\epsilon}\right);\qquad
+B_{z}=\mu B_{0}\!\left[\frac{\erratum{1-\omega^{2}\rho^{2}/(c^{2}\mu\epsilon)}}{1-\omega^{2}\rho^{2}/c^{2}}\right]
+\]
+and that for nonrelativistic motion ($\omega b/c\ll1$) the voltage difference is
+\[
+V=\frac{\mu\omega}{2c}\,B_{0}(b^{2}-a^{2})\!\left(1-\frac{1}{\mu\epsilon}\right)
+\]
+This experiment was \erratum{historically regarded as an early validation of special relativity and Minkowski's electrodynamics of material media in motion; its composite-material limitation is discussed in the solution}. If you are curious about how the Wilsons made a magnetic insulator, look up the paper.
+
+Reference: M.~Wilson and H.~A. Wilson, \emph{Proc. Roy. Soc. London} \textbf{A89}, 99--106 (1913).
+\solution
+Use the axially uniform, effectively infinite-cylinder model
+specified in the question, with no free charge on either surface,
+no free surface current, and $|\omega|b<c$. The exterior magnetic
+field is $B_0\hat{\mathbf z}$. Define
+$\beta=\omega\rho/c$, $\gamma^2=(1-\beta^2)^{-1}$,
+$E=E_\rho$, and $B=B_z$. Because
+$\hat{\boldsymbol\phi}\times\hat{\mathbf z}=\hat{\boldsymbol\rho}$
+and $\hat{\boldsymbol\phi}\times\hat{\boldsymbol\rho}=-\hat{\mathbf z}$,
+the formulas of 11.30 give
+\begin{align*}
+D_\rho&=\gamma^2[(\epsilon-\beta^2/\mu)E
++(\epsilon-1/\mu)\beta B],\\
+H_z&=\gamma^2[(1/\mu-\epsilon\beta^2)B
+-(\epsilon-1/\mu)\beta E].
+\end{align*}
+The differential equations integrate once to
+\[
+\frac1\rho\frac{d(\rho D_\rho)}{d\rho}=0
+\ \Longrightarrow\ D_\rho=C/\rho,
+\qquad \frac{dH_z}{d\rho}=0\ \Longrightarrow\ H_z=H_*.
+\]
+In the empty bore a radial, divergence-free field has the same
+$C/\rho$ form. Regularity at the axis makes its coefficient zero.
+Continuity of normal $D$ without free surface charge then sets
+$C=0$ inside the material as well. Continuity of tangential $H$
+at the outer wall, with vacuum outside, sets $H_*=B_0$.
+These boundary conditions fix the integration constants; the
+bulk differential equations alone do not.
+
+Multiply the two constitutive equations by $1-\beta^2$ and set
+$A=\epsilon-1/\mu$. The resulting linear system is
+\[
+(\epsilon-\beta^2/\mu)E+A\beta B=0,\qquad
+-A\beta E+(1/\mu-\epsilon\beta^2)B=(1-\beta^2)B_0.
+\]
+Its determinant is
+\begin{align*}
+&(\epsilon-\beta^2/\mu)(1/\mu-\epsilon\beta^2)+A^2\beta^2\\
+&\hspace{1cm}=\frac\epsilon\mu(1-2\beta^2+\beta^4)
+=\frac\epsilon\mu(1-\beta^2)^2.
+\end{align*}
+For nonzero $\epsilon,\mu$ it is nonzero at subluminal speed.
+Cramer's rule therefore gives
+\[
+\boxed{E_\rho=-\frac{\mu\beta B_0}{1-\beta^2}
+\left(1-\frac1{\mu\epsilon}\right),\qquad
+B_z=\mu B_0\frac{1-\beta^2/(\mu\epsilon)}{1-\beta^2}.}
+\]
+Restoring $\beta=\omega\rho/c$ reproduces the first field in the
+question and fixes the ambiguous denominator of the second:
+its numerator is $1-\omega^2\rho^2/(c^2\mu\epsilon)$.
+At $\omega=0$, $E_\rho=0$ and $B_z=\mu B_0$.
+
+The outer-minus-inner potential difference is
+\begin{align*}
+V&=\Phi(b)-\Phi(a)=-\int_a^bE_\rho\,d\rho\\
+&=\frac{\mu\omega B_0}{c}\left(1-\frac1{\mu\epsilon}\right)
+\int_a^b\frac{\rho\,d\rho}{1-\omega^2\rho^2/c^2}\\
+&=\boxed{-\frac{\mu cB_0}{2\omega}
+\left(1-\frac1{\mu\epsilon}\right)
+\ln\frac{1-\omega^2b^2/c^2}{1-\omega^2a^2/c^2}.}
+\end{align*}
+Use $\ln(1-x)=-x+O(x^2)$ to obtain
+\[
+\boxed{V=\frac{\mu\omega B_0}{2c}(b^2-a^2)
+\left(1-\frac1{\mu\epsilon}\right)
++O\!\left(\frac{\mu\omega^3B_0b^4}{c^3}
+\left|1-\frac1{\mu\epsilon}\right|\right).}
+\]
+The exact logarithmic expression has the continuous limit $V=0$
+at $\omega=0$. For positive $\omega B_0$ and $\mu\epsilon>1$,
+the radial field is inward and the outer surface is at higher
+potential. The calculation is conditional on the local moving-medium
+law stipulated in the problem; it does not assume a global inertial
+rest frame for the rotating material.
+
+For the historical construction asked about, the Wilsons embedded
+steel balls in wax: the composite was insulating as a whole while
+the steel supplied its magnetic response. This is described and
+reexamined in the primary experimental report by Hertzberg et al.
+(2001). They explain that the original composite could not
+distinguish competing predictions for a homogeneous rotating
+magnetic insulator, because its magnetization lay in conducting
+steel. Their subsequent measurement using a homogeneous magnetic
+insulator, yttrium iron garnet, supports the locally inertial
+constitutive treatment assumed in this problem. This material
+qualification motivates the marked refinement of the historical
+claim; it does not alter the conditional field calculation above.
+\footnote{J.~B. Hertzberg et al., ``Measurement of the Relativistic
+Potential Difference across a Rotating Magnetic Dielectric Cylinder,''
+primary experimental report, 2001, abstract and introduction,
+\url{https://arxiv.org/abs/gr-qc/0104101}.}
+
