@@ -13,9 +13,27 @@ pushed to `main` every few problems, so to resume:
 2. For every `audit/chNN.md` whose status is not `complete`, start an auditor
    on that chapter with the protocol below. It skips the problems already
    listed in the log and continues with the next one.
-3. When all chapters are complete, run `audit/check.sh` for the whole
+3. For every chapter whose status is `complete` but not
+   `complete (second pass complete)`, run the second pass (below).
+4. When all chapters are complete, run `audit/check.sh` for the whole
    document and rebuild `main.pdf` locally (the figure sources under
    `supplementary/` are not in the repository).
+
+## Second pass
+
+After a chapter's first pass, an independent second pass re-audits it in
+groups of up to four problems, and also reviews the first pass's own fixes.
+Every proposed fix goes to three independent verifiers (fresh derivation,
+numerical check, consistency with the book and the rest of the solution).
+A fix is applied only when at least two of the three confirm both the defect
+and the replacement. Results are logged under `## Second pass` in
+`audit/chNN.md`, with a `- Second pass X–Y — done` marker per group, and
+committed group by group.
+
+The pass is the Workflow script `audit/second-pass.js`, run once per chapter
+with the arguments printed by `audit/second-pass-args NN`. That command
+leaves out groups whose marker is already logged, so rerunning it after an
+interruption picks up where the pass stopped.
 
 ## Protocol for auditing chapter NN
 
@@ -61,3 +79,5 @@ Work only on `sections/chNN.tex` and `audit/chNN.md`.
 - `audit/commit.sh "message" paths...` — commit the given paths and push to
   `origin/main` (serialized with a lock so chapters can be audited in
   parallel).
+- `audit/second-pass-args NN` and `audit/second-pass.js` — arguments and
+  script for the second pass.

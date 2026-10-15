@@ -1,0 +1,42 @@
+#!/usr/bin/env python3
+"""Print the Workflow args for the second audit pass of one chapter.
+
+    audit/second-pass-args 16
+
+Problems are grouped (at most 4 problems / ~22 kB per group). Groups whose
+"- Second pass X–Y — done" marker is already in audit/chNN.md are skipped,
+so rerunning after an interruption resumes where the pass stopped.
+"""
+import json, os, re, sys
+
+repo = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+ch = sys.argv[1].zfill(2)
+lines = open(f'{repo}/sections/ch{ch}.tex').read().split('\n')
+log = open(f'{repo}/audit/ch{ch}.md').read()
+
+starts = [(m.group(1), i + 1) for i, l in enumerate(lines)
+          if (m := re.match(r'^\\noindent\\textbf\{(\d+\.\d+)\}', l))]
+probs = []
+for k, (p, s) in enumerate(starts):
+    e = starts[k + 1][1] - 1 if k + 1 < len(starts) else len(lines)
+    probs.append(dict(p=p, start=s, end=e, size=sum(len(x) + 1 for x in lines[s - 1:e])))
+
+groups, cur = [], []
+for pr in probs:
+    if cur and (len(cur) >= 4 or sum(x['size'] for x in cur) + pr['size'] > 22000):
+        groups.append(cur)
+        cur = []
+    cur.append(pr)
+if cur:
+    groups.append(cur)
+
+items = []
+if '— FIXED' in log.split('## Second pass')[0] and \
+        '- Second pass review of first-pass fixes — done' not in log:
+    items.append(dict(kind='firstpass', problems='first-pass fixes'))
+for g in groups:
+    name = f"{g[0]['p']}–{g[-1]['p']}" if len(g) > 1 else g[0]['p']
+    if f'- Second pass {name} — done' not in log:
+        items.append(dict(kind='problems', problems=name, start=g[0]['start'], end=g[-1]['end']))
+
+print(json.dumps(dict(ch=ch, n=str(int(ch)), items=items)))
