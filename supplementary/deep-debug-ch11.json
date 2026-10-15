@@ -1,0 +1,1615 @@
+{
+  "audit": "Fresh independent iterative deep-debug, 2026-10-03",
+  "chapter": 11,
+  "problem_count": 31,
+  "scope_rebuilt_from": [
+    "sections/ch11.tex",
+    "supplementary/check_ch11.py",
+    "all directly referenced chapter figure inputs"
+  ],
+  "prior_ledgers": "Used only as source locators; no inherited review result treated as current evidence.",
+  "audit_matrix": {
+    "domain_correctness": "Every problem/subpart checked for algebra, physics, dimensions, signs, domains, notation and source fidelity; individual evidence below.",
+    "implementation_correctness": "Read calculation script functions and every current assertion path; ran with warnings promoted to errors and captured stdout.",
+    "memory_and_resources": "Scoped batch calculation scripts, bounded arrays/quadrature and synchronous Path writes inspected; file handles are closed by write_text; no persistent service, network mutation, process stop or concurrency-sensitive state.",
+    "performance": "No performance target requested. Current final script duration is recorded; no measured performance defect or optimization claim.",
+    "completeness": "All original problem IDs and subparts reviewed; every Needspace/par/bigskip prefix preserved; retained historical-source and approximation limitations enumerated."
+  },
+  "notation_checked": {
+    "units": "Gaussian electromagnetism, g=diag(1,-1,-1,-1), x0=ct, F0i=-Ei, Fij=-epsilon_ijk Bk; kinematic masses in energy units with c=1 stated.",
+    "source": "Jackson pp.524-525,531-532,536,542-543,545-548,554-558; Eqs.11.16-11.19,11.26,11.31-11.36,11.46,11.69-11.78,11.90-11.99,11.128-11.149.",
+    "inspected_files": [
+      "/private/tmp/jackson_ch11_reference/p-549.txt",
+      "/private/tmp/jackson_ch11_reference/p-550.txt",
+      "/private/tmp/jackson_ch11_reference/p-553.txt",
+      "/private/tmp/jackson_ch11_reference/p-556.txt",
+      "/private/tmp/jackson_ch11_reference/p-557.txt",
+      "/private/tmp/jackson_ch11_reference/p-561.txt",
+      "/private/tmp/jackson_ch11_reference/p-567.txt",
+      "/private/tmp/jackson_ch11_reference/p-568.txt",
+      "/private/tmp/jackson_ch11_reference/p-570.txt",
+      "/private/tmp/jackson_ch11_reference/p-573.txt",
+      "/private/tmp/jackson_ch11_reference/p-579.txt",
+      "/private/tmp/jackson_ch11_reference/p-580.txt",
+      "/private/tmp/jackson_ch11_reference/p-581.txt",
+      "/private/tmp/jackson_ch11_reference/p-582.txt",
+      "/private/tmp/jackson_ch11_reference/p-583.txt"
+    ]
+  },
+  "runs": [
+    {
+      "chapter": 11,
+      "command": [
+        "/opt/homebrew/opt/python@3.14/bin/python3.14",
+        "-W",
+        "error",
+        "supplementary/check_ch11.py"
+      ],
+      "exit_code": 0,
+      "log": "/var/folders/93/r1t98m8d3014c24llb8j119w0000gn/T/jackson-deep-debug-team3-7iu2qgz3/check_ch11-baseline.log",
+      "tail": [
+        "11.31: PASS \u2014 symbolic moving-medium boundary fields, determinant, voltage quadrature, and cubic nonrelativistic remainder",
+        "31/31 problem groups passed. Historical source-access limitation recorded under 11.8."
+      ]
+    },
+    {
+      "chapter": 11,
+      "command": [
+        "/opt/homebrew/opt/python@3.14/bin/python3.14",
+        "-W",
+        "error",
+        "supplementary/check_ch11.py"
+      ],
+      "exit_code": 0,
+      "seconds": 10.74,
+      "log": "/var/folders/93/r1t98m8d3014c24llb8j119w0000gn/T/jackson-deep-debug-team3-7iu2qgz3/check_ch11-final.log",
+      "tail": [
+        "11.31: PASS \u2014 symbolic moving-medium boundary fields, determinant, voltage quadrature, and cubic nonrelativistic remainder",
+        "31/31 problem groups passed. Historical source-access limitation recorded under 11.8."
+      ]
+    }
+  ],
+  "confirmed_new_findings": [],
+  "crc": {
+    "correctness": "Current chapter checks and independent analytical final route passed.",
+    "robustness": "Physical/domain endpoints and singular limits are individually documented; no unsupported extension of approximations.",
+    "completeness": "Entire chapter rerun, generated assets verified, and isolated local four-chapter compilation/render completed as recorded in validation."
+  },
+  "final_pass": {
+    "coverage": "All 31 problems, reverse-order answer-to-invariant route, after the only TeX correction.",
+    "new_confirmed_errors": 0,
+    "numerical_limit": "Finite numerical checks supplement analytical retracing and are not exhaustive proof."
+  },
+  "problems": [
+    {
+      "problem": "11.1",
+      "inspected_sources": [
+        {
+          "file": "sections/ch11.tex",
+          "line": 23,
+          "scope": "Current complete statement, solution, every subpart, assumptions and retained errata."
+        },
+        {
+          "file": "supplementary/check_ch11.py",
+          "scope": "Current functions covering this problem, assertion logic, numerical methods and generated assets."
+        },
+        {
+          "source": "Jackson 3rd edition supplied local PDF",
+          "printed_pages": "568",
+          "pdf_pages": [
+            593
+          ],
+          "ocr_files": [
+            "ocr/p-593.txt"
+          ]
+        }
+      ],
+      "source_notation": "Jackson pp.524-525,531-532,536,542-543,545-548,554-558; Eqs.11.16-11.19,11.26,11.31-11.36,11.46,11.69-11.78,11.90-11.99,11.128-11.149.",
+      "additional_sources_checked": [],
+      "first_pass": {
+        "method": "Read current problem and full solution, independently retrace the stated derivation, then inspect current check implementation.",
+        "mathematics_checked": "Homogeneity/additivity, continuity, parity of coefficients, inverse consistency and limiting-speed endpoint.",
+        "falsifiable_candidate": "Candidate: homogeneity alone proves real linearity without regularity. Discarded: continuity is stated explicitly.",
+        "outcome": "candidate_discarded_no_new_confirmed_error"
+      },
+      "independent_final_pass": {
+        "method": "Reverse problem order; work from final expressions back to source equations using conservation, boundary conditions, dimensional checks, independent integral reductions and limiting cases rather than repeating the first derivation.",
+        "evidence": "Final route: substitute the resulting matrix and its v-reversed inverse, then verify invariance of c^2 t^2-x^2 and fixed endpoints +/-C.",
+        "new_confirmed_errors": 0
+      },
+      "verification": {
+        "manual_analytic_retracing": "The displayed identities and domain restrictions above were retraced; this is not a claim that numerical sampling proves all parameter values.",
+        "baseline_exit_code": 0,
+        "final_exit_code": 0,
+        "final_log": "/var/folders/93/r1t98m8d3014c24llb8j119w0000gn/T/jackson-deep-debug-team3-7iu2qgz3/check_ch11-final.log",
+        "machine_check_kind": "Symbolic identities where implemented; otherwise numerical quadrature/spectral samples with explicit tolerances."
+      },
+      "changes": [],
+      "unresolved_limitations": []
+    },
+    {
+      "problem": "11.2",
+      "inspected_sources": [
+        {
+          "file": "sections/ch11.tex",
+          "line": 111,
+          "scope": "Current complete statement, solution, every subpart, assumptions and retained errata."
+        },
+        {
+          "file": "supplementary/check_ch11.py",
+          "scope": "Current functions covering this problem, assertion logic, numerical methods and generated assets."
+        },
+        {
+          "source": "Jackson 3rd edition supplied local PDF",
+          "printed_pages": "568",
+          "pdf_pages": [
+            593
+          ],
+          "ocr_files": [
+            "ocr/p-593.txt"
+          ]
+        }
+      ],
+      "source_notation": "Jackson pp.524-525,531-532,536,542-543,545-548,554-558; Eqs.11.16-11.19,11.26,11.31-11.36,11.46,11.69-11.78,11.90-11.99,11.128-11.149.",
+      "additional_sources_checked": [],
+      "first_pass": {
+        "method": "Read current problem and full solution, independently retrace the stated derivation, then inspect current check implementation.",
+        "mathematics_checked": "Group composition, signed universal kappa and Lorentz/Galilean/negative-kappa branches.",
+        "falsifiable_candidate": "Candidate: only |kappa|, not its sign, is common to different velocities. Discarded: equality of the two diagonal entries forces the signed ratio to agree.",
+        "outcome": "candidate_discarded_no_new_confirmed_error"
+      },
+      "independent_final_pass": {
+        "method": "Reverse problem order; work from final expressions back to source equations using conservation, boundary conditions, dimensional checks, independent integral reductions and limiting cases rather than repeating the first derivation.",
+        "evidence": "Final route: compose two arbitrary small nonzero velocities and compare the off-diagonal ratio; units are speed^-2 and kappa=0 remains a distinct allowed branch.",
+        "new_confirmed_errors": 0
+      },
+      "verification": {
+        "manual_analytic_retracing": "The displayed identities and domain restrictions above were retraced; this is not a claim that numerical sampling proves all parameter values.",
+        "baseline_exit_code": 0,
+        "final_exit_code": 0,
+        "final_log": "/var/folders/93/r1t98m8d3014c24llb8j119w0000gn/T/jackson-deep-debug-team3-7iu2qgz3/check_ch11-final.log",
+        "machine_check_kind": "Symbolic identities where implemented; otherwise numerical quadrature/spectral samples with explicit tolerances."
+      },
+      "changes": [],
+      "unresolved_limitations": []
+    },
+    {
+      "problem": "11.3",
+      "inspected_sources": [
+        {
+          "file": "sections/ch11.tex",
+          "line": 156,
+          "scope": "Current complete statement, solution, every subpart, assumptions and retained errata."
+        },
+        {
+          "file": "supplementary/check_ch11.py",
+          "scope": "Current functions covering this problem, assertion logic, numerical methods and generated assets."
+        },
+        {
+          "source": "Jackson 3rd edition supplied local PDF",
+          "printed_pages": "568",
+          "pdf_pages": [
+            593
+          ],
+          "ocr_files": [
+            "ocr/p-593.txt"
+          ]
+        }
+      ],
+      "source_notation": "Jackson pp.524-525,531-532,536,542-543,545-548,554-558; Eqs.11.16-11.19,11.26,11.31-11.36,11.46,11.69-11.78,11.90-11.99,11.128-11.149.",
+      "additional_sources_checked": [],
+      "first_pass": {
+        "method": "Read current problem and full solution, independently retrace the stated derivation, then inspect current check implementation.",
+        "mathematics_checked": "Two boost matrices, velocity composition, gamma product and rapidity addition.",
+        "falsifiable_candidate": "Candidate: the gamma product acquires an absolute value for physical collinear boosts. Discarded: 1+beta1 beta2>0 for |beta_i|<1.",
+        "outcome": "candidate_discarded_no_new_confirmed_error"
+      },
+      "independent_final_pass": {
+        "method": "Reverse problem order; work from final expressions back to source equations using conservation, boundary conditions, dimensional checks, independent integral reductions and limiting cases rather than repeating the first derivation.",
+        "evidence": "Final route: rapidities add by hyperbolic addition, reproducing the rational velocity rule and inverse-boost cancellation.",
+        "new_confirmed_errors": 0
+      },
+      "verification": {
+        "manual_analytic_retracing": "The displayed identities and domain restrictions above were retraced; this is not a claim that numerical sampling proves all parameter values.",
+        "baseline_exit_code": 0,
+        "final_exit_code": 0,
+        "final_log": "/var/folders/93/r1t98m8d3014c24llb8j119w0000gn/T/jackson-deep-debug-team3-7iu2qgz3/check_ch11-final.log",
+        "machine_check_kind": "Symbolic identities where implemented; otherwise numerical quadrature/spectral samples with explicit tolerances."
+      },
+      "changes": [],
+      "unresolved_limitations": []
+    },
+    {
+      "problem": "11.4",
+      "inspected_sources": [
+        {
+          "file": "sections/ch11.tex",
+          "line": 201,
+          "scope": "Current complete statement, solution, every subpart, assumptions and retained errata."
+        },
+        {
+          "file": "supplementary/check_ch11.py",
+          "scope": "Current functions covering this problem, assertion logic, numerical methods and generated assets."
+        },
+        {
+          "source": "Jackson 3rd edition supplied local PDF",
+          "printed_pages": "568-569",
+          "pdf_pages": [
+            593,
+            594
+          ],
+          "ocr_files": [
+            "ocr/p-593.txt",
+            "ocr/p-594.txt"
+          ]
+        }
+      ],
+      "source_notation": "Jackson pp.524-525,531-532,536,542-543,545-548,554-558; Eqs.11.16-11.19,11.26,11.31-11.36,11.46,11.69-11.78,11.90-11.99,11.128-11.149.",
+      "additional_sources_checked": [],
+      "first_pass": {
+        "method": "Read current problem and full solution, independently retrace the stated derivation, then inspect current check implementation.",
+        "mathematics_checked": "Source light-clock geometry, transverse path, contracted parallel length and coordinate/proper times.",
+        "falsifiable_candidate": "Candidate: the return ray should point away from P. Discarded against the source figure and the already-corrected arrows.",
+        "outcome": "candidate_discarded_no_new_confirmed_error"
+      },
+      "independent_final_pass": {
+        "method": "Reverse problem order; work from final expressions back to source equations using conservation, boundary conditions, dimensional checks, independent integral reductions and limiting cases rather than repeating the first derivation.",
+        "evidence": "Final route: both legs connect null-separated events and their common emitter endpoints have interval c^2 Delta tau^2; the coordinate round trip is gamma Delta tau.",
+        "new_confirmed_errors": 0
+      },
+      "verification": {
+        "manual_analytic_retracing": "The displayed identities and domain restrictions above were retraced; this is not a claim that numerical sampling proves all parameter values.",
+        "baseline_exit_code": 0,
+        "final_exit_code": 0,
+        "final_log": "/var/folders/93/r1t98m8d3014c24llb8j119w0000gn/T/jackson-deep-debug-team3-7iu2qgz3/check_ch11-final.log",
+        "machine_check_kind": "Symbolic identities where implemented; otherwise numerical quadrature/spectral samples with explicit tolerances."
+      },
+      "changes": [],
+      "unresolved_limitations": []
+    },
+    {
+      "problem": "11.5",
+      "inspected_sources": [
+        {
+          "file": "sections/ch11.tex",
+          "line": 275,
+          "scope": "Current complete statement, solution, every subpart, assumptions and retained errata."
+        },
+        {
+          "file": "supplementary/check_ch11.py",
+          "scope": "Current functions covering this problem, assertion logic, numerical methods and generated assets."
+        },
+        {
+          "source": "Jackson 3rd edition supplied local PDF",
+          "printed_pages": "569",
+          "pdf_pages": [
+            594
+          ],
+          "ocr_files": [
+            "ocr/p-594.txt"
+          ]
+        }
+      ],
+      "source_notation": "Jackson pp.524-525,531-532,536,542-543,545-548,554-558; Eqs.11.16-11.19,11.26,11.31-11.36,11.46,11.69-11.78,11.90-11.99,11.128-11.149.",
+      "additional_sources_checked": [],
+      "first_pass": {
+        "method": "Read current problem and full solution, independently retrace the stated derivation, then inspect current check implementation.",
+        "mathematics_checked": "General acceleration transformation with longitudinal/transverse decomposition and dt Jacobian.",
+        "falsifiable_candidate": "Candidate: a_perp has gamma^-3 like a_parallel. Discarded: differentiating the velocity addition law gives gamma^-2 plus the coupling term.",
+        "outcome": "candidate_discarded_no_new_confirmed_error"
+      },
+      "independent_final_pass": {
+        "method": "Reverse problem order; work from final expressions back to source equations using conservation, boundary conditions, dimensional checks, independent integral reductions and limiting cases rather than repeating the first derivation.",
+        "evidence": "Final route: treat acceleration as the derivative of the transformed velocity four-vector; instantaneous rest and v-to-zero cases recover known gamma powers and ordinary acceleration.",
+        "new_confirmed_errors": 0
+      },
+      "verification": {
+        "manual_analytic_retracing": "The displayed identities and domain restrictions above were retraced; this is not a claim that numerical sampling proves all parameter values.",
+        "baseline_exit_code": 0,
+        "final_exit_code": 0,
+        "final_log": "/var/folders/93/r1t98m8d3014c24llb8j119w0000gn/T/jackson-deep-debug-team3-7iu2qgz3/check_ch11-final.log",
+        "machine_check_kind": "Symbolic identities where implemented; otherwise numerical quadrature/spectral samples with explicit tolerances."
+      },
+      "changes": [],
+      "unresolved_limitations": []
+    },
+    {
+      "problem": "11.6",
+      "inspected_sources": [
+        {
+          "file": "sections/ch11.tex",
+          "line": 335,
+          "scope": "Current complete statement, solution, every subpart, assumptions and retained errata."
+        },
+        {
+          "file": "supplementary/check_ch11.py",
+          "scope": "Current functions covering this problem, assertion logic, numerical methods and generated assets."
+        },
+        {
+          "source": "Jackson 3rd edition supplied local PDF",
+          "printed_pages": "569",
+          "pdf_pages": [
+            594
+          ],
+          "ocr_files": [
+            "ocr/p-594.txt"
+          ]
+        }
+      ],
+      "source_notation": "Jackson pp.524-525,531-532,536,542-543,545-548,554-558; Eqs.11.16-11.19,11.26,11.31-11.36,11.46,11.69-11.78,11.90-11.99,11.128-11.149.",
+      "additional_sources_checked": [],
+      "first_pass": {
+        "method": "Read current problem and full solution, independently retrace the stated derivation, then inspect current check implementation.",
+        "mathematics_checked": "Four proper-acceleration legs, rapidity history, total Earth time and maximum distance.",
+        "falsifiable_candidate": "Candidate: the 20 years are Earth coordinate time. Discarded: the statement specifies traveler proper time and the integrals use d t=cosh(eta) d tau.",
+        "outcome": "candidate_discarded_no_new_confirmed_error"
+      },
+      "independent_final_pass": {
+        "method": "Reverse problem order; work from final expressions back to source equations using conservation, boundary conditions, dimensional checks, independent integral reductions and limiting cases rather than repeating the first derivation.",
+        "evidence": "Final route: integrate the symmetric spacetime worldline leg by leg; spatial displacements cancel after the return, while all four positive time contributions add.",
+        "new_confirmed_errors": 0
+      },
+      "verification": {
+        "manual_analytic_retracing": "The displayed identities and domain restrictions above were retraced; this is not a claim that numerical sampling proves all parameter values.",
+        "baseline_exit_code": 0,
+        "final_exit_code": 0,
+        "final_log": "/var/folders/93/r1t98m8d3014c24llb8j119w0000gn/T/jackson-deep-debug-team3-7iu2qgz3/check_ch11-final.log",
+        "machine_check_kind": "Symbolic identities where implemented; otherwise numerical quadrature/spectral samples with explicit tolerances."
+      },
+      "changes": [],
+      "unresolved_limitations": []
+    },
+    {
+      "problem": "11.7",
+      "inspected_sources": [
+        {
+          "file": "sections/ch11.tex",
+          "line": 394,
+          "scope": "Current complete statement, solution, every subpart, assumptions and retained errata."
+        },
+        {
+          "file": "supplementary/check_ch11.py",
+          "scope": "Current functions covering this problem, assertion logic, numerical methods and generated assets."
+        },
+        {
+          "source": "Jackson 3rd edition supplied local PDF",
+          "printed_pages": "569-570",
+          "pdf_pages": [
+            594,
+            595
+          ],
+          "ocr_files": [
+            "ocr/p-594.txt",
+            "ocr/p-595.txt"
+          ]
+        }
+      ],
+      "source_notation": "Jackson pp.524-525,531-532,536,542-543,545-548,554-558; Eqs.11.16-11.19,11.26,11.31-11.36,11.46,11.69-11.78,11.90-11.99,11.128-11.149.",
+      "additional_sources_checked": [],
+      "first_pass": {
+        "method": "Read current problem and full solution, independently retrace the stated derivation, then inspect current check implementation.",
+        "mathematics_checked": "Spacelike/timelike simultaneous or colocated frames, invariant intervals and moving particle velocities.",
+        "falsifiable_candidate": "Candidate: the same admissible boost handles a null interval. Discarded: both candidate speeds tend to c, so no inertial rest/simultaneity frame exists.",
+        "outcome": "candidate_discarded_no_new_confirmed_error"
+      },
+      "independent_final_pass": {
+        "method": "Reverse problem order; work from final expressions back to source equations using conservation, boundary conditions, dimensional checks, independent integral reductions and limiting cases rather than repeating the first derivation.",
+        "evidence": "Final route: evaluate the interval before and after each explicit boost and inspect the physical |V|<c domain; transform the running worldline with the same matrix.",
+        "new_confirmed_errors": 0
+      },
+      "verification": {
+        "manual_analytic_retracing": "The displayed identities and domain restrictions above were retraced; this is not a claim that numerical sampling proves all parameter values.",
+        "baseline_exit_code": 0,
+        "final_exit_code": 0,
+        "final_log": "/var/folders/93/r1t98m8d3014c24llb8j119w0000gn/T/jackson-deep-debug-team3-7iu2qgz3/check_ch11-final.log",
+        "machine_check_kind": "Symbolic identities where implemented; otherwise numerical quadrature/spectral samples with explicit tolerances."
+      },
+      "changes": [],
+      "unresolved_limitations": []
+    },
+    {
+      "problem": "11.8",
+      "inspected_sources": [
+        {
+          "file": "sections/ch11.tex",
+          "line": 446,
+          "scope": "Current complete statement, solution, every subpart, assumptions and retained errata."
+        },
+        {
+          "file": "supplementary/check_ch11.py",
+          "scope": "Current functions covering this problem, assertion logic, numerical methods and generated assets."
+        },
+        {
+          "source": "Jackson 3rd edition supplied local PDF",
+          "printed_pages": "570",
+          "pdf_pages": [
+            595
+          ],
+          "ocr_files": [
+            "ocr/p-595.txt"
+          ]
+        }
+      ],
+      "source_notation": "Jackson pp.524-525,531-532,536,542-543,545-548,554-558; Eqs.11.16-11.19,11.26,11.31-11.36,11.46,11.69-11.78,11.90-11.99,11.128-11.149.",
+      "additional_sources_checked": [
+        "https://doi.org/10.1063/1.1702908",
+        "https://journals.aps.org/pra/abstract/10.1103/PhysRevA.5.591",
+        "https://thierry-lahaye.org/wp-content/uploads/2022/12/2012_lahaye_amjphys_fizeau.pdf (pp.498-499, Eq.7 and historical discussion)"
+      ],
+      "first_pass": {
+        "method": "Read current problem and full solution, independently retrace the stated derivation, then inspect current check implementation.",
+        "mathematics_checked": "Fizeau drag including dispersion, wave-vector covariance, ring phase and resonance group length.",
+        "falsifiable_candidate": "Candidate: the historical papers establish an unquoted exact numerical accuracy. Discarded: the solution preserves its explicit Macek full-text access limitation.",
+        "outcome": "candidate_discarded_no_new_confirmed_error"
+      },
+      "independent_final_pass": {
+        "method": "Reverse problem order; work from final expressions back to source equations using conservation, boundary conditions, dimensional checks, independent integral reductions and limiting cases rather than repeating the first derivation.",
+        "evidence": "Final route: Doppler-shift the rest frequency in n(omega'), then expand k and the ring phase at fixed laboratory omega; the author-hosted Lahaye Eq.7 independently supplies n^2-1+n omega n'.",
+        "new_confirmed_errors": 0
+      },
+      "verification": {
+        "manual_analytic_retracing": "The displayed identities and domain restrictions above were retraced; this is not a claim that numerical sampling proves all parameter values.",
+        "baseline_exit_code": 0,
+        "final_exit_code": 0,
+        "final_log": "/var/folders/93/r1t98m8d3014c24llb8j119w0000gn/T/jackson-deep-debug-team3-7iu2qgz3/check_ch11-final.log",
+        "machine_check_kind": "Symbolic identities where implemented; otherwise numerical quadrature/spectral samples with explicit tolerances."
+      },
+      "changes": [],
+      "unresolved_limitations": [
+        "Macek et al. DOI 10.1063/1.1702908: current DOI open returned an internal retrieval error; no original full-text numerical accuracy verified. Existing explicit limitation retained.",
+        "Bilger-Zavodny: publisher abstract read; full article remains authorization-gated. No formula-image numerical coefficients inferred from missing abstract equations."
+      ]
+    },
+    {
+      "problem": "11.9",
+      "inspected_sources": [
+        {
+          "file": "sections/ch11.tex",
+          "line": 565,
+          "scope": "Current complete statement, solution, every subpart, assumptions and retained errata."
+        },
+        {
+          "file": "supplementary/check_ch11.py",
+          "scope": "Current functions covering this problem, assertion logic, numerical methods and generated assets."
+        },
+        {
+          "source": "Jackson 3rd edition supplied local PDF",
+          "printed_pages": "570",
+          "pdf_pages": [
+            595
+          ],
+          "ocr_files": [
+            "ocr/p-595.txt"
+          ]
+        }
+      ],
+      "source_notation": "Jackson pp.524-525,531-532,536,542-543,545-548,554-558; Eqs.11.16-11.19,11.26,11.31-11.36,11.46,11.69-11.78,11.90-11.99,11.128-11.149.",
+      "additional_sources_checked": [],
+      "first_pass": {
+        "method": "Read current problem and full solution, independently retrace the stated derivation, then inspect current check implementation.",
+        "mathematics_checked": "Infinitesimal covariant/contravariant tensor indices, metric antisymmetry and six generators.",
+        "falsifiable_candidate": "Candidate: the mixed boost matrix must be antisymmetric. Discarded: gL is antisymmetric; the time-space entries of L are symmetric.",
+        "outcome": "candidate_discarded_no_new_confirmed_error"
+      },
+      "independent_final_pass": {
+        "method": "Reverse problem order; work from final expressions back to source equations using conservation, boundary conditions, dimensional checks, independent integral reductions and limiting cases rather than repeating the first derivation.",
+        "evidence": "Final route: enforce L^T g+gL=0 component by component; this leaves exactly three boosts and three rotations with Jackson's passive signs.",
+        "new_confirmed_errors": 0
+      },
+      "verification": {
+        "manual_analytic_retracing": "The displayed identities and domain restrictions above were retraced; this is not a claim that numerical sampling proves all parameter values.",
+        "baseline_exit_code": 0,
+        "final_exit_code": 0,
+        "final_log": "/var/folders/93/r1t98m8d3014c24llb8j119w0000gn/T/jackson-deep-debug-team3-7iu2qgz3/check_ch11-final.log",
+        "machine_check_kind": "Symbolic identities where implemented; otherwise numerical quadrature/spectral samples with explicit tolerances."
+      },
+      "changes": [],
+      "unresolved_limitations": []
+    },
+    {
+      "problem": "11.10",
+      "inspected_sources": [
+        {
+          "file": "sections/ch11.tex",
+          "line": 622,
+          "scope": "Current complete statement, solution, every subpart, assumptions and retained errata."
+        },
+        {
+          "file": "supplementary/check_ch11.py",
+          "scope": "Current functions covering this problem, assertion logic, numerical methods and generated assets."
+        },
+        {
+          "source": "Jackson 3rd edition supplied local PDF",
+          "printed_pages": "570",
+          "pdf_pages": [
+            595
+          ],
+          "ocr_files": [
+            "ocr/p-595.txt"
+          ]
+        }
+      ],
+      "source_notation": "Jackson pp.524-525,531-532,536,542-543,545-548,554-558; Eqs.11.16-11.19,11.26,11.31-11.36,11.46,11.69-11.78,11.90-11.99,11.128-11.149.",
+      "additional_sources_checked": [],
+      "first_pass": {
+        "method": "Read current problem and full solution, independently retrace the stated derivation, then inspect current check implementation.",
+        "mathematics_checked": "Powers and exponentials of arbitrary-axis rotation and boost generators.",
+        "falsifiable_candidate": "Candidate: S^3=S as for the boost generator. Discarded: the transverse rotation block squares to minus the transverse projector.",
+        "outcome": "candidate_discarded_no_new_confirmed_error"
+      },
+      "independent_final_pass": {
+        "method": "Reverse problem order; work from final expressions back to source equations using conservation, boundary conditions, dimensional checks, independent integral reductions and limiting cases rather than repeating the first derivation.",
+        "evidence": "Final route: apply each exponential separately to the axis, transverse plane and time-axis plane; the trigonometric and hyperbolic series recover the complete matrix.",
+        "new_confirmed_errors": 0
+      },
+      "verification": {
+        "manual_analytic_retracing": "The displayed identities and domain restrictions above were retraced; this is not a claim that numerical sampling proves all parameter values.",
+        "baseline_exit_code": 0,
+        "final_exit_code": 0,
+        "final_log": "/var/folders/93/r1t98m8d3014c24llb8j119w0000gn/T/jackson-deep-debug-team3-7iu2qgz3/check_ch11-final.log",
+        "machine_check_kind": "Symbolic identities where implemented; otherwise numerical quadrature/spectral samples with explicit tolerances."
+      },
+      "changes": [],
+      "unresolved_limitations": []
+    },
+    {
+      "problem": "11.11",
+      "inspected_sources": [
+        {
+          "file": "sections/ch11.tex",
+          "line": 672,
+          "scope": "Current complete statement, solution, every subpart, assumptions and retained errata."
+        },
+        {
+          "file": "supplementary/check_ch11.py",
+          "scope": "Current functions covering this problem, assertion logic, numerical methods and generated assets."
+        },
+        {
+          "source": "Jackson 3rd edition supplied local PDF",
+          "printed_pages": "570",
+          "pdf_pages": [
+            595
+          ],
+          "ocr_files": [
+            "ocr/p-595.txt"
+          ]
+        }
+      ],
+      "source_notation": "Jackson pp.524-525,531-532,536,542-543,545-548,554-558; Eqs.11.16-11.19,11.26,11.31-11.36,11.46,11.69-11.78,11.90-11.99,11.128-11.149.",
+      "additional_sources_checked": [],
+      "first_pass": {
+        "method": "Read current problem and full solution, independently retrace the stated derivation, then inspect current check implementation.",
+        "mathematics_checked": "Derivative of matrix exponential and all nested-commutator coefficients.",
+        "falsifiable_candidate": "Candidate: delta L commutes through exp L. Discarded: Duhamel's integral retains the adjoint action.",
+        "outcome": "candidate_discarded_no_new_confirmed_error"
+      },
+      "independent_final_pass": {
+        "method": "Reverse problem order; work from final expressions back to source equations using conservation, boundary conditions, dimensional checks, independent integral reductions and limiting cases rather than repeating the first derivation.",
+        "evidence": "Final route: expand exp(sL) delta L exp(-sL) and integrate s^n/n! over [0,1]; each coefficient becomes 1/(n+1)!.",
+        "new_confirmed_errors": 0
+      },
+      "verification": {
+        "manual_analytic_retracing": "The displayed identities and domain restrictions above were retraced; this is not a claim that numerical sampling proves all parameter values.",
+        "baseline_exit_code": 0,
+        "final_exit_code": 0,
+        "final_log": "/var/folders/93/r1t98m8d3014c24llb8j119w0000gn/T/jackson-deep-debug-team3-7iu2qgz3/check_ch11-final.log",
+        "machine_check_kind": "Symbolic identities where implemented; otherwise numerical quadrature/spectral samples with explicit tolerances."
+      },
+      "changes": [],
+      "unresolved_limitations": []
+    },
+    {
+      "problem": "11.12",
+      "inspected_sources": [
+        {
+          "file": "sections/ch11.tex",
+          "line": 718,
+          "scope": "Current complete statement, solution, every subpart, assumptions and retained errata."
+        },
+        {
+          "file": "supplementary/check_ch11.py",
+          "scope": "Current functions covering this problem, assertion logic, numerical methods and generated assets."
+        },
+        {
+          "source": "Jackson 3rd edition supplied local PDF",
+          "printed_pages": "571",
+          "pdf_pages": [
+            596
+          ],
+          "ocr_files": [
+            "ocr/p-596.txt"
+          ]
+        }
+      ],
+      "source_notation": "Jackson pp.524-525,531-532,536,542-543,545-548,554-558; Eqs.11.16-11.19,11.26,11.31-11.36,11.46,11.69-11.78,11.90-11.99,11.128-11.149.",
+      "additional_sources_checked": [],
+      "first_pass": {
+        "method": "Read current problem and full solution, independently retrace the stated derivation, then inspect current check implementation.",
+        "mathematics_checked": "Rapidity derivative, noncommuting infinitesimal boosts and Thomas rotation coefficient/sign.",
+        "falsifiable_candidate": "Candidate: the perpendicular variation of rapidity equals gamma^2 delta beta. Discarded: it is eta delta beta_perp/beta, before the finite-boost conjugation.",
+        "outcome": "candidate_discarded_no_new_confirmed_error"
+      },
+      "independent_final_pass": {
+        "method": "Reverse problem order; work from final expressions back to source equations using conservation, boundary conditions, dimensional checks, independent integral reductions and limiting cases rather than repeating the first derivation.",
+        "evidence": "Final route: take beta to zero in the complete transformation; the spatial rotation begins at -1/2 beta cross delta beta, while a parallel variation has no rotation.",
+        "new_confirmed_errors": 0
+      },
+      "verification": {
+        "manual_analytic_retracing": "The displayed identities and domain restrictions above were retraced; this is not a claim that numerical sampling proves all parameter values.",
+        "baseline_exit_code": 0,
+        "final_exit_code": 0,
+        "final_log": "/var/folders/93/r1t98m8d3014c24llb8j119w0000gn/T/jackson-deep-debug-team3-7iu2qgz3/check_ch11-final.log",
+        "machine_check_kind": "Symbolic identities where implemented; otherwise numerical quadrature/spectral samples with explicit tolerances."
+      },
+      "changes": [],
+      "unresolved_limitations": []
+    },
+    {
+      "problem": "11.13",
+      "inspected_sources": [
+        {
+          "file": "sections/ch11.tex",
+          "line": 807,
+          "scope": "Current complete statement, solution, every subpart, assumptions and retained errata."
+        },
+        {
+          "file": "supplementary/check_ch11.py",
+          "scope": "Current functions covering this problem, assertion logic, numerical methods and generated assets."
+        },
+        {
+          "source": "Jackson 3rd edition supplied local PDF",
+          "printed_pages": "571",
+          "pdf_pages": [
+            596
+          ],
+          "ocr_files": [
+            "ocr/p-596.txt"
+          ]
+        }
+      ],
+      "source_notation": "Jackson pp.524-525,531-532,536,542-543,545-548,554-558; Eqs.11.16-11.19,11.26,11.31-11.36,11.46,11.69-11.78,11.90-11.99,11.128-11.149.",
+      "additional_sources_checked": [],
+      "first_pass": {
+        "method": "Read current problem and full solution, independently retrace the stated derivation, then inspect current check implementation.",
+        "mathematics_checked": "Boosted charged wire, current four-vector, Gaussian fields and charge per length.",
+        "falsifiable_candidate": "Candidate: the electric field is unchanged because individual charge is invariant. Discarded: the simultaneous line density is gamma times its rest value.",
+        "outcome": "candidate_discarded_no_new_confirmed_error"
+      },
+      "independent_final_pass": {
+        "method": "Reverse problem order; work from final expressions back to source equations using conservation, boundary conditions, dimensional checks, independent integral reductions and limiting cases rather than repeating the first derivation.",
+        "evidence": "Final route: integrate Gauss and Ampere laws over cylindrical loops using the transformed line charge/current; both recover the field-transform result.",
+        "new_confirmed_errors": 0
+      },
+      "verification": {
+        "manual_analytic_retracing": "The displayed identities and domain restrictions above were retraced; this is not a claim that numerical sampling proves all parameter values.",
+        "baseline_exit_code": 0,
+        "final_exit_code": 0,
+        "final_log": "/var/folders/93/r1t98m8d3014c24llb8j119w0000gn/T/jackson-deep-debug-team3-7iu2qgz3/check_ch11-final.log",
+        "machine_check_kind": "Symbolic identities where implemented; otherwise numerical quadrature/spectral samples with explicit tolerances."
+      },
+      "changes": [],
+      "unresolved_limitations": []
+    },
+    {
+      "problem": "11.14",
+      "inspected_sources": [
+        {
+          "file": "sections/ch11.tex",
+          "line": 854,
+          "scope": "Current complete statement, solution, every subpart, assumptions and retained errata."
+        },
+        {
+          "file": "supplementary/check_ch11.py",
+          "scope": "Current functions covering this problem, assertion logic, numerical methods and generated assets."
+        },
+        {
+          "source": "Jackson 3rd edition supplied local PDF",
+          "printed_pages": "571",
+          "pdf_pages": [
+            596
+          ],
+          "ocr_files": [
+            "ocr/p-596.txt"
+          ]
+        }
+      ],
+      "source_notation": "Jackson pp.524-525,531-532,536,542-543,545-548,554-558; Eqs.11.16-11.19,11.26,11.31-11.36,11.46,11.69-11.78,11.90-11.99,11.128-11.149.",
+      "additional_sources_checked": [],
+      "first_pass": {
+        "method": "Read current problem and full solution, independently retrace the stated derivation, then inspect current check implementation.",
+        "mathematics_checked": "Field-tensor/dual contractions, electric-free-frame criterion and listed additional invariants.",
+        "falsifiable_candidate": "Candidate: E dot B=0 alone is sufficient. Discarded: the invariant B^2-E^2 must be positive unless the field vanishes.",
+        "outcome": "candidate_discarded_no_new_confirmed_error"
+      },
+      "independent_final_pass": {
+        "method": "Reverse problem order; work from final expressions back to source equations using conservation, boundary conditions, dimensional checks, independent integral reductions and limiting cases rather than repeating the first derivation.",
+        "evidence": "Final route: choose beta=E cross B/B^2 and verify E'=0 and |beta|<1 precisely under the stated criterion; null nonzero fields fail it.",
+        "new_confirmed_errors": 0
+      },
+      "verification": {
+        "manual_analytic_retracing": "The displayed identities and domain restrictions above were retraced; this is not a claim that numerical sampling proves all parameter values.",
+        "baseline_exit_code": 0,
+        "final_exit_code": 0,
+        "final_log": "/var/folders/93/r1t98m8d3014c24llb8j119w0000gn/T/jackson-deep-debug-team3-7iu2qgz3/check_ch11-final.log",
+        "machine_check_kind": "Symbolic identities where implemented; otherwise numerical quadrature/spectral samples with explicit tolerances."
+      },
+      "changes": [],
+      "unresolved_limitations": []
+    },
+    {
+      "problem": "11.15",
+      "inspected_sources": [
+        {
+          "file": "sections/ch11.tex",
+          "line": 925,
+          "scope": "Current complete statement, solution, every subpart, assumptions and retained errata."
+        },
+        {
+          "file": "supplementary/check_ch11.py",
+          "scope": "Current functions covering this problem, assertion logic, numerical methods and generated assets."
+        },
+        {
+          "source": "Jackson 3rd edition supplied local PDF",
+          "printed_pages": "571-572",
+          "pdf_pages": [
+            596,
+            597
+          ],
+          "ocr_files": [
+            "ocr/p-596.txt",
+            "ocr/p-597.txt"
+          ]
+        }
+      ],
+      "source_notation": "Jackson pp.524-525,531-532,536,542-543,545-548,554-558; Eqs.11.16-11.19,11.26,11.31-11.36,11.46,11.69-11.78,11.90-11.99,11.128-11.149.",
+      "additional_sources_checked": [],
+      "first_pass": {
+        "method": "Read current problem and full solution, independently retrace the stated derivation, then inspect current check implementation.",
+        "mathematics_checked": "Boost making initially angled fields parallel, physical quadratic root and small/right-angle limits.",
+        "falsifiable_candidate": "Candidate: the other quadratic root is a second physical solution. Discarded: the product of roots is one, so the nontrivial second root is superluminal.",
+        "outcome": "candidate_discarded_no_new_confirmed_error"
+      },
+      "independent_final_pass": {
+        "method": "Reverse problem order; work from final expressions back to source equations using conservation, boundary conditions, dimensional checks, independent integral reductions and limiting cases rather than repeating the first derivation.",
+        "evidence": "Final route: use E dot B and B^2-E^2 to recover the transformed magnitudes; at theta=pi/2 the electric field vanishes and B'=sqrt(3)E0.",
+        "new_confirmed_errors": 0
+      },
+      "verification": {
+        "manual_analytic_retracing": "The displayed identities and domain restrictions above were retraced; this is not a claim that numerical sampling proves all parameter values.",
+        "baseline_exit_code": 0,
+        "final_exit_code": 0,
+        "final_log": "/var/folders/93/r1t98m8d3014c24llb8j119w0000gn/T/jackson-deep-debug-team3-7iu2qgz3/check_ch11-final.log",
+        "machine_check_kind": "Symbolic identities where implemented; otherwise numerical quadrature/spectral samples with explicit tolerances."
+      },
+      "changes": [],
+      "unresolved_limitations": []
+    },
+    {
+      "problem": "11.16",
+      "inspected_sources": [
+        {
+          "file": "sections/ch11.tex",
+          "line": 985,
+          "scope": "Current complete statement, solution, every subpart, assumptions and retained errata."
+        },
+        {
+          "file": "supplementary/check_ch11.py",
+          "scope": "Current functions covering this problem, assertion logic, numerical methods and generated assets."
+        },
+        {
+          "source": "Jackson 3rd edition supplied local PDF",
+          "printed_pages": "572",
+          "pdf_pages": [
+            597
+          ],
+          "ocr_files": [
+            "ocr/p-597.txt"
+          ]
+        }
+      ],
+      "source_notation": "Jackson pp.524-525,531-532,536,542-543,545-548,554-558; Eqs.11.16-11.19,11.26,11.31-11.36,11.46,11.69-11.78,11.90-11.99,11.128-11.149.",
+      "additional_sources_checked": [],
+      "first_pass": {
+        "method": "Read current problem and full solution, independently retrace the stated derivation, then inspect current check implementation.",
+        "mathematics_checked": "Covariant Ohm projector, Gaussian c factors, proper neutrality and moving-medium current.",
+        "falsifiable_candidate": "Candidate: the nonrelativistic motional term is v cross B in Gaussian units. Discarded against the already-corrected v cross B/c statement.",
+        "outcome": "candidate_discarded_no_new_confirmed_error"
+      },
+      "independent_final_pass": {
+        "method": "Reverse problem order; work from final expressions back to source equations using conservation, boundary conditions, dimensional checks, independent integral reductions and limiting cases rather than repeating the first derivation.",
+        "evidence": "Final route: contract the covariant law with U and transform from the rest-frame Ohm law; the induced charge density and convective subtraction then agree independently.",
+        "new_confirmed_errors": 0
+      },
+      "verification": {
+        "manual_analytic_retracing": "The displayed identities and domain restrictions above were retraced; this is not a claim that numerical sampling proves all parameter values.",
+        "baseline_exit_code": 0,
+        "final_exit_code": 0,
+        "final_log": "/var/folders/93/r1t98m8d3014c24llb8j119w0000gn/T/jackson-deep-debug-team3-7iu2qgz3/check_ch11-final.log",
+        "machine_check_kind": "Symbolic identities where implemented; otherwise numerical quadrature/spectral samples with explicit tolerances."
+      },
+      "changes": [],
+      "unresolved_limitations": []
+    },
+    {
+      "problem": "11.17",
+      "inspected_sources": [
+        {
+          "file": "sections/ch11.tex",
+          "line": 1053,
+          "scope": "Current complete statement, solution, every subpart, assumptions and retained errata."
+        },
+        {
+          "file": "supplementary/check_ch11.py",
+          "scope": "Current functions covering this problem, assertion logic, numerical methods and generated assets."
+        },
+        {
+          "source": "Jackson 3rd edition supplied local PDF",
+          "printed_pages": "572-573",
+          "pdf_pages": [
+            597,
+            598
+          ],
+          "ocr_files": [
+            "ocr/p-597.txt",
+            "ocr/p-598.txt"
+          ]
+        }
+      ],
+      "source_notation": "Jackson pp.524-525,531-532,536,542-543,545-548,554-558; Eqs.11.16-11.19,11.26,11.31-11.36,11.46,11.69-11.78,11.90-11.99,11.128-11.149.",
+      "additional_sources_checked": [],
+      "first_pass": {
+        "method": "Read current problem and full solution, independently retrace the stated derivation, then inspect current check implementation.",
+        "mathematics_checked": "Moving point-charge tensor from X wedge U, scalar distance and simultaneous/retarded displacement forms.",
+        "falsifiable_candidate": "Candidate: Lorentz covariance alone excludes the dual tensor. Discarded: the solution explicitly invokes the ordinary Coulomb field and rest-frame B=0.",
+        "outcome": "candidate_discarded_no_new_confirmed_error"
+      },
+      "independent_final_pass": {
+        "method": "Reverse problem order; work from final expressions back to source equations using conservation, boundary conditions, dimensional checks, independent integral reductions and limiting cases rather than repeating the first derivation.",
+        "evidence": "Final route: move X along the source worldline: X wedge U and its orthogonal distance remain unchanged; evaluating in the rest frame fixes q/c and the inverse-cube scalar.",
+        "new_confirmed_errors": 0
+      },
+      "verification": {
+        "manual_analytic_retracing": "The displayed identities and domain restrictions above were retraced; this is not a claim that numerical sampling proves all parameter values.",
+        "baseline_exit_code": 0,
+        "final_exit_code": 0,
+        "final_log": "/var/folders/93/r1t98m8d3014c24llb8j119w0000gn/T/jackson-deep-debug-team3-7iu2qgz3/check_ch11-final.log",
+        "machine_check_kind": "Symbolic identities where implemented; otherwise numerical quadrature/spectral samples with explicit tolerances."
+      },
+      "changes": [],
+      "unresolved_limitations": []
+    },
+    {
+      "problem": "11.18",
+      "inspected_sources": [
+        {
+          "file": "sections/ch11.tex",
+          "line": 1151,
+          "scope": "Current complete statement, solution, every subpart, assumptions and retained errata."
+        },
+        {
+          "file": "supplementary/check_ch11.py",
+          "scope": "Current functions covering this problem, assertion logic, numerical methods and generated assets."
+        },
+        {
+          "source": "Jackson 3rd edition supplied local PDF",
+          "printed_pages": "573",
+          "pdf_pages": [
+            598
+          ],
+          "ocr_files": [
+            "ocr/p-598.txt"
+          ]
+        }
+      ],
+      "source_notation": "Jackson pp.524-525,531-532,536,542-543,545-548,554-558; Eqs.11.16-11.19,11.26,11.31-11.36,11.46,11.69-11.78,11.90-11.99,11.128-11.149.",
+      "additional_sources_checked": [],
+      "first_pass": {
+        "method": "Read current problem and full solution, independently retrace the stated derivation, then inspect current check implementation.",
+        "mathematics_checked": "Ultrarelativistic distributional fields, null current sheet and gauge-equivalent potentials.",
+        "falsifiable_candidate": "Candidate: pointwise E_z tends to zero but leaves a delta distribution. Discarded by its odd longitudinal kernel and vanishing distributional integral.",
+        "outcome": "candidate_discarded_no_new_confirmed_error"
+      },
+      "independent_final_pass": {
+        "method": "Reverse problem order; work from final expressions back to source equations using conservation, boundary conditions, dimensional checks, independent integral reductions and limiting cases rather than repeating the first derivation.",
+        "evidence": "Final route: apply two-dimensional Gauss law to 2q r_perp/r_perp^2 and differentiate the step-function gauge; both reconstruct the same sheet source and field.",
+        "new_confirmed_errors": 0
+      },
+      "verification": {
+        "manual_analytic_retracing": "The displayed identities and domain restrictions above were retraced; this is not a claim that numerical sampling proves all parameter values.",
+        "baseline_exit_code": 0,
+        "final_exit_code": 0,
+        "final_log": "/var/folders/93/r1t98m8d3014c24llb8j119w0000gn/T/jackson-deep-debug-team3-7iu2qgz3/check_ch11-final.log",
+        "machine_check_kind": "Symbolic identities where implemented; otherwise numerical quadrature/spectral samples with explicit tolerances."
+      },
+      "changes": [],
+      "unresolved_limitations": []
+    },
+    {
+      "problem": "11.19",
+      "inspected_sources": [
+        {
+          "file": "sections/ch11.tex",
+          "line": 1263,
+          "scope": "Current complete statement, solution, every subpart, assumptions and retained errata."
+        },
+        {
+          "file": "supplementary/check_ch11.py",
+          "scope": "Current functions covering this problem, assertion logic, numerical methods and generated assets."
+        },
+        {
+          "source": "Jackson 3rd edition supplied local PDF",
+          "printed_pages": "573-574",
+          "pdf_pages": [
+            598,
+            599
+          ],
+          "ocr_files": [
+            "ocr/p-598.txt",
+            "ocr/p-599.txt"
+          ]
+        }
+      ],
+      "source_notation": "Jackson pp.524-525,531-532,536,542-543,545-548,554-558; Eqs.11.16-11.19,11.26,11.31-11.36,11.46,11.69-11.78,11.90-11.99,11.128-11.149.",
+      "additional_sources_checked": [],
+      "first_pass": {
+        "method": "Read current problem and full solution, independently retrace the stated derivation, then inspect current check implementation.",
+        "mathematics_checked": "Two-body decay energies, common momentum, Q allocation and pion/muon numerical example.",
+        "falsifiable_candidate": "Candidate: the heavy daughter gets half the available kinetic energy. Discarded by the mass-shell subtraction.",
+        "outcome": "candidate_discarded_no_new_confirmed_error"
+      },
+      "independent_final_pass": {
+        "method": "Reverse problem order; work from final expressions back to source equations using conservation, boundary conditions, dimensional checks, independent integral reductions and limiting cases rather than repeating the first derivation.",
+        "evidence": "Final route: square P-p1 and impose m2^2, then check E1+E2=M and equal/opposite momenta; the numerical kinetic energies sum to the specified release.",
+        "new_confirmed_errors": 0
+      },
+      "verification": {
+        "manual_analytic_retracing": "The displayed identities and domain restrictions above were retraced; this is not a claim that numerical sampling proves all parameter values.",
+        "baseline_exit_code": 0,
+        "final_exit_code": 0,
+        "final_log": "/var/folders/93/r1t98m8d3014c24llb8j119w0000gn/T/jackson-deep-debug-team3-7iu2qgz3/check_ch11-final.log",
+        "machine_check_kind": "Symbolic identities where implemented; otherwise numerical quadrature/spectral samples with explicit tolerances."
+      },
+      "changes": [],
+      "unresolved_limitations": []
+    },
+    {
+      "problem": "11.20",
+      "inspected_sources": [
+        {
+          "file": "sections/ch11.tex",
+          "line": 1320,
+          "scope": "Current complete statement, solution, every subpart, assumptions and retained errata."
+        },
+        {
+          "file": "supplementary/check_ch11.py",
+          "scope": "Current functions covering this problem, assertion logic, numerical methods and generated assets."
+        },
+        {
+          "source": "Jackson 3rd edition supplied local PDF",
+          "printed_pages": "574",
+          "pdf_pages": [
+            599
+          ],
+          "ocr_files": [
+            "ocr/p-599.txt"
+          ]
+        }
+      ],
+      "source_notation": "Jackson pp.524-525,531-532,536,542-543,545-548,554-558; Eqs.11.16-11.19,11.26,11.31-11.36,11.46,11.69-11.78,11.90-11.99,11.128-11.149.",
+      "additional_sources_checked": [],
+      "first_pass": {
+        "method": "Read current problem and full solution, independently retrace the stated derivation, then inspect current check implementation.",
+        "mathematics_checked": "Two-body invariant reconstruction, boosted opening-angle extrema and mean decay distance.",
+        "falsifiable_candidate": "Candidate: the largest opening angle is at transverse emission in the parent frame. Discarded by the actual angular derivative condition and boundary comparison.",
+        "outcome": "candidate_discarded_no_new_confirmed_error"
+      },
+      "independent_final_pass": {
+        "method": "Reverse problem order; work from final expressions back to source equations using conservation, boundary conditions, dimensional checks, independent integral reductions and limiting cases rather than repeating the first derivation.",
+        "evidence": "Final route: boost both daughter four-momenta and check their sum and on-shell norms throughout the angular domain; exponential proper lifetime transforms to beta gamma c tau.",
+        "new_confirmed_errors": 0
+      },
+      "verification": {
+        "manual_analytic_retracing": "The displayed identities and domain restrictions above were retraced; this is not a claim that numerical sampling proves all parameter values.",
+        "baseline_exit_code": 0,
+        "final_exit_code": 0,
+        "final_log": "/var/folders/93/r1t98m8d3014c24llb8j119w0000gn/T/jackson-deep-debug-team3-7iu2qgz3/check_ch11-final.log",
+        "machine_check_kind": "Symbolic identities where implemented; otherwise numerical quadrature/spectral samples with explicit tolerances."
+      },
+      "changes": [],
+      "unresolved_limitations": []
+    },
+    {
+      "problem": "11.21",
+      "inspected_sources": [
+        {
+          "file": "sections/ch11.tex",
+          "line": 1406,
+          "scope": "Current complete statement, solution, every subpart, assumptions and retained errata."
+        },
+        {
+          "file": "supplementary/check_ch11.py",
+          "scope": "Current functions covering this problem, assertion logic, numerical methods and generated assets."
+        },
+        {
+          "source": "Jackson 3rd edition supplied local PDF",
+          "printed_pages": "574-575",
+          "pdf_pages": [
+            599,
+            600
+          ],
+          "ocr_files": [
+            "ocr/p-599.txt",
+            "ocr/p-600.txt"
+          ]
+        }
+      ],
+      "source_notation": "Jackson pp.524-525,531-532,536,542-543,545-548,554-558; Eqs.11.16-11.19,11.26,11.31-11.36,11.46,11.69-11.78,11.90-11.99,11.128-11.149.",
+      "additional_sources_checked": [
+        "https://pdg.lbl.gov/2025/reviews/rpp2024-rev-charged-kaon-mass.pdf (primary search result verified mass 493.677 MeV; direct open returned internal error)"
+      ],
+      "first_pass": {
+        "method": "Read current problem and full solution, independently retrace the stated derivation, then inspect current check implementation.",
+        "mathematics_checked": "Multiparticle kinetic endpoints, minimum remainder invariant mass, massless limits and all table rows.",
+        "falsifiable_candidate": "Candidate: the remainder must have a rest frame even when all its particles are massless. Discarded: the null collinear limiting case is handled separately.",
+        "outcome": "candidate_discarded_no_new_confirmed_error"
+      },
+      "independent_final_pass": {
+        "method": "Reverse problem order; work from final expressions back to source equations using conservation, boundary conditions, dimensional checks, independent integral reductions and limiting cases rather than repeating the first derivation.",
+        "evidence": "Final route: treat the chosen daughter and remainder as a two-body system; lowering the remainder invariant mass increases the daughter energy, giving the stated endpoint or supremum.",
+        "new_confirmed_errors": 0
+      },
+      "verification": {
+        "manual_analytic_retracing": "The displayed identities and domain restrictions above were retraced; this is not a claim that numerical sampling proves all parameter values.",
+        "baseline_exit_code": 0,
+        "final_exit_code": 0,
+        "final_log": "/var/folders/93/r1t98m8d3014c24llb8j119w0000gn/T/jackson-deep-debug-team3-7iu2qgz3/check_ch11-final.log",
+        "machine_check_kind": "Symbolic identities where implemented; otherwise numerical quadrature/spectral samples with explicit tolerances."
+      },
+      "changes": [],
+      "unresolved_limitations": []
+    },
+    {
+      "problem": "11.22",
+      "inspected_sources": [
+        {
+          "file": "sections/ch11.tex",
+          "line": 1495,
+          "scope": "Current complete statement, solution, every subpart, assumptions and retained errata."
+        },
+        {
+          "file": "supplementary/check_ch11.py",
+          "scope": "Current functions covering this problem, assertion logic, numerical methods and generated assets."
+        },
+        {
+          "source": "Jackson 3rd edition supplied local PDF",
+          "printed_pages": "575",
+          "pdf_pages": [
+            600
+          ],
+          "ocr_files": [
+            "ocr/p-600.txt"
+          ]
+        }
+      ],
+      "source_notation": "Jackson pp.524-525,531-532,536,542-543,545-548,554-558; Eqs.11.16-11.19,11.26,11.31-11.36,11.46,11.69-11.78,11.90-11.99,11.128-11.149.",
+      "additional_sources_checked": [],
+      "first_pass": {
+        "method": "Read current problem and full solution, independently retrace the stated derivation, then inspect current check implementation.",
+        "mathematics_checked": "Two-photon pair threshold, angular dependence and both specified background energies.",
+        "falsifiable_candidate": "Candidate: parallel photons can pair-produce at sufficiently high energy. Discarded: their total invariant mass is identically zero.",
+        "outcome": "candidate_discarded_no_new_confirmed_error"
+      },
+      "independent_final_pass": {
+        "method": "Reverse problem order; work from final expressions back to source equations using conservation, boundary conditions, dimensional checks, independent integral reductions and limiting cases rather than repeating the first derivation.",
+        "evidence": "Final route: set s=4 m_e^2 c^4 and maximize 1-cos(psi); the head-on minimum reproduces the PeV and 522 MeV values without invoking an attenuation model.",
+        "new_confirmed_errors": 0
+      },
+      "verification": {
+        "manual_analytic_retracing": "The displayed identities and domain restrictions above were retraced; this is not a claim that numerical sampling proves all parameter values.",
+        "baseline_exit_code": 0,
+        "final_exit_code": 0,
+        "final_log": "/var/folders/93/r1t98m8d3014c24llb8j119w0000gn/T/jackson-deep-debug-team3-7iu2qgz3/check_ch11-final.log",
+        "machine_check_kind": "Symbolic identities where implemented; otherwise numerical quadrature/spectral samples with explicit tolerances."
+      },
+      "changes": [],
+      "unresolved_limitations": []
+    },
+    {
+      "problem": "11.23",
+      "inspected_sources": [
+        {
+          "file": "sections/ch11.tex",
+          "line": 1539,
+          "scope": "Current complete statement, solution, every subpart, assumptions and retained errata."
+        },
+        {
+          "file": "supplementary/check_ch11.py",
+          "scope": "Current functions covering this problem, assertion logic, numerical methods and generated assets."
+        },
+        {
+          "source": "Jackson 3rd edition supplied local PDF",
+          "printed_pages": "575",
+          "pdf_pages": [
+            600
+          ],
+          "ocr_files": [
+            "ocr/p-600.txt"
+          ]
+        }
+      ],
+      "source_notation": "Jackson pp.524-525,531-532,536,542-543,545-548,554-558; Eqs.11.16-11.19,11.26,11.31-11.36,11.46,11.69-11.78,11.90-11.99,11.128-11.149.",
+      "additional_sources_checked": [],
+      "first_pass": {
+        "method": "Read current problem and full solution, independently retrace the stated derivation, then inspect current check implementation.",
+        "mathematics_checked": "Fixed-target invariant energy, center-of-momentum boost, incoming momentum and nonrelativistic limit.",
+        "falsifiable_candidate": "Candidate: p'=p/gamma_cm. Discarded: the boosted incident energy contributes, giving p'=m2 p/W.",
+        "outcome": "candidate_discarded_no_new_confirmed_error"
+      },
+      "independent_final_pass": {
+        "method": "Reverse problem order; work from final expressions back to source equations using conservation, boundary conditions, dimensional checks, independent integral reductions and limiting cases rather than repeating the first derivation.",
+        "evidence": "Final route: boost the stationary target; its center-of-momentum magnitude equals m2 gamma_cm beta_cm=m2 p/W, independently fixing the incident momentum.",
+        "new_confirmed_errors": 0
+      },
+      "verification": {
+        "manual_analytic_retracing": "The displayed identities and domain restrictions above were retraced; this is not a claim that numerical sampling proves all parameter values.",
+        "baseline_exit_code": 0,
+        "final_exit_code": 0,
+        "final_log": "/var/folders/93/r1t98m8d3014c24llb8j119w0000gn/T/jackson-deep-debug-team3-7iu2qgz3/check_ch11-final.log",
+        "machine_check_kind": "Symbolic identities where implemented; otherwise numerical quadrature/spectral samples with explicit tolerances."
+      },
+      "changes": [],
+      "unresolved_limitations": []
+    },
+    {
+      "problem": "11.24",
+      "inspected_sources": [
+        {
+          "file": "sections/ch11.tex",
+          "line": 1670,
+          "scope": "Current complete statement, solution, every subpart, assumptions and retained errata."
+        },
+        {
+          "file": "supplementary/check_ch11.py",
+          "scope": "Current functions covering this problem, assertion logic, numerical methods and generated assets."
+        },
+        {
+          "source": "Jackson 3rd edition supplied local PDF",
+          "printed_pages": "575-576",
+          "pdf_pages": [
+            600,
+            601
+          ],
+          "ocr_files": [
+            "ocr/p-600.txt",
+            "ocr/p-601.txt"
+          ]
+        }
+      ],
+      "source_notation": "Jackson pp.524-525,531-532,536,542-543,545-548,554-558; Eqs.11.16-11.19,11.26,11.31-11.36,11.46,11.69-11.78,11.90-11.99,11.128-11.149.",
+      "additional_sources_checked": [],
+      "first_pass": {
+        "method": "Read current problem and full solution, independently retrace the stated derivation, then inspect current check implementation.",
+        "mathematics_checked": "General fixed-target threshold and all requested particle-production examples.",
+        "falsifiable_candidate": "Candidate: a fixed-target threshold is the same as a symmetric collider threshold. Discarded: the invariant contains the target mass in 2m2 T.",
+        "outcome": "candidate_discarded_no_new_confirmed_error"
+      },
+      "independent_final_pass": {
+        "method": "Reverse problem order; work from final expressions back to source equations using conservation, boundary conditions, dimensional checks, independent integral reductions and limiting cases rather than repeating the first derivation.",
+        "evidence": "Final route: final particles at threshold share a common velocity; their total invariant mass is the sum of masses, reproducing every threshold from one scalar equation.",
+        "new_confirmed_errors": 0
+      },
+      "verification": {
+        "manual_analytic_retracing": "The displayed identities and domain restrictions above were retraced; this is not a claim that numerical sampling proves all parameter values.",
+        "baseline_exit_code": 0,
+        "final_exit_code": 0,
+        "final_log": "/var/folders/93/r1t98m8d3014c24llb8j119w0000gn/T/jackson-deep-debug-team3-7iu2qgz3/check_ch11-final.log",
+        "machine_check_kind": "Symbolic identities where implemented; otherwise numerical quadrature/spectral samples with explicit tolerances."
+      },
+      "changes": [],
+      "unresolved_limitations": []
+    },
+    {
+      "problem": "11.25",
+      "inspected_sources": [
+        {
+          "file": "sections/ch11.tex",
+          "line": 1732,
+          "scope": "Current complete statement, solution, every subpart, assumptions and retained errata."
+        },
+        {
+          "file": "supplementary/check_ch11.py",
+          "scope": "Current functions covering this problem, assertion logic, numerical methods and generated assets."
+        },
+        {
+          "source": "Jackson 3rd edition supplied local PDF",
+          "printed_pages": "576",
+          "pdf_pages": [
+            601
+          ],
+          "ocr_files": [
+            "ocr/p-601.txt"
+          ]
+        }
+      ],
+      "source_notation": "Jackson pp.524-525,531-532,536,542-543,545-548,554-558; Eqs.11.16-11.19,11.26,11.31-11.36,11.46,11.69-11.78,11.90-11.99,11.128-11.149.",
+      "additional_sources_checked": [],
+      "first_pass": {
+        "method": "Read current problem and full solution, independently retrace the stated derivation, then inspect current check implementation.",
+        "mathematics_checked": "Crossing-angle definition and source figure, invariant energy expansion, boost direction and pion example.",
+        "falsifiable_candidate": "Candidate: theta is the angle between momentum vectors. Discarded against the explicitly corrected departure-from-head-on convention.",
+        "outcome": "candidate_discarded_no_new_confirmed_error"
+      },
+      "independent_final_pass": {
+        "method": "Reverse problem order; work from final expressions back to source equations using conservation, boundary conditions, dimensional checks, independent integral reductions and limiting cases rather than repeating the first derivation.",
+        "evidence": "Final route: sum the two laboratory momentum vectors geometrically and compare with sqrt((E1+E2)^2-W^2); atan2 fixes the quadrant and zero-momentum degeneracies.",
+        "new_confirmed_errors": 0
+      },
+      "verification": {
+        "manual_analytic_retracing": "The displayed identities and domain restrictions above were retraced; this is not a claim that numerical sampling proves all parameter values.",
+        "baseline_exit_code": 0,
+        "final_exit_code": 0,
+        "final_log": "/var/folders/93/r1t98m8d3014c24llb8j119w0000gn/T/jackson-deep-debug-team3-7iu2qgz3/check_ch11-final.log",
+        "machine_check_kind": "Symbolic identities where implemented; otherwise numerical quadrature/spectral samples with explicit tolerances."
+      },
+      "changes": [],
+      "unresolved_limitations": []
+    },
+    {
+      "problem": "11.26",
+      "inspected_sources": [
+        {
+          "file": "sections/ch11.tex",
+          "line": 1858,
+          "scope": "Current complete statement, solution, every subpart, assumptions and retained errata."
+        },
+        {
+          "file": "supplementary/check_ch11.py",
+          "scope": "Current functions covering this problem, assertion logic, numerical methods and generated assets."
+        },
+        {
+          "source": "Jackson 3rd edition supplied local PDF",
+          "printed_pages": "576-577",
+          "pdf_pages": [
+            601,
+            602
+          ],
+          "ocr_files": [
+            "ocr/p-601.txt",
+            "ocr/p-602.txt"
+          ]
+        }
+      ],
+      "source_notation": "Jackson pp.524-525,531-532,536,542-543,545-548,554-558; Eqs.11.16-11.19,11.26,11.31-11.36,11.46,11.69-11.78,11.90-11.99,11.128-11.149.",
+      "additional_sources_checked": [],
+      "first_pass": {
+        "method": "Read current problem and full solution, independently retrace the stated derivation, then inspect current check implementation.",
+        "mathematics_checked": "Elastic recoil energy in center-of-momentum, lab angle and Q^2 forms, maximal transfer and mass limits.",
+        "falsifiable_candidate": "Candidate: squaring permits backward recoil targets. Discarded: the unsquared relation requires cos(theta4)>=0.",
+        "outcome": "candidate_discarded_no_new_confirmed_error"
+      },
+      "independent_final_pass": {
+        "method": "Reverse problem order; work from final expressions back to source equations using conservation, boundary conditions, dimensional checks, independent integral reductions and limiting cases rather than repeating the first derivation.",
+        "evidence": "Final route: use the target mass shell to derive Q^2=2m2 T, then maximize it at center-of-momentum backscatter; the equal-mass limit permits full labeled-target transfer.",
+        "new_confirmed_errors": 0
+      },
+      "verification": {
+        "manual_analytic_retracing": "The displayed identities and domain restrictions above were retraced; this is not a claim that numerical sampling proves all parameter values.",
+        "baseline_exit_code": 0,
+        "final_exit_code": 0,
+        "final_log": "/var/folders/93/r1t98m8d3014c24llb8j119w0000gn/T/jackson-deep-debug-team3-7iu2qgz3/check_ch11-final.log",
+        "machine_check_kind": "Symbolic identities where implemented; otherwise numerical quadrature/spectral samples with explicit tolerances."
+      },
+      "changes": [],
+      "unresolved_limitations": []
+    },
+    {
+      "problem": "11.27",
+      "inspected_sources": [
+        {
+          "file": "sections/ch11.tex",
+          "line": 1951,
+          "scope": "Current complete statement, solution, every subpart, assumptions and retained errata."
+        },
+        {
+          "file": "supplementary/check_ch11.py",
+          "scope": "Current functions covering this problem, assertion logic, numerical methods and generated assets."
+        },
+        {
+          "source": "Jackson 3rd edition supplied local PDF",
+          "printed_pages": "577",
+          "pdf_pages": [
+            602
+          ],
+          "ocr_files": [
+            "ocr/p-602.txt"
+          ]
+        }
+      ],
+      "source_notation": "Jackson pp.524-525,531-532,536,542-543,545-548,554-558; Eqs.11.16-11.19,11.26,11.31-11.36,11.46,11.69-11.78,11.90-11.99,11.128-11.149.",
+      "additional_sources_checked": [],
+      "first_pass": {
+        "method": "Read current problem and full solution, independently retrace the stated derivation, then inspect current check implementation.",
+        "mathematics_checked": "Boosted electric/magnetic source densities, equal-time volume Jacobian, moments and static-current condition.",
+        "falsifiable_candidate": "Candidate: a moving electric dipole has magnetic moment p cross beta, without the half. Discarded: the defining current moment contains 1/(2c).",
+        "outcome": "candidate_discarded_no_new_confirmed_error"
+      },
+      "independent_final_pass": {
+        "method": "Reverse problem order; work from final expressions back to source equations using conservation, boundary conditions, dimensional checks, independent integral reductions and limiting cases rather than repeating the first derivation.",
+        "evidence": "Final route: integrate the boosted source at fixed laboratory time; antisymmetry of integral x_i J_j for a steady localized current gives p=beta cross m and separates the two physically different boosts.",
+        "new_confirmed_errors": 0
+      },
+      "verification": {
+        "manual_analytic_retracing": "The displayed identities and domain restrictions above were retraced; this is not a claim that numerical sampling proves all parameter values.",
+        "baseline_exit_code": 0,
+        "final_exit_code": 0,
+        "final_log": "/var/folders/93/r1t98m8d3014c24llb8j119w0000gn/T/jackson-deep-debug-team3-7iu2qgz3/check_ch11-final.log",
+        "machine_check_kind": "Symbolic identities where implemented; otherwise numerical quadrature/spectral samples with explicit tolerances."
+      },
+      "changes": [],
+      "unresolved_limitations": []
+    },
+    {
+      "problem": "11.28",
+      "inspected_sources": [
+        {
+          "file": "sections/ch11.tex",
+          "line": 2017,
+          "scope": "Current complete statement, solution, every subpart, assumptions and retained errata."
+        },
+        {
+          "file": "supplementary/check_ch11.py",
+          "scope": "Current functions covering this problem, assertion logic, numerical methods and generated assets."
+        },
+        {
+          "source": "Jackson 3rd edition supplied local PDF",
+          "printed_pages": "577",
+          "pdf_pages": [
+            602
+          ],
+          "ocr_files": [
+            "ocr/p-602.txt"
+          ]
+        }
+      ],
+      "source_notation": "Jackson pp.524-525,531-532,536,542-543,545-548,554-558; Eqs.11.16-11.19,11.26,11.31-11.36,11.46,11.69-11.78,11.90-11.99,11.128-11.149.",
+      "additional_sources_checked": [],
+      "first_pass": {
+        "method": "Read current problem and full solution, independently retrace the stated derivation, then inspect current check implementation.",
+        "mathematics_checked": "Moving electric-dipole potentials, Lorenz gauge, electric field and full magnetic/quadrupole contribution.",
+        "falsifiable_candidate": "Candidate: the field is completely described by the current-defined magnetic dipole. Discarded: the symmetric potential piece and displacement current also contribute.",
+        "outcome": "candidate_discarded_no_new_confirmed_error"
+      },
+      "independent_final_pass": {
+        "method": "Reverse problem order; work from final expressions back to source equations using conservation, boundary conditions, dimensional checks, independent integral reductions and limiting cases rather than repeating the first derivation.",
+        "evidence": "Final route: differentiate the translated scalar potential with partial_t=-v dot grad; the Lorenz condition and B=beta cross E follow directly.",
+        "new_confirmed_errors": 0
+      },
+      "verification": {
+        "manual_analytic_retracing": "The displayed identities and domain restrictions above were retraced; this is not a claim that numerical sampling proves all parameter values.",
+        "baseline_exit_code": 0,
+        "final_exit_code": 0,
+        "final_log": "/var/folders/93/r1t98m8d3014c24llb8j119w0000gn/T/jackson-deep-debug-team3-7iu2qgz3/check_ch11-final.log",
+        "machine_check_kind": "Symbolic identities where implemented; otherwise numerical quadrature/spectral samples with explicit tolerances."
+      },
+      "changes": [],
+      "unresolved_limitations": []
+    },
+    {
+      "problem": "11.29",
+      "inspected_sources": [
+        {
+          "file": "sections/ch11.tex",
+          "line": 2121,
+          "scope": "Current complete statement, solution, every subpart, assumptions and retained errata."
+        },
+        {
+          "file": "supplementary/check_ch11.py",
+          "scope": "Current functions covering this problem, assertion logic, numerical methods and generated assets."
+        },
+        {
+          "source": "Jackson 3rd edition supplied local PDF",
+          "printed_pages": "577-578",
+          "pdf_pages": [
+            602,
+            603
+          ],
+          "ocr_files": [
+            "ocr/p-602.txt",
+            "ocr/p-603.txt"
+          ]
+        }
+      ],
+      "source_notation": "Jackson pp.524-525,531-532,536,542-543,545-548,554-558; Eqs.11.16-11.19,11.26,11.31-11.36,11.46,11.69-11.78,11.90-11.99,11.128-11.149.",
+      "additional_sources_checked": [],
+      "first_pass": {
+        "method": "Read current problem and full solution, independently retrace the stated derivation, then inspect current check implementation.",
+        "mathematics_checked": "Moving magnetic-dipole potentials, electric dipole/inductive terms, half-dipole identity and contact fields.",
+        "falsifiable_candidate": "Candidate: E is the static dipole field of beta cross m alone. Discarded: the time-dependent vector potential supplies an equally required induction term.",
+        "outcome": "candidate_discarded_no_new_confirmed_error"
+      },
+      "independent_final_pass": {
+        "method": "Reverse problem order; work from final expressions back to source equations using conservation, boundary conditions, dimensional checks, independent integral reductions and limiting cases rather than repeating the first derivation.",
+        "evidence": "Final route: apply E=B_static cross beta, including the distributional 8 pi m delta/3 contact term; it agrees with the complete potential-derived result.",
+        "new_confirmed_errors": 0
+      },
+      "verification": {
+        "manual_analytic_retracing": "The displayed identities and domain restrictions above were retraced; this is not a claim that numerical sampling proves all parameter values.",
+        "baseline_exit_code": 0,
+        "final_exit_code": 0,
+        "final_log": "/var/folders/93/r1t98m8d3014c24llb8j119w0000gn/T/jackson-deep-debug-team3-7iu2qgz3/check_ch11-final.log",
+        "machine_check_kind": "Symbolic identities where implemented; otherwise numerical quadrature/spectral samples with explicit tolerances."
+      },
+      "changes": [],
+      "unresolved_limitations": []
+    },
+    {
+      "problem": "11.30",
+      "inspected_sources": [
+        {
+          "file": "sections/ch11.tex",
+          "line": 2230,
+          "scope": "Current complete statement, solution, every subpart, assumptions and retained errata."
+        },
+        {
+          "file": "supplementary/check_ch11.py",
+          "scope": "Current functions covering this problem, assertion logic, numerical methods and generated assets."
+        },
+        {
+          "source": "Jackson 3rd edition supplied local PDF",
+          "printed_pages": "578",
+          "pdf_pages": [
+            603
+          ],
+          "ocr_files": [
+            "ocr/p-603.txt"
+          ]
+        }
+      ],
+      "source_notation": "Jackson pp.524-525,531-532,536,542-543,545-548,554-558; Eqs.11.16-11.19,11.26,11.31-11.36,11.46,11.69-11.78,11.90-11.99,11.128-11.149.",
+      "additional_sources_checked": [],
+      "first_pass": {
+        "method": "Read current problem and full solution, independently retrace the stated derivation, then inspect current check implementation.",
+        "mathematics_checked": "Lorentz-transformed constitutive tensors, parallel/perpendicular solution and Gaussian dimensions.",
+        "falsifiable_candidate": "Candidate: epsilon and mu are SI absolute quantities here. Discarded: Jackson Chapter 11 uses dimensionless Gaussian constitutive constants.",
+        "outcome": "candidate_discarded_no_new_confirmed_error"
+      },
+      "independent_final_pass": {
+        "method": "Reverse problem order; work from final expressions back to source equations using conservation, boundary conditions, dimensional checks, independent integral reductions and limiting cases rather than repeating the first derivation.",
+        "evidence": "Final route: substitute the displayed D,H into the covariant implicit constitutive relations; parallel components reduce to the rest laws and beta=0 recovers all components.",
+        "new_confirmed_errors": 0
+      },
+      "verification": {
+        "manual_analytic_retracing": "The displayed identities and domain restrictions above were retraced; this is not a claim that numerical sampling proves all parameter values.",
+        "baseline_exit_code": 0,
+        "final_exit_code": 0,
+        "final_log": "/var/folders/93/r1t98m8d3014c24llb8j119w0000gn/T/jackson-deep-debug-team3-7iu2qgz3/check_ch11-final.log",
+        "machine_check_kind": "Symbolic identities where implemented; otherwise numerical quadrature/spectral samples with explicit tolerances."
+      },
+      "changes": [],
+      "unresolved_limitations": []
+    },
+    {
+      "problem": "11.31",
+      "inspected_sources": [
+        {
+          "file": "sections/ch11.tex",
+          "line": 2299,
+          "scope": "Current complete statement, solution, every subpart, assumptions and retained errata."
+        },
+        {
+          "file": "supplementary/check_ch11.py",
+          "scope": "Current functions covering this problem, assertion logic, numerical methods and generated assets."
+        },
+        {
+          "source": "Jackson 3rd edition supplied local PDF",
+          "printed_pages": "578",
+          "pdf_pages": [
+            603
+          ],
+          "ocr_files": [
+            "ocr/p-603.txt"
+          ]
+        }
+      ],
+      "source_notation": "Jackson pp.524-525,531-532,536,542-543,545-548,554-558; Eqs.11.16-11.19,11.26,11.31-11.36,11.46,11.69-11.78,11.90-11.99,11.128-11.149.",
+      "additional_sources_checked": [
+        "https://arxiv.org/pdf/gr-qc/0104101 (pp.2-3 and 10-13, steel-wax versus homogeneous YIG limitations)"
+      ],
+      "first_pass": {
+        "method": "Read current problem and full solution, independently retrace the stated derivation, then inspect current check implementation.",
+        "mathematics_checked": "Rotating magnetic dielectric, local constitutive assumption, boundary constants, exact voltage and low-speed form.",
+        "falsifiable_candidate": "Candidate: historical steel-in-wax agreement uniquely validates a homogeneous rotating constitutive model. Discarded against the primary Hertzberg paper; the solution preserves that limitation.",
+        "outcome": "candidate_discarded_no_new_confirmed_error"
+      },
+      "independent_final_pass": {
+        "method": "Reverse problem order; work from final expressions back to source equations using conservation, boundary conditions, dimensional checks, independent integral reductions and limiting cases rather than repeating the first derivation.",
+        "evidence": "Final route: D_r=0 and H_z=B0 solve Maxwell's equations under the explicit no-free-source/infinite-cylinder assumptions; integrate -E_r and expand the exact logarithm to obtain the quoted voltage.",
+        "new_confirmed_errors": 0
+      },
+      "verification": {
+        "manual_analytic_retracing": "The displayed identities and domain restrictions above were retraced; this is not a claim that numerical sampling proves all parameter values.",
+        "baseline_exit_code": 0,
+        "final_exit_code": 0,
+        "final_log": "/var/folders/93/r1t98m8d3014c24llb8j119w0000gn/T/jackson-deep-debug-team3-7iu2qgz3/check_ch11-final.log",
+        "machine_check_kind": "Symbolic identities where implemented; otherwise numerical quadrature/spectral samples with explicit tolerances."
+      },
+      "changes": [],
+      "unresolved_limitations": []
+    }
+  ],
+  "frozen_sha256": {
+    "sections/ch11.tex": "d127d59e1bcc01753d8e0427217f38df0e828852441a73c4b1ef5670fbb998cd",
+    "supplementary/ch11-results.json": "9fe0158371ca1095371df218f7f7215eea2071e09adaedd026f64b1cea012cb6",
+    "supplementary/ch11-sources.json": "c2e5846389862aaf5ea32ba88d42c9424b6adbb3e2132b460e9501fdb3f5bd78",
+    "supplementary/ch11-verification.json": "5d2ec0b4b5dd901445d540e1206b4d83b301c01c756dd56407e27aee0df6e0ad",
+    "supplementary/check_ch11.py": "7ed2923ee82d66b4e52cd53f9f2d5ff7fd2e69e007e62e4fbdd40c39e33346ab"
+  },
+  "validation": {
+    "isolated_compile": [
+      {
+        "command": [
+          "pdflatex",
+          "-interaction=nonstopmode",
+          "-halt-on-error",
+          "review.tex"
+        ],
+        "cwd": "/var/folders/93/r1t98m8d3014c24llb8j119w0000gn/T/jackson-deep-debug-team3-7iu2qgz3/compile",
+        "pass": 1,
+        "exit_code": 0,
+        "seconds": 28.98,
+        "log": "/var/folders/93/r1t98m8d3014c24llb8j119w0000gn/T/jackson-deep-debug-team3-7iu2qgz3/compile/pdflatex-1.log",
+        "tail": [
+          "mbols/msbm10.pfb>",
+          "Output written on review.pdf (144 pages, 1118220 bytes).",
+          "Transcript written on review.log."
+        ]
+      },
+      {
+        "command": [
+          "pdflatex",
+          "-interaction=nonstopmode",
+          "-halt-on-error",
+          "review.tex"
+        ],
+        "cwd": "/var/folders/93/r1t98m8d3014c24llb8j119w0000gn/T/jackson-deep-debug-team3-7iu2qgz3/compile",
+        "pass": 2,
+        "exit_code": 0,
+        "seconds": 41.444,
+        "log": "/var/folders/93/r1t98m8d3014c24llb8j119w0000gn/T/jackson-deep-debug-team3-7iu2qgz3/compile/pdflatex-2.log",
+        "tail": [
+          "sbm10.pfb>",
+          "Output written on review.pdf (144 pages, 1118220 bytes).",
+          "Transcript written on review.log."
+        ]
+      }
+    ],
+    "current_tex_and_referenced_assets_match_compiled_copy": true,
+    "render_manifest": "/private/var/folders/93/r1t98m8d3014c24llb8j119w0000gn/T/jackson-deep-debug-team3-7iu2qgz3/render-results.json",
+    "pdf_pages": 144,
+    "pdftotext_exit": 0,
+    "pdftoppm_exit": 0,
+    "montage_initial_exit": 1,
+    "montage_initial_failure": "montage: unable to read font `' @ error/annotate.c/RenderFreetype/1660.",
+    "montage_resolution": "Supplied the verified existing Helvetica.ttc font; all nine contact-sheet commands subsequently exited 0.",
+    "montage_retry_exits": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "visual_inspection": "All nine contact sheets (all 144 pages) inspected; full pages 71 and 141-144 separately inspected. No clipped formulas/plots or missing separation found.",
+    "latex_diagnostic_scan": [],
+    "prefixes_checked": 31,
+    "ledger_generation_observed_exits": [
+      1,
+      0
+    ],
+    "ledger_generation_resolution": "First temporary generator used a bare vertical-bar separator that also occurred inside a mathematical absolute value. Replaced it with explicit Candidate/Confirmed and Final route field delimiters; regenerated all 104 entries and validated their IDs, JSON syntax and hashes successfully.",
+    "numerical_evidence_limit": "Passing samples and symbolic identities have the coverage stated in the current scripts; they are not an exhaustive theorem proof for every parameter."
+  }
+}

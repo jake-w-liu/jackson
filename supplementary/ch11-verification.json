@@ -1,0 +1,24 @@
+{
+  "problem_count": 31,
+  "solution_count": 31,
+  "test_groups_passed": 31,
+  "test_command": "python3 -u -W error supplementary/check_ch11.py",
+  "test_log": "build/ch11-checks.log",
+  "compile_command": "pdflatex -interaction=nonstopmode -halt-on-error -output-directory=/private/tmp/ch11-latex build/ch11-check.tex",
+  "chapter_pdf": "build/ch11-check.pdf",
+  "pages": 38,
+  "tex_warnings_or_over_underfull_boxes": 0,
+  "visual_review": "All38 pages reviewed: delivery pages1-35 pixel-identical to reviewed verified images; delivery pages36-38 inspected individually after the final historical note.",
+  "render_command": "pdftoppm -scale-to 1500 -png /private/tmp/ch11-latex/ch11-check.pdf /private/tmp/ch11-delivery",
+  "break_prefixes_preserved": 31,
+  "remaining_limitation": "11.8b: Macek et al.1964 full text inaccessible; explicit footnote records metadata-only access and cites checked primary1972/2012 experimental reports for the status discussion.",
+  "sha256": {
+    "sections/ch11.tex": "a03802cc18b18a8851fc48d46dc2f6322daed57be2346e023d583e6453385668",
+    "supplementary/check_ch11.py": "b22c87d63442a06add79922e24c64e96cc200d3d34125848a0c878b6780b1b09",
+    "supplementary/ch11-results.json": "9fe0158371ca1095371df218f7f7215eea2071e09adaedd026f64b1cea012cb6",
+    "supplementary/ch11-sources.json": "c2e5846389862aaf5ea32ba88d42c9424b6adbb3e2132b460e9501fdb3f5bd78",
+    "build/ch11-check.pdf": "634a2dfe5098d772fa1fff79bc37e7653eb19c97106442ed490def357f945da8",
+    "build/ch11-check.log": "ebab3868fe71b0b4941eb20a3fc8acedc43b693e3c127bbf4902769ac6c30244",
+    "build/ch11-checks.log": "24207ee26e0b376672c6fd89011eb9049c94a30577b90192086ef769622db4fe"
+  }
+}

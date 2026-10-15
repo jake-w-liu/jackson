@@ -1,0 +1,690 @@
+{
+  "audit": "Fresh iterative deep-debug, current-run independent evidence",
+  "date": "2026-10-03",
+  "chapter": 12,
+  "coverage": {
+    "problems": 21,
+    "all_problem_statements_and_solutions_read": true,
+    "every_subpart_retraced": true,
+    "problem_spacing_prefixes_preserved": 21
+  },
+  "scope_reconstruction": [
+    "Actual chapter TeX and entire current check script inspected.",
+    "Prior recheck ledgers used only to locate sources, not as current proof.",
+    "All problem pages read from local Jackson OCR and critical formulas/diagrams checked from actual scans."
+  ],
+  "audit_matrix": {
+    "domain": "Per-problem algebra, signs, units, normalization, boundaries, approximation domains and limiting behavior retraced; actual source conventions checked.",
+    "implementation": "Entire calculation script inspected; independent functions added for alternative routes and successful execution checked with warnings-as-errors.",
+    "data_and_io": "Physical inputs traced to supplied problem or primary source; deterministic figure generators run. Captured stdout copied after completion, not streamed to workspace.",
+    "resources": "Finite numerical grids/integrals, bounded file output under owned chapter assets; no services or external mutations and no processes terminated.",
+    "performance": "No speed/optimization claim requested or made; execution completed. Added high-precision/radial-grid/orbit checks are bounded by explicit samples."
+  },
+  "notation_checks": [
+    "Gaussian units, metric diag(1,-1,-1,-1), and x^0=ct. The actual printed p.556 scan, Eqs. (11.136)–(11.140), has F^{0i}=-E_i and F^{ij}=-epsilon_{ijk} B_k.",
+    "Printed p.584 Eq. (12.33) defines physical P=-dL/dU; Eq. (12.34) gives the positive effective Hamiltonian.",
+    "The rest-frame spin convention is checked against printed pp.564–565 (BMT). London impedance uses exp(-i omega t), printed pp.604–605. Problem 12.17 explicitly sets c=1. SI is used only for identified numerical conversions."
+  ],
+  "checks": [
+    {
+      "stage": "baseline",
+      "command": "python3 -W error supplementary/check_ch12.py",
+      "exit": 0,
+      "captured_log": "supplementary/ch12-deep-debug/baseline.log",
+      "note": "All assertions passed; warnings treated as errors."
+    },
+    {
+      "stage": "crc2",
+      "command": "python3 -W error supplementary/check_ch12.py",
+      "exit": 0,
+      "captured_log": "supplementary/ch12-deep-debug/crc2.log",
+      "note": "All assertions passed; warnings treated as errors."
+    },
+    {
+      "stage": "final",
+      "command": "python3 -W error supplementary/check_ch12.py",
+      "exit": 0,
+      "captured_log": "supplementary/ch12-deep-debug/final.log",
+      "note": "All assertions passed; warnings treated as errors."
+    }
+  ],
+  "confirmed_new_math_or_statement_bugs": 0,
+  "final_pass_status": "Complete across all assigned chapter problems, using the different routes below; no new confirmed defect. Numerical samples are not universal proofs.",
+  "problems": [
+    {
+      "problem": "12.1",
+      "statement_and_every_solution_subpart_read": true,
+      "subparts": [
+        "a",
+        "b"
+      ],
+      "inspected_sources": [
+        "sections/ch12.tex:9",
+        "supplementary/check_ch12.py: check_01",
+        "ocr/p-642.txt (Jackson printed p.617)",
+        "Jackson/source conventions: 556:(11.136)-(11.140); 584-585:(12.33)-(12.34)"
+      ],
+      "initial_derivation_checked": "Covariant variation before normalization gives the Lorentz force. Jackson uses P=-dL/dU and Htilde=P.U+L, so Htilde=+mc^2/2.",
+      "candidate": "Possible canonical-Hamiltonian sign conflict was discarded after inspecting the actual p.584 scan; the alternative ordinary Legendre convention is explicitly distinguished.",
+      "candidate_status": "discarded/no new defect",
+      "change": "No TeX change in this fresh audit.",
+      "current_verification": {
+        "analytic": "Manual independent algebra/identities and source comparison as recorded; not a machine-checked theorem.",
+        "executable": "check_01",
+        "sample_evidence": "The full chapter suite exited 0 with -W error. Symbolic identities and numerical tolerances are in the named functions; finite numerical samples are not universal proofs."
+      },
+      "independent_final_pass": {
+        "route": "Different route: Hamilton equations reconstruct the four-force; antisymmetry conserves U^2. The space-time mass-shell expression equals the invariant Hamiltonian.",
+        "result": "No new confirmed mathematical or physical defect found in this independent final pass."
+      },
+      "remaining_limitations": "Gaussian units and metric+---; proper-time normalization is imposed after variation."
+    },
+    {
+      "problem": "12.2",
+      "statement_and_every_solution_subpart_read": true,
+      "subparts": [
+        "a",
+        "b"
+      ],
+      "inspected_sources": [
+        "sections/ch12.tex:92",
+        "supplementary/check_ch12.py: check_02",
+        "ocr/p-642.txt (Jackson printed p.617)",
+        "Jackson/source conventions: 584-585: particle action; printed p.617"
+      ],
+      "initial_derivation_checked": "A total derivative changes only the endpoint action. A to A+partial Lambda changes L by -q dLambda/(c dt).",
+      "candidate": "Possible reversed spatial gauge sign was discarded using partial^alpha=(c^-1 partial_t,-grad).",
+      "candidate_status": "discarded/no new defect",
+      "change": "No TeX change in this fresh audit.",
+      "current_verification": {
+        "analytic": "Manual independent algebra/identities and source comparison as recorded; not a machine-checked theorem.",
+        "executable": "check_02",
+        "sample_evidence": "The full chapter suite exited 0 with -W error. Symbolic identities and numerical tolerances are in the named functions; finite numerical samples are not universal proofs."
+      },
+      "independent_final_pass": {
+        "route": "Different route: compute the Euler-Lagrange contribution of F_t+F_q qdot componentwise and distinguish gauge-dependent canonical momentum from kinetic momentum.",
+        "result": "No new confirmed mathematical or physical defect found in this independent final pass."
+      },
+      "remaining_limitations": "Fixed endpoints and differentiable gauge variations."
+    },
+    {
+      "problem": "12.3",
+      "statement_and_every_solution_subpart_read": true,
+      "subparts": [
+        "a",
+        "b"
+      ],
+      "inspected_sources": [
+        "sections/ch12.tex:136",
+        "supplementary/check_ch12.py: check_03; check_fresh_routes",
+        "ocr/p-642.txt (Jackson printed p.617)",
+        "Jackson/source conventions: printed p.617; relativistic Lorentz force(11.144)"
+      ],
+      "initial_derivation_checked": "Uniform momentum growth fixes gamma, velocity and hyperbolic position integrals. The spatial trajectory is a catenary.",
+      "candidate": "Negative charge and zero transverse speed are covered by signed F and the explicitly stated continuous straight-path limits.",
+      "candidate_status": "discarded/no new defect",
+      "change": "No TeX change in this fresh audit.",
+      "current_verification": {
+        "analytic": "Manual independent algebra/identities and source comparison as recorded; not a machine-checked theorem.",
+        "executable": "check_03; check_fresh_routes",
+        "sample_evidence": "The full chapter suite exited 0 with -W error. Symbolic identities and numerical tolerances are in the named functions; finite numerical samples are not universal proofs."
+      },
+      "independent_final_pass": {
+        "route": "Different route: electrostatic work gamma-gamma0=F x in scaled units is checked for both force signs and several times, along with short/long-time velocity limits.",
+        "result": "No new confirmed mathematical or physical defect found in this independent final pass."
+      },
+      "remaining_limitations": "Uniform static field; radiation reaction is outside the prescribed equation."
+    },
+    {
+      "problem": "12.4",
+      "statement_and_every_solution_subpart_read": true,
+      "subparts": [
+        "whole problem"
+      ],
+      "inspected_sources": [
+        "sections/ch12.tex:195",
+        "supplementary/check_ch12.py: check_04",
+        "ocr/p-642.txt (Jackson printed p.617)",
+        "Jackson/source conventions: printed p.617; Section12.3 field boost"
+      ],
+      "initial_derivation_checked": "The boosted gyro orbit and laboratory linearization yield D and its phase. Equal finite slits give triangular transmission, full support and FWHM.",
+      "candidate": "The large proton bandwidth at beta=.995 is already labeled an extrapolation; the exact ODE gives the physical acceptance lower edge .9500180.",
+      "candidate_status": "discarded/no new defect",
+      "change": "No TeX change in this fresh audit.",
+      "current_verification": {
+        "analytic": "Manual independent algebra/identities and source comparison as recorded; not a machine-checked theorem.",
+        "executable": "check_04",
+        "sample_evidence": "The full chapter suite exited 0 with -W error. Symbolic identities and numerical tolerances are in the named functions; finite numerical samples are not universal proofs."
+      },
+      "independent_final_pass": {
+        "route": "Different route: laboratory coupled force equations reproduce the boosted result; exact relativistic trajectories check the broad interval and the optimum tan(phi/2)=phi.",
+        "result": "No new confirmed mathematical or physical defect found in this independent final pass."
+      },
+      "remaining_limitations": "Widths are full support. Finite emittance and disconnected bands are discussed; fringe fields are omitted."
+    },
+    {
+      "problem": "12.5",
+      "statement_and_every_solution_subpart_read": true,
+      "subparts": [
+        "a",
+        "b"
+      ],
+      "inspected_sources": [
+        "sections/ch12.tex:298",
+        "supplementary/check_ch12.py: check_05; check_fresh_routes",
+        "ocr/p-642.txt (Jackson printed p.617)",
+        "ocr/p-643.txt (Jackson printed p.618)",
+        "Jackson/source conventions: 558:(11.149); printed pp.617-618"
+      ],
+      "initial_derivation_checked": "Signed boosts eliminate E or B in the appropriate invariant regime. Arbitrary initial four-velocities and integrated trajectories transform back consistently.",
+      "candidate": "Possible drift reversal from assuming positive E,B was discarded: signed components and w=cE/B or cB/E are explicit.",
+      "candidate_status": "discarded/no new defect",
+      "change": "No TeX change in this fresh audit.",
+      "current_verification": {
+        "analytic": "Manual independent algebra/identities and source comparison as recorded; not a machine-checked theorem.",
+        "executable": "check_05; check_fresh_routes",
+        "sample_evidence": "The full chapter suite exited 0 with -W error. Symbolic identities and numerical tolerances are in the named functions; finite numerical samples are not universal proofs."
+      },
+      "independent_final_pass": {
+        "route": "Different route: direct eight-component proper-time ODE integration for signed crossed fields and pure-electric limits matches the matrix trajectory and preserves U^2.",
+        "result": "No new confirmed mathematical or physical defect found in this independent final pass."
+      },
+      "remaining_limitations": "The excluded null-field case is handled in12.6."
+    },
+    {
+      "problem": "12.6",
+      "statement_and_every_solution_subpart_read": true,
+      "subparts": [
+        "a",
+        "b"
+      ],
+      "inspected_sources": [
+        "sections/ch12.tex:363",
+        "supplementary/check_ch12.py: check_06; check_fresh_routes",
+        "ocr/p-643.txt (Jackson printed p.618)",
+        "Jackson/source conventions: 556:(11.137), printed p.618"
+      ],
+      "initial_derivation_checked": "The characteristic polynomial gives complementary electric/magnetic projectors. Zero-frequency and null-field limits are explicit.",
+      "candidate": "Possible singular projector division at D=0 was discarded: M^3=0 gives the separate polynomial trajectory.",
+      "candidate_status": "discarded/no new defect",
+      "change": "No TeX change in this fresh audit.",
+      "current_verification": {
+        "analytic": "Manual independent algebra/identities and source comparison as recorded; not a machine-checked theorem.",
+        "executable": "check_06; check_fresh_routes",
+        "sample_evidence": "The full chapter suite exited 0 with -W error. Symbolic identities and numerical tolerances are in the named functions; finite numerical samples are not universal proofs."
+      },
+      "independent_final_pass": {
+        "route": "Different route: matrix-exponential and direct ODE comparisons, M^T g+gM=0, and differentiation of the parallel-field trajectory check the solution.",
+        "result": "No new confirmed mathematical or physical defect found in this independent final pass."
+      },
+      "remaining_limitations": "Uniform prescribed fields; signed constants and permitted coordinate offsets are defined."
+    },
+    {
+      "problem": "12.7",
+      "statement_and_every_solution_subpart_read": true,
+      "subparts": [
+        "a",
+        "b",
+        "c"
+      ],
+      "inspected_sources": [
+        "sections/ch12.tex:454",
+        "supplementary/check_ch12.py: check_07",
+        "ocr/p-643.txt (Jackson printed p.618)",
+        "Jackson/source conventions: printed p.618; Gaussian field momentum"
+      ],
+      "initial_derivation_checked": "Symmetric-plane Coulomb integration gives piecewise G_y. The orbit conserves p_y+G_y while the external slab exchanges x momentum.",
+      "candidate": "Possible contradiction with closed-system momentum conservation was discarded because the prescribed source apparatus is excluded; the conditional integration prescription is explicit.",
+      "candidate_status": "discarded/no new defect",
+      "change": "No TeX change in this fresh audit.",
+      "current_verification": {
+        "analytic": "Manual independent algebra/identities and source comparison as recorded; not a machine-checked theorem.",
+        "executable": "check_07",
+        "sample_evidence": "The full chapter suite exited 0 with -W error. Symbolic identities and numerical tolerances are in the named functions; finite numerical samples are not universal proofs."
+      },
+      "independent_final_pass": {
+        "route": "Different route: differentiate piecewise G_y and compare -qB v_x/c through both boundaries and a closed orbit; circle identities reconstruct mechanical p_x,p_y.",
+        "result": "No new confirmed mathematical or physical defect found in this independent final pass."
+      },
+      "remaining_limitations": "An infinite slab requires the specified integration prescription; order-independent absolute convergence is not claimed."
+    },
+    {
+      "problem": "12.8",
+      "statement_and_every_solution_subpart_read": true,
+      "subparts": [
+        "a",
+        "b"
+      ],
+      "inspected_sources": [
+        "sections/ch12.tex:534",
+        "supplementary/check_ch12.py: check_08",
+        "ocr/p-643.txt (Jackson printed p.618)",
+        "Jackson/source conventions: printed p.618; chapter6 cross-field momentum relation"
+      ],
+      "initial_derivation_checked": "Carrier energy and steady current continuity give P_mech=-integral(Phi J)/c^2. Inner/outer toroid segments give the opposite field momentum.",
+      "candidate": "Possible fixed carrier density or reversed toroid orientation was discarded: n v is conserved and upward inner current fixes the sign.",
+      "candidate_status": "discarded/no new defect",
+      "change": "No TeX change in this fresh audit.",
+      "current_verification": {
+        "analytic": "Manual independent algebra/identities and source comparison as recorded; not a machine-checked theorem.",
+        "executable": "check_08",
+        "sample_evidence": "The full chapter suite exited 0 with -W error. Symbolic identities and numerical tolerances are in the named functions; finite numerical samples are not universal proofs."
+      },
+      "independent_final_pass": {
+        "route": "Different route: sum energy constants separately for each closed stream, use integral J=0, and convert 1/(epsilon0 c^2)=mu0 to recover the SI coefficient.",
+        "result": "No new confirmed mathematical or physical defect found in this independent final pass."
+      },
+      "remaining_limitations": "Stationary localized closed streams; no unstated mechanical model is inferred."
+    },
+    {
+      "problem": "12.9",
+      "statement_and_every_solution_subpart_read": true,
+      "subparts": [
+        "a",
+        "b",
+        "c",
+        "d"
+      ],
+      "inspected_sources": [
+        "sections/ch12.tex:603",
+        "supplementary/check_ch12.py: check_09; check_fresh_routes",
+        "ocr/p-644.txt (Jackson printed p.619)",
+        "Jackson/source conventions: 593-595: (12.55), guiding-center/mirror discussion"
+      ],
+      "initial_derivation_checked": "Dipole field lines, gradient drift, the 9lambda^2/2 mirror expansion, and relativistic numerical drift/bounce times were checked.",
+      "candidate": "Possible west/east reversal from the southward Earth moment was discarded by reconstructing northward equatorial B and charge signs.",
+      "candidate_status": "discarded/no new defect",
+      "change": "No TeX change in this fresh audit.",
+      "current_verification": {
+        "analytic": "Manual independent algebra/identities and source comparison as recorded; not a machine-checked theorem.",
+        "executable": "check_09; check_fresh_routes",
+        "sample_evidence": "The full chapter suite exited 0 with -W error. Symbolic identities and numerical tolerances are in the named functions; finite numerical samples are not universal proofs."
+      },
+      "independent_final_pass": {
+        "route": "Different route: a full Lorentz orbit in B=r^-3 gives longitude slope -0.000151534795 versus the leading estimate -0.000151511196, consistent with the small-gyroradius expansion.",
+        "result": "No new confirmed mathematical or physical defect found in this independent final pass."
+      },
+      "remaining_limitations": "Guiding-center approximation and small parallel oscillation amplitude."
+    },
+    {
+      "problem": "12.10",
+      "statement_and_every_solution_subpart_read": true,
+      "subparts": [
+        "whole problem"
+      ],
+      "inspected_sources": [
+        "sections/ch12.tex:716",
+        "supplementary/check_ch12.py: check_10",
+        "ocr/p-644.txt (Jackson printed p.619)",
+        "Jackson/source conventions: 593-595: adiabatic invariant; printed p.619"
+      ],
+      "initial_derivation_checked": "The invariant p_perp^2/B gives the mirror equation; surface intersections use r=R cos^2(lambda).",
+      "candidate": "Possible pitch-angle confusion was discarded: p_perp=p cos(alpha) uses the angle from the equatorial plane specified in the question.",
+      "candidate_status": "discarded/no new defect",
+      "change": "No TeX change in this fresh audit.",
+      "current_verification": {
+        "analytic": "Manual independent algebra/identities and source comparison as recorded; not a machine-checked theorem.",
+        "executable": "check_10",
+        "sample_evidence": "The full chapter suite exited 0 with -W error. Symbolic identities and numerical tolerances are in the named functions; finite numerical samples are not universal proofs."
+      },
+      "independent_final_pass": {
+        "route": "Different route: a logarithmic derivative proves monotonicity and uniqueness; direct surface geometry independently gives all seven launch/intersection markers.",
+        "result": "No new confirmed mathematical or physical defect found in this independent final pass."
+      },
+      "remaining_limitations": "Guiding-center surface intersection neglects finite gyroradius."
+    },
+    {
+      "problem": "12.11",
+      "statement_and_every_solution_subpart_read": true,
+      "subparts": [
+        "a",
+        "b",
+        "c"
+      ],
+      "inspected_sources": [
+        "sections/ch12.tex:778",
+        "supplementary/check_ch12.py: check_11",
+        "ocr/p-644.txt (Jackson printed p.619)",
+        "Jackson/source conventions: 564-565:(11.168)-(11.171)"
+      ],
+      "initial_derivation_checked": "BMT rest-spin precession minus orbital rotation gives the anomaly frequency. Ring momentum, lifetime and a gamma cycles were converted consistently.",
+      "candidate": "Possible ambiguity between total and kinetic energy is already handled by reporting both numerical conventions.",
+      "candidate_status": "discarded/no new defect",
+      "change": "No TeX change in this fresh audit.",
+      "current_verification": {
+        "analytic": "Manual independent algebra/identities and source comparison as recorded; not a machine-checked theorem.",
+        "executable": "check_11",
+        "sample_evidence": "The full chapter suite exited 0 with -W error. Symbolic identities and numerical tolerances are in the named functions; finite numerical samples are not universal proofs."
+      },
+      "independent_final_pass": {
+        "route": "Different route: differentiate the moving tangent/radius basis and check spin-length conservation; derive p=eBR independently in SI.",
+        "result": "No new confirmed mathematical or physical defect found in this independent final pass."
+      },
+      "remaining_limitations": "The anomaly alpha/(2pi) and lifetime are the supplied historical approximations."
+    },
+    {
+      "problem": "12.12",
+      "statement_and_every_solution_subpart_read": true,
+      "subparts": [
+        "a",
+        "b",
+        "c",
+        "d"
+      ],
+      "inspected_sources": [
+        "sections/ch12.tex:867",
+        "supplementary/check_ch12.py: check_12",
+        "ocr/p-645.txt (Jackson printed p.620)",
+        "Jackson/source conventions: 556:(11.137); 564-565:(11.168)-(11.171)"
+      ],
+      "initial_derivation_checked": "Differentiating s.betahat includes the changing velocity direction. BMT coefficients simplify to the stated angle equation and selector factor g/(2gamma).",
+      "candidate": "Possible contraction or orientation sign error was discarded using explicit lowered L,U,N and the actual Jackson F matrix.",
+      "candidate_status": "discarded/no new defect",
+      "change": "No TeX change in this fresh audit.",
+      "current_verification": {
+        "analytic": "Manual independent algebra/identities and source comparison as recorded; not a machine-checked theorem.",
+        "executable": "check_12",
+        "sample_evidence": "The full chapter suite exited 0 with -W error. Symbolic identities and numerical tolerances are in the named functions; finite numerical samples are not universal proofs."
+      },
+      "independent_final_pass": {
+        "route": "Different route: componentwise contraction for orthogonal spin/velocity axes agrees with the vector equation; g=2 and undeflected-selector limits were checked.",
+        "result": "No new confirmed mathematical or physical defect found in this independent final pass."
+      },
+      "remaining_limitations": "At exactly parallel spin the direction is specified by a continuous limiting rotation plane."
+    },
+    {
+      "problem": "12.13",
+      "statement_and_every_solution_subpart_read": true,
+      "subparts": [
+        "a",
+        "b"
+      ],
+      "inspected_sources": [
+        "sections/ch12.tex:969",
+        "supplementary/check_ch12.py: check_13",
+        "ocr/p-645.txt (Jackson printed p.620)",
+        "Jackson/source conventions: 599:(12.82); Bethe-Salpeter actual p.193 Eq42.1 scan"
+      ],
+      "initial_derivation_checked": "The reduced Darwin Lagrangian, momentum inversion and Hamiltonian through c^-2 agree with spinless H0,H1,H2.",
+      "candidate": "Setting Newtonian center velocity to zero does not change the retained answer: its induced correction is O(c^-2) and the reduced action changes only at O(c^-4).",
+      "candidate_status": "discarded/no new defect",
+      "change": "No TeX change in this fresh audit.",
+      "current_verification": {
+        "analytic": "Manual independent algebra/identities and source comparison as recorded; not a machine-checked theorem.",
+        "executable": "check_13",
+        "sample_evidence": "The full chapter suite exited 0 with -W error. Symbolic identities and numerical tolerances are in the named functions; finite numerical samples are not universal proofs."
+      },
+      "independent_final_pass": {
+        "route": "Different route: the perturbative Legendre identity H1=-L1(v=p/mu) reproduces quartic and orbit-orbit terms; the actual Bethe-Salpeter scan separates quantum and spin terms.",
+        "result": "No new confirmed mathematical or physical defect found in this independent final pass."
+      },
+      "remaining_limitations": "Classical commuting momenta do not determine quantum operator ordering."
+    },
+    {
+      "problem": "12.14",
+      "statement_and_every_solution_subpart_read": true,
+      "subparts": [
+        "a",
+        "b"
+      ],
+      "inspected_sources": [
+        "sections/ch12.tex:1058",
+        "supplementary/check_ch12.py: check_14",
+        "ocr/p-645.txt (Jackson printed p.620)",
+        "ocr/p-646.txt (Jackson printed p.621)",
+        "Jackson/source conventions: 600:(12.85); printed p.620"
+      ],
+      "initial_derivation_checked": "The alternative Euler-Lagrange equation is Box A=4pi J/c. Its difference from Maxwell includes a divergence and -(partial.A)^2/(8pi).",
+      "candidate": "Conserved J alone does not force Lorenz gauge: Box D=0 permits a homogeneous D, and compatible initial data are explicitly required.",
+      "candidate_status": "discarded/no new defect",
+      "change": "No TeX change in this fresh audit.",
+      "current_verification": {
+        "analytic": "Manual independent algebra/identities and source comparison as recorded; not a machine-checked theorem.",
+        "executable": "check_14",
+        "sample_evidence": "The full chapter suite exited 0 with -W error. Symbolic identities and numerical tolerances are in the named functions; finite numerical samples are not universal proofs."
+      },
+      "independent_final_pass": {
+        "route": "Different route: the product-rule identity for K and polynomial potentials verify the off-gauge term; compact variations remove only the boundary divergence.",
+        "result": "No new confirmed mathematical or physical defect found in this independent final pass."
+      },
+      "remaining_limitations": "Lorenz-compatible initial/boundary data are necessary for Maxwell equivalence."
+    },
+    {
+      "problem": "12.15",
+      "statement_and_every_solution_subpart_read": true,
+      "subparts": [
+        "a",
+        "b",
+        "c"
+      ],
+      "inspected_sources": [
+        "sections/ch12.tex:1124",
+        "supplementary/check_ch12.py: check_15; check_fresh_routes",
+        "ocr/p-646.txt (Jackson printed p.621)",
+        "Jackson/source conventions: 600:(12.91); printed p.621"
+      ],
+      "initial_derivation_checked": "Yukawa convolution, the dipole curl and angular decomposition give the massive field and its model photon-mass bound.",
+      "candidate": "Possible uniform-component sign or missing contact term was discarded by the Yukawa Hessian; the delta term is explicitly excluded at r>0.",
+      "candidate_status": "discarded/no new defect",
+      "change": "No TeX change in this fresh audit.",
+      "current_verification": {
+        "analytic": "Manual independent algebra/identities and source comparison as recorded; not a machine-checked theorem.",
+        "executable": "check_15; check_fresh_routes",
+        "sample_evidence": "The full chapter suite exited 0 with -W error. Symbolic identities and numerical tolerances are in the named functions; finite numerical samples are not universal proofs."
+      },
+      "independent_final_pass": {
+        "route": "Different route: symbolic spherical divergence B=0 and curl B=-mu^2 A hold away from the source; the exact ratio root .0806015 checks the leading thirteen-Earth-radii bound.",
+        "result": "No new confirmed mathematical or physical defect found in this independent final pass."
+      },
+      "remaining_limitations": "This is a bound from the historical datum/model, not a current best photon-mass limit."
+    },
+    {
+      "problem": "12.16",
+      "statement_and_every_solution_subpart_read": true,
+      "subparts": [
+        "a",
+        "b",
+        "c"
+      ],
+      "inspected_sources": [
+        "sections/ch12.tex:1212",
+        "supplementary/check_ch12.py: check_16",
+        "ocr/p-646.txt (Jackson printed p.621)",
+        "Jackson/source conventions: 600:(12.91); 606-608:(12.108)-(12.117)"
+      ],
+      "initial_derivation_checked": "Canonical improvement plus the Proca mass term gives a symmetric stress tensor. The Bianchi identity and conserved J yield Lorentz-force balance.",
+      "candidate": "Possible wrong sign in mass-term divergence was discarded through explicit index lowering and polynomial field checks.",
+      "candidate_status": "discarded/no new defect",
+      "change": "No TeX change in this fresh audit.",
+      "current_verification": {
+        "analytic": "Manual independent algebra/identities and source comparison as recorded; not a machine-checked theorem.",
+        "executable": "check_16",
+        "sample_evidence": "The full chapter suite exited 0 with -W error. Symbolic identities and numerical tolerances are in the named functions; finite numerical samples are not universal proofs."
+      },
+      "independent_final_pass": {
+        "route": "Different route: calculate the00/i0 components from E,B, verify positive energy and the massless limit, and test the symbolic divergence with sourced fields.",
+        "result": "No new confirmed mathematical or physical defect found in this independent final pass."
+      },
+      "remaining_limitations": "Conserved current is required; otherwise an extra A^beta partial.A term remains."
+    },
+    {
+      "problem": "12.17",
+      "statement_and_every_solution_subpart_read": true,
+      "subparts": [
+        "a",
+        "b",
+        "c",
+        "d"
+      ],
+      "inspected_sources": [
+        "sections/ch12.tex:1317",
+        "supplementary/check_ch12.py: check_17; check_fresh_routes",
+        "ocr/p-646.txt (Jackson printed p.621)",
+        "ocr/p-647.txt (Jackson printed p.622)",
+        "Jackson/source conventions: 600:(12.91); printed pp.621-622"
+      ],
+      "initial_derivation_checked": "With c=1, longitudinal vector potential gives reduced electric force and flux. E0=s^2 and flux ratios produce all pure polarization channels.",
+      "candidate": "A scalar E0 cannot describe arbitrary coherent mixed incidence; the existing qualification restricts the formula and gives the correct weighted incident vector.",
+      "candidate_status": "discarded/no new defect",
+      "change": "No TeX change in this fresh audit.",
+      "current_verification": {
+        "analytic": "Manual independent algebra/identities and source comparison as recorded; not a machine-checked theorem.",
+        "executable": "check_17; check_fresh_routes",
+        "sample_evidence": "The full chapter suite exited 0 with -W error. Symbolic identities and numerical tolerances are in the named functions; finite numerical samples are not universal proofs."
+      },
+      "independent_final_pass": {
+        "route": "Different route: channel reciprocity, integrated sigma_l=s sigma_t, and the massless Thomson limit independently check the angular results.",
+        "result": "No new confirmed mathematical or physical defect found in this independent final pass."
+      },
+      "remaining_limitations": "Small classical nonrelativistic response and negligible recoil."
+    },
+    {
+      "problem": "12.18",
+      "statement_and_every_solution_subpart_read": true,
+      "subparts": [
+        "whole problem"
+      ],
+      "inspected_sources": [
+        "sections/ch12.tex:1453",
+        "supplementary/check_ch12.py: check_18",
+        "ocr/p-647.txt (Jackson printed p.622)",
+        "Jackson/source conventions: 606:(12.106); 608:(12.117)"
+      ],
+      "initial_derivation_checked": "Stress contracted with a spacelike directed surface element gives a four-vector. The divergence theorem supplies hypersurface independence.",
+      "candidate": "Possible unjustified replacement of tilted and equal-time surfaces was discarded: the closing boundary flux is explicitly controlled.",
+      "candidate_status": "discarded/no new defect",
+      "change": "No TeX change in this fresh audit.",
+      "current_verification": {
+        "analytic": "Manual independent algebra/identities and source comparison as recorded; not a machine-checked theorem.",
+        "executable": "check_18",
+        "sample_evidence": "The full chapter suite exited 0 with -W error. Symbolic identities and numerical tolerances are in the named functions; finite numerical samples are not universal proofs."
+      },
+      "independent_final_pass": {
+        "route": "Different route: causal support of a compact packet removes the distant timelike boundary; parallel slices prove constancy and tilted slices prove the boost law.",
+        "result": "No new confirmed mathematical or physical defect found in this independent final pass."
+      },
+      "remaining_limitations": "Localization and vanishing boundary flux are required; material walls cannot be excluded from a sourced closed system."
+    },
+    {
+      "problem": "12.19",
+      "statement_and_every_solution_subpart_read": true,
+      "subparts": [
+        "a",
+        "b"
+      ],
+      "inspected_sources": [
+        "sections/ch12.tex:1508",
+        "supplementary/check_ch12.py: check_19",
+        "ocr/p-647.txt (Jackson printed p.622)",
+        "Jackson/source conventions: 608:(12.117)"
+      ],
+      "initial_derivation_checked": "Symmetric conserved stress gives both angular momentum and boost moments; their derivative fixes the center-of-energy velocity c^2 P/E.",
+      "candidate": "Possible missing c or zero-field centroid problem was discarded: x0=ct fixes the factors and E>0 is stated.",
+      "candidate_status": "discarded/no new defect",
+      "change": "No TeX change in this fresh audit.",
+      "current_verification": {
+        "analytic": "Manual independent algebra/identities and source comparison as recorded; not a machine-checked theorem.",
+        "executable": "check_19",
+        "sample_evidence": "The full chapter suite exited 0 with -W error. Symbolic identities and numerical tolerances are in the named functions; finite numerical samples are not universal proofs."
+      },
+      "independent_final_pass": {
+        "route": "Different route: the first spatial moment of Poynting conservation gives the same centroid law; |S|<=c u independently bounds its speed by c.",
+        "result": "No new confirmed mathematical or physical defect found in this independent final pass."
+      },
+      "remaining_limitations": "The zero-field centroid is undefined; boundary flux must vanish."
+    },
+    {
+      "problem": "12.20",
+      "statement_and_every_solution_subpart_read": true,
+      "subparts": [
+        "whole problem"
+      ],
+      "inspected_sources": [
+        "sections/ch12.tex:1576",
+        "supplementary/check_ch12.py: check_20; check_fresh_routes",
+        "ocr/p-648.txt (Jackson printed p.623)",
+        "Jackson/source conventions: 604-605:(12.99)-(12.100), impedance with e^-iomega t"
+      ],
+      "initial_derivation_checked": "The London wave equation, continuous E_y/B_z and outgoing/decaying root give reflection and Zs=-4pi i omega/(c^2 kappa).",
+      "candidate": "Possible capacitive impedance sign was discarded after checking the actual p.605 convention and the low-frequency SI conversion.",
+      "candidate_status": "discarded/no new defect",
+      "change": "No TeX change in this fresh audit.",
+      "current_verification": {
+        "analytic": "Manual independent algebra/identities and source comparison as recorded; not a machine-checked theorem.",
+        "executable": "check_20; check_fresh_routes",
+        "sample_evidence": "The full chapter suite exited 0 with -W error. Symbolic identities and numerical tolerances are in the named functions; finite numerical samples are not universal proofs."
+      },
+      "independent_final_pass": {
+        "route": "Different route: high-frequency reflection tends to1/(4k^2 lambdaL^2); subthreshold unit-modulus reflection and its phase verify the root choice.",
+        "result": "No new confirmed mathematical or physical defect found in this independent final pass."
+      },
+      "remaining_limitations": "Ideal London model; microscopic high-frequency material validity is not asserted."
+    },
+    {
+      "problem": "12.21",
+      "statement_and_every_solution_subpart_read": true,
+      "subparts": [
+        "a",
+        "b"
+      ],
+      "inspected_sources": [
+        "sections/ch12.tex:1637",
+        "supplementary/check_ch12.py: check_21",
+        "ocr/p-648.txt (Jackson printed p.623)",
+        "Jackson/source conventions: 604:(12.100); printed p.623"
+      ],
+      "initial_derivation_checked": "The two Drude components give i D_S/omega+sigma_n. The Maxwell wave operator tends to nabla^2-lambdaL^-2.",
+      "candidate": "A finite stationary E is not claimed to be equilibrium: the solution explains that it continuously accelerates the supercurrent.",
+      "candidate_status": "discarded/no new defect",
+      "change": "No TeX change in this fresh audit.",
+      "current_verification": {
+        "analytic": "Manual independent algebra/identities and source comparison as recorded; not a machine-checked theorem.",
+        "executable": "check_21",
+        "sample_evidence": "The full chapter suite exited 0 with -W error. Symbolic identities and numerical tolerances are in the named functions; finite numerical samples are not universal proofs."
+      },
+      "independent_final_pass": {
+        "route": "Different route: inverse conductivity has negative imaginary inductive response and positive real O(omega^2) dissipation; n_S=0 removes the finite London scale.",
+        "result": "No new confirmed mathematical or physical defect found in this independent final pass."
+      },
+      "remaining_limitations": "This is a transverse time-dependent limit in a homogeneous bulk."
+    }
+  ],
+  "local_render": "TeX unchanged in this audit; only calculation checks/assets updated.",
+  "frozen_sha256": {
+    "sections/ch12.tex": "488126cb6b607e8f76f2cdb6c870d7559b1ebd0f088f026728c5d467d4487dd7",
+    "supplementary/check_ch12.py": "992e35842df749ac340bf404073d1a5501d3b53f6d240d915421187fa371633f",
+    "supplementary/ch12_mirror.tex": "102c15818d13e4f02a8059b376e0f4e5467b4757cb021ef3fbb503f3b6a8878b",
+    "supplementary/ch12-deep-debug/baseline.log": "6691cd93c4f54934aabd6edadd4b031374163d7ee1e2d1da77036eddbb7c9112",
+    "supplementary/ch12-deep-debug/crc2.log": "1e4e52713c98f72c668867d95e29e14d4dcae50f09badfdaa1199f1665eeaac8",
+    "supplementary/ch12-deep-debug/final.log": "1e4e52713c98f72c668867d95e29e14d4dcae50f09badfdaa1199f1665eeaac8",
+    "supplementary/ch12-deep-debug/Jackson-p556-F-tensor.png": "c3225dd151b4aadf10968ce6ad9a1d2ec7d205488ce265c9c15a43d868a45e9f"
+  },
+  "textbook": "John David Jackson - Classical Electrodynamics (1998, Wiley) - libgen.li.pdf; PDF page = printed page +25.",
+  "current_source_cache": [
+    "supplementary/ch12-deep-debug/Jackson-p556-F-tensor.png",
+    "build/ch12-source/p-589.txt",
+    "build/ch12-source/p-590.txt",
+    "build/ch12-source/p-609.png",
+    "build/ch12-source/p-610.txt",
+    "build/ch12-source/p-618.txt",
+    "build/ch12-source/p-620.txt",
+    "build/ch12-source/p-622.txt",
+    "build/ch12-source/p-624.txt",
+    "build/ch12-source/p-625.txt",
+    "build/ch12-source/p-629.txt",
+    "build/ch12-source/p-630.txt",
+    "build/ch12-source/p-631.txt",
+    "build/ch12-source/p-632.txt",
+    "build/ch12-source/p-633.txt",
+    "build/ch12-source/BetheSalpeter193.png"
+  ],
+  "targeted_integrity_scan": "Current scan found no broken newline-m unit commands, bare cdots/quad/frac command fragments, or literal comma integration measures. A first broad pattern matched suffixes within valid qquad and dfrac; the identifier-boundary scan eliminated these false positives.",
+  "environment": {
+    "python": "3.14.7",
+    "numpy": "2.4.6",
+    "scipy": "1.18.0",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "unchanged_tex_verified_against_baseline_sha256": true
+}

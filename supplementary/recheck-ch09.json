@@ -1,0 +1,431 @@
+{
+  "chapter": 9,
+  "review_date": "2026-10-03",
+  "problem_count": 24,
+  "scope": "Every problem and subpart read and independently retraced; source conventions checked against actual local PDF pages. This ledger does not treat a passing compilation or an existing test as proof of all mathematics.",
+  "textbook": "John David Jackson - Classical Electrodynamics (1998, Wiley) - libgen.li.pdf",
+  "source_page_rule": "PDF page number = printed page + 25",
+  "review_evidence": "Actual section files, rendered/OCR textbook theory pages, new derivations and independent checks in the chapter script; existing checks also rerun with warnings as errors.",
+  "test_command": "python3 -u -W error supplementary/check_ch09.py",
+  "test_log": "build/recheck-ch09-checks.log",
+  "test_result": "exit 0, including fresh independent_recheck()",
+  "problems": [
+    {
+      "problem": "9.1",
+      "mathematics_checked": "Real Cartesian Fourier moments, factor two, periodic delta normalization, signed-m harmonics and quadrupole frequencies.",
+      "derivation_pedagogy_changes": "Defined N_lm and distinguished instantaneous q_lm(t) from source phasor Q_lm.",
+      "evidence_checks": "check_01; fresh scipy spherical-harmonic/Fourier comparison for all m through l=4.",
+      "notation_sources": [
+        "SI, physical real part of exp(-i omega t) phasors: printed p.407 (PDF432), (9.1) and its factor-of-two footnote.",
+        "Condon-Shortley P_l^m and normalized Y_lm: printed p.108 (PDF133), (3.49)-(3.55).",
+        "Jackson radiation moment normalization: printed pp.441-442 (PDF466-467), (9.169)-(9.172).",
+        "(9.1) and footnote p.407; (3.49)-(3.55) p.108."
+      ],
+      "remaining_limitations": [
+        "Complex spherical moments are not themselves real observables."
+      ]
+    },
+    {
+      "problem": "9.2",
+      "mathematics_checked": "Explicit rotating charge tensor and Q22 phasor, source-continuity coefficient, transverse norm, angular integral and 2omega power.",
+      "derivation_pedagogy_changes": "No derivation change needed.",
+      "evidence_checks": "check_02: exact moving-point source transform versus quadrupole field; angular quadrature.",
+      "notation_sources": [
+        "SI, physical real part of exp(-i omega t) phasors: printed p.407 (PDF432), (9.1) and its factor-of-two footnote.",
+        "Condon-Shortley P_l^m and normalized Y_lm: printed p.108 (PDF133), (3.49)-(3.55).",
+        "Jackson radiation moment normalization: printed pp.441-442 (PDF466-467), (9.169)-(9.172).",
+        "(9.41)-(9.49), pp.414-415 (PDF439-440)."
+      ],
+      "remaining_limitations": [
+        "Long-wavelength nonrelativistic rotating-source approximation."
+      ]
+    },
+    {
+      "problem": "9.3",
+      "mathematics_checked": "Hemispherical boundary Legendre coefficient, dipole/voltage normalization, fields and angular power.",
+      "derivation_pedagogy_changes": "No derivation change needed.",
+      "evidence_checks": "check_03 Legendre integral and solid-angle power integral.",
+      "notation_sources": [
+        "SI, physical real part of exp(-i omega t) phasors: printed p.407 (PDF432), (9.1) and its factor-of-two footnote.",
+        "Condon-Shortley P_l^m and normalized Y_lm: printed p.108 (PDF133), (3.49)-(3.55).",
+        "Jackson radiation moment normalization: printed pp.441-442 (PDF466-467), (9.169)-(9.172).",
+        "Dipole fields/power (9.18)-(9.23), pp.411-412 (PDF436-437)."
+      ],
+      "remaining_limitations": [
+        "Leading order in kR; applied voltage difference is 2V."
+      ]
+    },
+    {
+      "problem": "9.4",
+      "mathematics_checked": "Fourier current components, orbital magnetization divergence including distributions, selection rules and M3/E2 ratio.",
+      "derivation_pedagogy_changes": "No derivation change needed.",
+      "evidence_checks": "check_04: associated-Legendre derivatives, temporal coefficients and four-charge phase sum.",
+      "notation_sources": [
+        "SI, physical real part of exp(-i omega t) phasors: printed p.407 (PDF432), (9.1) and its factor-of-two footnote.",
+        "Condon-Shortley P_l^m and normalized Y_lm: printed p.108 (PDF133), (3.49)-(3.55).",
+        "Jackson radiation moment normalization: printed pp.441-442 (PDF466-467), (9.169)-(9.172).",
+        "(9.171)-(9.172), p.442; (9.173), p.442."
+      ],
+      "remaining_limitations": [
+        "No spin/intrinsic magnetization; ratio is leading long-wavelength order."
+      ]
+    },
+    {
+      "problem": "9.5",
+      "mathematics_checked": "Green expansion, continuity integral, Lorenz condition and all radial field powers/signs.",
+      "derivation_pedagogy_changes": "No derivation change needed.",
+      "evidence_checks": "check_05: numerical differentiation of both potentials and Lorenz residual.",
+      "notation_sources": [
+        "SI, physical real part of exp(-i omega t) phasors: printed p.407 (PDF432), (9.1) and its factor-of-two footnote.",
+        "Condon-Shortley P_l^m and normalized Y_lm: printed p.108 (PDF133), (3.49)-(3.55).",
+        "Jackson radiation moment normalization: printed pp.441-442 (PDF466-467), (9.169)-(9.172).",
+        "(9.14)-(9.18), pp.410-411 (PDF435-436)."
+      ],
+      "remaining_limitations": [
+        "Only the dipole source moment is retained; a static monopole is separate."
+      ]
+    },
+    {
+      "problem": "9.6",
+      "mathematics_checked": "Retarded-time chain rule in both gradients and curl, source light-crossing approximation, arbitrary-history/harmonic conversion.",
+      "derivation_pedagogy_changes": "Retained corrected B radial powers in the statement.",
+      "evidence_checks": "check_06: four-coordinate differentiation of potentials for a nonharmonic vector history.",
+      "notation_sources": [
+        "SI, physical real part of exp(-i omega t) phasors: printed p.407 (PDF432), (9.1) and its factor-of-two footnote.",
+        "Condon-Shortley P_l^m and normalized Y_lm: printed p.108 (PDF133), (3.49)-(3.55).",
+        "Jackson radiation moment normalization: printed pp.441-442 (PDF466-467), (9.169)-(9.172).",
+        "(9.2)-(9.5), p.408 (PDF433); (9.18), p.411."
+      ],
+      "remaining_limitations": [
+        "Source size must be small relative to the time-variation wavelength; observation need not be in the far zone."
+      ]
+    },
+    {
+      "problem": "9.7",
+      "mathematics_checked": "Real-field Poynting coefficient without one-half, duality, quadrupole symmetric/trace factors and harmonic average.",
+      "derivation_pedagogy_changes": "No derivation change needed.",
+      "evidence_checks": "check_07: arbitrary real vector/tensor angular integrals.",
+      "notation_sources": [
+        "SI, physical real part of exp(-i omega t) phasors: printed p.407 (PDF432), (9.1) and its factor-of-two footnote.",
+        "Condon-Shortley P_l^m and normalized Y_lm: printed p.108 (PDF133), (3.49)-(3.55).",
+        "Jackson radiation moment normalization: printed pp.441-442 (PDF466-467), (9.169)-(9.172).",
+        "(9.22)-(9.23), p.411 (PDF436); (9.41)-(9.49), pp.414-415."
+      ],
+      "remaining_limitations": [
+        "Instantaneous formulas and phasor time averages are explicitly distinct."
+      ]
+    },
+    {
+      "problem": "9.8",
+      "mathematics_checked": "Maxwell stress angular flux retaining radial induction field, complex cross-product sign, bound and both polarizations.",
+      "derivation_pedagogy_changes": "No derivation change needed.",
+      "evidence_checks": "check_08 full finite-radius stress; fresh magnetic-dual stress at two radii.",
+      "notation_sources": [
+        "SI, physical real part of exp(-i omega t) phasors: printed p.407 (PDF432), (9.1) and its factor-of-two footnote.",
+        "Condon-Shortley P_l^m and normalized Y_lm: printed p.108 (PDF133), (3.49)-(3.55).",
+        "Jackson radiation moment normalization: printed pp.441-442 (PDF466-467), (9.169)-(9.172).",
+        "Dipole full fields (9.18), p.411; magnetic duality (9.35)-(9.36), p.413 (PDF438)."
+      ],
+      "remaining_limitations": [
+        "Photon interpretation is a correspondence statement; linear polarization has zero net angular momentum."
+      ]
+    },
+    {
+      "problem": "9.9",
+      "mathematics_checked": "Instantaneous stress and power, central-force substitutions, Schott derivatives, atomic scale and harmonic averages.",
+      "derivation_pedagogy_changes": "Replaced stray superscript commas by explicit squared norms for acceleration.",
+      "evidence_checks": "check_09 finite-radius stress including 1/r correction; constants and physical source table independently reread.",
+      "notation_sources": [
+        "SI, physical real part of exp(-i omega t) phasors: printed p.407 (PDF432), (9.1) and its factor-of-two footnote.",
+        "Condon-Shortley P_l^m and normalized Y_lm: printed p.108 (PDF133), (3.49)-(3.55).",
+        "Jackson radiation moment normalization: printed pp.441-442 (PDF466-467), (9.169)-(9.172).",
+        "(9.18), p.411; Wiese-Fuhr 2009 Table2 p.572, retained local text lines 584-595."
+      ],
+      "remaining_limitations": [
+        "Classical scale is not a stationary atomic lifetime prediction."
+      ]
+    },
+    {
+      "problem": "9.10",
+      "mathematics_checked": "Apparent current singularity cancellation, azimuthal magnetization, E1 angular/radial integrals, rate coefficient and orbit comparison.",
+      "derivation_pedagogy_changes": "No derivation change needed; comparison-orbit qualification retained.",
+      "evidence_checks": "check_10 continuity and exact radial integral; numerical constants and comparison ratio.",
+      "notation_sources": [
+        "SI, physical real part of exp(-i omega t) phasors: printed p.407 (PDF432), (9.1) and its factor-of-two footnote.",
+        "Condon-Shortley P_l^m and normalized Y_lm: printed p.108 (PDF133), (3.49)-(3.55).",
+        "Jackson radiation moment normalization: printed pp.441-442 (PDF466-467), (9.169)-(9.172).",
+        "p.407 (9.1) footnote p=2e<f|r|i>; (9.169)-(9.172), pp.441-442."
+      ],
+      "remaining_limitations": [
+        "Infinite-nuclear-mass nonrelativistic model differs slightly from evaluated physical-hydrogen data."
+      ]
+    },
+    {
+      "problem": "9.11",
+      "mathematics_checked": "All lower moments vanish, static/2omega quadrupole split, Q20 normalization and averaged/instantaneous power.",
+      "derivation_pedagogy_changes": "No derivation change needed.",
+      "evidence_checks": "check_11 direct charge tensor at multiple times and solid-angle integration.",
+      "notation_sources": [
+        "SI, physical real part of exp(-i omega t) phasors: printed p.407 (PDF432), (9.1) and its factor-of-two footnote.",
+        "Condon-Shortley P_l^m and normalized Y_lm: printed p.108 (PDF133), (3.49)-(3.55).",
+        "Jackson radiation moment normalization: printed pp.441-442 (PDF466-467), (9.169)-(9.172).",
+        "(9.41),(9.43),(9.45),(9.49), pp.414-415."
+      ],
+      "remaining_limitations": [
+        "Leading long-wavelength quadrupole only."
+      ]
+    },
+    {
+      "problem": "9.12",
+      "mathematics_checked": "Fixed-total-charge density expansion, solid-harmonic radial integral, tensor coefficients, pattern and total power; current nonuniqueness.",
+      "derivation_pedagogy_changes": "Added explicit meridional flow and statement qualification excluding independent circulating current.",
+      "evidence_checks": "check_12 normalized deformed-volume tensor; fresh symbolic incompressible flow/divergence and boundary speed checks.",
+      "notation_sources": [
+        "SI, physical real part of exp(-i omega t) phasors: printed p.407 (PDF432), (9.1) and its factor-of-two footnote.",
+        "Condon-Shortley P_l^m and normalized Y_lm: printed p.108 (PDF133), (3.49)-(3.55).",
+        "Jackson radiation moment normalization: printed pp.441-442 (PDF466-467), (9.169)-(9.172).",
+        "(9.170),(9.172), pp.441-442; problem p.453 (PDF478)."
+      ],
+      "remaining_limitations": [
+        "Charge density alone does not specify an arbitrary solenoidal current; the added assumption closes that ambiguity."
+      ]
+    },
+    {
+      "problem": "9.13",
+      "mathematics_checked": "Intrinsic magnetic moment shape derivative, M3 normalization, finite-wavelength M1 at same order, cross-term integral and total power.",
+      "derivation_pedagogy_changes": "No new derivation change; retained the necessary finite-wavelength M1 statement correction.",
+      "evidence_checks": "check_13 exact shape-source Fourier integral; fresh finite-volume central shape derivative.",
+      "notation_sources": [
+        "SI, physical real part of exp(-i omega t) phasors: printed p.407 (PDF432), (9.1) and its factor-of-two footnote.",
+        "Condon-Shortley P_l^m and normalized Y_lm: printed p.108 (PDF133), (3.49)-(3.55).",
+        "Jackson radiation moment normalization: printed pp.441-442 (PDF466-467), (9.169)-(9.172).",
+        "(9.165)-(9.172), pp.440-442; radiation normalization (9.149)-(9.154), pp.437-439."
+      ],
+      "remaining_limitations": [
+        "Prescribed magnetization model excludes additional polarization/conduction sources; isolated M3 power and full leading power are distinguished."
+      ]
+    },
+    {
+      "problem": "9.14",
+      "mathematics_checked": "Exact loop source transform, J1 sign, transverse E/H and small-ka magnetic moment/power.",
+      "derivation_pedagogy_changes": "No derivation change needed.",
+      "evidence_checks": "check_14 direct loop azimuth quadrature at three ka and three angles.",
+      "notation_sources": [
+        "SI, physical real part of exp(-i omega t) phasors: printed p.407 (PDF432), (9.1) and its factor-of-two footnote.",
+        "Condon-Shortley P_l^m and normalized Y_lm: printed p.108 (PDF133), (3.49)-(3.55).",
+        "Jackson radiation moment normalization: printed pp.441-442 (PDF466-467), (9.169)-(9.172).",
+        "(9.8)-(9.10), p.409 (PDF434); (9.171)-(9.172), p.442."
+      ],
+      "remaining_limitations": [
+        "Uniform prescribed loop-current phasor; radiation-zone approximation only in part a."
+      ]
+    },
+    {
+      "problem": "9.15",
+      "mathematics_checked": "Moving-dipole magnetic moment factor one-half, E2 tensor, coherent M1/E2 sum, transverse angular pattern and power.",
+      "derivation_pedagogy_changes": "Displayed the spherical-basis components of both fields before summing them.",
+      "evidence_checks": "check_15 independent moving-point-dipole source transform and integrated interference.",
+      "notation_sources": [
+        "SI, physical real part of exp(-i omega t) phasors: printed p.407 (PDF432), (9.1) and its factor-of-two footnote.",
+        "Condon-Shortley P_l^m and normalized Y_lm: printed p.108 (PDF133), (3.49)-(3.55).",
+        "Jackson radiation moment normalization: printed pp.441-442 (PDF466-467), (9.169)-(9.172).",
+        "(9.35)-(9.49), pp.413-415; problem p.453 (PDF478), cross-reference 6.21."
+      ],
+      "remaining_limitations": [
+        "Nonrelativistic dipole translations; overall field phase is conventional."
+      ]
+    },
+    {
+      "problem": "9.16",
+      "mathematics_checked": "Exact full-wave odd current transform, removable axial zeros, Ci integration, antinode resistance and peak angles.",
+      "derivation_pedagogy_changes": "No derivation change needed.",
+      "evidence_checks": "check_16 direct current integrals including axial limit, power quadrature and plotted pattern.",
+      "notation_sources": [
+        "SI, physical real part of exp(-i omega t) phasors: printed p.407 (PDF432), (9.1) and its factor-of-two footnote.",
+        "Condon-Shortley P_l^m and normalized Y_lm: printed p.108 (PDF133), (3.49)-(3.55).",
+        "Jackson radiation moment normalization: printed pp.441-442 (PDF466-467), (9.169)-(9.172).",
+        "(9.178)-(9.182), p.445 (PDF470); problem p.453 (PDF478)."
+      ],
+      "remaining_limitations": [
+        "Resistance refers to maximum current; the central current is zero in the prescribed model."
+      ]
+    },
+    {
+      "problem": "9.17",
+      "mathematics_checked": "Parity and endpoint charge, exact even-l moments, static Qzz, effective quadrupole ratio, patterns and orthogonal powers.",
+      "derivation_pedagogy_changes": "No derivation change needed.",
+      "evidence_checks": "check_17 source integral, power sum through l=20; fresh projection of exact far field on vector harmonics.",
+      "notation_sources": [
+        "SI, physical real part of exp(-i omega t) phasors: printed p.407 (PDF432), (9.1) and its factor-of-two footnote.",
+        "Condon-Shortley P_l^m and normalized Y_lm: printed p.108 (PDF133), (3.49)-(3.55).",
+        "Jackson radiation moment normalization: printed pp.441-442 (PDF466-467), (9.169)-(9.172).",
+        "Exact source coefficient (9.167), p.441; sinusoidal antenna pp.445-446 (PDF470-471)."
+      ],
+      "remaining_limitations": [
+        "Long-wavelength source approximation is uncontrolled at kd=2pi; exact multipole-order truncation remains valid."
+      ]
+    },
+    {
+      "problem": "9.18",
+      "mathematics_checked": "Full electric-minus-magnetic norm cancellation, radial reactive integral, triangular-current dipole and capacitance.",
+      "derivation_pedagogy_changes": "No derivation change needed.",
+      "evidence_checks": "check_18 full complex dipole fields at three radii and radial/source integrals.",
+      "notation_sources": [
+        "SI, physical real part of exp(-i omega t) phasors: printed p.407 (PDF432), (9.1) and its factor-of-two footnote.",
+        "Condon-Shortley P_l^m and normalized Y_lm: printed p.108 (PDF133), (3.49)-(3.55).",
+        "Jackson radiation moment normalization: printed pp.441-442 (PDF466-467), (9.169)-(9.172).",
+        "(9.18), p.411; problem p.454 (PDF479), stated (6.140) convention."
+      ],
+      "remaining_limitations": [
+        "Only fields outside radius a contribute; full finite-wire input reactance is not claimed."
+      ]
+    },
+    {
+      "problem": "9.19",
+      "mathematics_checked": "Local-base moments including injected endpoint charge, quadrupole contraction, exact TE10 overlap and general-mode correction.",
+      "derivation_pedagogy_changes": "No derivation change needed.",
+      "evidence_checks": "check_19 direct S0/S1/S2 and modal overlap including degenerate q_n=k0 limit; compared actual 8.19 statement.",
+      "notation_sources": [
+        "SI, physical real part of exp(-i omega t) phasors: printed p.407 (PDF432), (9.1) and its factor-of-two footnote.",
+        "Condon-Shortley P_l^m and normalized Y_lm: printed p.108 (PDF133), (3.49)-(3.55).",
+        "Jackson radiation moment normalization: printed pp.441-442 (PDF466-467), (9.169)-(9.172).",
+        "(9.69), p.421 (PDF446); 8.19 current and power in sections/ch08.tex."
+      ],
+      "remaining_limitations": [
+        "Multipole origin is explicitly the probe base; translated moments require the same translated field expansion."
+      ]
+    },
+    {
+      "problem": "9.20",
+      "mathematics_checked": "Static aperture E and H integrals, observation-side signs, Maxwell integration-by-parts identity and low-frequency order.",
+      "derivation_pedagogy_changes": "No derivation change needed.",
+      "evidence_checks": "check_20 radial integrals plus independent disk integration-by-parts example; actual source formula images inspected.",
+      "notation_sources": [
+        "SI, physical real part of exp(-i omega t) phasors: printed p.407 (PDF432), (9.1) and its factor-of-two footnote.",
+        "Condon-Shortley P_l^m and normalized Y_lm: printed p.108 (PDF133), (3.49)-(3.55).",
+        "Jackson radiation moment normalization: printed pp.441-442 (PDF466-467), (9.169)-(9.172).",
+        "(3.186), p.134 (PDF159); (5.132), p.206 (PDF231); (9.72),(9.74)-(9.75), pp.422,424 (PDF447,449)."
+      ],
+      "remaining_limitations": [
+        "Bouwkamp historical article was not newly consulted; derivation uses the supplied textbook equations and Maxwell identity."
+      ]
+    },
+    {
+      "problem": "9.21",
+      "mathematics_checked": "Bessel-gradient norm, total energy per length, azimuthal Poynting term and signed m/omega ratio.",
+      "derivation_pedagogy_changes": "No derivation change needed.",
+      "evidence_checks": "check_21 direct Bessel integrals for m=0,1,3.",
+      "notation_sources": [
+        "SI, physical real part of exp(-i omega t) phasors: printed p.407 (PDF432), (9.1) and its factor-of-two footnote.",
+        "Condon-Shortley P_l^m and normalized Y_lm: printed p.108 (PDF133), (3.49)-(3.55).",
+        "Jackson radiation moment normalization: printed pp.441-442 (PDF466-467), (9.169)-(9.172).",
+        "Vector-harmonic angular-momentum convention (9.101), p.428 (PDF453); problem pp.454-455 (PDF479-480)."
+      ],
+      "remaining_limitations": [
+        "Traveling angular phase versus real standing pattern is distinguished."
+      ]
+    },
+    {
+      "problem": "9.22",
+      "mathematics_checked": "TE/TM boundary conditions, no l=0 wave, radial/azimuthal labels, root ordering, explicit fields and origin limits.",
+      "derivation_pedagogy_changes": "Explicitly defined Jackson operator L=-i r cross grad in X_lm.",
+      "evidence_checks": "check_22 root search and TE Maxwell curls; fresh TM Maxwell curls and tangential E at many wall points.",
+      "notation_sources": [
+        "SI, physical real part of exp(-i omega t) phasors: printed p.407 (PDF432), (9.1) and its factor-of-two footnote.",
+        "Condon-Shortley P_l^m and normalized Y_lm: printed p.108 (PDF133), (3.49)-(3.55).",
+        "Jackson radiation moment normalization: printed pp.441-442 (PDF466-467), (9.169)-(9.172).",
+        "(9.101), p.428; (9.119)-(9.122), p.431 (PDF456)."
+      ],
+      "remaining_limitations": [
+        "Table lists distinct frequencies; each carries the stated 2l+1 degeneracy."
+      ]
+    },
+    {
+      "problem": "9.23",
+      "mathematics_checked": "Surface resistance prefactors, equality of stored electric/magnetic energies, full Bessel integral proof and both Q factors.",
+      "derivation_pedagogy_changes": "No derivation change needed.",
+      "evidence_checks": "check_23 radial bulk/wall integrals for l=1,...,4 and two roots each.",
+      "notation_sources": [
+        "SI, physical real part of exp(-i omega t) phasors: printed p.407 (PDF432), (9.1) and its factor-of-two footnote.",
+        "Condon-Shortley P_l^m and normalized Y_lm: printed p.108 (PDF133), (3.49)-(3.55).",
+        "Jackson radiation moment normalization: printed pp.441-442 (PDF466-467), (9.169)-(9.172).",
+        "Vector fields (9.119)-(9.122), p.431; skin-depth convention p.204 (PDF229); problem p.455 (PDF480)."
+      ],
+      "remaining_limitations": [
+        "Leading order in skin depth/radius; lossless fields used consistently."
+      ]
+    },
+    {
+      "problem": "9.24",
+      "mathematics_checked": "Outgoing rather than regular waves, passive-energy half-plane argument, exact l=1,2 polynomials and energy-decay factor two.",
+      "derivation_pedagogy_changes": "No derivation change needed.",
+      "evidence_checks": "check_24 roots through l=8; source Hankel residuals and all table values for l<=2.",
+      "notation_sources": [
+        "SI, physical real part of exp(-i omega t) phasors: printed p.407 (PDF432), (9.1) and its factor-of-two footnote.",
+        "Condon-Shortley P_l^m and normalized Y_lm: printed p.108 (PDF133), (3.49)-(3.55).",
+        "Jackson radiation moment normalization: printed pp.441-442 (PDF466-467), (9.169)-(9.172).",
+        "Outgoing spherical waves (9.89)-(9.96), pp.427-428 (PDF452-453); problem p.455 (PDF480)."
+      ],
+      "remaining_limitations": [
+        "A single outgoing resonance grows spatially and is not a finite-total-energy field; local ringing energy envelope is stated explicitly. Historical Thomson source not newly checked."
+      ]
+    }
+  ],
+  "test_log_sha256": "da0ba0bef9455324f70205e7812c4b995bb5cd332489afef94fe6e9efd925a77",
+  "render_verification": {
+    "command": "pdflatex -interaction=nonstopmode -halt-on-error -output-directory=/private/tmp/recheck-ch09-render /private/tmp/recheck-ch09-render/recheck-ch09.tex",
+    "exit_code": 0,
+    "compile_log": "build/recheck-ch09-compile.log",
+    "compile_log_sha256": "156da23e9a13a1cede83a7f1bd22a031033202dcc946540b598fd2b512428388",
+    "warnings_overfull_underfull_errors": [],
+    "pdf": "/private/tmp/recheck-ch09-render/recheck-ch09.pdf",
+    "pdf_sha256": "b646baeb89b239d82db102bee7b61dd072e1fd06431908772a4e9fce7e0a8b43",
+    "pdf_bytes": 350651,
+    "pages": 26,
+    "visually_inspected_pages": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26
+    ],
+    "method": "All pages rasterized at 1400 px and visually inspected in four-page contact sheets; altered formula/unit pages also inspected individually where needed.",
+    "findings": "No clipping, overlaps, missing glyphs, displaced equations, or illegible plot labels seen."
+  },
+  "final_structure_check": {
+    "ordered_problem_count": 24,
+    "every_problem_prefix": "\\Needspace{5\\baselineskip}\\par\\bigskip",
+    "broken_unit_fragments_found": 0
+  },
+  "frozen_files_sha256": {
+    "sections/ch09.tex": "67bc4af8fc0baab8c6bb9d455c2a47abec5883ba75df6472197ab2a69823a9a8",
+    "supplementary/check_ch09.py": "613c0e1b4ce5b1ffe0990e6f8b0422c0c84e3f1c37d2df162cbd2e72d0b80b28",
+    "supplementary/ch09-results.json": "32fd695a9dfb2cfa072f018bed0b7eefb9d603312566407596f3265a96640c9c",
+    "supplementary/figures/ch09-p16.tex": "e5124e637effae2e96ecebea413cfb844ca9c77bfde72086fdbc01660d7a5997",
+    "supplementary/ch09-source/Wiese-Fuhr-2009.pdf": "1b31d9cbb70edbff62b512720df1c3475f97f1dbce7315f74978eeb849db8c2b",
+    "supplementary/ch09-source/Wiese-Fuhr-2009.txt": "b87ee767be9aa8c1a132ace67b85206cbabb62e36061ef5cc6e850c12168a642",
+    "supplementary/ch09-source/sources.txt": "a62cdc1fcd6e5e393111edb5914c841f8ac3904dca08c18cd36805aeabf03aff"
+  },
+  "sources_assets_frozen": true
+}

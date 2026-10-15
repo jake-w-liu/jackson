@@ -1,0 +1,1287 @@
+{
+  "chapter": 2,
+  "problem_count": 30,
+  "scope": "Every current statement, solution and requested subpart in sections/ch02.tex; complete check script and all referenced generated figures.",
+  "skill": "/Users/jake/.agents/skills/deep-debug/SKILL.md",
+  "review_date": "2026-10-03",
+  "prior_ledgers": "Used only as source locators; no previous PASS result is current-run evidence.",
+  "passes": [
+    {
+      "pass": 1,
+      "route": "Source-led derivation and units/signs review of all 30 problems.",
+      "new_confirmed_defects": 0
+    },
+    {
+      "pass": 2,
+      "route": "Read current complete TeX again; boundary/source normalization and approximation-domain review across all assigned 102.",
+      "new_confirmed_defects_in_this_chapter": 0,
+      "other_chapter_finding": "14.23 nonuniform exponential approximation prompted another final pass."
+    },
+    {
+      "pass": 3,
+      "route": "Observable invariants, limiting cases, reciprocal/energy relations and the per-problem routes below, after the 14.23 fix.",
+      "new_confirmed_defects": 0
+    }
+  ],
+  "notation_sources": [
+    {
+      "printed_pages": [
+        58,
+        59,
+        60,
+        61,
+        62,
+        63,
+        64,
+        65,
+        66,
+        67,
+        77,
+        80
+      ],
+      "pdf_pages": [
+        83,
+        84,
+        85,
+        86,
+        87,
+        88,
+        89,
+        90,
+        91,
+        92,
+        102,
+        105
+      ],
+      "checked": "SI image normalization, Green normalization, sphere boundary normals, cylindrical harmonics and Galerkin psi convention."
+    }
+  ],
+  "problems": [
+    {
+      "problem_id": "2.1",
+      "statement_subparts": [
+        "a",
+        "b",
+        "c",
+        "d",
+        "e",
+        "f"
+      ],
+      "inspected_sources": {
+        "problem_ocr": [
+          "ocr/p-110.txt"
+        ],
+        "printed_problem_pages": [
+          85
+        ],
+        "theory": "2.1-2.4, printed pp.58-59",
+        "current_tex": "sections/ch02.tex:9"
+      },
+      "first_pass_derivation": "Differentiate the antisymmetric image potential; integrate surface charge and pressure; separate conductor assembly energy from two independent charges.",
+      "falsifiable_candidates": [
+        {
+          "claim": "The work could be off by two because image separation changes with source height.",
+          "verification": "Direct pressure integral equals the image force; differentiating U=-q^2/(16 pi eps0 d) gives that force, whereas the two-charge mutual energy is twice U.",
+          "status": "discarded"
+        }
+      ],
+      "independent_final_pass": {
+        "route": "Start from energy and action-reaction: total induced charge is -q, force scales d^-2, removal energy d^-1 and the SI conversion gives 3.599911 eV.",
+        "result": "No new confirmed defect in the final pass after both current-run fixes.",
+        "evidence_type": "Analytic identity/domain review, with finite numerical or symbolic samples where the named script provides them."
+      },
+      "current_script_check": "check_01_05",
+      "changes": [],
+      "notation_check": "SI; Phi is electric potential, sigma surface charge; G satisfies Laplacian G=-4 pi delta. Local shorthand is explicitly defined in the solution.",
+      "remaining_limitations": [
+        "The ideal plane and point source omit microscopic surface physics."
+      ]
+    },
+    {
+      "problem_id": "2.2",
+      "statement_subparts": [
+        "a",
+        "b",
+        "c",
+        "d"
+      ],
+      "inspected_sources": {
+        "problem_ocr": [
+          "ocr/p-110.txt"
+        ],
+        "printed_problem_pages": [
+          85
+        ],
+        "theory": "2.3-2.6, printed pp.59-60",
+        "current_tex": "sections/ch02.tex:92"
+      },
+      "first_pass_derivation": "Invert an interior source outside the cavity; use the metal-to-cavity inward normal; integrate induced charge and differentiate image energy.",
+      "falsifiable_candidates": [
+        {
+          "claim": "An isolated sphere's specified inner radius might determine its absolute potential.",
+          "verification": "Inner charge is -q and force is independent of a constant potential; exterior capacitance needs the outer radius or exterior geometry.",
+          "status": "discarded"
+        }
+      ],
+      "independent_final_pass": {
+        "route": "Check the centered limit, near-wall image-force limit, and Gauss law separately for inner and outer surfaces.",
+        "result": "No new confirmed defect in the final pass after both current-run fixes.",
+        "evidence_type": "Analytic identity/domain review, with finite numerical or symbolic samples where the named script provides them."
+      },
+      "current_script_check": "check_01_05",
+      "changes": [],
+      "notation_check": "SI; Phi is electric potential, sigma surface charge; G satisfies Laplacian G=-4 pi delta. Local shorthand is explicitly defined in the solution.",
+      "remaining_limitations": [
+        "An outer radius A is supplied conditionally, not inferred from the given inner radius."
+      ]
+    },
+    {
+      "problem_id": "2.3",
+      "statement_subparts": [
+        "a",
+        "b",
+        "c",
+        "d"
+      ],
+      "inspected_sources": {
+        "problem_ocr": [
+          "ocr/p-110.txt",
+          "ocr/p-111.txt"
+        ],
+        "printed_problem_pages": [
+          85,
+          86
+        ],
+        "theory": "2.1 image construction, printed p.58; problem pp.85-86",
+        "current_tex": "sections/ch02.tex:154"
+      },
+      "first_pass_derivation": "Four logarithmic line potentials, normal derivative, arctangent charge partition, quadrupole far field.",
+      "falsifiable_candidates": [
+        {
+          "claim": "The fourth image or the far-field coefficient could have a wrong sign.",
+          "verification": "Both walls are equipotentials and tangential derivatives vanish; Qx+Qy=-lambda; monopole and dipole cancel, leaving the stated positive first-quadrant quadrupole.",
+          "status": "discarded"
+        }
+      ],
+      "independent_final_pass": {
+        "route": "Check exchange x0/y0, the x0->0 charge partition, quadrupolar angular nodes, and rho^-2 decay against the exact logarithm.",
+        "result": "No new confirmed defect in the final pass after both current-run fixes.",
+        "evidence_type": "Analytic identity/domain review, with finite numerical or symbolic samples where the named script provides them."
+      },
+      "current_script_check": "check_01_05",
+      "changes": [],
+      "notation_check": "SI; Phi is electric potential, sigma surface charge; G satisfies Laplacian G=-4 pi delta. Local shorthand is explicitly defined in the solution.",
+      "remaining_limitations": [
+        "Plots use the specified coordinate units; singular source points are excluded."
+      ]
+    },
+    {
+      "problem_id": "2.4",
+      "statement_subparts": [
+        "a",
+        "b",
+        "c"
+      ],
+      "inspected_sources": {
+        "problem_ocr": [
+          "ocr/p-111.txt"
+        ],
+        "printed_problem_pages": [
+          86
+        ],
+        "theory": "2.8-2.9, printed p.61",
+        "current_tex": "sections/ch02.tex:238"
+      },
+      "first_pass_derivation": "Differentiate H(x), establish one attraction/repulsion transition, solve each charge ratio and expand the near-surface image force.",
+      "falsifiable_candidates": [
+        {
+          "claim": "The retained corrected 0.6180339887 threshold might disagree with the force equation.",
+          "verification": "Using x^2=x+1 gives the exact golden-ratio root; independent brentq roots reproduce all three thresholds.",
+          "status": "discarded"
+        }
+      ],
+      "independent_final_pass": {
+        "route": "Check force sign on both sides of the monotone root and the universal plane limit for finite Q/q.",
+        "result": "No new confirmed defect in the final pass after both current-run fixes.",
+        "evidence_type": "Analytic identity/domain review, with finite numerical or symbolic samples where the named script provides them."
+      },
+      "current_script_check": "check_01_05",
+      "changes": [],
+      "notation_check": "SI; Phi is electric potential, sigma surface charge; G satisfies Laplacian G=-4 pi delta. Local shorthand is explicitly defined in the solution.",
+      "remaining_limitations": [
+        "Existing dark-red correction to the source's printed 0.6178 is preserved."
+      ]
+    },
+    {
+      "problem_id": "2.5",
+      "statement_subparts": [
+        "a",
+        "b"
+      ],
+      "inspected_sources": {
+        "problem_ocr": [
+          "ocr/p-111.txt"
+        ],
+        "printed_problem_pages": [
+          86
+        ],
+        "theory": "2.3,2.6,2.8-2.9, printed pp.59-61",
+        "current_tex": "sections/ch02.tex:295"
+      },
+      "first_pass_derivation": "Integrate grounded and isolated sphere forces and distinguish q Phi_Q from half q Phi_polarization.",
+      "falsifiable_candidates": [
+        {
+          "claim": "Assigning the factor one-half to the pre-existing sphere charge could halve its interaction.",
+          "verification": "Symbolic negative energy derivative and an independent force quadrature give the stated work including the full qQ/r term.",
+          "status": "discarded"
+        }
+      ],
+      "independent_final_pass": {
+        "route": "Check Q=0, large r induced-polarization r^-4 energy, and possible negative removal work under repulsion.",
+        "result": "No new confirmed defect in the final pass after both current-run fixes.",
+        "evidence_type": "Analytic identity/domain review, with finite numerical or symbolic samples where the named script provides them."
+      },
+      "current_script_check": "check_01_05",
+      "changes": [],
+      "notation_check": "SI; Phi is electric potential, sigma surface charge; G satisfies Laplacian G=-4 pi delta. Local shorthand is explicitly defined in the solution.",
+      "remaining_limitations": [
+        "Divergent point self-energy and constant isolated-sphere self-energy are excluded consistently."
+      ]
+    },
+    {
+      "problem_id": "2.6",
+      "statement_subparts": [
+        "a",
+        "b",
+        "c"
+      ],
+      "inspected_sources": {
+        "problem_ocr": [
+          "ocr/p-111.txt",
+          "ocr/p-112.txt"
+        ],
+        "printed_problem_pages": [
+          86,
+          87
+        ],
+        "theory": "2.1-2.4, printed pp.58-59; problem pp.86-87",
+        "current_tex": "sections/ch02.tex:357"
+      },
+      "first_pass_derivation": "Coupled two-seed image recursion, geometric tail bound, force from stress and energy, contact Euler-Maclaurin expansion and capacitance.",
+      "falsifiable_candidates": [
+        {
+          "claim": "The contact force coefficient 0.6149 could be a finite-truncation artifact or the unequal-sphere normalization could violate reciprocity.",
+          "verification": "Stress, image force, energy derivative and analytic contact expansion agree; new unit-charge potential matrices are symmetric and positive definite for two unequal geometries.",
+          "status": "discarded"
+        }
+      ],
+      "independent_final_pass": {
+        "route": "Use electrostatic reciprocity and energy positivity independently of the force construction, then approach contact through strictly positive gaps.",
+        "result": "No new confirmed defect in the final pass after both current-run fixes.",
+        "evidence_type": "Analytic identity/domain review, with finite numerical or symbolic samples where the named script provides them."
+      },
+      "current_script_check": "check_06",
+      "changes": [
+        "Added independent reciprocity and positive-energy regression."
+      ],
+      "notation_check": "SI; Phi is electric potential, sigma surface charge; G satisfies Laplacian G=-4 pi delta. The algorithm uses 4 pi epsilon0=1, with SI factors restored explicitly.",
+      "remaining_limitations": [
+        "Exact contact is handled analytically; the numerical routine explicitly rejects zero gap. Existing correction to source 0.6189 remains."
+      ]
+    },
+    {
+      "problem_id": "2.7",
+      "statement_subparts": [
+        "a",
+        "b",
+        "c",
+        "d"
+      ],
+      "inspected_sources": {
+        "problem_ocr": [
+          "ocr/p-112.txt",
+          "ocr/p-113.txt"
+        ],
+        "printed_problem_pages": [
+          87,
+          88
+        ],
+        "theory": "Dirichlet representation and images, printed pp.64-65",
+        "current_tex": "sections/ch02.tex:509"
+      },
+      "first_pass_derivation": "Differentiate half-space Green function, integrate disk boundary data, derive axial potential and uniformly ordered far expansion.",
+      "falsifiable_candidates": [
+        {
+          "claim": "The displayed denominator expansion might be mistaken for a uniform fixed-angle far-distance expansion.",
+          "verification": "The solution separately supplies the required rho/L-dependent terms of equal asymptotic order; direct disk quadrature checks them.",
+          "status": "discarded"
+        }
+      ],
+      "independent_final_pass": {
+        "route": "Check boundary values inside/outside the disk, axial exact expansion, positive harmonic kernel and the a^2 z/(2L^3) leading term.",
+        "result": "No new confirmed defect in the final pass after both current-run fixes.",
+        "evidence_type": "Analytic identity/domain review, with finite numerical or symbolic samples where the named script provides them."
+      },
+      "current_script_check": "check_07_11",
+      "changes": [],
+      "notation_check": "SI; Phi is electric potential, sigma surface charge; G satisfies Laplacian G=-4 pi delta. Local shorthand is explicitly defined in the solution.",
+      "remaining_limitations": [
+        "The edge discontinuity is interpreted through interior limits; the book's denominator ordering is retained and explained."
+      ]
+    },
+    {
+      "problem_id": "2.8",
+      "statement_subparts": [
+        "a",
+        "b",
+        "c",
+        "d"
+      ],
+      "inspected_sources": {
+        "problem_ocr": [
+          "ocr/p-113.txt"
+        ],
+        "printed_problem_pages": [
+          88
+        ],
+        "theory": "Logarithmic line potentials, printed p.77; problem p.88",
+        "current_tex": "sections/ch02.tex:584"
+      },
+      "first_pass_derivation": "Complete the equipotential circle square, derive external/nested bipolar capacitances and next inverse-distance term.",
+      "falsifiable_candidates": [
+        {
+          "claim": "The nested formula could use the external argument with the wrong sign.",
+          "verification": "Independent circle parameters give cosh(ta-tb) internally and cosh(ta+tb) externally; concentric limit is ln(b/a).",
+          "status": "discarded"
+        }
+      ],
+      "independent_final_pass": {
+        "route": "Check positivity, symmetric interchange of radii, the V=0 infinite-radius plane and the well-separated logarithmic capacitance.",
+        "result": "No new confirmed defect in the final pass after both current-run fixes.",
+        "evidence_type": "Analytic identity/domain review, with finite numerical or symbolic samples where the named script provides them."
+      },
+      "current_script_check": "check_07_11",
+      "changes": [],
+      "notation_check": "SI; Phi is electric potential, sigma surface charge; G satisfies Laplacian G=-4 pi delta. Local shorthand is explicitly defined in the solution.",
+      "remaining_limitations": [
+        "The concentric result is a limit of the bipolar geometry."
+      ]
+    },
+    {
+      "problem_id": "2.9",
+      "statement_subparts": [
+        "a",
+        "b"
+      ],
+      "inspected_sources": {
+        "problem_ocr": [
+          "ocr/p-113.txt"
+        ],
+        "printed_problem_pages": [
+          88
+        ],
+        "theory": "2.12-2.15, printed pp.63-64",
+        "current_tex": "sections/ch02.tex:670"
+      },
+      "first_pass_derivation": "Uniform-field sphere potential, signed surface charge, Maxwell pressure on both hemispheres and separate translation/separation forces.",
+      "falsifiable_candidates": [
+        {
+          "claim": "The QE0 term could have been counted as separation force.",
+          "verification": "FN+FS=QE0 while half the difference contains only Q^2 and E0^2; direct pressure integration reproduces both.",
+          "status": "discarded"
+        }
+      ],
+      "independent_final_pass": {
+        "route": "Check reversal Q or E0, the uncharged limit, the no-field charged-shell limit, and net force QE0.",
+        "result": "No new confirmed defect in the final pass after both current-run fixes.",
+        "evidence_type": "Analytic identity/domain review, with finite numerical or symbolic samples where the named script provides them."
+      },
+      "current_script_check": "check_07_11",
+      "changes": [],
+      "notation_check": "SI; Phi is electric potential, sigma surface charge; G satisfies Laplacian G=-4 pi delta. Local shorthand is explicitly defined in the solution.",
+      "remaining_limitations": [
+        "Holding each half stationary requires the separately listed support forces; mutual restraint is defined for equal hemispheres."
+      ]
+    },
+    {
+      "problem_id": "2.10",
+      "statement_subparts": [
+        "a",
+        "b",
+        "c"
+      ],
+      "inspected_sources": {
+        "problem_ocr": [
+          "ocr/p-113.txt",
+          "ocr/p-114.txt"
+        ],
+        "printed_problem_pages": [
+          88,
+          89
+        ],
+        "theory": "Uniform sphere field, printed pp.63-64; image relations pp.58-59",
+        "current_tex": "sections/ch02.tex:730"
+      },
+      "first_pass_derivation": "Hemispherical boss boundary solution, densities and four-charge image integral for a source above the boss.",
+      "falsifiable_candidates": [
+        {
+          "claim": "Boss charge normalization could lack the reflected source contribution.",
+          "verification": "The four-charge potential vanishes on both boundaries; integrating its normal derivative gives the stated boss charge.",
+          "status": "discarded"
+        }
+      ],
+      "independent_final_pass": {
+        "route": "Check rim density zero, top enhancement three, d->a+ charge -q and d->infinity charge zero.",
+        "result": "No new confirmed defect in the final pass after both current-run fixes.",
+        "evidence_type": "Analytic identity/domain review, with finite numerical or symbolic samples where the named script provides them."
+      },
+      "current_script_check": "check_07_11",
+      "changes": [],
+      "notation_check": "SI; Phi is electric potential, sigma surface charge; G satisfies Laplacian G=-4 pi delta. Local shorthand is explicitly defined in the solution.",
+      "remaining_limitations": [
+        "Uniform remote-field construction is the D/a->infinity approximation specified in the solution."
+      ]
+    },
+    {
+      "problem_id": "2.11",
+      "statement_subparts": [
+        "a",
+        "b",
+        "c",
+        "d"
+      ],
+      "inspected_sources": {
+        "problem_ocr": [
+          "ocr/p-113.txt",
+          "ocr/p-114.txt"
+        ],
+        "printed_problem_pages": [
+          88,
+          89
+        ],
+        "theory": "2.71, printed p.77; problem pp.88-89",
+        "current_tex": "sections/ch02.tex:808"
+      },
+      "first_pass_derivation": "Line-image distance identity, logarithmic reference at infinity, surface density and force.",
+      "falsifiable_candidates": [
+        {
+          "claim": "A freely prescribed cylinder voltage and zero infinity potential might be mutually incompatible.",
+          "verification": "The neutral line-plus-image pair fixes Vb=tau ln(b/R)/(2 pi eps0); any added central line would generate logarithmic growth.",
+          "status": "discarded"
+        }
+      ],
+      "independent_final_pass": {
+        "route": "Check total induced -tau, two-dimensional dipole falloff, attraction and the planar near-gap force limit.",
+        "result": "No new confirmed defect in the final pass after both current-run fixes.",
+        "evidence_type": "Analytic identity/domain review, with finite numerical or symbolic samples where the named script provides them."
+      },
+      "current_script_check": "check_07_11",
+      "changes": [],
+      "notation_check": "SI; Phi is electric potential, sigma surface charge; G satisfies Laplacian G=-4 pi delta. Local shorthand is explicitly defined in the solution.",
+      "remaining_limitations": [
+        "The specified infinity condition fixes the admissible conductor voltage."
+      ]
+    },
+    {
+      "problem_id": "2.12",
+      "statement_subparts": [],
+      "inspected_sources": {
+        "problem_ocr": [
+          "ocr/p-114.txt"
+        ],
+        "printed_problem_pages": [
+          89
+        ],
+        "theory": "2.71, printed p.77",
+        "current_tex": "sections/ch02.tex:875"
+      },
+      "first_pass_derivation": "Fourier coefficients, geometric kernel sum, bounded exterior inversion and zero mode.",
+      "falsifiable_candidates": [
+        {
+          "claim": "Arbitrary boundary data might permit a bounded exterior solution vanishing at infinity.",
+          "verification": "The exterior zero mode is the boundary mean; a nonzero mean cannot vanish at infinity, and a logarithmic mode requires separate data.",
+          "status": "discarded"
+        }
+      ],
+      "independent_final_pass": {
+        "route": "Test constant and individual sine/cosine boundary modes, kernel integral one, and radial inversion.",
+        "result": "No new confirmed defect in the final pass after both current-run fixes.",
+        "evidence_type": "Analytic identity/domain review, with finite numerical or symbolic samples where the named script provides them."
+      },
+      "current_script_check": "check_12_21",
+      "changes": [],
+      "notation_check": "SI; Phi is electric potential, sigma surface charge; G satisfies Laplacian G=-4 pi delta. Local shorthand is explicitly defined in the solution.",
+      "remaining_limitations": [
+        "Boundary discontinuities use harmonic interior limits."
+      ]
+    },
+    {
+      "problem_id": "2.13",
+      "statement_subparts": [
+        "a",
+        "b"
+      ],
+      "inspected_sources": {
+        "problem_ocr": [
+          "ocr/p-114.txt"
+        ],
+        "printed_problem_pages": [
+          89
+        ],
+        "theory": "2.71, printed p.77",
+        "current_tex": "sections/ch02.tex:921"
+      },
+      "first_pass_derivation": "Odd Fourier modes of sign(cos phi), complex arctangent sum, branch choice and inward normal derivative.",
+      "falsifiable_candidates": [
+        {
+          "claim": "The arctangent branch or surface-charge sign might swap the two electrode halves.",
+          "verification": "Continuous branch from the center tends to +/-pi/2 correctly; charge sign follows the higher/lower potential half.",
+          "status": "discarded"
+        }
+      ],
+      "independent_final_pass": {
+        "route": "Check V1=V2, center average, reflection across each gap and the inverse-distance edge charge singularity.",
+        "result": "No new confirmed defect in the final pass after both current-run fixes.",
+        "evidence_type": "Analytic identity/domain review, with finite numerical or symbolic samples where the named script provides them."
+      },
+      "current_script_check": "check_12_21",
+      "changes": [],
+      "notation_check": "SI; Phi is electric potential, sigma surface charge; G satisfies Laplacian G=-4 pi delta. Local shorthand is explicitly defined in the solution.",
+      "remaining_limitations": [
+        "Only inner-face charge is determined; exterior geometry and finite-gap regularization are unspecified."
+      ]
+    },
+    {
+      "problem_id": "2.14",
+      "statement_subparts": [
+        "a",
+        "b",
+        "c"
+      ],
+      "inspected_sources": {
+        "problem_ocr": [
+          "ocr/p-114.txt"
+        ],
+        "printed_problem_pages": [
+          89
+        ],
+        "theory": "2.71, printed p.77",
+        "current_tex": "sections/ch02.tex:983"
+      },
+      "first_pass_derivation": "Quarter-wave Fourier selection, artanh(zeta^2), exact orthogonal curve families and deterministic parametric sketch.",
+      "falsifiable_candidates": [
+        {
+          "claim": "The drawn field lines might not be harmonic conjugates of the equipotentials.",
+          "verification": "Generated curves invert artanh(zeta^2); their recovered real/imaginary coordinates are checked separately and arrows follow decreasing potential.",
+          "status": "discarded"
+        }
+      ],
+      "independent_final_pass": {
+        "route": "Check rotation by pi/2 reverses potential, harmonic leading xy term, zero-potential axes and orthogonality.",
+        "result": "No new confirmed defect in the final pass after both current-run fixes.",
+        "evidence_type": "Analytic identity/domain review, with finite numerical or symbolic samples where the named script provides them."
+      },
+      "current_script_check": "check_12_21",
+      "changes": [],
+      "notation_check": "SI; Phi is electric potential, sigma surface charge; G satisfies Laplacian G=-4 pi delta. Local shorthand is explicitly defined in the solution.",
+      "remaining_limitations": [
+        "Ideal zero-width electrode gaps have singular fields."
+      ]
+    },
+    {
+      "problem_id": "2.15",
+      "statement_subparts": [
+        "a",
+        "b"
+      ],
+      "inspected_sources": {
+        "problem_ocr": [
+          "ocr/p-114.txt",
+          "ocr/p-115.txt"
+        ],
+        "printed_problem_pages": [
+          89,
+          90
+        ],
+        "theory": "Separation equations 2.48-2.57, printed pp.70-71",
+        "current_tex": "sections/ch02.tex:1046"
+      },
+      "first_pass_derivation": "Square sine completeness, one-dimensional Green matching and -4pi derivative jump.",
+      "falsifiable_candidates": [
+        {
+          "claim": "A missing sine normalization could produce a factor-two error.",
+          "verification": "The 2 from angular completeness and 4/[n sinh(n pi)] from the jump give the displayed 8 coefficient.",
+          "status": "discarded"
+        }
+      ],
+      "independent_final_pass": {
+        "route": "Check symmetry under source/observer exchange, all four boundary zeros and local logarithmic source normalization.",
+        "result": "No new confirmed defect in the final pass after both current-run fixes.",
+        "evidence_type": "Analytic identity/domain review, with finite numerical or symbolic samples where the named script provides them."
+      },
+      "current_script_check": "check_12_21",
+      "changes": [],
+      "notation_check": "SI; Phi is electric potential, sigma surface charge; G satisfies Laplacian G=-4 pi delta. Local shorthand is explicitly defined in the solution.",
+      "remaining_limitations": [
+        "Source equality is distributional, not a pointwise finite Green value."
+      ]
+    },
+    {
+      "problem_id": "2.16",
+      "statement_subparts": [],
+      "inspected_sources": {
+        "problem_ocr": [
+          "ocr/p-115.txt"
+        ],
+        "printed_problem_pages": [
+          90
+        ],
+        "theory": "Problem 2.15 and 2.48-2.57, printed pp.70-71",
+        "current_tex": "sections/ch02.tex:1101"
+      },
+      "first_pass_derivation": "Integrate the square Green function for uniform charge and evaluate both hyperbolic integrals.",
+      "falsifiable_candidates": [
+        {
+          "claim": "The series could solve Laplace rather than Poisson or have a wrong epsilon0 factor.",
+          "verification": "Termwise Laplacian leaves the odd sine series of one with coefficient -1/eps0; all walls are zero.",
+          "status": "discarded"
+        }
+      ],
+      "independent_final_pass": {
+        "route": "Use maximum-principle positivity and x/y reflection symmetries, then compare the center and nodal continuum values.",
+        "result": "No new confirmed defect in the final pass after both current-run fixes.",
+        "evidence_type": "Analytic identity/domain review, with finite numerical or symbolic samples where the named script provides them."
+      },
+      "current_script_check": "check_12_21",
+      "changes": [],
+      "notation_check": "SI; Phi is electric potential, sigma surface charge; G satisfies Laplacian G=-4 pi delta. Local shorthand is explicitly defined in the solution.",
+      "remaining_limitations": [
+        "Derivatives at ideal corners require limiting interpretation."
+      ]
+    },
+    {
+      "problem_id": "2.17",
+      "statement_subparts": [
+        "a",
+        "b",
+        "c"
+      ],
+      "inspected_sources": {
+        "problem_ocr": [
+          "ocr/p-115.txt"
+        ],
+        "printed_problem_pages": [
+          90
+        ],
+        "theory": "2.68-2.71, printed p.77",
+        "current_tex": "sections/ch02.tex:1147"
+      },
+      "first_pass_derivation": "Integrate 1/R along an extra dimension, remove constant, and solve all radial Fourier modes including m=0.",
+      "falsifiable_candidates": [
+        {
+          "claim": "The logarithmic Green normalization or zero mode might be missing.",
+          "verification": "Small-circle flux is -4pi; radial weighted derivative jumps are -4pi and the summed series equals -ln distance^2.",
+          "status": "discarded"
+        }
+      ],
+      "independent_final_pass": {
+        "route": "Check scale changes alter only a constant, reciprocal source exchange and absolute convergence for unequal radii.",
+        "result": "No new confirmed defect in the final pass after both current-run fixes.",
+        "evidence_type": "Analytic identity/domain review, with finite numerical or symbolic samples where the named script provides them."
+      },
+      "current_script_check": "check_12_21",
+      "changes": [],
+      "notation_check": "SI; Phi is electric potential, sigma surface charge; G satisfies Laplacian G=-4 pi delta. Local shorthand is explicitly defined in the solution.",
+      "remaining_limitations": [
+        "Reference length in a two-dimensional logarithm is a gauge constant."
+      ]
+    },
+    {
+      "problem_id": "2.18",
+      "statement_subparts": [
+        "a",
+        "b",
+        "c"
+      ],
+      "inspected_sources": {
+        "problem_ocr": [
+          "ocr/p-115.txt",
+          "ocr/p-116.txt"
+        ],
+        "printed_problem_pages": [
+          90,
+          91
+        ],
+        "theory": "2.68-2.71, printed p.77; problem p.90",
+        "current_tex": "sections/ch02.tex:1224"
+      },
+      "first_pass_derivation": "Interior/exterior disk Wronskians, closed forms and boundary normal derivatives.",
+      "falsifiable_candidates": [
+        {
+          "claim": "The same algebraic closed form might wrongly impose zero infinity data externally.",
+          "verification": "Its exterior limit is 2 ln(rho'/b), explicitly retained; the normal reverses on the exterior domain's inner wall.",
+          "status": "discarded"
+        }
+      ],
+      "independent_final_pass": {
+        "route": "Check Kelvin inversion, reciprocity, positive Green function, wall zeros and correct interior/exterior Poisson kernels.",
+        "result": "No new confirmed defect in the final pass after both current-run fixes.",
+        "evidence_type": "Analytic identity/domain review, with finite numerical or symbolic samples where the named script provides them."
+      },
+      "current_script_check": "check_12_21",
+      "changes": [],
+      "notation_check": "SI; Phi is electric potential, sigma surface charge; G satisfies Laplacian G=-4 pi delta. Local shorthand is explicitly defined in the solution.",
+      "remaining_limitations": [
+        "Nondecaying exterior data require retaining the boundary contribution at infinity."
+      ]
+    },
+    {
+      "problem_id": "2.19",
+      "statement_subparts": [],
+      "inspected_sources": {
+        "problem_ocr": [
+          "ocr/p-116.txt"
+        ],
+        "printed_problem_pages": [
+          91
+        ],
+        "theory": "2.68-2.71, printed p.77",
+        "current_tex": "sections/ch02.tex:1305"
+      },
+      "first_pass_derivation": "Annular radial solutions, m=0 logarithms, Wronskian denominator and exterior limit.",
+      "falsifiable_candidates": [
+        {
+          "claim": "The annular zero-mode denominator might carry an extra two.",
+          "verification": "Weighted jump of f0 h0 is -ln(c/b); Fourier normalization gives exactly the displayed squared-log ratio.",
+          "status": "discarded"
+        }
+      ],
+      "independent_final_pass": {
+        "route": "Check both wall zeros, positive radial kernel and c->infinity reduction to 2.18.",
+        "result": "No new confirmed defect in the final pass after both current-run fixes.",
+        "evidence_type": "Analytic identity/domain review, with finite numerical or symbolic samples where the named script provides them."
+      },
+      "current_script_check": "check_12_21",
+      "changes": [],
+      "notation_check": "SI; Phi is electric potential, sigma surface charge; G satisfies Laplacian G=-4 pi delta. Local shorthand is explicitly defined in the solution.",
+      "remaining_limitations": [
+        "The coincident-source logarithmic singularity is expected."
+      ]
+    },
+    {
+      "problem_id": "2.20",
+      "statement_subparts": [
+        "a",
+        "b",
+        "c"
+      ],
+      "inspected_sources": {
+        "problem_ocr": [
+          "ocr/p-116.txt"
+        ],
+        "printed_problem_pages": [
+          91
+        ],
+        "theory": "Problem 2.17; complex potential and 2.71, printed p.77",
+        "current_tex": "sections/ch02.tex:1351"
+      },
+      "first_pass_derivation": "Four-source discrete Fourier filter, complex logarithm and Cartesian sixth-degree correction to the quadrupole.",
+      "falsifiable_candidates": [
+        {
+          "claim": "The sixth-degree potential could yield an x^6 rather than x^4 relative force correction.",
+          "verification": "Differentiation lowers both powers by one, producing (x/a)^4; harmonic polynomial Laplacians vanish.",
+          "status": "discarded"
+        }
+      ],
+      "independent_final_pass": {
+        "route": "Check 90-degree sign reversal, diagonal potential nodes, interior/exterior inversion and agreement with rotated 2.3.",
+        "result": "No new confirmed defect in the final pass after both current-run fixes.",
+        "evidence_type": "Analytic identity/domain review, with finite numerical or symbolic samples where the named script provides them."
+      },
+      "current_script_check": "check_12_21",
+      "changes": [],
+      "notation_check": "SI; Phi is electric potential, sigma surface charge; G satisfies Laplacian G=-4 pi delta. Local shorthand is explicitly defined in the solution.",
+      "remaining_limitations": [
+        "Near-origin expansion requires rho<a; the field-line figure is a schematic in the statement."
+      ]
+    },
+    {
+      "problem_id": "2.21",
+      "statement_subparts": [],
+      "inspected_sources": {
+        "problem_ocr": [
+          "ocr/p-116.txt"
+        ],
+        "printed_problem_pages": [
+          91
+        ],
+        "theory": "2.71 and complex-variable Poisson construction, printed p.77",
+        "current_tex": "sections/ch02.tex:1485"
+      },
+      "first_pass_derivation": "Cauchy formula plus exterior image pole; explicitly combine kernels into a real Poisson kernel.",
+      "falsifiable_candidates": [
+        {
+          "claim": "Taking real parts could accidentally retain the unknown harmonic conjugate.",
+          "verification": "The combined kernel is real on the circle, so only Re F contributes; the image-pole integral is zero.",
+          "status": "discarded"
+        }
+      ],
+      "independent_final_pass": {
+        "route": "Check center mean-value theorem and reproduction of arbitrary single harmonic modes.",
+        "result": "No new confirmed defect in the final pass after both current-run fixes.",
+        "evidence_type": "Analytic identity/domain review, with finite numerical or symbolic samples where the named script provides them."
+      },
+      "current_script_check": "check_12_21",
+      "changes": [],
+      "notation_check": "SI; Phi is electric potential, sigma surface charge; G satisfies Laplacian G=-4 pi delta. Local shorthand is explicitly defined in the solution.",
+      "remaining_limitations": [
+        "The analytic proof assumes regular boundary data; piecewise data follow by interior limits."
+      ]
+    },
+    {
+      "problem_id": "2.22",
+      "statement_subparts": [
+        "a",
+        "b",
+        "c"
+      ],
+      "inspected_sources": {
+        "problem_ocr": [
+          "ocr/p-117.txt"
+        ],
+        "printed_problem_pages": [
+          92
+        ],
+        "theory": "2.22,2.27, printed pp.66-67",
+        "current_tex": "sections/ch02.tex:1526"
+      },
+      "first_pass_derivation": "Spherical Poisson integral, Kelvin transform, origin/pole derivatives and signed axial-versus-radial components.",
+      "falsifiable_candidates": [
+        {
+          "claim": "The field plotted on the negative axis could have the wrong parity.",
+          "verification": "The odd potential gives even Ez; Er changes basis sign. New Legendre reconstruction independently checks both signs and derivatives.",
+          "status": "discarded"
+        }
+      ],
+      "independent_final_pass": {
+        "route": "Use the sign(cos theta) Legendre coefficients and parity rather than differentiating the same closed form; check center and both sides of each pole.",
+        "result": "No new confirmed defect in the final pass after both current-run fixes.",
+        "evidence_type": "Analytic identity/domain review, with finite numerical or symbolic samples where the named script provides them."
+      },
+      "current_script_check": "check_22_27",
+      "changes": [
+        "Added independent Legendre-series potential and field regression."
+      ],
+      "notation_check": "SI; Phi is electric potential, sigma surface charge; G satisfies Laplacian G=-4 pi delta. Local shorthand is explicitly defined in the solution.",
+      "remaining_limitations": [
+        "Existing dark-red Ez correction remains; no unique radial basis exists at the origin."
+      ]
+    },
+    {
+      "problem_id": "2.23",
+      "statement_subparts": [
+        "a",
+        "b",
+        "c"
+      ],
+      "inspected_sources": {
+        "problem_ocr": [
+          "ocr/p-117.txt"
+        ],
+        "printed_problem_pages": [
+          92
+        ],
+        "theory": "2.48-2.57, printed pp.70-71",
+        "current_tex": "sections/ch02.tex:1641"
+      },
+      "first_pass_derivation": "Double sine coefficients, symmetric cosh modes, numerical center sums and inward-face derivative.",
+      "falsifiable_candidates": [
+        {
+          "claim": "Four retained mode pairs might not attain the advertised three significant digits.",
+          "verification": "The four-pair value 0.332957715 rounds to 0.333, and face symmetry fixes the exact center value at 1/3.",
+          "status": "discarded"
+        }
+      ],
+      "independent_final_pass": {
+        "route": "Check independent face-superposition harmonic measure, positivity, symmetric z profiles and charge normal sign.",
+        "result": "No new confirmed defect in the final pass after both current-run fixes.",
+        "evidence_type": "Analytic identity/domain review, with finite numerical or symbolic samples where the named script provides them."
+      },
+      "current_script_check": "check_22_27",
+      "changes": [],
+      "notation_check": "SI; Phi is electric potential, sigma surface charge; G satisfies Laplacian G=-4 pi delta. Local shorthand is explicitly defined in the solution.",
+      "remaining_limitations": [
+        "Surface series is an Abel/interior limit; exterior-face charge is not specified."
+      ]
+    },
+    {
+      "problem_id": "2.24",
+      "statement_subparts": [],
+      "inspected_sources": {
+        "problem_ocr": [
+          "ocr/p-117.txt"
+        ],
+        "printed_problem_pages": [
+          92
+        ],
+        "theory": "2.72-2.74, printed p.77",
+        "current_tex": "sections/ch02.tex:1710"
+      },
+      "first_pass_derivation": "Orthogonality and odd periodic extension prove the distributional sine completeness relation.",
+      "falsifiable_candidates": [
+        {
+          "claim": "A delta identity might be asserted as a pointwise convergent ordinary series.",
+          "verification": "The solution states distributional action on every compactly supported smooth test function; numerical checks only test sine polynomials.",
+          "status": "discarded"
+        }
+      ],
+      "independent_final_pass": {
+        "route": "Use the odd-extension Fourier theorem and normalized reproducing action, including the endpoint exclusion.",
+        "result": "No new confirmed defect in the final pass after both current-run fixes.",
+        "evidence_type": "Analytic identity/domain review, with finite numerical or symbolic samples where the named script provides them."
+      },
+      "current_script_check": "check_22_27",
+      "changes": [],
+      "notation_check": "SI; Phi is electric potential, sigma surface charge; G satisfies Laplacian G=-4 pi delta. Local shorthand is explicitly defined in the solution.",
+      "remaining_limitations": [
+        "This is an analytic completeness proof; finite polynomial samples do not prove the general theorem."
+      ]
+    },
+    {
+      "problem_id": "2.25",
+      "statement_subparts": [
+        "a",
+        "b",
+        "c"
+      ],
+      "inspected_sources": {
+        "problem_ocr": [
+          "ocr/p-117.txt",
+          "ocr/p-118.txt"
+        ],
+        "printed_problem_pages": [
+          92,
+          93
+        ],
+        "theory": "2.72-2.74, printed p.77",
+        "current_tex": "sections/ch02.tex:1748"
+      },
+      "first_pass_derivation": "Wedge radial jump, logarithmic sum and conformal map/image special cases.",
+      "falsifiable_candidates": [
+        {
+          "claim": "A principal complex-power branch could invalidate wide-wedge formulas.",
+          "verification": "The TeX uses explicit phi in (0,beta), hence the conformal branch is fixed; the test-only complex helper is used only for beta<=pi.",
+          "status": "discarded"
+        }
+      ],
+      "independent_final_pass": {
+        "route": "Check positive Green function, both walls, local -ln distance^2 singularity and beta=pi,pi/2 images.",
+        "result": "No new confirmed defect in the final pass after both current-run fixes.",
+        "evidence_type": "Analytic identity/domain review, with finite numerical or symbolic samples where the named script provides them."
+      },
+      "current_script_check": "check_22_27",
+      "changes": [],
+      "notation_check": "SI; Phi is electric potential, sigma surface charge; G satisfies Laplacian G=-4 pi delta. Local shorthand is explicitly defined in the solution.",
+      "remaining_limitations": [
+        "The helper's principal-power implementation is not claimed for beta>pi; the stated polar formula is valid with its explicit angular branch."
+      ]
+    },
+    {
+      "problem_id": "2.26",
+      "statement_subparts": [
+        "a",
+        "b",
+        "c"
+      ],
+      "inspected_sources": {
+        "problem_ocr": [
+          "ocr/p-118.txt"
+        ],
+        "printed_problem_pages": [
+          93
+        ],
+        "theory": "2.72-2.74, printed p.77",
+        "current_tex": "sections/ch02.tex:1818"
+      },
+      "first_pass_derivation": "Separated exterior wedge mode, all conductor normals, beta=pi half-cylinder charge redistribution.",
+      "falsifiable_candidates": [
+        {
+          "claim": "The lower wall's normal could introduce an opposite surface-charge sign.",
+          "verification": "For the first mode cos(pi) and the reversed normal cancel; both wall densities agree, and the total charge difference tends to zero.",
+          "status": "discarded"
+        }
+      ],
+      "independent_final_pass": {
+        "route": "Use Gauss-law charge balance including the removed strip, and check beta=pi gives a uniform remote field and the finite-L residual.",
+        "result": "No new confirmed defect in the final pass after both current-run fixes.",
+        "evidence_type": "Analytic identity/domain review, with finite numerical or symbolic samples where the named script provides them."
+      },
+      "current_script_check": "check_22_27",
+      "changes": [],
+      "notation_check": "SI; Phi is electric potential, sigma surface charge; G satisfies Laplacian G=-4 pi delta. Local shorthand is explicitly defined in the solution.",
+      "remaining_limitations": [
+        "The local source-free mode expansion is limited by remote sources and its convergence region."
+      ]
+    },
+    {
+      "problem_id": "2.27",
+      "statement_subparts": [
+        "a",
+        "b"
+      ],
+      "inspected_sources": {
+        "problem_ocr": [
+          "ocr/p-118.txt",
+          "ocr/p-119.txt"
+        ],
+        "printed_problem_pages": [
+          93,
+          94
+        ],
+        "theory": "2.72-2.74, printed p.77; Problem 2.26",
+        "current_tex": "sections/ch02.tex:1941"
+      },
+      "first_pass_derivation": "Square-root slit potential, cylinder and both sheet-face densities, maximum and net redistribution.",
+      "falsifiable_candidates": [
+        {
+          "claim": "Counting only the surviving sheet might leave a spurious factor-two charge deficit.",
+          "verification": "The removed interval 0<x<a contributes the other half; total deficiency is -Qc.",
+          "status": "discarded"
+        }
+      ],
+      "independent_final_pass": {
+        "route": "Check integrability at the unrounded edge, x=3a maximum and full two-face charge conservation.",
+        "result": "No new confirmed defect in the final pass after both current-run fixes.",
+        "evidence_type": "Analytic identity/domain review, with finite numerical or symbolic samples where the named script provides them."
+      },
+      "current_script_check": "check_22_27",
+      "changes": [],
+      "notation_check": "SI; Phi is electric potential, sigma surface charge; G satisfies Laplacian G=-4 pi delta. Local shorthand is explicitly defined in the solution.",
+      "remaining_limitations": [
+        "Each infinite sheet charge diverges, but the stated difference is convergent."
+      ]
+    },
+    {
+      "problem_id": "2.28",
+      "statement_subparts": [],
+      "inspected_sources": {
+        "problem_ocr": [
+          "ocr/p-119.txt"
+        ],
+        "printed_problem_pages": [
+          94
+        ],
+        "theory": "Dirichlet uniqueness and face symmetry; problem p.94",
+        "current_tex": "sections/ch02.tex:2012"
+      },
+      "first_pass_derivation": "Unit-face harmonic solutions, face-transitive symmetry at center and sum equal to one.",
+      "falsifiable_candidates": [
+        {
+          "claim": "An area-mean argument could be invalid for a nonspherical boundary.",
+          "verification": "The proof uses equal harmonic measures from face-transitive symmetry, not an arbitrary area average; each is 1/n.",
+          "status": "discarded"
+        }
+      ],
+      "independent_final_pass": {
+        "route": "Start with the constant Dirichlet solution and uniqueness, then group-average each unit-face response at the fixed center.",
+        "result": "No new confirmed defect in the final pass after both current-run fixes.",
+        "evidence_type": "Analytic identity/domain review, with finite numerical or symbolic samples where the named script provides them."
+      },
+      "current_script_check": null,
+      "changes": [],
+      "notation_check": "SI; Phi is electric potential, sigma surface charge; G satisfies Laplacian G=-4 pi delta. Local shorthand is explicitly defined in the solution.",
+      "remaining_limitations": [
+        "Analytic uniqueness/symmetry proof; no numerical assertion or compiler result is represented as proof."
+      ]
+    },
+    {
+      "problem_id": "2.29",
+      "statement_subparts": [],
+      "inspected_sources": {
+        "problem_ocr": [
+          "ocr/p-119.txt"
+        ],
+        "printed_problem_pages": [
+          94
+        ],
+        "theory": "2.80-2.81, printed p.80",
+        "current_tex": "sections/ch02.tex:2043"
+      },
+      "first_pass_derivation": "Factor tensor-product tent mass and derivative integrals; diagonal, axial and diagonal-neighbor stiffness entries.",
+      "falsifiable_candidates": [
+        {
+          "claim": "The diagonal neighbor could be zero as in a five-point stencil.",
+          "verification": "Two products K1 M1 give -1/3; the resulting nine-point row sums to zero.",
+          "status": "discarded"
+        }
+      ],
+      "independent_final_pass": {
+        "route": "Use partition of unity/constant-gradient null mode and h-dimensional scaling after direct integral evaluation.",
+        "result": "No new confirmed defect in the final pass after both current-run fixes.",
+        "evidence_type": "Analytic identity/domain review, with finite numerical or symbolic samples where the named script provides them."
+      },
+      "current_script_check": "check_29_30",
+      "changes": [],
+      "notation_check": "SI; Phi is electric potential, sigma surface charge; G satisfies Laplacian G=-4 pi delta. Local shorthand is explicitly defined in the solution.",
+      "remaining_limitations": [
+        "The values apply to interior tents; Dirichlet boundary nodes are removed separately."
+      ]
+    },
+    {
+      "problem_id": "2.30",
+      "statement_subparts": [],
+      "inspected_sources": {
+        "problem_ocr": [
+          "ocr/p-119.txt"
+        ],
+        "printed_problem_pages": [
+          94
+        ],
+        "theory": "2.80-2.81, printed p.80; Problems 1.24 and 2.16",
+        "current_tex": "sections/ch02.tex:2092"
+      },
+      "first_pass_derivation": "Assemble the three reduced Galerkin equations, solve analytically, compare continuum series and reduced-matrix Jacobi/Gauss-Seidel.",
+      "falsifiable_candidates": [
+        {
+          "claim": "The second reduced Jacobi diagonal could use 20 rather than 18 and silently change the iteration comparison.",
+          "verification": "The 2 psi2 symmetry self-term is moved left; both chapters' reported convention uses 18 and all table values reproduce.",
+          "status": "discarded"
+        }
+      ],
+      "independent_final_pass": {
+        "route": "Check discrete residuals, continuum source normalization psi=4 pi eps0 Phi, iteration convergence versus spatial error and Galerkin energy meaning.",
+        "result": "No new confirmed defect in the final pass after both current-run fixes.",
+        "evidence_type": "Analytic identity/domain review, with finite numerical or symbolic samples where the named script provides them."
+      },
+      "current_script_check": "check_29_30",
+      "changes": [],
+      "notation_check": "SI; Phi is electric potential, sigma surface charge; G satisfies Laplacian G=-4 pi delta. psi=4 pi epsilon0 Phi only in the Galerkin comparison.",
+      "remaining_limitations": [
+        "Nodal superiority is stated only for this coarse mesh; Galerkin energy optimality is not a pointwise bound."
+      ]
+    }
+  ],
+  "check_history": [
+    {
+      "stage": "initial",
+      "command": [
+        "python3",
+        "-W",
+        "error",
+        "supplementary/check_ch02.py",
+        "--write-assets",
+        "--images",
+        "supplementary/ch02_images.csv"
+      ],
+      "exit_code": 0,
+      "log": "supplementary/ch02-deep-debug/initial-checks.log",
+      "log_sha256": "26d29d5c4f7dc0101b669a3149717018ff1666e5a3e8ab284010c12f571ac9a1"
+    },
+    {
+      "stage": "final",
+      "command": [
+        "/opt/homebrew/opt/python@3.14/bin/python3.14",
+        "-W",
+        "error",
+        "supplementary/check_ch02.py",
+        "--write-assets",
+        "--images",
+        "supplementary/ch02_images.csv"
+      ],
+      "exit_code": 0,
+      "log": "supplementary/ch02-deep-debug/final-checks.log",
+      "log_sha256": "26d29d5c4f7dc0101b669a3149717018ff1666e5a3e8ab284010c12f571ac9a1",
+      "elapsed_seconds": 8.443365097045898
+    }
+  ],
+  "evidence_classes": {
+    "manual_analytic": "Reviewed identities, derivations, domain assumptions and limiting arguments in the actual current solutions and source equations. This is human-readable mathematical reasoning, not a formal proof-assistant certificate.",
+    "symbolic": "SymPy simplification/differentiation/integration and exact polynomial identities where present in the named checks; assumptions are recorded by the check.",
+    "numerical": "Finite deterministic quadrature, finite-difference, matrix, series and convergence samples with explicit tolerances; these are sample evidence, not universal proofs.",
+    "source": "Actual local Jackson text/images checked; historical external access gaps are recorded per problem."
+  },
+  "dimensions": {
+    "domain_correctness": {
+      "status": "reviewed",
+      "evidence": "All per-problem rows record a derivation, falsifiable candidate and independent final route; exact source notation and physical domains checked."
+    },
+    "implementation_correctness": {
+      "status": "reviewed",
+      "evidence": "All named calculation functions, helper conventions, quadrature tolerances and generated data/figures read; chapter entry point ran with warnings as errors. All exceptions propagate rather than producing a PASS."
+    },
+    "memory_resources": {
+      "status": "reviewed_at_script_scope",
+      "evidence": "Finite NumPy arrays and bounded multipole/image/figure lists; Path read/write and subprocess.run manage file/process lifetimes. No servers, sockets or acquired external resources in these local calculation entry points. No process was stopped or signaled."
+    },
+    "performance": {
+      "status": "no_optimization_claim",
+      "evidence": "No latency/throughput target or optimization change is requested. Final whole-script elapsed time is measured above; no unmeasured memory/performance ceiling or absence-of-all-leaks claim is made."
+    }
+  },
+  "current_run_confirmed_bugs": [],
+  "final_full_scope_pass": {
+    "chapters": [
+      2,
+      6,
+      10,
+      14
+    ],
+    "problem_count": 102,
+    "completed": true,
+    "new_confirmed_defects": 0,
+    "unresolved_candidates": [],
+    "trigger": "Restarted after correcting14.23; reviewed every current problem/subpart by a different invariant/limit/conservation route, not only the fixes.",
+    "coverage_evidence": "Concrete independent_final_pass route in each of30+25+20+27 rows."
+  },
+  "check_limit": "Passing numerical tests and successful TeX compilation are not by themselves proof of every mathematical statement. The analytic/source review is separate; all source-access and approximation limits remain explicit.",
+  "environment": {
+    "python": "3.14.7 (main, Aug  5 2026, 10:29:49) [Clang 21.0.0 (clang-2100.1.1.101)]",
+    "executable": "/opt/homebrew/opt/python@3.14/bin/python3.14",
+    "numpy": "2.4.6",
+    "scipy": "1.18.0",
+    "sympy": "1.14.0"
+  },
+  "additional_observed_check_exits": [
+    {
+      "kind": "structural and unit/control-fragment scan",
+      "exit_code": 0,
+      "result": "All102 problem prefixes and solutions counted; no control characters or broken newline-plus-unit fragments found."
+    },
+    {
+      "kind": "focused new probes with10.2 and14.18",
+      "exit_code": 0,
+      "result": "Unequal-sphere reciprocity/positive potential matrix and independent hemisphere Legendre-axis derivative passed."
+    }
+  ],
+  "local_render": {
+    "performed_this_pass": false,
+    "reason": "No TeX changes in this chapter during this deep-debug assignment; generated figures were numerically revalidated. Only changed chapters6/14 were locally compiled/rendered in this pass."
+  },
+  "operational_lookup_failures_not_math_results": [
+    {
+      "kind": "source/path locator",
+      "result": "Early OCR glob returned exit1; inventory-based search corrected the path."
+    },
+    {
+      "kind": "unit fragment scan attempt",
+      "result": "Unsupported rg lookbehind emitted an error while a downstream head masked status; replaced by an explicit Python scan, exit0."
+    },
+    {
+      "kind": "ledger inventory before creation",
+      "result": "Missing ledger paths returned exit1 before the ledgers were written; no calculation was run."
+    },
+    {
+      "kind": "combined metadata cat",
+      "result": "Exit1 because montage-exits.json is inside each chapter render directory, not its parent; per-chapter metadata then read successfully."
+    }
+  ],
+  "frozen_source_script_asset_sha256": {
+    "sections/ch02.tex": "441f5cc76b2999934a6a2d2552a75a851afb5293dc29e79f07b43bcb87fe2842",
+    "supplementary/ch02-results.json": "00629bf68da078a971db583c4be977927dacd213f2af0012eb66e6486d860725",
+    "supplementary/ch02_figures/hemisphere_axis.tex": "ee0da1c0ea6087c3c69962a5a90a7752bf32f094e4d137a9fb28ac36dd87a134",
+    "supplementary/ch02_figures/quarter_cylinder.tex": "e331dbbe1d00e56107b54e5859465e2b355b9fdf289ad0a53b92cd4c3a995d77",
+    "supplementary/ch02_images.csv": "eb50a30f6d83e3f1a1d85a1555a7a2f88fef1114625c7dc873bc98c485753e74",
+    "supplementary/check_ch02.py": "2299e4b1d59dcfa260acdd8f1667d956f8ecfb14a38cb30a6320e8f91055de77"
+  },
+  "freeze": "Sections/scripts/generated assets frozen after clean final pass. Subsequent operations only archive evidence and update these audit records; no main.pdf build was performed by this worker."
+}

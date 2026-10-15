@@ -1,0 +1,368 @@
+{
+  "chapter": 3,
+  "review": "Independent derivation and pedagogy review",
+  "problems": [
+    {
+      "problem": "3.1",
+      "status": "reviewed",
+      "mathematics_checked": "Legendre projections; solved radial boundary equations; monopole offset at b→∞ and regular interior a→0.",
+      "derivation_changes": "Inserted full radial coefficient elimination; repaired malformed odd-parity label.",
+      "notation_check": "SI Coulomb factor 1/(4πε0); Green normalization ∇²G=−4πδ; P_l(1)=1. Associated Legendre P_l^m includes (−1)^m and Y_lm has no extra phase (Jackson p.108 Eqs.3.49,3.53).",
+      "source_evidence": [
+        "Local PDF page 160, printed p.135, Problem3.1",
+        "p.101 Eqs.(3.33)–(3.36)"
+      ],
+      "independent_check": "python3 -W error supplementary/check_ch03.py; check_01",
+      "remaining_limitations": "Numerical checks sample parameters; convergence/domain assumptions and analytic checks are stated in the solution."
+    },
+    {
+      "problem": "3.2",
+      "status": "reviewed",
+      "mathematics_checked": "Coulomb angular average, inside/outside powers, cap charge normalization, origin-field sign and both shrinking-cap limits.",
+      "derivation_changes": "Existing intermediate derivation checked; no mathematical change needed.",
+      "notation_check": "SI Coulomb factor 1/(4πε0); Green normalization ∇²G=−4πδ; P_l(1)=1. Associated Legendre P_l^m includes (−1)^m and Y_lm has no extra phase (Jackson p.108 Eqs.3.49,3.53).",
+      "source_evidence": [
+        "Local PDF page 160, printed p.135, Problem3.2",
+        "p.102 Eq.(3.38)"
+      ],
+      "independent_check": "python3 -W error supplementary/check_ch03.py; check_02",
+      "remaining_limitations": "Numerical checks sample parameters; convergence/domain assumptions and analytic checks are stated in the solution."
+    },
+    {
+      "problem": "3.3",
+      "status": "reviewed",
+      "mathematics_checked": "Abel rim-density normalization, beta-function moments, separate upper/lower regular expansions and capacitance 8ε0R.",
+      "derivation_changes": "Existing intermediate derivation checked; no mathematical change needed.",
+      "notation_check": "SI Coulomb factor 1/(4πε0); Green normalization ∇²G=−4πδ; P_l(1)=1. Associated Legendre P_l^m includes (−1)^m and Y_lm has no extra phase (Jackson p.108 Eqs.3.49,3.53).",
+      "source_evidence": [
+        "Local PDF page 161, printed p.136, Problem3.3",
+        "pp.101–102 Eqs.(3.33),(3.37)–(3.38)"
+      ],
+      "independent_check": "python3 -W error supplementary/check_ch03.py; check_03",
+      "remaining_limitations": "Numerical checks sample parameters; convergence/domain assumptions and analytic checks are stated in the solution."
+    },
+    {
+      "problem": "3.4",
+      "status": "reviewed",
+      "mathematics_checked": "Fourier wedge selection; associated-Legendre norm/phase, nonzero allowed coefficients, l=1,3 rotation.",
+      "derivation_changes": "Added Jackson p.108 phase references and integration-by-parts recurrence/beta base proving all allowed coefficients nonzero.",
+      "notation_check": "SI Coulomb factor 1/(4πε0); Green normalization ∇²G=−4πδ; P_l(1)=1. Associated Legendre P_l^m includes (−1)^m and Y_lm has no extra phase (Jackson p.108 Eqs.3.49,3.53).",
+      "source_evidence": [
+        "Local PDF page 161, printed p.136, Problem3.4",
+        "p.108 Eqs.(3.49)–(3.55); p.101 Eq.(3.36)"
+      ],
+      "independent_check": "python3 -W error supplementary/check_ch03.py; check_04",
+      "remaining_limitations": "Numerical checks sample parameters; convergence/domain assumptions and analytic checks are stated in the solution."
+    },
+    {
+      "problem": "3.5",
+      "status": "reviewed",
+      "mathematics_checked": "Poisson kernel from differentiated generating function; addition-theorem normalization and convergence.",
+      "derivation_changes": "Existing intermediate derivation checked; no mathematical change needed.",
+      "notation_check": "SI Coulomb factor 1/(4πε0); Green normalization ∇²G=−4πδ; P_l(1)=1. Associated Legendre P_l^m includes (−1)^m and Y_lm has no extra phase (Jackson p.108 Eqs.3.49,3.53).",
+      "source_evidence": [
+        "Local PDF page 161, printed p.136, Problem3.5",
+        "p.108 Eqs.(3.53)–(3.56), p.110 Eq.(3.62)"
+      ],
+      "independent_check": "python3 -W error supplementary/check_ch03.py; check_05",
+      "remaining_limitations": "Numerical checks sample parameters; convergence/domain assumptions and analytic checks are stated in the solution."
+    },
+    {
+      "problem": "3.6",
+      "status": "reviewed",
+      "mathematics_checked": "Odd multipoles, point-dipole limit, uniform field required to ground sphere.",
+      "derivation_changes": "Existing intermediate derivation checked; no mathematical change needed.",
+      "notation_check": "SI Coulomb factor 1/(4πε0); Green normalization ∇²G=−4πδ; P_l(1)=1. Associated Legendre P_l^m includes (−1)^m and Y_lm has no extra phase (Jackson p.108 Eqs.3.49,3.53).",
+      "source_evidence": [
+        "Local PDF page 161, printed p.136, Problem3.6",
+        "p.102 Eq.(3.38)"
+      ],
+      "independent_check": "python3 -W error supplementary/check_ch03.py; check_06",
+      "remaining_limitations": "Numerical checks sample parameters; convergence/domain assumptions and analytic checks are stated in the solution."
+    },
+    {
+      "problem": "3.7",
+      "status": "reviewed",
+      "mathematics_checked": "Even multipoles in both radial regions; Kelvin images/constant; quadrupole limit.",
+      "derivation_changes": "Existing intermediate derivation checked; no mathematical change needed.",
+      "notation_check": "SI Coulomb factor 1/(4πε0); Green normalization ∇²G=−4πδ; P_l(1)=1. Associated Legendre P_l^m includes (−1)^m and Y_lm has no extra phase (Jackson p.108 Eqs.3.49,3.53).",
+      "source_evidence": [
+        "Local PDF page 162, printed p.137, Problem3.7",
+        "p.102 Eq.(3.38)"
+      ],
+      "independent_check": "python3 -W error supplementary/check_ch03.py; check_07",
+      "remaining_limitations": "Numerical checks sample parameters; convergence/domain assumptions and analytic checks are stated in the solution."
+    },
+    {
+      "problem": "3.8",
+      "status": "reviewed",
+      "mathematics_checked": "Log Legendre coefficients by parts; image constant; surface charge sign, integrable endpoint divergence, total charge.",
+      "derivation_changes": "Existing intermediate derivation checked; no mathematical change needed.",
+      "notation_check": "SI Coulomb factor 1/(4πε0); Green normalization ∇²G=−4πδ; P_l(1)=1. Associated Legendre P_l^m includes (−1)^m and Y_lm has no extra phase (Jackson p.108 Eqs.3.49,3.53).",
+      "source_evidence": [
+        "Local PDF page 162, printed p.137, Problem3.8",
+        "p.124 Eqs.(3.133)–(3.137)"
+      ],
+      "independent_check": "python3 -W error supplementary/check_ch03.py; check_08",
+      "remaining_limitations": "Numerical checks sample parameters; convergence/domain assumptions and analytic checks are stated in the solution."
+    },
+    {
+      "problem": "3.9",
+      "status": "reviewed",
+      "mathematics_checked": "Cylinder I_m/sine separation; Fourier coefficient normalization and boundary jumps.",
+      "derivation_changes": "Existing intermediate derivation checked; no mathematical change needed.",
+      "notation_check": "SI Coulomb factor 1/(4πε0); Green normalization ∇²G=−4πδ; P_l(1)=1. Associated Legendre P_l^m includes (−1)^m and Y_lm has no extra phase (Jackson p.108 Eqs.3.49,3.53).",
+      "source_evidence": [
+        "Local PDF page 163, printed p.138, Problem3.9",
+        "pp.116–118 Eqs.(3.98)–(3.109): modified-Bessel separation and cylindrical boundary expansions."
+      ],
+      "independent_check": "python3 -W error supplementary/check_ch03.py; check_09",
+      "remaining_limitations": "Numerical checks sample parameters; convergence/domain assumptions and analytic checks are stated in the solution."
+    },
+    {
+      "problem": "3.10",
+      "status": "reviewed",
+      "mathematics_checked": "Double Fourier coefficients; long-cylinder arctangent; first transverse eigenvalue controls exponential correction.",
+      "derivation_changes": "Existing intermediate derivation checked; no mathematical change needed.",
+      "notation_check": "SI Coulomb factor 1/(4πε0); Green normalization ∇²G=−4πδ; P_l(1)=1. Associated Legendre P_l^m includes (−1)^m and Y_lm has no extra phase (Jackson p.108 Eqs.3.49,3.53).",
+      "source_evidence": [
+        "Local PDF page 163, printed p.138, Problem3.10",
+        "pp.116–118 Eqs.(3.98)–(3.109); p.114 Eq.(3.92), positive zeros of J_m."
+      ],
+      "independent_check": "python3 -W error supplementary/check_ch03.py; check_10",
+      "remaining_limitations": "Numerical checks sample parameters; convergence/domain assumptions and analytic checks are stated in the solution."
+    },
+    {
+      "problem": "3.11",
+      "status": "reviewed",
+      "mathematics_checked": "Robin Wronskian orthogonality/norm, Dirichlet limit, quadratic form/completeness, zero/negative modes, negative-root uniqueness and norm.",
+      "derivation_changes": "Added power-series variance proof for unique negative Robin eigenvalue and explicit negative-mode norm/projection.",
+      "notation_check": "SI Coulomb factor 1/(4πε0); Green normalization ∇²G=−4πδ; P_l(1)=1. Associated Legendre P_l^m includes (−1)^m and Y_lm has no extra phase (Jackson p.108 Eqs.3.49,3.53).",
+      "source_evidence": [
+        "Local PDF page 163, printed p.138, Problem3.11",
+        "p.115 Eqs.(3.94)–(3.97), Bessel orthogonality/norm; p.116 Eqs.(3.98)–(3.104), modified Bessel functions; Robin boundary condition in Problem3.11, p.138."
+      ],
+      "independent_check": "python3 -W error supplementary/check_ch03.py; check_11",
+      "remaining_limitations": "Numerical checks sample parameters; convergence/domain assumptions and analytic checks are stated in the solution."
+    },
+    {
+      "problem": "3.12",
+      "status": "reviewed",
+      "mathematics_checked": "Disk Hankel inversion, axial transform, rim elliptic integral with modulus κ, far-distance limits.",
+      "derivation_changes": "Existing intermediate derivation checked; no mathematical change needed.",
+      "notation_check": "SI Coulomb factor 1/(4πε0); Green normalization ∇²G=−4πδ; P_l(1)=1. Associated Legendre P_l^m includes (−1)^m and Y_lm has no extra phase (Jackson p.108 Eqs.3.49,3.53).",
+      "source_evidence": [
+        "Local PDF page 164, printed p.139, Problem3.12",
+        "pp.118–119 Eqs.(3.106)–(3.110), Hankel expansion and inversion."
+      ],
+      "independent_check": "python3 -W error supplementary/check_ch03.py; check_12",
+      "remaining_limitations": "Numerical checks sample parameters; convergence/domain assumptions and analytic checks are stated in the solution."
+    },
+    {
+      "problem": "3.13",
+      "status": "reviewed",
+      "mathematics_checked": "Annular Dirichlet Green normalization, source jump, normals, boundary interpolants.",
+      "derivation_changes": "Existing intermediate derivation checked; no mathematical change needed.",
+      "notation_check": "SI Coulomb factor 1/(4πε0); Green normalization ∇²G=−4πδ; P_l(1)=1. Associated Legendre P_l^m includes (−1)^m and Y_lm has no extra phase (Jackson p.108 Eqs.3.49,3.53).",
+      "source_evidence": [
+        "Local PDF page 164, printed p.139, Problem3.13",
+        "p.122 Eqs.(3.125)–(3.128)"
+      ],
+      "independent_check": "python3 -W error supplementary/check_ch03.py; check_13",
+      "remaining_limitations": "Numerical checks sample parameters; convergence/domain assumptions and analytic checks are stated in the solution."
+    },
+    {
+      "problem": "3.14",
+      "status": "reviewed",
+      "mathematics_checked": "Parabolic charge moments; split integrals and l=0,2 logarithms; grounded correction; quadrupole limit.",
+      "derivation_changes": "Repaired malformed even/odd parity labels.",
+      "notation_check": "SI Coulomb factor 1/(4πε0); Green normalization ∇²G=−4πδ; P_l(1)=1. Associated Legendre P_l^m includes (−1)^m and Y_lm has no extra phase (Jackson p.108 Eqs.3.49,3.53).",
+      "source_evidence": [
+        "Local PDF page 164, printed p.139, Problem3.14",
+        "pp.122–124 Eqs.(3.125)–(3.136)"
+      ],
+      "independent_check": "python3 -W error supplementary/check_ch03.py; check_14",
+      "remaining_limitations": "Numerical checks sample parameters; convergence/domain assumptions and analytic checks are stated in the solution."
+    },
+    {
+      "problem": "3.15",
+      "status": "reviewed",
+      "mathematics_checked": "Steady Ohm/Laplace equations; l=1 matching; fields/current/charge/dipole; Joule integrals and resistances/voltages.",
+      "derivation_changes": "Explained harmonic potentials from steady Ohm equations and l=1 selection.",
+      "notation_check": "SI Coulomb factor 1/(4πε0); Green normalization ∇²G=−4πδ; P_l(1)=1. Associated Legendre P_l^m includes (−1)^m and Y_lm has no extra phase (Jackson p.108 Eqs.3.49,3.53).",
+      "source_evidence": [
+        "Local PDF page 165, printed p.140, Problem3.15",
+        "Problem3.15, pp.139–140, explicitly specifies the force/current model; p.101 Eq.(3.33), l=1 spherical harmonic radial solution."
+      ],
+      "independent_check": "python3 -W error supplementary/check_ch03.py; check_15",
+      "remaining_limitations": "Numerical checks sample parameters; convergence/domain assumptions and analytic checks are stated in the solution."
+    },
+    {
+      "problem": "3.16",
+      "status": "reviewed",
+      "mathematics_checked": "Finite-radius Wronskian closure as distribution; Coulomb normalization; Laplace/addition/integral identities and domains.",
+      "derivation_changes": "Existing intermediate derivation checked; no mathematical change needed.",
+      "notation_check": "SI Coulomb factor 1/(4πε0); Green normalization ∇²G=−4πδ; P_l(1)=1. Associated Legendre P_l^m includes (−1)^m and Y_lm has no extra phase (Jackson p.108 Eqs.3.49,3.53).",
+      "source_evidence": [
+        "Local PDF page 165, printed p.140, Problem3.16",
+        "pp.118–119 Eqs.(3.108)–(3.113), distributional Hankel completeness; p.126 Eqs.(3.148)–(3.151), cylindrical Green expansion."
+      ],
+      "independent_check": "python3 -W error supplementary/check_ch03.py; check_16",
+      "remaining_limitations": "Numerical checks sample parameters; convergence/domain assumptions and analytic checks are stated in the solution."
+    },
+    {
+      "problem": "3.17",
+      "status": "reviewed",
+      "mathematics_checked": "Slab radial/axial Green jumps, sine resolvent and reciprocity.",
+      "derivation_changes": "Existing intermediate derivation checked; no mathematical change needed.",
+      "notation_check": "SI Coulomb factor 1/(4πε0); Green normalization ∇²G=−4πδ; P_l(1)=1. Associated Legendre P_l^m includes (−1)^m and Y_lm has no extra phase (Jackson p.108 Eqs.3.49,3.53).",
+      "source_evidence": [
+        "Local PDF page 165, printed p.140, Problem3.17",
+        "pp.125–126 Eqs.(3.140)–(3.148), Green normalization and Bessel Wronskian; Problem3.17, pp.140–141."
+      ],
+      "independent_check": "python3 -W error supplementary/check_ch03.py; check_17",
+      "remaining_limitations": "Numerical checks sample parameters; convergence/domain assumptions and analytic checks are stated in the solution."
+    },
+    {
+      "problem": "3.18",
+      "status": "reviewed",
+      "mathematics_checked": "Hankel coefficient; exact exterior correction; exponential large-disc limit; image-pair ζ(3)/L³ correction.",
+      "derivation_changes": "Added outward Green derivative, exterior integral and subtraction sign.",
+      "notation_check": "SI Coulomb factor 1/(4πε0); Green normalization ∇²G=−4πδ; P_l(1)=1. Associated Legendre P_l^m includes (−1)^m and Y_lm has no extra phase (Jackson p.108 Eqs.3.49,3.53).",
+      "source_evidence": [
+        "Local PDF page 166, printed p.141, Problem3.18",
+        "p.122 Eq.(3.126), Green boundary representation; pp.118–119 Hankel inversion; Problem3.17 Green function on pp.140–141."
+      ],
+      "independent_check": "python3 -W error supplementary/check_ch03.py; check_18",
+      "remaining_limitations": "Numerical checks sample parameters; convergence/domain assumptions and analytic checks are stated in the solution."
+    },
+    {
+      "problem": "3.19",
+      "status": "reviewed",
+      "mathematics_checked": "Reciprocity finite-disc and total charge; differentiated density, K0 series, on-axis inverse-square pairs.",
+      "derivation_changes": "Added source potential and upper-conductor derivative before K0 density.",
+      "notation_check": "SI Coulomb factor 1/(4πε0); Green normalization ∇²G=−4πδ; P_l(1)=1. Associated Legendre P_l^m includes (−1)^m and Y_lm has no extra phase (Jackson p.108 Eqs.3.49,3.53).",
+      "source_evidence": [
+        "Local PDF page 166, printed p.141, Problem3.19",
+        "p.122 Eq.(3.126); Problem3.19, p.141, reciprocity and surface-charge signs."
+      ],
+      "independent_check": "python3 -W error supplementary/check_ch03.py; check_19",
+      "remaining_limitations": "Numerical checks sample parameters; convergence/domain assumptions and analytic checks are stated in the solution."
+    },
+    {
+      "problem": "3.20",
+      "status": "reviewed",
+      "mathematics_checked": "Source normalization, conductor normals, sine/Hankel/K0 relation, Abel-summed induced charge.",
+      "derivation_changes": "Existing intermediate derivation checked; no mathematical change needed.",
+      "notation_check": "SI Coulomb factor 1/(4πε0); Green normalization ∇²G=−4πδ; P_l(1)=1. Associated Legendre P_l^m includes (−1)^m and Y_lm has no extra phase (Jackson p.108 Eqs.3.49,3.53).",
+      "source_evidence": [
+        "Local PDF page 166, printed p.141, Problem3.20",
+        "p.126 Eq.(3.148) and Problem3.17–3.20, pp.140–142, slab Green functions and their boundary derivatives."
+      ],
+      "independent_check": "python3 -W error supplementary/check_ch03.py; check_20",
+      "remaining_limitations": "Numerical checks sample parameters; convergence/domain assumptions and analytic checks are stated in the solution."
+    },
+    {
+      "problem": "3.21",
+      "status": "reviewed",
+      "mathematics_checked": "Fixed-charge energy bound, Hankel trial functions, quadratic minimization, small/large-gap limits and table.",
+      "derivation_changes": "Existing intermediate derivation checked; no mathematical change needed.",
+      "notation_check": "SI Coulomb factor 1/(4πε0); Green normalization ∇²G=−4πδ; P_l(1)=1. Associated Legendre P_l^m includes (−1)^m and Y_lm has no extra phase (Jackson p.108 Eqs.3.49,3.53).",
+      "source_evidence": [
+        "Local PDF page 167, printed p.142, Problem3.21",
+        "Problem3.21, p.142, specifies inverse-capacitance functional and trial families; p.122 Eq.(3.126), Green representation."
+      ],
+      "independent_check": "python3 -W error supplementary/check_ch03.py; check_21",
+      "remaining_limitations": "Numerical checks sample parameters; convergence/domain assumptions and analytic checks are stated in the solution."
+    },
+    {
+      "problem": "3.22",
+      "status": "reviewed",
+      "mathematics_checked": "Sector angular delta normalization, radial jump, Dirichlet boundaries and reciprocity.",
+      "derivation_changes": "Existing intermediate derivation checked; no mathematical change needed.",
+      "notation_check": "SI Coulomb factor 1/(4πε0); Green normalization ∇²G=−4πδ; P_l(1)=1. Associated Legendre P_l^m includes (−1)^m and Y_lm has no extra phase (Jackson p.108 Eqs.3.49,3.53).",
+      "source_evidence": [
+        "Local PDF page 167, printed p.142, Problem3.22",
+        "Problem3.22, p.142, gives the polar-wedge Green series and normalization; p.127 Eq.(3.156), ∇²G=−4πδ."
+      ],
+      "independent_check": "python3 -W error supplementary/check_ch03.py; check_22",
+      "remaining_limitations": "Numerical checks sample parameters; convergence/domain assumptions and analytic checks are stated in the solution."
+    },
+    {
+      "problem": "3.23",
+      "status": "reviewed",
+      "mathematics_checked": "Three cylindrical Green representations, Bessel/sine norms, jumps and spectral denominators.",
+      "derivation_changes": "Existing intermediate derivation checked; no mathematical change needed.",
+      "notation_check": "SI Coulomb factor 1/(4πε0); Green normalization ∇²G=−4πδ; P_l(1)=1. Associated Legendre P_l^m includes (−1)^m and Y_lm has no extra phase (Jackson p.108 Eqs.3.49,3.53).",
+      "source_evidence": [
+        "Local PDF page 168, printed p.143, Problem3.23",
+        "pp.127–129 Eqs.(3.154)–(3.169), normalized eigenfunction Green expansion and separated sum identity."
+      ],
+      "independent_check": "python3 -W error supplementary/check_ch03.py; check_23",
+      "remaining_limitations": "Numerical checks sample parameters; convergence/domain assumptions and analytic checks are stated in the solution."
+    },
+    {
+      "problem": "3.24",
+      "status": "reviewed",
+      "mathematics_checked": "Three voltage-disc representations, piecewise I0K0 integrals, numerical agreement and convergence acceleration.",
+      "derivation_changes": "Existing intermediate derivation checked; no mathematical change needed.",
+      "notation_check": "SI Coulomb factor 1/(4πε0); Green normalization ∇²G=−4πδ; P_l(1)=1. Associated Legendre P_l^m includes (−1)^m and Y_lm has no extra phase (Jackson p.108 Eqs.3.49,3.53).",
+      "source_evidence": [
+        "Local PDF page 168, printed p.143, Problem3.24",
+        "p.122 Eq.(3.126), boundary representation; pp.127–129 Eqs.(3.160)–(3.169), spectral Green normalization."
+      ],
+      "independent_check": "python3 -W error supplementary/check_ch03.py; check_24",
+      "remaining_limitations": "Numerical checks sample parameters; convergence/domain assumptions and analytic checks are stated in the solution."
+    },
+    {
+      "problem": "3.25",
+      "status": "reviewed",
+      "mathematics_checked": "Both surface-charge signs, rim expression, radial integral, missing-disk cancellation and zero total correction.",
+      "derivation_changes": "Existing intermediate derivation checked; no mathematical change needed.",
+      "notation_check": "SI Coulomb factor 1/(4πε0); Green normalization ∇²G=−4πδ; P_l(1)=1. Associated Legendre P_l^m includes (−1)^m and Y_lm has no extra phase (Jackson p.108 Eqs.3.49,3.53).",
+      "source_evidence": [
+        "Local PDF page 168, printed p.143, Problem3.25",
+        "pp.130–134 Eqs.(3.170)–(3.187)"
+      ],
+      "independent_check": "python3 -W error supplementary/check_ch03.py; check_25",
+      "remaining_limitations": "Numerical checks sample parameters; convergence/domain assumptions and analytic checks are stated in the solution."
+    },
+    {
+      "problem": "3.26",
+      "status": "reviewed",
+      "mathematics_checked": "Neumann coefficient equations, l>0 symmetry/jump, l=0 normal constraint, compatibility cancels source-coordinate freedom.",
+      "derivation_changes": "Existing intermediate derivation checked; no mathematical change needed.",
+      "notation_check": "SI Coulomb factor 1/(4πε0); Green normalization ∇²G=−4πδ; P_l(1)=1. Associated Legendre P_l^m includes (−1)^m and Y_lm has no extra phase (Jackson p.108 Eqs.3.49,3.53).",
+      "source_evidence": [
+        "Local PDF page 169, printed p.144, Problem3.26",
+        "p.39 Eqs.(1.45)–(1.46)"
+      ],
+      "independent_check": "python3 -W error supplementary/check_ch03.py; check_26",
+      "remaining_limitations": "Numerical checks sample parameters; convergence/domain assumptions and analytic checks are stated in the solution."
+    },
+    {
+      "problem": "3.27",
+      "status": "reviewed",
+      "mathematics_checked": "l=1 Neumann surface integral, gradients and boundaries, Cartesian fields, flux-function first integral and plotted trajectories.",
+      "derivation_changes": "Existing intermediate derivation checked; no mathematical change needed.",
+      "notation_check": "SI Coulomb factor 1/(4πε0); Green normalization ∇²G=−4πδ; P_l(1)=1. Associated Legendre P_l^m includes (−1)^m and Y_lm has no extra phase (Jackson p.108 Eqs.3.49,3.53).",
+      "source_evidence": [
+        "Local PDF page 169, printed p.144, Problem3.27",
+        "p.39 Eqs.(1.45)–(1.46)"
+      ],
+      "independent_check": "python3 -W error supplementary/check_ch03.py; check_27",
+      "remaining_limitations": "Numerical checks sample parameters; convergence/domain assumptions and analytic checks are stated in the solution."
+    }
+  ],
+  "test_command": "python3 -W error supplementary/check_ch03.py",
+  "verification": {
+    "test_status": "Passed all problem groups with -W error after the recorded implementation changes.",
+    "tex_compile": "pdflatex -interaction=nonstopmode -halt-on-error in an isolated local temporary output directory; exit0, no box/font/other warnings.",
+    "pdf": "/var/folders/93/r1t98m8d3014c24llb8j119w0000gn/T/jackson-recheck-ch03-51i7cqq3/ch03-verify.pdf",
+    "pages_rendered_and_visually_reviewed": 35,
+    "review_images": "/var/folders/93/r1t98m8d3014c24llb8j119w0000gn/T/jackson-recheck-ch03-51i7cqq3/sheet-*.png",
+    "source_sha256": "47114b75069d7f5365265163738f201642069b0a4f16b67b6d13918feb498827",
+    "test_sha256": "6d4b54dc99d49860eebbf02250cb8b560e6e0de7163e785953655327d74fcca3",
+    "problem_prefixes": "27/27 preserved; all solution bodies manually retraced."
+  }
+}

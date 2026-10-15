@@ -1,0 +1,326 @@
+{
+  "chapter": 10,
+  "review_date": "2026-10-03",
+  "reviewer": "independent chapter03 agent; these chapters were authored by other agents",
+  "scope": "Every original problem, every solution and all subparts; independent mathematical reconstruction, source notation and pedagogical continuity.",
+  "problem_count": 20,
+  "chapter_notation_checks": [
+    "SI and exp(-i*omega*t), checked at Eq.(10.23), printed p.463 (PDF488); the host-medium epsilon_0,mu_0 convention of Section10.2 is explicitly not restricted to vacuum on that page.",
+    "Condon-Shortley spherical harmonics: Eqs.(3.49),(3.53)-(3.55), printed p.108 (PDF133); L=-i r cross grad and X_lm=L Y_lm/sqrt(l(l+1)), Eqs.(9.101),(9.119)-(9.121), printed pp.428,431 (PDF453,456).",
+    "Circular plane wave in (10.46)/(10.55) has electric-vector norm sqrt(2); checked printed pp.472-473 (PDF497-498). Scattering/absorption/extinction coefficients are (10.57),(10.61)-(10.62), printed pp.474-475 (PDF499-500).",
+    "Surface impedance boundary (10.65) and its low-frequency reduction (10.69) checked directly in the printed p.476 image (PDF501). Normalized vector amplitude f=F/E_0 is (10.138), printed p.501 (PDF526)."
+  ],
+  "checks_command": "python3 -W error supplementary/check_ch10.py --figures",
+  "checks_log": "build/recheck-ch10-checks.log",
+  "compile_command": "pdflatex -interaction=nonstopmode -halt-on-error -output-directory=build build/recheck-ch10.tex",
+  "compile_log": "build/recheck-ch10.log",
+  "render_directory": "build/recheck-render-ch10",
+  "validation": {
+    "python_warnings_as_errors_exit_code": 0,
+    "temporary_chapter_compile_exit_code": 0,
+    "compiled_pages": 27,
+    "latex_warning_overfull_underfull_scan": "No warnings or box diagnostics in the final chapter log.",
+    "visual_review": "Every rendered page inspected in contact sheets; changed mathematical passages additionally inspected at 120 dpi.",
+    "problem_spacing_and_solution_slots": "Every problem retains Needspace{5 baselineskip}, par bigskip and exactly one nonempty solution slot.",
+    "malformed_math_typography_scan": "No remaining broken command fragments, literal multiplication commas or doubled-backslash thin-space candidates in the reviewed chapters."
+  },
+  "tex_sha256": "54a2cb0e91bc9058b8e677c3839656e2ee7fd14a2b103051fbbfe10079221fa4",
+  "script_sha256": "130ab318ae854fb52c5d0e38ae0c1ef60cd96853c433839c30dc6bc97dfbc5c1",
+  "problems": [
+    {
+      "problem_id": "10.1",
+      "mathematics_checked": "Combined the electric and magnetic PEC dipole amplitudes with their relative sign, summed transverse polarizations and checked the angular cross term, total cross section and two right-angle intensity values.",
+      "derivation_pedagogy_changes": [],
+      "notation_and_source_checks": [
+        "Original problem: printed pp.507-508, PDF pp.532-533; inspected local OCR and compared every part with the TeX statement."
+      ],
+      "evidence": [
+        "supplementary/check_ch10.py::check01",
+        "Independent manual reconstruction of the mathematics described above, including each requested subpart and approximation assumptions."
+      ],
+      "unresolved_limitations": [],
+      "status": "reviewed"
+    },
+    {
+      "problem_id": "10.2",
+      "mathematics_checked": "Superposed the two circular amplitudes coherently, checked the common spherical-harmonic phase and complex-conjugate projections, and recovered both circular limits and the linear ellipse orientation alpha/2.",
+      "derivation_pedagogy_changes": [],
+      "notation_and_source_checks": [
+        "Original problem: printed pp.508, PDF pp.533; inspected local OCR and compared every part with the TeX statement.",
+        "Eqs.(7.22),(7.24), printed p.300 (PDF325); X normalization (9.119), printed p.431 (PDF456)."
+      ],
+      "evidence": [
+        "supplementary/check_ch10.py::check02",
+        "Independent manual reconstruction of the mathematics described above, including each requested subpart and approximation assumptions."
+      ],
+      "unresolved_limitations": [],
+      "status": "reviewed"
+    },
+    {
+      "problem_id": "10.3",
+      "mathematics_checked": "Solved the excluded oscillating magnetic flux problem in the quasistatic exterior, checked the tangential factor 3/2 and integrated skin-layer heating to obtain the square-root-frequency absorption law.",
+      "derivation_pedagogy_changes": [],
+      "notation_and_source_checks": [
+        "Original problem: printed pp.508, PDF pp.533; inspected local OCR and compared every part with the TeX statement."
+      ],
+      "evidence": [
+        "supplementary/check_ch10.py::check03",
+        "Independent manual reconstruction of the mathematics described above, including each requested subpart and approximation assumptions."
+      ],
+      "unresolved_limitations": [],
+      "status": "reviewed"
+    },
+    {
+      "problem_id": "10.4",
+      "mathematics_checked": "Matched the dielectric dipole boundary fields with complex relative permittivity, integrated scattering and absorption, and retained the radiative correction needed for consistency of forward amplitude and optical theorem.",
+      "derivation_pedagogy_changes": [],
+      "notation_and_source_checks": [
+        "Original problem: printed pp.508, PDF pp.533; inspected local OCR and compared every part with the TeX statement.",
+        "Approximation-order warning surrounding (10.149)-(10.151), printed p.505 (PDF530)."
+      ],
+      "evidence": [
+        "supplementary/check_ch10.py::check04",
+        "Independent manual reconstruction of the mathematics described above, including each requested subpart and approximation assumptions."
+      ],
+      "unresolved_limitations": [],
+      "status": "reviewed"
+    },
+    {
+      "problem_id": "10.5",
+      "mathematics_checked": "Integrated the Faraday-induced conduction current into its magnetic moment and included the polarization-current real part; checked the internal wavelength condition and material-loss versus full-extinction distinction.",
+      "derivation_pedagogy_changes": [],
+      "notation_and_source_checks": [
+        "Original problem: printed pp.508-509, PDF pp.533-534; inspected local OCR and compared every part with the TeX statement.",
+        "Approximation-order warning surrounding (10.149)-(10.151), printed p.505 (PDF530)."
+      ],
+      "evidence": [
+        "supplementary/check_ch10.py::check05",
+        "Independent manual reconstruction of the mathematics described above, including each requested subpart and approximation assumptions."
+      ],
+      "unresolved_limitations": [],
+      "status": "reviewed"
+    },
+    {
+      "problem_id": "10.6",
+      "mathematics_checked": "Expanded the outgoing Hankel fields with the incident sqrt(2) normalization, evaluated X_l,+/-1 at the forward pole using Jackson's phases, and recovered extinction from both the optical theorem and coefficient sums.",
+      "derivation_pedagogy_changes": [],
+      "notation_and_source_checks": [
+        "Original problem: printed pp.509, PDF pp.534; inspected local OCR and compared every part with the TeX statement.",
+        "Eqs.(10.46),(10.55),(10.57),(10.61)-(10.62), printed pp.472-475 (PDF497-500); Eqs.(3.49),(3.53)-(3.55), printed p.108 (PDF133)."
+      ],
+      "evidence": [
+        "supplementary/check_ch10.py::check06",
+        "Independent manual reconstruction of the mathematics described above, including each requested subpart and approximation assumptions."
+      ],
+      "unresolved_limitations": [],
+      "status": "reviewed"
+    },
+    {
+      "problem_id": "10.7",
+      "mathematics_checked": "Solved the four tangential matching equations for dielectric Mie coefficients, checked unitarity and phase shifts, derived the Rayleigh terms and examined the nonuniform real-permittivity/PEC resonance limit.",
+      "derivation_pedagogy_changes": [],
+      "notation_and_source_checks": [
+        "Original problem: printed pp.509, PDF pp.534; inspected local OCR and compared every part with the TeX statement."
+      ],
+      "evidence": [
+        "supplementary/check_ch10.py::check07",
+        "Independent manual reconstruction of the mathematics described above, including each requested subpart and approximation assumptions."
+      ],
+      "unresolved_limitations": [],
+      "status": "reviewed"
+    },
+    {
+      "problem_id": "10.8",
+      "mathematics_checked": "Derived the exact Riccati-Bessel impedance equation and each small-x numerator/denominator term, checked the reciprocal-impedance electric coefficient, and expanded scattering and absorption consistently in skin depth.",
+      "derivation_pedagogy_changes": [
+        "Expanded the boundary-equation step into the exact Riccati-Bessel quotient, all four leading radial terms, numerator/denominator factors and reciprocal-impedance beta limit.",
+        "Added general-l tests of both exact impedance quotients and quadratic-in-ka remainder convergence for l=1,2,3,4."
+      ],
+      "notation_and_source_checks": [
+        "Original problem: printed pp.509, PDF pp.534; inspected local OCR and compared every part with the TeX statement.",
+        "Eqs.(10.65),(10.69), printed p.476 (PDF501), directly inspected source image; surface-impedance locality stated on p.475 (PDF500)."
+      ],
+      "evidence": [
+        "supplementary/check_ch10.py::check08",
+        "Independent manual reconstruction of the mathematics described above, including each requested subpart and approximation assumptions."
+      ],
+      "unresolved_limitations": [
+        "The delta=a comparison is a formal surface-impedance extrapolation; locality requires delta much smaller than the sphere radius."
+      ],
+      "status": "reviewed"
+    },
+    {
+      "problem_id": "10.9",
+      "mathematics_checked": "Fourier-transformed the sphere in Born theory, resolved the forward cone, evaluated three finite antiderivatives and checked the exact F(z), its positive integral form and both wavelength limits.",
+      "derivation_pedagogy_changes": [],
+      "notation_and_source_checks": [
+        "Original problem: printed pp.509-510, PDF pp.534-535; inspected local OCR and compared every part with the TeX statement."
+      ],
+      "evidence": [
+        "supplementary/check_ch10.py::check09",
+        "Independent manual reconstruction of the mathematics described above, including each requested subpart and approximation assumptions."
+      ],
+      "unresolved_limitations": [],
+      "status": "reviewed"
+    },
+    {
+      "problem_id": "10.10",
+      "mathematics_checked": "Expanded the exact Smythe aperture integral into electric and magnetic dipole moments, matched SI medium factors and integrated by parts with explicit cancellation of the singular-edge contribution.",
+      "derivation_pedagogy_changes": [],
+      "notation_and_source_checks": [
+        "Original problem: printed pp.510, PDF pp.535; inspected local OCR and compared every part with the TeX statement."
+      ],
+      "evidence": [
+        "supplementary/check_ch10.py::check10",
+        "Independent manual reconstruction of the mathematics described above, including each requested subpart and approximation assumptions."
+      ],
+      "unresolved_limitations": [],
+      "status": "reviewed"
+    },
+    {
+      "problem_id": "10.11",
+      "mathematics_checked": "Evaluated the half-plane Fresnel integral with its complex normalization, checked shadow/illuminated asymptotics and quarter-intensity edge value, and derived the vector field and its longitudinal correction.",
+      "derivation_pedagogy_changes": [],
+      "notation_and_source_checks": [
+        "Original problem: printed pp.510-511, PDF pp.535-536; inspected local OCR and compared every part with the TeX statement."
+      ],
+      "evidence": [
+        "supplementary/check_ch10.py::check11",
+        "Independent manual reconstruction of the mathematics described above, including each requested subpart and approximation assumptions."
+      ],
+      "unresolved_limitations": [],
+      "status": "reviewed"
+    },
+    {
+      "problem_id": "10.12",
+      "mathematics_checked": "Transformed the circular aperture at oblique TE incidence, checked the vector polarization factor and power normalization and compared it explicitly with scalar and TM obliquity factors.",
+      "derivation_pedagogy_changes": [],
+      "notation_and_source_checks": [
+        "Original problem: printed pp.511, PDF pp.536; inspected local OCR and compared every part with the TeX statement."
+      ],
+      "evidence": [
+        "supplementary/check_ch10.py::check12",
+        "Independent manual reconstruction of the mathematics described above, including each requested subpart and approximation assumptions."
+      ],
+      "unresolved_limitations": [],
+      "status": "reviewed"
+    },
+    {
+      "problem_id": "10.13",
+      "mathematics_checked": "Projected the vector Kirchhoff field transversely, separated its extra polarization term and compared its angular power ratio at the actual alpha=45 degrees, ka=pi conditions of Fig.10.14.",
+      "derivation_pedagogy_changes": [],
+      "notation_and_source_checks": [
+        "Original problem: printed pp.511, PDF pp.536; inspected local OCR and compared every part with the TeX statement.",
+        "Fig.10.14, printed p.495 (PDF520), alpha=45 degrees and ka=pi; graph crop retained in supplementary/ch10-source."
+      ],
+      "evidence": [
+        "supplementary/check_ch10.py::check13",
+        "Independent manual reconstruction of the mathematics described above, including each requested subpart and approximation assumptions."
+      ],
+      "unresolved_limitations": [],
+      "status": "reviewed"
+    },
+    {
+      "problem_id": "10.14",
+      "mathematics_checked": "Transformed the rectangle with polarization measured from its long side, checked the vector and scalar angular factors, and evaluated the specified square's zeros and plotted power comparison.",
+      "derivation_pedagogy_changes": [],
+      "notation_and_source_checks": [
+        "Original problem: printed pp.511, PDF pp.536; inspected local OCR and compared every part with the TeX statement."
+      ],
+      "evidence": [
+        "supplementary/check_ch10.py::check14",
+        "Independent manual reconstruction of the mathematics described above, including each requested subpart and approximation assumptions."
+      ],
+      "unresolved_limitations": [],
+      "status": "reviewed"
+    },
+    {
+      "problem_id": "10.15",
+      "mathematics_checked": "Integrated the annular TEM aperture into a difference of Bessel J0 functions, checked the on-axis zero and meridional field, and independently checked both small-ka and Hankel/large-ka total-power limits.",
+      "derivation_pedagogy_changes": [],
+      "notation_and_source_checks": [
+        "Original problem: printed pp.511, PDF pp.536; inspected local OCR and compared every part with the TeX statement."
+      ],
+      "evidence": [
+        "supplementary/check_ch10.py::check15",
+        "Independent manual reconstruction of the mathematics described above, including each requested subpart and approximation assumptions."
+      ],
+      "unresolved_limitations": [],
+      "status": "reviewed"
+    },
+    {
+      "problem_id": "10.16",
+      "mathematics_checked": "Converted the shadow amplitude integral into a transverse Fourier norm, applied Parseval with all 2pi factors and checked the optical-theorem factor two in extinction.",
+      "derivation_pedagogy_changes": [],
+      "notation_and_source_checks": [
+        "Original problem: printed pp.512, PDF pp.537; inspected local OCR and compared every part with the TeX statement."
+      ],
+      "evidence": [
+        "supplementary/check_ch10.py::check16",
+        "Independent manual reconstruction of the mathematics described above, including each requested subpart and approximation assumptions."
+      ],
+      "unresolved_limitations": [],
+      "status": "reviewed"
+    },
+    {
+      "problem_id": "10.17",
+      "mathematics_checked": "Combined diffractive and reflected amplitudes including their phase, computed converged exact Mie E/H-plane curves, and compared them with Jackson's King-Wu reproduction without claiming access to the original appendix.",
+      "derivation_pedagogy_changes": [],
+      "notation_and_source_checks": [
+        "Original problem: printed pp.512, PDF pp.537; inspected local OCR and compared every part with the TeX statement.",
+        "Jackson Fig.10.16, printed p.500 (PDF525), inspected directly: exact solid curve attributed to King and Wu, ka=10, unpolarized; the dotted/dashed approximation is the E/H average."
+      ],
+      "evidence": [
+        "supplementary/check_ch10.py::check17",
+        "Independent manual reconstruction of the mathematics described above, including each requested subpart and approximation assumptions."
+      ],
+      "unresolved_limitations": [
+        "The original King-Wu appendix remains inaccessible; comparison uses Jackson's explicitly attributed reproduction and independently converged Mie sums, not claimed original-appendix readings."
+      ],
+      "status": "reviewed"
+    },
+    {
+      "problem_id": "10.18",
+      "mathematics_checked": "Inserted the static circular-hole electric/magnetic polarizabilities with correct screen-side signs, checked the coherent far field and integrated the forward hemisphere including vanishing mixed term.",
+      "derivation_pedagogy_changes": [],
+      "notation_and_source_checks": [
+        "Original problem: printed pp.512, PDF pp.537; inspected local OCR and compared every part with the TeX statement."
+      ],
+      "evidence": [
+        "supplementary/check_ch10.py::check18",
+        "Independent manual reconstruction of the mathematics described above, including each requested subpart and approximation assumptions."
+      ],
+      "unresolved_limitations": [],
+      "status": "reviewed"
+    },
+    {
+      "problem_id": "10.19",
+      "mathematics_checked": "Constructed the doubled closed-screen TM/TE fields, derived both small-hole angular patterns and transmission coefficients, and checked the specified ruler readings and comparison with Smythe's ka=pi source curve.",
+      "derivation_pedagogy_changes": [],
+      "notation_and_source_checks": [
+        "Original problem: printed pp.512-513, PDF pp.537-538; inspected local OCR and compared every part with the TeX statement.",
+        "Fig.10.14, printed p.495 (PDF520); retained source crop and fig10_14_measurements.csv explicitly record line-width intervals and the graph-reading uncertainty."
+      ],
+      "evidence": [
+        "supplementary/check_ch10.py::check19",
+        "Independent manual reconstruction of the mathematics described above, including each requested subpart and approximation assumptions."
+      ],
+      "unresolved_limitations": [],
+      "status": "reviewed"
+    },
+    {
+      "problem_id": "10.20",
+      "mathematics_checked": "Fourier-transformed the finite cylinder, averaged the squared sinc over orientation, checked the Si expression and removable origin, and integrated the short-/long-fiber limits with the first-amplitude/second-cross-section order distinction.",
+      "derivation_pedagogy_changes": [],
+      "notation_and_source_checks": [
+        "Original problem: printed pp.513, PDF pp.538; inspected local OCR and compared every part with the TeX statement."
+      ],
+      "evidence": [
+        "supplementary/check_ch10.py::check20",
+        "Independent manual reconstruction of the mathematics described above, including each requested subpart and approximation assumptions."
+      ],
+      "unresolved_limitations": [],
+      "status": "reviewed"
+    }
+  ]
+}

@@ -1,0 +1,1431 @@
+{
+  "audit": "Fresh independent iterative deep-debug, 2026-10-03",
+  "chapter": 3,
+  "problem_count": 27,
+  "scope_rebuilt_from": [
+    "sections/ch03.tex",
+    "supplementary/check_ch03.py",
+    "all directly referenced chapter figure inputs"
+  ],
+  "prior_ledgers": "Used only as source locators; no inherited review result treated as current evidence.",
+  "audit_matrix": {
+    "domain_correctness": "Every problem/subpart checked for algebra, physics, dimensions, signs, domains, notation and source fidelity; individual evidence below.",
+    "implementation_correctness": "Read calculation script functions and every current assertion path; ran with warnings promoted to errors and captured stdout.",
+    "memory_and_resources": "Scoped batch calculation scripts, bounded arrays/quadrature and synchronous Path writes inspected; file handles are closed by write_text; no persistent service, network mutation, process stop or concurrency-sensitive state.",
+    "performance": "No performance target requested. Current final script duration is recorded; no measured performance defect or optimization claim.",
+    "completeness": "All original problem IDs and subparts reviewed; every Needspace/par/bigskip prefix preserved; retained historical-source and approximation limitations enumerated."
+  },
+  "notation_checked": {
+    "units": "SI; potential q/(4 pi epsilon0 r); mathematical Green function solves Laplacian G=-4 pi delta.",
+    "source": "Jackson pp.103,108-109,114-115,120-126,133; Eqs.3.38,3.49,3.53-3.56,3.93-3.97,3.116-3.125,3.138-3.149,3.181-3.185.",
+    "inspected_files": [
+      "build/recheck-ch03-source/p-128.txt",
+      "build/recheck-ch03-source/p-133.txt",
+      "build/recheck-ch03-source/p-134.txt",
+      "build/recheck-ch03-source/p-139.txt",
+      "build/recheck-ch03-source/p-140.txt",
+      "build/recheck-ch03-source/p-145.txt",
+      "build/recheck-ch03-source/p-146.txt",
+      "build/recheck-ch03-source/p-149.txt",
+      "build/recheck-ch03-source/p-150.txt",
+      "build/recheck-ch03-source/p-151.txt",
+      "build/recheck-ch03-source/p-158.txt"
+    ]
+  },
+  "runs": [
+    {
+      "chapter": 3,
+      "command": [
+        "/opt/homebrew/opt/python@3.14/bin/python3.14",
+        "-W",
+        "error",
+        "supplementary/check_ch03.py"
+      ],
+      "exit_code": 0,
+      "log": "/var/folders/93/r1t98m8d3014c24llb8j119w0000gn/T/jackson-deep-debug-team3-7iu2qgz3/check_ch03-baseline.log",
+      "tail": [
+        "PASS 3.27",
+        "All 27 problem checks passed; ch03_fieldlines.tex regenerated."
+      ]
+    },
+    {
+      "chapter": 3,
+      "command": [
+        "/opt/homebrew/opt/python@3.14/bin/python3.14",
+        "-W",
+        "error",
+        "supplementary/check_ch03.py"
+      ],
+      "exit_code": 0,
+      "seconds": 7.94,
+      "log": "/var/folders/93/r1t98m8d3014c24llb8j119w0000gn/T/jackson-deep-debug-team3-7iu2qgz3/check_ch03-final.log",
+      "tail": [
+        "PASS 3.27",
+        "All 27 problem checks passed; ch03_fieldlines.tex regenerated."
+      ]
+    },
+    {
+      "chapter": 3,
+      "stage": "after independent heat-kernel domain regression",
+      "command": [
+        "/opt/homebrew/opt/python@3.14/bin/python3.14",
+        "-W",
+        "error",
+        "supplementary/check_ch03.py"
+      ],
+      "exit_code": 0,
+      "seconds": 8.098,
+      "log": "/var/folders/93/r1t98m8d3014c24llb8j119w0000gn/T/jackson-deep-debug-team3-7iu2qgz3/check_ch03-final-domain.log",
+      "tail": [
+        "PASS 3.27",
+        "All 27 problem checks passed; ch03_fieldlines.tex regenerated."
+      ]
+    }
+  ],
+  "confirmed_new_findings": [],
+  "crc": {
+    "correctness": "Current chapter checks and independent analytical final route passed.",
+    "robustness": "Physical/domain endpoints and singular limits are individually documented; no unsupported extension of approximations.",
+    "completeness": "Entire chapter rerun, generated assets verified, and isolated local four-chapter compilation/render completed as recorded in validation."
+  },
+  "final_pass": {
+    "coverage": "All 27 problems, reverse-order answer-to-invariant route, after the only TeX correction.",
+    "new_confirmed_errors": 0,
+    "numerical_limit": "Finite numerical checks supplement analytical retracing and are not exhaustive proof."
+  },
+  "problems": [
+    {
+      "problem": "3.1",
+      "inspected_sources": [
+        {
+          "file": "sections/ch03.tex",
+          "line": 9,
+          "scope": "Current complete statement, solution, every subpart, assumptions and retained errata."
+        },
+        {
+          "file": "supplementary/check_ch03.py",
+          "scope": "Current functions covering this problem, assertion logic, numerical methods and generated assets."
+        },
+        {
+          "source": "Jackson 3rd edition supplied local PDF",
+          "printed_pages": "135",
+          "pdf_pages": [
+            160
+          ],
+          "ocr_files": [
+            "ocr/p-160.txt"
+          ]
+        }
+      ],
+      "source_notation": "Jackson pp.103,108-109,114-115,120-126,133; Eqs.3.38,3.49,3.53-3.56,3.93-3.97,3.116-3.125,3.138-3.149,3.181-3.185.",
+      "additional_sources_checked": [],
+      "first_pass": {
+        "method": "Read current problem and full solution, independently retrace the stated derivation, then inspect current check implementation.",
+        "mathematics_checked": "Legendre boundary projections and the two radial interpolation coefficients; l=0,1,3 and both geometric limits.",
+        "falsifiable_candidate": "Candidate: the b-to-infinity limit must lose its constant. Discarded: equal l=0 boundary averages fix V/2 for every b.",
+        "outcome": "candidate_discarded_no_new_confirmed_error"
+      },
+      "independent_final_pass": {
+        "method": "Reverse problem order; work from final expressions back to source equations using conservation, boundary conditions, dimensional checks, independent integral reductions and limiting cases rather than repeating the first derivation.",
+        "evidence": "Final route: substitute r=a,b into each mode and use uniqueness; A0+B0=1 separately prevents the false grounded-at-infinity limit.",
+        "new_confirmed_errors": 0
+      },
+      "verification": {
+        "manual_analytic_retracing": "The displayed identities and domain restrictions above were retraced; this is not a claim that numerical sampling proves all parameter values.",
+        "baseline_exit_code": 0,
+        "final_exit_code": 0,
+        "final_log": "/var/folders/93/r1t98m8d3014c24llb8j119w0000gn/T/jackson-deep-debug-team3-7iu2qgz3/check_ch03-final-domain.log",
+        "machine_check_kind": "Symbolic identities where implemented; otherwise numerical quadrature/spectral samples with explicit tolerances."
+      },
+      "changes": [],
+      "unresolved_limitations": []
+    },
+    {
+      "problem": "3.2",
+      "inspected_sources": [
+        {
+          "file": "sections/ch03.tex",
+          "line": 74,
+          "scope": "Current complete statement, solution, every subpart, assumptions and retained errata."
+        },
+        {
+          "file": "supplementary/check_ch03.py",
+          "scope": "Current functions covering this problem, assertion logic, numerical methods and generated assets."
+        },
+        {
+          "source": "Jackson 3rd edition supplied local PDF",
+          "printed_pages": "135-136",
+          "pdf_pages": [
+            160,
+            161
+          ],
+          "ocr_files": [
+            "ocr/p-160.txt",
+            "ocr/p-161.txt"
+          ]
+        }
+      ],
+      "source_notation": "Jackson pp.103,108-109,114-115,120-126,133; Eqs.3.38,3.49,3.53-3.56,3.93-3.97,3.116-3.125,3.138-3.149,3.181-3.185.",
+      "additional_sources_checked": [],
+      "first_pass": {
+        "method": "Read current problem and full solution, independently retrace the stated derivation, then inspect current check implementation.",
+        "mathematics_checked": "Cap charge moments, exterior continuation, origin field and both small charged/missing-cap limits.",
+        "falsifiable_candidate": "Candidate: Q is the surviving charge. Discarded: the supplied density integrates to Q(1+cos(alpha))/2.",
+        "outcome": "candidate_discarded_no_new_confirmed_error"
+      },
+      "independent_final_pass": {
+        "method": "Reverse problem order; work from final expressions back to source equations using conservation, boundary conditions, dimensional checks, independent integral reductions and limiting cases rather than repeating the first derivation.",
+        "evidence": "Final route: integrate the original surface charge directly for the origin field and monopole; its northward sign and R^-2 dimensions agree.",
+        "new_confirmed_errors": 0
+      },
+      "verification": {
+        "manual_analytic_retracing": "The displayed identities and domain restrictions above were retraced; this is not a claim that numerical sampling proves all parameter values.",
+        "baseline_exit_code": 0,
+        "final_exit_code": 0,
+        "final_log": "/var/folders/93/r1t98m8d3014c24llb8j119w0000gn/T/jackson-deep-debug-team3-7iu2qgz3/check_ch03-final-domain.log",
+        "machine_check_kind": "Symbolic identities where implemented; otherwise numerical quadrature/spectral samples with explicit tolerances."
+      },
+      "changes": [],
+      "unresolved_limitations": []
+    },
+    {
+      "problem": "3.3",
+      "inspected_sources": [
+        {
+          "file": "sections/ch03.tex",
+          "line": 145,
+          "scope": "Current complete statement, solution, every subpart, assumptions and retained errata."
+        },
+        {
+          "file": "supplementary/check_ch03.py",
+          "scope": "Current functions covering this problem, assertion logic, numerical methods and generated assets."
+        },
+        {
+          "source": "Jackson 3rd edition supplied local PDF",
+          "printed_pages": "136",
+          "pdf_pages": [
+            161
+          ],
+          "ocr_files": [
+            "ocr/p-161.txt"
+          ]
+        }
+      ],
+      "source_notation": "Jackson pp.103,108-109,114-115,120-126,133; Eqs.3.38,3.49,3.53-3.56,3.93-3.97,3.116-3.125,3.138-3.149,3.181-3.185.",
+      "additional_sources_checked": [],
+      "first_pass": {
+        "method": "Read current problem and full solution, independently retrace the stated derivation, then inspect current check implementation.",
+        "mathematics_checked": "Disc density normalization, separate interior/exterior series, both faces and capacitance.",
+        "falsifiable_candidate": "Candidate: C=4 epsilon0 R because only one face contributes. Discarded: the stated sheet density includes both faces.",
+        "outcome": "candidate_discarded_no_new_confirmed_error"
+      },
+      "independent_final_pass": {
+        "method": "Reverse problem order; work from final expressions back to source equations using conservation, boundary conditions, dimensional checks, independent integral reductions and limiting cases rather than repeating the first derivation.",
+        "evidence": "Final route: integrate 2 pi rho sigma d rho and independently take the axial far-field 1/r coefficient; both give Q=8 epsilon0 R V.",
+        "new_confirmed_errors": 0
+      },
+      "verification": {
+        "manual_analytic_retracing": "The displayed identities and domain restrictions above were retraced; this is not a claim that numerical sampling proves all parameter values.",
+        "baseline_exit_code": 0,
+        "final_exit_code": 0,
+        "final_log": "/var/folders/93/r1t98m8d3014c24llb8j119w0000gn/T/jackson-deep-debug-team3-7iu2qgz3/check_ch03-final-domain.log",
+        "machine_check_kind": "Symbolic identities where implemented; otherwise numerical quadrature/spectral samples with explicit tolerances."
+      },
+      "changes": [],
+      "unresolved_limitations": []
+    },
+    {
+      "problem": "3.4",
+      "inspected_sources": [
+        {
+          "file": "sections/ch03.tex",
+          "line": 208,
+          "scope": "Current complete statement, solution, every subpart, assumptions and retained errata."
+        },
+        {
+          "file": "supplementary/check_ch03.py",
+          "scope": "Current functions covering this problem, assertion logic, numerical methods and generated assets."
+        },
+        {
+          "source": "Jackson 3rd edition supplied local PDF",
+          "printed_pages": "136",
+          "pdf_pages": [
+            161
+          ],
+          "ocr_files": [
+            "ocr/p-161.txt"
+          ]
+        }
+      ],
+      "source_notation": "Jackson pp.103,108-109,114-115,120-126,133; Eqs.3.38,3.49,3.53-3.56,3.93-3.97,3.116-3.125,3.138-3.149,3.181-3.185.",
+      "additional_sources_checked": [],
+      "first_pass": {
+        "method": "Read current problem and full solution, independently retrace the stated derivation, then inspect current check implementation.",
+        "mathematics_checked": "Condon-Shortley phase, allowed azimuthal/parity modes, nonvanishing coefficient recurrence and n=1 rotation.",
+        "falsifiable_candidate": "Candidate: some l=m+2j coefficients beyond parity may vanish. Discarded by the positive recurrence multiplier and nonzero beta-integral seed.",
+        "outcome": "candidate_discarded_no_new_confirmed_error"
+      },
+      "independent_final_pass": {
+        "method": "Reverse problem order; work from final expressions back to source equations using conservation, boundary conditions, dimensional checks, independent integral reductions and limiting cases rather than repeating the first derivation.",
+        "evidence": "Final route: reduce the l=1,3 real harmonics to polynomials in y/r and compare the rotated hemisphere series; source Eq.3.49 includes the phase.",
+        "new_confirmed_errors": 0
+      },
+      "verification": {
+        "manual_analytic_retracing": "The displayed identities and domain restrictions above were retraced; this is not a claim that numerical sampling proves all parameter values.",
+        "baseline_exit_code": 0,
+        "final_exit_code": 0,
+        "final_log": "/var/folders/93/r1t98m8d3014c24llb8j119w0000gn/T/jackson-deep-debug-team3-7iu2qgz3/check_ch03-final-domain.log",
+        "machine_check_kind": "Symbolic identities where implemented; otherwise numerical quadrature/spectral samples with explicit tolerances."
+      },
+      "changes": [],
+      "unresolved_limitations": []
+    },
+    {
+      "problem": "3.5",
+      "inspected_sources": [
+        {
+          "file": "sections/ch03.tex",
+          "line": 300,
+          "scope": "Current complete statement, solution, every subpart, assumptions and retained errata."
+        },
+        {
+          "file": "supplementary/check_ch03.py",
+          "scope": "Current functions covering this problem, assertion logic, numerical methods and generated assets."
+        },
+        {
+          "source": "Jackson 3rd edition supplied local PDF",
+          "printed_pages": "136",
+          "pdf_pages": [
+            161
+          ],
+          "ocr_files": [
+            "ocr/p-161.txt"
+          ]
+        }
+      ],
+      "source_notation": "Jackson pp.103,108-109,114-115,120-126,133; Eqs.3.38,3.49,3.53-3.56,3.93-3.97,3.116-3.125,3.138-3.149,3.181-3.185.",
+      "additional_sources_checked": [],
+      "first_pass": {
+        "method": "Read current problem and full solution, independently retrace the stated derivation, then inspect current check implementation.",
+        "mathematics_checked": "Generating-function differentiation, addition theorem and interior convergence of the Poisson kernel.",
+        "falsifiable_candidate": "Candidate: an a or 4 pi factor is missing. Discarded: the kernel integrates to one and dimensions cancel against dOmega.",
+        "outcome": "candidate_discarded_no_new_confirmed_error"
+      },
+      "independent_final_pass": {
+        "method": "Reverse problem order; work from final expressions back to source equations using conservation, boundary conditions, dimensional checks, independent integral reductions and limiting cases rather than repeating the first derivation.",
+        "evidence": "Final route: act on one arbitrary Y_lm boundary mode; angular orthogonality gives (r/a)^l Y_lm, which uniquely determines the solution.",
+        "new_confirmed_errors": 0
+      },
+      "verification": {
+        "manual_analytic_retracing": "The displayed identities and domain restrictions above were retraced; this is not a claim that numerical sampling proves all parameter values.",
+        "baseline_exit_code": 0,
+        "final_exit_code": 0,
+        "final_log": "/var/folders/93/r1t98m8d3014c24llb8j119w0000gn/T/jackson-deep-debug-team3-7iu2qgz3/check_ch03-final-domain.log",
+        "machine_check_kind": "Symbolic identities where implemented; otherwise numerical quadrature/spectral samples with explicit tolerances."
+      },
+      "changes": [],
+      "unresolved_limitations": []
+    },
+    {
+      "problem": "3.6",
+      "inspected_sources": [
+        {
+          "file": "sections/ch03.tex",
+          "line": 341,
+          "scope": "Current complete statement, solution, every subpart, assumptions and retained errata."
+        },
+        {
+          "file": "supplementary/check_ch03.py",
+          "scope": "Current functions covering this problem, assertion logic, numerical methods and generated assets."
+        },
+        {
+          "source": "Jackson 3rd edition supplied local PDF",
+          "printed_pages": "136-137",
+          "pdf_pages": [
+            161,
+            162
+          ],
+          "ocr_files": [
+            "ocr/p-161.txt",
+            "ocr/p-162.txt"
+          ]
+        }
+      ],
+      "source_notation": "Jackson pp.103,108-109,114-115,120-126,133; Eqs.3.38,3.49,3.53-3.56,3.93-3.97,3.116-3.125,3.138-3.149,3.181-3.185.",
+      "additional_sources_checked": [],
+      "first_pass": {
+        "method": "Read current problem and full solution, independently retrace the stated derivation, then inspect current check implementation.",
+        "mathematics_checked": "Odd multipoles on both radial intervals, fixed-p coalescence and grounded-sphere reaction harmonic.",
+        "falsifiable_candidate": "Candidate: image-field sign is opposite. Discarded: subtracting the r cos(theta)/b^3 term is required by the surface potential.",
+        "outcome": "candidate_discarded_no_new_confirmed_error"
+      },
+      "independent_final_pass": {
+        "method": "Reverse problem order; work from final expressions back to source equations using conservation, boundary conditions, dimensional checks, independent integral reductions and limiting cases rather than repeating the first derivation.",
+        "evidence": "Final route: differentiate the added potential to recover the uniform +p/(4 pi epsilon0 b^3) reaction field and check the original two point sources.",
+        "new_confirmed_errors": 0
+      },
+      "verification": {
+        "manual_analytic_retracing": "The displayed identities and domain restrictions above were retraced; this is not a claim that numerical sampling proves all parameter values.",
+        "baseline_exit_code": 0,
+        "final_exit_code": 0,
+        "final_log": "/var/folders/93/r1t98m8d3014c24llb8j119w0000gn/T/jackson-deep-debug-team3-7iu2qgz3/check_ch03-final-domain.log",
+        "machine_check_kind": "Symbolic identities where implemented; otherwise numerical quadrature/spectral samples with explicit tolerances."
+      },
+      "changes": [],
+      "unresolved_limitations": []
+    },
+    {
+      "problem": "3.7",
+      "inspected_sources": [
+        {
+          "file": "sections/ch03.tex",
+          "line": 391,
+          "scope": "Current complete statement, solution, every subpart, assumptions and retained errata."
+        },
+        {
+          "file": "supplementary/check_ch03.py",
+          "scope": "Current functions covering this problem, assertion logic, numerical methods and generated assets."
+        },
+        {
+          "source": "Jackson 3rd edition supplied local PDF",
+          "printed_pages": "137",
+          "pdf_pages": [
+            162
+          ],
+          "ocr_files": [
+            "ocr/p-162.txt"
+          ]
+        }
+      ],
+      "source_notation": "Jackson pp.103,108-109,114-115,120-126,133; Eqs.3.38,3.49,3.53-3.56,3.93-3.97,3.116-3.125,3.138-3.149,3.181-3.185.",
+      "additional_sources_checked": [],
+      "first_pass": {
+        "method": "Read current problem and full solution, independently retrace the stated derivation, then inspect current check implementation.",
+        "mathematics_checked": "Three-charge cancellation, interior and exterior expansions, images and fixed-qa^2 quadrupole limit.",
+        "falsifiable_candidate": "Candidate: an image monopole constant survives. Discarded: the two displaced images and central image cancel their l=0 terms.",
+        "outcome": "candidate_discarded_no_new_confirmed_error"
+      },
+      "independent_final_pass": {
+        "method": "Reverse problem order; work from final expressions back to source equations using conservation, boundary conditions, dimensional checks, independent integral reductions and limiting cases rather than repeating the first derivation.",
+        "evidence": "Final route: total real charge and dipole are zero; the leading moment is 2qa^2 P2, with a regular l=2 term fixed by the grounded boundary.",
+        "new_confirmed_errors": 0
+      },
+      "verification": {
+        "manual_analytic_retracing": "The displayed identities and domain restrictions above were retraced; this is not a claim that numerical sampling proves all parameter values.",
+        "baseline_exit_code": 0,
+        "final_exit_code": 0,
+        "final_log": "/var/folders/93/r1t98m8d3014c24llb8j119w0000gn/T/jackson-deep-debug-team3-7iu2qgz3/check_ch03-final-domain.log",
+        "machine_check_kind": "Symbolic identities where implemented; otherwise numerical quadrature/spectral samples with explicit tolerances."
+      },
+      "changes": [],
+      "unresolved_limitations": []
+    },
+    {
+      "problem": "3.8",
+      "inspected_sources": [
+        {
+          "file": "sections/ch03.tex",
+          "line": 481,
+          "scope": "Current complete statement, solution, every subpart, assumptions and retained errata."
+        },
+        {
+          "file": "supplementary/check_ch03.py",
+          "scope": "Current functions covering this problem, assertion logic, numerical methods and generated assets."
+        },
+        {
+          "source": "Jackson 3rd edition supplied local PDF",
+          "printed_pages": "137-138",
+          "pdf_pages": [
+            162,
+            163
+          ],
+          "ocr_files": [
+            "ocr/p-162.txt",
+            "ocr/p-163.txt"
+          ]
+        }
+      ],
+      "source_notation": "Jackson pp.103,108-109,114-115,120-126,133; Eqs.3.38,3.49,3.53-3.56,3.93-3.97,3.116-3.125,3.138-3.149,3.181-3.185.",
+      "additional_sources_checked": [],
+      "first_pass": {
+        "method": "Read current problem and full solution, independently retrace the stated derivation, then inspect current check implementation.",
+        "mathematics_checked": "Legendre coefficients of log(csc theta), singular boundary integrations and line-charge surface density.",
+        "falsifiable_candidate": "Candidate: the integration-by-parts endpoint fails. Discarded: (1-u^2) times its logarithm tends to zero.",
+        "outcome": "candidate_discarded_no_new_confirmed_error"
+      },
+      "independent_final_pass": {
+        "method": "Reverse problem order; work from final expressions back to source equations using conservation, boundary conditions, dimensional checks, independent integral reductions and limiting cases rather than repeating the first derivation.",
+        "evidence": "Final route: integrate the induced surface density to -Q and compare the near-axis logarithm with a locally infinite line; the 1/theta surface singularity remains integrable.",
+        "new_confirmed_errors": 0
+      },
+      "verification": {
+        "manual_analytic_retracing": "The displayed identities and domain restrictions above were retraced; this is not a claim that numerical sampling proves all parameter values.",
+        "baseline_exit_code": 0,
+        "final_exit_code": 0,
+        "final_log": "/var/folders/93/r1t98m8d3014c24llb8j119w0000gn/T/jackson-deep-debug-team3-7iu2qgz3/check_ch03-final-domain.log",
+        "machine_check_kind": "Symbolic identities where implemented; otherwise numerical quadrature/spectral samples with explicit tolerances."
+      },
+      "changes": [],
+      "unresolved_limitations": []
+    },
+    {
+      "problem": "3.9",
+      "inspected_sources": [
+        {
+          "file": "sections/ch03.tex",
+          "line": 570,
+          "scope": "Current complete statement, solution, every subpart, assumptions and retained errata."
+        },
+        {
+          "file": "supplementary/check_ch03.py",
+          "scope": "Current functions covering this problem, assertion logic, numerical methods and generated assets."
+        },
+        {
+          "source": "Jackson 3rd edition supplied local PDF",
+          "printed_pages": "138",
+          "pdf_pages": [
+            163
+          ],
+          "ocr_files": [
+            "ocr/p-163.txt"
+          ]
+        }
+      ],
+      "source_notation": "Jackson pp.103,108-109,114-115,120-126,133; Eqs.3.38,3.49,3.53-3.56,3.93-3.97,3.116-3.125,3.138-3.149,3.181-3.185.",
+      "additional_sources_checked": [],
+      "first_pass": {
+        "method": "Read current problem and full solution, independently retrace the stated derivation, then inspect current check implementation.",
+        "mathematics_checked": "Modified-Bessel radial regularity, angular and axial Fourier norms and all three cylinder surfaces.",
+        "falsifiable_candidate": "Candidate: the complex azimuthal expansion needs 2/(pi L). Discarded: its norm is (2 pi)(L/2)=pi L.",
+        "outcome": "candidate_discarded_no_new_confirmed_error"
+      },
+      "independent_final_pass": {
+        "method": "Reverse problem order; work from final expressions back to source equations using conservation, boundary conditions, dimensional checks, independent integral reductions and limiting cases rather than repeating the first derivation.",
+        "evidence": "Final route: project one boundary mode directly and verify the radial factor is unity at rho=b and regular at rho=0; endpoints vanish mode by mode.",
+        "new_confirmed_errors": 0
+      },
+      "verification": {
+        "manual_analytic_retracing": "The displayed identities and domain restrictions above were retraced; this is not a claim that numerical sampling proves all parameter values.",
+        "baseline_exit_code": 0,
+        "final_exit_code": 0,
+        "final_log": "/var/folders/93/r1t98m8d3014c24llb8j119w0000gn/T/jackson-deep-debug-team3-7iu2qgz3/check_ch03-final-domain.log",
+        "machine_check_kind": "Symbolic identities where implemented; otherwise numerical quadrature/spectral samples with explicit tolerances."
+      },
+      "changes": [],
+      "unresolved_limitations": []
+    },
+    {
+      "problem": "3.10",
+      "inspected_sources": [
+        {
+          "file": "sections/ch03.tex",
+          "line": 602,
+          "scope": "Current complete statement, solution, every subpart, assumptions and retained errata."
+        },
+        {
+          "file": "supplementary/check_ch03.py",
+          "scope": "Current functions covering this problem, assertion logic, numerical methods and generated assets."
+        },
+        {
+          "source": "Jackson 3rd edition supplied local PDF",
+          "printed_pages": "138",
+          "pdf_pages": [
+            163
+          ],
+          "ocr_files": [
+            "ocr/p-163.txt"
+          ]
+        }
+      ],
+      "source_notation": "Jackson pp.103,108-109,114-115,120-126,133; Eqs.3.38,3.49,3.53-3.56,3.93-3.97,3.116-3.125,3.138-3.149,3.181-3.185.",
+      "additional_sources_checked": [],
+      "first_pass": {
+        "method": "Read current problem and full solution, independently retrace the stated derivation, then inspect current check implementation.",
+        "mathematics_checked": "Odd angular/axial side data, infinite-cylinder arctangent and finite-length correction.",
+        "falsifiable_candidate": "Candidate: m=0 gives the slowest end correction. Discarded: hemisphere antisymmetry excludes m=0.",
+        "outcome": "candidate_discarded_no_new_confirmed_error"
+      },
+      "independent_final_pass": {
+        "method": "Reverse problem order; work from final expressions back to source equations using conservation, boundary conditions, dimensional checks, independent integral reductions and limiting cases rather than repeating the first derivation.",
+        "evidence": "Final route: the two-dimensional analytic solution has the stipulated opposite semicircle limits; the first permitted transverse Dirichlet eigenvalue is x_11.",
+        "new_confirmed_errors": 0
+      },
+      "verification": {
+        "manual_analytic_retracing": "The displayed identities and domain restrictions above were retraced; this is not a claim that numerical sampling proves all parameter values.",
+        "baseline_exit_code": 0,
+        "final_exit_code": 0,
+        "final_log": "/var/folders/93/r1t98m8d3014c24llb8j119w0000gn/T/jackson-deep-debug-team3-7iu2qgz3/check_ch03-final-domain.log",
+        "machine_check_kind": "Symbolic identities where implemented; otherwise numerical quadrature/spectral samples with explicit tolerances."
+      },
+      "changes": [],
+      "unresolved_limitations": []
+    },
+    {
+      "problem": "3.11",
+      "inspected_sources": [
+        {
+          "file": "sections/ch03.tex",
+          "line": 659,
+          "scope": "Current complete statement, solution, every subpart, assumptions and retained errata."
+        },
+        {
+          "file": "supplementary/check_ch03.py",
+          "scope": "Current functions covering this problem, assertion logic, numerical methods and generated assets."
+        },
+        {
+          "source": "Jackson 3rd edition supplied local PDF",
+          "printed_pages": "138-139",
+          "pdf_pages": [
+            163,
+            164
+          ],
+          "ocr_files": [
+            "ocr/p-163.txt",
+            "ocr/p-164.txt"
+          ]
+        }
+      ],
+      "source_notation": "Jackson pp.103,108-109,114-115,120-126,133; Eqs.3.38,3.49,3.53-3.56,3.93-3.97,3.116-3.125,3.138-3.149,3.181-3.185.",
+      "additional_sources_checked": [],
+      "first_pass": {
+        "method": "Read current problem and full solution, independently retrace the stated derivation, then inspect current check implementation.",
+        "mathematics_checked": "Robin orthogonality/norms, origin domain, zero mode and the unique negative mode for arbitrary real lambda.",
+        "falsifiable_candidate": "Candidate: positive roots are complete also for lambda<=-nu. Discarded against the already-corrected statement: zero/negative modes are explicitly included.",
+        "outcome": "candidate_discarded_no_new_confirmed_error"
+      },
+      "independent_final_pass": {
+        "method": "Reverse problem order; work from final expressions back to source equations using conservation, boundary conditions, dimensional checks, independent integral reductions and limiting cases rather than repeating the first derivation.",
+        "evidence": "Final route: complete the quadratic form after u=rho^nu h; lambda=-nu is exactly the zero threshold and the monotone I_nu logarithmic derivative gives one negative eigenvalue below it.",
+        "new_confirmed_errors": 0
+      },
+      "verification": {
+        "manual_analytic_retracing": "The displayed identities and domain restrictions above were retraced; this is not a claim that numerical sampling proves all parameter values.",
+        "baseline_exit_code": 0,
+        "final_exit_code": 0,
+        "final_log": "/var/folders/93/r1t98m8d3014c24llb8j119w0000gn/T/jackson-deep-debug-team3-7iu2qgz3/check_ch03-final-domain.log",
+        "machine_check_kind": "Symbolic identities where implemented; otherwise numerical quadrature/spectral samples with explicit tolerances."
+      },
+      "changes": [],
+      "unresolved_limitations": []
+    },
+    {
+      "problem": "3.12",
+      "inspected_sources": [
+        {
+          "file": "sections/ch03.tex",
+          "line": 780,
+          "scope": "Current complete statement, solution, every subpart, assumptions and retained errata."
+        },
+        {
+          "file": "supplementary/check_ch03.py",
+          "scope": "Current functions covering this problem, assertion logic, numerical methods and generated assets."
+        },
+        {
+          "source": "Jackson 3rd edition supplied local PDF",
+          "printed_pages": "139",
+          "pdf_pages": [
+            164
+          ],
+          "ocr_files": [
+            "ocr/p-164.txt"
+          ]
+        }
+      ],
+      "source_notation": "Jackson pp.103,108-109,114-115,120-126,133; Eqs.3.38,3.49,3.53-3.56,3.93-3.97,3.116-3.125,3.138-3.149,3.181-3.185.",
+      "additional_sources_checked": [],
+      "first_pass": {
+        "method": "Read current problem and full solution, independently retrace the stated derivation, then inspect current check implementation.",
+        "mathematics_checked": "Hankel inversion of the disc step, axis integral and edge elliptic integral with modulus convention.",
+        "falsifiable_candidate": "Candidate: K(k) was passed as parameter k rather than k^2. Discarded: the solution defines the modulus and the script calls ellipk(k^2).",
+        "outcome": "candidate_discarded_no_new_confirmed_error"
+      },
+      "independent_final_pass": {
+        "method": "Reverse problem order; work from final expressions back to source equations using conservation, boundary conditions, dimensional checks, independent integral reductions and limiting cases rather than repeating the first derivation.",
+        "evidence": "Final route: both axis and edge expressions have the Poisson-kernel far field Va^2/(2z^2); their respective boundary limits are V and V/2.",
+        "new_confirmed_errors": 0
+      },
+      "verification": {
+        "manual_analytic_retracing": "The displayed identities and domain restrictions above were retraced; this is not a claim that numerical sampling proves all parameter values.",
+        "baseline_exit_code": 0,
+        "final_exit_code": 0,
+        "final_log": "/var/folders/93/r1t98m8d3014c24llb8j119w0000gn/T/jackson-deep-debug-team3-7iu2qgz3/check_ch03-final-domain.log",
+        "machine_check_kind": "Symbolic identities where implemented; otherwise numerical quadrature/spectral samples with explicit tolerances."
+      },
+      "changes": [],
+      "unresolved_limitations": []
+    },
+    {
+      "problem": "3.13",
+      "inspected_sources": [
+        {
+          "file": "sections/ch03.tex",
+          "line": 840,
+          "scope": "Current complete statement, solution, every subpart, assumptions and retained errata."
+        },
+        {
+          "file": "supplementary/check_ch03.py",
+          "scope": "Current functions covering this problem, assertion logic, numerical methods and generated assets."
+        },
+        {
+          "source": "Jackson 3rd edition supplied local PDF",
+          "printed_pages": "139",
+          "pdf_pages": [
+            164
+          ],
+          "ocr_files": [
+            "ocr/p-164.txt"
+          ]
+        }
+      ],
+      "source_notation": "Jackson pp.103,108-109,114-115,120-126,133; Eqs.3.38,3.49,3.53-3.56,3.93-3.97,3.116-3.125,3.138-3.149,3.181-3.185.",
+      "additional_sources_checked": [],
+      "first_pass": {
+        "method": "Read current problem and full solution, independently retrace the stated derivation, then inspect current check implementation.",
+        "mathematics_checked": "Annular Dirichlet Green function, both outward normals and recovery of the direct radial coefficients.",
+        "falsifiable_candidate": "Candidate: inner-sphere normal causes a sign reversal. Discarded: the inward radial outward-normal of the annulus is explicitly included.",
+        "outcome": "candidate_discarded_no_new_confirmed_error"
+      },
+      "independent_final_pass": {
+        "method": "Reverse problem order; work from final expressions back to source equations using conservation, boundary conditions, dimensional checks, independent integral reductions and limiting cases rather than repeating the first derivation.",
+        "evidence": "Final route: each Green radial mode has the correct -(2l+1) jump; its two boundary derivatives reproduce the cardinal interpolants of 3.1.",
+        "new_confirmed_errors": 0
+      },
+      "verification": {
+        "manual_analytic_retracing": "The displayed identities and domain restrictions above were retraced; this is not a claim that numerical sampling proves all parameter values.",
+        "baseline_exit_code": 0,
+        "final_exit_code": 0,
+        "final_log": "/var/folders/93/r1t98m8d3014c24llb8j119w0000gn/T/jackson-deep-debug-team3-7iu2qgz3/check_ch03-final-domain.log",
+        "machine_check_kind": "Symbolic identities where implemented; otherwise numerical quadrature/spectral samples with explicit tolerances."
+      },
+      "changes": [],
+      "unresolved_limitations": []
+    },
+    {
+      "problem": "3.14",
+      "inspected_sources": [
+        {
+          "file": "sections/ch03.tex",
+          "line": 885,
+          "scope": "Current complete statement, solution, every subpart, assumptions and retained errata."
+        },
+        {
+          "file": "supplementary/check_ch03.py",
+          "scope": "Current functions covering this problem, assertion logic, numerical methods and generated assets."
+        },
+        {
+          "source": "Jackson 3rd edition supplied local PDF",
+          "printed_pages": "139",
+          "pdf_pages": [
+            164
+          ],
+          "ocr_files": [
+            "ocr/p-164.txt"
+          ]
+        }
+      ],
+      "source_notation": "Jackson pp.103,108-109,114-115,120-126,133; Eqs.3.38,3.49,3.53-3.56,3.93-3.97,3.116-3.125,3.138-3.149,3.181-3.185.",
+      "additional_sources_checked": [],
+      "first_pass": {
+        "method": "Read current problem and full solution, independently retrace the stated derivation, then inspect current check implementation.",
+        "mathematics_checked": "Parabolic line moments, exceptional l=0,2 integrals, induced charge and limiting short line.",
+        "falsifiable_candidate": "Candidate: the l=2 logarithm is missing. Discarded: its separate expression contains -r^2 log(d/r).",
+        "outcome": "candidate_discarded_no_new_confirmed_error"
+      },
+      "independent_final_pass": {
+        "method": "Reverse problem order; work from final expressions back to source equations using conservation, boundary conditions, dimensional checks, independent integral reductions and limiting cases rather than repeating the first derivation.",
+        "evidence": "Final route: match C_l and its first derivative at r=d; the l=0 surface term alone integrates to -Q and the d-to-zero limit gives a centered point charge.",
+        "new_confirmed_errors": 0
+      },
+      "verification": {
+        "manual_analytic_retracing": "The displayed identities and domain restrictions above were retraced; this is not a claim that numerical sampling proves all parameter values.",
+        "baseline_exit_code": 0,
+        "final_exit_code": 0,
+        "final_log": "/var/folders/93/r1t98m8d3014c24llb8j119w0000gn/T/jackson-deep-debug-team3-7iu2qgz3/check_ch03-final-domain.log",
+        "machine_check_kind": "Symbolic identities where implemented; otherwise numerical quadrature/spectral samples with explicit tolerances."
+      },
+      "changes": [],
+      "unresolved_limitations": []
+    },
+    {
+      "problem": "3.15",
+      "inspected_sources": [
+        {
+          "file": "sections/ch03.tex",
+          "line": 961,
+          "scope": "Current complete statement, solution, every subpart, assumptions and retained errata."
+        },
+        {
+          "file": "supplementary/check_ch03.py",
+          "scope": "Current functions covering this problem, assertion logic, numerical methods and generated assets."
+        },
+        {
+          "source": "Jackson 3rd edition supplied local PDF",
+          "printed_pages": "139-140",
+          "pdf_pages": [
+            164,
+            165
+          ],
+          "ocr_files": [
+            "ocr/p-164.txt",
+            "ocr/p-165.txt"
+          ]
+        }
+      ],
+      "source_notation": "Jackson pp.103,108-109,114-115,120-126,133; Eqs.3.38,3.49,3.53-3.56,3.93-3.97,3.116-3.125,3.138-3.149,3.181-3.185.",
+      "additional_sources_checked": [],
+      "first_pass": {
+        "method": "Read current problem and full solution, independently retrace the stated derivation, then inspect current check implementation.",
+        "mathematics_checked": "Current continuity, induced dipole, inner/exterior Joule losses and chemical work.",
+        "falsifiable_candidate": "Candidate: interior heating is sigma E^2. Discarded: electrochemical Ohm law requires J^2/sigma and the current contains the chemical force.",
+        "outcome": "candidate_discarded_no_new_confirmed_error"
+      },
+      "independent_final_pass": {
+        "method": "Reverse problem order; work from final expressions back to source equations using conservation, boundary conditions, dimensional checks, independent integral reductions and limiting cases rather than repeating the first derivation.",
+        "evidence": "Final route: sum I^2 Ri and I^2 Re and independently integrate J dot F over the sphere; both give I(4aF/3), including the open-circuit limit by continuity.",
+        "new_confirmed_errors": 0
+      },
+      "verification": {
+        "manual_analytic_retracing": "The displayed identities and domain restrictions above were retraced; this is not a claim that numerical sampling proves all parameter values.",
+        "baseline_exit_code": 0,
+        "final_exit_code": 0,
+        "final_log": "/var/folders/93/r1t98m8d3014c24llb8j119w0000gn/T/jackson-deep-debug-team3-7iu2qgz3/check_ch03-final-domain.log",
+        "machine_check_kind": "Symbolic identities where implemented; otherwise numerical quadrature/spectral samples with explicit tolerances."
+      },
+      "changes": [],
+      "unresolved_limitations": []
+    },
+    {
+      "problem": "3.16",
+      "inspected_sources": [
+        {
+          "file": "sections/ch03.tex",
+          "line": 1053,
+          "scope": "Current complete statement, solution, every subpart, assumptions and retained errata."
+        },
+        {
+          "file": "supplementary/check_ch03.py",
+          "scope": "Current functions covering this problem, assertion logic, numerical methods and generated assets."
+        },
+        {
+          "source": "Jackson 3rd edition supplied local PDF",
+          "printed_pages": "140",
+          "pdf_pages": [
+            165
+          ],
+          "ocr_files": [
+            "ocr/p-165.txt"
+          ]
+        }
+      ],
+      "source_notation": "Jackson pp.103,108-109,114-115,120-126,133; Eqs.3.38,3.49,3.53-3.56,3.93-3.97,3.116-3.125,3.138-3.149,3.181-3.185.",
+      "additional_sources_checked": [],
+      "first_pass": {
+        "method": "Read current problem and full solution, independently retrace the stated derivation, then inspect current check implementation.",
+        "mathematics_checked": "Finite-radius Bessel Wronskian, bilinear complex-order closure, Green normalization and addition/plane-wave formulas.",
+        "falsifiable_candidate": "Candidate: Re nu>-1/2 is necessary at the origin. Discarded: leading Wronskian terms cancel, leaving rho^(2nu+2), so the stated positive-axis distribution domain is Re nu>-1.",
+        "outcome": "candidate_discarded_no_new_confirmed_error"
+      },
+      "independent_final_pass": {
+        "method": "Reverse problem order; work from final expressions back to source equations using conservation, boundary conditions, dimensional checks, independent integral reductions and limiting cases rather than repeating the first derivation.",
+        "evidence": "Final route: reconstruct the Coulomb delta source using (d_z^2-k^2)exp(-k|z-z'|)=-2k delta; the angular factor 1/(2 pi) fixes the expansion coefficient.",
+        "new_confirmed_errors": 0
+      },
+      "verification": {
+        "manual_analytic_retracing": "The displayed identities and domain restrictions above were retraced; this is not a claim that numerical sampling proves all parameter values.",
+        "baseline_exit_code": 0,
+        "final_exit_code": 0,
+        "final_log": "/var/folders/93/r1t98m8d3014c24llb8j119w0000gn/T/jackson-deep-debug-team3-7iu2qgz3/check_ch03-final-domain.log",
+        "machine_check_kind": "Symbolic identities where implemented; otherwise numerical quadrature/spectral samples with explicit tolerances."
+      },
+      "changes": [
+        "Added independent Weber heat-kernel product-integral regression at orders -0.75, 0.4 and 1.7, including the admissible negative-order domain."
+      ],
+      "unresolved_limitations": []
+    },
+    {
+      "problem": "3.17",
+      "inspected_sources": [
+        {
+          "file": "sections/ch03.tex",
+          "line": 1167,
+          "scope": "Current complete statement, solution, every subpart, assumptions and retained errata."
+        },
+        {
+          "file": "supplementary/check_ch03.py",
+          "scope": "Current functions covering this problem, assertion logic, numerical methods and generated assets."
+        },
+        {
+          "source": "Jackson 3rd edition supplied local PDF",
+          "printed_pages": "140-141",
+          "pdf_pages": [
+            165,
+            166
+          ],
+          "ocr_files": [
+            "ocr/p-165.txt",
+            "ocr/p-166.txt"
+          ]
+        }
+      ],
+      "source_notation": "Jackson pp.103,108-109,114-115,120-126,133; Eqs.3.38,3.49,3.53-3.56,3.93-3.97,3.116-3.125,3.138-3.149,3.181-3.185.",
+      "additional_sources_checked": [],
+      "first_pass": {
+        "method": "Read current problem and full solution, independently retrace the stated derivation, then inspect current check implementation.",
+        "mathematics_checked": "Slab Green sine-K and Hankel forms, image representation, boundary values and source derivative jump.",
+        "falsifiable_candidate": "Candidate: a factor two differs between the two spectral forms. Discarded: sine completeness supplies 2/L whereas the Hankel jump is -2k.",
+        "outcome": "candidate_discarded_no_new_confirmed_error"
+      },
+      "independent_final_pass": {
+        "method": "Reverse problem order; work from final expressions back to source equations using conservation, boundary conditions, dimensional checks, independent integral reductions and limiting cases rather than repeating the first derivation.",
+        "evidence": "Final route: antisymmetrize each Coulomb image about the lower plane and use periodicity to enforce the upper plane; uniqueness identifies both spectral representations.",
+        "new_confirmed_errors": 0
+      },
+      "verification": {
+        "manual_analytic_retracing": "The displayed identities and domain restrictions above were retraced; this is not a claim that numerical sampling proves all parameter values.",
+        "baseline_exit_code": 0,
+        "final_exit_code": 0,
+        "final_log": "/var/folders/93/r1t98m8d3014c24llb8j119w0000gn/T/jackson-deep-debug-team3-7iu2qgz3/check_ch03-final-domain.log",
+        "machine_check_kind": "Symbolic identities where implemented; otherwise numerical quadrature/spectral samples with explicit tolerances."
+      },
+      "changes": [],
+      "unresolved_limitations": []
+    },
+    {
+      "problem": "3.18",
+      "inspected_sources": [
+        {
+          "file": "sections/ch03.tex",
+          "line": 1231,
+          "scope": "Current complete statement, solution, every subpart, assumptions and retained errata."
+        },
+        {
+          "file": "supplementary/check_ch03.py",
+          "scope": "Current functions covering this problem, assertion logic, numerical methods and generated assets."
+        },
+        {
+          "source": "Jackson 3rd edition supplied local PDF",
+          "printed_pages": "141",
+          "pdf_pages": [
+            166
+          ],
+          "ocr_files": [
+            "ocr/p-166.txt"
+          ]
+        }
+      ],
+      "source_notation": "Jackson pp.103,108-109,114-115,120-126,133; Eqs.3.38,3.49,3.53-3.56,3.93-3.97,3.116-3.125,3.138-3.149,3.181-3.185.",
+      "additional_sources_checked": [],
+      "first_pass": {
+        "method": "Read current problem and full solution, independently retrace the stated derivation, then inspect current check implementation.",
+        "mathematics_checked": "Biased disc between plates, large-radius exponential correction and remote-plane L^-3 image correction.",
+        "falsifiable_candidate": "Candidate: large disc corrections are algebraic in a. Discarded: the lateral disturbance is evanescent in each nonzero axial mode.",
+        "outcome": "candidate_discarded_no_new_confirmed_error"
+      },
+      "independent_final_pass": {
+        "method": "Reverse problem order; work from final expressions back to source equations using conservation, boundary conditions, dimensional checks, independent integral reductions and limiting cases rather than repeating the first derivation.",
+        "evidence": "Final route: pair the remote images before expanding: their even L^-2 terms cancel and the odd difference gives -Va^2 h zeta(3)/(4L^3).",
+        "new_confirmed_errors": 0
+      },
+      "verification": {
+        "manual_analytic_retracing": "The displayed identities and domain restrictions above were retraced; this is not a claim that numerical sampling proves all parameter values.",
+        "baseline_exit_code": 0,
+        "final_exit_code": 0,
+        "final_log": "/var/folders/93/r1t98m8d3014c24llb8j119w0000gn/T/jackson-deep-debug-team3-7iu2qgz3/check_ch03-final-domain.log",
+        "machine_check_kind": "Symbolic identities where implemented; otherwise numerical quadrature/spectral samples with explicit tolerances."
+      },
+      "changes": [],
+      "unresolved_limitations": []
+    },
+    {
+      "problem": "3.19",
+      "inspected_sources": [
+        {
+          "file": "sections/ch03.tex",
+          "line": 1326,
+          "scope": "Current complete statement, solution, every subpart, assumptions and retained errata."
+        },
+        {
+          "file": "supplementary/check_ch03.py",
+          "scope": "Current functions covering this problem, assertion logic, numerical methods and generated assets."
+        },
+        {
+          "source": "Jackson 3rd edition supplied local PDF",
+          "printed_pages": "141",
+          "pdf_pages": [
+            166
+          ],
+          "ocr_files": [
+            "ocr/p-166.txt"
+          ]
+        }
+      ],
+      "source_notation": "Jackson pp.103,108-109,114-115,120-126,133; Eqs.3.38,3.49,3.53-3.56,3.93-3.97,3.116-3.125,3.138-3.149,3.181-3.185.",
+      "additional_sources_checked": [],
+      "first_pass": {
+        "method": "Read current problem and full solution, independently retrace the stated derivation, then inspect current check implementation.",
+        "mathematics_checked": "Reciprocity disc charge, local upper-plate density, axis odd-integer sum and total induced charge.",
+        "falsifiable_candidate": "Candidate: the density normal has the lower-plate sign. Discarded by the explicitly differentiated upper boundary Green factor.",
+        "outcome": "candidate_discarded_no_new_confirmed_error"
+      },
+      "independent_final_pass": {
+        "method": "Reverse problem order; work from final expressions back to source equations using conservation, boundary conditions, dimensional checks, independent integral reductions and limiting cases rather than repeating the first derivation.",
+        "evidence": "Final route: take a to infinity in the reciprocal potential: the upper-plane total charge becomes -q z0/L and vanishes as the source approaches the opposite plane.",
+        "new_confirmed_errors": 0
+      },
+      "verification": {
+        "manual_analytic_retracing": "The displayed identities and domain restrictions above were retraced; this is not a claim that numerical sampling proves all parameter values.",
+        "baseline_exit_code": 0,
+        "final_exit_code": 0,
+        "final_log": "/var/folders/93/r1t98m8d3014c24llb8j119w0000gn/T/jackson-deep-debug-team3-7iu2qgz3/check_ch03-final-domain.log",
+        "machine_check_kind": "Symbolic identities where implemented; otherwise numerical quadrature/spectral samples with explicit tolerances."
+      },
+      "changes": [],
+      "unresolved_limitations": []
+    },
+    {
+      "problem": "3.20",
+      "inspected_sources": [
+        {
+          "file": "sections/ch03.tex",
+          "line": 1413,
+          "scope": "Current complete statement, solution, every subpart, assumptions and retained errata."
+        },
+        {
+          "file": "supplementary/check_ch03.py",
+          "scope": "Current functions covering this problem, assertion logic, numerical methods and generated assets."
+        },
+        {
+          "source": "Jackson 3rd edition supplied local PDF",
+          "printed_pages": "141-142",
+          "pdf_pages": [
+            166,
+            167
+          ],
+          "ocr_files": [
+            "ocr/p-166.txt",
+            "ocr/p-167.txt"
+          ]
+        }
+      ],
+      "source_notation": "Jackson pp.103,108-109,114-115,120-126,133; Eqs.3.38,3.49,3.53-3.56,3.93-3.97,3.116-3.125,3.138-3.149,3.181-3.185.",
+      "additional_sources_checked": [],
+      "first_pass": {
+        "method": "Read current problem and full solution, independently retrace the stated derivation, then inspect current check implementation.",
+        "mathematics_checked": "Both slab Green expansions, normal fields on each plate, total charges and axial limiting procedure.",
+        "falsifiable_candidate": "Candidate: K0 divergence invalidates the axis potential. Discarded: the series must be Abel-summed before rho tends to zero away from the charge.",
+        "outcome": "candidate_discarded_no_new_confirmed_error"
+      },
+      "independent_final_pass": {
+        "method": "Reverse problem order; work from final expressions back to source equations using conservation, boundary conditions, dimensional checks, independent integral reductions and limiting cases rather than repeating the first derivation.",
+        "evidence": "Final route: total charge on the two planes is -q; the near-source singularity is the SI Coulomb q/(4 pi epsilon0 R) and both grounded boundaries remain zero.",
+        "new_confirmed_errors": 0
+      },
+      "verification": {
+        "manual_analytic_retracing": "The displayed identities and domain restrictions above were retraced; this is not a claim that numerical sampling proves all parameter values.",
+        "baseline_exit_code": 0,
+        "final_exit_code": 0,
+        "final_log": "/var/folders/93/r1t98m8d3014c24llb8j119w0000gn/T/jackson-deep-debug-team3-7iu2qgz3/check_ch03-final-domain.log",
+        "machine_check_kind": "Symbolic identities where implemented; otherwise numerical quadrature/spectral samples with explicit tolerances."
+      },
+      "changes": [],
+      "unresolved_limitations": []
+    },
+    {
+      "problem": "3.21",
+      "inspected_sources": [
+        {
+          "file": "sections/ch03.tex",
+          "line": 1484,
+          "scope": "Current complete statement, solution, every subpart, assumptions and retained errata."
+        },
+        {
+          "file": "supplementary/check_ch03.py",
+          "scope": "Current functions covering this problem, assertion logic, numerical methods and generated assets."
+        },
+        {
+          "source": "Jackson 3rd edition supplied local PDF",
+          "printed_pages": "142",
+          "pdf_pages": [
+            167
+          ],
+          "ocr_files": [
+            "ocr/p-167.txt"
+          ]
+        }
+      ],
+      "source_notation": "Jackson pp.103,108-109,114-115,120-126,133; Eqs.3.38,3.49,3.53-3.56,3.93-3.97,3.116-3.125,3.138-3.149,3.181-3.185.",
+      "additional_sources_checked": [],
+      "first_pass": {
+        "method": "Read current problem and full solution, independently retrace the stated derivation, then inspect current check implementation.",
+        "mathematics_checked": "Fixed-charge energy principle, Fourier-Bessel trial forms, two-basis quadratic minimization and numerical limits.",
+        "falsifiable_candidate": "Candidate: minimizing trial energy gives a lower bound on inverse capacitance. Discarded: the true electrostatic energy is the minimum, so trial inverse capacitance is an upper bound.",
+        "outcome": "candidate_discarded_no_new_confirmed_error"
+      },
+      "independent_final_pass": {
+        "method": "Reverse problem order; work from final expressions back to source equations using conservation, boundary conditions, dimensional checks, independent integral reductions and limiting cases rather than repeating the first derivation.",
+        "evidence": "Final route: use positive definiteness of the Coulomb energy and the unit-charge constraint; isolated-disc and small-gap limits recover the expected inverse-capacitance scales.",
+        "new_confirmed_errors": 0
+      },
+      "verification": {
+        "manual_analytic_retracing": "The displayed identities and domain restrictions above were retraced; this is not a claim that numerical sampling proves all parameter values.",
+        "baseline_exit_code": 0,
+        "final_exit_code": 0,
+        "final_log": "/var/folders/93/r1t98m8d3014c24llb8j119w0000gn/T/jackson-deep-debug-team3-7iu2qgz3/check_ch03-final-domain.log",
+        "machine_check_kind": "Symbolic identities where implemented; otherwise numerical quadrature/spectral samples with explicit tolerances."
+      },
+      "changes": [],
+      "unresolved_limitations": []
+    },
+    {
+      "problem": "3.22",
+      "inspected_sources": [
+        {
+          "file": "sections/ch03.tex",
+          "line": 1614,
+          "scope": "Current complete statement, solution, every subpart, assumptions and retained errata."
+        },
+        {
+          "file": "supplementary/check_ch03.py",
+          "scope": "Current functions covering this problem, assertion logic, numerical methods and generated assets."
+        },
+        {
+          "source": "Jackson 3rd edition supplied local PDF",
+          "printed_pages": "142",
+          "pdf_pages": [
+            167
+          ],
+          "ocr_files": [
+            "ocr/p-167.txt"
+          ]
+        }
+      ],
+      "source_notation": "Jackson pp.103,108-109,114-115,120-126,133; Eqs.3.38,3.49,3.53-3.56,3.93-3.97,3.116-3.125,3.138-3.149,3.181-3.185.",
+      "additional_sources_checked": [],
+      "first_pass": {
+        "method": "Read current problem and full solution, independently retrace the stated derivation, then inspect current check implementation.",
+        "mathematics_checked": "Wedge angular sine norm, radial fundamental solutions, jump coefficient and reciprocity.",
+        "falsifiable_candidate": "Candidate: the 4/m coefficient lacks pi/beta. Discarded: nu=m pi/beta cancels that factor.",
+        "outcome": "candidate_discarded_no_new_confirmed_error"
+      },
+      "independent_final_pass": {
+        "method": "Reverse problem order; work from final expressions back to source equations using conservation, boundary conditions, dimensional checks, independent integral reductions and limiting cases rather than repeating the first derivation.",
+        "evidence": "Final route: integrate Laplace's equation over the source radius and a sine mode; -2nu C=-8pi/beta gives C=4/m, with all three Dirichlet boundaries satisfied.",
+        "new_confirmed_errors": 0
+      },
+      "verification": {
+        "manual_analytic_retracing": "The displayed identities and domain restrictions above were retraced; this is not a claim that numerical sampling proves all parameter values.",
+        "baseline_exit_code": 0,
+        "final_exit_code": 0,
+        "final_log": "/var/folders/93/r1t98m8d3014c24llb8j119w0000gn/T/jackson-deep-debug-team3-7iu2qgz3/check_ch03-final-domain.log",
+        "machine_check_kind": "Symbolic identities where implemented; otherwise numerical quadrature/spectral samples with explicit tolerances."
+      },
+      "changes": [],
+      "unresolved_limitations": []
+    },
+    {
+      "problem": "3.23",
+      "inspected_sources": [
+        {
+          "file": "sections/ch03.tex",
+          "line": 1669,
+          "scope": "Current complete statement, solution, every subpart, assumptions and retained errata."
+        },
+        {
+          "file": "supplementary/check_ch03.py",
+          "scope": "Current functions covering this problem, assertion logic, numerical methods and generated assets."
+        },
+        {
+          "source": "Jackson 3rd edition supplied local PDF",
+          "printed_pages": "143",
+          "pdf_pages": [
+            168
+          ],
+          "ocr_files": [
+            "ocr/p-168.txt"
+          ]
+        }
+      ],
+      "source_notation": "Jackson pp.103,108-109,114-115,120-126,133; Eqs.3.38,3.49,3.53-3.56,3.93-3.97,3.116-3.125,3.138-3.149,3.181-3.185.",
+      "additional_sources_checked": [],
+      "first_pass": {
+        "method": "Read current problem and full solution, independently retrace the stated derivation, then inspect current check implementation.",
+        "mathematics_checked": "All three cylinder Green representations, Bessel norm and the axial/radial resolvent reductions.",
+        "falsifiable_candidate": "Candidate: negative m changes J_(m+1)^2 normalization. Discarded at zeros using the neighboring-order recurrence and J_-m=(-1)^m J_m.",
+        "outcome": "candidate_discarded_no_new_confirmed_error"
+      },
+      "independent_final_pass": {
+        "method": "Reverse problem order; work from final expressions back to source equations using conservation, boundary conditions, dimensional checks, independent integral reductions and limiting cases rather than repeating the first derivation.",
+        "evidence": "Final route: multiply angular 1/(2 pi), axial 2/L and radial 2/a^2 completeness factors by 4 pi; the triple-sum coefficient is 8/(La^2).",
+        "new_confirmed_errors": 0
+      },
+      "verification": {
+        "manual_analytic_retracing": "The displayed identities and domain restrictions above were retraced; this is not a claim that numerical sampling proves all parameter values.",
+        "baseline_exit_code": 0,
+        "final_exit_code": 0,
+        "final_log": "/var/folders/93/r1t98m8d3014c24llb8j119w0000gn/T/jackson-deep-debug-team3-7iu2qgz3/check_ch03-final-domain.log",
+        "machine_check_kind": "Symbolic identities where implemented; otherwise numerical quadrature/spectral samples with explicit tolerances."
+      },
+      "changes": [],
+      "unresolved_limitations": []
+    },
+    {
+      "problem": "3.24",
+      "inspected_sources": [
+        {
+          "file": "sections/ch03.tex",
+          "line": 1755,
+          "scope": "Current complete statement, solution, every subpart, assumptions and retained errata."
+        },
+        {
+          "file": "supplementary/check_ch03.py",
+          "scope": "Current functions covering this problem, assertion logic, numerical methods and generated assets."
+        },
+        {
+          "source": "Jackson 3rd edition supplied local PDF",
+          "printed_pages": "143",
+          "pdf_pages": [
+            168
+          ],
+          "ocr_files": [
+            "ocr/p-168.txt"
+          ]
+        }
+      ],
+      "source_notation": "Jackson pp.103,108-109,114-115,120-126,133; Eqs.3.38,3.49,3.53-3.56,3.93-3.97,3.116-3.125,3.138-3.149,3.181-3.185.",
+      "additional_sources_checked": [],
+      "first_pass": {
+        "method": "Read current problem and full solution, independently retrace the stated derivation, then inspect current check implementation.",
+        "mathematics_checked": "Three biased-end-disc series, radial source integration, convergence treatment and 0.07152937289 center value.",
+        "falsifiable_candidate": "Candidate: the slowly convergent sine expansion has a different center value. Discarded by accelerated summation and the independently summed radial representation.",
+        "outcome": "candidate_discarded_no_new_confirmed_error"
+      },
+      "independent_final_pass": {
+        "method": "Reverse problem order; work from final expressions back to source equations using conservation, boundary conditions, dimensional checks, independent integral reductions and limiting cases rather than repeating the first derivation.",
+        "evidence": "Final route: take a normal derivative of each 3.23 Green representation and integrate the same disc measure; this fixes every coefficient and explains the 1/k tail.",
+        "new_confirmed_errors": 0
+      },
+      "verification": {
+        "manual_analytic_retracing": "The displayed identities and domain restrictions above were retraced; this is not a claim that numerical sampling proves all parameter values.",
+        "baseline_exit_code": 0,
+        "final_exit_code": 0,
+        "final_log": "/var/folders/93/r1t98m8d3014c24llb8j119w0000gn/T/jackson-deep-debug-team3-7iu2qgz3/check_ch03-final-domain.log",
+        "machine_check_kind": "Symbolic identities where implemented; otherwise numerical quadrature/spectral samples with explicit tolerances."
+      },
+      "changes": [],
+      "unresolved_limitations": []
+    },
+    {
+      "problem": "3.25",
+      "inspected_sources": [
+        {
+          "file": "sections/ch03.tex",
+          "line": 1857,
+          "scope": "Current complete statement, solution, every subpart, assumptions and retained errata."
+        },
+        {
+          "file": "supplementary/check_ch03.py",
+          "scope": "Current functions covering this problem, assertion logic, numerical methods and generated assets."
+        },
+        {
+          "source": "Jackson 3rd edition supplied local PDF",
+          "printed_pages": "143-144",
+          "pdf_pages": [
+            168,
+            169
+          ],
+          "ocr_files": [
+            "ocr/p-168.txt",
+            "ocr/p-169.txt"
+          ]
+        }
+      ],
+      "source_notation": "Jackson pp.103,108-109,114-115,120-126,133; Eqs.3.38,3.49,3.53-3.56,3.93-3.97,3.116-3.125,3.138-3.149,3.181-3.185.",
+      "additional_sources_checked": [],
+      "first_pass": {
+        "method": "Read current problem and full solution, independently retrace the stated derivation, then inspect current check implementation.",
+        "mathematics_checked": "Aperture fictitious sheet, zero total additional charge, edge behavior and far-field dipole.",
+        "falsifiable_candidate": "Candidate: both sides require doubling the per-face sheet density. Discarded: its symmetric contribution is shared across the two half-spaces.",
+        "outcome": "candidate_discarded_no_new_confirmed_error"
+      },
+      "independent_final_pass": {
+        "method": "Reverse problem order; work from final expressions back to source equations using conservation, boundary conditions, dimensional checks, independent integral reductions and limiting cases rather than repeating the first derivation.",
+        "evidence": "Final route: integrate the positive hole contribution and negative exterior tail with the explicit primitive; cancellation agrees with A(k)=O(k), hence no monopole.",
+        "new_confirmed_errors": 0
+      },
+      "verification": {
+        "manual_analytic_retracing": "The displayed identities and domain restrictions above were retraced; this is not a claim that numerical sampling proves all parameter values.",
+        "baseline_exit_code": 0,
+        "final_exit_code": 0,
+        "final_log": "/var/folders/93/r1t98m8d3014c24llb8j119w0000gn/T/jackson-deep-debug-team3-7iu2qgz3/check_ch03-final-domain.log",
+        "machine_check_kind": "Symbolic identities where implemented; otherwise numerical quadrature/spectral samples with explicit tolerances."
+      },
+      "changes": [],
+      "unresolved_limitations": []
+    },
+    {
+      "problem": "3.26",
+      "inspected_sources": [
+        {
+          "file": "sections/ch03.tex",
+          "line": 1939,
+          "scope": "Current complete statement, solution, every subpart, assumptions and retained errata."
+        },
+        {
+          "file": "supplementary/check_ch03.py",
+          "scope": "Current functions covering this problem, assertion logic, numerical methods and generated assets."
+        },
+        {
+          "source": "Jackson 3rd edition supplied local PDF",
+          "printed_pages": "144",
+          "pdf_pages": [
+            169
+          ],
+          "ocr_files": [
+            "ocr/p-169.txt"
+          ]
+        }
+      ],
+      "source_notation": "Jackson pp.103,108-109,114-115,120-126,133; Eqs.3.38,3.49,3.53-3.56,3.93-3.97,3.116-3.125,3.138-3.149,3.181-3.185.",
+      "additional_sources_checked": [],
+      "first_pass": {
+        "method": "Read current problem and full solution, independently retrace the stated derivation, then inspect current check implementation.",
+        "mathematics_checked": "Neumann Green multipoles, constant normal derivative, arbitrary observation-point gauge and compatibility.",
+        "falsifiable_candidate": "Candidate: nonsymmetric f(r) violates a Neumann Green construction. Discarded: the PDE and derivative act on the source coordinate; compatibility removes the arbitrary observation-only term.",
+        "outcome": "candidate_discarded_no_new_confirmed_error"
+      },
+      "independent_final_pass": {
+        "method": "Reverse problem order; work from final expressions back to source equations using conservation, boundary conditions, dimensional checks, independent integral reductions and limiting cases rather than repeating the first derivation.",
+        "evidence": "Final route: integrate the normal derivative over the complete boundary to -4 pi; the zero angular mode supplies this flux while l>=1 modes have zero flux.",
+        "new_confirmed_errors": 0
+      },
+      "verification": {
+        "manual_analytic_retracing": "The displayed identities and domain restrictions above were retraced; this is not a claim that numerical sampling proves all parameter values.",
+        "baseline_exit_code": 0,
+        "final_exit_code": 0,
+        "final_log": "/var/folders/93/r1t98m8d3014c24llb8j119w0000gn/T/jackson-deep-debug-team3-7iu2qgz3/check_ch03-final-domain.log",
+        "machine_check_kind": "Symbolic identities where implemented; otherwise numerical quadrature/spectral samples with explicit tolerances."
+      },
+      "changes": [],
+      "unresolved_limitations": []
+    },
+    {
+      "problem": "3.27",
+      "inspected_sources": [
+        {
+          "file": "sections/ch03.tex",
+          "line": 2029,
+          "scope": "Current complete statement, solution, every subpart, assumptions and retained errata."
+        },
+        {
+          "file": "supplementary/check_ch03.py",
+          "scope": "Current functions covering this problem, assertion logic, numerical methods and generated assets."
+        },
+        {
+          "source": "Jackson 3rd edition supplied local PDF",
+          "printed_pages": "144",
+          "pdf_pages": [
+            169
+          ],
+          "ocr_files": [
+            "ocr/p-169.txt"
+          ]
+        }
+      ],
+      "source_notation": "Jackson pp.103,108-109,114-115,120-126,133; Eqs.3.38,3.49,3.53-3.56,3.93-3.97,3.116-3.125,3.138-3.149,3.181-3.185.",
+      "additional_sources_checked": [],
+      "first_pass": {
+        "method": "Read current problem and full solution, independently retrace the stated derivation, then inspect current check implementation.",
+        "mathematics_checked": "Neumann l=1 potential, Cartesian field components, spherical boundaries and invariant field-line plot.",
+        "falsifiable_candidate": "Candidate: field lines terminate on the insulating inner sphere. Discarded: Er(a)=0 and the stream function is constant there.",
+        "outcome": "candidate_discarded_no_new_confirmed_error"
+      },
+      "independent_final_pass": {
+        "method": "Reverse problem order; work from final expressions back to source equations using conservation, boundary conditions, dimensional checks, independent integral reductions and limiting cases rather than repeating the first derivation.",
+        "evidence": "Final route: differentiate the flux function to recover both spherical field components; its contour equation and the outer normal field independently fix the plotted paths and direction.",
+        "new_confirmed_errors": 0
+      },
+      "verification": {
+        "manual_analytic_retracing": "The displayed identities and domain restrictions above were retraced; this is not a claim that numerical sampling proves all parameter values.",
+        "baseline_exit_code": 0,
+        "final_exit_code": 0,
+        "final_log": "/var/folders/93/r1t98m8d3014c24llb8j119w0000gn/T/jackson-deep-debug-team3-7iu2qgz3/check_ch03-final-domain.log",
+        "machine_check_kind": "Symbolic identities where implemented; otherwise numerical quadrature/spectral samples with explicit tolerances."
+      },
+      "changes": [],
+      "unresolved_limitations": []
+    }
+  ],
+  "frozen_sha256": {
+    "sections/ch03.tex": "47114b75069d7f5365265163738f201642069b0a4f16b67b6d13918feb498827",
+    "supplementary/ch03_fieldlines.tex": "91d1539f672342cd8d35c7321072383eeeb9220c6af452f168497224494bd99a",
+    "supplementary/check_ch03.py": "cd96eea0da39236f3eab2ea2aabcf6de88cdc4b9644d9ad50bb1e3e6ac028285"
+  },
+  "validation": {
+    "isolated_compile": [
+      {
+        "command": [
+          "pdflatex",
+          "-interaction=nonstopmode",
+          "-halt-on-error",
+          "review.tex"
+        ],
+        "cwd": "/var/folders/93/r1t98m8d3014c24llb8j119w0000gn/T/jackson-deep-debug-team3-7iu2qgz3/compile",
+        "pass": 1,
+        "exit_code": 0,
+        "seconds": 28.98,
+        "log": "/var/folders/93/r1t98m8d3014c24llb8j119w0000gn/T/jackson-deep-debug-team3-7iu2qgz3/compile/pdflatex-1.log",
+        "tail": [
+          "mbols/msbm10.pfb>",
+          "Output written on review.pdf (144 pages, 1118220 bytes).",
+          "Transcript written on review.log."
+        ]
+      },
+      {
+        "command": [
+          "pdflatex",
+          "-interaction=nonstopmode",
+          "-halt-on-error",
+          "review.tex"
+        ],
+        "cwd": "/var/folders/93/r1t98m8d3014c24llb8j119w0000gn/T/jackson-deep-debug-team3-7iu2qgz3/compile",
+        "pass": 2,
+        "exit_code": 0,
+        "seconds": 41.444,
+        "log": "/var/folders/93/r1t98m8d3014c24llb8j119w0000gn/T/jackson-deep-debug-team3-7iu2qgz3/compile/pdflatex-2.log",
+        "tail": [
+          "sbm10.pfb>",
+          "Output written on review.pdf (144 pages, 1118220 bytes).",
+          "Transcript written on review.log."
+        ]
+      }
+    ],
+    "current_tex_and_referenced_assets_match_compiled_copy": true,
+    "render_manifest": "/private/var/folders/93/r1t98m8d3014c24llb8j119w0000gn/T/jackson-deep-debug-team3-7iu2qgz3/render-results.json",
+    "pdf_pages": 144,
+    "pdftotext_exit": 0,
+    "pdftoppm_exit": 0,
+    "montage_initial_exit": 1,
+    "montage_initial_failure": "montage: unable to read font `' @ error/annotate.c/RenderFreetype/1660.",
+    "montage_resolution": "Supplied the verified existing Helvetica.ttc font; all nine contact-sheet commands subsequently exited 0.",
+    "montage_retry_exits": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "visual_inspection": "All nine contact sheets (all 144 pages) inspected; full pages 71 and 141-144 separately inspected. No clipped formulas/plots or missing separation found.",
+    "latex_diagnostic_scan": [],
+    "prefixes_checked": 27,
+    "ledger_generation_observed_exits": [
+      1,
+      0
+    ],
+    "ledger_generation_resolution": "First temporary generator used a bare vertical-bar separator that also occurred inside a mathematical absolute value. Replaced it with explicit Candidate/Confirmed and Final route field delimiters; regenerated all 104 entries and validated their IDs, JSON syntax and hashes successfully.",
+    "numerical_evidence_limit": "Passing samples and symbolic identities have the coverage stated in the current scripts; they are not an exhaustive theorem proof for every parameter."
+  }
+}

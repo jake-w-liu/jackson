@@ -1,0 +1,156 @@
+{
+  "chapter": 16,
+  "reviewer": "root",
+  "reviewed_at_utc": "2026-10-03T15:03:23.871307+00:00",
+  "audit_kind": "Fresh goal: full current-file first pass, then alternate-route/source/invariant final pass",
+  "problem_count": 13,
+  "section": "sections/ch16.tex",
+  "section_sha256": "8c0b351f416ce40af8048c33d9756f1f351dcbd6bc1f868522411a322f335283",
+  "script": "supplementary/check_ch16.py",
+  "script_sha256": "8bdd739eeb6d54a13744fbf3a65427a4b83b05cdd4326528dc69062563989490",
+  "source_pages_freshly_inspected": [
+    {
+      "file": "build/source_ch16/p-773.png",
+      "sha256": "f6ec81c06ece1f68570e347715d8e1ea12c8b26b5ebdb5035a94960206b6400f"
+    },
+    {
+      "file": "build/source_ch16/p-778.png",
+      "sha256": "88ebe870e111959345a77a3b8c5a72cc240a012c7530fc87aa8ca74495fd134a"
+    },
+    {
+      "file": "pages/p-794.png",
+      "sha256": "728364e99e464a5d276e79ad284411b742d5d00327844269bc6b6f489368141c"
+    },
+    {
+      "file": "pages/p-795.png",
+      "sha256": "1739fcad119371ff1a505a3ec4652a88afdc79f8ae87a846951438ba19d10ab2"
+    },
+    {
+      "file": "pages/p-796.png",
+      "sha256": "4a79b54ee0e61ebd377fc2bcce775cd522ffbfbdb432da06e419fd7cc8240d25"
+    },
+    {
+      "file": "pages/p-797.png",
+      "sha256": "88a9719745b6e59a5b6af226fb782977aa56721b7d74a8d02eb23647e96e2c5b"
+    },
+    {
+      "file": "pages/p-798.png",
+      "sha256": "27dea347948d8bc4012e74a573bab6f050765f5babb5469b66cee83719c185e7"
+    }
+  ],
+  "notation": "Jackson Gaussian units; (+---) metric; proper tau distinguished from defined radiation time tau_r; symmetric Fourier pair.",
+  "baseline": {
+    "command": [
+      "python3",
+      "-u",
+      "-W",
+      "error",
+      "supplementary/check_ch16.py"
+    ],
+    "exit_code": 0,
+    "log": "build/deep-debug-ch16-checks.log"
+  },
+  "new_alternate_probes": {
+    "command": [
+      "python3",
+      "-W",
+      "error",
+      "build/deep-debug-root-independent.py"
+    ],
+    "exit_code": 0,
+    "script_sha256": "ac3e4c3ab558d90d142e72c3372737152588c0a5657542578e79e7706ee174cb",
+    "results": "build/deep-debug-root-independent.json",
+    "results_sha256": "56d45f4924dd2aa847af9423d7984b62fa8ab6227fd50776eb4026a6fbec9538"
+  },
+  "dimensions": {
+    "mathematics_physics": "All statements, subparts, intermediate equations and claimed limits retraced in the current section; see per-problem records.",
+    "calculation_implementation": "Entire current chapter script read. Independent integral/ODE/symbolic routes, domains, tolerance scales, singular endpoints and numerical convergence examined; script executed with warnings as errors.",
+    "resources": "Standalone bounded calculations and local owned output files. No persistent server, external service or process lifecycle in chapter script; solver failure assertions and exceptions propagate.",
+    "performance": "No optimization target. Finite quadrature/mesh/root limits examined for accuracy and feasibility; observed suite completed successfully. Formal universal numerical certification is not claimed."
+  },
+  "candidate_findings": [],
+  "problems": [
+    {
+      "problem": "16.1",
+      "first_pass": "Orbit-averaged oscillator energy and vector-angular-momentum decay.",
+      "independent_final_pass": "Full Abraham-Lorentz roots give first-order rate with errors scaling as tau_r^2; reduced-order ODE angular momentum agrees independently.",
+      "final_status": "no further confirmed error"
+    },
+    {
+      "problem": "16.2",
+      "first_pass": "Circular shrinking law from separate energy/L equations, n rate and cascade times.",
+      "independent_final_pass": "Direct decreasing-n time integration stays positive; radius-cubed ODE, printed values and all mass/Z powers checked.",
+      "final_status": "no further confirmed error"
+    },
+    {
+      "problem": "16.3",
+      "first_pass": "Kepler time averages, secular rates, epsilon(L) and circularization.",
+      "independent_final_pass": "Coupled secular ODE independently preserves derived invariant; eccentricity limits 0,.5,.9 and circular reduction checked.",
+      "final_status": "no further confirmed error"
+    },
+    {
+      "problem": "16.4",
+      "first_pass": "Shell-pair kernel, removable zero, runaway threshold and Lambert roots.",
+      "independent_final_pass": "Independent angular/source integral and argument-principle winding verify pole count; h=1 real poles distinguished from strict damping.",
+      "final_status": "no further confirmed error"
+    },
+    {
+      "problem": "16.5",
+      "first_pass": "Symmetric Fourier normalization, retarded contour and initially resting step response.",
+      "independent_final_pass": "Source p.753 pair checked directly; causal delay solution reproduces first interval and Laplace transform, including m0=0 qualification.",
+      "final_status": "no further confirmed error"
+    },
+    {
+      "problem": "16.6",
+      "first_pass": "Exponential-cloud form factor, retarded mass integral and root trajectories.",
+      "independent_final_pass": "New causal gamma-memory ODE independently reproduces roots and step-response Laplace transform; pole versus response-zero distinction and h=1/2 checked.",
+      "final_status": "no further confirmed error"
+    },
+    {
+      "problem": "16.7",
+      "first_pass": "Mass-shell projection of jerk and covariant spatial signs.",
+      "independent_final_pass": "Lorentz transformation and contraction tests verify orthogonality; uniform proper acceleration gives exactly zero projected local jerk.",
+      "final_status": "no further confirmed error"
+    },
+    {
+      "problem": "16.8",
+      "first_pass": "One-dimensional invariant and rapidity reduction, arbitrary constant and nonrunaway condition.",
+      "independent_final_pass": "Numerical rapidity ODE agrees with integral general solution and original nonlinear momentum equation; initial momentum alone does not fix second datum.",
+      "final_status": "no further confirmed error"
+    },
+    {
+      "problem": "16.9",
+      "first_pass": "Projected external-force derivative and laboratory spatial reduction.",
+      "independent_final_pass": "Random general vector contractions reproduce cross-product bracket and force orthogonality; source p.772 confirms required reaction-time multiplier.",
+      "final_status": "no further confirmed error"
+    },
+    {
+      "problem": "16.10",
+      "first_pass": "Nonrunaway future-force integral, asymptotic derivative expansion and step onset.",
+      "independent_final_pass": "Direct integrals, smooth-force truncation refinement and factorial-divergence example checked; step acceleration/velocity distributions agree.",
+      "final_status": "no further confirmed error"
+    },
+    {
+      "problem": "16.11",
+      "first_pass": "Self-consistent finite-gap motion, crossing time, first-order changes and energy balance.",
+      "independent_final_pass": "Direct integrals include pre-entry radiation and v0=0 edge case; exact work equality and quadratic truncation errors verified.",
+      "final_status": "no further confirmed error"
+    },
+    {
+      "problem": "16.12",
+      "first_pass": "Poisson phase-loss correlation, Lorentzian width, sodium Doppler/collision estimates.",
+      "independent_final_pass": "Independent renewal-wave-train average and normalized Maxwell relative-speed integral reproduce widths; FWHM and pressure units checked consistently.",
+      "final_status": "no further confirmed error"
+    },
+    {
+      "problem": "16.13",
+      "first_pass": "Extinction from cycle-averaged work and high-frequency dipole sum.",
+      "independent_final_pass": "Multiple damped resonances and finite complex contours independently verify sum and arc sign; analyticity and asymptotic mass conditions remain explicit.",
+      "final_status": "no further confirmed error"
+    }
+  ],
+  "final_pass_clean": true,
+  "limitations": [
+    "Numerical checks cover stated probes; analytic derivation review supplies the remaining evidence. This is not a proof that no possible error exists."
+  ]
+}

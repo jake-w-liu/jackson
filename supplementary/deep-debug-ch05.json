@@ -1,0 +1,314 @@
+{
+  "chapter": 5,
+  "reviewer": "root",
+  "reviewed_at_utc": "2026-10-03T15:03:23.816646+00:00",
+  "audit_kind": "Fresh goal: full current-file first pass, then alternate-route/source/invariant final pass",
+  "problem_count": 36,
+  "section": "sections/ch05.tex",
+  "section_sha256": "5639893e51b2f92480b62f277ecfdec0f69fa8142a915211dd2e255ef8d9a63c",
+  "script": "supplementary/check_ch05.py",
+  "script_sha256": "a0598d67cadc308e5223b4dde0f857ce15aed243747fe6eaa71b73a1b735e1da",
+  "source_pages_freshly_inspected": [
+    {
+      "file": "pages/p-250.png",
+      "sha256": "261d826ffaaeaae5c35bf945a698b194e22c9b54e603f00199727f681991478b"
+    },
+    {
+      "file": "pages/p-251.png",
+      "sha256": "c5b6736bd80b5674e5ba6f440ae02b4fc7a297db41ffc3d9656bbfbdb3079f99"
+    },
+    {
+      "file": "pages/p-252.png",
+      "sha256": "26652d553f9e141220c5b1127edb6e378b3de894fe148011fcb81e2096e18454"
+    },
+    {
+      "file": "pages/p-253.png",
+      "sha256": "092be74637f1e5bb96ad9338006625e9861d7de03a1c1f3b35bec31238bfd540"
+    },
+    {
+      "file": "pages/p-254.png",
+      "sha256": "a0c01f9d89b1cc2a5b0eaa1ec3e9d0f94f72081bf99dfb4942768359b466fa4f"
+    },
+    {
+      "file": "pages/p-255.png",
+      "sha256": "17b8cd16b3686a936ea9c4b88fd0dcf299fc677630b08829937038fb7795d688"
+    },
+    {
+      "file": "pages/p-256.png",
+      "sha256": "8cc538a87910ac91ff08d79a0164e97b54bc72b952ca3bb1b355684c0026b76e"
+    },
+    {
+      "file": "pages/p-257.png",
+      "sha256": "d872b4906a1524c4931971323fd91f1be4fa024d9566b9a857b62ca8162d9219"
+    },
+    {
+      "file": "pages/p-258.png",
+      "sha256": "0a3fe1cc13413701a6acc51b42b5dceda91a4a68033469afa4e08308679d2e04"
+    },
+    {
+      "file": "pages/p-259.png",
+      "sha256": "2c6f9d61ea0f5b8a7abb906f1ac98b2aeb299827aa7d7310606b256ddd0b36d0"
+    },
+    {
+      "file": "pages/p-260.png",
+      "sha256": "30992b76fd1c838c82de15807be5d9d88ea260d1157f1de7b41ad997cbd11ee5"
+    },
+    {
+      "file": "build/deep-debug-sources/ch05-p261.png",
+      "sha256": "3d768bb4b5366e510c822819cdfdd11b9b234735eedf0da1afb52bf114563221"
+    }
+  ],
+  "notation": "Jackson SI units and phasor/source conventions explicitly preserved.",
+  "baseline": {
+    "command": [
+      "python3",
+      "-u",
+      "-W",
+      "error",
+      "supplementary/check_ch05.py"
+    ],
+    "exit_code": 0,
+    "log": "build/deep-debug-ch05-checks.log"
+  },
+  "new_alternate_probes": {
+    "command": [
+      "python3",
+      "-W",
+      "error",
+      "build/deep-debug-root-independent.py"
+    ],
+    "exit_code": 0,
+    "script_sha256": "ac3e4c3ab558d90d142e72c3372737152588c0a5657542578e79e7706ee174cb",
+    "results": "build/deep-debug-root-independent.json",
+    "results_sha256": "56d45f4924dd2aa847af9423d7984b62fa8ab6227fd50776eb4026a6fbec9538"
+  },
+  "dimensions": {
+    "mathematics_physics": "All statements, subparts, intermediate equations and claimed limits retraced in the current section; see per-problem records.",
+    "calculation_implementation": "Entire current chapter script read. Independent integral/ODE/symbolic routes, domains, tolerance scales, singular endpoints and numerical convergence examined; script executed with warnings as errors.",
+    "resources": "Standalone bounded calculations and local owned output files. No persistent server, external service or process lifecycle in chapter script; solver failure assertions and exceptions propagate.",
+    "performance": "No optimization target. Finite quadrature/mesh/root limits examined for accuracy and feasibility; observed suite completed successfully. Formal universal numerical certification is not claimed."
+  },
+  "candidate_findings": [],
+  "problems": [
+    {
+      "problem": "5.1",
+      "first_pass": "Component Stokes contraction, gradient signs and solid-angle branch.",
+      "independent_final_pass": "New scalene-triangle solid angle gradient agrees with direct Biot-Savart line integral in all components to 2e-13.",
+      "final_status": "no further confirmed error"
+    },
+    {
+      "problem": "5.2",
+      "first_pass": "Arbitrary-section solenoid solid-angle jump and averaged helical currents.",
+      "independent_final_pass": "Inside/outside Ampere contours check axial versus azimuthal fields; the omitted return lead and turn ripple are explicitly qualified.",
+      "final_status": "no further confirmed error"
+    },
+    {
+      "problem": "5.3",
+      "first_pass": "Single-loop cross product and finite-stack axial integral.",
+      "independent_final_pass": "Differentiated the elementary antiderivative; signed end cosines, symmetry and infinite-solenoid limits checked.",
+      "final_status": "no further confirmed error"
+    },
+    {
+      "problem": "5.4",
+      "first_pass": "Divergence/curl recurrence for regular axial fields.",
+      "independent_final_pass": "Symbolic truncated fields satisfy both Maxwell equations to retained order; first omitted powers and near-axis criterion are explicit.",
+      "final_status": "no further confirmed error"
+    },
+    {
+      "problem": "5.5",
+      "first_pass": "Long-solenoid central and end expansions and sheet jump.",
+      "independent_final_pass": "Source p.226 confirms plus sign of axis end contributions; coefficients, wall subtraction and helical-field ratio checked by expansion and dimensions.",
+      "final_status": "no further confirmed error"
+    },
+    {
+      "problem": "5.6",
+      "first_pass": "Superposed full cylinder and opposite-current hole.",
+      "independent_final_pass": "Difference cancels observation coordinate exactly; centered-hole limit and total-current normalization give expected uniform field.",
+      "final_status": "no further confirmed error"
+    },
+    {
+      "problem": "5.7",
+      "first_pass": "Exact two-loop sum, small- and large-distance coefficients and Helmholtz tolerances.",
+      "independent_final_pass": "Current symbolic derivatives and numerical exact-field roots verify both series and printed central-interval limits.",
+      "final_status": "no further confirmed error"
+    },
+    {
+      "problem": "5.8",
+      "first_pass": "Azimuthal projection of Coulomb addition theorem and moment factors.",
+      "independent_final_pass": "Only m=1 survives, with Condon-Shortley sign and L>=1; convergence restricted to interior/exterior source-free spheres.",
+      "final_status": "no further confirmed error"
+    },
+    {
+      "problem": "5.9",
+      "first_pass": "Ring delta measure, odd-order moments and axial reconstruction.",
+      "independent_final_pass": "Source-point Legendre evaluation and exact two-loop expansion independently agree through z^4 for generic and Helmholtz geometries.",
+      "final_status": "no further confirmed error"
+    },
+    {
+      "problem": "5.10",
+      "first_pass": "Both cylindrical Green representations, curls and on-axis integrals.",
+      "independent_final_pass": "Fresh baseline compares ordinary/modified Bessel integrals with direct loop potential off axis; scaled functions avoid overflow.",
+      "final_status": "no further confirmed error"
+    },
+    {
+      "problem": "5.11",
+      "first_pass": "Exact affine-field Lorentz force, circle torque and general centroid correction.",
+      "independent_final_pass": "New off-center scalene-triangle line integrations verify both force and centroid-dependent torque beyond the original circle check.",
+      "final_status": "no further confirmed error"
+    },
+    {
+      "problem": "5.12",
+      "first_pass": "Tilted-loop flux, mutual-inductance derivative and signed torque.",
+      "independent_final_pass": "Direct Neumann-integral derivative checks the series; positive coefficient argument establishes alignment for all allowed acute tilts.",
+      "final_status": "no further confirmed error"
+    },
+    {
+      "problem": "5.13",
+      "first_pass": "Rotating shell current, vector-potential matching and magnetic moment.",
+      "independent_final_pass": "Independent moment surface integral and normal/tangential field jumps recover the uniform interior and exterior dipole coefficients.",
+      "final_status": "no further confirmed error"
+    },
+    {
+      "problem": "5.14",
+      "first_pass": "Four magnetic interface equations and induction in each region.",
+      "independent_final_pass": "Symbolic residuals, kappa=1, reciprocal permeability and thin-shell limits check field and shielding curves.",
+      "final_status": "no further confirmed error"
+    },
+    {
+      "problem": "5.15",
+      "first_pass": "Local two-wire potential, dipole matching and finite-thickness shielding.",
+      "independent_final_pass": "New numerical solve of all four interface equations for three permeability regimes reproduces coefficients; exact and thin estimates distinguished.",
+      "final_status": "no further confirmed error"
+    },
+    {
+      "problem": "5.16",
+      "first_pass": "Spherical iron reaction multipoles and proposed image loop.",
+      "independent_final_pass": "l=1 and l=3 boundary equations demand incompatible exact image radii; center correction remains exact while uniform-field image is approximate.",
+      "final_status": "no further confirmed error"
+    },
+    {
+      "problem": "5.17",
+      "first_pass": "Reflection of polar currents and axial magnetic fields.",
+      "independent_final_pass": "Actual inclined-loop Biot-Savart fields satisfy normal B and tangential H transmission at unrelated interface points.",
+      "final_status": "no further confirmed error"
+    },
+    {
+      "problem": "5.18",
+      "first_pass": "Image-loop forces, elliptic derivative, coplanar series and dipole limits.",
+      "independent_final_pass": "New direct Lorentz force in each image field verifies signs, magnitude and absence of transverse components without differentiating image position twice.",
+      "final_status": "no further confirmed error"
+    },
+    {
+      "problem": "5.19",
+      "first_pass": "Uniform cylinder magnetization, bound current and axial H/B.",
+      "independent_final_pass": "Source/constitutive relation checks continuity of B and jumps of H; center/end numeric values and plot branches agree.",
+      "final_status": "no further confirmed error"
+    },
+    {
+      "problem": "5.20",
+      "first_pass": "Integration by parts of volume and surface bound-current forces.",
+      "independent_final_pass": "Boundary terms cancel, divergence/curl hypotheses are explicit; affine-field force equals the independent loop result with m=volume*M.",
+      "final_status": "no further confirmed error"
+    },
+    {
+      "problem": "5.21",
+      "first_pass": "All-space B dot H identity and permanent-magnet energy constant.",
+      "independent_final_pass": "Direct magnetized-sphere interior/exterior integral cancels; orientation-independent M^2 term is removed only for fixed magnetizations.",
+      "final_status": "no further confirmed error"
+    },
+    {
+      "problem": "5.22",
+      "first_pass": "Contact-gap image sheets and normal stress.",
+      "independent_final_pass": "External-image field supplies exactly half the total gap field; electrostatic pressure analogy confirms the factor one half.",
+      "final_status": "no further confirmed error"
+    },
+    {
+      "problem": "5.23",
+      "first_pass": "Disk-overlap force, integration by parts and elliptic reduction.",
+      "independent_final_pass": "Independent Bessel-transform force agrees at three aspect ratios; four image pairs and long-bar limit reproduce pressure times area.",
+      "final_status": "no further confirmed error"
+    },
+    {
+      "problem": "5.24",
+      "first_pass": "Damped Bessel aperture integral, plane potential and surface currents.",
+      "independent_final_pass": "Differentiated f(rho) independently, checked streamfunction signs on each face and the integrable rim singularity.",
+      "final_status": "no further confirmed error"
+    },
+    {
+      "problem": "5.25",
+      "first_pass": "Rectangular and circular flux, full vector force and source-work sign.",
+      "independent_final_pass": "New direct line-force quadrature also covers radius greater than center distance at nonzero tilt; signed square-root continuation gives agreement.",
+      "final_status": "no further confirmed error"
+    },
+    {
+      "problem": "5.26",
+      "first_pass": "Uniform-disk logarithmic self/cross averages and inductance.",
+      "independent_final_pass": "Double-disk quadrature independently gives log(d); internal terms are mu0/(8pi) each and exactness requires prescribed uniform current.",
+      "final_status": "no further confirmed error"
+    },
+    {
+      "problem": "5.27",
+      "first_pass": "Piecewise coaxial field and energy integrals.",
+      "independent_final_pass": "Tube limit removes exactly the inner-volume energy; outer thin sheet adds none and outside net-current field vanishes.",
+      "final_status": "no further confirmed error"
+    },
+    {
+      "problem": "5.28",
+      "first_pass": "Neumann circle integral and elliptic normalization.",
+      "independent_final_pass": "Direct line quadrature matches the corrected modulus; near-coincidence asymptotic and dimensions verified with wire-radius cutoff qualification.",
+      "final_status": "no further confirmed error"
+    },
+    {
+      "problem": "5.29",
+      "first_pass": "Rotated transverse electrostatic field and energy proof of L'C'=mu*epsilon.",
+      "independent_final_pass": "Circulation fixes normalization independently; internal inductance and trapped flux are excluded explicitly.",
+      "final_status": "no further confirmed error"
+    },
+    {
+      "problem": "5.30",
+      "first_pass": "Cosine axial sheath, tangential field jump and equal energy division.",
+      "independent_final_pass": "Positive sheet-current integral is I; independent radial energy integrations produce the stated circuit inductance.",
+      "final_status": "no further confirmed error"
+    },
+    {
+      "problem": "5.31",
+      "first_pass": "Infinite-permeability wall, current jump and iron enhancement.",
+      "independent_final_pass": "Boundary solution and radial energy integration confirm increased interior energy, decreased exterior energy and N^2 current normalization.",
+      "final_status": "no further confirmed error"
+    },
+    {
+      "problem": "5.32",
+      "first_pass": "Filament elliptic potential, local uniform-current matching and thin-wire inductance.",
+      "independent_final_pass": "Derivative matching and disk average recover -7/4 versus -2 constants; all linear curvature terms average to zero.",
+      "final_status": "no further confirmed error"
+    },
+    {
+      "problem": "5.33",
+      "first_pass": "Closed-loop Lorentz force to gradient of Neumann integral.",
+      "independent_final_pass": "Exact differential integrates to zero; kernel harmonic only for disjoint loops, with delta-source term retained at intersections.",
+      "final_status": "no further confirmed error"
+    },
+    {
+      "problem": "5.34",
+      "first_pass": "Squared-Bessel convolution, Laplace moments and harmonic continuation.",
+      "independent_final_pass": "Independent coaxial/coplanar line integrals match series; differentiated coefficients agree with image-loop dipole forces.",
+      "final_status": "no further confirmed error"
+    },
+    {
+      "problem": "5.35",
+      "first_pass": "Spherical diffusion transform, central field, energy and growing spatial scale.",
+      "independent_final_pass": "Heat convolution and spectral integrals agree independently; initial energy and long-time power laws have correct normalization and volume scaling.",
+      "final_status": "no further confirmed error"
+    },
+    {
+      "problem": "5.36",
+      "first_pass": "Induced azimuthal electric field, initial current distribution and dissipation.",
+      "independent_final_pass": "Spectral power equals negative magnetic-energy derivative; electric-energy correction and displacement current share epsilon0/(sigma*T) order.",
+      "final_status": "no further confirmed error"
+    }
+  ],
+  "final_pass_clean": true,
+  "limitations": [
+    "Numerical checks cover stated probes; analytic derivation review supplies the remaining evidence. This is not a proof that no possible error exists."
+  ]
+}

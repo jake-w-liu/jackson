@@ -1,0 +1,421 @@
+{
+  "chapter": 11,
+  "review": "Fresh independent mathematical, pedagogical and notation retrace of every problem and subpart",
+  "source": "Jackson 3rd ed.; PDF page=printed page+25; theory scans /private/tmp/jackson_ch11_reference; problem scans pages/p-593.png through p-603.png.",
+  "test_command": "python3 -W error supplementary/check_ch11.py",
+  "problems": [
+    {
+      "problem": "11.1",
+      "status": "reviewed",
+      "mathematics_checked": "Used translation homogeneity and continuity to prove linearity, isotropy/inversion to fix transverse scale, and inverse consistency plus a limiting speed to fix f,g,h.",
+      "derivation_changes": "No new algebra needed; signed velocity, continuous identity branch and C identification checked.",
+      "notation_check": "Jackson Gaussian units, g=diag(1,−1,−1,−1) (p.542 Eq.11.69; p.544 Eq.11.81), A^α=(A0,A), A_α=(A0,−A) (p.542 Eq.11.75), F^{0i}=−E_i, F^{ij}=−ε_ijk B_k (p.556 Eq.11.137), dual e^{0123}=+1 (p.556 Eq.11.140). Passive boost signs match p.558 Eq.11.149. Spatial Cartesian indices are Euclidean labels; kinematic c=1 is explicitly stated.",
+      "source_evidence": [
+        "Problem11.1, printed pp.568.",
+        "pp.524–526 Eqs.(11.14)–(11.22)."
+      ],
+      "independent_check": "python3 -W error supplementary/check_ch11.py; check_1_8 (plus new symbolic factorization/null-cluster check for11.20–21)",
+      "remaining_limitations": "Continuity excludes pathological additive maps."
+    },
+    {
+      "problem": "11.2",
+      "status": "reviewed",
+      "mathematics_checked": "Composed general collinear maps and equated both diagonal entries, obtaining one signed κ=h/f and its dimensions.",
+      "derivation_changes": "No new algebra needed; the stronger signed result and Galilean/negative-κ cases are already explained.",
+      "notation_check": "Jackson Gaussian units, g=diag(1,−1,−1,−1) (p.542 Eq.11.69; p.544 Eq.11.81), A^α=(A0,A), A_α=(A0,−A) (p.542 Eq.11.75), F^{0i}=−E_i, F^{ij}=−ε_ijk B_k (p.556 Eq.11.137), dual e^{0123}=+1 (p.556 Eq.11.140). Passive boost signs match p.558 Eq.11.149. Spatial Cartesian indices are Euclidean labels; kinematic c=1 is explicitly stated.",
+      "source_evidence": [
+        "Problem11.2, printed pp.568.",
+        "Problem11.2, p.568; pp.525–526 Lorentz map conventions."
+      ],
+      "independent_check": "python3 -W error supplementary/check_ch11.py; check_1_8 (plus new symbolic factorization/null-cluster check for11.20–21)",
+      "remaining_limitations": "A negative κ has only a locally single-valued velocity chart; experiment selects κ>0."
+    },
+    {
+      "problem": "11.3",
+      "status": "reviewed",
+      "mathematics_checked": "Multiplied the two boost matrices and verified the common Lorentz factor, velocity addition and unchanged transverse coordinates.",
+      "derivation_changes": "No mathematical change needed.",
+      "notation_check": "Jackson Gaussian units, g=diag(1,−1,−1,−1) (p.542 Eq.11.69; p.544 Eq.11.81), A^α=(A0,A), A_α=(A0,−A) (p.542 Eq.11.75), F^{0i}=−E_i, F^{ij}=−ε_ijk B_k (p.556 Eq.11.137), dual e^{0123}=+1 (p.556 Eq.11.140). Passive boost signs match p.558 Eq.11.149. Spatial Cartesian indices are Euclidean labels; kinematic c=1 is explicitly stated.",
+      "source_evidence": [
+        "Problem11.3, printed pp.568.",
+        "p.531 Eqs.(11.31)–(11.32); p.526 Eq.(11.22)."
+      ],
+      "independent_check": "python3 -W error supplementary/check_ch11.py; check_1_8 (plus new symbolic factorization/null-cluster check for11.20–21)",
+      "remaining_limitations": "Collinear boosts only; noncollinear boosts also rotate axes."
+    },
+    {
+      "problem": "11.4",
+      "status": "reviewed",
+      "mathematics_checked": "Intersected both light rays with moving source/mirror world lines for transverse and longitudinal clocks, including length contraction.",
+      "derivation_changes": "Reversed two incorrectly transcribed diagram arrows to source F→M→P and marked the restoration.",
+      "notation_check": "Jackson Gaussian units, g=diag(1,−1,−1,−1) (p.542 Eq.11.69; p.544 Eq.11.81), A^α=(A0,A), A_α=(A0,−A) (p.542 Eq.11.75), F^{0i}=−E_i, F^{ij}=−ε_ijk B_k (p.556 Eq.11.137), dual e^{0123}=+1 (p.556 Eq.11.140). Passive boost signs match p.558 Eq.11.149. Spatial Cartesian indices are Euclidean labels; kinematic c=1 is explicitly stated.",
+      "source_evidence": [
+        "Problem11.4, printed pp.568–569.",
+        "Problem11.4 figure, p.569 (pages/p-594.png); p.528 time-dilation/length-contraction discussion."
+      ],
+      "independent_check": "python3 -W error supplementary/check_ch11.py; check_1_8 (plus new symbolic factorization/null-cluster check for11.20–21)",
+      "remaining_limitations": "Clock delay in its internal electronics is neglected, as stipulated."
+    },
+    {
+      "problem": "11.5",
+      "status": "reviewed",
+      "mathematics_checked": "Differentiated the velocity transformation with dt=γ(1+v·u′/c²)dt′ and reduced the cross-product numerator.",
+      "derivation_changes": "No mathematical change needed.",
+      "notation_check": "Jackson Gaussian units, g=diag(1,−1,−1,−1) (p.542 Eq.11.69; p.544 Eq.11.81), A^α=(A0,A), A_α=(A0,−A) (p.542 Eq.11.75), F^{0i}=−E_i, F^{ij}=−ε_ijk B_k (p.556 Eq.11.137), dual e^{0123}=+1 (p.556 Eq.11.140). Passive boost signs match p.558 Eq.11.149. Spatial Cartesian indices are Euclidean labels; kinematic c=1 is explicitly stated.",
+      "source_evidence": [
+        "Problem11.5, printed pp.569.",
+        "p.531 Eqs.(11.31)–(11.32)."
+      ],
+      "independent_check": "python3 -W error supplementary/check_ch11.py; check_1_8 (plus new symbolic factorization/null-cluster check for11.20–21)",
+      "remaining_limitations": "Acceleration components are compared at the same event."
+    },
+    {
+      "problem": "11.6",
+      "status": "reviewed",
+      "mathematics_checked": "Integrated four constant-proper-acceleration legs in rapidity, checking displacement cancellation and the maximum excursion.",
+      "derivation_changes": "No mathematical change needed; numerical year convention is explicit.",
+      "notation_check": "Jackson Gaussian units, g=diag(1,−1,−1,−1) (p.542 Eq.11.69; p.544 Eq.11.81), A^α=(A0,A), A_α=(A0,−A) (p.542 Eq.11.75), F^{0i}=−E_i, F^{ij}=−ε_ijk B_k (p.556 Eq.11.137), dual e^{0123}=+1 (p.556 Eq.11.140). Passive boost signs match p.558 Eq.11.149. Spatial Cartesian indices are Euclidean labels; kinematic c=1 is explicitly stated.",
+      "source_evidence": [
+        "Problem11.6, printed pp.569.",
+        "p.528 Eqs.(11.26)–(11.27), proper time; Problem11.6, p.569."
+      ],
+      "independent_check": "python3 -W error supplementary/check_ch11.py; check_1_8 (plus new symbolic factorization/null-cluster check for11.20–21)",
+      "remaining_limitations": "Quoted years use g=9.80665 m/s² and a Julian year; these choices affect the last digits."
+    },
+    {
+      "problem": "11.7",
+      "status": "reviewed",
+      "mathematics_checked": "Classified the two start events by interval, constructed simultaneous/coincident frames, and transformed the runners' world lines including null boundaries.",
+      "derivation_changes": "No mathematical change needed.",
+      "notation_check": "Jackson Gaussian units, g=diag(1,−1,−1,−1) (p.542 Eq.11.69; p.544 Eq.11.81), A^α=(A0,A), A_α=(A0,−A) (p.542 Eq.11.75), F^{0i}=−E_i, F^{ij}=−ε_ijk B_k (p.556 Eq.11.137), dual e^{0123}=+1 (p.556 Eq.11.140). Passive boost signs match p.558 Eq.11.149. Spatial Cartesian indices are Euclidean labels; kinematic c=1 is explicitly stated.",
+      "source_evidence": [
+        "Problem11.7, printed pp.569–570.",
+        "pp.525–526 Eq.(11.22); p.542 Eq.(11.69)."
+      ],
+      "independent_check": "python3 -W error supplementary/check_ch11.py; check_1_8 (plus new symbolic factorization/null-cluster check for11.20–21)",
+      "remaining_limitations": "A null nonzero separation cannot be made simultaneous or colocated by a finite subluminal boost."
+    },
+    {
+      "problem": "11.8",
+      "status": "reviewed",
+      "mathematics_checked": "Expanded Doppler-shifted material index and velocity denominator independently; derived phase shift and ring beat frequency with group optical length.",
+      "derivation_changes": "Corrected the frequency-shift remainder to O(ωv²/c²); retained the explicit inaccessible-1964-paper qualification.",
+      "notation_check": "Jackson Gaussian units, g=diag(1,−1,−1,−1) (p.542 Eq.11.69; p.544 Eq.11.81), A^α=(A0,A), A_α=(A0,−A) (p.542 Eq.11.75), F^{0i}=−E_i, F^{ij}=−ε_ijk B_k (p.556 Eq.11.137), dual e^{0123}=+1 (p.556 Eq.11.140). Passive boost signs match p.558 Eq.11.149. Spatial Cartesian indices are Euclidean labels; kinematic c=1 is explicitly stated.",
+      "source_evidence": [
+        "Problem11.8, printed pp.570.",
+        "Problem11.8, p.570; pp.529–530 Eqs.(11.28)–(11.30), phase/wave-vector transformation; Bilger–Zavodny DOI10.1103/PhysRevA.5.591 abstract; Lahaye et al. DOI10.1119/1.3690117 pp.498–499 Eqs.5–7, independently reopened."
+      ],
+      "independent_check": "python3 -W error supplementary/check_ch11.py; check_1_8 (plus new symbolic factorization/null-cluster check for11.20–21)",
+      "remaining_limitations": "Macek et al.1964 full text remains unread; no accuracy or data is attributed to it. The accessible 1972 abstract and 2012 paper support the reported experimental assessment."
+    },
+    {
+      "problem": "11.9",
+      "status": "reviewed",
+      "mathematics_checked": "Expanded A^T g A to first order, distinguished mixed from raised indices and reconstructed Jackson's generator matrix.",
+      "derivation_changes": "No mathematical change needed.",
+      "notation_check": "Jackson Gaussian units, g=diag(1,−1,−1,−1) (p.542 Eq.11.69; p.544 Eq.11.81), A^α=(A0,A), A_α=(A0,−A) (p.542 Eq.11.75), F^{0i}=−E_i, F^{ij}=−ε_ijk B_k (p.556 Eq.11.137), dual e^{0123}=+1 (p.556 Eq.11.140). Passive boost signs match p.558 Eq.11.149. Spatial Cartesian indices are Euclidean labels; kinematic c=1 is explicitly stated.",
+      "source_evidence": [
+        "Problem11.9, printed pp.570.",
+        "p.544 Eq.(11.86); pp.545–546 Eqs.(11.90)–(11.93)."
+      ],
+      "independent_check": "python3 -W error supplementary/check_ch11.py; check_9_18 (plus new symbolic factorization/null-cluster check for11.20–21)",
+      "remaining_limitations": "Index raising flips spatial signs; Euclidean spatial component labels are separately defined."
+    },
+    {
+      "problem": "11.10",
+      "status": "reviewed",
+      "mathematics_checked": "Acted rotation/boost generators on arbitrary four-vectors to establish cubic identities and summed the exponential into sinh/cosh.",
+      "derivation_changes": "No mathematical change needed.",
+      "notation_check": "Jackson Gaussian units, g=diag(1,−1,−1,−1) (p.542 Eq.11.69; p.544 Eq.11.81), A^α=(A0,A), A_α=(A0,−A) (p.542 Eq.11.75), F^{0i}=−E_i, F^{ij}=−ε_ijk B_k (p.556 Eq.11.137), dual e^{0123}=+1 (p.556 Eq.11.140). Passive boost signs match p.558 Eq.11.149. Spatial Cartesian indices are Euclidean labels; kinematic c=1 is explicitly stated.",
+      "source_evidence": [
+        "Problem11.10, printed pp.570.",
+        "pp.545–547 Eqs.(11.90)–(11.98)."
+      ],
+      "independent_check": "python3 -W error supplementary/check_ch11.py; check_9_18 (plus new symbolic factorization/null-cluster check for11.20–21)",
+      "remaining_limitations": "The displayed axes are real unit three-vectors."
+    },
+    {
+      "problem": "11.11",
+      "status": "reviewed",
+      "mathematics_checked": "Derived the differential equation for e^{λ(L+δL)}e^{−λL}, integrated the conjugation operator and expanded nested commutators.",
+      "derivation_changes": "No mathematical change needed; first order in δL versus all orders in L is explicit.",
+      "notation_check": "Jackson Gaussian units, g=diag(1,−1,−1,−1) (p.542 Eq.11.69; p.544 Eq.11.81), A^α=(A0,A), A_α=(A0,−A) (p.542 Eq.11.75), F^{0i}=−E_i, F^{ij}=−ε_ijk B_k (p.556 Eq.11.137), dual e^{0123}=+1 (p.556 Eq.11.140). Passive boost signs match p.558 Eq.11.149. Spatial Cartesian indices are Euclidean labels; kinematic c=1 is explicitly stated.",
+      "source_evidence": [
+        "Problem11.11, printed pp.570.",
+        "Problem11.11, p.570; p.547 Eq.(11.98)."
+      ],
+      "independent_check": "python3 -W error supplementary/check_ch11.py; check_9_18 (plus new symbolic factorization/null-cluster check for11.20–21)",
+      "remaining_limitations": "The expansion is only linear in the variation, while finite L is unrestricted."
+    },
+    {
+      "problem": "11.12",
+      "status": "reviewed",
+      "mathematics_checked": "Differentiated rapidity-axis parameters, iterated boost/rotation commutators and summed the Thomas rotation coefficient.",
+      "derivation_changes": "No new algebra; the prior typographic derivation erratum is preserved.",
+      "notation_check": "Jackson Gaussian units, g=diag(1,−1,−1,−1) (p.542 Eq.11.69; p.544 Eq.11.81), A^α=(A0,A), A_α=(A0,−A) (p.542 Eq.11.75), F^{0i}=−E_i, F^{ij}=−ε_ijk B_k (p.556 Eq.11.137), dual e^{0123}=+1 (p.556 Eq.11.140). Passive boost signs match p.558 Eq.11.149. Spatial Cartesian indices are Euclidean labels; kinematic c=1 is explicitly stated.",
+      "source_evidence": [
+        "Problem11.12, printed pp.571.",
+        "p.548 Eq.(11.99); pp.550–551 Eq.(11.116); Problem11.12, p.571."
+      ],
+      "independent_check": "python3 -W error supplementary/check_ch11.py; check_9_18 (plus new symbolic factorization/null-cluster check for11.20–21)",
+      "remaining_limitations": "Passive coordinate-rotation sign is opposite the corresponding physical active rotation."
+    },
+    {
+      "problem": "11.13",
+      "status": "reviewed",
+      "mathematics_checked": "Boosted the rest-frame line field/current and verified laboratory Gauss and Ampère fluxes.",
+      "derivation_changes": "No mathematical change needed.",
+      "notation_check": "Jackson Gaussian units, g=diag(1,−1,−1,−1) (p.542 Eq.11.69; p.544 Eq.11.81), A^α=(A0,A), A_α=(A0,−A) (p.542 Eq.11.75), F^{0i}=−E_i, F^{ij}=−ε_ijk B_k (p.556 Eq.11.137), dual e^{0123}=+1 (p.556 Eq.11.140). Passive boost signs match p.558 Eq.11.149. Spatial Cartesian indices are Euclidean labels; kinematic c=1 is explicitly stated.",
+      "source_evidence": [
+        "Problem11.13, printed pp.571.",
+        "pp.554–555 four-current; p.558 Eq.(11.149); Problem11.13, p.571."
+      ],
+      "independent_check": "python3 -W error supplementary/check_ch11.py; check_9_18 (plus new symbolic factorization/null-cluster check for11.20–21)",
+      "remaining_limitations": "Infinite straight wire, with rest linear charge density q0."
+    },
+    {
+      "problem": "11.14",
+      "status": "reviewed",
+      "mathematics_checked": "Contracted F, dual F and G explicitly; derived local magnetic-dominance conditions and the boost that eliminates E.",
+      "derivation_changes": "Qualified the zero-E criterion as pointwise; a single global inertial frame requires the same boost to work throughout the region.",
+      "notation_check": "Jackson Gaussian units, g=diag(1,−1,−1,−1) (p.542 Eq.11.69; p.544 Eq.11.81), A^α=(A0,A), A_α=(A0,−A) (p.542 Eq.11.75), F^{0i}=−E_i, F^{ij}=−ε_ijk B_k (p.556 Eq.11.137), dual e^{0123}=+1 (p.556 Eq.11.140). Passive boost signs match p.558 Eq.11.149. Spatial Cartesian indices are Euclidean labels; kinematic c=1 is explicitly stated.",
+      "source_evidence": [
+        "Problem11.14, printed pp.571.",
+        "pp.556–557 Eqs.(11.137)–(11.145); p.558 Eq.(11.149)."
+      ],
+      "independent_check": "python3 -W error supplementary/check_ch11.py; check_9_18 (plus new symbolic factorization/null-cluster check for11.20–21)",
+      "remaining_limitations": "No claim that arbitrary nonuniform magnetic-dominated fields share one global zero-E frame."
+    },
+    {
+      "problem": "11.15",
+      "status": "reviewed",
+      "mathematics_checked": "Solved E′×B′=0 for the physical z boost, chose the subluminal branch and used invariants to recover field magnitudes and both endpoint limits.",
+      "derivation_changes": "Made small-angle field remainders dimensionally explicit as O(E0θ²).",
+      "notation_check": "Jackson Gaussian units, g=diag(1,−1,−1,−1) (p.542 Eq.11.69; p.544 Eq.11.81), A^α=(A0,A), A_α=(A0,−A) (p.542 Eq.11.75), F^{0i}=−E_i, F^{ij}=−ε_ijk B_k (p.556 Eq.11.137), dual e^{0123}=+1 (p.556 Eq.11.140). Passive boost signs match p.558 Eq.11.149. Spatial Cartesian indices are Euclidean labels; kinematic c=1 is explicitly stated.",
+      "source_evidence": [
+        "Problem11.15, printed pp.571.",
+        "p.558 Eq.(11.149); Problem11.15, p.571."
+      ],
+      "independent_check": "python3 -W error supplementary/check_ch11.py; check_9_18 (plus new symbolic factorization/null-cluster check for11.20–21)",
+      "remaining_limitations": "Other frames reached by boosts along the common field preserve its collinearity."
+    },
+    {
+      "problem": "11.16",
+      "status": "reviewed",
+      "mathematics_checked": "Projected four-current orthogonally to U to construct covariant Ohm's law and recovered the laboratory three-current and neutral-rest-frame charge.",
+      "derivation_changes": "No mathematical change; reverified the prior c factor correction to the cross-chapter SI reference.",
+      "notation_check": "Jackson Gaussian units, g=diag(1,−1,−1,−1) (p.542 Eq.11.69; p.544 Eq.11.81), A^α=(A0,A), A_α=(A0,−A) (p.542 Eq.11.75), F^{0i}=−E_i, F^{ij}=−ε_ijk B_k (p.556 Eq.11.137), dual e^{0123}=+1 (p.556 Eq.11.140). Passive boost signs match p.558 Eq.11.149. Spatial Cartesian indices are Euclidean labels; kinematic c=1 is explicitly stated.",
+      "source_evidence": [
+        "Problem11.16, printed pp.572.",
+        "p.557 Eq.(11.144), Gaussian Lorentz force; p.558 Eq.(11.149); Problem11.16, p.572."
+      ],
+      "independent_check": "python3 -W error supplementary/check_ch11.py; check_9_18 (plus new symbolic factorization/null-cluster check for11.20–21)",
+      "remaining_limitations": "σ is the scalar local rest-frame conductivity; the convective current is treated separately."
+    },
+    {
+      "problem": "11.17",
+      "status": "reviewed",
+      "mathematics_checked": "Constructed the Coulomb antisymmetric tensor from event separation and U, then proved the simultaneous/proper/retarded separation forms equivalent.",
+      "derivation_changes": "No new algebra; preserved the ordinary-tensor qualification that excludes adding the dual without physical input.",
+      "notation_check": "Jackson Gaussian units, g=diag(1,−1,−1,−1) (p.542 Eq.11.69; p.544 Eq.11.81), A^α=(A0,A), A_α=(A0,−A) (p.542 Eq.11.75), F^{0i}=−E_i, F^{ij}=−ε_ijk B_k (p.556 Eq.11.137), dual e^{0123}=+1 (p.556 Eq.11.140). Passive boost signs match p.558 Eq.11.149. Spatial Cartesian indices are Euclidean labels; kinematic c=1 is explicitly stated.",
+      "source_evidence": [
+        "Problem11.17, printed pp.572.",
+        "pp.556–559 Eqs.(11.137),(11.149),(11.152); Problem11.17, p.572."
+      ],
+      "independent_check": "python3 -W error supplementary/check_ch11.py; check_9_18 (plus new symbolic factorization/null-cluster check for11.20–21)",
+      "remaining_limitations": "Uniform motion; the specified Coulomb rest-frame field excludes a magnetic dual contribution."
+    },
+    {
+      "problem": "11.18",
+      "status": "reviewed",
+      "mathematics_checked": "Took the moving-charge field limit as a distribution against a test function, checked transverse flux and differentiated both gauges.",
+      "derivation_changes": "No mathematical change needed.",
+      "notation_check": "Jackson Gaussian units, g=diag(1,−1,−1,−1) (p.542 Eq.11.69; p.544 Eq.11.81), A^α=(A0,A), A_α=(A0,−A) (p.542 Eq.11.75), F^{0i}=−E_i, F^{ij}=−ε_ijk B_k (p.556 Eq.11.137), dual e^{0123}=+1 (p.556 Eq.11.140). Passive boost signs match p.558 Eq.11.149. Spatial Cartesian indices are Euclidean labels; kinematic c=1 is explicitly stated.",
+      "source_evidence": [
+        "Problem11.18, printed pp.573.",
+        "p.559 Eq.(11.152); Problem11.18, p.573."
+      ],
+      "independent_check": "python3 -W error supplementary/check_ch11.py; check_9_18 (plus new symbolic factorization/null-cluster check for11.20–21)",
+      "remaining_limitations": "Auxiliary transverse D is explicitly not material displacement; fields are distributions, not pointwise functions on the sheet."
+    },
+    {
+      "problem": "11.19",
+      "status": "reviewed",
+      "mathematics_checked": "Used daughter mass shells and scalar products to derive two-body energies/momenta and pion-decay numerical values.",
+      "derivation_changes": "No mathematical change needed.",
+      "notation_check": "Jackson Gaussian units, g=diag(1,−1,−1,−1) (p.542 Eq.11.69; p.544 Eq.11.81), A^α=(A0,A), A_α=(A0,−A) (p.542 Eq.11.75), F^{0i}=−E_i, F^{ij}=−ε_ijk B_k (p.556 Eq.11.137), dual e^{0123}=+1 (p.556 Eq.11.140). Passive boost signs match p.558 Eq.11.149. Spatial Cartesian indices are Euclidean labels; kinematic c=1 is explicitly stated.",
+      "source_evidence": [
+        "Problem11.19, printed pp.573.",
+        "p.538 Eqs.(11.54)–(11.55); Problem11.19, p.573."
+      ],
+      "independent_check": "python3 -W error supplementary/check_ch11.py; check_19_26 (plus new symbolic factorization/null-cluster check for11.20–21)",
+      "remaining_limitations": "A two-body channel requires M≥m1+m2."
+    },
+    {
+      "problem": "11.20",
+      "status": "reviewed",
+      "mathematics_checked": "Boosted both daughter four-momenta, derived the laboratory opening-angle stationary cubic and independently optimized it numerically.",
+      "derivation_changes": "Inserted the previously skipped polynomial factorization yielding (a+b)[(κ²−1)u³+(2−ab−κ²)u+a−b].",
+      "notation_check": "Jackson Gaussian units, g=diag(1,−1,−1,−1) (p.542 Eq.11.69; p.544 Eq.11.81), A^α=(A0,A), A_α=(A0,−A) (p.542 Eq.11.75), F^{0i}=−E_i, F^{ij}=−ε_ijk B_k (p.556 Eq.11.137), dual e^{0123}=+1 (p.556 Eq.11.140). Passive boost signs match p.558 Eq.11.149. Spatial Cartesian indices are Euclidean labels; kinematic c=1 is explicitly stated.",
+      "source_evidence": [
+        "Problem11.20, printed pp.574.",
+        "p.538 mass-shell invariant; Problem11.20, p.574."
+      ],
+      "independent_check": "python3 -W error supplementary/check_ch11.py; check_19_26 (plus new symbolic factorization/null-cluster check for11.20–21)",
+      "remaining_limitations": "Angular range assumes every decay orientation is accessible; lifetime gives the stated mean decay length."
+    },
+    {
+      "problem": "11.21",
+      "status": "reviewed",
+      "mathematics_checked": "Bound the invariant mass of all other daughters, derived the maximal energy and evaluated every listed channel.",
+      "derivation_changes": "Explained that a null recoil cluster has no rest frame; used collinear null momenta, and identified mixed massless thresholds as suprema when necessary.",
+      "notation_check": "Jackson Gaussian units, g=diag(1,−1,−1,−1) (p.542 Eq.11.69; p.544 Eq.11.81), A^α=(A0,A), A_α=(A0,−A) (p.542 Eq.11.75), F^{0i}=−E_i, F^{ij}=−ε_ijk B_k (p.556 Eq.11.137), dual e^{0123}=+1 (p.556 Eq.11.140). Passive boost signs match p.558 Eq.11.149. Spatial Cartesian indices are Euclidean labels; kinematic c=1 is explicitly stated.",
+      "source_evidence": [
+        "Problem11.21, printed pp.574.",
+        "p.538 Eq.(11.54); Problem11.21, p.574; rounded kaon mass493.7 MeV documented in the solution."
+      ],
+      "independent_check": "python3 -W error supplementary/check_ch11.py; check_19_26 (plus new symbolic factorization/null-cluster check for11.20–21)",
+      "remaining_limitations": "Listed single-particle endpoints need not occur simultaneously; physical branching amplitudes can vanish at an endpoint."
+    },
+    {
+      "problem": "11.22",
+      "status": "reviewed",
+      "mathematics_checked": "Applied the γγ invariant and pair threshold to microwave and x-ray backgrounds, checking head-on minimization.",
+      "derivation_changes": "No mathematical change needed.",
+      "notation_check": "Jackson Gaussian units, g=diag(1,−1,−1,−1) (p.542 Eq.11.69; p.544 Eq.11.81), A^α=(A0,A), A_α=(A0,−A) (p.542 Eq.11.75), F^{0i}=−E_i, F^{ij}=−ε_ijk B_k (p.556 Eq.11.137), dual e^{0123}=+1 (p.556 Eq.11.140). Passive boost signs match p.558 Eq.11.149. Spatial Cartesian indices are Euclidean labels; kinematic c=1 is explicitly stated.",
+      "source_evidence": [
+        "Problem11.22, printed pp.574.",
+        "p.538 Eq.(11.54); Problem11.22, p.574."
+      ],
+      "independent_check": "python3 -W error supplementary/check_ch11.py; check_19_26 (plus new symbolic factorization/null-cluster check for11.20–21)",
+      "remaining_limitations": "These are kinematic thresholds, not mean free paths; a spectrum/cross section is needed for attenuation."
+    },
+    {
+      "problem": "11.23",
+      "status": "reviewed",
+      "mathematics_checked": "Derived W and the exact cm boost from total four-momentum and expanded the nonrelativistic limit.",
+      "derivation_changes": "Restored the source diagram's equal and opposite collinear cm momenta; marked the altered arrow.",
+      "notation_check": "Jackson Gaussian units, g=diag(1,−1,−1,−1) (p.542 Eq.11.69; p.544 Eq.11.81), A^α=(A0,A), A_α=(A0,−A) (p.542 Eq.11.75), F^{0i}=−E_i, F^{ij}=−ε_ijk B_k (p.556 Eq.11.137), dual e^{0123}=+1 (p.556 Eq.11.140). Passive boost signs match p.558 Eq.11.149. Spatial Cartesian indices are Euclidean labels; kinematic c=1 is explicitly stated.",
+      "source_evidence": [
+        "Problem11.23, printed pp.575.",
+        "Problem11.23 diagram p.575 (pages/p-600.png); p.538 Eq.(11.54)."
+      ],
+      "independent_check": "python3 -W error supplementary/check_ch11.py; check_19_26 (plus new symbolic factorization/null-cluster check for11.20–21)",
+      "remaining_limitations": "Masses and momenta are expressed in common energy units with c=1."
+    },
+    {
+      "problem": "11.24",
+      "status": "reviewed",
+      "mathematics_checked": "Set the final system at its threshold invariant mass, solved for projectile kinetic energy and checked all four requested reactions.",
+      "derivation_changes": "Specified that the positive threshold formula is applied to the endothermic reactions listed.",
+      "notation_check": "Jackson Gaussian units, g=diag(1,−1,−1,−1) (p.542 Eq.11.69; p.544 Eq.11.81), A^α=(A0,A), A_α=(A0,−A) (p.542 Eq.11.75), F^{0i}=−E_i, F^{ij}=−ε_ijk B_k (p.556 Eq.11.137), dual e^{0123}=+1 (p.556 Eq.11.140). Passive boost signs match p.558 Eq.11.149. Spatial Cartesian indices are Euclidean labels; kinematic c=1 is explicitly stated.",
+      "source_evidence": [
+        "Problem11.24, printed pp.575.",
+        "Problem11.24, p.575; p.538 Eq.(11.54)."
+      ],
+      "independent_check": "python3 -W error supplementary/check_ch11.py; check_19_26 (plus new symbolic factorization/null-cluster check for11.20–21)",
+      "remaining_limitations": "An arbitrary exothermic channel would require separate treatment instead of a negative physical kinetic threshold."
+    },
+    {
+      "problem": "11.25",
+      "status": "reviewed",
+      "mathematics_checked": "Expanded the crossed-beam invariant, resolved the boost angle with atan2 and transformed the transverse pion decay.",
+      "derivation_changes": "No further change; verified the existing head-on-departure and angle-arc corrections against the actual source figure.",
+      "notation_check": "Jackson Gaussian units, g=diag(1,−1,−1,−1) (p.542 Eq.11.69; p.544 Eq.11.81), A^α=(A0,A), A_α=(A0,−A) (p.542 Eq.11.75), F^{0i}=−E_i, F^{ij}=−ε_ijk B_k (p.556 Eq.11.137), dual e^{0123}=+1 (p.556 Eq.11.140). Passive boost signs match p.558 Eq.11.149. Spatial Cartesian indices are Euclidean labels; kinematic c=1 is explicitly stated.",
+      "source_evidence": [
+        "Problem11.25, printed pp.576.",
+        "Problem11.25, p.576 (pages/p-601.png); p.538 Eq.(11.54)."
+      ],
+      "independent_check": "python3 -W error supplementary/check_ch11.py; check_19_26 (plus new symbolic factorization/null-cluster check for11.20–21)",
+      "remaining_limitations": "The θ used is departure from head-on; the expansion assumes ultrarelativistic beam momenta."
+    },
+    {
+      "problem": "11.26",
+      "status": "reviewed",
+      "mathematics_checked": "Eliminated target recoil between conservation laws, derived cm/lab/invariant recoil formulas and heavy/equal-mass limits.",
+      "derivation_changes": "No mathematical change needed.",
+      "notation_check": "Jackson Gaussian units, g=diag(1,−1,−1,−1) (p.542 Eq.11.69; p.544 Eq.11.81), A^α=(A0,A), A_α=(A0,−A) (p.542 Eq.11.75), F^{0i}=−E_i, F^{ij}=−ε_ijk B_k (p.556 Eq.11.137), dual e^{0123}=+1 (p.556 Eq.11.140). Passive boost signs match p.558 Eq.11.149. Spatial Cartesian indices are Euclidean labels; kinematic c=1 is explicitly stated.",
+      "source_evidence": [
+        "Problem11.26, printed pp.576.",
+        "Problem11.26, p.576; pp.531,538 velocity addition and mass shells."
+      ],
+      "independent_check": "python3 -W error supplementary/check_ch11.py; check_19_26 (plus new symbolic factorization/null-cluster check for11.20–21)",
+      "remaining_limitations": "The laboratory-angle formula retains an unsquared sign restriction; the equal-mass target label is theoretical for identical electrons."
+    },
+    {
+      "problem": "11.27",
+      "status": "reviewed",
+      "mathematics_checked": "Transformed charge/current densities on simultaneous lab slices, integrated dipole moments and distinguished convection from a steady localized current.",
+      "derivation_changes": "No further change; checked the existing steady-current statement qualification.",
+      "notation_check": "Jackson Gaussian units, g=diag(1,−1,−1,−1) (p.542 Eq.11.69; p.544 Eq.11.81), A^α=(A0,A), A_α=(A0,−A) (p.542 Eq.11.75), F^{0i}=−E_i, F^{ij}=−ε_ijk B_k (p.556 Eq.11.137), dual e^{0123}=+1 (p.556 Eq.11.140). Passive boost signs match p.558 Eq.11.149. Spatial Cartesian indices are Euclidean labels; kinematic c=1 is explicitly stated.",
+      "source_evidence": [
+        "Problem11.27, printed pp.577.",
+        "pp.554–555 four-current; p.558 Eq.(11.149); Problem11.27, p.577."
+      ],
+      "independent_check": "python3 -W error supplementary/check_ch11.py; check_27_31 (plus new symbolic factorization/null-cluster check for11.20–21)",
+      "remaining_limitations": "The unchanged rest magnetic moment at first order requires the stated localized time-independent rest current."
+    },
+    {
+      "problem": "11.28",
+      "status": "reviewed",
+      "mathematics_checked": "Boosted dipole potentials, checked Lorenz gauge, separated translating electric multipoles and the magnetic/symmetric vector-potential pieces.",
+      "derivation_changes": "Added the explicit curl of the symmetric magnetic field and its equality to the translating quadrupole displacement current.",
+      "notation_check": "Jackson Gaussian units, g=diag(1,−1,−1,−1) (p.542 Eq.11.69; p.544 Eq.11.81), A^α=(A0,A), A_α=(A0,−A) (p.542 Eq.11.75), F^{0i}=−E_i, F^{ij}=−ε_ijk B_k (p.556 Eq.11.137), dual e^{0123}=+1 (p.556 Eq.11.140). Passive boost signs match p.558 Eq.11.149. Spatial Cartesian indices are Euclidean labels; kinematic c=1 is explicitly stated.",
+      "source_evidence": [
+        "Problem11.28, printed pp.577.",
+        "Problem11.28, p.577; p.558 Eq.(11.149); vector identities are derived in the solution."
+      ],
+      "independent_check": "python3 -W error supplementary/check_ch11.py; check_27_31 (plus new symbolic factorization/null-cluster check for11.20–21)",
+      "remaining_limitations": "Ordinary fields shown for R>0; truncation is first order in β and the far multipole order is stated."
+    },
+    {
+      "problem": "11.29",
+      "status": "reviewed",
+      "mathematics_checked": "Differentiated boosted magnetic-dipole potentials and verified all three equivalent induced-electric-field decompositions, including contacts.",
+      "derivation_changes": "No mathematical change needed.",
+      "notation_check": "Jackson Gaussian units, g=diag(1,−1,−1,−1) (p.542 Eq.11.69; p.544 Eq.11.81), A^α=(A0,A), A_α=(A0,−A) (p.542 Eq.11.75), F^{0i}=−E_i, F^{ij}=−ε_ijk B_k (p.556 Eq.11.137), dual e^{0123}=+1 (p.556 Eq.11.140). Passive boost signs match p.558 Eq.11.149. Spatial Cartesian indices are Euclidean labels; kinematic c=1 is explicitly stated.",
+      "source_evidence": [
+        "Problem11.29, printed pp.577–578.",
+        "Problem11.29, pp.577–578; p.558 Eq.(11.149)."
+      ],
+      "independent_check": "python3 -W error supplementary/check_ch11.py; check_27_31 (plus new symbolic factorization/null-cluster check for11.20–21)",
+      "remaining_limitations": "Contact terms are treated distributionally; a moving localized magnetic current is not a static electric dipole alone."
+    },
+    {
+      "problem": "11.30",
+      "status": "reviewed",
+      "mathematics_checked": "Boosted E/B into the material rest frame and D/H back, deriving the exact transverse constitutive tensors.",
+      "derivation_changes": "No mathematical change needed; explicitly checked Gaussian dimensionless ε,µ.",
+      "notation_check": "Jackson Gaussian units, g=diag(1,−1,−1,−1) (p.542 Eq.11.69; p.544 Eq.11.81), A^α=(A0,A), A_α=(A0,−A) (p.542 Eq.11.75), F^{0i}=−E_i, F^{ij}=−ε_ijk B_k (p.556 Eq.11.137), dual e^{0123}=+1 (p.556 Eq.11.140). Passive boost signs match p.558 Eq.11.149. Spatial Cartesian indices are Euclidean labels; kinematic c=1 is explicitly stated.",
+      "source_evidence": [
+        "Problem11.30, printed pp.578.",
+        "pp.556–558 Eqs.(11.137),(11.145),(11.149); Problem11.30, p.578."
+      ],
+      "independent_check": "python3 -W error supplementary/check_ch11.py; check_27_31 (plus new symbolic factorization/null-cluster check for11.20–21)",
+      "remaining_limitations": "Isotropic linear local rest-frame response; dispersive/nonlocal generalizations are outside the assumptions."
+    },
+    {
+      "problem": "11.31",
+      "status": "reviewed",
+      "mathematics_checked": "Integrated radial D and axial H boundary equations, solved the coupled material-field system, integrated exact voltage and expanded its slow-rotation limit.",
+      "derivation_changes": "No new algebra; verified the existing denominator/boundary/history errata and the exact determinant.",
+      "notation_check": "Jackson Gaussian units, g=diag(1,−1,−1,−1) (p.542 Eq.11.69; p.544 Eq.11.81), A^α=(A0,A), A_α=(A0,−A) (p.542 Eq.11.75), F^{0i}=−E_i, F^{ij}=−ε_ijk B_k (p.556 Eq.11.137), dual e^{0123}=+1 (p.556 Eq.11.140). Passive boost signs match p.558 Eq.11.149. Spatial Cartesian indices are Euclidean labels; kinematic c=1 is explicitly stated.",
+      "source_evidence": [
+        "Problem11.31, printed pp.578.",
+        "Problem11.31, p.578; p.557 Eq.(11.145); Hertzberg et al., arXiv:gr-qc/0104101 pp.1–3 and10, independently reopened."
+      ],
+      "independent_check": "python3 -W error supplementary/check_ch11.py; check_27_31 (plus new symbolic factorization/null-cluster check for11.20–21)",
+      "remaining_limitations": "Conditional on the prescribed locally inertial constitutive model. Steel-ball/wax experiment does not distinguish homogeneous magnetic-insulator predictions; later YIG test does."
+    }
+  ],
+  "verification": {
+    "test_status": "Passed all problem groups with -W error after the recorded implementation changes.",
+    "tex_compile": "pdflatex -interaction=nonstopmode -halt-on-error in an isolated local temporary output directory; exit0, no box/font/other warnings.",
+    "pdf": "/var/folders/93/r1t98m8d3014c24llb8j119w0000gn/T/jackson-recheck-ch11-6qqp4hi6/ch11-check.pdf",
+    "pages_rendered_and_visually_reviewed": 38,
+    "review_images": "/var/folders/93/r1t98m8d3014c24llb8j119w0000gn/T/jackson-recheck-ch11-6qqp4hi6/sheet-*.png",
+    "source_sha256": "d127d59e1bcc01753d8e0427217f38df0e828852441a73c4b1ef5670fbb998cd",
+    "test_sha256": "7ed2923ee82d66b4e52cd53f9f2d5ff7fd2e69e007e62e4fbdd40c39e33346ab",
+    "problem_prefixes": "31/31 preserved; all solution bodies manually retraced."
+  }
+}

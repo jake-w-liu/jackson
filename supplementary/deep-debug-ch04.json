@@ -1,0 +1,466 @@
+{
+  "audit": "Fresh iterative deep-debug, current-run independent evidence",
+  "date": "2026-10-03",
+  "chapter": 4,
+  "coverage": {
+    "problems": 13,
+    "all_problem_statements_and_solutions_read": true,
+    "every_subpart_retraced": true,
+    "problem_spacing_prefixes_preserved": 13
+  },
+  "scope_reconstruction": [
+    "Actual chapter TeX and entire current check script inspected.",
+    "Prior recheck ledgers used only to locate sources, not as current proof.",
+    "All problem pages read from local Jackson OCR and critical formulas/diagrams checked from actual scans."
+  ],
+  "audit_matrix": {
+    "domain": "Per-problem algebra, signs, units, normalization, boundaries, approximation domains and limiting behavior retraced; actual source conventions checked.",
+    "implementation": "Entire calculation script inspected; independent functions added for alternative routes and successful execution checked with warnings-as-errors.",
+    "data_and_io": "Physical inputs traced to supplied problem or primary source; deterministic figure generators run. Captured stdout copied after completion, not streamed to workspace.",
+    "resources": "Finite numerical grids/integrals, bounded file output under owned chapter assets; no services or external mutations and no processes terminated.",
+    "performance": "No speed/optimization claim requested or made; execution completed. Added high-precision/radial-grid/orbit checks are bounded by explicit samples."
+  },
+  "notation_checks": [
+    "SI throughout: q_lm = integral rho r^l Y_lm* dV. Jackson printed pp.145–146, Eqs. (4.1), (4.3), (4.7), and (4.9).",
+    "The actual printed p.108 scan, Eqs. (3.49) and (3.53), puts the Condon–Shortley factor (-1)^m in P_l^m; Y_lm has the positive normalization prefactor.",
+    "Nuclear Q = Q_zz/e has units of area, printed p.151 Eq. (4.25). Molecular p = epsilon_0 gamma E_local follows printed pp.162 and 164."
+  ],
+  "checks": [
+    {
+      "stage": "baseline",
+      "command": "python3 -W error supplementary/check_ch04.py",
+      "exit": 0,
+      "captured_log": "supplementary/ch04-deep-debug/baseline.log",
+      "note": "All assertions passed; warnings treated as errors."
+    },
+    {
+      "stage": "crc1",
+      "command": "python3 -W error supplementary/check_ch04.py",
+      "exit": 1,
+      "captured_log": "supplementary/ch04-deep-debug/crc1.log",
+      "note": "New test harness passed helper arguments in the wrong order; fixed to cylinder_coefficients(a,b,k); no solution formula changed."
+    },
+    {
+      "stage": "crc2",
+      "command": "python3 -W error supplementary/check_ch04.py",
+      "exit": 0,
+      "captured_log": "supplementary/ch04-deep-debug/crc2.log",
+      "note": "All assertions passed; warnings treated as errors."
+    },
+    {
+      "stage": "final",
+      "command": "python3 -W error supplementary/check_ch04.py --figures",
+      "exit": 0,
+      "captured_log": "supplementary/ch04-deep-debug/final.log",
+      "note": "All assertions passed; warnings treated as errors."
+    }
+  ],
+  "confirmed_new_math_or_statement_bugs": 0,
+  "final_pass_status": "Complete across all assigned chapter problems, using the different routes below; no new confirmed defect. Numerical samples are not universal proofs.",
+  "problems": [
+    {
+      "problem": "4.1",
+      "statement_and_every_solution_subpart_read": true,
+      "subparts": [
+        "a",
+        "b",
+        "c",
+        "d"
+      ],
+      "inspected_sources": [
+        "sections/ch04.tex:9",
+        "supplementary/check_ch04.py: check_01",
+        "ocr/p-194.txt (Jackson printed p.169)",
+        "ocr/p-195.txt (Jackson printed p.170)",
+        "Jackson/source conventions: 145-146: (4.1),(4.3),(4.5),(4.7); 108: (3.49),(3.53)"
+      ],
+      "initial_derivation_checked": "Charge sums select odd l and odd m in (a); axial distribution has only q_(2n,0), n>=1; direct Coulomb potential and normalized plots agree.",
+      "candidate": "Possible Condon-Shortley/sign reversal in the perspective drawing: discarded after viewing printed pp.108,170; positive x and y carry +q.",
+      "candidate_status": "discarded/no new defect",
+      "change": "No TeX change in this fresh audit.",
+      "current_verification": {
+        "analytic": "Manual independent algebra/identities and source comparison as recorded; not a machine-checked theorem.",
+        "executable": "check_01",
+        "sample_evidence": "The full chapter suite exited 0 with -W error. Symbolic identities and numerical tolerances are in the named functions; finite numerical samples are not universal proofs."
+      },
+      "independent_final_pass": {
+        "route": "Different route: reconstruct the Cartesian dipole p=2qa(xhat+yhat), check the first spherical moments, and expand the exact midplane Coulomb expression to r^-7.",
+        "result": "No new confirmed mathematical or physical defect found in this independent final pass."
+      },
+      "remaining_limitations": "Exterior series requires r>a."
+    },
+    {
+      "problem": "4.2",
+      "statement_and_every_solution_subpart_read": true,
+      "subparts": [
+        "whole problem"
+      ],
+      "inspected_sources": [
+        "sections/ch04.tex:161",
+        "supplementary/check_ch04.py: check_02",
+        "ocr/p-195.txt (Jackson printed p.170)",
+        "Jackson/source conventions: 145-146: (4.1),(4.8)"
+      ],
+      "initial_derivation_checked": "Distribution acts on a smooth test function as p.grad(f); interaction energy is -p.E with no self-energy factor.",
+      "candidate": "Possible minus sign from differentiating source instead of observation coordinate: discarded by direct separated-charge limit.",
+      "candidate_status": "discarded/no new defect",
+      "change": "No TeX change in this fresh audit.",
+      "current_verification": {
+        "analytic": "Manual independent algebra/identities and source comparison as recorded; not a machine-checked theorem.",
+        "executable": "check_02",
+        "sample_evidence": "The full chapter suite exited 0 with -W error. Symbolic identities and numerical tolerances are in the named functions; finite numerical samples are not universal proofs."
+      },
+      "independent_final_pass": {
+        "route": "Different route: test rho against 1 and x_i, then compare the exact +/-q potential at separations .02,.01,.005 with second-order error scaling.",
+        "result": "No new confirmed mathematical or physical defect found in this independent final pass."
+      },
+      "remaining_limitations": "Potential test excludes the dipole point; external potential is smooth there."
+    },
+    {
+      "problem": "4.3",
+      "statement_and_every_solution_subpart_read": true,
+      "subparts": [
+        "whole problem"
+      ],
+      "inspected_sources": [
+        "sections/ch04.tex:203",
+        "supplementary/check_ch04.py: check_03_04",
+        "ocr/p-195.txt (Jackson printed p.170)",
+        "Jackson/source conventions: 145-146: (4.1),(4.3),(4.9)"
+      ],
+      "initial_derivation_checked": "Symmetric Cartesian moments decompose into harmonic ranks l,l-2,...; dimension sum is (l+1)(l+2)/2.",
+      "candidate": "Could traces contribute at the same exterior radial order: discarded because every trace contracts a Laplacian of the source-free Coulomb kernel.",
+      "candidate_status": "discarded/no new defect",
+      "change": "No TeX change in this fresh audit.",
+      "current_verification": {
+        "analytic": "Manual independent algebra/identities and source comparison as recorded; not a machine-checked theorem.",
+        "executable": "check_03_04",
+        "sample_evidence": "The full chapter suite exited 0 with -W error. Symbolic identities and numerical tolerances are in the named functions; finite numerical samples are not universal proofs."
+      },
+      "independent_final_pass": {
+        "route": "Different route: apply Laplacian to r^(2s) H_k, obtaining 2s(2k+2s+1)r^(2s-2)H_k; subtract trace dimensions to obtain 2l+1.",
+        "result": "No new confirmed mathematical or physical defect found in this independent final pass."
+      },
+      "remaining_limitations": "Exterior field statement applies off the support of charge."
+    },
+    {
+      "problem": "4.4",
+      "statement_and_every_solution_subpart_read": true,
+      "subparts": [
+        "a",
+        "b",
+        "c"
+      ],
+      "inspected_sources": [
+        "sections/ch04.tex:277",
+        "supplementary/check_ch04.py: check_03_04; check_fresh_routes",
+        "ocr/p-195.txt (Jackson printed p.170)",
+        "Jackson/source conventions: 145-146: (4.3),(4.8),(4.9)"
+      ],
+      "initial_derivation_checked": "Translated charge, dipole and traceless quadrupole laws were expanded; origin-removal conditions analyzed for q nonzero, q=0 with p nonzero, and q=p=0.",
+      "candidate": "Claim that any quadrupole can be translated away: discarded as not claimed; three distinct centered eigenvalues obstruct it.",
+      "candidate_status": "discarded/no new defect",
+      "change": "No TeX change in this fresh audit.",
+      "current_verification": {
+        "analytic": "Manual independent algebra/identities and source comparison as recorded; not a machine-checked theorem.",
+        "executable": "check_03_04; check_fresh_routes",
+        "sample_evidence": "The full chapter suite exited 0 with -W error. Symbolic identities and numerical tolerances are in the named functions; finite numerical samples are not universal proofs."
+      },
+      "independent_final_pass": {
+        "route": "Different route: construct Qc=R diag(-2lambda,lambda,lambda) R^T and shift along its first axis by sqrt(lambda/q); direct matrix cancellation verifies sufficiency as well as spectral necessity.",
+        "result": "No new confirmed mathematical or physical defect found in this independent final pass."
+      },
+      "remaining_limitations": "Generic impossibility is algebraic, not inferred from a failed search."
+    },
+    {
+      "problem": "4.5",
+      "statement_and_every_solution_subpart_read": true,
+      "subparts": [
+        "a",
+        "b"
+      ],
+      "inspected_sources": [
+        "sections/ch04.tex:371",
+        "supplementary/check_ch04.py: check_05",
+        "ocr/p-196.txt (Jackson printed p.171)",
+        "Jackson/source conventions: 150: (4.21)-(4.24)"
+      ],
+      "initial_derivation_checked": "Taylor force and torque retain the correct 1/6 and 1/3 factors; differentiating translated energy holds intrinsic moments fixed.",
+      "candidate": "Omitted isotropic second moment for overlapping external charge: existing source-free erratum is necessary and retained.",
+      "candidate_status": "discarded/no new defect",
+      "change": "No TeX change in this fresh audit.",
+      "current_verification": {
+        "analytic": "Manual independent algebra/identities and source comparison as recorded; not a machine-checked theorem.",
+        "executable": "check_05",
+        "sample_evidence": "The full chapter suite exited 0 with -W error. Symbolic identities and numerical tolerances are in the named functions; finite numerical samples are not universal proofs."
+      },
+      "independent_final_pass": {
+        "route": "Different route: integrate forces on explicit charges in harmonic cubic potentials, compare with -grad_R W(R), and compare torque with direct lever-arm sum.",
+        "result": "No new confirmed mathematical or physical defect found in this independent final pass."
+      },
+      "remaining_limitations": "Traceless-only force formula needs the stated source-free region."
+    },
+    {
+      "problem": "4.6",
+      "statement_and_every_solution_subpart_read": true,
+      "subparts": [
+        "a",
+        "b",
+        "c"
+      ],
+      "inspected_sources": [
+        "sections/ch04.tex:460",
+        "supplementary/check_ch04.py: check_06_07",
+        "ocr/p-196.txt (Jackson printed p.171)",
+        "Jackson/source conventions: 150-151: (4.24),(4.25)"
+      ],
+      "initial_derivation_checked": "Aligned Qij and source-free gradient contractions give -eQG/4; ellipsoid second moments give 2Z(a^2-b^2)/5.",
+      "candidate": "Ambiguous Q units or axis orientation: discarded after checking Q=Qzz/e and existing alignment erratum; splitting magnitude does not fix sign.",
+      "candidate_status": "discarded/no new defect",
+      "change": "No TeX change in this fresh audit.",
+      "current_verification": {
+        "analytic": "Manual independent algebra/identities and source comparison as recorded; not a machine-checked theorem.",
+        "executable": "check_06_07",
+        "sample_evidence": "The full chapter suite exited 0 with -W error. Symbolic identities and numerical tolerances are in the named functions; finite numerical samples are not universal proofs."
+      },
+      "independent_final_pass": {
+        "route": "Different route: compute unit-ball integrals and arbitrary-axis contraction P2(cos beta); check dimensionless gradient -.085033655 and deformation .101230969.",
+        "result": "No new confirmed mathematical or physical defect found in this independent final pass."
+      },
+      "remaining_limitations": "Uniform spheroid is the prescribed nuclear model; numeric Bohr radius is the rounded input."
+    },
+    {
+      "problem": "4.7",
+      "statement_and_every_solution_subpart_read": true,
+      "subparts": [
+        "a",
+        "b",
+        "c"
+      ],
+      "inspected_sources": [
+        "sections/ch04.tex:550",
+        "supplementary/check_ch04.py: check_06_07",
+        "ocr/p-196.txt (Jackson printed p.171)",
+        "ocr/p-197.txt (Jackson printed p.172)",
+        "Jackson/source conventions: 145-151: (4.3),(4.24),(4.25)"
+      ],
+      "initial_derivation_checked": "Only l=0,2 survive; exact A,B solve radial Poisson equations; physical field gradient yields |W|/h=980004.1302 Hz.",
+      "candidate": "Finite multipole series might be called exact outside a noncompact density: discarded because solution explicitly keeps exponential corrections and labels large-r series asymptotic.",
+      "candidate_status": "discarded/no new defect",
+      "change": "No TeX change in this fresh audit.",
+      "current_verification": {
+        "analytic": "Manual independent algebra/identities and source comparison as recorded; not a machine-checked theorem.",
+        "executable": "check_06_07",
+        "sample_evidence": "The full chapter suite exited 0 with -W error. Symbolic identities and numerical tolerances are in the named functions; finite numerical samples are not universal proofs."
+      },
+      "independent_final_pass": {
+        "route": "Different route: direct axis Coulomb quadrature at r=.4,2,7 plus source normalization and origin limits; restore charge and length dimensions before nuclear energy.",
+        "result": "No new confirmed mathematical or physical defect found in this independent final pass."
+      },
+      "remaining_limitations": "Nuclear energy is for the stated aligned symmetry axis."
+    },
+    {
+      "problem": "4.8",
+      "statement_and_every_solution_subpart_read": true,
+      "subparts": [
+        "a",
+        "b",
+        "c"
+      ],
+      "inspected_sources": [
+        "sections/ch04.tex:667",
+        "supplementary/check_ch04.py: check_08; check_fresh_routes; make_figure",
+        "ocr/p-197.txt (Jackson printed p.172)",
+        "Jackson/source conventions: 154: (4.36)-(4.40)"
+      ],
+      "initial_derivation_checked": "Four dielectric matching equations determine A,B,C,D; vacuum, solid-cylinder and bulk-cavity limits and field-line stream function are consistent.",
+      "candidate": "Cavity limit may use the wrong external field normalization: discarded after distinguishing remote applied E0 from bulk shell field.",
+      "candidate_status": "discarded/no new defect",
+      "change": "No TeX change in this fresh audit.",
+      "current_verification": {
+        "analytic": "Manual independent algebra/identities and source comparison as recorded; not a machine-checked theorem.",
+        "executable": "check_08; check_fresh_routes; make_figure",
+        "sample_evidence": "The full chapter suite exited 0 with -W error. Symbolic identities and numerical tolerances are in the named functions; finite numerical samples are not universal proofs."
+      },
+      "independent_final_pass": {
+        "route": "Different route: integrate bound surface polarization charge times x over both cylinders; resulting dipole per length equals 2pi epsilon0 E0 D. Regenerated contours satisfy continuity and tangency.",
+        "result": "No new confirmed mathematical or physical defect found in this independent final pass."
+      },
+      "remaining_limitations": "Infinite cylinder and positive permittivity assumptions remain explicit."
+    },
+    {
+      "problem": "4.9",
+      "statement_and_every_solution_subpart_read": true,
+      "subparts": [
+        "a",
+        "b",
+        "c"
+      ],
+      "inspected_sources": [
+        "sections/ch04.tex:768",
+        "supplementary/check_ch04.py: check_09_10; check_fresh_routes",
+        "ocr/p-197.txt (Jackson printed p.172)",
+        "Jackson/source conventions: 154: (4.40); 145: (4.1)"
+      ],
+      "initial_derivation_checked": "Every Legendre coefficient satisfies potential and D-normal matching; interior center field and gradient follow l=1,2.",
+      "candidate": "Conducting limit might be grounded instead of neutral: discarded; l=0 induced coefficient vanishes and compensating central image is included.",
+      "candidate_status": "discarded/no new defect",
+      "change": "No TeX change in this fresh audit.",
+      "current_verification": {
+        "analytic": "Manual independent algebra/identities and source comparison as recorded; not a machine-checked theorem.",
+        "executable": "check_09_10; check_fresh_routes",
+        "sample_evidence": "The full chapter suite exited 0 with -W error. Symbolic identities and numerical tolerances are in the named functions; finite numerical samples are not universal proofs."
+      },
+      "independent_final_pass": {
+        "route": "Different route: integrate each polarization surface moment by Legendre orthogonality and recover exterior B_l; compare conductor series to two image charges.",
+        "result": "No new confirmed mathematical or physical defect found in this independent final pass."
+      },
+      "remaining_limitations": "Charge lies outside sphere; perfect-conductor limit is an isolated neutral sphere."
+    },
+    {
+      "problem": "4.10",
+      "statement_and_every_solution_subpart_read": true,
+      "subparts": [
+        "a",
+        "b",
+        "c"
+      ],
+      "inspected_sources": [
+        "sections/ch04.tex:862",
+        "supplementary/check_ch04.py: check_09_10; check_fresh_routes",
+        "ocr/p-197.txt (Jackson printed p.172)",
+        "Jackson/source conventions: 154: (4.37)-(4.40); printed p.172 diagram"
+      ],
+      "initial_derivation_checked": "Radial field meets both spherical equipotentials and flat dielectric interface; free and bound charges use opposite inner-surface normals.",
+      "candidate": "Possible +Q arrow or bound-charge sign error: discarded after source diagram and Gauss-law normalization; corrected source figure remains intact.",
+      "candidate_status": "discarded/no new defect",
+      "change": "No TeX change in this fresh audit.",
+      "current_verification": {
+        "analytic": "Manual independent algebra/identities and source comparison as recorded; not a machine-checked theorem.",
+        "executable": "check_09_10; check_fresh_routes",
+        "sample_evidence": "The full chapter suite exited 0 with -W error. Symbolic identities and numerical tolerances are in the named functions; finite numerical samples are not universal proofs."
+      },
+      "independent_final_pass": {
+        "route": "Different route: add two hemispherical capacitors in parallel and integrate field energy; both yield C=2pi(epsilon+epsilon0)/(1/a-1/b) and U=CV^2/2.",
+        "result": "No new confirmed mathematical or physical defect found in this independent final pass."
+      },
+      "remaining_limitations": "Positive permittivities give the uniqueness step."
+    },
+    {
+      "problem": "4.11",
+      "statement_and_every_solution_subpart_read": true,
+      "subparts": [
+        "whole problem"
+      ],
+      "inspected_sources": [
+        "sections/ch04.tex:952",
+        "supplementary/check_ch04.py: check_11",
+        "ocr/p-197.txt (Jackson printed p.172)",
+        "ocr/p-198.txt (Jackson printed p.173)",
+        "Jackson/source conventions: 162: (4.70); NBS Circular564 pp.31,37, Tables2-1,2-2"
+      ],
+      "initial_derivation_checked": "F=(kappa-1)/(kappa+2) divided by density is recomputed for all gas/liquid rows and pressure interpolants.",
+      "candidate": "Could ideal-gas density be silently substituted: discarded; checked NBS real-gas Z and independent density rows are explicit replacements for unavailable AIP table.",
+      "candidate_status": "discarded/no new defect",
+      "change": "No TeX change in this fresh audit.",
+      "current_verification": {
+        "analytic": "Manual independent algebra/identities and source comparison as recorded; not a machine-checked theorem.",
+        "executable": "check_11",
+        "sample_evidence": "The full chapter suite exited 0 with -W error. Symbolic identities and numerical tolerances are in the named functions; finite numerical samples are not universal proofs."
+      },
+      "independent_final_pass": {
+        "route": "Different route: use rho*Z*T/P constancy to compare two independent NBS tables, Lagrange versus spline interpolation, and linear-pressure sensitivity.",
+        "result": "No new confirmed mathematical or physical defect found in this independent final pass."
+      },
+      "remaining_limitations": "AIP p.4-165 not available here; NBS substitution and experimental uncertainty limits are stated. NBS scans were viewed in this run."
+    },
+    {
+      "problem": "4.12",
+      "statement_and_every_solution_subpart_read": true,
+      "subparts": [
+        "whole problem"
+      ],
+      "inspected_sources": [
+        "sections/ch04.tex:1111",
+        "supplementary/check_ch04.py: check_12_13; check_fresh_routes",
+        "ocr/p-198.txt (Jackson printed p.173)",
+        "Jackson/source conventions: 162,164: (4.70),(4.81),(4.82)"
+      ],
+      "initial_derivation_checked": "CM conversion of four water-vapor rows and OLS slope yield p0=6.365135958e-30 C m in Jackson volume-polarizability convention.",
+      "candidate": "Potential missing epsilon0 or temperature unit conversion: discarded by p=epsilon0 gamma E and P=N kT dimensional reconstruction.",
+      "candidate_status": "discarded/no new defect",
+      "change": "No TeX change in this fresh audit.",
+      "current_verification": {
+        "analytic": "Manual independent algebra/identities and source comparison as recorded; not a machine-checked theorem.",
+        "executable": "check_12_13; check_fresh_routes",
+        "sample_evidence": "The full chapter suite exited 0 with -W error. Symbolic identities and numerical tolerances are in the named functions; finite numerical samples are not universal proofs."
+      },
+      "independent_final_pass": {
+        "route": "Different route: integrate exact orientational partition function; its cubic correction is -x^3/45 and leading p0^2/(3kT) agrees with fit interpretation.",
+        "result": "No new confirmed mathematical or physical defect found in this independent final pass."
+      },
+      "remaining_limitations": "Ideal gas and unweighted fit are assumptions; tabulated precision is not treated as a dipole uncertainty."
+    },
+    {
+      "problem": "4.13",
+      "statement_and_every_solution_subpart_read": true,
+      "subparts": [
+        "whole problem"
+      ],
+      "inspected_sources": [
+        "sections/ch04.tex:1210",
+        "supplementary/check_ch04.py: check_12_13; check_fresh_routes",
+        "ocr/p-198.txt (Jackson printed p.173)",
+        "Jackson/source conventions: 154: (4.38)-(4.40)"
+      ],
+      "initial_derivation_checked": "Battery work minus field-energy increase gives upward force .5 V^2 Cprime; hydrostatic weight uses area-averaged height.",
+      "candidate": "Potential fixed-voltage energy sign/factor error: discarded by explicit battery accounting.",
+      "candidate_status": "discarded/no new defect",
+      "change": "No TeX change in this fresh audit.",
+      "current_verification": {
+        "analytic": "Manual independent algebra/identities and source comparison as recorded; not a machine-checked theorem.",
+        "executable": "check_12_13; check_fresh_routes",
+        "sample_evidence": "The full chapter suite exited 0 with -W error. Symbolic identities and numerical tolerances are in the named functions; finite numerical samples are not universal proofs."
+      },
+      "independent_final_pass": {
+        "route": "Different route: derive force at fixed charge from Q^2/(2C), then substitute Q=CV; independent integrated dielectric pressure gives same force.",
+        "result": "No new confirmed mathematical or physical defect found in this independent final pass."
+      },
+      "remaining_limitations": "End effects, surface tension, compressibility and finite reservoir-level changes are neglected explicitly."
+    }
+  ],
+  "local_render": "TeX unchanged in this audit; only calculation checks/assets updated.",
+  "frozen_sha256": {
+    "sections/ch04.tex": "04550bf57870b032a2f93dfb7a1a2e3114935334316c20a27827673268d602f7",
+    "supplementary/check_ch04.py": "b25d2b755934f352a3f37bf3d43200609f01e2eaa7afa69f83197cdb230b4d73",
+    "supplementary/figures/ch04_8_fieldlines.tex": "cbda0a662172e46b95f90f428bd87257fc98413033e4d34e842c8700e690e0d7",
+    "supplementary/ch04-deep-debug/baseline.log": "de5a2b18adb155a8da5b82fd6ce5c78b562de91a30945ca7fd3d6e7ded488000",
+    "supplementary/ch04-deep-debug/crc1.log": "dc0835443b2b7edb5a6b363e0f9ff796c38f09b6a625a6babd6d87990aaf75d5",
+    "supplementary/ch04-deep-debug/crc2.log": "adff3a627b54a2d28dff8d3c25d1179556a6de5be1b5ce1884f12b97307c18d7",
+    "supplementary/ch04-deep-debug/final.log": "3147c3e30196e7d97c925498e6c4f77ad745b8a2439191ec6f116bf659eba726"
+  },
+  "textbook": "John David Jackson - Classical Electrodynamics (1998, Wiley) - libgen.li.pdf; PDF page = printed page +25.",
+  "current_source_cache": [
+    "build/recheck-sources/ch04/p-170.txt",
+    "build/recheck-sources/ch04/p-171.txt",
+    "build/recheck-sources/ch04/p-175.txt",
+    "build/recheck-sources/ch04/p-176.txt",
+    "build/recheck-sources/ch04/p-179.txt",
+    "build/recheck-sources/ch04/p-186.txt",
+    "build/recheck-sources/ch04/p-187.txt",
+    "build/recheck-sources/ch04/p-189.txt",
+    "build/recheck-ch03-source/p-133.png",
+    "pages/p-195.png",
+    "supplementary/ch04-source/nbs-z-045.png",
+    "supplementary/ch04-source/nbs-density-051.png"
+  ],
+  "targeted_integrity_scan": "Current scan found no broken newline-m unit commands, bare cdots/quad/frac command fragments, or literal comma integration measures. A first broad pattern matched suffixes within valid qquad and dfrac; the identifier-boundary scan eliminated these false positives.",
+  "environment": {
+    "python": "3.14.7",
+    "numpy": "2.4.6",
+    "scipy": "1.18.0",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "unchanged_tex_verified_against_baseline_sha256": true
+}

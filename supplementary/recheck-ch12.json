@@ -1,0 +1,420 @@
+{
+  "chapter": 12,
+  "review": "Fresh derivation, pedagogy and Jackson notation review",
+  "review_date": "2026-10-03",
+  "source": "sections/ch12.tex",
+  "source_sha256": "488126cb6b607e8f76f2cdb6c870d7559b1ebd0f088f026728c5d467d4487dd7",
+  "checked_command": "python3 -Werror supplementary/check_ch12.py",
+  "observed_exit_code": 0,
+  "check_log": "build/recheck-ch12.log",
+  "notation_sources": [
+    "build/ch12-source/p-609.png",
+    "build/ch12-source/p-610.png",
+    "build/ch12-source/p-589.png",
+    "build/ch12-source/p-590.png",
+    "build/ch12-source/p-625.png",
+    "build/ch12-source/p-629.png",
+    "build/ch12-source/BetheSalpeter193.png"
+  ],
+  "problems": [
+    {
+      "problem": "12.1",
+      "status": "reviewed",
+      "mathematics_checked": "Covariant Euler–Lagrange signs, mass-shell preservation, Jackson canonical-momentum sign and invariant Hamiltonian.",
+      "derivation_changes": "Used Jackson tilde-H notation and added explicit Hamilton equations before the on-shell constraint.",
+      "notation_check": "Jackson Gaussian units, metric +---, F^{0i}=-E_i and F^{ij}=-epsilon_ijk B_k; P=-dL/dU and tilde-H=PU+L (12.33–12.34); spin vector s in 11.170–11.171; Proca mu inverse length and London lambda_L (12.91,12.100). Problem12.17 explicitly uses c=1.",
+      "source_evidence": [
+        "sections/ch12.tex, full statement and solution 12.1",
+        "build/ch12-source/p-609.png",
+        "build/ch12-source/p-610.png",
+        "build/ch12-source/p-589.png",
+        "build/ch12-source/p-590.png",
+        "build/ch12-source/p-625.png",
+        "build/ch12-source/p-629.png",
+        "build/ch12-source/BetheSalpeter193.png"
+      ],
+      "independent_check": "supplementary/check_ch12.py::check_01; build/recheck-ch12.log",
+      "remaining_limitations": "Numerical checks sample parameters and supplement the analytic derivation; physical approximations and source-data conventions remain explicit in the solution."
+    },
+    {
+      "problem": "12.2",
+      "status": "reviewed",
+      "mathematics_checked": "Endpoint action variation, total derivative cancellation and covariant gauge signs.",
+      "derivation_changes": "Existing derivation retained.",
+      "notation_check": "Jackson Gaussian units, metric +---, F^{0i}=-E_i and F^{ij}=-epsilon_ijk B_k; P=-dL/dU and tilde-H=PU+L (12.33–12.34); spin vector s in 11.170–11.171; Proca mu inverse length and London lambda_L (12.91,12.100). Problem12.17 explicitly uses c=1.",
+      "source_evidence": [
+        "sections/ch12.tex, full statement and solution 12.2",
+        "build/ch12-source/p-609.png",
+        "build/ch12-source/p-610.png",
+        "build/ch12-source/p-589.png",
+        "build/ch12-source/p-590.png",
+        "build/ch12-source/p-625.png",
+        "build/ch12-source/p-629.png",
+        "build/ch12-source/BetheSalpeter193.png"
+      ],
+      "independent_check": "supplementary/check_ch12.py::check_02; build/recheck-ch12.log",
+      "remaining_limitations": "Numerical checks sample parameters and supplement the analytic derivation; physical approximations and source-data conventions remain explicit in the solution."
+    },
+    {
+      "problem": "12.3",
+      "status": "reviewed",
+      "mathematics_checked": "Exact constant-electric-force momentum, time integrals, catenary, small/large time and zero-force limits.",
+      "derivation_changes": "Added substitutions and both elementary antiderivatives.",
+      "notation_check": "Jackson Gaussian units, metric +---, F^{0i}=-E_i and F^{ij}=-epsilon_ijk B_k; P=-dL/dU and tilde-H=PU+L (12.33–12.34); spin vector s in 11.170–11.171; Proca mu inverse length and London lambda_L (12.91,12.100). Problem12.17 explicitly uses c=1.",
+      "source_evidence": [
+        "sections/ch12.tex, full statement and solution 12.3",
+        "build/ch12-source/p-609.png",
+        "build/ch12-source/p-610.png",
+        "build/ch12-source/p-589.png",
+        "build/ch12-source/p-590.png",
+        "build/ch12-source/p-625.png",
+        "build/ch12-source/p-629.png",
+        "build/ch12-source/BetheSalpeter193.png"
+      ],
+      "independent_check": "supplementary/check_ch12.py::check_03; build/recheck-ch12.log",
+      "remaining_limitations": "Numerical checks sample parameters and supplement the analytic derivation; physical approximations and source-data conventions remain explicit in the solution."
+    },
+    {
+      "problem": "12.4",
+      "status": "reviewed",
+      "mathematics_checked": "Crossed-field boost, first-order orbit, slit-overlap bandwidth, phase refocusing and exact high-speed proton acceptance.",
+      "derivation_changes": "Repaired comma in the phase denominator mc u.",
+      "notation_check": "Jackson Gaussian units, metric +---, F^{0i}=-E_i and F^{ij}=-epsilon_ijk B_k; P=-dL/dU and tilde-H=PU+L (12.33–12.34); spin vector s in 11.170–11.171; Proca mu inverse length and London lambda_L (12.91,12.100). Problem12.17 explicitly uses c=1.",
+      "source_evidence": [
+        "sections/ch12.tex, full statement and solution 12.4",
+        "build/ch12-source/p-609.png",
+        "build/ch12-source/p-610.png",
+        "build/ch12-source/p-589.png",
+        "build/ch12-source/p-590.png",
+        "build/ch12-source/p-625.png",
+        "build/ch12-source/p-629.png",
+        "build/ch12-source/BetheSalpeter193.png"
+      ],
+      "independent_check": "supplementary/check_ch12.py::check_04; build/recheck-ch12.log",
+      "remaining_limitations": "Numerical checks sample parameters and supplement the analytic derivation; physical approximations and source-data conventions remain explicit in the solution."
+    },
+    {
+      "problem": "12.5",
+      "status": "reviewed",
+      "mathematics_checked": "Signed electric/magnetic boost choices, arbitrary initial four-velocity, rotation/hyperbolic motion and inverse transformation.",
+      "derivation_changes": "Existing strict-regime and continuous zero-frequency limits retained.",
+      "notation_check": "Jackson Gaussian units, metric +---, F^{0i}=-E_i and F^{ij}=-epsilon_ijk B_k; P=-dL/dU and tilde-H=PU+L (12.33–12.34); spin vector s in 11.170–11.171; Proca mu inverse length and London lambda_L (12.91,12.100). Problem12.17 explicitly uses c=1.",
+      "source_evidence": [
+        "sections/ch12.tex, full statement and solution 12.5",
+        "build/ch12-source/p-609.png",
+        "build/ch12-source/p-610.png",
+        "build/ch12-source/p-589.png",
+        "build/ch12-source/p-590.png",
+        "build/ch12-source/p-625.png",
+        "build/ch12-source/p-629.png",
+        "build/ch12-source/BetheSalpeter193.png"
+      ],
+      "independent_check": "supplementary/check_ch12.py::check_05; build/recheck-ch12.log",
+      "remaining_limitations": "Numerical checks sample parameters and supplement the analytic derivation; physical approximations and source-data conventions remain explicit in the solution."
+    },
+    {
+      "problem": "12.6",
+      "status": "reviewed",
+      "mathematics_checked": "Lorentz-force matrix, characteristic polynomial, electric/magnetic projectors, null-field polynomial and parallel-field trajectory.",
+      "derivation_changes": "Expanded characteristic determinant and Cayley–Hamilton step.",
+      "notation_check": "Jackson Gaussian units, metric +---, F^{0i}=-E_i and F^{ij}=-epsilon_ijk B_k; P=-dL/dU and tilde-H=PU+L (12.33–12.34); spin vector s in 11.170–11.171; Proca mu inverse length and London lambda_L (12.91,12.100). Problem12.17 explicitly uses c=1.",
+      "source_evidence": [
+        "sections/ch12.tex, full statement and solution 12.6",
+        "build/ch12-source/p-609.png",
+        "build/ch12-source/p-610.png",
+        "build/ch12-source/p-589.png",
+        "build/ch12-source/p-590.png",
+        "build/ch12-source/p-625.png",
+        "build/ch12-source/p-629.png",
+        "build/ch12-source/BetheSalpeter193.png"
+      ],
+      "independent_check": "supplementary/check_ch12.py::check_06; build/recheck-ch12.log",
+      "remaining_limitations": "Numerical checks sample parameters and supplement the analytic derivation; physical approximations and source-data conventions remain explicit in the solution."
+    },
+    {
+      "problem": "12.7",
+      "status": "reviewed",
+      "mathematics_checked": "Conditionally convergent slab momentum with stated symmetric prescription, plane Coulomb integral, transmitted and trapped particle momenta.",
+      "derivation_changes": "Repaired inline integral spacing and comma in radial integration measure.",
+      "notation_check": "Jackson Gaussian units, metric +---, F^{0i}=-E_i and F^{ij}=-epsilon_ijk B_k; P=-dL/dU and tilde-H=PU+L (12.33–12.34); spin vector s in 11.170–11.171; Proca mu inverse length and London lambda_L (12.91,12.100). Problem12.17 explicitly uses c=1.",
+      "source_evidence": [
+        "sections/ch12.tex, full statement and solution 12.7",
+        "build/ch12-source/p-609.png",
+        "build/ch12-source/p-610.png",
+        "build/ch12-source/p-589.png",
+        "build/ch12-source/p-590.png",
+        "build/ch12-source/p-625.png",
+        "build/ch12-source/p-629.png",
+        "build/ch12-source/BetheSalpeter193.png"
+      ],
+      "independent_check": "supplementary/check_ch12.py::check_07; build/recheck-ch12.log",
+      "remaining_limitations": "Numerical checks sample parameters and supplement the analytic derivation; physical approximations and source-data conventions remain explicit in the solution."
+    },
+    {
+      "problem": "12.8",
+      "status": "reviewed",
+      "mathematics_checked": "Closed-stream energy conservation, integrated current cancellation, variable carrier density and toroid segment momentum in Gaussian/SI units.",
+      "derivation_changes": "Repaired inline current integral spacing.",
+      "notation_check": "Jackson Gaussian units, metric +---, F^{0i}=-E_i and F^{ij}=-epsilon_ijk B_k; P=-dL/dU and tilde-H=PU+L (12.33–12.34); spin vector s in 11.170–11.171; Proca mu inverse length and London lambda_L (12.91,12.100). Problem12.17 explicitly uses c=1.",
+      "source_evidence": [
+        "sections/ch12.tex, full statement and solution 12.8",
+        "build/ch12-source/p-609.png",
+        "build/ch12-source/p-610.png",
+        "build/ch12-source/p-589.png",
+        "build/ch12-source/p-590.png",
+        "build/ch12-source/p-625.png",
+        "build/ch12-source/p-629.png",
+        "build/ch12-source/BetheSalpeter193.png"
+      ],
+      "independent_check": "supplementary/check_ch12.py::check_08; build/recheck-ch12.log",
+      "remaining_limitations": "Numerical checks sample parameters and supplement the analytic derivation; physical approximations and source-data conventions remain explicit in the solution."
+    },
+    {
+      "problem": "12.9",
+      "status": "reviewed",
+      "mathematics_checked": "Dipole field lines, relativistic magnetic moment, gradient drift, mirror-force expansion, bounce/drift periods and units.",
+      "derivation_changes": "Added guiding-center force-balance derivation; repaired field-line differential and T m^3 unit punctuation.",
+      "notation_check": "Jackson Gaussian units, metric +---, F^{0i}=-E_i and F^{ij}=-epsilon_ijk B_k; P=-dL/dU and tilde-H=PU+L (12.33–12.34); spin vector s in 11.170–11.171; Proca mu inverse length and London lambda_L (12.91,12.100). Problem12.17 explicitly uses c=1.",
+      "source_evidence": [
+        "sections/ch12.tex, full statement and solution 12.9",
+        "build/ch12-source/p-609.png",
+        "build/ch12-source/p-610.png",
+        "build/ch12-source/p-589.png",
+        "build/ch12-source/p-590.png",
+        "build/ch12-source/p-625.png",
+        "build/ch12-source/p-629.png",
+        "build/ch12-source/BetheSalpeter193.png"
+      ],
+      "independent_check": "supplementary/check_ch12.py::check_09; build/recheck-ch12.log",
+      "remaining_limitations": "Numerical checks sample parameters and supplement the analytic derivation; physical approximations and source-data conventions remain explicit in the solution."
+    },
+    {
+      "problem": "12.10",
+      "status": "reviewed",
+      "mathematics_checked": "Flux invariant, turning latitude, monotonicity, Earth-intersection loss cone and plotted parameter values.",
+      "derivation_changes": "Added explicit logarithmic derivative proving uniqueness of the turning latitude.",
+      "notation_check": "Jackson Gaussian units, metric +---, F^{0i}=-E_i and F^{ij}=-epsilon_ijk B_k; P=-dL/dU and tilde-H=PU+L (12.33–12.34); spin vector s in 11.170–11.171; Proca mu inverse length and London lambda_L (12.91,12.100). Problem12.17 explicitly uses c=1.",
+      "source_evidence": [
+        "sections/ch12.tex, full statement and solution 12.10",
+        "build/ch12-source/p-609.png",
+        "build/ch12-source/p-610.png",
+        "build/ch12-source/p-589.png",
+        "build/ch12-source/p-590.png",
+        "build/ch12-source/p-625.png",
+        "build/ch12-source/p-629.png",
+        "build/ch12-source/BetheSalpeter193.png"
+      ],
+      "independent_check": "supplementary/check_ch12.py::check_10; build/recheck-ch12.log",
+      "remaining_limitations": "Numerical checks sample parameters and supplement the analytic derivation; physical approximations and source-data conventions remain explicit in the solution."
+    },
+    {
+      "problem": "12.11",
+      "status": "reviewed",
+      "mathematics_checked": "BMT/orbit frequency difference, rotating spin components, ring momentum/lifetime cycles and total-versus-kinetic energy convention.",
+      "derivation_changes": "Checked against Jackson 11.170–11.171 and retained existing derivation.",
+      "notation_check": "Jackson Gaussian units, metric +---, F^{0i}=-E_i and F^{ij}=-epsilon_ijk B_k; P=-dL/dU and tilde-H=PU+L (12.33–12.34); spin vector s in 11.170–11.171; Proca mu inverse length and London lambda_L (12.91,12.100). Problem12.17 explicitly uses c=1.",
+      "source_evidence": [
+        "sections/ch12.tex, full statement and solution 12.11",
+        "build/ch12-source/p-609.png",
+        "build/ch12-source/p-610.png",
+        "build/ch12-source/p-589.png",
+        "build/ch12-source/p-590.png",
+        "build/ch12-source/p-625.png",
+        "build/ch12-source/p-629.png",
+        "build/ch12-source/BetheSalpeter193.png"
+      ],
+      "independent_check": "supplementary/check_ch12.py::check_11; build/recheck-ch12.log",
+      "remaining_limitations": "Numerical checks sample parameters and supplement the analytic derivation; physical approximations and source-data conventions remain explicit in the solution."
+    },
+    {
+      "problem": "12.12",
+      "status": "reviewed",
+      "mathematics_checked": "Derivative of spin projection including moving velocity direction, selector specialization and tensor contraction.",
+      "derivation_changes": "Existing derivation retained; metric and field-tensor signs checked against Jackson.",
+      "notation_check": "Jackson Gaussian units, metric +---, F^{0i}=-E_i and F^{ij}=-epsilon_ijk B_k; P=-dL/dU and tilde-H=PU+L (12.33–12.34); spin vector s in 11.170–11.171; Proca mu inverse length and London lambda_L (12.91,12.100). Problem12.17 explicitly uses c=1.",
+      "source_evidence": [
+        "sections/ch12.tex, full statement and solution 12.12",
+        "build/ch12-source/p-609.png",
+        "build/ch12-source/p-610.png",
+        "build/ch12-source/p-589.png",
+        "build/ch12-source/p-590.png",
+        "build/ch12-source/p-625.png",
+        "build/ch12-source/p-629.png",
+        "build/ch12-source/BetheSalpeter193.png"
+      ],
+      "independent_check": "supplementary/check_ch12.py::check_12; build/recheck-ch12.log",
+      "remaining_limitations": "Numerical checks sample parameters and supplement the analytic derivation; physical approximations and source-data conventions remain explicit in the solution."
+    },
+    {
+      "problem": "12.13",
+      "status": "reviewed",
+      "mathematics_checked": "Reduced Darwin Lagrangian, canonical momentum inversion, quartic/orbit Hamiltonian and actual Bethe–Salpeter 42.1 comparison.",
+      "derivation_changes": "Existing derivation retained; primary p.193 comparison reread.",
+      "notation_check": "Jackson Gaussian units, metric +---, F^{0i}=-E_i and F^{ij}=-epsilon_ijk B_k; P=-dL/dU and tilde-H=PU+L (12.33–12.34); spin vector s in 11.170–11.171; Proca mu inverse length and London lambda_L (12.91,12.100). Problem12.17 explicitly uses c=1.",
+      "source_evidence": [
+        "sections/ch12.tex, full statement and solution 12.13",
+        "build/ch12-source/p-609.png",
+        "build/ch12-source/p-610.png",
+        "build/ch12-source/p-589.png",
+        "build/ch12-source/p-590.png",
+        "build/ch12-source/p-625.png",
+        "build/ch12-source/p-629.png",
+        "build/ch12-source/BetheSalpeter193.png"
+      ],
+      "independent_check": "supplementary/check_ch12.py::check_13; build/recheck-ch12.log",
+      "remaining_limitations": "Numerical checks sample parameters and supplement the analytic derivation; physical approximations and source-data conventions remain explicit in the solution."
+    },
+    {
+      "problem": "12.14",
+      "status": "reviewed",
+      "mathematics_checked": "Alternative field Euler equations, Lorenz-compatible data and exact off-gauge divergence identity.",
+      "derivation_changes": "Existing distinction between gauge-fixing term and boundary divergence retained.",
+      "notation_check": "Jackson Gaussian units, metric +---, F^{0i}=-E_i and F^{ij}=-epsilon_ijk B_k; P=-dL/dU and tilde-H=PU+L (12.33–12.34); spin vector s in 11.170–11.171; Proca mu inverse length and London lambda_L (12.91,12.100). Problem12.17 explicitly uses c=1.",
+      "source_evidence": [
+        "sections/ch12.tex, full statement and solution 12.14",
+        "build/ch12-source/p-609.png",
+        "build/ch12-source/p-610.png",
+        "build/ch12-source/p-589.png",
+        "build/ch12-source/p-590.png",
+        "build/ch12-source/p-625.png",
+        "build/ch12-source/p-629.png",
+        "build/ch12-source/BetheSalpeter193.png"
+      ],
+      "independent_check": "supplementary/check_ch12.py::check_14; build/recheck-ch12.log",
+      "remaining_limitations": "Numerical checks sample parameters and supplement the analytic derivation; physical approximations and source-data conventions remain explicit in the solution."
+    },
+    {
+      "problem": "12.15",
+      "status": "reviewed",
+      "mathematics_checked": "Yukawa convolution integration by parts, dipole Hessian, contact term, field-ratio bound and mass conversion.",
+      "derivation_changes": "Repaired broken gram unit command.",
+      "notation_check": "Jackson Gaussian units, metric +---, F^{0i}=-E_i and F^{ij}=-epsilon_ijk B_k; P=-dL/dU and tilde-H=PU+L (12.33–12.34); spin vector s in 11.170–11.171; Proca mu inverse length and London lambda_L (12.91,12.100). Problem12.17 explicitly uses c=1.",
+      "source_evidence": [
+        "sections/ch12.tex, full statement and solution 12.15",
+        "build/ch12-source/p-609.png",
+        "build/ch12-source/p-610.png",
+        "build/ch12-source/p-589.png",
+        "build/ch12-source/p-590.png",
+        "build/ch12-source/p-625.png",
+        "build/ch12-source/p-629.png",
+        "build/ch12-source/BetheSalpeter193.png"
+      ],
+      "independent_check": "supplementary/check_ch12.py::check_15; build/recheck-ch12.log",
+      "remaining_limitations": "Numerical checks sample parameters and supplement the analytic derivation; physical approximations and source-data conventions remain explicit in the solution."
+    },
+    {
+      "problem": "12.16",
+      "status": "reviewed",
+      "mathematics_checked": "Proca canonical tensor, divergence improvement, Bianchi cancellation, conserved-current qualification and positive energy density.",
+      "derivation_changes": "Existing tensor derivation retained and checked with nontrivial symbolic fields.",
+      "notation_check": "Jackson Gaussian units, metric +---, F^{0i}=-E_i and F^{ij}=-epsilon_ijk B_k; P=-dL/dU and tilde-H=PU+L (12.33–12.34); spin vector s in 11.170–11.171; Proca mu inverse length and London lambda_L (12.91,12.100). Problem12.17 explicitly uses c=1.",
+      "source_evidence": [
+        "sections/ch12.tex, full statement and solution 12.16",
+        "build/ch12-source/p-609.png",
+        "build/ch12-source/p-610.png",
+        "build/ch12-source/p-589.png",
+        "build/ch12-source/p-590.png",
+        "build/ch12-source/p-625.png",
+        "build/ch12-source/p-629.png",
+        "build/ch12-source/BetheSalpeter193.png"
+      ],
+      "independent_check": "supplementary/check_ch12.py::check_16; build/recheck-ch12.log",
+      "remaining_limitations": "Numerical checks sample parameters and supplement the analytic derivation; physical approximations and source-data conventions remain explicit in the solution."
+    },
+    {
+      "problem": "12.17",
+      "status": "reviewed",
+      "mathematics_checked": "Massive-wave flux/energy, driven electron amplitude, outgoing polarization channels and integrated Thomson cross sections.",
+      "derivation_changes": "Corrected the scattered-vector-potential phase sign and added the phasor force/current/Green-function steps.",
+      "notation_check": "Jackson Gaussian units, metric +---, F^{0i}=-E_i and F^{ij}=-epsilon_ijk B_k; P=-dL/dU and tilde-H=PU+L (12.33–12.34); spin vector s in 11.170–11.171; Proca mu inverse length and London lambda_L (12.91,12.100). Problem12.17 explicitly uses c=1.",
+      "source_evidence": [
+        "sections/ch12.tex, full statement and solution 12.17",
+        "build/ch12-source/p-609.png",
+        "build/ch12-source/p-610.png",
+        "build/ch12-source/p-589.png",
+        "build/ch12-source/p-590.png",
+        "build/ch12-source/p-625.png",
+        "build/ch12-source/p-629.png",
+        "build/ch12-source/BetheSalpeter193.png"
+      ],
+      "independent_check": "supplementary/check_ch12.py::check_17; build/recheck-ch12.log",
+      "remaining_limitations": "Numerical checks sample parameters and supplement the analytic derivation; physical approximations and source-data conventions remain explicit in the solution."
+    },
+    {
+      "problem": "12.18",
+      "status": "reviewed",
+      "mathematics_checked": "Covariant hypersurface momentum, side-boundary localization, equal-time replacement and constant four-vector.",
+      "derivation_changes": "Repaired comma in four-volume integration measure.",
+      "notation_check": "Jackson Gaussian units, metric +---, F^{0i}=-E_i and F^{ij}=-epsilon_ijk B_k; P=-dL/dU and tilde-H=PU+L (12.33–12.34); spin vector s in 11.170–11.171; Proca mu inverse length and London lambda_L (12.91,12.100). Problem12.17 explicitly uses c=1.",
+      "source_evidence": [
+        "sections/ch12.tex, full statement and solution 12.18",
+        "build/ch12-source/p-609.png",
+        "build/ch12-source/p-610.png",
+        "build/ch12-source/p-589.png",
+        "build/ch12-source/p-590.png",
+        "build/ch12-source/p-625.png",
+        "build/ch12-source/p-629.png",
+        "build/ch12-source/BetheSalpeter193.png"
+      ],
+      "independent_check": "supplementary/check_ch12.py::check_18; build/recheck-ch12.log",
+      "remaining_limitations": "Numerical checks sample parameters and supplement the analytic derivation; physical approximations and source-data conventions remain explicit in the solution."
+    },
+    {
+      "problem": "12.19",
+      "status": "reviewed",
+      "mathematics_checked": "Angular-momentum tensor divergence, spatial angular momentum and conserved boost generator/center-of-energy motion.",
+      "derivation_changes": "Existing derivation retained.",
+      "notation_check": "Jackson Gaussian units, metric +---, F^{0i}=-E_i and F^{ij}=-epsilon_ijk B_k; P=-dL/dU and tilde-H=PU+L (12.33–12.34); spin vector s in 11.170–11.171; Proca mu inverse length and London lambda_L (12.91,12.100). Problem12.17 explicitly uses c=1.",
+      "source_evidence": [
+        "sections/ch12.tex, full statement and solution 12.19",
+        "build/ch12-source/p-609.png",
+        "build/ch12-source/p-610.png",
+        "build/ch12-source/p-589.png",
+        "build/ch12-source/p-590.png",
+        "build/ch12-source/p-625.png",
+        "build/ch12-source/p-629.png",
+        "build/ch12-source/BetheSalpeter193.png"
+      ],
+      "independent_check": "supplementary/check_ch12.py::check_19; build/recheck-ch12.log",
+      "remaining_limitations": "Numerical checks sample parameters and supplement the analytic derivation; physical approximations and source-data conventions remain explicit in the solution."
+    },
+    {
+      "problem": "12.20",
+      "status": "reviewed",
+      "mathematics_checked": "London wave equation, decaying/outgoing branch, both surface continuities, Gaussian impedance and low-frequency SI mapping.",
+      "derivation_changes": "Existing derivation retained and checked against Jackson 12.99–12.100.",
+      "notation_check": "Jackson Gaussian units, metric +---, F^{0i}=-E_i and F^{ij}=-epsilon_ijk B_k; P=-dL/dU and tilde-H=PU+L (12.33–12.34); spin vector s in 11.170–11.171; Proca mu inverse length and London lambda_L (12.91,12.100). Problem12.17 explicitly uses c=1.",
+      "source_evidence": [
+        "sections/ch12.tex, full statement and solution 12.20",
+        "build/ch12-source/p-609.png",
+        "build/ch12-source/p-610.png",
+        "build/ch12-source/p-589.png",
+        "build/ch12-source/p-590.png",
+        "build/ch12-source/p-625.png",
+        "build/ch12-source/p-629.png",
+        "build/ch12-source/BetheSalpeter193.png"
+      ],
+      "independent_check": "supplementary/check_ch12.py::check_20; build/recheck-ch12.log",
+      "remaining_limitations": "Numerical checks sample parameters and supplement the analytic derivation; physical approximations and source-data conventions remain explicit in the solution."
+    },
+    {
+      "problem": "12.21",
+      "status": "reviewed",
+      "mathematics_checked": "Two-fluid Drude expansion, inductive inverse conductivity, transverse Maxwell equation and London limit.",
+      "derivation_changes": "Existing equilibrium-versus-low-frequency qualification retained.",
+      "notation_check": "Jackson Gaussian units, metric +---, F^{0i}=-E_i and F^{ij}=-epsilon_ijk B_k; P=-dL/dU and tilde-H=PU+L (12.33–12.34); spin vector s in 11.170–11.171; Proca mu inverse length and London lambda_L (12.91,12.100). Problem12.17 explicitly uses c=1.",
+      "source_evidence": [
+        "sections/ch12.tex, full statement and solution 12.21",
+        "build/ch12-source/p-609.png",
+        "build/ch12-source/p-610.png",
+        "build/ch12-source/p-589.png",
+        "build/ch12-source/p-590.png",
+        "build/ch12-source/p-625.png",
+        "build/ch12-source/p-629.png",
+        "build/ch12-source/BetheSalpeter193.png"
+      ],
+      "independent_check": "supplementary/check_ch12.py::check_21; build/recheck-ch12.log",
+      "remaining_limitations": "Numerical checks sample parameters and supplement the analytic derivation; physical approximations and source-data conventions remain explicit in the solution."
+    }
+  ]
+}

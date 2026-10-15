@@ -1,0 +1,408 @@
+{
+  "chapter": 7,
+  "review": "Fresh independent mathematical, pedagogical and notation retrace of every problem and subpart",
+  "source": "John David Jackson, Classical Electrodynamics, 3rd ed.; local source PDF. PDF page number equals printed page +25.",
+  "test_command": "python3 -W error supplementary/check_ch07.py --write-assets",
+  "problems": [
+    {
+      "problem": "7.1",
+      "status": "reviewed",
+      "mathematics_checked": "Stokes coherency matrix, ellipse eigenvalues/orientation, and both circular amplitudes reconstructed from each four-parameter set.",
+      "derivation_changes": "No new algebra needed; drawings and phase convention checked.",
+      "notation_check": "SI Maxwell equations; exp(i k·x−iωt) (p.296 Eq.7.8), passive Im ε≥0; circular ε±=(e1±i e2)/√2 (p.300 Eq.7.22). Jackson uses unitary transforms (p.323 Eqs.7.80–81; p.330 Eq.7.104); explicit problem-specific rescalings in7.7,7.26,7.27 are retained and defined.",
+      "source_evidence": [
+        "Problem 7.1, printed pp.340; ocr/ and pages/ source assets.",
+        "p.301 Eqs.(7.27)–(7.28); p.300 Eqs.(7.22)–(7.24)."
+      ],
+      "independent_check": "python3 -W error supplementary/check_ch07.py --write-assets; check_01_11",
+      "remaining_limitations": "Overall optical phase is undetermined by the Stokes data."
+    },
+    {
+      "problem": "7.2",
+      "status": "reviewed",
+      "mathematics_checked": "Summed the slab multiple-reflection series, applied transmitted admittance to get flux, and checked reciprocity plus quarter-wave cancellation.",
+      "derivation_changes": "Existing geometric-series and minimization steps checked.",
+      "notation_check": "SI Maxwell equations; exp(i k·x−iωt) (p.296 Eq.7.8), passive Im ε≥0; circular ε±=(e1±i e2)/√2 (p.300 Eq.7.22). Jackson uses unitary transforms (p.323 Eqs.7.80–81; p.330 Eq.7.104); explicit problem-specific rescalings in7.7,7.26,7.27 are retained and defined.",
+      "source_evidence": [
+        "Problem 7.2, printed pp.340–341; ocr/ and pages/ source assets.",
+        "pp.304–306 Eqs.(7.37)–(7.41)."
+      ],
+      "independent_check": "python3 -W error supplementary/check_ch07.py --write-assets; check_01_11",
+      "remaining_limitations": "Lossless nonmagnetic media; the equal-index case has additional trivial solutions."
+    },
+    {
+      "problem": "7.3",
+      "status": "reviewed",
+      "mathematics_checked": "Reconstructed TE/TM transfer matrices, evanescent continuation, critical-angle limit and thick-gap exponential.",
+      "derivation_changes": "Existing algebra and both polarization curves checked.",
+      "notation_check": "SI Maxwell equations; exp(i k·x−iωt) (p.296 Eq.7.8), passive Im ε≥0; circular ε±=(e1±i e2)/√2 (p.300 Eq.7.22). Jackson uses unitary transforms (p.323 Eqs.7.80–81; p.330 Eq.7.104); explicit problem-specific rescalings in7.7,7.26,7.27 are retained and defined.",
+      "source_evidence": [
+        "Problem 7.3, printed pp.341; ocr/ and pages/ source assets.",
+        "pp.304–308 Eqs.(7.37)–(7.48)."
+      ],
+      "independent_check": "python3 -W error supplementary/check_ch07.py --write-assets; check_01_11",
+      "remaining_limitations": "Gap wavelength means the vacuum wavelength at the chosen frequency."
+    },
+    {
+      "problem": "7.4",
+      "status": "reviewed",
+      "mathematics_checked": "Solved the passive square-root branch for a complex index, reflected phase, and poor/good-conductor limits.",
+      "derivation_changes": "No mathematical change needed.",
+      "notation_check": "SI Maxwell equations; exp(i k·x−iωt) (p.296 Eq.7.8), passive Im ε≥0; circular ε±=(e1±i e2)/√2 (p.300 Eq.7.22). Jackson uses unitary transforms (p.323 Eqs.7.80–81; p.330 Eq.7.104); explicit problem-specific rescalings in7.7,7.26,7.27 are retained and defined.",
+      "source_evidence": [
+        "Problem 7.4, printed pp.341; ocr/ and pages/ source assets.",
+        "p.306 Eq.(7.41) at normal incidence; pp.310–312 Eqs.(7.53)–(7.57)."
+      ],
+      "independent_check": "python3 -W error supplementary/check_ch07.py --write-assets; check_01_11",
+      "remaining_limitations": "The phase of a zero reflection amplitude is undefined, as noted."
+    },
+    {
+      "problem": "7.5",
+      "status": "reviewed",
+      "mathematics_checked": "Retraced the exact film denominator and a uniform good-conductor expansion retaining the sheet-conductance scale; checked zero/thick-film limits.",
+      "derivation_changes": "No mathematical change needed; the very-thin criterion and logarithmic plot were checked.",
+      "notation_check": "SI Maxwell equations; exp(i k·x−iωt) (p.296 Eq.7.8), passive Im ε≥0; circular ε±=(e1±i e2)/√2 (p.300 Eq.7.22). Jackson uses unitary transforms (p.323 Eqs.7.80–81; p.330 Eq.7.104); explicit problem-specific rescalings in7.7,7.26,7.27 are retained and defined.",
+      "source_evidence": [
+        "Problem 7.5, printed pp.341–342; ocr/ and pages/ source assets.",
+        "pp.304–306 interface conditions; Problem7.5, printed pp.341–342."
+      ],
+      "independent_check": "python3 -W error supplementary/check_ch07.py --write-assets; check_01_11",
+      "remaining_limitations": "Approximation requires σ/(ε0ω) large; the thick-film simplification is nonuniform near zero thickness."
+    },
+    {
+      "problem": "7.6",
+      "status": "reviewed",
+      "mathematics_checked": "Computed complex Poynting divergence and volumetric Joule loss; integrated heat equals the interface transmitted flux.",
+      "derivation_changes": "No mathematical change needed.",
+      "notation_check": "SI Maxwell equations; exp(i k·x−iωt) (p.296 Eq.7.8), passive Im ε≥0; circular ε±=(e1±i e2)/√2 (p.300 Eq.7.22). Jackson uses unitary transforms (p.323 Eqs.7.80–81; p.330 Eq.7.104); explicit problem-specific rescalings in7.7,7.26,7.27 are retained and defined.",
+      "source_evidence": [
+        "Problem 7.6, printed pp.342; ocr/ and pages/ source assets.",
+        "pp.310–312 complex ε and conductivity conventions; p.297 Eq.(7.11)."
+      ],
+      "independent_check": "python3 -W error supplementary/check_ch07.py --write-assets; check_01_11",
+      "remaining_limitations": "The absorption-depth integral has a singular lossless limit; conductivity must not be counted twice."
+    },
+    {
+      "problem": "7.7",
+      "status": "reviewed",
+      "mathematics_checked": "Differentiated total-reflection Fresnel phases and derived transverse versus interface beam displacements from the packet Fourier integral.",
+      "derivation_changes": "Explicitly related the problem's A(κ) to Jackson's unitary transform by a factor 1/√(2π).",
+      "notation_check": "SI Maxwell equations; exp(i k·x−iωt) (p.296 Eq.7.8), passive Im ε≥0; circular ε±=(e1±i e2)/√2 (p.300 Eq.7.22). Jackson uses unitary transforms (p.323 Eqs.7.80–81; p.330 Eq.7.104); explicit problem-specific rescalings in7.7,7.26,7.27 are retained and defined.",
+      "source_evidence": [
+        "Problem 7.7, printed pp.342–343; ocr/ and pages/ source assets.",
+        "p.308 Eq.(7.48); p.323 Eqs.(7.80)–(7.81); Problem7.7, pp.342–343."
+      ],
+      "independent_check": "python3 -W error supplementary/check_ch07.py --write-assets; check_01_11",
+      "remaining_limitations": "Stationary-phase displacement requires a narrow spectrum sufficiently far from the critical angle."
+    },
+    {
+      "problem": "7.8",
+      "status": "reviewed",
+      "mathematics_checked": "Derived interface matrices from E/H continuity, their determinant and flux form, and the complete-stack amplitude formulas.",
+      "derivation_changes": "No mathematical change needed; reference-plane amplitudes are explicitly defined.",
+      "notation_check": "SI Maxwell equations; exp(i k·x−iωt) (p.296 Eq.7.8), passive Im ε≥0; circular ε±=(e1±i e2)/√2 (p.300 Eq.7.22). Jackson uses unitary transforms (p.323 Eqs.7.80–81; p.330 Eq.7.104); explicit problem-specific rescalings in7.7,7.26,7.27 are retained and defined.",
+      "source_evidence": [
+        "Problem 7.8, printed pp.342–343; ocr/ and pages/ source assets.",
+        "pp.304–306 boundary conditions; Problem7.8, pp.342–343."
+      ],
+      "independent_check": "python3 -W error supplementary/check_ch07.py --write-assets; check_01_11",
+      "remaining_limitations": "Inverse propagation equals conjugation for real indices and lossless layers."
+    },
+    {
+      "problem": "7.9",
+      "status": "reviewed",
+      "mathematics_checked": "Multiplied the ordered foil/gap matrices with Pauli identities, then exponentiated the quarter-wave cell and obtained sech²(N ln n).",
+      "derivation_changes": "No mathematical change needed.",
+      "notation_check": "SI Maxwell equations; exp(i k·x−iωt) (p.296 Eq.7.8), passive Im ε≥0; circular ε±=(e1±i e2)/√2 (p.300 Eq.7.22). Jackson uses unitary transforms (p.323 Eqs.7.80–81; p.330 Eq.7.104); explicit problem-specific rescalings in7.7,7.26,7.27 are retained and defined.",
+      "source_evidence": [
+        "Problem 7.9, printed pp.343; ocr/ and pages/ source assets.",
+        "Problem7.9, printed p.343; interface conditions p.304 Eq.(7.37)."
+      ],
+      "independent_check": "python3 -W error supplementary/check_ch07.py --write-assets; check_01_11",
+      "remaining_limitations": "The asymptotic transmission requires n^(2N) large."
+    },
+    {
+      "problem": "7.10",
+      "status": "reviewed",
+      "mathematics_checked": "Expanded the transmitted phase and amplitude around the carrier to derive the packet delay and envelope translation.",
+      "derivation_changes": "Aligned both wave-packet transforms with Jackson's symmetric 1/√(2π) normalization.",
+      "notation_check": "SI Maxwell equations; exp(i k·x−iωt) (p.296 Eq.7.8), passive Im ε≥0; circular ε±=(e1±i e2)/√2 (p.300 Eq.7.22). Jackson uses unitary transforms (p.323 Eqs.7.80–81; p.330 Eq.7.104); explicit problem-specific rescalings in7.7,7.26,7.27 are retained and defined.",
+      "source_evidence": [
+        "Problem 7.10, printed pp.344; ocr/ and pages/ source assets.",
+        "p.323 Eqs.(7.80)–(7.81); p.325 Eq.(7.86); pp.336–338 front/stationary-phase discussion."
+      ],
+      "independent_check": "python3 -W error supplementary/check_ch07.py --write-assets; check_01_11",
+      "remaining_limitations": "Group delay approximates a weakly distorted packet and does not specify its causal front."
+    },
+    {
+      "problem": "7.11",
+      "status": "reviewed",
+      "mathematics_checked": "Differentiated the unwrapped slab phase, evaluated the delay endpoints and the correctly anchored quarter-fringe mean.",
+      "derivation_changes": "Preserved the existing erratum restricting the stated averaging interval; recomputed both plotted functions.",
+      "notation_check": "SI Maxwell equations; exp(i k·x−iωt) (p.296 Eq.7.8), passive Im ε≥0; circular ε±=(e1±i e2)/√2 (p.300 Eq.7.22). Jackson uses unitary transforms (p.323 Eqs.7.80–81; p.330 Eq.7.104); explicit problem-specific rescalings in7.7,7.26,7.27 are retained and defined.",
+      "source_evidence": [
+        "Problem 7.11, printed pp.344; ocr/ and pages/ source assets.",
+        "Problem7.11, printed p.344; p.325 Eq.(7.86)."
+      ],
+      "independent_check": "python3 -W error supplementary/check_ch07.py --write-assets; check_01_11",
+      "remaining_limitations": "A mean over an arbitrary quarter period need not be L/c; multiple resolved packets require a different interpretation."
+    },
+    {
+      "problem": "7.12",
+      "status": "reviewed",
+      "mathematics_checked": "Combined continuity, Gauss and Drude current dynamics into the damped charge oscillator; found both temporal roots and compared the static-σ limit.",
+      "derivation_changes": "No mathematical change needed.",
+      "notation_check": "SI Maxwell equations; exp(i k·x−iωt) (p.296 Eq.7.8), passive Im ε≥0; circular ε±=(e1±i e2)/√2 (p.300 Eq.7.22). Jackson uses unitary transforms (p.323 Eqs.7.80–81; p.330 Eq.7.104); explicit problem-specific rescalings in7.7,7.26,7.27 are retained and defined.",
+      "source_evidence": [
+        "Problem 7.12, printed pp.344–345; ocr/ and pages/ source assets.",
+        "pp.311–312 Eqs.(7.56)–(7.58)."
+      ],
+      "independent_check": "python3 -W error supplementary/check_ch07.py --write-assets; check_12_21",
+      "remaining_limitations": "The requested ωpτ≫1 regime contradicts the low-frequency assumption needed for instantaneous Ohm relaxation."
+    },
+    {
+      "problem": "7.13",
+      "status": "reviewed",
+      "mathematics_checked": "Derived reflected amplitudes with fixed tangential E axes, obtained total-reflection conditions, and independently calculated flat and spherical ionosphere densities.",
+      "derivation_changes": "Corrected TM r from (n²cos i−q)/(n²cos i+q) to (q−n²cos i)/(q+n²cos i); inserted the two tangential boundary equations.",
+      "notation_check": "SI Maxwell equations; exp(i k·x−iωt) (p.296 Eq.7.8), passive Im ε≥0; circular ε±=(e1±i e2)/√2 (p.300 Eq.7.22). Jackson uses unitary transforms (p.323 Eqs.7.80–81; p.330 Eq.7.104); explicit problem-specific rescalings in7.7,7.26,7.27 are retained and defined.",
+      "source_evidence": [
+        "Problem 7.13, printed pp.345; ocr/ and pages/ source assets.",
+        "pp.304–306 Eqs.(7.37)–(7.41); p.313 Eqs.(7.59)–(7.61); Problem7.13, p.345."
+      ],
+      "independent_check": "python3 -W error supplementary/check_ch07.py --write-assets; check_12_21",
+      "remaining_limitations": "The corrected amplitude sign changes phase, not the power ratio. Density estimates use the specified idealized reflecting shell."
+    },
+    {
+      "problem": "7.14",
+      "status": "reviewed",
+      "mathematics_checked": "Derived TE and TM scalar equations, the transformed vertical field, WKB amplitudes, Airy connection and frequency derivative of the reflected phase.",
+      "derivation_changes": "Added the linear turning-point coordinate, Ai asymptotic, incident/reflected decomposition and reflection phase.",
+      "notation_check": "SI Maxwell equations; exp(i k·x−iωt) (p.296 Eq.7.8), passive Im ε≥0; circular ε±=(e1±i e2)/√2 (p.300 Eq.7.22). Jackson uses unitary transforms (p.323 Eqs.7.80–81; p.330 Eq.7.104); explicit problem-specific rescalings in7.7,7.26,7.27 are retained and defined.",
+      "source_evidence": [
+        "Problem 7.14, printed pp.345–346; ocr/ and pages/ source assets.",
+        "Problem7.14, pp.345–346; p.313 Eq.(7.59); p.338 stationary-phase discussion."
+      ],
+      "independent_check": "python3 -W error supplementary/check_ch07.py --write-assets; check_12_21",
+      "remaining_limitations": "Simple isolated turning point assumed; a finite forbidden barrier also permits exponentially small tunneling. Existing k=0 erratum preserved."
+    },
+    {
+      "problem": "7.15",
+      "status": "reviewed",
+      "mathematics_checked": "Expanded the unmagnetized group delay and the two helicity wave numbers; obtained electron column and density-weighted line-of-sight field.",
+      "derivation_changes": "No further change; verified the existing signed rotation definition against the circular Jones vectors.",
+      "notation_check": "SI Maxwell equations; exp(i k·x−iωt) (p.296 Eq.7.8), passive Im ε≥0; circular ε±=(e1±i e2)/√2 (p.300 Eq.7.22). Jackson uses unitary transforms (p.323 Eqs.7.80–81; p.330 Eq.7.104); explicit problem-specific rescalings in7.7,7.26,7.27 are retained and defined.",
+      "source_evidence": [
+        "Problem 7.15, printed pp.345–346; ocr/ and pages/ source assets.",
+        "p.317 Eq.(7.67); p.300 Eq.(7.22); Problem7.15, pp.345–346."
+      ],
+      "independent_check": "python3 -W error supplementary/check_ch07.py --write-assets; check_12_21",
+      "remaining_limitations": "Faraday observations determine a density-weighted field and have an intrinsic-polarization/angle-unwrapping ambiguity."
+    },
+    {
+      "problem": "7.16",
+      "status": "reviewed",
+      "mathematics_checked": "Reduced anisotropic Maxwell equations to a symmetric operator on the transverse D plane, cleared Fresnel denominators and proved orthogonality.",
+      "derivation_changes": "Preserved corrections for principal axes, degenerate phase velocities, and singular denominators.",
+      "notation_check": "SI Maxwell equations; exp(i k·x−iωt) (p.296 Eq.7.8), passive Im ε≥0; circular ε±=(e1±i e2)/√2 (p.300 Eq.7.22). Jackson uses unitary transforms (p.323 Eqs.7.80–81; p.330 Eq.7.104); explicit problem-specific rescalings in7.7,7.26,7.27 are retained and defined.",
+      "source_evidence": [
+        "Problem 7.16, printed pp.346; ocr/ and pages/ source assets.",
+        "Problem7.16, printed p.346; p.296 Eq.(7.2)."
+      ],
+      "independent_check": "python3 -W error supplementary/check_ch07.py --write-assets; check_12_21",
+      "remaining_limitations": "A real positive symmetric dielectric tensor is required for the stated Hermitian-mode argument."
+    },
+    {
+      "problem": "7.17",
+      "status": "reviewed",
+      "mathematics_checked": "Inverted the magnetized electron equation using longitudinal/transverse projectors and the cross-product operator; checked helicity eigenvalues and first-order oblique splitting.",
+      "derivation_changes": "No mathematical change needed; helicity and electron-charge signs checked against the source.",
+      "notation_check": "SI Maxwell equations; exp(i k·x−iωt) (p.296 Eq.7.8), passive Im ε≥0; circular ε±=(e1±i e2)/√2 (p.300 Eq.7.22). Jackson uses unitary transforms (p.323 Eqs.7.80–81; p.330 Eq.7.104); explicit problem-specific rescalings in7.7,7.26,7.27 are retained and defined.",
+      "source_evidence": [
+        "Problem 7.17, printed pp.346–347; ocr/ and pages/ source assets.",
+        "pp.316–317 Eqs.(7.63)–(7.67); p.300 Eq.(7.22)."
+      ],
+      "independent_check": "python3 -W error supplementary/check_ch07.py --write-assets; check_12_21",
+      "remaining_limitations": "Weak-field oblique expansion is not uniform near the plasma resonance."
+    },
+    {
+      "problem": "7.18",
+      "status": "reviewed",
+      "mathematics_checked": "Eliminated pressure/density/magnetic perturbations in linear MHD, factored the three-mode determinant and found strong-field eigenvectors.",
+      "derivation_changes": "No mathematical change needed.",
+      "notation_check": "SI Maxwell equations; exp(i k·x−iωt) (p.296 Eq.7.8), passive Im ε≥0; circular ε±=(e1±i e2)/√2 (p.300 Eq.7.22). Jackson uses unitary transforms (p.323 Eqs.7.80–81; p.330 Eq.7.104); explicit problem-specific rescalings in7.7,7.26,7.27 are retained and defined.",
+      "source_evidence": [
+        "Problem 7.18, printed pp.347; ocr/ and pages/ source assets.",
+        "p.321 Eqs.(7.71)–(7.75); p.322 Eq.(7.78)."
+      ],
+      "independent_check": "python3 -W error supplementary/check_ch07.py --write-assets; check_12_21",
+      "remaining_limitations": "Ideal compressible fluid; special parallel/perpendicular directions have additional polarization degeneracies."
+    },
+    {
+      "problem": "7.19",
+      "status": "reviewed",
+      "mathematics_checked": "Calculated all four normalized Fourier transforms, real/spectral moments and uncertainty products; checked rectangular-tail divergence.",
+      "derivation_changes": "Inserted the Gaussian square completion and its shifted Gaussian integral; all four paired plots checked.",
+      "notation_check": "SI Maxwell equations; exp(i k·x−iωt) (p.296 Eq.7.8), passive Im ε≥0; circular ε±=(e1±i e2)/√2 (p.300 Eq.7.22). Jackson uses unitary transforms (p.323 Eqs.7.80–81; p.330 Eq.7.104); explicit problem-specific rescalings in7.7,7.26,7.27 are retained and defined.",
+      "source_evidence": [
+        "Problem 7.19, printed pp.347; ocr/ and pages/ source assets.",
+        "pp.323–324 Eqs.(7.80)–(7.82); Problem7.19, p.347."
+      ],
+      "independent_check": "python3 -W error supplementary/check_ch07.py --write-assets; check_12_21",
+      "remaining_limitations": "The rectangular spectrum has no finite variance and no absolutely convergent first moment."
+    },
+    {
+      "problem": "7.20",
+      "status": "reviewed",
+      "mathematics_checked": "Solved the frequency-domain wave equation and the two boundary linear equations for A/B, including the causal branch and reality conditions.",
+      "derivation_changes": "No new algebra; preserved the source-reality/branch erratum.",
+      "notation_check": "SI Maxwell equations; exp(i k·x−iωt) (p.296 Eq.7.8), passive Im ε≥0; circular ε±=(e1±i e2)/√2 (p.300 Eq.7.22). Jackson uses unitary transforms (p.323 Eqs.7.80–81; p.330 Eq.7.104); explicit problem-specific rescalings in7.7,7.26,7.27 are retained and defined.",
+      "source_evidence": [
+        "Problem 7.20, printed pp.347–348; ocr/ and pages/ source assets.",
+        "p.296 Eq.(7.6); p.330 Eq.(7.104); p.332 Eq.(7.113)."
+      ],
+      "independent_check": "python3 -W error supplementary/check_ch07.py --write-assets; check_12_21",
+      "remaining_limitations": "At k=0 the exponential basis degenerates; the limiting linear-in-x solution must be used."
+    },
+    {
+      "problem": "7.21",
+      "status": "reviewed",
+      "mathematics_checked": "Computed the causal oscillator-kernel moments and related them to the Taylor expansion of ε(i∂t), then inverted the differential constitutive law.",
+      "derivation_changes": "Stated ω0>0 for the Taylor expansion about zero frequency.",
+      "notation_check": "SI Maxwell equations; exp(i k·x−iωt) (p.296 Eq.7.8), passive Im ε≥0; circular ε±=(e1±i e2)/√2 (p.300 Eq.7.22). Jackson uses unitary transforms (p.323 Eqs.7.80–81; p.330 Eq.7.104); explicit problem-specific rescalings in7.7,7.26,7.27 are retained and defined.",
+      "source_evidence": [
+        "Problem 7.21, printed pp.348; ocr/ and pages/ source assets.",
+        "pp.330–331 Eqs.(7.106)–(7.110)."
+      ],
+      "independent_check": "python3 -W error supplementary/check_ch07.py --write-assets; check_12_21",
+      "remaining_limitations": "Derivative series is local asymptotics for slow fields, not a convergent representation for arbitrary time dependence."
+    },
+    {
+      "problem": "7.22",
+      "status": "reviewed",
+      "mathematics_checked": "Evaluated the finite-band KK principal value logarithm and the damped-oscillator rational integrals, including signs and pole widths.",
+      "derivation_changes": "No mathematical change; sketches and high-frequency limits checked.",
+      "notation_check": "SI Maxwell equations; exp(i k·x−iωt) (p.296 Eq.7.8), passive Im ε≥0; circular ε±=(e1±i e2)/√2 (p.300 Eq.7.22). Jackson uses unitary transforms (p.323 Eqs.7.80–81; p.330 Eq.7.104); explicit problem-specific rescalings in7.7,7.26,7.27 are retained and defined.",
+      "source_evidence": [
+        "Problem 7.22, printed pp.348; ocr/ and pages/ source assets.",
+        "pp.333–334 Eqs.(7.115)–(7.120); p.310 Fig.7.8."
+      ],
+      "independent_check": "python3 -W error supplementary/check_ch07.py --write-assets; check_22_30",
+      "remaining_limitations": "Sharp absorption edges generate logarithmic dispersive singularities; the idealized undamped limit is distributional."
+    },
+    {
+      "problem": "7.23",
+      "status": "reviewed",
+      "mathematics_checked": "Subtracted the conductivity pole and verified both KK relations, including the zero principal-value auxiliary integral.",
+      "derivation_changes": "No mathematical change needed.",
+      "notation_check": "SI Maxwell equations; exp(i k·x−iωt) (p.296 Eq.7.8), passive Im ε≥0; circular ε±=(e1±i e2)/√2 (p.300 Eq.7.22). Jackson uses unitary transforms (p.323 Eqs.7.80–81; p.330 Eq.7.104); explicit problem-specific rescalings in7.7,7.26,7.27 are retained and defined.",
+      "source_evidence": [
+        "Problem 7.23, printed pp.348; ocr/ and pages/ source assets.",
+        "p.311 Eq.(7.56); p.334 Eq.(7.120)."
+      ],
+      "independent_check": "python3 -W error supplementary/check_ch07.py --write-assets; check_22_30",
+      "remaining_limitations": "The formulas are for nonzero real ω; the value at ω=0 is interpreted as a limiting pole subtraction."
+    },
+    {
+      "problem": "7.24",
+      "status": "reviewed",
+      "mathematics_checked": "Built the spectral representation by subtracting the reflected lower-half-plane contour; proved monotonicity on the imaginary axis, zero exclusion and reciprocal sum rules.",
+      "derivation_changes": "Corrected Cauchy's source equation to7.115; explained7.113 reality, both contours, spectral pairing and the ωp² coefficient from7.121.",
+      "notation_check": "SI Maxwell equations; exp(i k·x−iωt) (p.296 Eq.7.8), passive Im ε≥0; circular ε±=(e1±i e2)/√2 (p.300 Eq.7.22). Jackson uses unitary transforms (p.323 Eqs.7.80–81; p.330 Eq.7.104); explicit problem-specific rescalings in7.7,7.26,7.27 are retained and defined.",
+      "source_evidence": [
+        "Problem 7.24, printed pp.348–349; ocr/ and pages/ source assets.",
+        "pp.332–335 Eqs.(7.113)–(7.122), specifically Cauchy7.115 and sum-rule coefficient7.121."
+      ],
+      "independent_check": "python3 -W error supplementary/check_ch07.py --write-assets; check_22_30",
+      "remaining_limitations": "Passive absorption and the stated analytic/high-frequency assumptions are essential; falloff alone cannot fix ωp²."
+    },
+    {
+      "problem": "7.25",
+      "status": "reviewed",
+      "mathematics_checked": "Differentiated the exact whistler dispersion, located minima, derived both stationary-phase branches and the Airy coalescence with the low-frequency chirp.",
+      "derivation_changes": "Used Jackson's unitary frequency normalization; supplied the stationary quadratic Gaussian integral and corresponding Airy prefactor.",
+      "notation_check": "SI Maxwell equations; exp(i k·x−iωt) (p.296 Eq.7.8), passive Im ε≥0; circular ε±=(e1±i e2)/√2 (p.300 Eq.7.22). Jackson uses unitary transforms (p.323 Eqs.7.80–81; p.330 Eq.7.104); explicit problem-specific rescalings in7.7,7.26,7.27 are retained and defined.",
+      "source_evidence": [
+        "Problem 7.25, printed pp.349; ocr/ and pages/ source assets.",
+        "p.317 Eq.(7.67); p.336 Eqs.(7.124)–(7.126); p.338 stationary-phase construction."
+      ],
+      "independent_check": "python3 -W error supplementary/check_ch07.py --write-assets; check_22_30",
+      "remaining_limitations": "The optional Airy form is local near the double stationary point; asymptotic chirps require separated stationary points."
+    },
+    {
+      "problem": "7.26",
+      "status": "reviewed",
+      "mathematics_checked": "Rebuilt the prescribed four-dimensional transform, moving-charge delta, longitudinal potential and stopping-power integral without squaring a delta.",
+      "derivation_changes": "Preserved and reverified existing work/sign errata.",
+      "notation_check": "SI Maxwell equations; exp(i k·x−iωt) (p.296 Eq.7.8), passive Im ε≥0; circular ε±=(e1±i e2)/√2 (p.300 Eq.7.22). Jackson uses unitary transforms (p.323 Eqs.7.80–81; p.330 Eq.7.104); explicit problem-specific rescalings in7.7,7.26,7.27 are retained and defined.",
+      "source_evidence": [
+        "Problem 7.26, printed pp.349–350; ocr/ and pages/ source assets.",
+        "Problem7.26, pp.349–350; p.311 conductivity sign and p.334 KK passive convention."
+      ],
+      "independent_check": "python3 -W error supplementary/check_ch07.py --write-assets; check_22_30",
+      "remaining_limitations": "Spatially nonlocal response or a physical large-q cutoff is needed; a local continuum dielectric alone does not give a universal finite loss."
+    },
+    {
+      "problem": "7.27",
+      "status": "reviewed",
+      "mathematics_checked": "Integrated field angular momentum by parts, retained the charge term, then evaluated source-free helicity spin and energy spectrally.",
+      "derivation_changes": "No new change; the existing source-free qualification was checked explicitly.",
+      "notation_check": "SI Maxwell equations; exp(i k·x−iωt) (p.296 Eq.7.8), passive Im ε≥0; circular ε±=(e1±i e2)/√2 (p.300 Eq.7.22). Jackson uses unitary transforms (p.323 Eqs.7.80–81; p.330 Eq.7.104); explicit problem-specific rescalings in7.7,7.26,7.27 are retained and defined.",
+      "source_evidence": [
+        "Problem 7.27, printed pp.350; ocr/ and pages/ source assets.",
+        "Problem7.27, p.350; p.300 Eqs.(7.22)–(7.24)."
+      ],
+      "independent_check": "python3 -W error supplementary/check_ch07.py --write-assets; check_22_30",
+      "remaining_limitations": "Spin/orbital split is gauge dependent; the displayed reduced formula assumes localized source-free radiation."
+    },
+    {
+      "problem": "7.28",
+      "status": "reviewed",
+      "mathematics_checked": "Solved transversality for the small longitudinal E component and obtained B by curl, tracking paraxial orders.",
+      "derivation_changes": "No mathematical change needed.",
+      "notation_check": "SI Maxwell equations; exp(i k·x−iωt) (p.296 Eq.7.8), passive Im ε≥0; circular ε±=(e1±i e2)/√2 (p.300 Eq.7.22). Jackson uses unitary transforms (p.323 Eqs.7.80–81; p.330 Eq.7.104); explicit problem-specific rescalings in7.7,7.26,7.27 are retained and defined.",
+      "source_evidence": [
+        "Problem 7.28, printed pp.350; ocr/ and pages/ source assets.",
+        "p.296 Eq.(7.2); p.297 Eq.(7.11); Problem7.28, p.350."
+      ],
+      "independent_check": "python3 -W error supplementary/check_ch07.py --write-assets; check_22_30",
+      "remaining_limitations": "Envelope varies slowly transversely; neglected diffraction becomes important over distances of order kw²."
+    },
+    {
+      "problem": "7.29",
+      "status": "reviewed",
+      "mathematics_checked": "Computed the transverse Poynting flow, integrated xIy/yIx by parts, and obtained Lz/U=±1/ω plus vanishing transverse L for axial symmetry.",
+      "derivation_changes": "No mathematical change needed.",
+      "notation_check": "SI Maxwell equations; exp(i k·x−iωt) (p.296 Eq.7.8), passive Im ε≥0; circular ε±=(e1±i e2)/√2 (p.300 Eq.7.22). Jackson uses unitary transforms (p.323 Eqs.7.80–81; p.330 Eq.7.104); explicit problem-specific rescalings in7.7,7.26,7.27 are retained and defined.",
+      "source_evidence": [
+        "Problem 7.29, printed pp.350–351; ocr/ and pages/ source assets.",
+        "Problem7.29, pp.350–351; p.300 helicity convention Eq.(7.22)."
+      ],
+      "independent_check": "python3 -W error supplementary/check_ch07.py --write-assets; check_22_30",
+      "remaining_limitations": "For an infinite monochromatic beam the ratio is interpreted per unit length or for a long packet."
+    },
+    {
+      "problem": "7.30",
+      "status": "reviewed",
+      "mathematics_checked": "Applied Parseval with unitary 3D Fourier transforms and explicitly evaluated the regulated 1/k kernel to recover the nonlocal photon-number functional.",
+      "derivation_changes": "Aligned the 3D transform and energy measures with Jackson; explained where (2π)^−3 reappears on squaring the transform.",
+      "notation_check": "SI Maxwell equations; exp(i k·x−iωt) (p.296 Eq.7.8), passive Im ε≥0; circular ε±=(e1±i e2)/√2 (p.300 Eq.7.22). Jackson uses unitary transforms (p.323 Eqs.7.80–81; p.330 Eq.7.104); explicit problem-specific rescalings in7.7,7.26,7.27 are retained and defined.",
+      "source_evidence": [
+        "Problem 7.30, printed pp.351; ocr/ and pages/ source assets.",
+        "p.298 Eq.(7.14) (plane-wave energy density); p.323 Eqs.(7.80)–(7.81); Problem7.30, printed p.351."
+      ],
+      "independent_check": "python3 -W error supplementary/check_ch07.py --write-assets; check_22_30",
+      "remaining_limitations": "Finite field energy alone does not guarantee an infrared-finite photon number."
+    }
+  ],
+  "verification": {
+    "test_status": "Passed all problem groups with -W error after the recorded implementation changes.",
+    "tex_compile": "pdflatex -interaction=nonstopmode -halt-on-error in an isolated local temporary output directory; exit0, no box/font/other warnings.",
+    "pdf": "/var/folders/93/r1t98m8d3014c24llb8j119w0000gn/T/jackson-recheck-ch07-y164ffng/ch07-check.pdf",
+    "pages_rendered_and_visually_reviewed": 42,
+    "review_images": "/var/folders/93/r1t98m8d3014c24llb8j119w0000gn/T/jackson-recheck-ch07-y164ffng/sheet-*.png",
+    "source_sha256": "fc9eb157ee5c574436a75a1c54014c72c759a1207e87975d8a2b98237feac32d",
+    "test_sha256": "5e5794a308cf6004d6c6a8db668b57e1bf8faa84eebd5806afa983e7e706a048",
+    "problem_prefixes": "30/30 preserved; all solution bodies manually retraced."
+  }
+}

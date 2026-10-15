@@ -1,0 +1,332 @@
+{
+  "chapter": 13,
+  "review": "Fresh derivation, pedagogy and Jackson notation review",
+  "review_date": "2026-10-03",
+  "source": "sections/ch13.tex",
+  "source_sha256": "3ed6d6500c434864be43d2bc4067045b240870b724103eb61efb0de0f9ccb3d2",
+  "checked_command": "python3 -Werror supplementary/check_ch13.py --figures",
+  "observed_exit_code": 0,
+  "check_log": "build/recheck-ch13.log",
+  "notation_sources": [
+    "build/ch13-source/p-650.png",
+    "build/ch13-source/p-657.png",
+    "build/ch13-source/p-659.png",
+    "build/ch13-source/p-675.png",
+    "build/ch13-source/p-676.png",
+    "build/ch13-source/p-678.png",
+    "build/ch13-source/Garibyan-p24.png"
+  ],
+  "problems": [
+    {
+      "problem": "13.1",
+      "status": "reviewed",
+      "mathematics_checked": "Invariant Q^2 in two frames, impact-parameter transfer, head-on maximum, direct relativistic-field impulse and overlap of approximations.",
+      "derivation_changes": "Corrected explanatory units of Q^2 to momentum squared.",
+      "notation_check": "Jackson Gaussian units; electron mass m versus projectile mass M; positive Q^2=-(p-pprime)^2 (13.2); unitary Fourier pair and 4D normalization (13.21); retarded lambda branch (13.30–13.36); transition variables nu, eta, D and I (13.79–13.87).",
+      "source_evidence": [
+        "sections/ch13.tex, full statement and solution 13.1",
+        "build/ch13-source/p-650.png",
+        "build/ch13-source/p-657.png",
+        "build/ch13-source/p-659.png",
+        "build/ch13-source/p-675.png",
+        "build/ch13-source/p-676.png",
+        "build/ch13-source/p-678.png",
+        "build/ch13-source/Garibyan-p24.png"
+      ],
+      "independent_check": "supplementary/check_ch13.py::check01; build/recheck-ch13.log",
+      "remaining_limitations": "Numerical checks sample parameters and supplement the analytic derivation; physical approximations and source-data conventions remain explicit in the solution."
+    },
+    {
+      "problem": "13.2",
+      "status": "reviewed",
+      "mathematics_checked": "Retarded oscillator solution, energy cross-term cancellation, symmetric Fourier normalization and damped delta limit.",
+      "derivation_changes": "Existing derivation retained.",
+      "notation_check": "Jackson Gaussian units; electron mass m versus projectile mass M; positive Q^2=-(p-pprime)^2 (13.2); unitary Fourier pair and 4D normalization (13.21); retarded lambda branch (13.30–13.36); transition variables nu, eta, D and I (13.79–13.87).",
+      "source_evidence": [
+        "sections/ch13.tex, full statement and solution 13.2",
+        "build/ch13-source/p-650.png",
+        "build/ch13-source/p-657.png",
+        "build/ch13-source/p-659.png",
+        "build/ch13-source/p-675.png",
+        "build/ch13-source/p-676.png",
+        "build/ch13-source/p-678.png",
+        "build/ch13-source/Garibyan-p24.png"
+      ],
+      "independent_check": "supplementary/check_ch13.py::check02; build/recheck-ch13.log",
+      "remaining_limitations": "Numerical checks sample parameters and supplement the analytic derivation; physical approximations and source-data conventions remain explicit in the solution."
+    },
+    {
+      "problem": "13.3",
+      "status": "reviewed",
+      "mathematics_checked": "Gaussian-integral K0 transform, parameter derivative to K1, odd longitudinal transform and sudden/adiabatic limits.",
+      "derivation_changes": "Existing positive/negative frequency and response assumptions retained.",
+      "notation_check": "Jackson Gaussian units; electron mass m versus projectile mass M; positive Q^2=-(p-pprime)^2 (13.2); unitary Fourier pair and 4D normalization (13.21); retarded lambda branch (13.30–13.36); transition variables nu, eta, D and I (13.79–13.87).",
+      "source_evidence": [
+        "sections/ch13.tex, full statement and solution 13.3",
+        "build/ch13-source/p-650.png",
+        "build/ch13-source/p-657.png",
+        "build/ch13-source/p-659.png",
+        "build/ch13-source/p-675.png",
+        "build/ch13-source/p-676.png",
+        "build/ch13-source/p-678.png",
+        "build/ch13-source/Garibyan-p24.png"
+      ],
+      "independent_check": "supplementary/check_ch13.py::check03; build/recheck-ch13.log",
+      "remaining_limitations": "Numerical checks sample parameters and supplement the analytic derivation; physical approximations and source-data conventions remain explicit in the solution."
+    },
+    {
+      "problem": "13.4",
+      "status": "reviewed",
+      "mathematics_checked": "All stopping-power rows, SI-to-Gaussian coefficient, dry-air mixture, density conversion and factor-2.3 statement correction.",
+      "derivation_changes": "Used Jackson r0 for classical electron radius; primary PDG densities/molar masses/mass fractions rechecked.",
+      "notation_check": "Jackson Gaussian units; electron mass m versus projectile mass M; positive Q^2=-(p-pprime)^2 (13.2); unitary Fourier pair and 4D normalization (13.21); retarded lambda branch (13.30–13.36); transition variables nu, eta, D and I (13.79–13.87).",
+      "source_evidence": [
+        "sections/ch13.tex, full statement and solution 13.4",
+        "build/ch13-source/p-650.png",
+        "build/ch13-source/p-657.png",
+        "build/ch13-source/p-659.png",
+        "build/ch13-source/p-675.png",
+        "build/ch13-source/p-676.png",
+        "build/ch13-source/p-678.png",
+        "build/ch13-source/Garibyan-p24.png"
+      ],
+      "independent_check": "supplementary/check_ch13.py::check04; build/recheck-ch13.log",
+      "remaining_limitations": "Numerical checks sample parameters and supplement the analytic derivation; physical approximations and source-data conventions remain explicit in the solution."
+    },
+    {
+      "problem": "13.5",
+      "status": "reviewed",
+      "mathematics_checked": "Screened impulse via sinh substitution, Bessel energy integral, 1.468 cutoff constant and quantum/classical lower scales.",
+      "derivation_changes": "Existing derivation retained.",
+      "notation_check": "Jackson Gaussian units; electron mass m versus projectile mass M; positive Q^2=-(p-pprime)^2 (13.2); unitary Fourier pair and 4D normalization (13.21); retarded lambda branch (13.30–13.36); transition variables nu, eta, D and I (13.79–13.87).",
+      "source_evidence": [
+        "sections/ch13.tex, full statement and solution 13.5",
+        "build/ch13-source/p-650.png",
+        "build/ch13-source/p-657.png",
+        "build/ch13-source/p-659.png",
+        "build/ch13-source/p-675.png",
+        "build/ch13-source/p-676.png",
+        "build/ch13-source/p-678.png",
+        "build/ch13-source/Garibyan-p24.png"
+      ],
+      "independent_check": "supplementary/check_ch13.py::check05; build/recheck-ch13.log",
+      "remaining_limitations": "Numerical checks sample parameters and supplement the analytic derivation; physical approximations and source-data conventions remain explicit in the solution."
+    },
+    {
+      "problem": "13.6",
+      "status": "reviewed",
+      "mathematics_checked": "Fermi Bessel expression, positive dielectric loss, narrow plasma pole and cancellation of matching scale.",
+      "derivation_changes": "Existing derivation retained; checked actual Jackson 13.36.",
+      "notation_check": "Jackson Gaussian units; electron mass m versus projectile mass M; positive Q^2=-(p-pprime)^2 (13.2); unitary Fourier pair and 4D normalization (13.21); retarded lambda branch (13.30–13.36); transition variables nu, eta, D and I (13.79–13.87).",
+      "source_evidence": [
+        "sections/ch13.tex, full statement and solution 13.6",
+        "build/ch13-source/p-650.png",
+        "build/ch13-source/p-657.png",
+        "build/ch13-source/p-659.png",
+        "build/ch13-source/p-675.png",
+        "build/ch13-source/p-676.png",
+        "build/ch13-source/p-678.png",
+        "build/ch13-source/Garibyan-p24.png"
+      ],
+      "independent_check": "supplementary/check_ch13.py::check06; build/recheck-ch13.log",
+      "remaining_limitations": "Numerical checks sample parameters and supplement the analytic derivation; physical approximations and source-data conventions remain explicit in the solution."
+    },
+    {
+      "problem": "13.7",
+      "status": "reviewed",
+      "mathematics_checked": "Projected kick variance, flight-distance weighting, cumulant Gaussian and normalization.",
+      "derivation_changes": "Existing central-distribution and negligible-slowing assumptions retained.",
+      "notation_check": "Jackson Gaussian units; electron mass m versus projectile mass M; positive Q^2=-(p-pprime)^2 (13.2); unitary Fourier pair and 4D normalization (13.21); retarded lambda branch (13.30–13.36); transition variables nu, eta, D and I (13.79–13.87).",
+      "source_evidence": [
+        "sections/ch13.tex, full statement and solution 13.7",
+        "build/ch13-source/p-650.png",
+        "build/ch13-source/p-657.png",
+        "build/ch13-source/p-659.png",
+        "build/ch13-source/p-675.png",
+        "build/ch13-source/p-676.png",
+        "build/ch13-source/p-678.png",
+        "build/ch13-source/Garibyan-p24.png"
+      ],
+      "independent_check": "supplementary/check_ch13.py::check07; build/recheck-ch13.log",
+      "remaining_limitations": "Numerical checks sample parameters and supplement the analytic derivation; physical approximations and source-data conventions remain explicit in the solution."
+    },
+    {
+      "problem": "13.8",
+      "status": "reviewed",
+      "mathematics_checked": "Finite nuclear cutoff, critical thickness, collision count, logarithmic accuracy and nonunique threshold definition.",
+      "derivation_changes": "Existing declared cutoff approximation and charge qualification retained.",
+      "notation_check": "Jackson Gaussian units; electron mass m versus projectile mass M; positive Q^2=-(p-pprime)^2 (13.2); unitary Fourier pair and 4D normalization (13.21); retarded lambda branch (13.30–13.36); transition variables nu, eta, D and I (13.79–13.87).",
+      "source_evidence": [
+        "sections/ch13.tex, full statement and solution 13.8",
+        "build/ch13-source/p-650.png",
+        "build/ch13-source/p-657.png",
+        "build/ch13-source/p-659.png",
+        "build/ch13-source/p-675.png",
+        "build/ch13-source/p-676.png",
+        "build/ch13-source/p-678.png",
+        "build/ch13-source/Garibyan-p24.png"
+      ],
+      "independent_check": "supplementary/check_ch13.py::check08; build/recheck-ch13.log",
+      "remaining_limitations": "Numerical checks sample parameters and supplement the analytic derivation; physical approximations and source-data conventions remain explicit in the solution."
+    },
+    {
+      "problem": "13.9",
+      "status": "reviewed",
+      "mathematics_checked": "Threshold and limiting Cherenkov angle, kinetic-energy conversion and wavelength-integrated photon yield.",
+      "derivation_changes": "Existing vacuum-wavelength convention and plotted functions retained.",
+      "notation_check": "Jackson Gaussian units; electron mass m versus projectile mass M; positive Q^2=-(p-pprime)^2 (13.2); unitary Fourier pair and 4D normalization (13.21); retarded lambda branch (13.30–13.36); transition variables nu, eta, D and I (13.79–13.87).",
+      "source_evidence": [
+        "sections/ch13.tex, full statement and solution 13.9",
+        "build/ch13-source/p-650.png",
+        "build/ch13-source/p-657.png",
+        "build/ch13-source/p-659.png",
+        "build/ch13-source/p-675.png",
+        "build/ch13-source/p-676.png",
+        "build/ch13-source/p-678.png",
+        "build/ch13-source/Garibyan-p24.png"
+      ],
+      "independent_check": "supplementary/check_ch13.py::check09; build/recheck-ch13.log",
+      "remaining_limitations": "Numerical checks sample parameters and supplement the analytic derivation; physical approximations and source-data conventions remain explicit in the solution."
+    },
+    {
+      "problem": "13.10",
+      "status": "reviewed",
+      "mathematics_checked": "Symmetric space/time transforms, retarded square-root branch, subthreshold fields and causal superluminal cone.",
+      "derivation_changes": "Corrected convergence domain of the intermediate exponential integral and used Jackson N0 for the Neumann function.",
+      "notation_check": "Jackson Gaussian units; electron mass m versus projectile mass M; positive Q^2=-(p-pprime)^2 (13.2); unitary Fourier pair and 4D normalization (13.21); retarded lambda branch (13.30–13.36); transition variables nu, eta, D and I (13.79–13.87).",
+      "source_evidence": [
+        "sections/ch13.tex, full statement and solution 13.10",
+        "build/ch13-source/p-650.png",
+        "build/ch13-source/p-657.png",
+        "build/ch13-source/p-659.png",
+        "build/ch13-source/p-675.png",
+        "build/ch13-source/p-676.png",
+        "build/ch13-source/p-678.png",
+        "build/ch13-source/Garibyan-p24.png"
+      ],
+      "independent_check": "supplementary/check_ch13.py::check10; build/recheck-ch13.log",
+      "remaining_limitations": "Numerical checks sample parameters and supplement the analytic derivation; physical approximations and source-data conventions remain explicit in the solution."
+    },
+    {
+      "problem": "13.11",
+      "status": "reviewed",
+      "mathematics_checked": "Monopole dual-field impulse, leading logarithm, Gaussian Dirac quantization and comparative stopping curve.",
+      "derivation_changes": "Existing leading-logarithm statement correction retained.",
+      "notation_check": "Jackson Gaussian units; electron mass m versus projectile mass M; positive Q^2=-(p-pprime)^2 (13.2); unitary Fourier pair and 4D normalization (13.21); retarded lambda branch (13.30–13.36); transition variables nu, eta, D and I (13.79–13.87).",
+      "source_evidence": [
+        "sections/ch13.tex, full statement and solution 13.11",
+        "build/ch13-source/p-650.png",
+        "build/ch13-source/p-657.png",
+        "build/ch13-source/p-659.png",
+        "build/ch13-source/p-675.png",
+        "build/ch13-source/p-676.png",
+        "build/ch13-source/p-678.png",
+        "build/ch13-source/Garibyan-p24.png"
+      ],
+      "independent_check": "supplementary/check_ch13.py::check11; build/recheck-ch13.log",
+      "remaining_limitations": "Numerical checks sample parameters and supplement the analytic derivation; physical approximations and source-data conventions remain explicit in the solution."
+    },
+    {
+      "problem": "13.12",
+      "status": "reviewed",
+      "mathematics_checked": "Coherent unequal-media amplitude, symmetric-Fourier normalization, partial fractions and frequency/angle integrals.",
+      "derivation_changes": "Added transverse K0/K1 transforms, polarization projection and all constants from Jackson 13.79 to the final spectrum.",
+      "notation_check": "Jackson Gaussian units; electron mass m versus projectile mass M; positive Q^2=-(p-pprime)^2 (13.2); unitary Fourier pair and 4D normalization (13.21); retarded lambda branch (13.30–13.36); transition variables nu, eta, D and I (13.79–13.87).",
+      "source_evidence": [
+        "sections/ch13.tex, full statement and solution 13.12",
+        "build/ch13-source/p-650.png",
+        "build/ch13-source/p-657.png",
+        "build/ch13-source/p-659.png",
+        "build/ch13-source/p-675.png",
+        "build/ch13-source/p-676.png",
+        "build/ch13-source/p-678.png",
+        "build/ch13-source/Garibyan-p24.png"
+      ],
+      "independent_check": "supplementary/check_ch13.py::check12; build/recheck-ch13.log",
+      "remaining_limitations": "Numerical checks sample parameters and supplement the analytic derivation; physical approximations and source-data conventions remain explicit in the solution."
+    },
+    {
+      "problem": "13.13",
+      "status": "reviewed",
+      "mathematics_checked": "Finite longitudinal integral, opposite interface amplitudes, formation phase, thin limit and phase average.",
+      "derivation_changes": "Existing derivation retained.",
+      "notation_check": "Jackson Gaussian units; electron mass m versus projectile mass M; positive Q^2=-(p-pprime)^2 (13.2); unitary Fourier pair and 4D normalization (13.21); retarded lambda branch (13.30–13.36); transition variables nu, eta, D and I (13.79–13.87).",
+      "source_evidence": [
+        "sections/ch13.tex, full statement and solution 13.13",
+        "build/ch13-source/p-650.png",
+        "build/ch13-source/p-657.png",
+        "build/ch13-source/p-659.png",
+        "build/ch13-source/p-675.png",
+        "build/ch13-source/p-676.png",
+        "build/ch13-source/p-678.png",
+        "build/ch13-source/Garibyan-p24.png"
+      ],
+      "independent_check": "supplementary/check_ch13.py::check13; build/recheck-ch13.log",
+      "remaining_limitations": "Numerical checks sample parameters and supplement the analytic derivation; physical approximations and source-data conventions remain explicit in the solution."
+    },
+    {
+      "problem": "13.14",
+      "status": "reviewed",
+      "mathematics_checked": "Variable-density polarization source, reference half-space normalization, stack phases, geometric sum and exact resonance limits.",
+      "derivation_changes": "Existing derivation retained; actual Garibyan p.24 Eqs.3–5 comparison reread.",
+      "notation_check": "Jackson Gaussian units; electron mass m versus projectile mass M; positive Q^2=-(p-pprime)^2 (13.2); unitary Fourier pair and 4D normalization (13.21); retarded lambda branch (13.30–13.36); transition variables nu, eta, D and I (13.79–13.87).",
+      "source_evidence": [
+        "sections/ch13.tex, full statement and solution 13.14",
+        "build/ch13-source/p-650.png",
+        "build/ch13-source/p-657.png",
+        "build/ch13-source/p-659.png",
+        "build/ch13-source/p-675.png",
+        "build/ch13-source/p-676.png",
+        "build/ch13-source/p-678.png",
+        "build/ch13-source/Garibyan-p24.png"
+      ],
+      "independent_check": "supplementary/check_ch13.py::check14; build/recheck-ch13.log",
+      "remaining_limitations": "Numerical checks sample parameters and supplement the analytic derivation; physical approximations and source-data conventions remain explicit in the solution."
+    },
+    {
+      "problem": "13.15",
+      "status": "reviewed",
+      "mathematics_checked": "Photon-number dilogarithm, logarithmic inverse-square correction, cutoff-consistent mean energy and primitive.",
+      "derivation_changes": "Existing corrected remainder and both mean-energy conventions retained.",
+      "notation_check": "Jackson Gaussian units; electron mass m versus projectile mass M; positive Q^2=-(p-pprime)^2 (13.2); unitary Fourier pair and 4D normalization (13.21); retarded lambda branch (13.30–13.36); transition variables nu, eta, D and I (13.79–13.87).",
+      "source_evidence": [
+        "sections/ch13.tex, full statement and solution 13.15",
+        "build/ch13-source/p-650.png",
+        "build/ch13-source/p-657.png",
+        "build/ch13-source/p-659.png",
+        "build/ch13-source/p-675.png",
+        "build/ch13-source/p-676.png",
+        "build/ch13-source/p-678.png",
+        "build/ch13-source/Garibyan-p24.png"
+      ],
+      "independent_check": "supplementary/check_ch13.py::check15; build/recheck-ch13.log",
+      "remaining_limitations": "Numerical checks sample parameters and supplement the analytic derivation; physical approximations and source-data conventions remain explicit in the solution."
+    },
+    {
+      "problem": "13.16",
+      "status": "reviewed",
+      "mathematics_checked": "Boosted dipole field, transverse radiation projection, Bohr/atomic conversions, exact cutoff integral and fixed-energy small-mass limit.",
+      "derivation_changes": "Existing approximation qualification and complete integration-by-parts derivation retained.",
+      "notation_check": "Jackson Gaussian units; electron mass m versus projectile mass M; positive Q^2=-(p-pprime)^2 (13.2); unitary Fourier pair and 4D normalization (13.21); retarded lambda branch (13.30–13.36); transition variables nu, eta, D and I (13.79–13.87).",
+      "source_evidence": [
+        "sections/ch13.tex, full statement and solution 13.16",
+        "build/ch13-source/p-650.png",
+        "build/ch13-source/p-657.png",
+        "build/ch13-source/p-659.png",
+        "build/ch13-source/p-675.png",
+        "build/ch13-source/p-676.png",
+        "build/ch13-source/p-678.png",
+        "build/ch13-source/Garibyan-p24.png"
+      ],
+      "independent_check": "supplementary/check_ch13.py::check16; build/recheck-ch13.log",
+      "remaining_limitations": "Numerical checks sample parameters and supplement the analytic derivation; physical approximations and source-data conventions remain explicit in the solution."
+    }
+  ],
+  "material_sources_rechecked": [
+    "https://pdg.lbl.gov/2024/AtomicNuclearProperties/HTML/air_dry_1_atm.html",
+    "https://pdgprod.lbl.gov/~deg/AtomicNuclearProperties/HTML/aluminum_Al.html",
+    "https://pdgprod.lbl.gov/~deg/AtomicNuclearProperties/HTML/copper_Cu.html",
+    "https://pdgprod.lbl.gov/~deg/AtomicNuclearProperties/HTML/lead_Pb.html",
+    "https://pdg.lbl.gov/2005/reviews/atomicrpp.pdf"
+  ]
+}

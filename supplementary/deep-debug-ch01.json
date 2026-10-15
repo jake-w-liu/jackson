@@ -1,0 +1,243 @@
+{
+  "chapter": 1,
+  "reviewer": "root",
+  "reviewed_at_utc": "2026-10-03T15:03:23.793054+00:00",
+  "audit_kind": "Fresh goal: full current-file first pass, then alternate-route/source/invariant final pass",
+  "problem_count": 24,
+  "section": "sections/ch01.tex",
+  "section_sha256": "6af55a26bfa7aa1afc225a2e59831eaa9de21087889a0a380057bcf9a6480dc4",
+  "script": "supplementary/check_ch01.py",
+  "script_sha256": "dc556de96ce96de05026c769b4991752dbf8090bc48cc7a3168e876fd5e9e988",
+  "source_pages_freshly_inspected": [
+    {
+      "file": "pages/p-075.png",
+      "sha256": "bd8363ae8ba94cffeaf3895d4ec0974bad7c67348c1320b86ad97a4cc6a59b6c"
+    },
+    {
+      "file": "build/deep-debug-sources/ch01/page-076.png",
+      "sha256": "bc600722381c7da56ef6898d4d3b11227eee1aa371964816ef69f4ce1d3de632"
+    },
+    {
+      "file": "build/deep-debug-sources/ch01/page-077.png",
+      "sha256": "555f7576340b47b726d282bdafe6e85e058291851bbc35685b002197dd52a059"
+    },
+    {
+      "file": "build/deep-debug-sources/ch01/page-078.png",
+      "sha256": "ec11a32430a485b65ac17e5d07591764c25ba7fde6438cbf330116fa9fa3a2ec"
+    },
+    {
+      "file": "build/deep-debug-sources/ch01/page-079.png",
+      "sha256": "a8ef4125252b9891d4d806bbccc70bbd8e6b9baf46faba0624f726eff708f674"
+    },
+    {
+      "file": "build/deep-debug-sources/ch01/page-080.png",
+      "sha256": "c79e9f91c45fe8d06b17f7e6b70262dc7196b47d10d03718c440d0fcd5bd7232"
+    },
+    {
+      "file": "build/deep-debug-sources/ch01/page-081.png",
+      "sha256": "edde1654d1154765fb0cd2db218339de0574d8704259589c80408696d444c74d"
+    },
+    {
+      "file": "build/source_ch01/page-064.png",
+      "sha256": "243d8ccb199ee8fd5611a90d23d210d59d5fdfdc66d1951689ee9f6862814753"
+    },
+    {
+      "file": "build/source_ch01/page-065.png",
+      "sha256": "d823ec82b4663ea12922616a5f8d1d49b3cf3d357d733479c835e30fc952f9ea"
+    }
+  ],
+  "notation": "Jackson SI units and phasor/source conventions explicitly preserved.",
+  "baseline": {
+    "command": [
+      "python3",
+      "-u",
+      "-W",
+      "error",
+      "supplementary/check_ch01.py"
+    ],
+    "exit_code": 0,
+    "log": "build/deep-debug-ch01-checks.log"
+  },
+  "new_alternate_probes": {
+    "command": [
+      "python3",
+      "-W",
+      "error",
+      "build/deep-debug-ch01-independent.py"
+    ],
+    "exit_code": 0,
+    "script_sha256": "db4f27a69147892bc9b5225a4892158d8ebf1eb586e487a4d5658435ea7acefe",
+    "results": "build/deep-debug-ch01-independent.json",
+    "results_sha256": "57ba06908a407172525d0f508c37210e40292b96cc420824134bbb8d5d30022b"
+  },
+  "dimensions": {
+    "mathematics_physics": "All statements, subparts, intermediate equations and claimed limits retraced in the current section; see per-problem records.",
+    "calculation_implementation": "Entire current chapter script read. Independent integral/ODE/symbolic routes, domains, tolerance scales, singular endpoints and numerical convergence examined; script executed with warnings as errors.",
+    "resources": "Standalone bounded calculations and local owned output files. No persistent server, external service or process lifecycle in chapter script; solver failure assertions and exceptions propagate.",
+    "performance": "No optimization target. Finite quadrature/mesh/root limits examined for accuracy and feasibility; observed suite completed successfully. Formal universal numerical certification is not claimed."
+  },
+  "candidate_findings": [
+    {
+      "problem": "1.15",
+      "status": "rejected",
+      "candidate": "Energy variation integrates field inside trial conductors.",
+      "evidence": "Equilibrium field there is zero; dropping that nonnegative variation energy yields the exterior identity. Boundary flux condition and fixed charges still cancel the cross term."
+    },
+    {
+      "problem": "1.23",
+      "status": "rejected",
+      "candidate": "Quoted 10.23 reference disagrees with finite-grid flux.",
+      "evidence": "Book printed p.55 gives 10.23 as a numerical reference. Current primal/dual bounds straddle it; finite-grid flux is explicitly only an estimate. No contradiction verified."
+    }
+  ],
+  "problems": [
+    {
+      "problem": "1.1",
+      "first_pass": "Gauss law, equilibrium conductor, cavity uniqueness and signed surface jump.",
+      "independent_final_pass": "Rechecked isolated versus grounded charge accounting; pillbox normal and absolute field magnitude have consistent SI units.",
+      "final_status": "no further confirmed error"
+    },
+    {
+      "problem": "1.2",
+      "first_pass": "Orthogonal-coordinate metric determinant and localized Gaussian normalization.",
+      "independent_final_pass": "Integrated the delta with the actual volume Jacobian; excluded singular coordinate charts explicitly.",
+      "final_status": "no further confirmed error"
+    },
+    {
+      "problem": "1.3",
+      "first_pass": "Shell, line and disk delta measures in all requested coordinates.",
+      "independent_final_pass": "Reintegrated total charge and checked that the spherical disk representation adds no point charge at the origin.",
+      "final_status": "no further confirmed error"
+    },
+    {
+      "problem": "1.4",
+      "first_pass": "Integrated r^n density, enclosed charge and radial field for n>-3.",
+      "independent_final_pass": "Small-sphere flux tends to zero even for singular but integrable densities; surface-conductor limit and external field agree.",
+      "final_status": "no further confirmed error"
+    },
+    {
+      "problem": "1.5",
+      "first_pass": "Radial Laplacian of screened potential and its distributional point term.",
+      "independent_final_pass": "Continuous charge integrates to -q, the point flux supplies +q; hydrogen length parameter agrees with the 1s density.",
+      "final_status": "no further confirmed error"
+    },
+    {
+      "problem": "1.6",
+      "first_pass": "Plane, spherical and cylindrical capacitances and numerical geometry.",
+      "independent_final_pass": "Dimensions F versus F/m, thin gaps and large outer-radius limits checked against field integrals and current numerical results.",
+      "final_status": "no further confirmed error"
+    },
+    {
+      "problem": "1.7",
+      "first_pass": "Two-wire voltage from logarithmic potentials and geometrical mean radius.",
+      "independent_final_pass": "Compared small-radius approximation with exact bipolar capacitance at three refinements; errors decrease in the stated regime.",
+      "final_status": "no further confirmed error"
+    },
+    {
+      "problem": "1.8",
+      "first_pass": "Field-energy integrals for every geometry versus Q^2/(2C).",
+      "independent_final_pass": "Rechecked neutral-system external fields, energy positivity and the factor one half using direct integrals.",
+      "final_status": "no further confirmed error"
+    },
+    {
+      "problem": "1.9",
+      "first_pass": "Mechanical force at fixed charge and at fixed voltage with source work.",
+      "independent_final_pass": "Legendre energy gives the same attractive force after Q=CV; treating battery work with the wrong sign would fail this comparison.",
+      "final_status": "no further confirmed error"
+    },
+    {
+      "problem": "1.10",
+      "first_pass": "Differentiated spherical mean and used Gauss divergence identity.",
+      "independent_final_pass": "Regular harmonic expansion leaves only the l=0 center value; the full averaging ball must be charge-free.",
+      "final_status": "no further confirmed error"
+    },
+    {
+      "problem": "1.11",
+      "first_pass": "Normal flux-tube area change and principal curvatures.",
+      "independent_final_pass": "New nonspherical harmonic-level-set symbolic probe independently verifies normal field derivative plus curvature times field equals zero.",
+      "final_status": "no further confirmed error"
+    },
+    {
+      "problem": "1.12",
+      "first_pass": "Green reciprocity including conductor surface normals and infinity.",
+      "independent_final_pass": "Boundary charge sign checked with normal pointing out of the field region into metal; reciprocal capacitance relation is symmetric.",
+      "final_status": "no further confirmed error"
+    },
+    {
+      "problem": "1.13",
+      "first_pass": "Applied reciprocity to point charge between planes.",
+      "independent_final_pass": "New independent one-dimensional Poisson jump solve reproduces both induced charges and their sum -q.",
+      "final_status": "no further confirmed error"
+    },
+    {
+      "problem": "1.14",
+      "first_pass": "Dirichlet Green symmetry, Neumann asymmetry and gauge adjustment.",
+      "independent_final_pass": "Fresh textbook equations (1.42)-(1.46) checked; new explicit ball kernel has symmetric arguments and vanishing boundary value.",
+      "final_status": "no further confirmed error"
+    },
+    {
+      "problem": "1.15",
+      "first_pass": "Thomson fixed-charge energy difference and vanishing cross term.",
+      "independent_final_pass": "New normalized l=1,2,4 interior/exterior energy integrals give nonnegative excess; the conductor-interior objection was examined and rejected.",
+      "final_status": "no further confirmed error"
+    },
+    {
+      "problem": "1.16",
+      "first_pass": "Old charge distribution as admissible trial when neutral conductor is added.",
+      "independent_final_pass": "New concentric neutral-shell field-energy calculation gives a strictly positive removed energy, consistent with the nonincrease theorem.",
+      "final_status": "no further confirmed error"
+    },
+    {
+      "problem": "1.17",
+      "first_pass": "Dirichlet variational bound and zero-boundary variation.",
+      "independent_final_pass": "New nontrivial radial variation has exactly zero cross integral and positive squared-gradient integral.",
+      "final_status": "no further confirmed error"
+    },
+    {
+      "problem": "1.18",
+      "first_pass": "Single-layer representation and fixed-charge quotient stationarity.",
+      "independent_final_pass": "Rescaling invariance, finite energy and nonzero total charge checked; positive energy difference establishes minimum of reciprocal capacitance functional.",
+      "final_status": "no further confirmed error"
+    },
+    {
+      "problem": "1.19",
+      "first_pass": "Linear coaxial trial, exact ratio and thin-gap expansion.",
+      "independent_final_pass": "The ratio reduces to chi*coth(chi)>=1 with t=exp(2chi); direct numerical values and second-order thin-gap correction agree.",
+      "final_status": "no further confirmed error"
+    },
+    {
+      "problem": "1.20",
+      "first_pass": "Conductor-inclusion bounds, cube comparison and two-wire square bounds.",
+      "independent_final_pass": "Checked admissible trial extension, radius order and quoted reference versus bound distinction; constants have correct inverse-length dimensions.",
+      "final_status": "no further confirmed error"
+    },
+    {
+      "problem": "1.21",
+      "first_pass": "Square Poisson functional, optimal polynomial and exact sine series.",
+      "independent_final_pass": "New full Kronecker-grid Poisson solve at 16,32,64 intervals has center errors decreasing by about four; trial value is not claimed as a pointwise bound.",
+      "final_status": "no further confirmed error"
+    },
+    {
+      "problem": "1.22",
+      "first_pass": "Five- and nine-point Taylor stencils and Poisson source term.",
+      "independent_final_pass": "Current script checks monomials through degree five; dimensions, fourth-order Laplacian-squared coefficient and residual source sign retraced.",
+      "final_status": "no further confirmed error"
+    },
+    {
+      "problem": "1.23",
+      "first_pass": "Every reduced equation, 42 printed refined voltages, flux and energy estimates.",
+      "independent_final_pass": "Independent full-annulus solve reproduces all table entries; primal upper and conjugate-FEM lower bounds straddle the quoted 10.23 reference.",
+      "final_status": "no further confirmed error"
+    },
+    {
+      "problem": "1.24",
+      "first_pass": "Reduced nine-point iteration including self-neighbor terms and source.",
+      "independent_final_pass": "All 66 printed iteration entries checked against separate Jacobi/GS arrays; fixed-point residual, spectral radii and continuum-series errors agree.",
+      "final_status": "no further confirmed error"
+    }
+  ],
+  "final_pass_clean": true,
+  "limitations": [
+    "Numerical checks cover stated probes; analytic derivation review supplies the remaining evidence. This is not a proof that no possible error exists."
+  ]
+}

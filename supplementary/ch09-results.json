@@ -1,0 +1,126 @@
+{
+  "atomic_rate_scale_per_s": 16065005823.472395,
+  "hydrogen_transition_rate_per_s": 626831502.9429876,
+  "deformed_magnetization_M1_fraction_of_power": 0.28,
+  "antenna_resistance_exact_ohm": 93.36606053896838,
+  "antenna_peak_polar_angle_deg": 53.91526441767983,
+  "antenna_E2_exact_resistance_ohm": 91.12598006273147,
+  "antenna_E2_static_resistance_ohm": 157.80442466654753,
+  "cavity_TE": [
+    {
+      "l": 1,
+      "n": 1,
+      "x": 4.4934094579090615,
+      "wavelength_over_a": 1.398311319285683
+    },
+    {
+      "l": 2,
+      "n": 1,
+      "x": 5.76345919689455,
+      "wavelength_over_a": 1.0901760717877684
+    },
+    {
+      "l": 3,
+      "n": 1,
+      "x": 6.987932000500519,
+      "wavelength_over_a": 0.8991480321688227
+    },
+    {
+      "l": 1,
+      "n": 2,
+      "x": 7.725251836937709,
+      "wavelength_over_a": 0.8133308065294402
+    }
+  ],
+  "cavity_TM": [
+    {
+      "l": 1,
+      "n": 1,
+      "x": 2.743707269992268,
+      "wavelength_over_a": 2.290034864833555
+    },
+    {
+      "l": 2,
+      "n": 1,
+      "x": 3.8702385802221615,
+      "wavelength_over_a": 1.623462010659538
+    },
+    {
+      "l": 3,
+      "n": 1,
+      "x": 4.973420350822846,
+      "wavelength_over_a": 1.2633529571133155
+    },
+    {
+      "l": 4,
+      "n": 1,
+      "x": 6.061949362982371,
+      "wavelength_over_a": 1.0364958416756507
+    }
+  ],
+  "sphere_radiative_resonances": {
+    "TE1": [
+      {
+        "real": -0.0,
+        "imag": -1.0,
+        "wavelength_over_a": null,
+        "energy_decay_over_transit": 0.5
+      }
+    ],
+    "TM1": [
+      {
+        "real": 0.8660254037844384,
+        "imag": -0.4999999999999998,
+        "wavelength_over_a": 7.255197456936873,
+        "energy_decay_over_transit": 1.0000000000000004
+      },
+      {
+        "real": -0.8660254037844386,
+        "imag": -0.4999999999999999,
+        "wavelength_over_a": 7.255197456936871,
+        "energy_decay_over_transit": 1.0000000000000002
+      }
+    ],
+    "TE2": [
+      {
+        "real": 0.8660254037844384,
+        "imag": -1.4999999999999991,
+        "wavelength_over_a": 7.255197456936873,
+        "energy_decay_over_transit": 0.33333333333333354
+      },
+      {
+        "real": -0.8660254037844386,
+        "imag": -1.5000000000000004,
+        "wavelength_over_a": 7.255197456936871,
+        "energy_decay_over_transit": 0.33333333333333326
+      }
+    ],
+    "TM2": [
+      {
+        "real": 1.8073394944520214,
+        "imag": -0.7019641810083392,
+        "wavelength_over_a": 3.476483154640863,
+        "energy_decay_over_transit": 0.7122870561312302
+      },
+      {
+        "real": -2.028000163634136e-16,
+        "imag": -1.596071637983322,
+        "wavelength_over_a": null,
+        "energy_decay_over_transit": 0.3132691466353998
+      },
+      {
+        "real": -1.8073394944520211,
+        "imag": -0.7019641810083388,
+        "wavelength_over_a": 3.4764831546408637,
+        "energy_decay_over_transit": 0.7122870561312307
+      }
+    ]
+  },
+  "fresh_independent_recheck": "spherical convention, magnetic stress, deforming source, antenna projection, TM Maxwell fields",
+  "constants": {
+    "c": 299792458.0,
+    "alpha": 0.0072973525643,
+    "Z0": 376.7303134118051,
+    "Bohr_radius": 5.29177210544e-11
+  }
+}

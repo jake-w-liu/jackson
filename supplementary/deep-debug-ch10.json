@@ -1,0 +1,925 @@
+{
+  "chapter": 10,
+  "problem_count": 20,
+  "scope": "Every current statement, solution and requested subpart in sections/ch10.tex; complete check script and all referenced figures/data.",
+  "skill": "/Users/jake/.agents/skills/deep-debug/SKILL.md",
+  "review_date": "2026-10-03",
+  "prior_ledgers": "Locators only; neither old ledgers nor old PASS lines were used as current verification.",
+  "passes": [
+    {
+      "pass": 1,
+      "route": "Fresh source-led complete derivation, units and sign review.",
+      "new_confirmed_defects": 0
+    },
+    {
+      "pass": 2,
+      "route": "Complete current-TeX reread from approximation domains and limits; candidate14.23 verified by saddle series and direct Bessel evaluation.",
+      "new_confirmed_defects": 0
+    },
+    {
+      "pass": 3,
+      "route": "Restarted ALL102 after14.23; independent observable, boundary, conservation and limiting routes recorded per problem, with no new confirmed defects.",
+      "new_confirmed_defects": 0
+    }
+  ],
+  "notation_sources": [
+    {
+      "files": "build/ch10-source/text-482.txt,text-483.txt,text-485.txt,text-488.txt,text-490.txt",
+      "printed_pages": "457-465",
+      "equations": "10.2,10.4,10.13-10.14,10.23,10.31-10.32",
+      "checked": "SI far-field dipole signs, dielectric contrast and Born normalization."
+    },
+    {
+      "files": "build/ch10-source/text-498.txt through text-502.txt",
+      "printed_pages": "473-477",
+      "equations": "10.55-10.72",
+      "checked": "Circular norm, Mie coefficient definitions, impedance double factorial denominator."
+    },
+    {
+      "files": "build/ch10-source/text-508.txt,text-509.txt,text-511.txt,text-512.txt,text-516.txt through text-527.txt",
+      "printed_pages": "483-502",
+      "equations": "10.90-10.139",
+      "checked": "Vector/scalar diffraction, shadow/reflection relative phases and optical theorem."
+    },
+    {
+      "files": "build/source_ch09/p-447.txt,p-449.txt; build/ch08-source/p-377.txt through p-380.txt",
+      "printed_pages": "422,424,352-355",
+      "equations": "9.72,9.75,8.1-8.12",
+      "checked": "Aperture moments and skin impedance."
+    },
+    {
+      "files": "/private/tmp/recheck-sources/p133.txt,p453.txt,p456.txt; /private/tmp/deep-debug-shared-sources/p325.txt,p326.txt",
+      "printed_pages": "108,428,431,300-301",
+      "equations": "3.49-3.55,9.101,9.119-9.121,7.22,7.27-7.28",
+      "checked": "Actual spherical/vector harmonics and signed circular/Stokes convention."
+    }
+  ],
+  "external_sources_currently_checked": [],
+  "problems": [
+    {
+      "problem_id": "10.1",
+      "statement_subparts": [
+        "a",
+        "b",
+        "c"
+      ],
+      "inspected_sources": {
+        "problem_ocr": [
+          "ocr/p-532.txt",
+          "ocr/p-533.txt"
+        ],
+        "printed_problem_pages": [
+          507,
+          508
+        ],
+        "theory": "10.2,10.12-10.14, printed pp.457-460 (PDF482-485)",
+        "current_tex": "sections/ch10.tex:9"
+      },
+      "first_pass_derivation": "Sum outgoing transverse polarizations of the electric and magnetic induced dipole amplitudes.",
+      "falsifiable_candidates": [
+        {
+          "claim": "An electric-magnetic interference sign might reverse forward and backward scattering.",
+          "verification": "Discarded: the cross product identity gives -n dot n0; direct polarization sums and angular integration agree.",
+          "status": "discarded"
+        }
+      ],
+      "independent_final_pass": {
+        "route": "Recover the two90-degree intensities and their1/4 ratio from radiation nodes; integrate to10pi k^4a^6/3.",
+        "result": "No new confirmed defect after both current-run fixes; the entire assigned102-problem final pass was restarted after14.23.",
+        "evidence_type": "Manual analytic identities/domain checks plus the finite numerical or symbolic evidence from the named script; no machine-certified universal proof is claimed."
+      },
+      "current_script_check": "check01",
+      "changes": [],
+      "notation_check": "SI amplitudes with exp(-i omega t), outgoing exp(+ikr), normalized incident polarization, Condon-Shortley Ylm and Xlm=L Ylm/sqrt(l(l+1)), k in the host medium where applicable, peak phasors and time-average1/2.",
+      "remaining_limitations": [
+        "Only leading long-wavelength response of a PEC sphere is represented."
+      ]
+    },
+    {
+      "problem_id": "10.2",
+      "statement_subparts": [],
+      "inspected_sources": {
+        "problem_ocr": [
+          "ocr/p-533.txt"
+        ],
+        "printed_problem_pages": [
+          508
+        ],
+        "theory": "7.22,7.27-7.28 pp.300-301;3.49-3.55 p.108;9.119 p.431;10.71 p.477",
+        "current_tex": "sections/ch10.tex:83"
+      },
+      "first_pass_derivation": "Superpose circular field amplitudes coherently and evaluate both polarization projections.",
+      "falsifiable_candidates": [
+        {
+          "claim": "The vector-harmonic expression may assign different extra phases to the two helicities.",
+          "verification": "Discarded by the new amplitude-level probe: Condon-Shortley Y1,+/-1 with X=LY/sqrt2 gives the same common negative phase for both, retaining alpha.",
+          "status": "discarded"
+        }
+      ],
+      "independent_final_pass": {
+        "route": "Check r=0,infinity circular limits and r=1 linear azimuth alpha/2; compare actual complex vector amplitudes at three generic directions.",
+        "result": "No new confirmed defect after both current-run fixes; the entire assigned102-problem final pass was restarted after14.23.",
+        "evidence_type": "Manual analytic identities/domain checks plus the finite numerical or symbolic evidence from the named script; no machine-certified universal proof is claimed."
+      },
+      "current_script_check": "check02",
+      "changes": [
+        "Added an independent complex-amplitude helicity/Condon-Shortley phase regression."
+      ],
+      "notation_check": "SI amplitudes with exp(-i omega t), outgoing exp(+ikr), normalized incident polarization, Condon-Shortley Ylm and Xlm=L Ylm/sqrt(l(l+1)), k in the host medium where applicable, peak phasors and time-average1/2.",
+      "remaining_limitations": [
+        "A common overall field phase is physically irrelevant; relative helicity phase is explicitly fixed."
+      ]
+    },
+    {
+      "problem_id": "10.3",
+      "statement_subparts": [
+        "a",
+        "b"
+      ],
+      "inspected_sources": {
+        "problem_ocr": [
+          "ocr/p-533.txt"
+        ],
+        "printed_problem_pages": [
+          508
+        ],
+        "theory": "8.1-8.12 pp.352-355 (PDF377-380);10.12-10.14 pp.459-460",
+        "current_tex": "sections/ch10.tex:134"
+      },
+      "first_pass_derivation": "Match the oscillatory flux-excluding magnetic scalar potential and integrate local skin-layer dissipation.",
+      "falsifiable_candidates": [
+        {
+          "claim": "Infinite conductivity at nonzero frequency could incorrectly be replaced by the static penetrating-field problem.",
+          "verification": "Discarded: the solution distinguishes preexisting static flux and uses Hr(R)=0 only for the oscillating component.",
+          "status": "discarded"
+        }
+      ],
+      "independent_final_pass": {
+        "route": "Check the dipole sign, surface Htheta=-3Hi sin(theta)/2 and the absorbed-to-incident flux ratio3pi k delta R².",
+        "result": "No new confirmed defect after both current-run fixes; the entire assigned102-problem final pass was restarted after14.23.",
+        "evidence_type": "Manual analytic identities/domain checks plus the finite numerical or symbolic evidence from the named script; no machine-certified universal proof is claimed."
+      },
+      "current_script_check": "check03",
+      "changes": [],
+      "notation_check": "SI amplitudes with exp(-i omega t), outgoing exp(+ikr), normalized incident polarization, Condon-Shortley Ylm and Xlm=L Ylm/sqrt(l(l+1)), k in the host medium where applicable, peak phasors and time-average1/2.",
+      "remaining_limitations": [
+        "Both kR much less than1 and delta/R much less than1 are needed; sigma is frequency independent only for the stated scaling."
+      ]
+    },
+    {
+      "problem_id": "10.4",
+      "statement_subparts": [
+        "a",
+        "b",
+        "c"
+      ],
+      "inspected_sources": {
+        "problem_ocr": [
+          "ocr/p-533.txt"
+        ],
+        "printed_problem_pages": [
+          508
+        ],
+        "theory": "10.2-10.11 pp.457-459;10.138-10.151 pp.502-505 (PDF527-530)",
+        "current_tex": "sections/ch10.tex:184"
+      },
+      "first_pass_derivation": "Match the complex quasistatic dielectric fields and compute Joule heating independently of far-field scattering.",
+      "falsifiable_candidates": [
+        {
+          "claim": "The leading optical theorem violates energy conservation by missing scattering.",
+          "verification": "Discarded as an error in the answer: it explicitly identifies the order mismatch and the radiation-reaction completion restores absorption plus scattering.",
+          "status": "discarded"
+        }
+      ],
+      "independent_final_pass": {
+        "route": "Check epsr=1,sigma=0 transparency and the imaginary-polarizability identity for Arad=A/(1-i b A).",
+        "result": "No new confirmed defect after both current-run fixes; the entire assigned102-problem final pass was restarted after14.23.",
+        "evidence_type": "Manual analytic identities/domain checks plus the finite numerical or symbolic evidence from the named script; no machine-certified universal proof is claimed."
+      },
+      "current_script_check": "check04",
+      "changes": [],
+      "notation_check": "SI amplitudes with exp(-i omega t), outgoing exp(+ikr), normalized incident polarization, Condon-Shortley Ylm and Xlm=L Ylm/sqrt(l(l+1)), k in the host medium where applicable, peak phasors and time-average1/2.",
+      "remaining_limitations": [
+        "The small internal wave-number condition is required; real dynamic depolarization is a separate higher-order correction."
+      ]
+    },
+    {
+      "problem_id": "10.5",
+      "statement_subparts": [
+        "a",
+        "b"
+      ],
+      "inspected_sources": {
+        "problem_ocr": [
+          "ocr/p-533.txt",
+          "ocr/p-534.txt"
+        ],
+        "printed_problem_pages": [
+          508,
+          509
+        ],
+        "theory": "10.4 problem pp.508-509;8.1 skin approximation;10.139 optical theorem p.502",
+        "current_tex": "sections/ch10.tex:271"
+      },
+      "first_pass_derivation": "Compute conduction-current m from Faraday-induced azimuthal E; add dielectric polarization current only where the full moment is needed.",
+      "falsifiable_candidates": [
+        {
+          "claim": "The printed sigma_t could be complete extinction even when sigma=0.",
+          "verification": "Discarded as a new issue: the existing erratum labels material absorption, and the solution supplies the missing scattering/radiative completion and internal-wavelength condition.",
+          "status": "discarded"
+        }
+      ],
+      "independent_final_pass": {
+        "route": "Check magnetic absorption by direct Joule volume integral and verify its coefficient agrees with Im forward magnetic amplitude.",
+        "result": "No new confirmed defect after both current-run fixes; the entire assigned102-problem final pass was restarted after14.23.",
+        "evidence_type": "Manual analytic identities/domain checks plus the finite numerical or symbolic evidence from the named script; no machine-certified universal proof is claimed."
+      },
+      "current_script_check": "check05",
+      "changes": [],
+      "notation_check": "SI amplitudes with exp(-i omega t), outgoing exp(+ikr), normalized incident polarization, Condon-Shortley Ylm and Xlm=L Ylm/sqrt(l(l+1)), k in the host medium where applicable, peak phasors and time-average1/2.",
+      "remaining_limitations": [
+        "The displayed textbook moment is only its conduction part; the full moment and validity restrictions are retained."
+      ]
+    },
+    {
+      "problem_id": "10.6",
+      "statement_subparts": [
+        "a",
+        "b"
+      ],
+      "inspected_sources": {
+        "problem_ocr": [
+          "ocr/p-534.txt"
+        ],
+        "printed_problem_pages": [
+          509
+        ],
+        "theory": "10.55,10.57,10.61-10.62 pp.473-474 (PDF498-499);10.138-10.139 p.502",
+        "current_tex": "sections/ch10.tex:354"
+      },
+      "first_pass_derivation": "Take Hankel far-field limits and normalize the circular incident vector before applying the forward optical theorem.",
+      "falsifiable_candidates": [
+        {
+          "claim": "The circular normalization may introduce a sqrt2 or factor-two cross-section error.",
+          "verification": "Discarded: Xl,+/-1 at the pole yields1/(4ik) sum(2l+1)(alpha+beta); adding scattering and absorption gives the same -pi/k² real sum.",
+          "status": "discarded"
+        }
+      ],
+      "independent_final_pass": {
+        "route": "Check the lossless S-matrix identity and recover the PEC dipole total using l=1.",
+        "result": "No new confirmed defect after both current-run fixes; the entire assigned102-problem final pass was restarted after14.23.",
+        "evidence_type": "Manual analytic identities/domain checks plus the finite numerical or symbolic evidence from the named script; no machine-certified universal proof is claimed."
+      },
+      "current_script_check": "check06",
+      "changes": [],
+      "notation_check": "SI amplitudes with exp(-i omega t), outgoing exp(+ikr), normalized incident polarization, Condon-Shortley Ylm and Xlm=L Ylm/sqrt(l(l+1)), k in the host medium where applicable, peak phasors and time-average1/2.",
+      "remaining_limitations": [
+        "The standard multipole series is assumed convergent at the observation and material parameters used."
+      ]
+    },
+    {
+      "problem_id": "10.7",
+      "statement_subparts": [
+        "a",
+        "b",
+        "c"
+      ],
+      "inspected_sources": {
+        "problem_ocr": [
+          "ocr/p-534.txt"
+        ],
+        "printed_problem_pages": [
+          509
+        ],
+        "theory": "10.55-10.68 pp.473-476 (PDF498-501)",
+        "current_tex": "sections/ch10.tex:408"
+      },
+      "first_pass_derivation": "Match both tangential fields with regular interior modes and solve the two2x2 systems for a_l,b_l.",
+      "falsifiable_candidates": [
+        {
+          "claim": "Strictly real epsr tending to infinity may always yield the PEC pointwise limit.",
+          "verification": "Discarded as a flaw: the solution explicitly gives internal standing-wave zero sequences that prevent a uniform pointwise limit, and specifies the absorbing limit that does converge.",
+          "status": "discarded"
+        }
+      ],
+      "independent_final_pass": {
+        "route": "Recheck epsr=1 gives zero scattering, lossless |S|=1, small internal size gives Rayleigh, and lossy high-index fields approach PEC.",
+        "result": "No new confirmed defect after both current-run fixes; the entire assigned102-problem final pass was restarted after14.23.",
+        "evidence_type": "Manual analytic identities/domain checks plus the finite numerical or symbolic evidence from the named script; no machine-certified universal proof is claimed."
+      },
+      "current_script_check": "check07",
+      "changes": [],
+      "notation_check": "SI amplitudes with exp(-i omega t), outgoing exp(+ikr), normalized incident polarization, Condon-Shortley Ylm and Xlm=L Ylm/sqrt(l(l+1)), k in the host medium where applicable, peak phasors and time-average1/2.",
+      "remaining_limitations": [
+        "Real high-index resonance sequences require exact coefficients; the two limiting operations cannot be interchanged."
+      ]
+    },
+    {
+      "problem_id": "10.8",
+      "statement_subparts": [
+        "a",
+        "b",
+        "c",
+        "d"
+      ],
+      "inspected_sources": {
+        "problem_ocr": [
+          "ocr/p-534.txt"
+        ],
+        "printed_problem_pages": [
+          509
+        ],
+        "theory": "8.1-8.12 pp.352-355;10.65-10.69 pp.475-476 (PDF500-501)",
+        "current_tex": "sections/ch10.tex:521"
+      },
+      "first_pass_derivation": "Derive surface impedance and expand the exact impedance multipole ratios using double-factorial Bessel coefficients.",
+      "falsifiable_candidates": [
+        {
+          "claim": "The general-l coefficient may be missing a factor(2l+1), or d=1 may be claimed quantitatively accurate.",
+          "verification": "Discarded: source10.69 has the stated denominator(2l+1)[(2l-1)!!]^2; d=1 is explicitly only a formal model extrapolation.",
+          "status": "discarded"
+        }
+      ],
+      "independent_final_pass": {
+        "route": "Check d->0 gives PEC and zero material loss, while first-order absorbed power agrees with10.3; rational d=1 ratio is2/5.",
+        "result": "No new confirmed defect after both current-run fixes; the entire assigned102-problem final pass was restarted after14.23.",
+        "evidence_type": "Manual analytic identities/domain checks plus the finite numerical or symbolic evidence from the named script; no machine-certified universal proof is claimed."
+      },
+      "current_script_check": "check08",
+      "changes": [],
+      "notation_check": "SI amplitudes with exp(-i omega t), outgoing exp(+ikr), normalized incident polarization, Condon-Shortley Ylm and Xlm=L Ylm/sqrt(l(l+1)), k in the host medium where applicable, peak phasors and time-average1/2.",
+      "remaining_limitations": [
+        "The local planar impedance approximation is controlled only for delta much less than a."
+      ]
+    },
+    {
+      "problem_id": "10.9",
+      "statement_subparts": [
+        "a",
+        "b"
+      ],
+      "inspected_sources": {
+        "problem_ocr": [
+          "ocr/p-534.txt",
+          "ocr/p-535.txt"
+        ],
+        "printed_problem_pages": [
+          509,
+          510
+        ],
+        "theory": "10.31-10.32 pp.465-466 (PDF490-491); problem10.9 p.509",
+        "current_tex": "sections/ch10.tex:633"
+      },
+      "first_pass_derivation": "Integrate the uniform sphere Born form factor and reduce the total cross section to three finite antiderivatives.",
+      "falsifiable_candidates": [
+        {
+          "claim": "Cancellation near the numerical helper branch z=.05 could exceed the stated quadrature tolerance.",
+          "verification": "Discarded by direct integral comparison at .049999,.05,.050001,.06,.1: maximal observed relative error about1.97e-7 is below2e-6.",
+          "status": "discarded"
+        }
+      ],
+      "independent_final_pass": {
+        "route": "Differentiate A0,A2,A4 and inspect zero endpoints; recover4z²/27 and F->1, including the shrinking forward-cone solid angle.",
+        "result": "No new confirmed defect after both current-run fixes; the entire assigned102-problem final pass was restarted after14.23.",
+        "evidence_type": "Manual analytic identities/domain checks plus the finite numerical or symbolic evidence from the named script; no machine-certified universal proof is claimed."
+      },
+      "current_script_check": "check09",
+      "changes": [],
+      "notation_check": "SI amplitudes with exp(-i omega t), outgoing exp(+ikr), normalized incident polarization, Condon-Shortley Ylm and Xlm=L Ylm/sqrt(l(l+1)), k in the host medium where applicable, peak phasors and time-average1/2.",
+      "remaining_limitations": [
+        "For large ka, weak contrast must also keep ka|Delta| small; the helper is used only for positive z, and zero is treated analytically."
+      ]
+    },
+    {
+      "problem_id": "10.10",
+      "statement_subparts": [
+        "a",
+        "b"
+      ],
+      "inspected_sources": {
+        "problem_ocr": [
+          "ocr/p-535.txt"
+        ],
+        "printed_problem_pages": [
+          510
+        ],
+        "theory": "10.101 p.487 (PDF512);9.72,9.74 pp.422-423 (PDF447-448)",
+        "current_tex": "sections/ch10.tex:731"
+      },
+      "first_pass_derivation": "Expand Smythe aperture radiation, isolate the trace electric dipole and integrate Faraday law by parts for m.",
+      "falsifiable_candidates": [
+        {
+          "claim": "A singular thin-screen edge may leave an omitted line contribution.",
+          "verification": "Discarded: the contour involves E parallel to the rim, which vanishes as sqrt(eta); the divergent perpendicular component does not enter.",
+          "status": "discarded"
+        }
+      ],
+      "independent_final_pass": {
+        "route": "Check dipole radiation normalization by transverse angular projection and repeat Stokes integration on an excised contour.",
+        "result": "No new confirmed defect after both current-run fixes; the entire assigned102-problem final pass was restarted after14.23.",
+        "evidence_type": "Manual analytic identities/domain checks plus the finite numerical or symbolic evidence from the named script; no machine-certified universal proof is claimed."
+      },
+      "current_script_check": "check10",
+      "changes": [],
+      "notation_check": "SI amplitudes with exp(-i omega t), outgoing exp(+ikr), normalized incident polarization, Condon-Shortley Ylm and Xlm=L Ylm/sqrt(l(l+1)), k in the host medium where applicable, peak phasors and time-average1/2.",
+      "remaining_limitations": [
+        "Smooth finite-energy edges and leading aperture-size order are assumed; higher aperture moments are not called dipoles."
+      ]
+    },
+    {
+      "problem_id": "10.11",
+      "statement_subparts": [
+        "a",
+        "b",
+        "c"
+      ],
+      "inspected_sources": {
+        "problem_ocr": [
+          "ocr/p-535.txt",
+          "ocr/p-536.txt"
+        ],
+        "printed_problem_pages": [
+          510,
+          511
+        ],
+        "theory": "10.101 p.487; scalar Kirchhoff Section10.8; problem10.11 pp.510-511",
+        "current_tex": "sections/ch10.tex:813"
+      },
+      "first_pass_derivation": "Evaluate the paraxial half-plane Gaussian integral and express it in the stated Fresnel argument convention.",
+      "falsifiable_candidates": [
+        {
+          "claim": "The edge intensity or asymptotic phase may use the wrong Fresnel normalization.",
+          "verification": "Discarded: A(0)=1/2 gives I0/4, the positive-infinity amplitude tends to1, and tail integration by parts gives cos(xi²+pi/4).",
+          "status": "discarded"
+        }
+      ],
+      "independent_final_pass": {
+        "route": "Check shadow decay1/(4pi xi²), illuminated oscillations, and vector longitudinal correction Ez=i partialX Ex/k.",
+        "result": "No new confirmed defect after both current-run fixes; the entire assigned102-problem final pass was restarted after14.23.",
+        "evidence_type": "Manual analytic identities/domain checks plus the finite numerical or symbolic evidence from the named script; no machine-certified universal proof is claimed."
+      },
+      "current_script_check": "check11",
+      "changes": [],
+      "notation_check": "SI amplitudes with exp(-i omega t), outgoing exp(+ikr), normalized incident polarization, Condon-Shortley Ylm and Xlm=L Ylm/sqrt(l(l+1)), k in the host medium where applicable, peak phasors and time-average1/2.",
+      "remaining_limitations": [
+        "Only the stated paraxial, large-kZ approximation is compared; the vector formula supplies smaller polarization corrections."
+      ]
+    },
+    {
+      "problem_id": "10.12",
+      "statement_subparts": [
+        "a",
+        "b"
+      ],
+      "inspected_sources": {
+        "problem_ocr": [
+          "ocr/p-536.txt"
+        ],
+        "printed_problem_pages": [
+          511
+        ],
+        "theory": "10.109-10.114 pp.491-493 (PDF516-518)",
+        "current_tex": "sections/ch10.tex:904"
+      },
+      "first_pass_derivation": "Fourier-transform the circular aperture and evaluate the TE vector magnetic-current factor.",
+      "falsifiable_candidates": [
+        {
+          "claim": "The scalar and vector angular factors may fail to coincide in the incident direction.",
+          "verification": "Discarded: at theta=alpha,phi=0 all three factors reduce to cos²alpha; polarization rotations agree at normal incidence.",
+          "status": "discarded"
+        }
+      ],
+      "independent_final_pass": {
+        "route": "Check the removable Bessel zero-argument limit and normal-incidence polarization exchange; preserve common incident power normalization.",
+        "result": "No new confirmed defect after both current-run fixes; the entire assigned102-problem final pass was restarted after14.23.",
+        "evidence_type": "Manual analytic identities/domain checks plus the finite numerical or symbolic evidence from the named script; no machine-certified universal proof is claimed."
+      },
+      "current_script_check": "check12",
+      "changes": [],
+      "notation_check": "SI amplitudes with exp(-i omega t), outgoing exp(+ikr), normalized incident polarization, Condon-Shortley Ylm and Xlm=L Ylm/sqrt(l(l+1)), k in the host medium where applicable, peak phasors and time-average1/2.",
+      "remaining_limitations": [
+        "The aperture field is prescribed as the unperturbed incident field."
+      ]
+    },
+    {
+      "problem_id": "10.13",
+      "statement_subparts": [
+        "a",
+        "b"
+      ],
+      "inspected_sources": {
+        "problem_ocr": [
+          "ocr/p-536.txt"
+        ],
+        "printed_problem_pages": [
+          511
+        ],
+        "theory": "10.90,10.92 pp.483-484;10.112-10.114 pp.492-493;Fig10.14 p.495",
+        "current_tex": "sections/ch10.tex:958"
+      },
+      "first_pass_derivation": "Take the transverse radiation part before truncating aperture fields, then combine electric and magnetic boundary terms.",
+      "falsifiable_candidates": [
+        {
+          "claim": "Directly truncated vector Kirchhoff data can produce an unphysical radial radiation component.",
+          "verification": "Discarded as a flaw in the solution: it explicitly identifies that inconsistent procedure and uses the exact transverse projection before approximation.",
+          "status": "discarded"
+        }
+      ],
+      "independent_final_pass": {
+        "route": "Verify the vector identity and the E/H envelope ratios at alpha45 degrees, including the H-plane grazing divergence where the denominator vanishes.",
+        "result": "No new confirmed defect after both current-run fixes; the entire assigned102-problem final pass was restarted after14.23.",
+        "evidence_type": "Manual analytic identities/domain checks plus the finite numerical or symbolic evidence from the named script; no machine-certified universal proof is claimed."
+      },
+      "current_script_check": "check13",
+      "changes": [],
+      "notation_check": "SI amplitudes with exp(-i omega t), outgoing exp(+ikr), normalized incident polarization, Condon-Shortley Ylm and Xlm=L Ylm/sqrt(l(l+1)), k in the host medium where applicable, peak phasors and time-average1/2.",
+      "remaining_limitations": [
+        "Neither aperture approximation is exact; ratios at common diffraction zeros mean envelope ratios."
+      ]
+    },
+    {
+      "problem_id": "10.14",
+      "statement_subparts": [
+        "a",
+        "b",
+        "c"
+      ],
+      "inspected_sources": {
+        "problem_ocr": [
+          "ocr/p-536.txt"
+        ],
+        "printed_problem_pages": [
+          511
+        ],
+        "theory": "10.109 p.491; problem10.14 p.511",
+        "current_tex": "sections/ch10.tex:1039"
+      },
+      "first_pass_derivation": "Separate the rectangular Fourier transform and keep beta measured from the long y-directed edges.",
+      "falsifiable_candidates": [
+        {
+          "claim": "The azimuthal factor may use phi-beta despite beta being measured from y.",
+          "verification": "Discarded: e=(sin beta,cos beta,0) gives n dot e=sin theta sin(phi+beta).",
+          "status": "discarded"
+        }
+      ],
+      "independent_final_pass": {
+        "route": "At beta45 degrees compare vector-scalar difference=(1-cos theta)^2 sinc²/4 and the common30/90 degree zeros.",
+        "result": "No new confirmed defect after both current-run fixes; the entire assigned102-problem final pass was restarted after14.23.",
+        "evidence_type": "Manual analytic identities/domain checks plus the finite numerical or symbolic evidence from the named script; no machine-certified universal proof is claimed."
+      },
+      "current_script_check": "check14",
+      "changes": [],
+      "notation_check": "SI amplitudes with exp(-i omega t), outgoing exp(+ikr), normalized incident polarization, Condon-Shortley Ylm and Xlm=L Ylm/sqrt(l(l+1)), k in the host medium where applicable, peak phasors and time-average1/2.",
+      "remaining_limitations": [
+        "The assumed unperturbed aperture field is the model being plotted."
+      ]
+    },
+    {
+      "problem_id": "10.15",
+      "statement_subparts": [],
+      "inspected_sources": {
+        "problem_ocr": [
+          "ocr/p-536.txt",
+          "ocr/p-537.txt"
+        ],
+        "printed_problem_pages": [
+          511,
+          512
+        ],
+        "theory": "10.101,10.109 pp.487,491; coax TEM normalization Section8.2",
+        "current_tex": "sections/ch10.tex:1099"
+      },
+      "first_pass_derivation": "Integrate the annular TEM electric field in cylindrical coordinates, then integrate its radiation over the upper hemisphere.",
+      "falsifiable_candidates": [
+        {
+          "claim": "The axial1/sin theta factor or high-frequency total could be singular or violate TEM power balance.",
+          "verification": "Discarded: the Bessel difference is O(sin²theta); the Hankel identity integrates to ln(b/a), giving high-frequency P/Ptem->1.",
+          "status": "discarded"
+        }
+      ],
+      "independent_final_pass": {
+        "route": "Recover low-k electric-dipole k^4 scaling and derive the logarithmic integral by differentiating with respect to b.",
+        "result": "No new confirmed defect after both current-run fixes; the entire assigned102-problem final pass was restarted after14.23.",
+        "evidence_type": "Manual analytic identities/domain checks plus the finite numerical or symbolic evidence from the named script; no machine-certified universal proof is claimed."
+      },
+      "current_script_check": "check15",
+      "changes": [],
+      "notation_check": "SI amplitudes with exp(-i omega t), outgoing exp(+ikr), normalized incident polarization, Condon-Shortley Ylm and Xlm=L Ylm/sqrt(l(l+1)), k in the host medium where applicable, peak phasors and time-average1/2.",
+      "remaining_limitations": [
+        "The unperturbed aperture field does not determine the true reflected TEM amplitude for a small opening."
+      ]
+    },
+    {
+      "problem_id": "10.16",
+      "statement_subparts": [
+        "a",
+        "b"
+      ],
+      "inspected_sources": {
+        "problem_ocr": [
+          "ocr/p-537.txt"
+        ],
+        "printed_problem_pages": [
+          512
+        ],
+        "theory": "10.125,10.138-10.139 pp.499,502 (PDF524,527)",
+        "current_tex": "sections/ch10.tex:1177"
+      },
+      "first_pass_derivation": "Use the projected-area indicator and Parseval to integrate the forward diffraction cone.",
+      "falsifiable_candidates": [
+        {
+          "claim": "Projected holes or an extra factor two may be mishandled in extinction.",
+          "verification": "Discarded: integral |indicator|² is the actual projected area including holes; the forward amplitude gives twice that area in extinction.",
+          "status": "discarded"
+        }
+      ],
+      "independent_final_pass": {
+        "route": "Check Fourier normalization1/(4pi²), dOmega=d²kt/k² and the distinction between shadow scattering and total extinction.",
+        "result": "No new confirmed defect after both current-run fixes; the entire assigned102-problem final pass was restarted after14.23.",
+        "evidence_type": "Manual analytic identities/domain checks plus the finite numerical or symbolic evidence from the named script; no machine-certified universal proof is claimed."
+      },
+      "current_script_check": "check16",
+      "changes": [],
+      "notation_check": "SI amplitudes with exp(-i omega t), outgoing exp(+ikr), normalized incident polarization, Condon-Shortley Ylm and Xlm=L Ylm/sqrt(l(l+1)), k in the host medium where applicable, peak phasors and time-average1/2.",
+      "remaining_limitations": [
+        "The short-wave forward-dominance assumption stated in the problem is essential."
+      ]
+    },
+    {
+      "problem_id": "10.17",
+      "statement_subparts": [
+        "a",
+        "b"
+      ],
+      "inspected_sources": {
+        "problem_ocr": [
+          "ocr/p-537.txt"
+        ],
+        "printed_problem_pages": [
+          512
+        ],
+        "theory": "10.127,10.132 pp.499-500 (PDF524-525);Fig10.16 printed p.500",
+        "current_tex": "sections/ch10.tex:1227"
+      },
+      "first_pass_derivation": "Add coherent shadow and reflection amplitudes with the correct E/H reflection phases, then compare to exact PEC partial waves.",
+      "falsifiable_candidates": [
+        {
+          "claim": "The extended two-amplitude approximation may be claimed uniformly accurate at ka=10.",
+          "verification": "Discarded: explicit table and30/40-multipole convergence show substantial quantitative disagreement; the solution preserves the nonuniform-angle qualification.",
+          "status": "discarded"
+        }
+      ],
+      "independent_final_pass": {
+        "route": "Check the forward common E/H limit, distinct interference signs, exact Mie optical theorem and strong E-plane minima.",
+        "result": "No new confirmed defect after both current-run fixes; the entire assigned102-problem final pass was restarted after14.23.",
+        "evidence_type": "Manual analytic identities/domain checks plus the finite numerical or symbolic evidence from the named script; no machine-certified universal proof is claimed."
+      },
+      "current_script_check": "check17",
+      "changes": [],
+      "notation_check": "SI amplitudes with exp(-i omega t), outgoing exp(+ikr), normalized incident polarization, Condon-Shortley Ylm and Xlm=L Ylm/sqrt(l(l+1)), k in the host medium where applicable, peak phasors and time-average1/2.",
+      "remaining_limitations": [
+        "Only the King-Wu graph reproduced in Jackson was accessed; the original Appendix pages were unavailable and are not claimed inspected."
+      ]
+    },
+    {
+      "problem_id": "10.18",
+      "statement_subparts": [
+        "a",
+        "b"
+      ],
+      "inspected_sources": {
+        "problem_ocr": [
+          "ocr/p-537.txt"
+        ],
+        "printed_problem_pages": [
+          512
+        ],
+        "theory": "9.75 p.424 (PDF449);10.2 p.457 (PDF482)",
+        "current_tex": "sections/ch10.tex:1335"
+      },
+      "first_pass_derivation": "Translate the small-hole static moments to the transmitted side and form the electric plus magnetic dipole far fields.",
+      "falsifiable_candidates": [
+        {
+          "claim": "A full-sphere dipole integral may double the transmitted power.",
+          "verification": "Discarded: the solution integrates only one hemisphere and uses its second moments2pi delta/3; the normal-electric/tangential-magnetic interference integrates to zero.",
+          "status": "discarded"
+        }
+      ],
+      "independent_final_pass": {
+        "route": "Check the sign of each moment under side exchange and compute power directly from the vector-field modulus.",
+        "result": "No new confirmed defect after both current-run fixes; the entire assigned102-problem final pass was restarted after14.23.",
+        "evidence_type": "Manual analytic identities/domain checks plus the finite numerical or symbolic evidence from the named script; no machine-certified universal proof is claimed."
+      },
+      "current_script_check": "check18",
+      "changes": [],
+      "notation_check": "SI amplitudes with exp(-i omega t), outgoing exp(+ikr), normalized incident polarization, Condon-Shortley Ylm and Xlm=L Ylm/sqrt(l(l+1)), k in the host medium where applicable, peak phasors and time-average1/2.",
+      "remaining_limitations": [
+        "The fields E0,B0 are closed-screen fields on the incident side, not incident-wave amplitudes alone."
+      ]
+    },
+    {
+      "problem_id": "10.19",
+      "statement_subparts": [
+        "a",
+        "b",
+        "c"
+      ],
+      "inspected_sources": {
+        "problem_ocr": [
+          "ocr/p-537.txt",
+          "ocr/p-538.txt"
+        ],
+        "printed_problem_pages": [
+          512,
+          513
+        ],
+        "theory": "Fig10.14 p.495 (PDF520);9.75 p.424;10.114-10.116 pp.493-494",
+        "current_tex": "sections/ch10.tex:1400"
+      },
+      "first_pass_derivation": "Double the appropriate closed-screen fields, calculate both polarizations and normalize hemispherical power by incident intercepted flux.",
+      "falsifiable_candidates": [
+        {
+          "claim": "The TM interference sign or factor-two boundary field could produce the wrong angular asymmetry.",
+          "verification": "Discarded: direct cross-product evaluation gives -4 sin(alpha) nx and both transmission coefficients match independent hemisphere integrals.",
+          "status": "discarded"
+        }
+      ],
+      "independent_final_pass": {
+        "route": "Check normal incidence equality, fixed-angle ka^4 suppression, and measured source-figure radii against the independent ka=pi Smythe curve.",
+        "result": "No new confirmed defect after both current-run fixes; the entire assigned102-problem final pass was restarted after14.23.",
+        "evidence_type": "Manual analytic identities/domain checks plus the finite numerical or symbolic evidence from the named script; no machine-certified universal proof is claimed."
+      },
+      "current_script_check": "check19",
+      "changes": [],
+      "notation_check": "SI amplitudes with exp(-i omega t), outgoing exp(+ikr), normalized incident polarization, Condon-Shortley Ylm and Xlm=L Ylm/sqrt(l(l+1)), k in the host medium where applicable, peak phasors and time-average1/2.",
+      "remaining_limitations": [
+        "Ruler readings carry0.02-0.03 normalized uncertainty; grazing transmission normalization is singular although power remains finite."
+      ]
+    },
+    {
+      "problem_id": "10.20",
+      "statement_subparts": [
+        "a",
+        "b",
+        "c"
+      ],
+      "inspected_sources": {
+        "problem_ocr": [
+          "ocr/p-538.txt"
+        ],
+        "printed_problem_pages": [
+          513
+        ],
+        "theory": "10.23 p.463,10.31 p.465; problem10.20 p.513",
+        "current_tex": "sections/ch10.tex:1517"
+      },
+      "first_pass_derivation": "Factor the cylinder Born transform, average sinc² over isotropic orientation, and integrate the slender-fiber asymptotics.",
+      "falsifiable_candidates": [
+        {
+          "claim": "The problem may mean a cross section first order in dielectric contrast or use the vacuum rather than host wave number.",
+          "verification": "Discarded as new: the existing erratum says first-order amplitude; eta=delta eps/eps and host k are explicitly used.",
+          "status": "discarded"
+        }
+      ],
+      "independent_final_pass": {
+        "route": "Recover H(0)=1, -u²/36, large-u pi/u, and the independent angular integral44/15 giving11pi²/60 k^3.",
+        "result": "No new confirmed defect after both current-run fixes; the entire assigned102-problem final pass was restarted after14.23.",
+        "evidence_type": "Manual analytic identities/domain checks plus the finite numerical or symbolic evidence from the named script; no machine-certified universal proof is claimed."
+      },
+      "current_script_check": "check20",
+      "changes": [],
+      "notation_check": "SI amplitudes with exp(-i omega t), outgoing exp(+ikr), normalized incident polarization, Condon-Shortley Ylm and Xlm=L Ylm/sqrt(l(l+1)), k in the host medium where applicable, peak phasors and time-average1/2.",
+      "remaining_limitations": [
+        "Long-object Born validity also requires small accumulated phase perturbation along relevant paths."
+      ]
+    }
+  ],
+  "check_history": [
+    {
+      "stage": "initial",
+      "command": [
+        "python3",
+        "-W",
+        "error",
+        "supplementary/check_ch10.py",
+        "--figures"
+      ],
+      "exit_code": 0,
+      "log": "supplementary/ch10-deep-debug/initial-checks.log",
+      "log_sha256": "18a305565c5b4e7e35fc1ced8b52062da0843932d1878da6dc42245232b3f08c"
+    },
+    {
+      "stage": "final",
+      "command": [
+        "/opt/homebrew/opt/python@3.14/bin/python3.14",
+        "-W",
+        "error",
+        "supplementary/check_ch10.py",
+        "--figures"
+      ],
+      "exit_code": 0,
+      "log": "supplementary/ch10-deep-debug/final-checks.log",
+      "log_sha256": "18a305565c5b4e7e35fc1ced8b52062da0843932d1878da6dc42245232b3f08c",
+      "elapsed_seconds": 20.0934898853302
+    }
+  ],
+  "evidence_classes": {
+    "manual_analytic": "Reviewed identities, derivations, domain assumptions and limiting arguments in the actual current solutions and source equations. This is human-readable mathematical reasoning, not a formal proof-assistant certificate.",
+    "symbolic": "SymPy simplification/differentiation/integration and exact polynomial identities where present in the named checks; assumptions are recorded by the check.",
+    "numerical": "Finite deterministic quadrature, finite-difference, matrix, series and convergence samples with explicit tolerances; these are sample evidence, not universal proofs.",
+    "source": "Actual local Jackson text/images checked; historical external access gaps are recorded per problem."
+  },
+  "dimensions": {
+    "domain_correctness": {
+      "status": "reviewed",
+      "evidence": "All per-problem rows record a derivation, falsifiable candidate and independent final route; exact source notation and physical domains checked."
+    },
+    "implementation_correctness": {
+      "status": "reviewed",
+      "evidence": "All named calculation functions, helper conventions, quadrature tolerances and generated data/figures read; chapter entry point ran with warnings as errors. All exceptions propagate rather than producing a PASS."
+    },
+    "memory_resources": {
+      "status": "reviewed_at_script_scope",
+      "evidence": "Finite NumPy arrays and bounded multipole/image/figure lists; Path read/write and subprocess.run manage file/process lifetimes. No servers, sockets or acquired external resources in these local calculation entry points. No process was stopped or signaled."
+    },
+    "performance": {
+      "status": "no_optimization_claim",
+      "evidence": "No latency/throughput target or optimization change is requested. Final whole-script elapsed time is measured above; no unmeasured memory/performance ceiling or absence-of-all-leaks claim is made."
+    }
+  },
+  "current_run_confirmed_bugs": [],
+  "final_full_scope_pass": {
+    "chapters": [
+      2,
+      6,
+      10,
+      14
+    ],
+    "problem_count": 102,
+    "completed": true,
+    "new_confirmed_defects": 0,
+    "unresolved_candidates": [],
+    "trigger": "Restarted after correcting14.23; reviewed every current problem/subpart by a different invariant/limit/conservation route, not only the fixes.",
+    "coverage_evidence": "Concrete independent_final_pass route in each of30+25+20+27 rows."
+  },
+  "check_limit": "Passing numerical tests and successful TeX compilation are not by themselves proof of every mathematical statement. The analytic/source review is separate; all source-access and approximation limits remain explicit.",
+  "environment": {
+    "python": "3.14.7 (main, Aug  5 2026, 10:29:49) [Clang 21.0.0 (clang-2100.1.1.101)]",
+    "executable": "/opt/homebrew/opt/python@3.14/bin/python3.14",
+    "numpy": "2.4.6",
+    "scipy": "1.18.0",
+    "sympy": "1.14.0"
+  },
+  "additional_observed_check_exits": [
+    {
+      "kind": "structural and unit/control-fragment scan",
+      "exit_code": 0,
+      "result": "All102 problem prefixes and solutions counted; no control characters or broken newline-plus-unit fragments found."
+    },
+    {
+      "kind": "Born sphere branch-cancellation probe",
+      "exit_code": 0,
+      "result": "Direct quadrature at z=.049999,.05,.050001,.06,.1 versus closed helper; maximum observed relative discrepancy1.9664e-7 below2e-6 check tolerance; candidate discarded."
+    },
+    {
+      "kind": "focused harmonic-phase probe withCh2 and14.18",
+      "exit_code": 0,
+      "result": "Actual Condon-Shortley complex X1,+/-1 amplitudes match direct electric/magnetic dipole amplitudes up to one common phase, for both helicities."
+    }
+  ],
+  "local_render": {
+    "performed_this_pass": false,
+    "reason": "No TeX changes in this chapter during this deep-debug assignment; generated figures were numerically revalidated. Only changed chapters6/14 were locally compiled/rendered in this pass."
+  },
+  "operational_lookup_failures_not_math_results": [
+    {
+      "kind": "source/path locator",
+      "result": "Early OCR glob returned exit1; inventory-based search corrected the path."
+    },
+    {
+      "kind": "unit fragment scan attempt",
+      "result": "Unsupported rg lookbehind emitted an error while a downstream head masked status; replaced by an explicit Python scan, exit0."
+    },
+    {
+      "kind": "ledger inventory before creation",
+      "result": "Missing ledger paths returned exit1 before the ledgers were written; no calculation was run."
+    },
+    {
+      "kind": "combined metadata cat",
+      "result": "Exit1 because montage-exits.json is inside each chapter render directory, not its parent; per-chapter metadata then read successfully."
+    }
+  ],
+  "frozen_source_script_asset_sha256": {
+    "sections/ch10.tex": "54a2cb0e91bc9058b8e677c3839656e2ee7fd14a2b103051fbbfe10079221fa4",
+    "supplementary/ch10-source/fig10_14_crop.png": "8dcc32492d9c556bf469c8508b484f93c9c05ce5220cbb1140e0fa8470d5d4ed",
+    "supplementary/ch10-source/fig10_14_measurements.csv": "0f25c82edab59dfeea93fb89159d32605cc952146d9c07563ca614d678bb417c",
+    "supplementary/ch10-source/sources.txt": "d894adf90410d5a4b4d9c03e31861fd17bee4de822d7166a44a09b6f7a568d0b",
+    "supplementary/check_ch10.py": "9d6309c04655ec699af6bcabeaabcb1660f568fc61a21eaaa6618e7badb9fe8b",
+    "supplementary/figures/ch10_11_fresnel.tex": "e424f38b8f8a656eef7192b46c62b1cc3aed26e05a58e6ab33eb75a31a5b257d",
+    "supplementary/figures/ch10_13_circular.tex": "9351341b51d0bfe8a64b92eae81f0a7afc2f415e751c1b99880f28fb1f9de4dc",
+    "supplementary/figures/ch10_14_square.tex": "fc2174e01bb129e95b90b4998ba1f1a50a51ba10b5cd7203063eacf1ed0d8c90",
+    "supplementary/figures/ch10_17_mie.tex": "9fc566896b025364baf7ffa5a4b06f3f506f6c694f674bfbd61e2ef36d015394",
+    "supplementary/figures/ch10_20_fibers.tex": "c15c5fac279ff90c4c01f77128282f71247186dee9c0d09e72f3263fb8835511"
+  },
+  "freeze": "Sections/scripts/generated assets frozen after clean final pass. Subsequent operations only archive evidence and update these audit records; no main.pdf build was performed by this worker."
+}

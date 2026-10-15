@@ -1,0 +1,250 @@
+{
+  "chapter": 9,
+  "reviewer": "root",
+  "reviewed_at_utc": "2026-10-03T15:03:23.858531+00:00",
+  "audit_kind": "Fresh goal: full current-file first pass, then alternate-route/source/invariant final pass",
+  "problem_count": 24,
+  "section": "sections/ch09.tex",
+  "section_sha256": "b898362877a97e4e36f1db379eb8cc922c93fb2281178ccd2436be662204afd6",
+  "script": "supplementary/check_ch09.py",
+  "script_sha256": "613c0e1b4ce5b1ffe0990e6f8b0422c0c84e3f1c37d2df162cbd2e72d0b80b28",
+  "source_pages_freshly_inspected": [
+    {
+      "file": "build/source_ch09/p-432.png",
+      "sha256": "f85e47a1876a6a84d438f99a620d1fd286160533df6d0da31ba6ef4e376392e1"
+    },
+    {
+      "file": "build/source_ch09/p-466.png",
+      "sha256": "f2b6f452acba85931f2442770a01d5624174a008b7cc4e190110eae38a3b3515"
+    },
+    {
+      "file": "build/source_ch09/p-467.png",
+      "sha256": "70ee9e5781a19a03f7d48052ba76a753d6f4b05ce2410e4f07bb135395b61b85"
+    },
+    {
+      "file": "pages/p-474.png",
+      "sha256": "13ed5afb7d8e98ea1df85c1e7df17dda4278333647ddcd789d2da7c1479ab7d9"
+    },
+    {
+      "file": "pages/p-475.png",
+      "sha256": "305f3d4858c496f785abbd883eb215e6b6a5e3e85a854d1b7d3c00d14489ca43"
+    },
+    {
+      "file": "pages/p-476.png",
+      "sha256": "9d0292bd4cf26d496e636ccf8683643b321581277f3171e4bdaa73abbcfb5a3f"
+    },
+    {
+      "file": "pages/p-477.png",
+      "sha256": "e151ef9876c2999f0e4c885d25ab2f60994e2dd14dc1deb848a37770ee2c95fb"
+    },
+    {
+      "file": "pages/p-478.png",
+      "sha256": "f50b8a546a6a7868922c539f85f3aa86b877d2f0c876d796a7917d4ce6a525fc"
+    },
+    {
+      "file": "pages/p-479.png",
+      "sha256": "f6fcfd56602d653c94b041ab9d83d2226870a7e970c8c0077dfcc593198a13b0"
+    },
+    {
+      "file": "pages/p-480.png",
+      "sha256": "9f5e33942eef96b6c22ea05c1b4a06e3c3b071a93548e697fe843503f069a7c9"
+    },
+    {
+      "file": "supplementary/ch09-source/Wiese-Fuhr-2009.txt",
+      "sha256": "b87ee767be9aa8c1a132ace67b85206cbabb62e36061ef5cc6e850c12168a642"
+    }
+  ],
+  "notation": "Jackson SI units and phasor/source conventions explicitly preserved.",
+  "baseline": {
+    "command": [
+      "python3",
+      "-u",
+      "-W",
+      "error",
+      "supplementary/check_ch09.py"
+    ],
+    "exit_code": 0,
+    "log": "build/deep-debug-ch09-checks.log"
+  },
+  "new_alternate_probes": {
+    "command": [
+      "python3",
+      "-W",
+      "error",
+      "build/deep-debug-root-independent.py"
+    ],
+    "exit_code": 0,
+    "script_sha256": "ac3e4c3ab558d90d142e72c3372737152588c0a5657542578e79e7706ee174cb",
+    "results": "build/deep-debug-root-independent.json",
+    "results_sha256": "56d45f4924dd2aa847af9423d7984b62fa8ab6227fd50776eb4026a6fbec9538"
+  },
+  "dimensions": {
+    "mathematics_physics": "All statements, subparts, intermediate equations and claimed limits retraced in the current section; see per-problem records.",
+    "calculation_implementation": "Entire current chapter script read. Independent integral/ODE/symbolic routes, domains, tolerance scales, singular endpoints and numerical convergence examined; script executed with warnings as errors.",
+    "resources": "Standalone bounded calculations and local owned output files. No persistent server, external service or process lifecycle in chapter script; solver failure assertions and exceptions propagate.",
+    "performance": "No optimization target. Finite quadrature/mesh/root limits examined for accuracy and feasibility; observed suite completed successfully. Formal universal numerical certification is not claimed."
+  },
+  "candidate_findings": [
+    {
+      "problem": "9.10",
+      "status": "verified and fixed",
+      "severity": "minor mathematical regularity statement",
+      "before": "rho_omega/z is smooth at z=0",
+      "evidence": "rho_omega/z is proportional to exp(-lambda*r). At the origin its axis one-sided derivatives are +lambda and -lambda; the function is finite and continuous but not differentiable.",
+      "fix": "State the finite continuous extension and explicitly identify the nuclear cusp.",
+      "correctness": "Exact one-sided limits checked in new independent probe; all moments and radiation coefficients unchanged.",
+      "robustness": "Statement distinguishes the origin from ordinary points in z=0 plane and does not assign an artificial divergent current.",
+      "completeness": "Charge/current formula, magnetic divergence, every requested radiation result and orbit comparison remain present."
+    }
+  ],
+  "problems": [
+    {
+      "problem": "9.1",
+      "first_pass": "Real Cartesian moments, two-sided Fourier coefficients and phasor factor two.",
+      "independent_final_pass": "All signed m harmonics through l=4 checked against actual normalized spherical harmonics; source p.407 and pp.441-442 conventions match.",
+      "final_status": "no further confirmed error"
+    },
+    {
+      "problem": "9.2",
+      "first_pass": "Rotating square quadrupole tensor, radiation fields and 2omega power.",
+      "independent_final_pass": "Direct finite moving-charge Fourier current agrees with quadrupole radiation, including phase; independent angular integral yields 16pi/5.",
+      "final_status": "no further confirmed error"
+    },
+    {
+      "problem": "9.3",
+      "first_pass": "Split-sphere l=1 boundary coefficient and effective dipole.",
+      "independent_final_pass": "Potential matching and angular power integration verify the voltage-difference factor two and total coefficient.",
+      "final_status": "no further confirmed error"
+    },
+    {
+      "problem": "9.4",
+      "first_pass": "Current harmonics, orbital magnetization divergence and magnetic selection rule.",
+      "independent_final_pass": "Solid-harmonic derivatives and temporal Fourier sums check l+m odd, four-charge selection and M3/E2 suppression.",
+      "final_status": "no further confirmed error"
+    },
+    {
+      "problem": "9.5",
+      "first_pass": "Lorenz-gauge dipole potentials and complete fields.",
+      "independent_final_pass": "Independent Cartesian finite derivatives verify curl A, electric field and Lorenz condition at near/far points.",
+      "final_status": "no further confirmed error"
+    },
+    {
+      "problem": "9.6",
+      "first_pass": "Retarded source expansion and spatial differentiation of retarded moments.",
+      "independent_final_pass": "Nonharmonic polynomial/trigonometric/Gaussian histories checked by direct potential derivatives; corrected magnetic radial powers agree with harmonic limit.",
+      "final_status": "no further confirmed error"
+    },
+    {
+      "problem": "9.7",
+      "first_pass": "Instantaneous dipole/quadrupole radiation and continuity coefficient.",
+      "independent_final_pass": "Angular integrals and real sinusoidal averages check c powers, tensor convention and absence of an instantaneous factor one half.",
+      "final_status": "no further confirmed error"
+    },
+    {
+      "problem": "9.8",
+      "first_pass": "Maxwell-stress angular momentum including radial induction field.",
+      "independent_final_pass": "Direct finite-radius stress integration and magnetic dual verify vector sign, circular limit and L/P=1/omega bound.",
+      "final_status": "no further confirmed error"
+    },
+    {
+      "problem": "9.9",
+      "first_pass": "General dipole flux, central-force loss rates, Schott terms and atomic scale.",
+      "independent_final_pass": "Finite-radius correction and harmonic averages checked independently; current Wiese-Fuhr Table 2 text verifies 6.265e8/s comparison.",
+      "final_status": "no further confirmed error"
+    },
+    {
+      "problem": "9.10",
+      "first_pass": "Transition-density moments, dipole power, rate and circular comparison.",
+      "independent_final_pass": "Found and corrected blanket smoothness claim at the nuclear cusp; new one-sided limit calculation verifies continuity but not differentiability. All radiation results unchanged.",
+      "final_status": "no further confirmed error"
+    },
+    {
+      "problem": "9.11",
+      "first_pass": "Three-charge quadrupole tensor, frequency and angular distribution.",
+      "independent_final_pass": "Direct charge tensor at several times and angular quadrature check static/oscillating split and instantaneous versus averaged factor.",
+      "final_status": "no further confirmed error"
+    },
+    {
+      "problem": "9.12",
+      "first_pass": "Moving charged boundary, constant total charge and meridional flow.",
+      "independent_final_pass": "Independent shape differentiation and explicit incompressible flow verify moment and absence of added magnetic source under stated assumption.",
+      "final_status": "no further confirmed error"
+    },
+    {
+      "problem": "9.13",
+      "first_pass": "Deformed intrinsic magnetization, M3 and same-order dynamic M1.",
+      "independent_final_pass": "Full finite-volume Fourier shape derivative independently verifies both fields, zero integrated interference and complete leading total power.",
+      "final_status": "no further confirmed error"
+    },
+    {
+      "problem": "9.14",
+      "first_pass": "Exact circular-loop source transform and magnetic dipole limit.",
+      "independent_final_pass": "Direct loop quadrature agrees with J1 at small and large ka; polarization and total dipole coefficient checked.",
+      "final_status": "no further confirmed error"
+    },
+    {
+      "problem": "9.15",
+      "first_pass": "Convected opposing dipoles, M1/E2 and coherent angular pattern.",
+      "independent_final_pass": "Independent time-Fourier transform of moving point dipoles verifies relative phase and integrated power; interference cannot be omitted pointwise.",
+      "final_status": "no further confirmed error"
+    },
+    {
+      "problem": "9.16",
+      "first_pass": "Full-wave odd current integral, radiation pattern and antinode resistance.",
+      "independent_final_pass": "Direct oscillatory integral including axial removable limit and independent cosine-integral quadrature verify pattern, peaks and resistance.",
+      "final_status": "no further confirmed error"
+    },
+    {
+      "problem": "9.17",
+      "first_pass": "Exact electric multipoles, static quadrupole and power comparison.",
+      "independent_final_pass": "New signed pointwise reconstruction of full far field from even multipoles agrees to 3.6e-16; modal power sum and long-wave scope checked.",
+      "final_status": "no further confirmed error"
+    },
+    {
+      "problem": "9.18",
+      "first_pass": "Electric-minus-magnetic field energy and short-antenna reactance.",
+      "independent_final_pass": "Direct angular field norms cancel r^-4 terms; triangular current continuity and r^-4 radial integral verify capacitance coefficient.",
+      "final_status": "no further confirmed error"
+    },
+    {
+      "problem": "9.19",
+      "first_pass": "Probe source moments, quadrupole contraction and modal overlap.",
+      "independent_final_pass": "Cross-read 8.19 source/current and normalization; direct y integrals verify exact TE10 result, translated moments and removable higher-mode overlap limit.",
+      "final_status": "no further confirmed error"
+    },
+    {
+      "problem": "9.20",
+      "first_pass": "Static aperture electric/magnetic moments and Faraday compatibility.",
+      "independent_final_pass": "Independent disk integration-by-parts example checks sign; angular symmetry and retained first inductive field explain zero static magnetic definition.",
+      "final_status": "no further confirmed error"
+    },
+    {
+      "problem": "9.21",
+      "first_pass": "Cylindrical TM energy and angular momentum per length.",
+      "independent_final_pass": "Bessel gradient norm by radial quadrature verifies m/omega, m=0 and cancellation for equal +/-m angular standing waves.",
+      "final_status": "no further confirmed error"
+    },
+    {
+      "problem": "9.22",
+      "first_pass": "TE/TM spherical roots, order sorting and explicit lowest fields.",
+      "independent_final_pass": "Both Maxwell curls independently checked for each family; wall tangential E and finite origin limits verified, radial index distinguished from m.",
+      "final_status": "no further confirmed error"
+    },
+    {
+      "problem": "9.23",
+      "first_pass": "Wall dissipation and spherical-Bessel energy norm.",
+      "independent_final_pass": "Direct radial quadrature for multiple l and roots confirms TE a/delta and TM correction; antiderivative and boundary terms retraced.",
+      "final_status": "no further confirmed error"
+    },
+    {
+      "problem": "9.24",
+      "first_pass": "Outgoing resonances, half-plane energy argument and l=1,2 roots.",
+      "independent_final_pass": "Polynomial roots checked against Hankel functions; sign pairs, energy-decay factor two and non-finite global mode energy are explicitly qualified.",
+      "final_status": "no further confirmed error"
+    }
+  ],
+  "final_pass_clean": true,
+  "limitations": [
+    "Numerical checks cover stated probes; analytic derivation review supplies the remaining evidence. This is not a proof that no possible error exists."
+  ]
+}

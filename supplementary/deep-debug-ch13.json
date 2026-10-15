@@ -1,0 +1,665 @@
+{
+  "audit": "Fresh iterative deep-debug, current-run independent evidence",
+  "date": "2026-10-03",
+  "chapter": 13,
+  "coverage": {
+    "problems": 16,
+    "all_problem_statements_and_solutions_read": true,
+    "every_subpart_retraced": true,
+    "problem_spacing_prefixes_preserved": 16
+  },
+  "scope_reconstruction": [
+    "Actual chapter TeX and entire current check script inspected.",
+    "Prior recheck ledgers used only to locate sources, not as current proof.",
+    "All problem pages read from local Jackson OCR and critical formulas/diagrams checked from actual scans."
+  ],
+  "audit_matrix": {
+    "domain": "Per-problem algebra, signs, units, normalization, boundaries, approximation domains and limiting behavior retraced; actual source conventions checked.",
+    "implementation": "Entire calculation script inspected; independent functions added for alternative routes and successful execution checked with warnings-as-errors.",
+    "data_and_io": "Physical inputs traced to supplied problem or primary source; deterministic figure generators run. Captured stdout copied after completion, not streamed to workspace.",
+    "resources": "Finite numerical grids/integrals, bounded file output under owned chapter assets; no services or external mutations and no processes terminated.",
+    "performance": "No speed/optimization claim requested or made; execution completed. Added high-precision/radial-grid/orbit checks are bounded by explicit samples."
+  },
+  "notation_checks": [
+    "Gaussian units. Where e denotes a magnitude it is positive; in 13.2 it is the signed particle charge. Stopping power S=-dE_projectile/dx is positive.",
+    "The symmetric Fourier transform has exp(+i omega t) forward and exp(-i omega t) inverse, checked directly in printed p.655 Problem 13.2 and printed p.632 Eq. (13.25).",
+    "Q^2 denotes squared momentum transfer on printed p.625 Eq. (13.2). Radiation I, nu=omega/(gamma omega_p), and eta=(gamma theta)^2 follow printed pp.652–653."
+  ],
+  "checks": [
+    {
+      "stage": "baseline",
+      "command": "python3 -W error supplementary/check_ch13.py",
+      "exit": 0,
+      "captured_log": "supplementary/ch13-deep-debug/baseline.log",
+      "note": "All assertions passed; warnings treated as errors."
+    },
+    {
+      "stage": "crc1",
+      "command": "python3 -W error supplementary/check_ch13.py",
+      "exit": 0,
+      "captured_log": "supplementary/ch13-deep-debug/crc1.log",
+      "note": "All assertions passed; warnings treated as errors."
+    },
+    {
+      "stage": "crc2",
+      "command": "python3 -W error supplementary/check_ch13.py",
+      "exit": 0,
+      "captured_log": "supplementary/ch13-deep-debug/crc2.log",
+      "note": "All assertions passed; warnings treated as errors."
+    },
+    {
+      "stage": "final",
+      "command": "python3 -W error supplementary/check_ch13.py --figures",
+      "exit": 0,
+      "captured_log": "supplementary/ch13-deep-debug/final.log",
+      "note": "All assertions passed; warnings treated as errors."
+    },
+    {
+      "stage": "final-wording",
+      "command": "python3 -W error supplementary/check_ch13.py --figures",
+      "exit": 0,
+      "captured_log": "supplementary/ch13-deep-debug/final-wording.log",
+      "note": "Final source specifies initially unexcited at the origin. All assertions, including the phase-dependent initial-state regressions, passed with warnings treated as errors."
+    },
+    {
+      "stage": "prequalification-repeat",
+      "command": "python3 -W error supplementary/check_ch13.py --figures",
+      "exit": 0,
+      "captured_log": "supplementary/ch13-deep-debug/prequalification-repeat.log",
+      "note": "An extra successful full run preceded the final electric-driving qualification; the attempted text replacement had not matched, so this run did not test that wording."
+    },
+    {
+      "stage": "final-electric-counterexample",
+      "command": "python3 -W error supplementary/check_ch13.py --figures",
+      "exit": 0,
+      "captured_log": "supplementary/ch13-deep-debug/final-electric-counterexample.log",
+      "note": "Final text explicitly restricts the excited-state counterexample to B=0. All assertions and phase-dependent initial-state ODE regressions passed with warnings treated as errors."
+    }
+  ],
+  "confirmed_new_math_or_statement_bugs": 1,
+  "final_pass_status": "Complete across all assigned chapter problems, using the different routes below; no new confirmed defect. Numerical samples are not universal proofs.",
+  "problems": [
+    {
+      "problem": "13.1",
+      "statement_and_every_solution_subpart_read": true,
+      "subparts": [
+        "a",
+        "b"
+      ],
+      "inspected_sources": [
+        "sections/ch13.tex:9",
+        "supplementary/check_ch13.py: check01; check_fresh_routes",
+        "ocr/p-680.txt (Jackson printed p.655)",
+        "Jackson/source conventions: 625:(13.1)-(13.4); 559:(11.152)"
+      ],
+      "initial_derivation_checked": "Q^2=2mT and the stipulated Rutherford impact law give bounded T(b); direct transverse impulse gives its large-b limit.",
+      "candidate": "A fully exact relativistic Coulomb trajectory is not claimed; the prescribed Rutherford model and nonrelativistic response overlap are explicit.",
+      "candidate_status": "discarded/no new defect",
+      "change": "No TeX change in this fresh audit.",
+      "current_verification": {
+        "analytic": "Manual independent algebra/identities and source comparison as recorded; not a machine-checked theorem.",
+        "executable": "check01; check_fresh_routes",
+        "sample_evidence": "The full chapter suite exited 0 with -W error. Symbolic identities and numerical tolerances are in the named functions; finite numerical samples are not universal proofs."
+      },
+      "independent_final_pass": {
+        "route": "Different route: differentiate b^2(T) for d sigma/dT and integrate the boosted Coulomb impulse; check the head-on maximum and finite-mass limitation.",
+        "result": "No new confirmed mathematical or physical defect found in this independent final pass."
+      },
+      "remaining_limitations": "Infinite heavy projectile; the supplied Rutherford impact law defines the model."
+    },
+    {
+      "problem": "13.2",
+      "statement_and_every_solution_subpart_read": true,
+      "subparts": [
+        "whole problem"
+      ],
+      "inspected_sources": [
+        "sections/ch13.tex:116",
+        "supplementary/check_ch13.py: check02",
+        "ocr/p-680.txt (Jackson printed p.655)",
+        "Jackson/source conventions: printed p.655 original statement; symmetric Fourier transform printed therein"
+      ],
+      "initial_derivation_checked": "Linear electric response with B=0 gives e^2(C^2+S^2)/(2m) only for an unexcited initial oscillator. General initial phases add e omega0(b.C-a.S). For the stipulated initially unexcited oscillator, the magnetic force enters displacement only at second order in the applied field.",
+      "candidate": "CONFIRMED: the original p.655 statement does not exclude initial excitation. Independent ODE gives .85134804315, while its unexcited RHS gives .39693893752.",
+      "candidate_status": "confirmed-and-fixed",
+      "change": "The dark-red statement now requires an initially unexcited oscillator at the origin and leading linear-response energy. The derivation adds the arbitrary initial-phase interference term. Independent ODE regressions cover even/odd pulses and both initial phases. The excited-state counterexample is explicitly restricted to B=0, because a pre-existing velocity could couple to B already at first order.",
+      "current_verification": {
+        "analytic": "Manual independent algebra/identities and source comparison as recorded; not a machine-checked theorem.",
+        "executable": "check02",
+        "sample_evidence": "The full chapter suite exited 0 with -W error. Symbolic identities and numerical tolerances are in the named functions; finite numerical samples are not universal proofs."
+      },
+      "independent_final_pass": {
+        "route": "Different route: initial-value ODEs with both cosine/sine initial phases and even/odd pulses reproduce the general interference term; the narrow-damping resonance separately recovers the unexcited formula.",
+        "result": "No new confirmed mathematical or physical defect found in this independent final pass."
+      },
+      "remaining_limitations": "The statement explicitly specifies an initially unexcited oscillator at the origin and leading linear-response energy. Finite-amplitude magnetic response is outside this formula. The arbitrary-initial-phase counterexample assumes B=0."
+    },
+    {
+      "problem": "13.3",
+      "statement_and_every_solution_subpart_read": true,
+      "subparts": [
+        "a",
+        "b"
+      ],
+      "inspected_sources": [
+        "sections/ch13.tex:221",
+        "supplementary/check_ch13.py: check03; check_fresh_routes",
+        "ocr/p-681.txt (Jackson printed p.656)",
+        "Jackson/source conventions: 559:(11.152); printed p.656"
+      ],
+      "initial_derivation_checked": "Symmetric Fourier integrals give xi K1 and -i xi K0/gamma; reality continuation and sudden/adiabatic limits were checked.",
+      "candidate": "Possible missing longitudinal1/gamma or phase was discarded by integration by parts and the negative-frequency reality condition.",
+      "candidate_status": "discarded/no new defect",
+      "change": "No TeX change in this fresh audit.",
+      "current_verification": {
+        "analytic": "Manual independent algebra/identities and source comparison as recorded; not a machine-checked theorem.",
+        "executable": "check03; check_fresh_routes",
+        "sample_evidence": "The full chapter suite exited 0 with -W error. Symbolic identities and numerical tolerances are in the named functions; finite numerical samples are not universal proofs."
+      },
+      "independent_final_pass": {
+        "route": "Different route: Parseval compares both time-domain squared-field integrals with their two-sided spectral norms, independently checking normalization.",
+        "result": "No new confirmed mathematical or physical defect found in this independent final pass."
+      },
+      "remaining_limitations": "Initially unexcited oscillator and weak nonrelativistic dipole response, as specified in13.2."
+    },
+    {
+      "problem": "13.4",
+      "statement_and_every_solution_subpart_read": true,
+      "subparts": [
+        "a",
+        "b"
+      ],
+      "inspected_sources": [
+        "sections/ch13.tex:334",
+        "supplementary/check_ch13.py: check04",
+        "ocr/p-681.txt (Jackson printed p.656)",
+        "Jackson/source conventions: 627-628:(13.14)-(13.16); PDG material tables"
+      ],
+      "initial_derivation_checked": "All24 stopping-power values, density conversions and electron-weighted air excitation energy were recomputed. The existing2.3 factor correction remains necessary.",
+      "candidate": "Possible substitution of modern PDG excitation energies for the given12Z prescription was discarded; the air mixture explicitly uses12Z for each element.",
+      "candidate_status": "discarded/no new defect",
+      "change": "No TeX change in this fresh audit.",
+      "current_verification": {
+        "analytic": "Manual independent algebra/identities and source comparison as recorded; not a machine-checked theorem.",
+        "executable": "check04",
+        "sample_evidence": "The full chapter suite exited 0 with -W error. Symbolic identities and numerical tolerances are in the named functions; finite numerical samples are not universal proofs."
+      },
+      "independent_final_pass": {
+        "route": "Different route: reconstruct K from the classical radius and Avogadro constant; convert every density column and row ratio. Fresh official PDG pages confirm material inputs.",
+        "result": "No new confirmed mathematical or physical defect found in this independent final pass."
+      },
+      "remaining_limitations": "NTP means0C and1atm. Density, shell, radiative and finite-projectile-mass corrections are outside the requested model."
+    },
+    {
+      "problem": "13.5",
+      "statement_and_every_solution_subpart_read": true,
+      "subparts": [
+        "a",
+        "b"
+      ],
+      "inspected_sources": [
+        "sections/ch13.tex:468",
+        "supplementary/check_ch13.py: check05",
+        "ocr/p-681.txt (Jackson printed p.656)",
+        "ocr/p-682.txt (Jackson printed p.657)",
+        "Jackson/source conventions: 628:(13.16); printed p.656"
+      ],
+      "initial_derivation_checked": "The Yukawa path integral2K0/v differentiates to the impulse; the exact K1-squared integral gives exp(gammaE+1/2)/2.",
+      "candidate": "A sharp upper cutoff b=1/kD would change the constant; the solution instead explicitly integrates the screened tail to infinity.",
+      "candidate_status": "discarded/no new defect",
+      "change": "No TeX change in this fresh audit.",
+      "current_verification": {
+        "analytic": "Manual independent algebra/identities and source comparison as recorded; not a machine-checked theorem.",
+        "executable": "check05",
+        "sample_evidence": "The full chapter suite exited 0 with -W error. Symbolic identities and numerical tolerances are in the named functions; finite numerical samples are not universal proofs."
+      },
+      "independent_final_pass": {
+        "route": "Different route: integrate the actual screened force, differentiate the Bessel antiderivative and take the unscreened limit.",
+        "result": "No new confirmed mathematical or physical defect found in this independent final pass."
+      },
+      "remaining_limitations": "Fast relative to thermal electrons, weak collisions, and kD bmin much less than one."
+    },
+    {
+      "problem": "13.6",
+      "statement_and_every_solution_subpart_read": true,
+      "subparts": [
+        "a",
+        "b"
+      ],
+      "inspected_sources": [
+        "sections/ch13.tex:566",
+        "supplementary/check_ch13.py: check06",
+        "ocr/p-682.txt (Jackson printed p.657)",
+        "Jackson/source conventions: 632,634:(13.25),(13.36)"
+      ],
+      "initial_derivation_checked": "The small-argument Fermi kernel gives2 exp(-gammaE); the positive plasma loss resonance has area pi wp^2/2, and kD cancels after matching.",
+      "candidate": "Possible loss-function sign or resonance factor two was discarded using the conjugate denominator and positive-frequency delta normalization.",
+      "candidate_status": "discarded/no new defect",
+      "change": "No TeX change in this fresh audit.",
+      "current_verification": {
+        "analytic": "Manual independent algebra/identities and source comparison as recorded; not a machine-checked theorem.",
+        "executable": "check06",
+        "sample_evidence": "The full chapter suite exited 0 with -W error. Symbolic identities and numerical tolerances are in the named functions; finite numerical samples are not universal proofs."
+      },
+      "independent_final_pass": {
+        "route": "Different route: numerical narrow-resonance integration and symbolic loss-function algebra agree; unrounded matching constants give Lambda=.764803.",
+        "result": "No new confirmed mathematical or physical defect found in this independent final pass."
+      },
+      "remaining_limitations": "Fast nonrelativistic plasma projectile and Gamma much less than wp. Quantized energy losses require quantum theory."
+    },
+    {
+      "problem": "13.7",
+      "statement_and_every_solution_subpart_read": true,
+      "subparts": [
+        "whole problem"
+      ],
+      "inspected_sources": [
+        "sections/ch13.tex:672",
+        "supplementary/check_ch13.py: check07",
+        "ocr/p-682.txt (Jackson printed p.657)",
+        "Jackson/source conventions: 643-646: multiple-scattering discussion; printed p.657"
+      ],
+      "initial_derivation_checked": "Projected angular variance is half the full variance. The displacement kernel(x-s) gives x^2<Theta^2>/6; the second cumulant gives a normalized Gaussian.",
+      "candidate": "Possible factor1/3 or exact Gaussian tail claim was discarded by the projection factor and the explicitly limited central-distribution approximation.",
+      "candidate_status": "discarded/no new defect",
+      "change": "No TeX change in this fresh audit.",
+      "current_verification": {
+        "analytic": "Manual independent algebra/identities and source comparison as recorded; not a machine-checked theorem.",
+        "executable": "check07",
+        "sample_evidence": "The full chapter suite exited 0 with -W error. Symbolic identities and numerical tolerances are in the named functions; finite numerical samples are not universal proofs."
+      },
+      "independent_final_pass": {
+        "route": "Different route: integrate the covariance kernel and Gaussian normalization/variance; retain the general variable-Dtheta(s) expression.",
+        "result": "No new confirmed mathematical or physical defect found in this independent final pass."
+      },
+      "remaining_limitations": "Many independent small kicks and negligible slowing for the closed formula; rare large kicks produce tails."
+    },
+    {
+      "problem": "13.8",
+      "statement_and_every_solution_subpart_read": true,
+      "subparts": [
+        "a",
+        "b"
+      ],
+      "inspected_sources": [
+        "sections/ch13.tex:745",
+        "supplementary/check_ch13.py: check08",
+        "ocr/p-682.txt (Jackson printed p.657)",
+        "Jackson/source conventions: 641-644:(13.52)-(13.65); printed p.657"
+      ],
+      "initial_derivation_checked": "The stated critical criterion<Theta^2>=theta_max^2 gives momentum-independent xc. Screening/nuclear radii and collision counts were checked.",
+      "candidate": "An exact disappearance of the nuclear tail or unique critical thickness is not claimed; the existing erratum and alternative criteria make this explicit.",
+      "candidate_status": "discarded/no new defect",
+      "change": "No TeX change in this fresh audit.",
+      "current_verification": {
+        "analytic": "Manual independent algebra/identities and source comparison as recorded; not a machine-checked theorem.",
+        "executable": "check08",
+        "sample_evidence": "The full chapter suite exited 0 with -W error. Symbolic identities and numerical tolerances are in the named functions; finite numerical samples are not universal proofs."
+      },
+      "independent_final_pass": {
+        "route": "Different route: cancel momentum in the variance criterion and eliminate N,Z,alpha from n_c to recover a^2/[2R^2 log(a/R)]; verify material unit conversions.",
+        "result": "No new confirmed mathematical or physical defect found in this independent final pass."
+      },
+      "remaining_limitations": "Singly charged, beta approximately one and a specified cutoff model. Negligible slowing over the quoted material thickness is additionally required."
+    },
+    {
+      "problem": "13.9",
+      "statement_and_every_solution_subpart_read": true,
+      "subparts": [
+        "whole problem"
+      ],
+      "inspected_sources": [
+        "sections/ch13.tex:848",
+        "supplementary/check_ch13.py: check09",
+        "ocr/p-682.txt (Jackson printed p.657)",
+        "ocr/p-683.txt (Jackson printed p.658)",
+        "Jackson/source conventions: 638-640:(13.47)-(13.51)"
+      ],
+      "initial_derivation_checked": "Cherenkov threshold, beta(T), emission angle, vacuum-wavelength Jacobian and numerical photon counts were checked.",
+      "candidate": "A spurious refractive-index or centimeter factor was discarded by identifying vacuum wavelengths and converting them to4e-5 and6e-5cm.",
+      "candidate_status": "discarded/no new defect",
+      "change": "No TeX change in this fresh audit.",
+      "current_verification": {
+        "analytic": "Manual independent algebra/identities and source comparison as recorded; not a machine-checked theorem.",
+        "executable": "check09",
+        "sample_evidence": "The full chapter suite exited 0 with -W error. Symbolic identities and numerical tolerances are in the named functions; finite numerical samples are not universal proofs."
+      },
+      "independent_final_pass": {
+        "route": "Different route: integrate the constant frequency photon spectrum and the1/lambda^2 wavelength spectrum separately; both give the same counts and limiting angle48.1897degrees.",
+        "result": "No new confirmed mathematical or physical defect found in this independent final pass."
+      },
+      "remaining_limitations": "Constant supplied index1.50; counts are emitted photons rather than detected photons."
+    },
+    {
+      "problem": "13.10",
+      "statement_and_every_solution_subpart_read": true,
+      "subparts": [
+        "a",
+        "b",
+        "c"
+      ],
+      "inspected_sources": [
+        "sections/ch13.tex:927",
+        "supplementary/check_ch13.py: check10",
+        "ocr/p-683.txt (Jackson printed p.658)",
+        "Jackson/source conventions: 632:(13.25); 639-640:(13.51)"
+      ],
+      "initial_derivation_checked": "Hankel inversion with symmetric Fourier factors gives K0. Retarded continuation gives the wake cone, factor two and interior fields.",
+      "candidate": "A wrong root could create an advanced cone: discarded by regulated J0/N0 transforms, which cancel ahead of the particle.",
+      "candidate_status": "discarded/no new defect",
+      "change": "No TeX change in this fresh audit.",
+      "current_verification": {
+        "analytic": "Manual independent algebra/identities and source comparison as recorded; not a machine-checked theorem.",
+        "executable": "check10",
+        "sample_evidence": "The full chapter suite exited 0 with -W error. Symbolic identities and numerical tolerances are in the named functions; finite numerical samples are not universal proofs."
+      },
+      "independent_final_pass": {
+        "route": "Different route: epsilon=1 recovers the vacuum field; regulated Laplace integrals check cone interior/exterior and direct differentiation retains both scalar/vector potentials.",
+        "result": "No new confirmed mathematical or physical defect found in this independent final pass."
+      },
+      "remaining_limitations": "The ideal nondispersive front is singular. Regular interior formulas are not the full front distribution."
+    },
+    {
+      "problem": "13.11",
+      "statement_and_every_solution_subpart_read": true,
+      "subparts": [
+        "a",
+        "b"
+      ],
+      "inspected_sources": [
+        "sections/ch13.tex:1126",
+        "supplementary/check_ch13.py: check11",
+        "ocr/p-683.txt (Jackson printed p.658)",
+        "Jackson/source conventions: 627:(13.14); 275:(6.153)"
+      ],
+      "initial_derivation_checked": "The boosted monopole electric field equals the charge field with ze replaced by beta g and a polarization rotation; the leading logarithm loses1/beta^2.",
+      "candidate": "Literal substitution in full13.14 retains -beta^2, so the existing leading-logarithm qualification is necessary.",
+      "candidate_status": "discarded/no new defect",
+      "change": "No TeX change in this fresh audit.",
+      "current_verification": {
+        "analytic": "Manual independent algebra/identities and source comparison as recorded; not a machine-checked theorem.",
+        "executable": "check11",
+        "sample_evidence": "The full chapter suite exited 0 with -W error. Symbolic identities and numerical tolerances are in the named functions; finite numerical samples are not universal proofs."
+      },
+      "independent_final_pass": {
+        "route": "Different route: directly integrate the monopole impulse and apply Gaussian Dirac quantization eg=n hbar c/2; check the high-speed ratio and plotted limits.",
+        "result": "No new confirmed mathematical or physical defect found in this independent final pass."
+      },
+      "remaining_limitations": "Nonlogarithmic monopole corrections and the near-rest law are not fixed by this model."
+    },
+    {
+      "problem": "13.12",
+      "statement_and_every_solution_subpart_read": true,
+      "subparts": [
+        "a",
+        "b"
+      ],
+      "inspected_sources": [
+        "sections/ch13.tex:1218",
+        "supplementary/check_ch13.py: check12; check_fresh_routes",
+        "ocr/p-683.txt (Jackson printed p.658)",
+        "Jackson/source conventions: 650-652:(13.76)-(13.84); 653:(13.87)"
+      ],
+      "initial_derivation_checked": "The coherent half-space difference gives the two-denominator spectrum. Frequency then angle integration produces the stated total energy.",
+      "candidate": "Adding separate intensities or using a wrong normalization would fail equal-medium cancellation; both equal-medium and vacuum limits pass.",
+      "candidate_status": "discarded/no new defect",
+      "change": "No TeX change in this fresh audit.",
+      "current_verification": {
+        "analytic": "Manual independent algebra/identities and source comparison as recorded; not a machine-checked theorem.",
+        "executable": "check12; check_fresh_routes",
+        "sample_evidence": "The full chapter suite exited 0 with -W error. Symbolic identities and numerical tolerances are in the named functions; finite numerical samples are not universal proofs."
+      },
+      "independent_final_pass": {
+        "route": "Different route: reverse the integration order. Independent angular quadrature and frequency integration agree with the total for plasma-frequency pairs(1,0),(1,2),(2,3).",
+        "result": "No new confirmed mathematical or physical defect found in this independent final pass."
+      },
+      "remaining_limitations": "Leading ultrarelativistic small-angle/high-frequency model. Extending it over the integral determines the leading gamma term only."
+    },
+    {
+      "problem": "13.13",
+      "statement_and_every_solution_subpart_read": true,
+      "subparts": [
+        "whole problem"
+      ],
+      "inspected_sources": [
+        "sections/ch13.tex:1381",
+        "supplementary/check_ch13.py: check13",
+        "ocr/p-683.txt (Jackson printed p.658)",
+        "ocr/p-684.txt (Jackson printed p.659)",
+        "Jackson/source conventions: 652:(13.84); printed p.658"
+      ],
+      "initial_derivation_checked": "A finite foil integral divided by the half-space result gives4sin^2(Theta); the formation-length substitution and phase average2 were checked.",
+      "candidate": "The thick-foil factor has no pointwise limit; the solution correctly claims a smoothed or phase-averaged value.",
+      "candidate_status": "discarded/no new defect",
+      "change": "No TeX change in this fresh audit.",
+      "current_verification": {
+        "analytic": "Manual independent algebra/identities and source comparison as recorded; not a machine-checked theorem.",
+        "executable": "check13",
+        "sample_evidence": "The full chapter suite exited 0 with -W error. Symbolic identities and numerical tolerances are in the named functions; finite numerical samples are not universal proofs."
+      },
+      "independent_final_pass": {
+        "route": "Different route: sum opposite-sign entrance/exit amplitudes, recover thin-foil quadratic cancellation and integrate one complete phase period.",
+        "result": "No new confirmed mathematical or physical defect found in this independent final pass."
+      },
+      "remaining_limitations": "Reflections and absorption are neglected. The cited Yodh figure is contextual and is not claimed to be reproduced."
+    },
+    {
+      "problem": "13.14",
+      "statement_and_every_solution_subpart_read": true,
+      "subparts": [
+        "a",
+        "b"
+      ],
+      "inspected_sources": [
+        "sections/ch13.tex:1450",
+        "supplementary/check_ch13.py: check14; check_fresh_routes",
+        "ocr/p-684.txt (Jackson printed p.659)",
+        "Jackson/source conventions: 650-652:(13.76)-(13.84); Garibyan1971p.24Eq3,5"
+      ],
+      "initial_derivation_checked": "The layered phase integral and finite geometric series give the foil factor times the array factor. The actual Garibyan page verifies N|r| much less than one.",
+      "candidate": "Replacing exact Snell longitudinal wave number by n(z)cos(theta) changes terms of order susceptibility times theta^2, beyond the retained approximation.",
+      "candidate_status": "discarded/no new defect",
+      "change": "No TeX change in this fresh audit.",
+      "current_verification": {
+        "analytic": "Manual independent algebra/identities and source comparison as recorded; not a machine-checked theorem.",
+        "executable": "check14; check_fresh_routes",
+        "sample_evidence": "The full chapter suite exited 0 with -W error. Symbolic identities and numerical tolerances are in the named functions; finite numerical samples are not universal proofs."
+      },
+      "independent_final_pass": {
+        "route": "Different route: a contiguous stack telescopes to one slab of thickness Na; original sums resolve removable singularities to N. Garibyan Eq5 and its finite-peak-width qualification were viewed.",
+        "result": "No new confirmed mathematical or physical defect found in this independent final pass."
+      },
+      "remaining_limitations": "Weak refraction and negligible multiple reflection. The further cited1975 paper is not used as unchecked derivation evidence."
+    },
+    {
+      "problem": "13.15",
+      "statement_and_every_solution_subpart_read": true,
+      "subparts": [
+        "a",
+        "b"
+      ],
+      "inspected_sources": [
+        "sections/ch13.tex:1575",
+        "supplementary/check_ch13.py: check15; check_fresh_routes",
+        "ocr/p-684.txt (Jackson printed p.659)",
+        "Jackson/source conventions: 653:(13.85)-(13.87)"
+      ],
+      "initial_derivation_checked": "The cutoff photon integral gives the dilogarithm expression and -(2ln gamma+3/2)/gamma^2 correction. Leading and matched-cutoff mean energies are separated.",
+      "candidate": "The original remainder and mixed numerator/denominator cutoffs are already qualified by an erratum and two distinct mean-energy tables.",
+      "candidate_status": "discarded/no new defect",
+      "change": "No TeX change in this fresh audit.",
+      "current_verification": {
+        "analytic": "Manual independent algebra/identities and source comparison as recorded; not a machine-checked theorem.",
+        "executable": "check15; check_fresh_routes",
+        "sample_evidence": "The full chapter suite exited 0 with -W error. Symbolic identities and numerical tolerances are in the named functions; finite numerical samples are not universal proofs."
+      },
+      "independent_final_pass": {
+        "route": "Different route: differentiate the antiderivative and fix the inversion-identity constant at gamma=1; reciprocal-frequency tails and the high-frequency series check convergent energy integrals.",
+        "result": "No new confirmed mathematical or physical defect found in this independent final pass."
+      },
+      "remaining_limitations": "The approximate spectrum is used down to its nominal plasma cutoff; the two means have different stated accuracy."
+    },
+    {
+      "problem": "13.16",
+      "statement_and_every_solution_subpart_read": true,
+      "subparts": [
+        "a",
+        "b",
+        "c",
+        "d"
+      ],
+      "inspected_sources": [
+        "sections/ch13.tex:1705",
+        "supplementary/check_ch13.py: check16; check_fresh_routes",
+        "ocr/p-684.txt (Jackson printed p.659)",
+        "ocr/p-685.txt (Jackson printed p.660)",
+        "Jackson/source conventions: 559:(11.152); 650-653:(13.79)-(13.87)"
+      ],
+      "initial_derivation_checked": "The boosted magnetic-moment field equals beta mu/(gamma ze) times d_z E_rho. Polarization projection, the spectral multiplier, cutoff integral and atomic units were checked.",
+      "candidate": "Exact intensity equality after polarization rotation would be false; the existing leading-order qualification is verified by the charge factor cos(theta)-1/(gamma^2 beta n).",
+      "candidate_status": "discarded/no new defect",
+      "change": "No TeX change in this fresh audit.",
+      "current_verification": {
+        "analytic": "Manual independent algebra/identities and source comparison as recorded; not a machine-checked theorem.",
+        "executable": "check16; check_fresh_routes",
+        "sample_evidence": "The full chapter suite exited 0 with -W error. Symbolic identities and numerical tolerances are in the named functions; finite numerical samples are not universal proofs."
+      },
+      "independent_final_pass": {
+        "route": "Different route: direct boost versus charge gradient, integration by parts for J2, reciprocal-frequency total pi/15, and gamma proportional1/m with cutoff proportionalm give the vanishing m^2 log(1/m) limit.",
+        "result": "No new confirmed mathematical or physical defect found in this independent final pass."
+      },
+      "remaining_limitations": "A classical spectrum with a kinematic cutoff is a crude estimate, not a quantum neutrino-radiation calculation."
+    }
+  ],
+  "local_render": {
+    "method": "Final chapter and its figure inputs copied to an isolated local temporary wrapper; main.pdf was not built or modified by this agent.",
+    "local_directory": "/var/folders/93/r1t98m8d3014c24llb8j119w0000gn/T/jackson-deepdebug-render13-kh3c4qhz",
+    "compiled_current_source_sha256": "f57888ee522024b954f171fc137a28b8d973ab0f4575fdd362eeea67106b9b13",
+    "pages": 28,
+    "observed_tool_exits": {
+      "initial_latexmk": 0,
+      "initial_pdftoppm": 0,
+      "final_wording_latexmk": 0,
+      "final_wording_pdftoppm": 0,
+      "four_contact_montages": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "final_page_2_3_focus_pdftoppm": 0,
+      "final_electric_qualification_latexmk": 0,
+      "final_electric_qualification_pdftoppm": 0,
+      "final_electric_focus_pdftoppm": 0,
+      "final_contact_default_font": 1,
+      "final_contact_explicit_font": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "log_scan": "No overfull/underfull boxes, LaTeX warnings, undefined control sequences, or TeX errors in final review.log.",
+    "visual_inspection": "All 28 final pages inspected in four newly rendered contact sheets after the B=0 qualification. Page 3 additionally inspected at 1800-pixel height; the explicit electric-driving scope, initial condition, energy derivation, and phase-dependent term are readable and within the text area. Page 2 was also inspected at this resolution before the page-3-only qualification. No clipping, overlap, or isolated problem labels observed.",
+    "persistent_evidence": "supplementary/ch13-deep-debug/render/"
+  },
+  "frozen_sha256": {
+    "sections/ch13.tex": "f57888ee522024b954f171fc137a28b8d973ab0f4575fdd362eeea67106b9b13",
+    "supplementary/ch13-deep-debug/baseline.log": "bfc3b513ac040226195c5313465f05bb30cf004e89523e1bf3ffa629113e1bbd",
+    "supplementary/ch13-deep-debug/crc1.log": "956e794766b9e2eac13936afc0acc35041bcedd1e65f3c823e4e445e1a1b41c6",
+    "supplementary/ch13-deep-debug/crc2.log": "e172674335d79417f88bf70e99d1c731237abdfae67812a5643338981031c641",
+    "supplementary/ch13-deep-debug/final-electric-counterexample.log": "7925ffdbb91245250a49f61a22e4f230e7b0ae0123234ef10f38467c04dd4f05",
+    "supplementary/ch13-deep-debug/final-wording.log": "7925ffdbb91245250a49f61a22e4f230e7b0ae0123234ef10f38467c04dd4f05",
+    "supplementary/ch13-deep-debug/final.log": "7925ffdbb91245250a49f61a22e4f230e7b0ae0123234ef10f38467c04dd4f05",
+    "supplementary/ch13-deep-debug/prequalification-repeat.log": "7925ffdbb91245250a49f61a22e4f230e7b0ae0123234ef10f38467c04dd4f05",
+    "supplementary/ch13-deep-debug/render/compile-electric-counterexample-stdout.log": "596a7833b63bf7870b758e8f163f4eb334094782044fe4ac1c03f96d5130ff60",
+    "supplementary/ch13-deep-debug/render/compile-final-stdout.log": "bb139775c026df72d69454704358b3d91034e0c6f1282d505b372e96e9e06247",
+    "supplementary/ch13-deep-debug/render/contact-1.png": "b22843cbae6bc9644ea9f3832b42359485fe30d8fd6dab6a3ef275ba7458e9a2",
+    "supplementary/ch13-deep-debug/render/contact-2.png": "933d1dfd5fe4058f7cf28eb09a9a296b468204313fbeb93c1ba0e66e09c0ef36",
+    "supplementary/ch13-deep-debug/render/contact-3.png": "b56d3c726619e8607d84c37f9adca0174c50812c25ff4a538e697ccd185253a6",
+    "supplementary/ch13-deep-debug/render/contact-4.png": "90b048f732a35bbd1e929e628c13ad771b7959aa8d673026dc1be1922d8a885b",
+    "supplementary/ch13-deep-debug/render/focus-02.png": "9a64c5dfd4652df73da1075a0b3322e8ca17b976c6f1bb75ef87c9d7578ce2db",
+    "supplementary/ch13-deep-debug/render/focus-03.png": "dda7b2a86e844074a9ce38a79955c3c2235d6b7274ecf3572a5a440c23f67bae",
+    "supplementary/ch13-deep-debug/render/review.log": "0830aba86346a32feb7e2313bcd137f5b8183c6da01a4aa564429d47e951b3d7",
+    "supplementary/ch13-deep-debug/render/review.pdf": "586891ae22bf587571bf1e43d4a86ce15f86f2c5faa89363a277856ff5c59cb7",
+    "supplementary/check_ch13.py": "ae73b16c5a6c9159209beee85265823b985902b1ce9eda82b2057cc8a3aa411c",
+    "supplementary/figures/ch13_11_monopole.tex": "41dcf88bc9dc47e7e1e63a11ef5927a18f6fa0cd146fd32a7599310db40b2fa8",
+    "supplementary/figures/ch13_9_cherenkov.tex": "39849a318f460a3fa174962fa392de104a2837ea0bca035cdfdd937b09b00efb"
+  },
+  "additional_observed_check_exits": [
+    {
+      "check": "Exploratory 13.2 excited-state initial-value ODE",
+      "exit": 1,
+      "detail": "The analytic energy agreement passed. A provisional absolute discrepancy >0.5 assertion failed because the observed discrepancy was 0.45440910565. This was a test-threshold error, not a second physics defect."
+    },
+    {
+      "check": "Corrected exploratory 13.2 excited-state initial-value ODE",
+      "exit": 0,
+      "detail": "The criterion was replaced by discrepancy >10% of the unexcited right-hand side. Measured Delta E=0.8513480431499278; unexcited RHS=0.3969389375181358; phase term=0.4544091056492313. The final independent regression is in check02."
+    }
+  ],
+  "textbook": "John David Jackson - Classical Electrodynamics (1998, Wiley) - libgen.li.pdf; PDF page = printed page +25.",
+  "current_source_cache": [
+    "build/ch13-source/p-650.txt",
+    "build/ch13-source/p-652.txt",
+    "build/ch13-source/p-653.txt",
+    "build/ch13-source/p-657.txt",
+    "build/ch13-source/p-659.txt",
+    "build/ch13-source/p-666.txt",
+    "build/ch13-source/p-669.txt",
+    "build/ch13-source/p-675.txt",
+    "build/ch13-source/p-676.txt",
+    "build/ch13-source/p-677.txt",
+    "build/ch13-source/p-678.png",
+    "pages/p-680.png",
+    "build/ch13-source/Garibyan-p24.png"
+  ],
+  "targeted_integrity_scan": "Current scan found no broken newline-m unit commands, bare cdots/quad/frac command fragments, or literal comma integration measures. A first broad pattern matched suffixes within valid qquad and dfrac; the identifier-boundary scan eliminated these false positives.",
+  "environment": {
+    "python": "3.14.7",
+    "numpy": "2.4.6",
+    "scipy": "1.18.0",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "external_sources_checked_in_current_audit": [
+    {
+      "url": "https://pdg.lbl.gov/2024/AtomicNuclearProperties/HTML/air_dry_1_atm.html",
+      "verified_input": "Dry-air elemental mass fractions and atomic masses. The displayed 20 degree C density is distinguished from the adopted 0 degree C NTP density.",
+      "applies_to": "13.4"
+    },
+    {
+      "url": "https://pdg.lbl.gov/2005/reviews/atomicrpp.pdf",
+      "location": "Table 6.1",
+      "verified_input": "STP air density 1.2931 g/L.",
+      "applies_to": "13.4"
+    },
+    {
+      "url": "https://pdgprod.lbl.gov/~deg/AtomicNuclearProperties/HTML/aluminum_Al.html",
+      "verified_input": "Z=13, A=26.9815385, density=2.699 g/cm^3.",
+      "applies_to": "13.8"
+    },
+    {
+      "url": "https://pdgprod.lbl.gov/~deg/AtomicNuclearProperties/HTML/copper_Cu.html",
+      "verified_input": "Z=29, A=63.546, density=8.960 g/cm^3.",
+      "applies_to": "13.8"
+    },
+    {
+      "url": "https://pdgprod.lbl.gov/~deg/AtomicNuclearProperties/HTML/lead_Pb.html",
+      "verified_input": "Z=82, A=207.2, density=11.35 g/cm^3.",
+      "applies_to": "13.8"
+    }
+  ],
+  "tooling_recoveries": [
+    {
+      "operation": "Exact-text replacement for the B=0 qualification",
+      "exit": 1,
+      "cause": "The asserted source fragment used a different line break from the actual file. The assertion prevented any source mutation. Reading the exact two lines and replacing that fragment succeeded with exit 0."
+    },
+    {
+      "operation": "Final contact montage without an explicit font",
+      "exit": 1,
+      "cause": "ImageMagick reported unable to read its empty default font. The four montages were regenerated using the existing /System/Library/Fonts/Supplemental/Arial.ttf; all four exited 0."
+    }
+  ]
+}
