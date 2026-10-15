@@ -1121,8 +1121,11 @@ power: $kd=2\pi$ is not small, so that source-size approximation is
 uncontrolled. Multipole \emph{order} truncation using the exact coefficient
 remains accurate. In particular, inserting $j_2(x)\simeq x^2/15$ into
 the boundary-only formula above is not a legitimate way to derive the
-static moment: its cancellation used the full Bessel differential
-equation and $kd=2\pi$ before the approximation.
+static moment: the integration by parts used only $I''+k^2I=0$ and
+holds for any radial weight, so that substitution also keeps the
+$k^2rIj_l$ current term, which the long-wavelength moment drops but
+which is not small at $kd=2\pi$; it gives $\pi^2/6$ times the
+long-wavelength $a_E(2,0)$.
 
 \Needspace{5\baselineskip}
 \par\bigskip
