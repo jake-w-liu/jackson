@@ -370,7 +370,8 @@ are
 \mathrm{TE}_{31}&4.201188941&2.281786850
 \end{array}
 \]
-The middle two families have the same cutoff.  Thus the table gives
+The $\mathrm{TE}_{01}$ and $\mathrm{TM}_{11}$ families have the same
+cutoff, because $J_0'=-J_1$ gives $x'_{01}=x_{11}$.  Thus the table gives
 both the next four families and, if ``higher'' is counted by distinct
 frequency, the next four distinct frequencies.  The dominant cutoff
 is $\omega_c=1.841183781v/R$, or $f_c=0.293033v/R$.
@@ -861,10 +862,13 @@ More explicitly the exact difference for a finite admissible variation is
 {\langle\mathbf E+\delta\mathbf E,\mathbf E+\delta\mathbf E\rangle},
 \]
 which is quadratic at leading order.  For upper bounds to positive
-Maxwell eigenvalues use divergence-free trial fields, and for an
+Maxwell eigenvalues use divergence-free trial fields orthogonal to
+the static curl-free fields that exist when $S$ has more than one
+part, and for an
 excited mode also restrict to its invariant symmetry subspace or
 remove overlaps with lower modes.  The trials below are
-$z$-independent longitudinal fields and therefore divergence-free.
+$z$-independent longitudinal fields and therefore divergence-free;
+the closed cylinder has a connected wall, so no static fields occur.
 
 \textbf{(b)} Put $u=\rho/R$ and $f(u)=\cos(\pi u/2)$.
 The common axial and angular factors cancel, leaving
@@ -1090,9 +1094,9 @@ where only the first (second) term in the numerator occurs for TM (TE) modes. [\
   \draw[thick] (0,0) -- (0.32,2.9) -- (3.58,2.9) -- (3.9,0) -- cycle;
   % delta marks at top corners
   \draw[<->] (0.02,2.6) -- (0.3,2.6);
-  \node at (0.16,2.85) {$\delta$};
+  \node[above] at (0.16,2.9) {$\delta$};
   \draw[<->] (3.88,2.6) -- (3.6,2.6);
-  \node at (3.74,2.85) {$\delta$};
+  \node[above] at (3.74,2.9) {$\delta$};
   % new boundary label with arrows to slanted sides
   \node at (1.95,1.4) {New};
   \node at (1.95,1.05) {boundary};
@@ -1271,8 +1275,8 @@ and either shape problem, nontrivial coefficients require
 \det[(\gamma^2-\gamma_0^2)\mathbf N+\boldsymbol\Delta]=0.
 \]
 Equivalently, diagonalize
-$\mathbf N^{-1/2}\boldsymbol\Delta\mathbf N^{-1/2}$; its negative
-eigenvalues are the first-order shifts of $\gamma^2$.
+$\mathbf N^{-1/2}\boldsymbol\Delta\mathbf N^{-1/2}$; the negatives of
+its eigenvalues are the first-order shifts of $\gamma^2$.
 
 \textbf{(b)} Put $x=x'_{11}=1.841183781$ and suppress the common
 $z,t$ factors.  To first order the ellipse is the radial deformation
@@ -1309,7 +1313,8 @@ mainly across the longer $x$ direction and has the lower transverse
 wave number; its electric field is predominantly along $y$.
 The other polarization has the opposite ordering.
 
-As an independent check, map the ellipse to the unit disk by
+As an independent check, put $\varepsilon=\Delta R/R$ and map the
+ellipse to the original disk $\rho\le R$ by
 $x=(1+\varepsilon)X$, $y=(1-\varepsilon)Y$.
 The Neumann Rayleigh quotient changes by
 \[
@@ -1986,7 +1991,7 @@ holds $I_0$ fixed.
   \draw[->] (1.15,1.85) -- (1.15,1.66);
   \draw (0.85,0.85) -- (1.45,0.85);
   \draw[->] (1.15,0.65) -- (1.15,0.84);
-  \node at (1.75,1.25) {$2R$};
+  \node[above] at (1.75,1.25) {$2R$};
   % h dimension: floor to the center of the loop
   \draw (1.1,1.25) -- (2.6,1.25);
   \draw[<->] (2.6,0) -- (2.6,1.25);
