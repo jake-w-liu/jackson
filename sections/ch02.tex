@@ -1367,36 +1367,24 @@ become the exterior-cylinder series of Problem 2.18.
   \fill (0,-1.5) circle (1.6pt) node[below=3pt] {$-\lambda$};
 \end{tikzpicture}\hspace{2em}
 \begin{tikzpicture}[scale=1.1]
-  % right figure: electric field lines (from +lambda at left/right to -lambda at top/bottom)
+  % right figure: exact interior field lines.  With u=z^2/a^2 the stream
+  % function is arg[(u+1)/(u-1)], so each line in the first quadrant is the
+  % image of a circular arc through u=\pm1; the 5 lines leave +lambda at
+  % equal angular steps of 15 degrees.  The circle rho=a is itself a field line.
   \draw (0,0) circle (1.5);
-  % quadrant I: lines from +lambda at (1.5,0) to -lambda at (0,1.5)
-  \draw[->] (1.49,0.08) .. controls (1.25,0.25) and (1.15,0.55) .. (1.06,1.06);
-  \draw[->] (1.44,0.35) .. controls (1.15,0.45) and (1.0,0.75) .. (0.78,1.28);
-  \draw[->] (1.30,0.68) .. controls (0.95,0.75) and (0.80,1.0) .. (0.55,1.40);
-  \draw[->] (1.35,0.30) .. controls (0.75,0.35) and (0.45,0.75) .. (0.30,1.35);
-  \draw[->] (1.10,0.22) .. controls (0.45,0.28) and (0.30,0.48) .. (0.18,1.12);
-  \draw[->] (1.45,-0.05) .. controls (0.9,-0.02) and (0.35,0.30) .. (0.06,1.47);
-  % quadrant II: from +lambda at (-1.5,0) to -lambda at (0,1.5)
-  \draw[->] (-1.49,0.08) .. controls (-1.25,0.25) and (-1.15,0.55) .. (-1.06,1.06);
-  \draw[->] (-1.44,0.35) .. controls (-1.15,0.45) and (-1.0,0.75) .. (-0.78,1.28);
-  \draw[->] (-1.30,0.68) .. controls (-0.95,0.75) and (-0.80,1.0) .. (-0.55,1.40);
-  \draw[->] (-1.35,0.30) .. controls (-0.75,0.35) and (-0.45,0.75) .. (-0.30,1.35);
-  \draw[->] (-1.10,0.22) .. controls (-0.45,0.28) and (-0.30,0.48) .. (-0.18,1.12);
-  \draw[->] (-1.45,-0.05) .. controls (-0.9,-0.02) and (-0.35,0.30) .. (-0.06,1.47);
-  % quadrant III: from +lambda at (-1.5,0) to -lambda at (0,-1.5)
-  \draw[->] (-1.49,-0.08) .. controls (-1.25,-0.25) and (-1.15,-0.55) .. (-1.06,-1.06);
-  \draw[->] (-1.44,-0.35) .. controls (-1.15,-0.45) and (-1.0,-0.75) .. (-0.78,-1.28);
-  \draw[->] (-1.30,-0.68) .. controls (-0.95,-0.75) and (-0.80,-1.0) .. (-0.55,-1.40);
-  \draw[->] (-1.35,-0.30) .. controls (-0.75,-0.35) and (-0.45,-0.75) .. (-0.30,-1.35);
-  \draw[->] (-1.10,-0.22) .. controls (-0.45,-0.28) and (-0.30,-0.48) .. (-0.18,-1.12);
-  \draw[->] (-1.45,0.05) .. controls (-0.9,0.02) and (-0.35,-0.30) .. (-0.06,-1.47);
-  % quadrant IV: from +lambda at (1.5,0) to -lambda at (0,-1.5)
-  \draw[->] (1.49,-0.08) .. controls (1.25,-0.25) and (1.15,-0.55) .. (1.06,-1.06);
-  \draw[->] (1.44,-0.35) .. controls (1.15,-0.45) and (1.0,-0.75) .. (0.78,-1.28);
-  \draw[->] (1.30,-0.68) .. controls (0.95,-0.75) and (0.80,-1.0) .. (0.55,-1.40);
-  \draw[->] (1.35,-0.30) .. controls (0.75,-0.35) and (0.45,-0.75) .. (0.30,-1.35);
-  \draw[->] (1.10,-0.22) .. controls (0.45,-0.28) and (0.30,-0.48) .. (0.18,-1.12);
-  \draw[->] (1.45,0.05) .. controls (0.9,0.02) and (0.35,-0.30) .. (0.06,-1.47);
+  \foreach \sx/\sy in {1/1,-1/1,-1/-1,1/-1}{
+    \begin{scope}[xscale=\sx,yscale=\sy]
+      \draw[->] plot[smooth] coordinates {(1.50,0.00) (1.46,0.12) (1.41,0.24) (1.35,0.37) (1.29,0.48) (1.21,0.60) (1.12,0.71) (1.03,0.82) (0.93,0.93)};
+      \draw plot[smooth] coordinates {(0.93,0.93) (0.82,1.03) (0.71,1.12) (0.60,1.21) (0.48,1.29) (0.37,1.35) (0.24,1.41) (0.12,1.46) (0.00,1.50)};
+      \draw[->] plot[smooth] coordinates {(1.50,0.00) (1.44,0.10) (1.37,0.20) (1.29,0.30) (1.21,0.39) (1.11,0.49) (1.01,0.60) (0.91,0.70) (0.81,0.81)};
+      \draw plot[smooth] coordinates {(0.81,0.81) (0.70,0.91) (0.60,1.01) (0.49,1.11) (0.39,1.21) (0.30,1.29) (0.20,1.37) (0.10,1.44) (0.00,1.50)};
+      \draw[->] plot[smooth] coordinates {(1.50,0.00) (1.42,0.07) (1.34,0.15) (1.24,0.22) (1.14,0.30) (1.03,0.38) (0.92,0.47) (0.80,0.57) (0.68,0.68)};
+      \draw plot[smooth] coordinates {(0.68,0.68) (0.57,0.80) (0.47,0.92) (0.38,1.03) (0.30,1.14) (0.22,1.24) (0.15,1.34) (0.07,1.42) (0.00,1.50)};
+      \draw[->] plot[smooth] coordinates {(1.50,0.00) (1.41,0.05) (1.32,0.10) (1.21,0.15) (1.10,0.20) (0.97,0.27) (0.84,0.34) (0.69,0.43) (0.55,0.55)};
+      \draw plot[smooth] coordinates {(0.55,0.55) (0.43,0.69) (0.34,0.84) (0.27,0.97) (0.20,1.10) (0.15,1.21) (0.10,1.32) (0.05,1.41) (0.00,1.50)};
+      \draw[->] plot[smooth] coordinates {(1.50,0.00) (1.41,0.02) (1.30,0.05) (1.19,0.08) (1.07,0.10) (0.93,0.14) (0.78,0.18) (0.59,0.25) (0.38,0.38)};
+      \draw plot[smooth] coordinates {(0.38,0.38) (0.25,0.59) (0.18,0.78) (0.14,0.93) (0.10,1.07) (0.08,1.19) (0.05,1.30) (0.02,1.41) (0.00,1.50)};
+    \end{scope}}
   \fill (1.5,0) circle (1.6pt);
   \fill (-1.5,0) circle (1.6pt);
   \fill (0,1.5) circle (1.6pt);
