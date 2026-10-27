@@ -4,6 +4,19 @@ Problem-by-problem audit of `sections/ch01.tex` … `sections/ch16.tex`.
 Each chapter has a log `audit/chNN.md`; its first line gives the chapter's
 status and each later line records one audited problem.
 
+## Outcome
+
+All 16 chapters (394 problems) have had both passes. The logs record 64
+fixes: wrong or overstated claims, rounding slips, unexplained or
+unjustified erratum marks, a units slip (3.21), a mistyped fraction
+(15.1), and figures that were physically wrong or clipped (2.20, 5.15,
+8.16) or had labels overprinted by lines. No boxed result needed a change
+of physics. Three notes remain open because they could not be settled
+without the printed book or depend on a modelling choice: 9.13 (moving
+magnetization model), 12.19 (overall sign of Jackson's (12.117)) and
+14.27(c) (a relative O(K²) factor D = 1 + K²/2). `main.pdf` was rebuilt
+from the audited sources.
+
 ## Resuming
 
 The audit is designed to survive interruptions. Progress is committed and
